@@ -1,12 +1,11 @@
-@font-face {
-  font-family: 'brandon';
-  src: url('brandon.eot'); /* IE9 Compat Modes */
-  src: url('brandon.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+body {
+  font-family: 'lato', helvetica, sans-serif;
+  line-height: 1.4em;
 }
 
-body {
-  font-family: 'brandon', helvetica, sans-serif;
-  line-height: 1.4em;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'lato', helvetica, sans-serif;
+  font-weight: 600;
 }
 
 .logo {
