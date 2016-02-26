@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'brandon';
+  src: url('brandon.eot'); /* IE9 Compat Modes */
+  src: url('brandon.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+}
+
+body {
+  font-family: 'brandon', helvetica, sans-serif;
+  line-height: 1.4em;
+}
+
+.logo {
+  display: block;
+  width: 25%;
+  margin: 1em auto;
+}
+
+.full-width-col-img {
+  padding: 0;
+}
