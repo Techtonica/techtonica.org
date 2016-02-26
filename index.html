@@ -1,18 +1,16 @@
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Techtonica</title>
     <meta name="description" content="Six months of tuition-free tech training followed by internships at tech companies for local, low-income women and gender-nonconforming adults." />
     <meta name="keywords" content="Techtonica, low income, Michelle Glauser" />
-
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="css/app.css" />
+    <script src="js/vendor/modernizr.js"></script>
   </head>
   <body>
+    
     <div class="fixed">
       <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
@@ -39,8 +37,11 @@
     </div>
 
     <div class="row">
-      <div class="large-12 columns">
+      <div class="large-6 columns">
         <img src="img/logo.png">
+        <h1>Welcome to Techtonica!</h1>
+      </div>
+      <div class="large-6 columns">
         <h1>Welcome to Techtonica!</h1>
       </div>
     </div>
@@ -62,10 +63,11 @@
         <p>A desperate need for greater gender, race, and sexuality diversity also exists in the tech industry.</p>
       </div>
     </div>
-
-    <script src="js/vendor/jquery.min.js"></script>
-    <script src="js/vendor/what-input.min.js"></script>
+    
+    <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
-    <script src="js/app.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
   </body>
 </html>
