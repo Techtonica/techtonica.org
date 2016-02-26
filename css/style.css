@@ -49,10 +49,6 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
-.non-hero-img-content {
-
-}
-
 @media only screen and (max-width: 50.063em) {
   .hero-img-content p {
     font-size: 1.2em;
