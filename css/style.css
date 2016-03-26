@@ -1,63 +1,86 @@
 body {
-  font-family: 'lato', helvetica, sans-serif;
-  line-height: 1.4em;
-}
+  margin: 0;
+  font-size: 1.2em;
+  line-height: 1.4em; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'lato', helvetica, sans-serif;
   font-weight: 700;
-}
+  color: #0093B5;
+  letter-spacing: 2px; }
+
+body, h1, h2, h3, h4, h5, h6, p {
+  font-family: 'lato', helvetica, sans-serif; }
+
+h1 {
+  color: white;
+  text-shadow: 1px 1px 5px #666;
+  font-size: 4em;
+  letter-spacing: 4px; }
+
+a {
+  color: #0093B5;
+  text-decoration: none; }
+
+.blue-background {
+  background-color: #0093B5;
+  color: white; }
+
+.centered {
+  text-align: center; }
+
+.row {
+  -webkit-display: inline-flex;
+  -moz-display: inline-flex;
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center; }
 
 .nav-bar {
+  -webkit-display: inline-flex;
+  -moz-display: inline-flex;
+  display: inline-flex;
+  flex-flow: row-reverse nowrap;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 4rem;
   background-color: white;
-  box-shadow: 1px 1px 1px 1px #ccc;
-  z-index: 100;
-}
+  box-shadow: 0 0 8px 1px #ccc;
+  z-index: 100; }
+
+.nav-link {
+  flex-grow: 1; }
 
 .img-link {
   display: inline-block;
-}
+  order: 1;
+  flex-grow: 10; }
 
 .logo {
   height: 4rem;
-  padding-left: 1rem;
-}
+  padding-left: 1rem; }
 
-.centered {
-  text-align: center;
-}
+.main-content {
+  margin-top: 4rem; }
 
-@media only screen and (max-width: 50.063em) {
-  .hero-img-content p {
-    font-size: 1.2em;
-  }
+.main-header {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 1000px;
+  background: url(../img/woman-computer.jpg) #0093B5 no-repeat center center fixed; }
 
-  .title {
-    font-size: 1.4em;
-  }
-}
+.main-header-text {
+  max-width: 50%;
+  padding: 0 1.5em; }
 
-@media only screen and (max-width: 40.063em) {
-  .hero-img-content p {
-    font-size: 1.1em;
-  }
-
-  .title {
-    font-size: 1.3em;
-  }
-}
-
-@media only screen and (max-width: 30.063em) {
-  .hero-img-content p {
-    font-size: 1.2em;
-  }
-
-  .title {
-    font-size: 1.4em;
-  }
-}
+/*# sourceMappingURL=style.css.map */
