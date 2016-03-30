@@ -5,8 +5,13 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  color: #0093B5;
+  color: #0093B5; }
+
+h1, h2 {
   letter-spacing: 2px; }
+
+h3, h4, h5, h6 {
+  letter-spacing: 1px; }
 
 body, h1, h2, h3, h4, h5, h6, p {
   font-family: 'lato', helvetica, sans-serif; }
@@ -34,8 +39,17 @@ a {
   display: inline-flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: center;
-  margin: 0 2rem; }
+  margin: 0 3rem; }
+
+.row__center {
+  align-items: center; }
+
+.row__baseline {
+  align-items: baseline; }
+
+.column {
+  flex: 1;
+  padding: 0 1rem; }
 
 .nav-bar {
   -webkit-display: inline-flex;
@@ -63,7 +77,7 @@ a {
 .img-link {
   display: inline-block;
   order: 1;
-  flex-grow: 10; }
+  flex: 10; }
 
 .logo {
   height: 4rem;
@@ -89,11 +103,8 @@ a {
   padding: 0 1.5em;
   text-shadow: 1px 1px 1px #666; }
 
-.how-it-works__img {
-  width: 100%; }
-
 @media only screen and (max-width: 30.063em) {
   .column {
-    flex-grow: 1; } }
+    flex: 1; } }
 
 /*# sourceMappingURL=style.css.map */
