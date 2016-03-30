@@ -82,12 +82,15 @@ a {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/woman-computer.jpg) #0093B5 no-repeat center center fixed; }
+  background: url(../img/woman-computer.jpg) #0093B5 no-repeat top right fixed; }
 
 .main-header__text {
   max-width: 50%;
   padding: 0 1.5em;
   text-shadow: 1px 1px 1px #666; }
+
+.how-it-works__img {
+  width: 100%; }
 
 @media only screen and (max-width: 30.063em) {
   .column {
