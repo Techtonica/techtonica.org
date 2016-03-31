@@ -39,7 +39,7 @@ a {
   display: inline-flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  margin: 0 3rem; }
+  padding: 3rem 5rem; }
 
 .row__center {
   align-items: center; }
@@ -62,7 +62,7 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  height: 4rem;
+  height: 5rem;
   background-color: white;
   box-shadow: 0 0 8px 1px #ccc;
   z-index: 100; }
