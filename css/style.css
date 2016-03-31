@@ -104,6 +104,9 @@ a {
   padding: 0 1.5em;
   text-shadow: 1px 1px 1px #666; }
 
+.full-width-img {
+  width: 100%; }
+
 @media only screen and (max-width: 30.063em) {
   .column {
     flex: 1; } }
