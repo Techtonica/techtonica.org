@@ -26,6 +26,10 @@ a {
   color: #0093B5;
   text-decoration: none; }
 
+.blue-h1 {
+  color: #05556D;
+  text-shadow: 0px 0px 1px #ccc; }
+
 .blue-background {
   background-color: #0093B5;
   color: white; }
