@@ -41,8 +41,8 @@ a {
   -webkit-display: inline-flex;
   -moz-display: inline-flex;
   display: inline-flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  flex-flow: row wrap;
+  justify-content: space-around;
   padding: 3rem 5rem; }
 
 .row__center {
@@ -59,8 +59,8 @@ a {
   -webkit-display: inline-flex;
   -moz-display: inline-flex;
   display: inline-flex;
-  flex-flow: row-reverse nowrap;
-  justify-content: space-between;
+  flex-flow: row-reverse wrap;
+  justify-content: space-around;
   align-items: center;
   position: fixed;
   top: 0;
@@ -120,8 +120,22 @@ a {
   background-color: #0093B5;
   color: white; }
 
-@media only screen and (max-width: 30.063em) {
-  .column {
-    flex: 1; } }
+@media only screen and (max-width: 768px) {
+  .row {
+    padding: 1em; }
+
+  .main-header {
+    display: block;
+    position: relative;
+    height: 90vh;
+    background: url(../img/woman-computer.jpg) #0093B5 no-repeat top center fixed; }
+
+  .main-header__text {
+    position: absolute;
+    bottom: 0;
+    max-width: 100%; } }
+@media only screen and (max-width: 480px) {
+  .row {
+    padding: 0; } }
 
 /*# sourceMappingURL=style.css.map */
