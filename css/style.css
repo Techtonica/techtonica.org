@@ -4,8 +4,10 @@ body {
   line-height: 1.4em; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  color: #0093B5; }
+  margin: 1.5rem 0;
+  color: #0093B5;
+  line-height: 1em;
+  font-weight: 700; }
 
 h1, h2 {
   letter-spacing: 2px; }
@@ -36,6 +38,9 @@ a {
 
 .centered {
   text-align: center; }
+
+.justify {
+  text-align: justify; }
 
 .row {
   -webkit-display: inline-flex;
@@ -122,9 +127,21 @@ a {
   background-color: #0093B5;
   color: white; }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .row {
-    padding: 1em; }
+    padding: 2em; }
+
+  h1 {
+    font-size: 3.5em; } }
+@media only screen and (max-width: 900px) {
+  .row {
+    padding: 1.5em 1em; }
+
+  .column-med {
+    flex: 0 0 40%; }
+
+  h1 {
+    font-size: 3em; }
 
   .main-header {
     display: block;
@@ -135,9 +152,19 @@ a {
   .main-header__text {
     position: absolute;
     bottom: 0;
-    max-width: 100%; } }
-@media only screen and (max-width: 480px) {
-  .row {
-    padding: 0; } }
+    max-width: 100%; }
+
+  .hidden-med {
+    display: none; } }
+@media only screen and (max-width: 600px) {
+  .column {
+    flex: 0 0 100%; }
+
+  h1 {
+    font-size: 2em;
+    letter-spacing: 0.5px; }
+
+  .hidden-sm {
+    display: none; } }
 
 /*# sourceMappingURL=style.css.map */
