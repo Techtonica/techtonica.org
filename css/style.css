@@ -152,7 +152,8 @@ a {
   .main-header__text {
     position: absolute;
     bottom: 0;
-    max-width: 100%; }
+    max-width: 100%;
+    width: 100%; }
 
   .hidden-med {
     display: none; } }
