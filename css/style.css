@@ -116,6 +116,8 @@ a {
   -moz-border-radius: 8px;
   -o-border-radius: 8px;
   border-radius: 8px;
+  display: inline-block;
+  margin: 0.5em 0;
   padding: 0.75em 1.5em;
   background-color: #0093B5;
   color: white; }
