@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  box-sizing: border-box;
   font-size: 1.2em;
   line-height: 1.4em; }
 
@@ -164,6 +165,9 @@ a {
   h1 {
     font-size: 2em;
     letter-spacing: 0.5px; }
+
+  .main-header__text {
+    width: auto; }
 
   .hidden-sm {
     display: none; } }
