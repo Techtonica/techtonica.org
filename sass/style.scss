@@ -1,0 +1,156 @@
+@import 'settings';
+@import 'mixins';
+
+.row {
+  @include prefix(display, inline-flex, webkit moz);
+
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 3rem 5rem;
+}
+
+.row__center {
+  align-items: center;
+}
+
+.row__baseline {
+  align-items: baseline;
+}
+
+.column {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.nav-bar {
+  @include prefix(display, inline-flex, webkit moz);
+
+  flex-flow: row-reverse wrap;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  background-color: $white;
+  box-shadow: 0 0 8px 1px #ccc;
+  z-index: 100;
+}
+
+.nav-link {
+  flex-grow: 1;
+  padding: 1em 0;
+  text-shadow: $thin-light-text-shadow;
+}
+
+.nav-link:hover {
+  color: $light-blue;
+}
+
+.img-link {
+  display: inline-block;
+  order: 1;
+  flex: 10;
+}
+
+.logo {
+  height: 4rem;
+  padding-left: 1rem;
+}
+
+.main-content {
+  margin-top: 4rem;
+}
+
+.main-header {
+  @include prefix(background-size, cover, webkit moz o);
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100vh;
+  background: url(../img/woman-computer.jpg) $main-blue no-repeat top right fixed;
+}
+
+.main-header__text {
+  max-width: 50%;
+  padding: 0 1.5em;
+  text-shadow: $thin-dark-text-shadow;
+}
+
+.full-width-img {
+  width: 100%;
+}
+
+.contact-us {
+  @include prefix(border-radius, 8px, webkit moz o);
+
+  display: inline-block;
+  margin: 0.5em 0;
+  padding: 0.75em 1.5em;
+  background-color: $main-blue;
+  color: $white;
+}
+
+@media only screen and (max-width: 1024px) {
+  .row {
+    padding: 2em;
+  }
+
+  h1 {
+    font-size: 3.5em;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .row {
+    padding: 1.5em 1em;
+  }
+
+  .column-med {
+    flex: 0 0 40%;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  .main-header {
+    display: block;
+    position: relative;
+    height: 90vh;
+    background: url(../img/woman-computer.jpg) $main-blue no-repeat top center fixed;
+  }
+
+  .main-header__text {
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hidden-med {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .column {
+    flex: 0 0 100%;
+  }
+
+  h1 {
+    font-size: 2em;
+    letter-spacing: 0.5px;
+  }
+
+  .main-header__text {
+    width: auto;
+  }
+
+  .hidden-sm {
+    display: none;
+  }
+}

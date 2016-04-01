@@ -1,0 +1,65 @@
+$main-blue: #0093B5;
+$light-blue: #16C1F3;
+$dark-blue: #05556D;
+$white: white;
+$light-gray: #ccc;
+$dark-gray: #666;
+$thick-dark-text-shadow: 2px 2px 5px $dark-gray;
+$thin-dark-text-shadow: 1px 1px 1px $dark-gray;
+$thin-light-text-shadow: 0px 0px 1px $light-gray;
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  line-height: 1.4em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.5rem 0;
+  color: $main-blue;
+  line-height: 1em;
+  font-weight: 700;
+}
+
+h1, h2 {
+  letter-spacing: 2px;
+}
+
+h3, h4, h5, h6 {
+  letter-spacing: 1px;
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+  font-family: 'lato', helvetica, sans-serif;
+}
+
+h1 {
+  color: $white;
+  text-shadow: $thick-dark-text-shadow;
+  font-size: 4em;
+  letter-spacing: 4px;
+}
+
+a {
+  color: $main-blue;
+  text-decoration: none;
+}
+
+.blue-h1 {
+  color: $dark-blue;
+  text-shadow: $thin-light-text-shadow;
+}
+
+.blue-background {
+  background-color: $main-blue;
+  color: $white;
+}
+
+.centered {
+  text-align: center;
+}
+
+.justify {
+  text-align: justify;
+}
