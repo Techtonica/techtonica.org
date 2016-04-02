@@ -54,6 +54,10 @@ a {
 .blue-background {
   background-color: $main-blue;
   color: $white;
+  a {
+    color: $light-blue;
+    text-shadow: $thin-dark-text-shadow;
+  }
 }
 
 .centered {

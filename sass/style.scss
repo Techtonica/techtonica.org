@@ -2,7 +2,7 @@
 @import 'mixins';
 
 .row {
-  @include prefix(display, inline-flex, webkit moz);
+  @include prefix(display, flex, webkit moz);
 
   flex-flow: row wrap;
   justify-content: space-around;
@@ -144,6 +144,14 @@
   h1 {
     font-size: 2em;
     letter-spacing: 0.5px;
+  }
+
+  .nav-link {
+
+  }
+
+  .main-content {
+    margin-top: 5rem;
   }
 
   .main-header__text {

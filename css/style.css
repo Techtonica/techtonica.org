@@ -36,6 +36,9 @@ a {
 .blue-background {
   background-color: #0093B5;
   color: white; }
+  .blue-background a {
+    color: #16C1F3;
+    text-shadow: 1px 1px 1px #666; }
 
 .centered {
   text-align: center; }
@@ -44,9 +47,9 @@ a {
   text-align: justify; }
 
 .row {
-  -webkit-display: inline-flex;
-  -moz-display: inline-flex;
-  display: inline-flex;
+  -webkit-display: flex;
+  -moz-display: flex;
+  display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   padding: 3rem 5rem; }
@@ -165,6 +168,9 @@ a {
   h1 {
     font-size: 2em;
     letter-spacing: 0.5px; }
+
+  .main-content {
+    margin-top: 5rem; }
 
   .main-header__text {
     width: auto; }
