@@ -92,6 +92,7 @@
   padding: 0.75em 1.5em;
   background-color: $main-blue;
   color: $white;
+  text-align: center;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -147,7 +148,7 @@
   }
 
   .nav-link {
-
+    display: none;
   }
 
   .main-content {
@@ -160,5 +161,11 @@
 
   .hidden-sm {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .contact-us {
+    display: block;
   }
 }

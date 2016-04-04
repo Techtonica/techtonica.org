@@ -129,7 +129,8 @@ a {
   margin: 0.5em 0;
   padding: 0.75em 1.5em;
   background-color: #0093B5;
-  color: white; }
+  color: white;
+  text-align: center; }
 
 @media only screen and (max-width: 1024px) {
   .row {
@@ -169,6 +170,9 @@ a {
     font-size: 2em;
     letter-spacing: 0.5px; }
 
+  .nav-link {
+    display: none; }
+
   .main-content {
     margin-top: 5rem; }
 
@@ -177,5 +181,8 @@ a {
 
   .hidden-sm {
     display: none; } }
+@media only screen and (max-width: 480px) {
+  .contact-us {
+    display: block; } }
 
 /*# sourceMappingURL=style.css.map */
