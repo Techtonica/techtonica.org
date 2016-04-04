@@ -182,8 +182,12 @@ a {
   .main-content {
     margin-top: 0; }
 
+  .main-header {
+    height: 100vh; }
+
   .main-header__text {
-    width: auto; }
+    width: auto;
+    padding: 0 1em; }
 
   .hidden-sm {
     display: none; } }
