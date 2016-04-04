@@ -170,11 +170,17 @@ a {
     font-size: 2em;
     letter-spacing: 0.5px; }
 
+  .nav-bar {
+    flex-flow: column-reverse nowrap; }
+
+  .img-link {
+    flex: 0; }
+
   .nav-link {
     display: none; }
 
   .main-content {
-    margin-top: 5rem; }
+    margin-top: 0; }
 
   .main-header__text {
     width: auto; }
