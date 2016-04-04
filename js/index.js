@@ -22,3 +22,8 @@ $('.whatwedo').click(function() {
   scrollDown('what-we-do', 1000);
 });
 
+$('.lines-button').click(function(){
+  $(this).toggleClass('x close');
+  $('.nav-bar').toggleClass('small-screen-nav');
+  $('.nav-link').toggleClass('show-menu-link');
+});

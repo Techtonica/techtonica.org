@@ -29,6 +29,10 @@ a {
   color: #0093B5;
   text-decoration: none; }
 
+button {
+  background-color: white;
+  border: 0; }
+
 .blue-h1 {
   color: #05556D;
   text-shadow: 0px 0px 1px #ccc; }
@@ -132,6 +136,9 @@ a {
   color: white;
   text-align: center; }
 
+.hidden-lg {
+  display: none; }
+
 @media only screen and (max-width: 1024px) {
   .row {
     padding: 2em; }
@@ -171,13 +178,20 @@ a {
     letter-spacing: 0.5px; }
 
   .nav-bar {
-    flex-flow: column-reverse nowrap; }
+    justify-content: space-between; }
+
+  .small-screen-nav {
+    flex-flow: column-reverse nowrap;
+    justify-content: space-around; }
 
   .img-link {
     flex: 0; }
 
   .nav-link {
     display: none; }
+
+  .show-menu-link {
+    display: inline-block; }
 
   .main-content {
     margin-top: 0; }
@@ -190,7 +204,67 @@ a {
     padding: 0 1em; }
 
   .hidden-sm {
-    display: none; } }
+    display: none; }
+
+  .hidden-lg {
+    display: inline-block; }
+
+  .lines-button {
+    padding: 1.5rem 1rem;
+    transition: .3s;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 0.42857rem; }
+    .lines-button:hover {
+      opacity: 1; }
+    .lines-button:active {
+      transition: 0;
+      background: rgba(0, 0, 0, 0.1); }
+
+  .lines {
+    display: inline-block;
+    width: 3rem;
+    height: 0.42857rem;
+    background: #16C1F3;
+    border-radius: 0.21429rem;
+    transition: 0.3s;
+    position: relative;
+    /*create the upper and lower lines as pseudo-elements of the middle line*/ }
+    .lines:before, .lines:after {
+      display: inline-block;
+      width: 3rem;
+      height: 0.42857rem;
+      background: #16C1F3;
+      border-radius: 0.21429rem;
+      transition: 0.3s;
+      position: absolute;
+      left: 0;
+      content: '';
+      transform-origin: 0.21429rem center; }
+    .lines:before {
+      top: 0.75rem; }
+    .lines:after {
+      top: -0.75rem; }
+
+  .lines-button:hover {
+    opacity: 1; }
+    .lines-button:hover .lines:before {
+      top: 1rem; }
+    .lines-button:hover .lines:after {
+      top: -1rem; }
+
+  .lines-button.x.close .lines {
+    /*hide the middle line*/
+    background: transparent;
+    /*overlay the lines by setting both their top values to 0*/ }
+    .lines-button.x.close .lines:before, .lines-button.x.close .lines:after {
+      transform-origin: 50% 50%;
+      top: 0;
+      width: 3rem; }
+    .lines-button.x.close .lines:before {
+      transform: rotate3d(0, 0, 1, 45deg); }
+    .lines-button.x.close .lines:after {
+      transform: rotate3d(0, 0, 1, -45deg); } }
 @media only screen and (max-width: 480px) {
   .contact-us {
     display: block; } }
