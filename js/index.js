@@ -25,5 +25,5 @@ $('.whatwedo').click(function() {
 $('.lines-button').click(function(){
   $(this).toggleClass('x close');
   $('.nav-bar').toggleClass('small-screen-nav');
-  $('.nav-link').toggleClass('show-menu-link');
+  $('.nav-link').toggleClass('nav-link--mobile');
 });

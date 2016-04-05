@@ -182,16 +182,30 @@ button {
 
   .small-screen-nav {
     flex-flow: column-reverse nowrap;
-    justify-content: space-around; }
+    justify-content: flex-end; }
 
   .img-link {
-    flex: 0; }
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0.5rem 0; }
 
   .nav-link {
     display: none; }
 
-  .show-menu-link {
-    display: inline-block; }
+  .nav-link--mobile {
+    display: inline-block;
+    width: 100%;
+    padding: 0.5rem 0;
+    border-top: 1px solid #ccc;
+    background-color: white;
+    text-align: center; }
+
+  .nav-link--mobile:nth-last-child(4) {
+    border-bottom: 1px solid #ccc; }
+
+  .nav-link--mobile:nth-last-child(1) {
+    margin-top: 5rem; }
 
   .main-content {
     margin-top: 0; }
@@ -210,6 +224,10 @@ button {
     display: inline-block; }
 
   .lines-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0.5rem 0;
     padding: 1.5rem 1rem;
     transition: .3s;
     cursor: pointer;

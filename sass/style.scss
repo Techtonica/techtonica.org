@@ -157,19 +157,35 @@
 
   .small-screen-nav {
     flex-flow: column-reverse nowrap;
-    justify-content: space-around;
+    justify-content: flex-end;
   }
 
   .img-link {
-    flex: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0.5rem 0;
   }
 
   .nav-link {
     display: none;
   }
 
-  .show-menu-link {
+  .nav-link--mobile {
     display: inline-block;
+    width: 100%;
+    padding: 0.5rem 0;
+    border-top: 1px solid $light-gray;
+    background-color: $white;
+    text-align: center;
+  }
+
+  .nav-link--mobile:nth-last-child(4) {
+    border-bottom: 1px solid $light-gray;
+  }
+
+  .nav-link--mobile:nth-last-child(1) {
+    margin-top: 5rem;
   }
 
   .main-content {
@@ -194,6 +210,10 @@
   }
 
   .lines-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 0.5rem 0;
     padding: $button-size/2 $button-size/3;
     transition: .3s;
     cursor: pointer;
