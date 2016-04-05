@@ -6,7 +6,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 1.5rem 0;
-  color: #0093B5;
+  color: #0093b5;
   line-height: 1em;
   font-weight: 700; }
 
@@ -21,12 +21,12 @@ body, h1, h2, h3, h4, h5, h6, p {
 
 h1 {
   color: white;
-  text-shadow: 2px 2px 5px #666;
+  text-shadow: 2px 2px 5px #666666;
   font-size: 4em;
   letter-spacing: 4px; }
 
 a {
-  color: #0093B5;
+  color: #0093b5;
   text-decoration: none; }
 
 button {
@@ -34,15 +34,15 @@ button {
   border: 0; }
 
 .blue-h1 {
-  color: #05556D;
-  text-shadow: 0px 0px 1px #ccc; }
+  color: #05556d;
+  text-shadow: 0px 0px 1px #cccccc; }
 
 .blue-background {
-  background-color: #0093B5;
+  background-color: #0093b5;
   color: white; }
   .blue-background a {
-    color: #16C1F3;
-    text-shadow: 1px 1px 1px #666; }
+    color: #16c1f3;
+    text-shadow: 1px 1px 1px #666666; }
 
 .centered {
   text-align: center; }
@@ -87,10 +87,10 @@ button {
 .nav-link {
   flex-grow: 1;
   padding: 1em 0;
-  text-shadow: 0px 0px 1px #ccc; }
+  text-shadow: 0px 0px 1px #cccccc; }
 
 .nav-link:hover {
-  color: #16C1F3; }
+  color: #16c1f3; }
 
 .img-link {
   display: inline-block;
@@ -114,12 +114,12 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/woman-computer.jpg) #0093B5 no-repeat top right fixed; }
+  background: url(../img/woman-computer.jpg) #0093b5 no-repeat top right fixed; }
 
 .main-header__text {
   max-width: 50%;
   padding: 0 1.5em;
-  text-shadow: 1px 1px 1px #666; }
+  text-shadow: 1px 1px 1px #666666; }
 
 .full-width-img {
   width: 100%; }
@@ -132,7 +132,7 @@ button {
   display: inline-block;
   margin: 0.5em 0;
   padding: 0.75em 1.5em;
-  background-color: #0093B5;
+  background-color: #0093b5;
   color: white;
   text-align: center; }
 
@@ -159,7 +159,7 @@ button {
     display: block;
     position: relative;
     height: 90vh;
-    background: url(../img/woman-computer.jpg) #0093B5 no-repeat top center fixed; }
+    background: url(../img/woman-computer.jpg) #0093b5 no-repeat top center fixed; }
 
   .main-header__text {
     position: absolute;
@@ -197,12 +197,13 @@ button {
     display: inline-block;
     width: 100%;
     padding: 0.5rem 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #cccccc;
     background-color: white;
-    text-align: center; }
+    text-align: center;
+    min-height: 1.4em; }
 
   .nav-link--mobile:nth-last-child(4) {
-    border-bottom: 1px solid #ccc; }
+    border-bottom: 1px solid #cccccc; }
 
   .nav-link--mobile:nth-last-child(1) {
     margin-top: 5rem; }
@@ -243,7 +244,7 @@ button {
     display: inline-block;
     width: 3rem;
     height: 0.42857rem;
-    background: #16C1F3;
+    background: #16c1f3;
     border-radius: 0.21429rem;
     transition: 0.3s;
     position: relative;
@@ -252,7 +253,7 @@ button {
       display: inline-block;
       width: 3rem;
       height: 0.42857rem;
-      background: #16C1F3;
+      background: #16c1f3;
       border-radius: 0.21429rem;
       transition: 0.3s;
       position: absolute;
@@ -286,5 +287,3 @@ button {
 @media only screen and (max-width: 480px) {
   .contact-us {
     display: block; } }
-
-/*# sourceMappingURL=style.css.map */
