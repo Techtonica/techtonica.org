@@ -3,7 +3,6 @@
 
 .row {
   @include prefix(display, flex, webkit moz);
-
   flex-flow: row wrap;
   justify-content: space-around;
   padding: 3rem 5rem;
@@ -18,13 +17,12 @@
 }
 
 .column {
-  flex: 1;
+  @include prefix(flex, 1, webkit moz);
   padding: 0 1rem;
 }
 
 .nav-bar {
   @include prefix(display, inline-flex, webkit moz);
-
   flex-flow: row-reverse wrap;
   justify-content: space-around;
   align-items: center;
@@ -49,9 +47,9 @@
 }
 
 .img-link {
+  @include prefix(flex, 10, webkit moz o);
   display: inline-block;
   order: 1;
-  flex: 10;
 }
 
 .logo {
@@ -65,8 +63,7 @@
 
 .main-header {
   @include prefix(background-size, cover, webkit moz o);
-
-  display: flex;
+  @include prefix(display, flex, webkit moz o);
   align-items: center;
   justify-content: flex-end;
   width: 100%;
@@ -115,7 +112,7 @@
   }
 
   .column-med {
-    flex: 0 0 40%;
+    @include prefix(flex, 0 0 40%, webkit moz o);
   }
 
   h1 {
@@ -143,7 +140,7 @@
 
 @media only screen and (max-width: 600px) {
   .column {
-    flex: 0 0 100%;
+    @include prefix(flex, 0 0 100%, webkit moz o);
   }
 
   h1 {
