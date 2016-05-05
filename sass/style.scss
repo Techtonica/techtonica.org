@@ -81,6 +81,11 @@
   width: 100%;
 }
 
+.social-media {
+  width: 3rem;
+  margin: 0.5rem;
+}
+
 .contact-us {
   @include prefix(border-radius, 8px, webkit moz o);
 
