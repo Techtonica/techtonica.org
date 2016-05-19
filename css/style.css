@@ -235,6 +235,13 @@ button {
   .nav-link--mobile:nth-last-child(4) {
     border-bottom: 1px solid #cccccc; }
 
+  .nav-link--mobile:nth-last-child(5) {
+    background-color: #0093B5; }
+
+  .nav-link--mobile:nth-last-child(5):hover {
+    background-color: #16C1F3;
+    transition: .3s; }
+
   .nav-link--mobile:nth-last-child(1) {
     margin-top: 5rem; }
 
