@@ -81,15 +81,38 @@
   width: 100%;
 }
 
-.contact-us {
+.social-media {
+  width: 3rem;
+  margin: 0.5rem;
+}
+
+.contact-us,
+.donate {
   @include prefix(border-radius, 8px, webkit moz o);
 
   display: inline-block;
-  margin: 0.5em 0;
-  padding: 0.75em 1.5em;
   background-color: $main-blue;
   color: $white;
   text-align: center;
+
+  &:hover {
+    background-color: $light-blue;
+    transition: .3s;
+  }
+}
+
+.contact-us {
+  margin: 0.5em 0;
+  padding: 0.75em 1.5em;
+}
+
+.donate {
+  margin: 0 0.25em;
+  padding: 0.75em 0.5em;
+
+  &:hover {
+    color: $white;
+  }
 }
 
 .hidden-lg {
@@ -138,7 +161,7 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 670px) {
   .column {
     @include prefix(flex, 0 0 100%, webkit moz o);
   }
@@ -160,8 +183,7 @@
   .img-link {
     position: absolute;
     left: 0;
-    top: 0;
-    padding: 0.5rem 0;
+    top: 5px;
   }
 
   .nav-link {

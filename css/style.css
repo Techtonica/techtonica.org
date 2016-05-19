@@ -132,17 +132,34 @@ button {
 .full-width-img {
   width: 100%; }
 
-.contact-us {
+.social-media {
+  width: 3rem;
+  margin: 0.5rem; }
+
+.contact-us,
+.donate {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -o-border-radius: 8px;
   border-radius: 8px;
   display: inline-block;
-  margin: 0.5em 0;
-  padding: 0.75em 1.5em;
-  background-color: #0093b5;
+  background-color: #0093B5;
   color: white;
   text-align: center; }
+  .contact-us:hover,
+  .donate:hover {
+    background-color: #16C1F3;
+    transition: .3s; }
+
+.contact-us {
+  margin: 0.5em 0;
+  padding: 0.75em 1.5em; }
+
+.donate {
+  margin: 0 0.25em;
+  padding: 0.75em 0.5em; }
+  .donate:hover {
+    color: white; }
 
 .hidden-lg {
   display: none; }
@@ -180,7 +197,7 @@ button {
 
   .hidden-med {
     display: none; } }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 670px) {
   .column {
     -webkit-flex: 0 0 100%;
     -moz-flex: 0 0 100%;
@@ -201,8 +218,7 @@ button {
   .img-link {
     position: absolute;
     left: 0;
-    top: 0;
-    padding: 0.5rem 0; }
+    top: 5px; }
 
   .nav-link {
     display: none; }
