@@ -26,13 +26,14 @@
   </head>
   <body>
     <nav class="nav-bar">
-      <a href="http://techtonica.org" class="img-link">
+      <a href="/" class="img-link">
         <img src="../img/techtonica-logo-name.jpg" alt="Techtonica logo"class="logo">
       </a>
       <button class="lines-button hidden-lg" type="button" role="button" aria-label="Toggle Navigation">
         <span class="lines"></span>
       </button>
       <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JK79ZYMRLEWDA" class="donate nav-link" target="_blank">Donate</a>
+      <a id="open-popup" class="hover-link newsletter nav-link pad-lv3 pad-tb0" href="#">Get Updates</a>
       <a href="#" class="aboutus nav-link">About</a>
       <a href="../#howitworks" class="howitworks nav-link">How It Works</a>
       <a href="../#why" class="why nav-link">Why?</a>
@@ -51,12 +52,13 @@
           <a href="mailto:info@techtonica.com?subject=Techtonica Contact Us" class="contact-us">Contact Us</a>
         </div>
       </div>
+
       <div class="row row__center blue-background">
         <div class="column">
           <p class="centered">
-            <!-- <a href="" target="_blank"><img id="facebook-icon" src="../img/facebook.png" class="social-media" alt="Techtonica Facebook"></a>
-            <a href="https://twitter.com/TechtonicaOrg" target="_blank"><img src="../img/twitter.png" class="social-media" alt="Techtonica Twitter"></a>
-            <a href="" target="_blank"><img id="medium-icon" src="../img/medium.png" class="social-media" alt="Techtonica Launch Medium Post"></a> -->
+            <!-- <a href="" target="_blank"><img src="img/facebook.png" class="social-media" alt="Techtonica Facebook"></a>
+            <a href="https://twitter.com/TechtonicaOrg" target="_blank"><img src="img/twitter.png" class="social-media" alt="Techtonica Twitter"></a>
+            <a href="" target="_blank"><img src="img/medium.png" class="social-media" alt="Techtonica Launch Medium Post"></a> -->
           </p>
           <p class="centered">All content ©Techtonica, a fiscally-sponsored project of <a href="http://www.socialgoodfund.org" target="_blank">SocialGood</a></p>
           <p class="centered">Banner image courtesy of <a href="http://www.wocintechchat.com/" target="_blank">Women of Color in Tech Chat</a></p>
@@ -64,6 +66,15 @@
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="../js/index.js"></script>
+
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+    <script type="text/javascript">
+      function openPopupForm() {
+        document.cookie = 'MCEvilPopupClosed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+        require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us13.list-manage.com","uuid":"110f637e29d9b2b5f89664fe8","lid":"22f1ab3b1f"}) })
+      }
+      $('#open-popup').on('click', openPopupForm);
+    </script>
   </body>
 </html>

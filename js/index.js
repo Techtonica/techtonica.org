@@ -6,10 +6,6 @@ function scrollDown(name, time) {
     time, 'swing');
 }
 
-$('.aboutus').click(function() {
-  scrollDown('about-us', 1000);
-});
-
 $('.howitworks').click(function() {
   scrollDown('how-it-works', 1000);
 });
