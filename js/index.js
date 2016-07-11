@@ -23,3 +23,8 @@ $('.lines-button').click(function(){
   $('.nav-bar').toggleClass('small-screen-nav');
   $('.nav-link').toggleClass('nav-link--mobile');
 });
+
+function openPopupForm() {
+  document.cookie = 'MCEvilPopupClosed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+  require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us13.list-manage.com","uuid":"110f637e29d9b2b5f89664fe8","lid":"22f1ab3b1f"}) });
+}
