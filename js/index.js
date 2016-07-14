@@ -18,6 +18,10 @@ $('.whatwedo').click(function() {
   scrollDown('what-we-do', 1000);
 });
 
+$('.howtohelp').click(function() {
+  scrollDown('how-to-help', 1000);
+});
+
 $('.lines-button').click(function(){
   $(this).toggleClass('x close');
   $('.nav-bar').toggleClass('small-screen-nav');
