@@ -188,7 +188,7 @@ button {
     display: block;
     position: relative;
     height: 90vh;
-    background: url(../img/women-library.jpg) #0093b5 no-repeat top center fixed; 
+    background: url(../img/women-library.jpg) #0093b5 no-repeat top center; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
