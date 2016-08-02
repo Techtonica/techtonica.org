@@ -137,7 +137,7 @@ button {
   width: 3rem;
   margin: 0.5rem; }
 
-.contact-us,
+/*.contact-us,*/
 .donate {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -147,14 +147,14 @@ button {
   background-color: #fc7625;
   color: white;
   text-align: center; }
-  .contact-us:hover,
+/*  .contact-us:hover,*/
   .donate:hover {
     background-color: #16C1F3;
     transition: .3s; }
 
-.contact-us {
+/*.contact-us {
   margin: 0.5em 0;
-  padding: 0.75em 1.5em; }
+  padding: 0.75em 1.5em; }*/
 
 .donate {
   margin: 0 0.25em;
@@ -328,5 +328,5 @@ button {
     .lines-button.x.close .lines:after {
       transform: rotate3d(0, 0, 1, -45deg); } }
 @media only screen and (max-width: 480px) {
-  .contact-us {
-    display: block; } }
+/*  .contact-us {
+    display: block; } }*/
