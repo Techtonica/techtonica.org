@@ -14,20 +14,19 @@ app = Flask(__name__)
 @app.route('/')
 def render_home_page():
     '''
-    Renders the home page from templates
+    Renders the home page from jinja2 template
     '''
-    return render_template('index.html')
+    return render_template('home.html')
 
 
 @app.route('/about/')
 def render_about_page():
     '''
-    Renders the about page from templates
+    Renders the about page from jinja2 template
     '''
     return render_template('about.html')
 
 
 if __name__ == '__main__':
-    app.secret_key = 'super_secret_key'
     app.debug = True
     app.run(host='0.0.0.0', port=5000)
