@@ -3,5 +3,10 @@
 
 
 ## SITE DEPENDENCIES
+----------------------
 
-[Flask](http://flask.pocoo.org/docs/ "Flask Documentation")
+
+Python 2.7 (Recomended)
+
+Python Packages
+*  [Flask](http://flask.pocoo.org/docs/ "Flask Documentation")
