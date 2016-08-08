@@ -1,4 +1,5 @@
-# techtonica
+# Techtonica
+This repo is for [the Techtonica website](http://techtonica.org), which is currently hosted on Bluehost.
 
 ### Who
 The main audience of the website is made up of (potential) volunteers and sponsors. (Students will be contacted via local organizations.)
