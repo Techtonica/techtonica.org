@@ -4,6 +4,14 @@
   Techtonica
 {% endblock title %}
 
+{% block nav %}
+  <a href="{{ url_for('render_about_page') }}" class="aboutus nav-link">About</a>
+  <a href="#howtohelp" class="howtohelp nav-link">How to Help</a>
+  <a href="#howitworks" class="howitworks nav-link">How It Works</a>
+  <a href="#why" class="why nav-link">Why</a>
+  <a href="#whatwedo" class="whatwedo nav-link">What We Do</a>
+{% endblock nav %}
+
 {% block content %}
   <div class="main-content">
       <div class="main-header">
@@ -38,11 +46,6 @@
           <h3>Vetting</h3>
           <p>Techtonica conducts free intro workshops with local organizations and labs. We ask the most engaged, understanding, collaborative, resilient, and responsible students to complete challenges and teach before we invite them to apply for the full-time program.</p>
         </div>
-<!--         <div class="column column-med centered">
-          <img src="{{ url_for('static'. filename='img/chalkboard.png') }}" alt="chalkboard icon">
-          <h3>Vetting</h3>
-          <p></p>
-        </div> -->
         <div class="column column-med centered">
           <img src="{{ url_for('static', filename='img/conversation.png') }}" alt="pencil icon">
           <h3>Partner Companies</h3>
