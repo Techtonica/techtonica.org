@@ -9,3 +9,13 @@ We need to effectively communicate that Techtonica and its students are worth su
 
 ### How
 There should be a good understanding of how the program works with vetting, training, mentoring, and hiring.
+
+
+
+## SITE DEPENDENCIES
+----------------------
+
+Python 2.7 (Recomended)
+
+Python Packages
+*  [Flask](http://flask.pocoo.org/docs/ "Flask Documentation")
