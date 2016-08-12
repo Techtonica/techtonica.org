@@ -6,6 +6,11 @@ function openPopupForm() {
   });
 }
 
+$('a.contact').on('click', function(){
+  var href = $(this).attr('href');
+  $(this).attr('href', href.replace('badmail.', ''));
+});
+
 $(document).ready(function() {
 
   function scrollDown(name, time) {
