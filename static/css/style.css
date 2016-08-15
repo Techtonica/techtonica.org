@@ -55,6 +55,11 @@ button {
   text-shadow: 1px 1px 1px #666666;
 }
 
+.gray-background {
+  background-color: #e5e5e6;
+  color: black;
+}
+
 .centered {
   text-align: center;
 }
