@@ -19,3 +19,9 @@ Python 2.7 (Recomended)
 
 Python Packages
 *  [Flask](http://flask.pocoo.org/docs/ "Flask Documentation")
+
+## DEPLOYMENT / UPDATE NOTES
+-----------------------------
+
+8-25-2016 Installed Python 2.7.12
+
