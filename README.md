@@ -23,5 +23,19 @@ Python Packages
 ## DEPLOYMENT / UPDATE NOTES
 -----------------------------
 
-8-25-2016 Installed Python 2.7.12
+8-25-2016 19:00
+
+Installed Python 2.7.12
+Submitted a ticket to Python so that the symlink would would work correctly when installed from source.
+Installed Virtialenv
+Installed Flask
+Installed Pip
+Installed Flup
+
+Tested the site on techtonica.org/test/ for basic functionality.
+
+Article linked below that we used to get through the BlueHost wierdness.
+[](http://willhaley.com/blog/flask-on-bluehost/)
+
+
 
