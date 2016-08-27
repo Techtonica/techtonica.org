@@ -32,8 +32,8 @@ Installed Flup
 
 Tested the site on techtonica.org/test/ for basic functionality.
 
-Article used to get through the BlueHost wierdness linked below.
-[](http://willhaley.com/blog/flask-on-bluehost/)
+Article used to get through the BlueHost wierdness linked below:    
+[Flask on BlueHost](http://willhaley.com/blog/flask-on-bluehost/)
 
 8-26-016 10:30 CST
 
