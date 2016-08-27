@@ -45,7 +45,7 @@ $('a.contact').on('click', function(){
 $(document).ready(function() {
 
   // check cookie to see if the user has visited if not popup newsletter registration.
-  if (cookieExists('techtonica-visited') == false) {
+  if (cookieExists('techtonica-visited') === false) {
     openPopupForm();
     setCookie('techtonica-visited', 'yes', 9999)
   }
@@ -82,6 +82,9 @@ $(document).ready(function() {
 
   $('.close-button').click(function() {
     $('.banner').hide();
-    $('.nav-bar').removeClass('banner-visible')
+    $('.nav-bar').removeClass('banner-visible');
+
+    // Expires in 7 days because why not remind them that something awesome is happening every day!
+    setCookie('hide_banner', '1', 1);
   });
 });

@@ -31,10 +31,13 @@
   <body>
     <!-- BEGIN HEADER -->
     <nav class="nav-bar banner-visible">
-      <div class="banner">
-        <div class="banner-content">[put campaign text here]</div>
-        <button class="close-button">x</button>
-      </div>
+
+      {% if request.cookies.get('hide_banner') != '1' %}
+        <div class="banner">
+          <div class="banner-content">[put campaign text here]</div>
+          <button class="close-button">x</button>
+        </div>
+      {% endif %}
       <div class="nav-bar-inner">
         <a href="{{ url_for('render_home_page') }}" class="img-link">
           <img src="{{ url_for('static', filename='img/techtonica-logo-name-min.jpg') }}" alt="Techtonica logo"class="logo">
