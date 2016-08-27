@@ -42,8 +42,11 @@
       {% endblock nav %}
     </nav>
     <!-- BEGIN MAIN CONTENT -->
-    {% block content %}
-    {% endblock content %}
+    <div class="main-content">
+      <div class="banner">[campaign message here]</div>
+      {% block content %}
+      {% endblock content %}
+    </div>
     <!-- BEGIN FOOTER -->
     <div class="row row__center gray-background">
       <div class="column">

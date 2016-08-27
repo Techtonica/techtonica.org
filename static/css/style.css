@@ -119,6 +119,10 @@ button {
   color: #16c1f3;
 }
 
+.banner {
+  background: orange;
+}
+
 .img-link {
   -webkit-flex: 10;
   -moz-flex: 10;
@@ -133,7 +137,7 @@ button {
 }
 
 .main-content {
-  margin-top: 4rem;
+  margin-top: 5rem;
 }
 
 .main-header {
@@ -310,10 +314,6 @@ button {
     margin-top: 5rem;
   }
 
-  .main-content {
-    margin-top: 0;
-  }
-
   .main-header {
     height: 100vh;
   }
@@ -412,8 +412,8 @@ button {
   }
 }
 
-@media only screen and (max-width: 480px) {
-/*.contact-us {
+/* @media only screen and (max-width: 480px) {
+.contact-us {
     display: block;
   }
 }*/
