@@ -10,8 +10,6 @@ We need to effectively communicate that Techtonica and its students are worth su
 ### How
 There should be a good understanding of how the program works with vetting, training, mentoring, and hiring.
 
-
-
 ## SITE DEPENDENCIES
 ----------------------
 
@@ -23,7 +21,7 @@ Python Packages
 ## DEPLOYMENT / UPDATE NOTES
 -----------------------------
 
-8-25-2016 19:00
+8-25-2016 19:00 CST
 
 Installed Python 2.7.12
 Submitted a ticket to Python so that the symlink would would work correctly when installed from source.
@@ -34,8 +32,14 @@ Installed Flup
 
 Tested the site on techtonica.org/test/ for basic functionality.
 
-Article linked below that we used to get through the BlueHost wierdness.
+Article used to get through the BlueHost wierdness linked below.
 [](http://willhaley.com/blog/flask-on-bluehost/)
 
+8-26-016 10:30 CST
 
+## UPDATING THE SITE
+------------------------
 
+Log in via SSH using your SSH key
+cd public_html
+git pull
