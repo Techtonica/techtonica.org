@@ -41,5 +41,5 @@ Article used to get through the BlueHost wierdness linked below.
 ------------------------
 
 Log in via SSH using your SSH key
-cd public_html
-git pull
+Navigate to your pbulic html folder using: cd public_html
+Submit pull request from github  using: git pull
