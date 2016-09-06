@@ -31,10 +31,11 @@
   <body>
     <!-- BEGIN HEADER -->
     <nav class="nav-bar banner-visible">
-
       {% if request.cookies.get('hide_banner') != '1' %}
-        <div class="banner">
-          <div class="banner-content">[put campaign text here]</div>
+        <div class="banner" id="crowdfunding">
+          <div class="banner-content">
+            {% include "fragments/crowdfunding.html" %}
+          </div>
           <button class="close-button">x</button>
         </div>
       {% endif %}
