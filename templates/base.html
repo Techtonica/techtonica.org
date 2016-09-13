@@ -31,10 +31,11 @@
   <body>
     <!-- BEGIN HEADER -->
     <nav class="nav-bar banner-visible">
-
       {% if request.cookies.get('hide_banner') != '1' %}
-        <div class="banner">
-          <div class="banner-content">[put campaign text here]</div>
+        <div class="banner" id="crowdfunding">
+          <div class="banner-content">
+            {% include "fragments/crowdfunding.html" %}
+          </div>
           <button class="close-button">x</button>
         </div>
       {% endif %}
@@ -70,5 +71,28 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
     <script type="text/javascript" src="https://s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
     <script type="text/javascript"></script>
+    <script type="text/javascript" language="javascript">
+       $(document).ready(function() {
+            function numberWithCommas(x) {
+              return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+            $.getJSON("http://api.indiegogo.com/1/campaigns/14952534#.json?api_token=060335a95d69355cf5e3bef25c36d1be61c8389c3d32c54b402fd5034304df9d", function(gogodata) {
+                  var goalAmount = gogodata.response.goal;
+                  var raisedAmount = gogodata.response.collected_funds;
+                  // Display the amounts under the progress bar:
+                  var amountRaisedText = '$' + numberWithCommas(raisedAmount) + ' raised ';
+                  var amountGoalText = '<span class="muted"> of $' + numberWithCommas(goalAmount) + ' goal</span>';
+                  $('#amount-raised').html(amountRaisedText + amountGoalText);
+                  // Set the progress bar percentage:
+                  var percentage = ((raisedAmount / goalAmount) * 100) + '%'
+                  $('#progress-bar-inner').css('width', percentage);
+            })
+            .error(function() {
+              // If the API call fails, just hide the progress bar and text.
+              $('#amount-raised').hide();
+              $('#progress-bar').hide();
+            });
+        });
+    </script>
   </body>
 </html>

@@ -1,5 +1,6 @@
 @import 'settings';
 @import 'mixins';
+@import '_crowdfunding';
 
 .row {
   @include prefix(display, flex, webkit moz);
