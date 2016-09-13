@@ -1,0 +1,102 @@
+.banner#crowdfunding {
+  line-height: 1.2;
+  margin-bottom: 0;
+  background-color: #252526;
+  color: #d3d3d3;
+  padding: 0;
+  height: 80px;
+  text-align: left;
+  font-size: 1.2rem;
+
+  .row, .column {
+      padding: 0;
+      height: 80px;
+  }
+
+  .wrapper {
+    width: 100%;
+    padding: 15px;
+    height: 80px;
+    font-size: 1rem;
+  }
+
+  p, span {
+    font-size: 1.1rem;
+  }
+
+  .muted {
+    font-size: .8rem;
+    color: $light-gray;
+  }
+
+  div:first-of-type p {
+    margin: 0;
+  }
+
+  .row>div:first-of-type {
+    background-color: black;
+    p {
+      margin-right: 10%;
+    }
+  }
+
+  .row>div:nth-of-type(2) .wrapper {
+    width: 80%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  img {
+    max-height: 30px;
+    display: block;
+  }
+
+  .arrow-right {
+    width: 10%;
+    height: 0; 
+    float: left;
+    border-top: 40px solid #252526;
+    border-bottom: 40px solid #252526;
+    border-left: 40px solid black;
+  }
+
+  #progress-bar-div span {
+    display: block;
+    float: left;
+    width: 80%;
+    margin-right: 10%;
+  }
+
+  #progress-bar {
+    width: 80%;
+    margin-right: 10%;
+    background-color: $dark-blue;
+    height: 30px;
+    margin-bottom: 5px;
+  }
+
+  #progress-bar-inner {
+    background-color: $light-blue;
+    height: 100%;
+    width: 50%;
+  }
+}
+
+@media (max-width: 990px) {
+  #crowdfunding {
+    .column:first-of-type {
+      display: none;
+    }
+    .arrow-right {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  #crowdfunding {
+    .column:nth-of-type(3) {
+      display: none;
+    }
+  }
+}
