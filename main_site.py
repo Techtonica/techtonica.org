@@ -4,7 +4,7 @@ for Techtonica.com
 """
 from flask import Flask, render_template
 
-__author__ = "Harry Staley <staleyh@gmail.com>"
+__author__ = "Harry Staley <staleyh@craftedtech.net>"
 __version__ = "1.0"
 
 app = Flask(__name__)
@@ -27,5 +27,5 @@ def render_about_page():
 
 
 if __name__ == '__main__':
-    app.debug = True
-    app.run(host='0.0.0.0', port=9999)
+    app.debug = False
+    # app.run(host='0.0.0.0', port=9999)
