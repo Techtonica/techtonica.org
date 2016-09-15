@@ -13,64 +13,67 @@
 {% endblock nav %}
 
 {% block content %}
-  <div class="main-header">
-    <div class="main-header__text blue-background">
-      <h1>Techtonica</h1>
-      <p>Free tech training and job placement for low-income women and non-binary adults</p>
-    </div>
-  </div>
-  <div class="row row__center what-we-do" id="whatwedo">
-    <div class="column">
-      <h1 class="blue-h1">What We Do</h1>
-      <p class="justify">We provide tuition-free tech training to local, low-income women and non-binary adults and place them in positions at sponsoring companies that are ready to support more diverse teams.</p>
-    </div>
-    <div class="column">
-      <img src="{{ url_for('static', filename='img/MichelleTeaching-small-min.jpg') }}" alt="two women working together at computer" class="full-width-img">
-    </div>
-  </div>
-  <div class="row row__center blue-background why-why" id="why">
-    <div class="column">
-      <img src="{{ url_for('static', filename='img/TenderloinSF-min.jpg') }}" alt="tenderloin neighborhood of san francisco" class="full-width-img">
-    </div>
-    <div class="column">
-      <h1>Why</h1>
-      <p class="justify">Though many jobs are available in top tech market cities like San Francisco, companies need to build teams with more racial, gender, and class diversity. Huge income disparities also exist in these areas.</p>
-      <p class="justify">Other technical training programs cost upwards of $15K, require laptops, do little to support parents and people of underrepresented genders, and provide limited transitions into the workforce.</p>
-      <p class="justify">We asked, "What if we could help companies build much-needed diverse technical teams by training the people who need jobs the most?"</p>
-    </div>
-  </div>
-  <div class="row row__baseline how-it-works" id="howitworks">
-    <div class="column column-med centered">
-      <img src="{{ url_for('static', filename='img/lightbulb.png') }}" alt="lightbulb icon">
-      <h3>Vetting</h3>
-      <p>Techtonica conducts free intro workshops with local organizations and labs. We ask the most engaged, understanding, collaborative, resilient, and responsible students to complete challenges and teach before we invite them to apply for the full-time program.</p>
-    </div>
-    <div class="column column-med centered">
-      <img src="{{ url_for('static', filename='img/conversation.png') }}" alt="pencil icon">
-      <h3>Partner Companies</h3>
-      <p>Partner companies sponsor the training and provide mentors for the students. They have a say in the curriculum and receive inclusion training in preparation for employing one of their top-rated students at the end of the program. The sponsorship is tax-deductible.</p>
-    </div>
-    <div class="column column-med centered">
-      <img src="{{ url_for('static', filename='img/chalkboard.png') }}" alt="conversation bubbles icon">
-      <h3>Training</h3>
-      <p>Accepted students receive living stipends, childcare if needed, and six months of full-time training that includes laptops, lectures, building assignments, projects, and experienced guidance and feedback. Upon completion of the program, they are placed with a partner company.</p>
-    </div>
-  </div>
-  <div class="row row__center blue-background howtohelp">
-    <div class="column how-to-help" id="howtohelp">
-      <h1>How to Help</h1>
-      <p class="justify">
-        <ul>
-          <li>Encourage your company to sponsor and hire students.</li>
-          <li>Contribute to <a href="https://github.com/Techtonica/curriculum">our open-source curriculum</a>.</li>
-          <li>Offer your space for the first six-month class in San Francisco.</li>
-          <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JK79ZYMRLEWDA" target="_blank">Donate</a> (donations are tax-deductible).</li>
-        </ul>
-      </p>
-      <p class="justify">To receive updates, please <a id="open-popup" class="hover-link newsletter nav-link pad-lv3 pad-tb0" href="#" onclick="openPopupForm(); return false;">sign up for our newsletter</a>.</p>
-    </div>
-    <div class="column">
-      <img src="{{ url_for('static', filename='img/TTLRailsGroup-min.jpg') }}" alt="group of workshop attendees and volunteers" class="full-width-img">
-    </div>
+  <div class="main-content">
+      <div class="main-header">
+        <div class="main-header__text blue-background">
+          <h1>Techtonica</h1>
+          <p>Free tech training and job placement for low-income women and non-binary adults. #BridgeTheTechGap</p>
+        </div>
+      </div>
+      <div class="row row__center what-we-do" id="whatwedo">
+        <div class="column">
+          <h1 class="blue-h1">What We Do</h1>
+          <p class="justify">We provide tuition-free tech training to local, low-income women and non-binary adults and place them in positions at sponsoring companies that are ready to support more diverse teams.</p>
+        </div>
+        <div class="column">
+          <img src="{{ url_for('static', filename='img/MichelleTeaching-small-min.jpg') }}" alt="two women working together at computer" class="full-width-img">
+        </div>
+      </div>
+      <div class="row row__center blue-background why-why" id="why">
+        <div class="column">
+          <img src="{{ url_for('static', filename='img/TenderloinSF-min.jpg') }}" alt="tenderloin neighborhood of san francisco" class="full-width-img">
+        </div>
+        <div class="column">
+          <h1>Why</h1>
+          <p class="justify">Though many jobs are available in top tech market cities like San Francisco, companies need to build teams with more racial, gender, and class diversity. Huge income disparities also exist in these areas.</p>
+          <p class="justify">Other technical training programs cost upwards of $15K, require laptops, do little to support parents and people of underrepresented genders, and provide limited transitions into the workforce.</p>
+          <p class="justify">We asked, "What if we could help companies build much-needed diverse technical teams by training the people who need jobs the most?"</p>
+        </div>
+      </div>
+      <div class="row row__baseline how-it-works" id="howitworks">
+        <div class="column column-med centered">
+          <img src="{{ url_for('static', filename='img/lightbulb.png') }}" alt="lightbulb icon">
+          <h3>Vetting</h3>
+          <p>Techtonica conducts free intro workshops with local organizations and labs. We ask the most engaged, understanding, collaborative, resilient, and responsible students to complete challenges and teach before we invite them to apply for the full-time program.</p>
+        </div>
+        <div class="column column-med centered">
+          <img src="{{ url_for('static', filename='img/conversation.png') }}" alt="pencil icon">
+          <h3>Partner Companies</h3>
+          <p>Partner companies sponsor the training and provide mentors for the students. They have a say in the curriculum and receive inclusion training in preparation for employing one of their top-rated students at the end of the program. The sponsorship is tax-deductible.</p>
+        </div>
+        <div class="column column-med centered">
+          <img src="{{ url_for('static', filename='img/chalkboard.png') }}" alt="conversation bubbles icon">
+          <h3>Training</h3>
+          <p>Accepted students receive living stipends, childcare if needed, and six months of full-time training that includes laptops, lectures, building assignments, projects, and experienced guidance and feedback. Upon completion of the program, they are placed with a partner company.</p>
+        </div>
+      </div>
+      <div class="row row__center blue-background howtohelp">
+        <div class="column how-to-help" id="howtohelp">
+          <h1>How to Help</h1>
+          <p class="justify">
+            <ul>
+              <li>Encourage your company to <a href="https://goo.gl/forms/Q88hao4ApxVFl76N2" target="_blank">sign up to sponsor and hire students</a>.</li>
+              <li><a href="https://goo.gl/forms/jgD3BWCEg5RN8XwN2" target="_blank">Sign up to volunteer</a>.</li>
+              <li>Offer your space for the first six-month class in San Francisco.</li>
+              <li><a href="https://www.indiegogo.com/projects/techtonica-bridging-the-tech-opportunity-gap-education/x/2949554#/" target="_blank">Donate</a> (donations are tax-deductible).</li>
+              <!--LINK DURING CAMPAIGN (COMMENT OUT ABOVE LINK FOR THE DURATION): <li>Donate to <a href="https://igg.me/at/techtonica">our Indiegogo campaign</a>.</li>-->
+            </ul>
+          </p>
+          <p class="justify">To receive updates, please <a id="open-popup" class="hover-link newsletter nav-link pad-lv3 pad-tb0" href="#" onclick="openPopupForm(); return false;">sign up for our newsletter</a>.</p>
+        </div>
+        <div class="column">
+          <img src="{{ url_for('static', filename='img/TTLRailsGroup-min.jpg') }}" alt="group of workshop attendees and volunteers" class="full-width-img">
+        </div>
+      </div>
 {% endblock content %}
 
