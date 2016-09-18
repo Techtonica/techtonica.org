@@ -32,14 +32,11 @@
   <body>
     <!-- BEGIN HEADER -->
     <nav class="nav-bar banner-visible">
-      {% if request.cookies.get('hide_banner') != '1' %}
         <div class="banner" id="crowdfunding">
           <div class="banner-content">
             {% include "fragments/crowdfunding.html" %}
           </div>
-          <button class="close-button">x</button>
         </div>
-      {% endif %}
       <div class="nav-bar-inner">
         <a href="{{ url_for('render_home_page') }}" class="img-link">
           <img src="{{ url_for('static', filename='img/techtonica-logo-name-min.jpg') }}" alt="Techtonica logo"class="logo">
@@ -47,9 +44,9 @@
         <button class="lines-button hidden-lg" type="button" role="button" aria-label="Toggle Navigation">
           <span class="lines"></span>
         </button>
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JK79ZYMRLEWDA" class="donate nav-link" target="_blank">Donate</a>
-        {% block nav %}
-        {% endblock nav %}
+          <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JK79ZYMRLEWDA" class="donate nav-link" target="_blank">Donate</a>
+          {% block nav %}
+          {% endblock nav %}
       </div>
     </nav>
     <!-- BEGIN MAIN CONTENT -->
