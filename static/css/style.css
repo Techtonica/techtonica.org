@@ -50,45 +50,69 @@ button {
 .justify {
   text-align: justify; }
 
+.banner-visible .nav-bar-inner {
+  height: 5.5rem; }
+
+.nav-bar.banner-visible {
+  height: auto;
+  padding-bottom: .2rem; }
+
+.banner-visible .lines-button {
+  top: 5.5rem;
+  right: 1rem; }
+
+.banner-visible .lines-button.close {
+  top: 0;
+  z-index: 2;
+  background: transparent;
+  padding: 1rem;
+  right: 0; }
+
+.banner-visible .img-link {
+  top: 6rem; }
+
 .banner#crowdfunding {
-  line-height: 1.2;
-  margin-bottom: 0;
-  background-color: #252526;
-  color: #d3d3d3;
-  padding: 0;
-  height: 80px;
-  text-align: left;
-  font-size: 1.2rem; }
+  width: 100%;
+  background: black;
+  text-align: center; }
+  .banner#crowdfunding .banner-content {
+    width: 45%;
+    line-height: 1.2;
+    margin-bottom: 0;
+    color: #d3d3d3;
+    padding: 0;
+    text-align: left;
+    font-size: 1.2rem;
+    margin: 0 auto; }
   .banner#crowdfunding .row, .banner#crowdfunding .column {
     padding: 0;
     height: 80px; }
   .banner#crowdfunding .wrapper {
     width: 100%;
-    padding: 15px;
+    padding: 10px;
     height: 80px;
     font-size: 1rem; }
   .banner#crowdfunding p, .banner#crowdfunding span {
-    font-size: 1.1rem; }
+    font-size: 1rem; }
   .banner#crowdfunding .muted {
     font-size: .8rem;
     color: #ccc; }
   .banner#crowdfunding div:first-of-type p {
-    margin: 0; }
+    margin: 10px 0 0 0; }
   .banner#crowdfunding .row > div:first-of-type {
     background-color: black; }
     .banner#crowdfunding .row > div:first-of-type p {
       margin-right: 10%; }
   .banner#crowdfunding .row > div:nth-of-type(2) .wrapper {
-    width: 80%;
-    margin-left: 20%;
-    margin-right: 20%; }
+    position: absolute;
+    left: 47%; }
   .banner#crowdfunding img {
     max-height: 30px;
     display: block; }
   .banner#crowdfunding .arrow-right {
-    width: 10%;
+    width: 100%;
     height: 0;
-    float: left;
+    position: absolute;
     border-top: 40px solid #252526;
     border-bottom: 40px solid #252526;
     border-left: 40px solid black; }
@@ -114,8 +138,10 @@ button {
   #crowdfunding .arrow-right {
     display: none; } }
 @media (max-width: 670px) {
-  #crowdfunding .column:nth-of-type(3) {
-    display: none; } }
+  .banner#crowdfunding .column:nth-of-type(3) {
+    display: none; }
+  .banner#crowdfunding .row > div:nth-of-type(2) .wrapper {
+    left: 33%; } }
 .row {
   -webkit-display: flex;
   -moz-display: flex;
@@ -151,6 +177,17 @@ button {
   background-color: white;
   box-shadow: 0 0 8px 1px #ccc;
   z-index: 100; }
+
+.nav-bar-inner {
+  -webkit-display: inline-flex;
+  -moz-display: inline-flex;
+  display: inline-flex;
+  flex-flow: row-reverse wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 5px 0;
+  background: white; }
 
 .nav-link {
   flex-grow: 1;
@@ -188,7 +225,8 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/woman-computer.jpg) #0093B5 no-repeat top right fixed; }
+  background: url(../img/woman-computer-min.jpg) #0093B5 no-repeat top right fixed;
+  background-size: cover; }
 
 .main-header__text {
   max-width: 50%;
@@ -208,9 +246,9 @@ button {
   -moz-border-radius: 8px;
   -o-border-radius: 8px;
   border-radius: 8px;
+  color: white;
   display: inline-block;
   background-color: #0093B5;
-  color: white;
   text-align: center; }
   .contact-us:hover,
   .donate:hover {
@@ -220,12 +258,6 @@ button {
 .contact-us {
   margin: 0.5em 0;
   padding: 0.75em 1.5em; }
-
-.donate {
-  margin: 0 0.25em;
-  padding: 0.75em 0.5em; }
-  .donate:hover {
-    color: white; }
 
 .hidden-lg {
   display: none; }
@@ -253,7 +285,7 @@ button {
     display: block;
     position: relative;
     height: 90vh;
-    background: url(../img/woman-computer.jpg) #0093B5 no-repeat top center fixed; }
+    background: url(../img/woman-computer-min.jpg) #0093B5 no-repeat top center fixed; }
 
   .main-header__text {
     position: absolute;
@@ -273,6 +305,9 @@ button {
   h1 {
     font-size: 2em;
     letter-spacing: 0.5px; }
+
+  .donate {
+    color: #0093B5; }
 
   .nav-bar {
     justify-content: space-between; }
@@ -296,16 +331,14 @@ button {
     border-top: 1px solid #ccc;
     background-color: white;
     text-align: center;
-    min-height: 1.4em; }
+    min-height: 1.4em;
+    z-index: 1; }
 
-  .nav-link--mobile:nth-last-child(4) {
+  .nav-link--mobile:last-child {
     border-bottom: 1px solid #ccc; }
 
-  .nav-link--mobile:nth-last-child(1) {
-    margin-top: 5rem; }
-
   .main-content {
-    margin-top: 0; }
+    margin-top: 9rem; }
 
   .main-header {
     height: 100vh; }
@@ -375,13 +408,16 @@ button {
     .lines-button.x.close .lines:before, .lines-button.x.close .lines:after {
       transform-origin: 50% 50%;
       top: 0;
-      width: 3rem; }
+      width: 2.5em; }
     .lines-button.x.close .lines:before {
       transform: rotate3d(0, 0, 1, 45deg); }
     .lines-button.x.close .lines:after {
-      transform: rotate3d(0, 0, 1, -45deg); } }
-@media only screen and (max-width: 480px) {
+      transform: rotate3d(0, 0, 1, -45deg); }
+
   .contact-us {
-    display: block; } }
+    display: block; }
+
+  .nav-bar-inner {
+    padding: 0; } }
 
 /*# sourceMappingURL=style.css.map */

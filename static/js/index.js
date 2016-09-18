@@ -79,12 +79,4 @@ $(document).ready(function() {
     $('.nav-bar').toggleClass('small-screen-nav');
     $('.nav-link').toggleClass('nav-link--mobile');
   });
-
-  $('.close-button').click(function() {
-    $('.banner').hide();
-    $('.nav-bar').removeClass('banner-visible');
-
-    // Expires in 7 days because why not remind them that something awesome is happening every day!
-    setCookie('hide_banner', '1', 1);
-  });
 });
