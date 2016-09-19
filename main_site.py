@@ -9,7 +9,6 @@ __version__ = "1.0"
 
 app = Flask(__name__)
 
-
 # MAIN HANDLERS
 @app.route('/')
 def render_home_page():
