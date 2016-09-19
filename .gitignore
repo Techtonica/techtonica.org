@@ -1,4 +1,4 @@
 .DS_Store
 .sass-cache/
 css/style.css.map
-.pyc
+*.pyc
