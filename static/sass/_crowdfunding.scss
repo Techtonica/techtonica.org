@@ -1,0 +1,131 @@
+.banner-visible .nav-bar-inner {
+  height: 5.5rem;
+}
+
+.nav-bar.banner-visible {
+  height: auto;
+  padding-bottom: .2rem;
+}
+
+.banner-visible .lines-button {
+  top: 5.5rem;
+  right: 1rem;
+}
+
+.banner-visible .lines-button.close {
+  top: 0;
+  z-index: 2;
+  background: transparent;
+  padding: 1rem;
+  right: 0;
+}
+
+.banner-visible .img-link {
+   top: 6rem;
+ }
+
+.banner#crowdfunding {
+    width: 100%;
+    background: black;
+    text-align: center;
+
+  .banner-content {
+    width: 90%;
+    line-height: 1.2;
+    margin-bottom: 0;
+    color: #d3d3d3;
+    padding: 0;
+    text-align: left;
+    font-size: 1.2rem;
+    margin: 0 auto
+  }
+
+  .row, .column {
+    padding: 0;
+    height: 80px;
+  }
+
+  .wrapper {
+    width: 100%;
+    padding: 10px;
+    height: 80px;
+    font-size: 1rem;
+  }
+
+  p, span {
+    font-size: 1rem;
+  }
+
+  .muted {
+    font-size: .8rem;
+    color: $light-gray;
+  }
+
+  div:first-of-type p {
+    margin: 10px 0 0 0;
+  }
+
+  .row>div:first-of-type {
+    background-color: black;
+    p {
+      margin-right: 10%;
+    }
+  }
+
+  .row>div:nth-of-type(2) .wrapper {
+    position: absolute;
+    left: 47%;
+  }
+
+  img {
+    max-height: 30px;
+    display: block;
+  }
+
+  #progress-bar-div span {
+    display: block;
+    float: left;
+    width: 80%;
+    margin-right: 10%;
+  }
+
+  #progress-bar {
+    width: 45%;
+    margin-right: 10%;
+    background-color: $dark-blue;
+    height: 30px;
+    margin-bottom: 5px;
+  }
+
+  #progress-bar-inner {
+    background-color: $light-blue;
+    height: 100%;
+    width: 50%;
+  }
+}
+
+@media (max-width: 990px) {
+  #crowdfunding {
+    .column:first-of-type {
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  .banner#crowdfunding {
+    .column:nth-of-type(2) {
+      display: none;
+    }
+
+    .row>div:nth-of-type(2) .wrapper {
+      left: 33%;
+    }
+    img {
+      margin: 0 auto;
+    }
+    .wrapper {
+      text-align: center;
+    }
+  }
+
+}
