@@ -30,7 +30,7 @@
     text-align: center;
 
   .banner-content {
-    width: 45%;
+    width: 90%;
     line-height: 1.2;
     margin-bottom: 0;
     color: #d3d3d3;
@@ -82,15 +82,6 @@
     display: block;
   }
 
-  .arrow-right {
-    width: 100%;
-    height: 0;
-    position: absolute;
-    border-top: 40px solid #252526;
-    border-bottom: 40px solid #252526;
-    border-left: 40px solid black;
-  }
-
   #progress-bar-div span {
     display: block;
     float: left;
@@ -99,7 +90,7 @@
   }
 
   #progress-bar {
-    width: 80%;
+    width: 45%;
     margin-right: 10%;
     background-color: $dark-blue;
     height: 30px;
@@ -116,22 +107,24 @@
 @media (max-width: 990px) {
   #crowdfunding {
     .column:first-of-type {
-      display: none;
-    }
-    .arrow-right {
-      display: none;
     }
   }
 }
 
 @media (max-width: 670px) {
   .banner#crowdfunding {
-    .column:nth-of-type(3) {
+    .column:nth-of-type(2) {
       display: none;
     }
 
     .row>div:nth-of-type(2) .wrapper {
       left: 33%;
+    }
+    img {
+      margin: 0 auto;
+    }
+    .wrapper {
+      text-align: center;
     }
   }
 
