@@ -6,6 +6,7 @@
 
 {% block nav %}
   <a href="{{ url_for('render_about_page') }}" class="aboutus nav-link">About</a>
+  <a href="#supporters" class="supporters nav-link">Supporters</a>
   <a href="#howtohelp" class="howtohelp nav-link">How to Help</a>
   <a href="#howitworks" class="howitworks nav-link">How It Works</a>
   <a href="#why" class="why nav-link">Why</a>
@@ -74,5 +75,35 @@
           <img src="{{ url_for('static', filename='img/TTLRailsGroup-min.jpg') }}" alt="group of workshop attendees and volunteers" class="full-width-img">
         </div>
       </div>
+      <div class="row row__center supporters" id="supporters">
+        <div class="column">
+          <h1 class="blue-h1">Supporters</h1>
+        </div>
+        <div class="column">
+          <div class="row">
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='img/SFPL_Logo.jpg') }}" alt="san francisco public library" class="full-width-img">
+            </div>
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='img/rackspace-startups-logo.png') }}" alt="rackspace" class="full-width-img">
+            </div>
+          </div>
+          <div class="row">
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='img/StAnthonys.png') }}" alt="st. anthony's" class="full-width-img">
+            </div>
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='img/logo-zendesk.svg') }}" alt="zendesk" class="full-width-img">
+            </div>
+          </div>
+          <div class="row">
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='img/scienceexchange_logo.png') }}" alt="science exchange" class="full-width-img">
+            </div>
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='img/BRIDGE_AT_MAIN.jpg') }}" alt="bridge at main" class="full-width-img">
+            </div>
+          </div>
+        </div>
+      </div>
 {% endblock content %}
-
