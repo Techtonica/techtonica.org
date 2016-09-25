@@ -74,7 +74,6 @@
               return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             }
             $.getJSON("https://api.indiegogo.com/1/campaigns/techtonica-bridging-the-tech-opportunity-gap-education.json?api_token=060335a95d69355cf5e3bef25c36d1be61c8389c3d32c54b402fd5034304df9d", function(gogodata) {
-              console.log(gogodata);
                   var goalAmount = gogodata.response.goal;
                   var raisedAmount = gogodata.response.collected_funds;
                   // Display the amounts under the progress bar:
