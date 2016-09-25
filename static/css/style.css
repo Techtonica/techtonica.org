@@ -238,6 +238,7 @@ button {
   -moz-border-radius: 8px;
   -o-border-radius: 8px;
   border-radius: 8px;
+  margin-right: 12px;
   color: white;
   display: inline-block;
   background-color: #fc7625;
