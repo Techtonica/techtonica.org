@@ -74,6 +74,10 @@ $(document).ready(function() {
     scrollDown('how-to-help', 1000);
   });
 
+  $('.supporters').click(function() {
+    scrollDown('our-supporters', 1000)
+  });
+
   $('.lines-button').click(function(){
     $(this).toggleClass('x close');
     $('.nav-bar').toggleClass('small-screen-nav');
