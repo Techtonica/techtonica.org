@@ -41,8 +41,11 @@ button {
   background-color: #0093B5;
   color: white; }
   .blue-background a {
-    color: #16C1F3;
+    color: #fc7625;
     text-shadow: 1px 1px 1px #666; }
+  .blue-background a:hover {
+    color: #16C1F3;
+  }
 
 .centered {
   text-align: center; }
@@ -71,69 +74,6 @@ button {
 .banner-visible .img-link {
   top: 6rem; }
 
-.banner#crowdfunding {
-  width: 100%;
-  background: black;
-  text-align: center; }
-  .banner#crowdfunding .banner-content {
-    width: 90%;
-    line-height: 1.2;
-    margin-bottom: 0;
-    color: #d3d3d3;
-    padding: 0;
-    text-align: left;
-    font-size: 1.2rem;
-    margin: 0 auto; }
-  .banner#crowdfunding .row, .banner#crowdfunding .column {
-    padding: 0;
-    height: 80px; }
-  .banner#crowdfunding .wrapper {
-    width: 100%;
-    padding: 10px;
-    height: 80px;
-    font-size: 1rem; }
-  .banner#crowdfunding p, .banner#crowdfunding span {
-    font-size: 1rem; }
-  .banner#crowdfunding .muted {
-    font-size: .8rem;
-    color: #ccc; }
-  .banner#crowdfunding div:first-of-type p {
-    margin: 10px 0 0 0; }
-  .banner#crowdfunding .row > div:first-of-type {
-    background-color: black; }
-    .banner#crowdfunding .row > div:first-of-type p {
-      margin-right: 10%; }
-  .banner#crowdfunding .row > div:nth-of-type(2) .wrapper {
-    position: absolute;
-    left: 47%; }
-  .banner#crowdfunding img {
-    max-height: 30px;
-    display: block; }
-  .banner#crowdfunding #progress-bar-div span {
-    display: block;
-    float: left;
-    width: 80%;
-    margin-right: 10%; }
-  .banner#crowdfunding #progress-bar {
-    width: 45%;
-    margin-right: 10%;
-    background-color: #05556D;
-    height: 30px;
-    margin-bottom: 5px; }
-  .banner#crowdfunding #progress-bar-inner {
-    background-color: #16C1F3;
-    height: 100%;
-    width: 50%; }
-
-@media (max-width: 670px) {
-  .banner#crowdfunding .column:nth-of-type(2) {
-    display: none; }
-  .banner#crowdfunding .row > div:nth-of-type(2) .wrapper {
-    left: 33%; }
-  .banner#crowdfunding img {
-    margin: 0 auto; }
-  .banner#crowdfunding .wrapper {
-    text-align: center; } }
 .row {
   -webkit-display: flex;
   -moz-display: flex;
@@ -178,7 +118,7 @@ button {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  padding: 5px 0;
+  padding: 5px 1rem 5px 0;
   background: white; }
 
 .nav-link {
@@ -187,7 +127,7 @@ button {
   text-shadow: 0px 0px 1px #ccc; }
 
 .nav-link:hover {
-  color: white; }
+  color: #16C1F6; }
 
 .img-link {
   -webkit-flex: 10;
@@ -245,6 +185,7 @@ button {
   .contact-us:hover,
   .donate:hover {
     background-color: #16C1F3;
+    color: white;
     transition: .3s; }
 
 .contact-us {
@@ -410,4 +351,4 @@ button {
     display: block; }
 
   .nav-bar-inner {
-    padding: 0; } }
+    padding: 0 1rem 0 0; } }

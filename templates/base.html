@@ -9,7 +9,7 @@
       {% endblock title %}
     </title>
     <meta name="description" content="Free tech training followed by job placement at tech companies for local, low-income women and non-binary adults." />
-    <meta name="keywords" content="Techtonica, coding school for women, coding academy, learn how to code, programming courses, low income, free tech training, coding, tech jobs, San Francisco, sf, software engineering, learn to code, software developer school, Michelle Glauser" />
+    <meta name="keywords" content="Techtonica, coding school for women, coding academy, learn how to code, programming courses, low income, free tech training, coding, women's empowerment, education for women, LGBT, LGBTQIA+, non-binary, non-binary adults, genderqueer adults, adult education, vocational training, tech jobs, San Francisco, sf, software engineering, learn to code, software developer school, Michelle Glauser" />
     <meta property="og:title" content="Techtonica"/>
     <meta property="og:description" content="Tuition-free tech training and job placement at sponsoring companies for low-income women and non-binary adults."/>
     <meta property="og:type" content="website"/>
@@ -32,11 +32,6 @@
   <body>
     <!-- BEGIN HEADER -->
     <nav class="nav-bar banner-visible">
-        <div class="banner" id="crowdfunding">
-          <div class="banner-content">
-            {% include "fragments/crowdfunding.html" %}
-          </div>
-        </div>
       <div class="nav-bar-inner">
         <a href="{{ url_for('render_home_page') }}" class="img-link">
           <img src="{{ url_for('static', filename='img/techtonica-logo-name-min.jpg') }}" alt="Techtonica logo"class="logo">
@@ -44,7 +39,7 @@
         <button class="lines-button hidden-lg" type="button" role="button" aria-label="Toggle Navigation">
           <span class="lines"></span>
         </button>
-          <a href="https://www.indiegogo.com/projects/techtonica-bridging-the-tech-opportunity-gap-education/reft/2949554/sitedonatebutton" class="donate nav-link" target="_blank">Donate</a>
+          <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JK79ZYMRLEWDA" class="donate nav-link" target="_blank">Donate</a>
           {% block nav %}
           {% endblock nav %}
       </div>
@@ -68,29 +63,5 @@
     <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
     <script type="text/javascript" src="https://s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
-    <script type="text/javascript" language="javascript">
-       $(document).ready(function() {
-            function numberWithCommas(x) {
-              return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-            }
-            $.getJSON("https://api.indiegogo.com/1/campaigns/techtonica-bridging-the-tech-opportunity-gap-education.json?api_token=060335a95d69355cf5e3bef25c36d1be61c8389c3d32c54b402fd5034304df9d", function(gogodata) {
-              console.log(gogodata);
-                  var goalAmount = gogodata.response.goal;
-                  var raisedAmount = gogodata.response.collected_funds;
-                  // Display the amounts under the progress bar:
-                  var amountRaisedText = '$' + numberWithCommas(raisedAmount) + ' raised ';
-                  var amountGoalText = '<span class="muted"> of $' + numberWithCommas(goalAmount) + ' goal</span>';
-                  $('#amount-raised').html(amountRaisedText + amountGoalText);
-                  // Set the progress bar percentage:
-                  var percentage = ((raisedAmount / goalAmount) * 100) + '%'
-                  $('#progress-bar-inner').css('width', percentage);
-            })
-            .error(function() {
-              // If the API call fails, just hide the progress bar and text.
-              $('#amount-raised').hide();
-              $('#progress-bar').hide();
-            });
-        });
-    </script>
   </body>
 </html>
