@@ -109,6 +109,7 @@
 
   &:hover {
     background-color: $light-blue;
+    color: white;
     transition: .3s;
   }
 }
@@ -177,7 +178,12 @@
 
 
   .donate {
-    color: #0093B5;
+    @include prefix(border-radius, 0px, webkit moz o);
+    color: $focal-orange;
+    &:hover {
+      background-color: $focal-orange;
+      color: white;
+    }
   }
 
 
@@ -307,6 +313,7 @@
   }
 
   .nav-bar-inner {
-    padding: 0
+    padding: 0;
+    margin-top: 5rem;
   }
 }

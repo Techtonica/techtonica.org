@@ -163,6 +163,7 @@ button {
   .contact-us:hover,
   .donate:hover {
     background-color: #16C1F3;
+    color: white;
     transition: .3s; }
 
 .contact-us {
@@ -218,7 +219,14 @@ button {
     letter-spacing: 0.5px; }
 
   .donate {
-    color: #0093B5; }
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    color: #fc7625; }
+    .donate:hover {
+      background-color: #fc7625;
+      color: white; }
 
   .nav-bar {
     justify-content: space-between; }
@@ -329,6 +337,7 @@ button {
     display: block; }
 
   .nav-bar-inner {
-    padding: 0; } }
+    padding: 0;
+    margin-top: 5rem; } }
 
 /*# sourceMappingURL=style.css.map */
