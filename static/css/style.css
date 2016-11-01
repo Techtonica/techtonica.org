@@ -44,35 +44,13 @@ button {
     color: #fc7625;
     text-shadow: 1px 1px 1px #666; }
   .blue-background a:hover {
-    color: #16C1F3;
-  }
+    color: #16C1F3; }
 
 .centered {
   text-align: center; }
 
 .justify {
   text-align: justify; }
-
-.banner-visible .nav-bar-inner {
-  height: 5.5rem; }
-
-.nav-bar.banner-visible {
-  height: auto;
-  padding-bottom: .2rem; }
-
-.banner-visible .lines-button {
-  top: 5.5rem;
-  right: 1rem; }
-
-.banner-visible .lines-button.close {
-  top: 0;
-  z-index: 2;
-  background: transparent;
-  padding: 1rem;
-  right: 0; }
-
-.banner-visible .img-link {
-  top: 6rem; }
 
 .row {
   -webkit-display: flex;
@@ -127,7 +105,7 @@ button {
   text-shadow: 0px 0px 1px #ccc; }
 
 .nav-link:hover {
-  color: #16C1F6; }
+  color: #16C1F3; }
 
 .img-link {
   -webkit-flex: 10;
@@ -142,7 +120,7 @@ button {
   padding-left: 1rem; }
 
 .main-content {
-  margin-top: 8rem; }
+  margin-top: 4rem; }
 
 .main-header {
   -webkit-background-size: cover;
@@ -178,7 +156,6 @@ button {
   -moz-border-radius: 8px;
   -o-border-radius: 8px;
   border-radius: 8px;
-  margin-right: 12px;
   color: white;
   display: inline-block;
   background-color: #fc7625;
@@ -186,7 +163,6 @@ button {
   .contact-us:hover,
   .donate:hover {
     background-color: #16C1F3;
-    color: white;
     transition: .3s; }
 
 .contact-us {
@@ -219,7 +195,8 @@ button {
     display: block;
     position: relative;
     height: 90vh;
-    background: url(../img/women-library-min.jpg) #0093B5 no-repeat top center fixed; }
+    background: url(../img/women-library-min.jpg) #0093B5 no-repeat top center fixed;
+    background-size: cover; }
 
   .main-header__text {
     position: absolute;
@@ -229,7 +206,7 @@ button {
 
   .hidden-med {
     display: none; } }
-@media only screen and (max-width: 670px) {
+@media only screen and (max-width: 910px) {
   .column {
     -webkit-flex: 0 0 100%;
     -moz-flex: 0 0 100%;
@@ -272,7 +249,7 @@ button {
     border-bottom: 1px solid #ccc; }
 
   .main-content {
-    margin-top: 9rem; }
+    margin-top: 5rem; }
 
   .main-header {
     height: 100vh; }
@@ -296,7 +273,7 @@ button {
     transition: .3s;
     cursor: pointer;
     user-select: none;
-    border-radius: 0.4285714286rem; }
+    border-radius: 0.42857rem; }
     .lines-button:hover {
       opacity: 1; }
     .lines-button:active {
@@ -306,23 +283,23 @@ button {
   .lines {
     display: inline-block;
     width: 3rem;
-    height: 0.4285714286rem;
+    height: 0.42857rem;
     background: #16C1F3;
-    border-radius: 0.2142857143rem;
+    border-radius: 0.21429rem;
     transition: 0.3s;
     position: relative;
     /*create the upper and lower lines as pseudo-elements of the middle line*/ }
     .lines:before, .lines:after {
       display: inline-block;
       width: 3rem;
-      height: 0.4285714286rem;
+      height: 0.42857rem;
       background: #16C1F3;
-      border-radius: 0.2142857143rem;
+      border-radius: 0.21429rem;
       transition: 0.3s;
       position: absolute;
       left: 0;
       content: '';
-      transform-origin: 0.2142857143rem center; }
+      transform-origin: 0.21429rem center; }
     .lines:before {
       top: 0.75rem; }
     .lines:after {
@@ -352,4 +329,6 @@ button {
     display: block; }
 
   .nav-bar-inner {
-    padding: 0 1rem 0 0; } }
+    padding: 0; } }
+
+/*# sourceMappingURL=style.css.map */

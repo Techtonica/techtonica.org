@@ -1,6 +1,5 @@
 @import 'settings';
 @import 'mixins';
-@import '_crowdfunding';
 
 .row {
   @include prefix(display, flex, webkit moz);
@@ -45,7 +44,7 @@
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  padding: 5px 0;
+  padding: 5px 1rem 5px 0;
   background: white;
 }
 
@@ -56,7 +55,7 @@
 }
 
 .nav-link:hover {
-  color: white;
+  color: $light-blue;
 }
 
 .img-link {
@@ -105,7 +104,7 @@
   @include prefix(border-radius, 8px, webkit moz o);
   color: white;
   display: inline-block;
-  background-color: #fc7625;
+  background-color: $focal-orange;
   text-align: center;
 
   &:hover {
@@ -151,6 +150,7 @@
     position: relative;
     height: 90vh;
     background: url(../img/women-library-min.jpg) $main-blue no-repeat top center fixed;
+    background-size: cover;
   }
 
   .main-header__text {
@@ -165,7 +165,7 @@
   }
 }
 
-@media only screen and (max-width: 670px) {
+@media only screen and (max-width: 910px) {
   .column {
     @include prefix(flex, 0 0 100%, webkit moz o);
   }
@@ -216,7 +216,7 @@
   }
 
   .main-content {
-    margin-top: 9rem;
+    margin-top: 5rem;
   }
 
   .main-header {

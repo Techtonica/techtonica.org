@@ -7,6 +7,7 @@ $dark-gray: #666;
 $thick-dark-text-shadow: 2px 2px 5px $dark-gray;
 $thin-dark-text-shadow: 1px 1px 1px $dark-gray;
 $thin-light-text-shadow: 0px 0px 1px $light-gray;
+$focal-orange: #fc7625;
 
 $button-size : 3rem; 
 $transition: .3s; // increase this to see the transformations in slow-motion
@@ -63,8 +64,11 @@ button {
   background-color: $main-blue;
   color: $white;
   a {
-    color: $light-blue;
+    color: #fc7625;
     text-shadow: $thin-dark-text-shadow;
+  }
+  a:hover {
+    color: $light-blue;
   }
 }
 
