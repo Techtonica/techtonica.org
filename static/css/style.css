@@ -179,7 +179,7 @@ button {
 
   h1 {
     font-size: 3.5em; } }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 910px) {
   .row {
     padding: 1.5em 1em; }
 
@@ -189,25 +189,9 @@ button {
     -o-flex: 0 0 40%;
     flex: 0 0 40%; }
 
-  h1 {
-    font-size: 3em; }
-
-  .main-header {
-    display: block;
-    position: relative;
-    height: 90vh;
-    background: url(../img/women-library-min.jpg) #0093B5 no-repeat top center fixed;
-    background-size: cover; }
-
-  .main-header__text {
-    position: absolute;
-    bottom: 0;
-    max-width: 100%;
-    width: 100%; }
-
   .hidden-med {
-    display: none; } }
-@media only screen and (max-width: 910px) {
+    display: none; }
+
   .column {
     -webkit-flex: 0 0 100%;
     -moz-flex: 0 0 100%;
@@ -256,15 +240,24 @@ button {
   .nav-link--mobile:last-child {
     border-bottom: 1px solid #ccc; }
 
-  .main-content {
-    margin-top: 5rem; }
-
   .main-header {
-    height: 100vh; }
+    display: block;
+    position: relative;
+    background: url(../img/women-library-min.jpg) #0093B5 no-repeat top center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain; }
 
   .main-header__text {
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
     width: auto;
     padding: 0 1em; }
+
+  .main-content {
+    margin-top: 5rem; }
 
   .hidden-sm {
     display: none; }
