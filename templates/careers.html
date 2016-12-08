@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Techtonica
+{% endblock title %}
+
+{% block nav %}
+  <a href="{{ url_for('render_about_page') }}" class="aboutus nav-link">About</a>
+  <a href="#supporters" class="supporters nav-link">Supporters</a>
+  <a href="#howtohelp" class="howtohelp nav-link">How to Help</a>
+  <a href="#howitworks" class="howitworks nav-link">How It Works</a>
+  <a href="#why" class="why nav-link">Why</a>
+  <a href="#whatwedo" class="whatwedo nav-link">What We Do</a>
+{% endblock nav %}
+{% block content %}
+  <div class="row row__center about-us">
+    <div class="column hidden-med">
+      <img src="{{ url_for('static', filename='img/library-lab-workshop-2-min.jpg') }}"  alt="techtonica logo shape" class="fixed-img">
+    </div>
+    <div class="column">
+      <h1 class="blue-h1">Join our team!</h1>
+      <p class="justify">Techtonica is a new nonprofit that offers low-income women and non-binary adults free tech training, along with living and childcare stipends, then places them in positions at sponsoring companies that are ready to support more diverse teams. You can read more here.</p>
+
+
+		<p class="justify">Full-time Instructor—San Francisco—$90,000+
+		Techtonica is currently seeking our first full-time instructor in San Francisco. The salary goal is $90,000 or more, with less to start while we find sponsors to contribute. We can offer benefits if needed, but unfortunately at this time we can't offer a visa or relocation assistance.</p>
+
+
+		<p class="justify">Our students are low-income women and non-binary femme adults and 71% people of color. We are seeking an instructor who can relate to the target audience on as many levels as possible.</p>
+
+
+		<p class="justify">We’re looking for:
+		<ul>
+			<li>Prior experience teaching and developing curriculum, with an open mind about methods</li>
+		</ul>
+		<ul>
+			<li>At least 2 years of professional experience in web development
+			Belief that anyone can learn anything</li>
+		</ul>
+		<ul>
+			<li>Confidence that you can figure out anything and instill that confidence in students</li>
+		</ul>
+		<ul>
+			<li>Ability to keep students focused and inspired
+			Clear, transparent, compassionate communication</li>
+		</ul>
+		<ul>
+			<li>Being woke, and passionate and informed about social justice and diversity-and-inclusion-in-tech issues</li>
+		</ul>
+		<ul>
+			<li>Understanding of socioeconomic differences and experiences that class straddlers face</li>
+		</ul>
+		<ul>
+			<li>Unequivocal support for parents, people who don't identify with the gender binary, and people with disabilities</li>
+		</ul>
+		<ul>
+			<li>Patience</li>
+		</ul>
+		<ul>
+			<li>Dedication to underprivileged populations and willingness to examine your biases often</li>
+		</ul>
+		<ul>
+			<li>Willingness to do pretty much anything—we are a brand-new nonprofit that works much like a tech startup</li>
+		</ul>
+		<ul>
+			<li>Ability to handle many different projects and tasks simultaneously</li>
+		</ul>
+		<ul>
+			<li>Ability to take things and run with them independently</li>
+		</ul>
+		</p>
+
+
+		<p class="justify">This role is very exciting as you'll be our sole paid instructor for our inaugural full-time class of five students and will play a fundamental role in formulating an amazing program. This exciting role will include:
+		<ul>
+			<li>working closely with the well-connected founder on the program vision</li>
+		</ul>
+		<ul>
+			<li>organizing one-day workshops with local organizations to find students and build community partnerships</li>
+		</ul>
+		<ul>
+			<li>refining our vetting process for full-time students</li>
+		</ul>
+		<ul>
+			<li>collaborating on designing and implementing project-based curriculum with sponsoring companies</li>
+		</ul>
+		<ul>
+			<li>managing workshop volunteers and mentors</li>
+		</ul>
+		<ul>
+			<li>teaching with a focus on empowering students so they can succeed long-term</li>
+		</ul>
+		</p>
+
+
+		<p class="justify">Because this role involves a lot of people-interacting, it might be best if you're extroverted or at least an ambivert, but you should also respect the space needed by introverts, especially since you'll be working closely with the founder, who is an introvert.</p>
+
+
+		Please reach out to michelleglauser@techtonica.org if this role sounds interesting to you.</p>
+      <a href="mailto:info@badmail.techtonica.org?Subject=Techtonica%20Contact%20Us" class="contact" target="_blank" ><img src="{{ url_for('static', filename='img/ContactUs.png') }}" class="contact" alt="Contact us at info@techtonica.org"></a>
+    </div>
+  </div>
+{% endblock content %}

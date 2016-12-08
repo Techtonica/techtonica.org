@@ -25,7 +25,13 @@ def render_about_page():
     '''
     return render_template('about.html')
 
-
+@app.route('/careers/')
+def render_careers_page():
+    '''
+    Renders the careers page from jinja2 template
+    '''
+    return render_template('careers.html')
+    
 if __name__ == '__main__':
     app.debug = False
     # app.run(host='0.0.0.0', port=9999)
