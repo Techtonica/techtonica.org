@@ -149,6 +149,15 @@ button {
 .full-width-img {
   width: 100%; }
 
+.twenty-percent-width {
+  width: 20%; }
+
+.min-width-250 {
+  min-width: 250px; }
+
+.margin-25 {
+  margin: 25px; }
+
 .fixed-img {
   width: 30%;
   position: fixed;

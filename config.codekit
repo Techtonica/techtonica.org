@@ -41,46 +41,46 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/static\/img\/AprilWorkshopGroup-min.jpg": {
+	"\/static\/img\/april-workshop-group-min.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 913881,
-		"inputAbbreviatedPath": "\/static\/img\/AprilWorkshopGroup-min.jpg",
-		"outputAbbreviatedPath": "\/static\/img\/AprilWorkshopGroup-min.jpg",
+		"inputAbbreviatedPath": "\/static\/img\/april-workshop-group-min.jpg",
+		"outputAbbreviatedPath": "\/static\/img\/april-workshop-group-min.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/static\/img\/BlueCircle.png": {
+	"\/static\/img\/blue-circle.jpg": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 6419,
-		"inputAbbreviatedPath": "\/static\/img\/BlueCircle.png",
-		"outputAbbreviatedPath": "\/static\/img\/BlueCircle.png",
+		"inputAbbreviatedPath": "\/static\/img\/blue-circle.jpg",
+		"outputAbbreviatedPath": "\/static\/img\/blue-circle.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/static\/img\/chalkboard.png": {
+	"\/static\/img\/chalkboard.jpg": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 813,
-		"inputAbbreviatedPath": "\/static\/img\/chalkboard.png",
-		"outputAbbreviatedPath": "\/static\/img\/chalkboard.png",
+		"inputAbbreviatedPath": "\/static\/img\/chalkboard.jpg",
+		"outputAbbreviatedPath": "\/static\/img\/chalkboard.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/static\/img\/ContactUs.png": {
+	"\/static\/img\/contact-us.jpg": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 12475,
-		"inputAbbreviatedPath": "\/static\/img\/ContactUs.png",
-		"outputAbbreviatedPath": "\/static\/img\/ContactUs.png",
+		"inputAbbreviatedPath": "\/static\/img\/contact-us.jpg",
+		"outputAbbreviatedPath": "\/static\/img\/contact-us.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -107,13 +107,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/static\/img\/DiverseLightBulb.png": {
+	"\/static\/img\/diverse-lightbulb.jpg": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 108232,
-		"inputAbbreviatedPath": "\/static\/img\/DiverseLightBulb.png",
-		"outputAbbreviatedPath": "\/static\/img\/DiverseLightBulb.png",
+		"inputAbbreviatedPath": "\/static\/img\/diverse-lightbulb.jpg",
+		"outputAbbreviatedPath": "\/static\/img\/diverse-lightbulb.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -250,24 +250,24 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/static\/img\/MayWorkshop-min.jpg": {
+	"\/static\/img\/may-workshop-min.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1.39015e+06,
-		"inputAbbreviatedPath": "\/static\/img\/MayWorkshop-min.jpg",
-		"outputAbbreviatedPath": "\/static\/img\/MayWorkshop-min.jpg",
+		"inputAbbreviatedPath": "\/static\/img\/may-workshop-min.jpg",
+		"outputAbbreviatedPath": "\/static\/img\/may-workshop-min.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/static\/img\/MayWorkshop2-min.jpg": {
+	"\/static\/img\/may-workshop2-min.jpg-min.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1.42847e+06,
-		"inputAbbreviatedPath": "\/static\/img\/MayWorkshop2-min.jpg",
-		"outputAbbreviatedPath": "\/static\/img\/MayWorkshop2-min.jpg",
+		"inputAbbreviatedPath": "\/static\/img\/may-workshop2-min.jpg-min.jpg",
+		"outputAbbreviatedPath": "\/static\/img\/may-workshop2-min.jpg-min.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -283,13 +283,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/static\/img\/MichelleTeaching-small-min.jpg": {
+	"\/static\/img\/michelle-teaching-small-min.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 523958,
-		"inputAbbreviatedPath": "\/static\/img\/MichelleTeaching-small-min.jpg",
-		"outputAbbreviatedPath": "\/static\/img\/MichelleTeaching-small-min.jpg",
+		"inputAbbreviatedPath": "\/static\/img\/michelle-teaching-small-min.jpg",
+		"outputAbbreviatedPath": "\/static\/img\/michelle-teaching-small-min.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -316,13 +316,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/static\/img\/ReinvestArrow.png": {
+	"\/static\/img\/reinvest-arrow.jpg": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1385,
-		"inputAbbreviatedPath": "\/static\/img\/ReinvestArrow.png",
-		"outputAbbreviatedPath": "\/static\/img\/ReinvestArrow.png",
+		"inputAbbreviatedPath": "\/static\/img\/reinvest-arrow.jpg",
+		"outputAbbreviatedPath": "\/static\/img\/reinvest-arrow.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -382,46 +382,46 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/static\/img\/TenderloinSF-min.jpg": {
+	"\/static\/img\/tenderloin-sf-min.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 55190,
-		"inputAbbreviatedPath": "\/static\/img\/TenderloinSF-min.jpg",
-		"outputAbbreviatedPath": "\/static\/img\/TenderloinSF-min.jpg",
+		"inputAbbreviatedPath": "\/static\/img\/tenderloin-sf-min.jpg",
+		"outputAbbreviatedPath": "\/static\/img\/tenderloin-sf-min.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/static\/img\/TimelineDownPointer.png": {
+	"\/static\/img\/timeline-down-pointer.jpg": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1037,
-		"inputAbbreviatedPath": "\/static\/img\/TimelineDownPointer.png",
-		"outputAbbreviatedPath": "\/static\/img\/TimelineDownPointer.png",
+		"inputAbbreviatedPath": "\/static\/img\/timeline-down-pointer.jpg",
+		"outputAbbreviatedPath": "\/static\/img\/timeline-down-pointer.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/static\/img\/TimelineUpPointer.png": {
+	"\/static\/img\/timeline-up-pointer.jpg": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1076,
-		"inputAbbreviatedPath": "\/static\/img\/TimelineUpPointer.png",
-		"outputAbbreviatedPath": "\/static\/img\/TimelineUpPointer.png",
+		"inputAbbreviatedPath": "\/static\/img\/timeline-up-pointer.jpg",
+		"outputAbbreviatedPath": "\/static\/img\/timeline-up-pointer.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/static\/img\/TopTechMarketCities.png": {
+	"\/static\/img\/top-tech-market-cities.jpg": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 35495,
-		"inputAbbreviatedPath": "\/static\/img\/TopTechMarketCities.png",
-		"outputAbbreviatedPath": "\/static\/img\/TopTechMarketCities.png",
+		"inputAbbreviatedPath": "\/static\/img\/top-tech-market-cities.jpg",
+		"outputAbbreviatedPath": "\/static\/img\/top-tech-market-cities.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -437,13 +437,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/static\/img\/TTLRailsGroup-min.jpg": {
+	"\/static\/img\/ttl-rails-group-min.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 209378,
-		"inputAbbreviatedPath": "\/static\/img\/TTLRailsGroup-min.jpg",
-		"outputAbbreviatedPath": "\/static\/img\/TTLRailsGroup-min.jpg",
+		"inputAbbreviatedPath": "\/static\/img\/ttl-rails-group-min.jpg",
+		"outputAbbreviatedPath": "\/static\/img\/ttl-rails-group-min.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -677,13 +677,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/static\/workshops\/AprilWorkshopGroup-min.JPG": {
+	"\/static\/workshops\/april-workshop-group-min.JPG": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 913881,
-		"inputAbbreviatedPath": "\/static\/workshops\/AprilWorkshopGroup-min.JPG",
-		"outputAbbreviatedPath": "\/static\/workshops\/AprilWorkshopGroup-min.JPG",
+		"inputAbbreviatedPath": "\/static\/workshops\/april-workshop-group-min.JPG",
+		"outputAbbreviatedPath": "\/static\/workshops\/april-workshop-group-min.JPG",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
