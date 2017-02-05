@@ -116,8 +116,8 @@ button {
   order: 1; }
 
 .logo {
-  height: 4rem;
-  padding-left: 1rem; }
+  width: 170px;
+  padding-left: 1.25rem; }
 
 .mc-closeModal {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
@@ -239,9 +239,12 @@ button {
     flex-flow: column-reverse nowrap;
     justify-content: flex-end; }
   .img-link {
-    position: absolute;
+    align-items: center;
+    display: flex;
+    height: 100%;
     left: 0;
-    top: 5px; }
+    position: absolute;
+    top: 0; }
   .nav-link {
     display: none; }
   .nav-link--mobile {

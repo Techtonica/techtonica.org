@@ -65,8 +65,8 @@
 }
 
 .logo {
-  height: 4rem;
-  padding-left: 1rem;
+  width: 170px;
+  padding-left: 1.25rem;
 }
 
 .mc-closeModal{
@@ -216,9 +216,12 @@
   }
 
   .img-link {
-    position: absolute;
+    align-items: center;
+    display: flex;
+    height: 100%;
     left: 0;
-    top: 5px;
+    position: absolute;
+    top: 0;
   }
 
   .nav-link {
@@ -245,6 +248,7 @@
     position: relative;
     background: url(../img/women-library-min.jpg) $main-blue no-repeat top center;
     @include prefix(background-size, contain, webkit moz o);
+    height: 600px;
   }
 
   .main-header__text {
