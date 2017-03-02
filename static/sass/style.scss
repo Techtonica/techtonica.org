@@ -97,6 +97,16 @@
   text-shadow: $thin-dark-text-shadow;
 }
 
+.main-header__header {
+  // Responsive font-size fomula, min size 28px on 320px width screen.
+  font-size: calc(28px + 24 * (100vw - 320px) / 960);
+
+  // Caps max fontsize above x-large-screen breakpoint.
+  @media only screen and (min-width:1200px) {
+    font-size: 3.5rem;
+  }
+}
+
 .full-width-img {
   width: 100%;
 }
@@ -242,11 +252,11 @@
   }
 
   .main-header__text {
-    position: absolute;
-    bottom: 0;
-    max-width: 100%;
-    width: auto;
-    padding: 0 1em;
+        position: absolute;
+        bottom: 0;
+        max-width: 100%;
+        width: auto;
+        padding: 0 1em;
   }
 
   .main-content {
