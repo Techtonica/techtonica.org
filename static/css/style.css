@@ -146,6 +146,12 @@ button {
   padding: 0 1.5em;
   text-shadow: 1px 1px 1px #666; }
 
+.main-header__header {
+  font-size: calc(28px + 24 * (100vw - 320px) / 960); }
+  @media only screen and (min-width: 1200px) {
+    .main-header__header {
+      font-size: 3.5rem; } }
+
 .full-width-img {
   width: 100%; }
 
