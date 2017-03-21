@@ -140,7 +140,7 @@
 }
 
 .contact-us,
-.donate {
+.donate, .sponsor {
   @include prefix(border-radius, 8px, webkit moz o);
   color: white;
   display: inline-block;
@@ -157,6 +157,24 @@
 .contact-us {
   margin: 0.5em 0;
   padding: 0.75em 1.5em;
+}
+
+.sponsor {
+  line-height: 36px;
+  padding: 25px; 
+  margin: 0;
+}
+
+.sponsor-p {
+  font-size: 20px; 
+  line-height: 35px; 
+  text-align: center;
+}
+
+.sponsorship-levels-img {
+  width: 90%; 
+  height: 90%; 
+  padding: 5%;
 }
 
 .hidden-lg {
