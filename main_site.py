@@ -38,6 +38,14 @@ def render_conduct_page():
     Renders the conduct page from jinja2 template
     '''
     return render_template('conduct.html')
+
+@app.route('/thankyou/')
+def render_thankyou_page():
+    '''
+    Renders the newsletter signup's thank you page from jinja2 template.
+    '''
+
+    return render_template('thankyou.html')
     
 if __name__ == '__main__':
     app.debug = False
