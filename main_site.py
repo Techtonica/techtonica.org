@@ -52,6 +52,13 @@ def render_sponsor_page():
     Renders the careers page from jinja2 template
     '''
     return render_template('sponsor.html')
+
+@app.route('/faqs/')
+def render_faqs_page():
+    '''
+    Renders the about page from jinja2 template
+    '''
+    return render_template('faqs.html')
     
 if __name__ == '__main__':
     app.debug = False
