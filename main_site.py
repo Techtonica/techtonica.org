@@ -1,6 +1,6 @@
 """
-This is the main python file that sets up rendering and templating
-for Techtonica.com
+This is the main Python file that sets up rendering and templating
+for Techtonica.org
 """
 from flask import Flask, render_template
 
@@ -44,8 +44,14 @@ def render_thankyou_page():
     '''
     Renders the newsletter signup's thank you page from jinja2 template.
     '''
-
     return render_template('thankyou.html')
+
+@app.route('/sponsor/')
+def render_sponsor_page():
+    '''
+    Renders the careers page from jinja2 template
+    '''
+    return render_template('sponsor.html')
     
 if __name__ == '__main__':
     app.debug = False
