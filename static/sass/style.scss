@@ -115,8 +115,13 @@
   width:20%;
 }
 
-.min-width-250{
+.min-width-250 {
   min-width:250px;
+}
+
+.max-size-100px {
+  max-height: 100px;
+  max-width: 100px;
 }
 
 .margin-25{
