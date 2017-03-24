@@ -97,7 +97,10 @@
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+    {% block popup %}
+      <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+    {% endblock %}
+     <script type="text/javascript" src="{{ url_for('static', filename='js/scroll.js') }}"></script>
     <script type="text/javascript" src="https://s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
   </body>
 </html>
