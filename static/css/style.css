@@ -41,7 +41,8 @@ button {
   background-color: #0093B5;
   color: white; }
   .blue-background a {
-    color: #fc7625;
+    color: white;
+    text-decoration: underline;
     text-shadow: 1px 1px 1px #666; }
   .blue-background a:hover {
     color: #16C1F3; }

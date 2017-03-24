@@ -15,7 +15,7 @@
       <div class="row row__center what-we-do" id="whatwedo">
         <div class="column">
           <h1 class="blue-h1">What We Do</h1>
-          <p class="justify">We're like a coding bootcamp, but our program is longer, free to students, and for local women and non-binary femme adults in need. Our program also has job placement at the end, and criteria, curriculum, and mentoring support from sponsoring companies. (See what else sets us apart in <a href="{{ url_for('render_faqs_page') }}">our FAQs</a>.)</p>
+          <p class="justify">We're like a coding bootcamp, but our program covers more than just web development, and it's longer, free to students, and for local women and non-binary femme adults in need. Our program also has job placement at the end, and criteria, curriculum, and mentoring support from sponsoring companies. (See what else sets us apart in <a href="{{ url_for('render_faqs_page') }}">our FAQs</a>.)</p>
         </div>
         <div class="column">
           <img src="{{ url_for('static', filename='img/michelle-teaching-small-min.jpg') }}" alt="Two women sit at a computer, working together on some code." class="full-width-img">
@@ -59,9 +59,10 @@
           <h1>How to Help</h1>
           <p class="justify">
             <ul>
-              <li>Encourage your company to <a href="https://goo.gl/forms/Q88hao4ApxVFl76N2" class="hover-link" target="_blank">sign up to sponsor and hire students</a>.</li>
+              <li>Encourage your company to <a href="{{ url_for('render_faqs_page') }}">sponsor and hire students</a>.</li>
+<!--               <li>Encourage your company to <a href="https://goo.gl/forms/Q88hao4ApxVFl76N2" class="hover-link" target="_blank">sponsor and hire students</a>.</li> -->
               <li><a href="https://goo.gl/forms/jgD3BWCEg5RN8XwN2" class="hover-link" target="_blank">Sign up to volunteer</a>.</li>
-              <li>Offer your space for the first six-month class in San Francisco. <a href="https://twitter.com/TechtonicaOrg/status/842485189531983872">Details here</a>.</li>
+              <li><a href="https://twitter.com/TechtonicaOrg/status/842485189531983872">Host the first class in your space for a month</a>.</li>
               <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JK79ZYMRLEWDA" class="hover-link" target="_blank">Donate</a> (donations are tax-deductible and you can sign up to donate monthly).</li>
             </ul>
           </p>
