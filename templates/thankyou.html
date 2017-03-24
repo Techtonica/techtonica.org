@@ -6,9 +6,14 @@
 
 {% block content %}
 
-<div class="row row__center what-we-do" id="whatwedo">
-  <div class="column">
-    <h1 class="blue-h1">Thank you!</h1>
+<div class="row row__center">
+	<div class="column">
+    	<h1 class="blue-h1">Thank you!</h1>
+    	<h3>We will be in touch!</h3>
+    	<p>In the meantime, you can check out <a href="{{ url_for('render_home_page') }}">our home page</a> or look through <a href="{{ url_for('render_faqs_page') }}">our frequently-asked questions (FAQs)</a>. 
+    </div>
+    <div class="column">
+    	<img src="{{ url_for('static', filename='img/bridge-the-tech-gap-student.png') }}" alt="Student at computer, image has 'Bridge the tech gap' on it." class="full-width-img">
   </div>
 </div>
 
