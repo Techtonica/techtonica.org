@@ -87,7 +87,7 @@
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/women-library-min.jpg) $main-blue no-repeat top right fixed;
+  background: url(../img/laptop-techtonica-sticker-student.png) $main-blue no-repeat top right fixed;
   background-size: cover;
 }
 
@@ -166,7 +166,7 @@
 
 .sponsor {
   line-height: 36px;
-  padding: 25px; 
+  padding: 25px;
   margin: 0;
 }
 
@@ -182,14 +182,14 @@ a:hover {
 }
 
 .sponsor-p {
-  font-size: 20px; 
-  line-height: 35px; 
+  font-size: 20px;
+  line-height: 35px;
   text-align: center;
 }
 
 .sponsorship-levels-img {
-  width: 90%; 
-  height: 90%; 
+  width: 90%;
+  height: 90%;
   padding: 5%;
 }
 
@@ -280,7 +280,7 @@ a:hover {
   .main-header {
     display: block;
     position: relative;
-    background: url(../img/women-library-min.jpg) $main-blue no-repeat top center;
+    background: url(../img/laptop-techtonica-sticker-student.png) $main-blue no-repeat top center;
     @include prefix(background-size, contain, webkit moz o);
   }
 
