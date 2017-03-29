@@ -91,6 +91,11 @@
   background-size: cover;
 }
 
+.main-header__image {
+  display: none;
+  max-width: 100%;
+}
+
 .main-header__text {
   max-width: 50%;
   padding: 0 1.5em;
@@ -104,6 +109,10 @@
   // Caps max fontsize above x-large-screen breakpoint.
   @media only screen and (min-width:1200px) {
     font-size: 3.5rem;
+  }
+
+  h2 {
+    margin-bottom: 0;
   }
 }
 
@@ -279,17 +288,19 @@ a:hover {
 
   .main-header {
     display: block;
-    position: relative;
-    background: url(../img/laptop-techtonica-sticker-student.png) $main-blue no-repeat top center;
-    @include prefix(background-size, contain, webkit moz o);
+    background-image: none;
+    height: auto;
+    padding: 1em 0;
+  }
+
+  .main-header__image {
+    display: block;
   }
 
   .main-header__text {
-        position: absolute;
-        bottom: 0;
-        max-width: 100%;
-        width: auto;
-        padding: 0 1em;
+    max-width: 100%;
+    width: auto;
+    padding: 0 1em;
   }
 
   .main-content {

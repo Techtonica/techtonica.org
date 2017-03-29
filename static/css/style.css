@@ -142,6 +142,10 @@ button {
   background: url(../img/laptop-techtonica-sticker-student.png) #0093B5 no-repeat top right fixed;
   background-size: cover; }
 
+.main-header__image {
+  display: none;
+  max-width: 100%; }
+
 .main-header__text {
   max-width: 50%;
   padding: 0 1.5em;
@@ -152,6 +156,8 @@ button {
   @media only screen and (min-width: 1200px) {
     .main-header__header {
       font-size: 3.5rem; } }
+  .main-header__header h2 {
+    margin-bottom: 0; }
 
 .full-width-img {
   width: 100%; }
@@ -300,16 +306,14 @@ a:hover {
 
   .main-header {
     display: block;
-    position: relative;
-    background: url(../img/laptop-techtonica-sticker-student.png) #0093B5 no-repeat top center;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain; }
+    background-image: none;
+    height: auto;
+    padding: 1em 0; }
+
+  .main-header__image {
+    display: block; }
 
   .main-header__text {
-    position: absolute;
-    bottom: 0;
     max-width: 100%;
     width: auto;
     padding: 0 1em; }
