@@ -44,34 +44,27 @@ FLASK_APP=main_site.py flask run
 Browse to <http://localhost:5000>.
 
 
-## Deployment Notes
+## Deployment to DreamHost
 
-8-25-2016 19:00 CST
+## Initial Setup
 
-* Installed Python 2.7.12
-* Submitted a ticket to Python so that the symlink would would work correctly
-  when installed from source.
-* Installed Virtualenv
-* Installed Flask
-* Installed Pip
-* Installed Flup
-* Tested the site on techtonica.org/test/ for basic functionality.
-
-[Article used to get through the BlueHost
-weirdness](http://willhaley.com/blog/flask-on-bluehost/)
-
-8-26-016 10:30 CST
+Follow the instructions in the [Setting up and deploying Python Flask to
+Dreamhost](https://mattcarrier.com/flask-dreamhost-setup/) blog post.
 
 ## Updating the Site
 
-* Log in via SSH using your SSH key
-* Navigate to your public html folder using:
+1.  Log in via SSH using your SSH key.
+2.  Change directory to the appropriate domain, either `techtonica.org` or
+    `staging.techtonica.org`.
+3.  Change to the source directory:
 
     ```sh
-    cd public_html
+    cd techtonica
     ```
-* Update to the latest code:
+4.  Use the usual `git` commands to get the latest code or check out another
+    branch.
+5.  "Restart" the passenger process:
 
     ```sh
-    git pull
+    cd .. && touch tmp/restart.txt
     ```
