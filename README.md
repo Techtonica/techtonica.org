@@ -48,22 +48,54 @@ Browse to <http://localhost:5000>.
 
 ## Initial Setup
 
-Follow the instructions in the [Setting up and deploying Python Flask to
-Dreamhost](https://mattcarrier.com/flask-dreamhost-setup/) blog post.
+1.  Follow the instructions in the [Setting up and deploying Python Flask to
+    Dreamhost](https://mattcarrier.com/flask-dreamhost-setup/) blog post.
+
+1.  Update package tools, while you're still operating in the virtual
+    environment:
+
+    ```sh
+    pip install -U pip setuptools
+    ```
 
 ## Updating the Site
 
 1.  Log in via SSH using your SSH key.
-2.  Change directory to the appropriate domain, either `techtonica.org` or
-    `staging.techtonica.org`.
-3.  Change to the source directory:
+
+1.  Change directory to the appropriate domain:
+
+    ```sh
+    cd techtonica.org
+    ```
+
+    or
+
+    ```sh
+    cd staging.techtonica.org
+    ```
+
+1.  Activate the virtual envrionment:
+
+    ```sh
+    . bin/activate
+    ```
+
+1.  Change to the source directory:
 
     ```sh
     cd techtonica
     ```
-4.  Use the usual `git` commands to get the latest code or check out another
+
+1.  Use the usual `git` commands to get the latest code or check out another
     branch.
-5.  "Restart" the passenger process:
+
+1.  Update requirements:
+
+    ```sh
+    pip-sync
+    ```
+
+1.  "Restart" the passenger process:
 
     ```sh
     cd .. && touch tmp/restart.txt
