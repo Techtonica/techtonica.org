@@ -1,0 +1,4 @@
+Flask
+Flask-SSLify
+Jinja2
+pip-tools
