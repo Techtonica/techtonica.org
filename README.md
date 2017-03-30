@@ -1,7 +1,7 @@
 # Techtonica
 
 This repo is for [the Techtonica website](http://techtonica.org), which is
-currently hosted on Bluehost.
+currently hosted on DreamHost.
 
 ### Who
 
