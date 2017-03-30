@@ -38,7 +38,7 @@ pip install -r requirements.txt
 Start the application's server:
 
 ```sh
-FLASK_APP=main_site.py flask run
+FLASK_DEBUG=1 FLASK_APP=main_site.py flask run
 ```
 
 Browse to <http://localhost:5000>.
