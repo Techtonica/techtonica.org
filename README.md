@@ -1,69 +1,102 @@
 # Techtonica
-This repo is for [the Techtonica website](http://techtonica.org), which is currently hosted on Bluehost.
+
+This repo is for [the Techtonica website](http://techtonica.org), which is
+currently hosted on DreamHost.
 
 ### Who
-The main audience of the website is made up of (potential) volunteers and sponsors. (Students will be contacted via local organizations.)
+
+The main audience of the website is made up of (potential) volunteers and
+sponsors. (Students will be contacted via local organizations.)
 
 ### What
-We need to effectively communicate that Techtonica and its students are worth supporting.
+
+We need to effectively communicate that Techtonica and its students are worth
+supporting.
 
 ### How
-There should be a good understanding of how the program works with vetting, training, mentoring, and hiring.
+
+There should be a good understanding of how the program works with vetting,
+training, mentoring, and hiring.
+
 
 ## Getting Started
-----------------------
 
 This app uses Python 2.7; please stick to this version.
 
-#### Running Locally
+### Running Locally
 
-It is recommended you use a Virtual Environment tool to keep dependencies required by different projects separate. Learn more about Virtual Environments and Python [here](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
+It is recommended you use a virtual environment tool to keep dependencies
+required by different projects separate. [Learn more about Python virtual
+environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 
 Install the project dependencies. In the project root run:
 
-```
-$ pip install -r requirements.txt
+```sh
+pip install -r requirements.txt
 ```
 
 Start the application's server:
 
+```sh
+FLASK_DEBUG=1 FLASK_APP=main_site.py flask run
 ```
-$ FLASK_APP=main_site.py flask run
-```
 
-Browse to `localhost:5000`
+Browse to <http://localhost:5000>.
 
 
+## Deployment to DreamHost
 
-## DEPLOYMENT / UPDATE NOTES
------------------------------
+## Initial Setup
 
-8-25-2016 19:00 CST
+1.  Follow the instructions in the [Setting up and deploying Python Flask to
+    Dreamhost](https://mattcarrier.com/flask-dreamhost-setup/) blog post.
 
-Installed Python 2.7.12
+1.  Update package tools, while you're still operating in the virtual
+    environment:
 
-Submitted a ticket to Python so that the symlink would would work correctly when installed from source.
+    ```sh
+    pip install -U pip setuptools
+    ```
 
-Installed Virtualenv
+## Updating the Site
 
-Installed Flask
+1.  Log in via SSH using your SSH key.
 
-Installed Pip
+1.  Change directory to the appropriate domain:
 
-Installed Flup
+    ```sh
+    cd techtonica.org
+    ```
 
-Tested the site on techtonica.org/test/ for basic functionality.
+    or
 
-Article used to get through the BlueHost wierdness linked below:    
-[Flask on BlueHost](http://willhaley.com/blog/flask-on-bluehost/)
+    ```sh
+    cd staging.techtonica.org
+    ```
 
-8-26-016 10:30 CST
+1.  Activate the virtual envrionment:
 
-## UPDATING THE SITE
-------------------------
+    ```sh
+    . bin/activate
+    ```
 
-Log in via SSH using your SSH key
+1.  Change to the source directory:
 
-Navigate to your public html folder using: cd public_html
+    ```sh
+    cd techtonica
+    ```
 
-Submit pull request from github using: git pull
+1.  Use the usual `git` commands to get the latest code or check out another
+    branch.
+
+1.  Update requirements:
+
+    ```sh
+    pip-sync
+    ```
+
+1.  "Restart" the passenger process:
+
+    ```sh
+    cd .. && touch tmp/restart.txt
+    ```
