@@ -15,11 +15,11 @@
     <meta property="og:description" content="Tuition-free tech training and job placement at sponsoring companies for low-income women and non-binary adults."/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="http://techtonica.org"/>
-    <meta property="og:image" content="{{ url_for('static', filename='img/women-library-2-min.jpg') }}"/>
+    <meta property="og:image" content="{{ url_for('static', filename='img/laptop-techtonica-sticker-student.jpg') }}"/>
     <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon" type="image/x-icon" />
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
-    <link rel="preload" href="{{ url_for('static', filename='img/laptop-techtonica-sticker-student.png') }}" as="image">
+    <link rel="preload" href="{{ url_for('static', filename='img/laptop-techtonica-sticker-student.jpg') }}" as="image">
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -69,6 +69,7 @@
         </button>
           <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JK79ZYMRLEWDA" class="nav-link" target="_blank">Donate</a>
           <a href="{{ url_for('render_about_page') }}" class="aboutus nav-link">About Us</a>
+          <a href="{{ url_for('render_faqs_page') }}" class="nav-link">FAQs</a>
           <a href="{{ url_for('render_home_page') }}#supporters" class="supporters nav-link">Supporters</a>
           <a href="{{ url_for('render_home_page') }}#howtohelp" class="howtohelp nav-link">How to Help</a>
           <a href="{{ url_for('render_home_page') }}#whatwedo" class="whatwedo nav-link">What We Do</a>
@@ -83,6 +84,7 @@
     <div class="row row__center gray-background">
       <div class="column">
         <p class="centered">
+          <a href="mailto:info@techtonica.org"><img src="{{ url_for('static', filename='img/mail-icon.png') }}" class="social-media" alt="Techtonica Email"></a>
           <a href="https://www.facebook.com/Techtonica/" target="_blank"><img src="{{ url_for('static', filename='img/facebook-blue.png') }}" class="social-media" alt="Techtonica Facebook"></a>
           <a href="https://twitter.com/TechtonicaOrg" target="_blank"><img src="{{ url_for('static', filename='img/twitter-blue.png') }}" class="social-media" alt="Techtonica Twitter"></a>
           <a href="https://www.linkedin.com/company/12897075" target="_blank"><img src="{{ url_for('static', filename='img/linkedin-blue.png') }}" class="social-media" alt="Techtonica LinkedIn"></a>
