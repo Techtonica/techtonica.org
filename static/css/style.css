@@ -139,7 +139,7 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/laptop-techtonica-sticker-student.png) #0093B5 no-repeat top right fixed;
+  background: url(../img/laptop-techtonica-sticker-student.jpg) #0093B5 no-repeat top right fixed;
   background-size: cover; }
 
 .main-header__text {
@@ -231,32 +231,27 @@ a:hover {
 @media only screen and (max-width: 1024px) {
   .row {
     padding: 2em; }
-
   h1 {
     font-size: 3.5em; } }
+
 @media only screen and (max-width: 910px) {
   .row {
     padding: 1.5em 1em; }
-
   .column-med {
     -webkit-flex: 0 0 40%;
     -moz-flex: 0 0 40%;
     -o-flex: 0 0 40%;
     flex: 0 0 40%; }
-
   .hidden-med {
     display: none; }
-
   .column {
     -webkit-flex: 0 0 100%;
     -moz-flex: 0 0 100%;
     -o-flex: 0 0 100%;
     flex: 0 0 100%; }
-
   h1 {
     font-size: 2em;
     letter-spacing: 0.5px; }
-
   .donate {
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
@@ -266,14 +261,11 @@ a:hover {
     .donate:hover {
       background-color: #fc7625;
       color: white; }
-
   .nav-bar {
     justify-content: space-between; }
-
   .small-screen-nav {
     flex-flow: column-reverse nowrap;
     justify-content: flex-end; }
-
   .img-link {
     align-items: center;
     display: flex;
@@ -281,10 +273,8 @@ a:hover {
     left: 0;
     position: absolute;
     top: 0; }
-
   .nav-link {
     display: none; }
-
   .nav-link--mobile {
     display: inline-block;
     width: 100%;
@@ -294,35 +284,28 @@ a:hover {
     text-align: center;
     min-height: 1.4em;
     z-index: 1; }
-
   .nav-link--mobile:last-child {
     border-bottom: 1px solid #ccc; }
-
   .main-header {
     display: block;
     position: relative;
-    background: url(../img/laptop-techtonica-sticker-student.png) #0093B5 no-repeat top center;
+    background: url(../img/laptop-techtonica-sticker-student.jpg) #0093B5 no-repeat top center;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
     background-size: contain; }
-
   .main-header__text {
     position: absolute;
     bottom: 0;
     max-width: 100%;
     width: auto;
     padding: 0 1em; }
-
   .main-content {
     margin-top: 5rem; }
-
   .hidden-sm {
     display: none; }
-
   .hidden-lg {
     display: inline-block; }
-
   .lines-button {
     position: absolute;
     right: 0;
@@ -332,45 +315,42 @@ a:hover {
     transition: .3s;
     cursor: pointer;
     user-select: none;
-    border-radius: 0.42857rem; }
+    border-radius: 0.4285714286rem; }
     .lines-button:hover {
       opacity: 1; }
     .lines-button:active {
       transition: 0;
       background: rgba(0, 0, 0, 0.1); }
-
   .lines {
     display: inline-block;
     width: 3rem;
-    height: 0.42857rem;
+    height: 0.4285714286rem;
     background: #16C1F3;
-    border-radius: 0.21429rem;
+    border-radius: 0.2142857143rem;
     transition: 0.3s;
     position: relative;
     /*create the upper and lower lines as pseudo-elements of the middle line*/ }
     .lines:before, .lines:after {
       display: inline-block;
       width: 3rem;
-      height: 0.42857rem;
+      height: 0.4285714286rem;
       background: #16C1F3;
-      border-radius: 0.21429rem;
+      border-radius: 0.2142857143rem;
       transition: 0.3s;
       position: absolute;
       left: 0;
       content: '';
-      transform-origin: 0.21429rem center; }
+      transform-origin: 0.2142857143rem center; }
     .lines:before {
       top: 0.75rem; }
     .lines:after {
       top: -0.75rem; }
-
   .lines-button:hover {
     opacity: 1; }
     .lines-button:hover .lines:before {
       top: 1rem; }
     .lines-button:hover .lines:after {
       top: -1rem; }
-
   .lines-button.x.close .lines {
     /*hide the middle line*/
     background: transparent;
@@ -383,45 +363,38 @@ a:hover {
       transform: rotate3d(0, 0, 1, 45deg); }
     .lines-button.x.close .lines:after {
       transform: rotate3d(0, 0, 1, -45deg); }
-
   .contact-us {
     display: block; }
-
   .nav-bar-inner {
     padding: 0;
     margin-top: 5rem; } }
+
 /* iphone 4 and 4s media query */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
   .main-header__text {
     font-size: 1rem;
     height: 50vh; } }
+
 /* iphone 4 and 4s landscape media query */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .main-header {
     background-size: cover;
     font-size: 14px; }
-
   .main-content {
     font-size: 14px; } }
+
 /* Samsung Galaxy s5 portrait media query */
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
   .main-header__text {
-    font-size: 1rem;
-    height: 30vh; }
-
+    font-size: 1rem; }
   .main-header_text p {
-    margin-bottom: 20px; }
+    margin-bottom: 20px; } }
 
-  .main-header {
-    height: 420px; } }
 /* Samsung Galaxy s5 landscape media query */
 @media screen and (device-width: 640px) and (device-height: 360px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
   .main-header__text {
     font-size: 1rem;
     height: 50vh; }
-
   .main-header {
     height: 500px;
     background-size: cover; } }
-
-/*# sourceMappingURL=style.css.map */
