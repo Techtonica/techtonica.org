@@ -308,7 +308,7 @@ a:hover {
     display: block;
     background-image: none;
     height: auto;
-    padding-bottom: 1em 0; }
+    padding-bottom: 1em; }
 
   .main-header__image {
     display: block; }
