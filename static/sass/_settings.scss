@@ -64,7 +64,12 @@ button {
   background-color: $main-blue;
   color: $white;
   a {
+<<<<<<< HEAD:static/sass/_settings.scss
     color: #fc7625;
+=======
+    color: white;
+    text-decoration: underline;
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/sass/_settings.scss
     text-shadow: $thin-dark-text-shadow;
   }
   a:hover {

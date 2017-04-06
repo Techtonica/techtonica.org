@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-  Techtonica — About
+  Techtonica: Bridging the Tech Gap — About Us
 {% endblock title %}
 
 {% block content %}
@@ -14,7 +14,12 @@
     <div class="column">
       <h1 class="blue-h1">About Us</h1>
       <p class="justify">The Techtonica Squad includes software engineers, community volunteers and leaders, non-profit and startup founders, teachers, curriculum development specialists, venture capitalists, and social impact strategists.</p>
+<<<<<<< HEAD
       <p class="justify">Techtonica's founder and CEO is Michelle Glauser. Since becoming a software engineer in 2012, she's worked for a better, more diverse software industry by organizing support groups, meetups, workshops, and the #ILookLikeAnEngineer ad campaign. Michelle's experience working in tech and volunteering in the community in San Francisco revealed two glaring issues: lack of diversity on tech teams and high income disparity. Techtonica is her vision to help tech companies and people who need more opportunities thrive together.</p>
+=======
+      <p class="justify">Techtonica's founder and CEO is <a href="http://michelleglauser.com" target="_blank">Michelle Glauser</a>. Since becoming a software engineer in 2012, she's worked for a better, more diverse software industry by organizing support groups, meetups, workshops, and the #ILookLikeAnEngineer ad campaign. Michelle's experience working in tech and volunteering in the community in San Francisco revealed two glaring issues: lack of diversity on tech teams and high income disparity. Techtonica is her vision to help tech companies and people who need more opportunities thrive together.</p>
+      <p class="justify">Please check out <a href="{{ url_for('render_faqs_page') }}">our FAQs</a> for more information.</p>
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254
       <a href="mailto:info@badmail.techtonica.org?Subject=Techtonica%20Contact%20Us" class="contact" target="_blank" ><img src="{{ url_for('static', filename='img/contact-us.jpg') }}" class="contact" alt="Contact us at info@techtonica.org"></a>
     </div>
   </div>

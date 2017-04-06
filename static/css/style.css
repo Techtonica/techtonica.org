@@ -41,7 +41,12 @@ button {
   background-color: #0093B5;
   color: white; }
   .blue-background a {
+<<<<<<< HEAD:static/css/style.css
     color: #fc7625;
+=======
+    color: white;
+    text-decoration: underline;
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/css/style.css
     text-shadow: 1px 1px 1px #666; }
   .blue-background a:hover {
     color: #16C1F3; }
@@ -138,7 +143,11 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
+<<<<<<< HEAD:static/css/style.css
   background: url(../img/women-library-min.jpg) #0093B5 no-repeat top right fixed;
+=======
+  background: url(../img/laptop-techtonica-sticker-student.jpg) #0093B5 no-repeat top right fixed;
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/css/style.css
   background-size: cover; }
 
 .main-header__text {
@@ -205,6 +214,27 @@ button {
   line-height: 36px;
   padding: 25px;
   margin: 0; }
+<<<<<<< HEAD:static/css/style.css
+
+.sponsor-p {
+  font-size: 20px;
+  line-height: 35px;
+  text-align: center; }
+
+.sponsorship-levels-img {
+  width: 90%;
+  height: 90%;
+  padding: 5%; }
+=======
+
+#orange-button {
+  text-decoration: none; }
+  #orange-button:hover {
+    color: white; }
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/css/style.css
+
+a:hover {
+  color: #16C1F3; }
 
 .sponsor-p {
   font-size: 20px;
@@ -222,32 +252,41 @@ button {
 @media only screen and (max-width: 1024px) {
   .row {
     padding: 2em; }
-
   h1 {
     font-size: 3.5em; } }
+<<<<<<< HEAD:static/css/style.css
+=======
+
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/css/style.css
 @media only screen and (max-width: 910px) {
   .row {
     padding: 1.5em 1em; }
-
   .column-med {
     -webkit-flex: 0 0 40%;
     -moz-flex: 0 0 40%;
     -o-flex: 0 0 40%;
     flex: 0 0 40%; }
+<<<<<<< HEAD:static/css/style.css
 
   .hidden-med {
     display: none; }
 
+=======
+  .hidden-med {
+    display: none; }
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/css/style.css
   .column {
     -webkit-flex: 0 0 100%;
     -moz-flex: 0 0 100%;
     -o-flex: 0 0 100%;
     flex: 0 0 100%; }
-
   h1 {
     font-size: 2em;
     letter-spacing: 0.5px; }
+<<<<<<< HEAD:static/css/style.css
 
+=======
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/css/style.css
   .donate {
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
@@ -257,14 +296,15 @@ button {
     .donate:hover {
       background-color: #fc7625;
       color: white; }
+<<<<<<< HEAD:static/css/style.css
 
+=======
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/css/style.css
   .nav-bar {
     justify-content: space-between; }
-
   .small-screen-nav {
     flex-flow: column-reverse nowrap;
     justify-content: flex-end; }
-
   .img-link {
     align-items: center;
     display: flex;
@@ -272,10 +312,12 @@ button {
     left: 0;
     position: absolute;
     top: 0; }
+<<<<<<< HEAD:static/css/style.css
 
+=======
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/css/style.css
   .nav-link {
     display: none; }
-
   .nav-link--mobile {
     display: inline-block;
     width: 100%;
@@ -285,6 +327,7 @@ button {
     text-align: center;
     min-height: 1.4em;
     z-index: 1; }
+<<<<<<< HEAD:static/css/style.css
 
   .nav-link--mobile:last-child {
     border-bottom: 1px solid #ccc; }
@@ -293,27 +336,41 @@ button {
     display: block;
     position: relative;
     background: url(../img/women-library-min.jpg) #0093B5 no-repeat top center;
+=======
+  .nav-link--mobile:last-child {
+    border-bottom: 1px solid #ccc; }
+  .main-header {
+    display: block;
+    position: relative;
+    background: url(../img/laptop-techtonica-sticker-student.jpg) #0093B5 no-repeat top center;
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/css/style.css
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
     background-size: contain; }
+<<<<<<< HEAD:static/css/style.css
 
+=======
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/css/style.css
   .main-header__text {
     position: absolute;
     bottom: 0;
     max-width: 100%;
     width: auto;
     padding: 0 1em; }
+<<<<<<< HEAD:static/css/style.css
 
   .main-content {
     margin-top: 5rem; }
 
+=======
+  .main-content {
+    margin-top: 5rem; }
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/css/style.css
   .hidden-sm {
     display: none; }
-
   .hidden-lg {
     display: inline-block; }
-
   .lines-button {
     position: absolute;
     right: 0;
@@ -323,45 +380,54 @@ button {
     transition: .3s;
     cursor: pointer;
     user-select: none;
-    border-radius: 0.42857rem; }
+    border-radius: 0.4285714286rem; }
     .lines-button:hover {
       opacity: 1; }
     .lines-button:active {
       transition: 0;
       background: rgba(0, 0, 0, 0.1); }
-
   .lines {
     display: inline-block;
     width: 3rem;
+<<<<<<< HEAD:static/css/style.css
     height: 0.42857rem;
     background: #16C1F3;
     border-radius: 0.21429rem;
+=======
+    height: 0.4285714286rem;
+    background: #16C1F3;
+    border-radius: 0.2142857143rem;
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/css/style.css
     transition: 0.3s;
     position: relative;
     /*create the upper and lower lines as pseudo-elements of the middle line*/ }
     .lines:before, .lines:after {
       display: inline-block;
       width: 3rem;
+<<<<<<< HEAD:static/css/style.css
       height: 0.42857rem;
       background: #16C1F3;
       border-radius: 0.21429rem;
+=======
+      height: 0.4285714286rem;
+      background: #16C1F3;
+      border-radius: 0.2142857143rem;
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/css/style.css
       transition: 0.3s;
       position: absolute;
       left: 0;
       content: '';
-      transform-origin: 0.21429rem center; }
+      transform-origin: 0.2142857143rem center; }
     .lines:before {
       top: 0.75rem; }
     .lines:after {
       top: -0.75rem; }
-
   .lines-button:hover {
     opacity: 1; }
     .lines-button:hover .lines:before {
       top: 1rem; }
     .lines-button:hover .lines:after {
       top: -1rem; }
-
   .lines-button.x.close .lines {
     /*hide the middle line*/
     background: transparent;
@@ -374,6 +440,7 @@ button {
       transform: rotate3d(0, 0, 1, 45deg); }
     .lines-button.x.close .lines:after {
       transform: rotate3d(0, 0, 1, -45deg); }
+<<<<<<< HEAD:static/css/style.css
 
   .contact-us {
     display: block; }
@@ -381,16 +448,29 @@ button {
   .nav-bar-inner {
     padding: 0;
     margin-top: 5rem; } }
+=======
+  .contact-us {
+    display: block; }
+  .nav-bar-inner {
+    padding: 0;
+    margin-top: 5rem; } }
+
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/css/style.css
 /* iphone 4 and 4s media query */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
   .main-header__text {
     font-size: 1rem;
     height: 50vh; } }
+<<<<<<< HEAD:static/css/style.css
+=======
+
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/css/style.css
 /* iphone 4 and 4s landscape media query */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .main-header {
     background-size: cover;
     font-size: 14px; }
+<<<<<<< HEAD:static/css/style.css
 
   .main-content {
     font-size: 14px; } }
@@ -405,14 +485,32 @@ button {
 
   .main-header {
     height: 420px; } }
+=======
+  .main-content {
+    font-size: 14px; } }
+
+/* Samsung Galaxy s5 portrait media query */
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+  .main-header__text {
+    font-size: 1rem; }
+  .main-header_text p {
+    margin-bottom: 20px; } }
+
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/css/style.css
 /* Samsung Galaxy s5 landscape media query */
 @media screen and (device-width: 640px) and (device-height: 360px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
   .main-header__text {
     font-size: 1rem;
     height: 50vh; }
+<<<<<<< HEAD:static/css/style.css
 
   .main-header {
     height: 500px;
     background-size: cover; } }
 
 /*# sourceMappingURL=style.css.map */
+=======
+  .main-header {
+    height: 500px;
+    background-size: cover; } }
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254:static/css/style.css

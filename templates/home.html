@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-  Techtonica
+  Techtonica: Bridging the Tech Gap
 {% endblock title %}
 
 {% block content %}
@@ -9,13 +9,22 @@
       <div class="main-header">
         <div class="main-header__text blue-background">
           <h1 class="main-header__header">#BridgeTheTechGap</h1>
+<<<<<<< HEAD
           <p>We partner with tech companies to offer free tech training, living and childcare stipends, and job placement to low-income women and non-binary adults.</p>
+=======
+          <p>We partner with tech companies to offer free tech training and job placement to local women and non-binary femme adults in need. Our students have been selected—we just need you!</p>
+          <h2><a href="{{ url_for('render_sponsor_page') }}" class="sponsor" id="orange-button" target="_blank">Sponsor a Techtonica student today!</a></h2>
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254
         </div>
       </div>
       <div class="row row__center what-we-do" id="whatwedo">
         <div class="column">
           <h1 class="blue-h1">What We Do</h1>
+<<<<<<< HEAD
           <p class="justify">We provide tuition-free tech training to local, low-income women and non-binary adults and place them in positions at sponsoring companies that are ready to support more diverse teams. We don't discriminate by age.</p>
+=======
+          <p class="justify">We're like a coding bootcamp, but free, and we cover more than just web development. Our full-time program is longer than most at six months, it's followed by job placement, and it's specifically for local women and non-binary femme adults in need. Companies partner with us to provide mentoring and to formulate student criteria and curriculum. (See what else sets us apart in <a href="{{ url_for('render_faqs_page') }}">our FAQs</a>.)</p>
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254
         </div>
         <div class="column">
           <img src="{{ url_for('static', filename='img/michelle-teaching-small-min.jpg') }}" alt="Two women sit at a computer, working together on some code." class="full-width-img">
@@ -23,13 +32,16 @@
       </div>
       <div class="row row__center blue-background why-why" id="why">
         <div class="column">
+<<<<<<< HEAD
           <img src="{{ url_for('static', filename='img/tenderloin-sf-min.jpg') }}" alt="People on the streets of a run-down area of the Tenderloin neighborhood in San Francisco." class="full-width-img">
+=======
+          <img src="{{ url_for('static', filename='img/Tenderloin.jpg') }}" alt="Street, sidewalks, and building in the Tenderloin neighborhood of San Francisco." class="full-width-img">
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254
         </div>
         <div class="column">
           <h1>Why</h1>
-          <p class="justify">Though many jobs are available in top tech market cities like San Francisco, companies need to build teams with more racial, gender, and class diversity. Huge income disparities also exist in these areas.</p>
-          <p class="justify">Other technical training programs cost upwards of $15K, require laptops, do little to support parents and people of underrepresented genders, and provide limited transitions into the workforce.</p>
-          <p class="justify">We asked, "What if we could help companies build much-needed diverse technical teams by training the people who need jobs the most?"</p>
+          <p class="justify">The tech industry in the Bay Area is causing displacement and increasing income disparity. The industry also needs to build more diverse technical teams.</p>
+          <p class="justify">We asked, "What if we could help tech companies build much-needed diverse technical teams by having them sponsor the training for underrepresented, underprivileged locals who need jobs the most?"</p>
         </div>
       </div>
       <div class="row row__baseline how-it-works" id="howitworks">
@@ -38,17 +50,32 @@
             <div class="column column-med centered">
               <img src="{{ url_for('static', filename='img/lightbulb.png') }}" alt="" aria-hidden="true">
               <h3>Vetting</h3>
+<<<<<<< HEAD
               <p>Techtonica conducts free intro workshops with local organizations and labs. We ask the most engaged, understanding, collaborative, resilient, and responsible students to complete challenges and teach before we invite them to apply for the full-time program.</p>
+=======
+              <p>Techtonica conducts free intro workshops with local organizations and labs.</p> <p>We invite the best students to apply for the full-time program.</p>
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254
             </div>
             <div class="column column-med centered">
               <img src="{{ url_for('static', filename='img/conversation.png') }}" alt="" aria-hidden="true">
               <h3>Partner Companies</h3>
+<<<<<<< HEAD
               <p>Partner companies sponsor the training and provide mentors for the students. They have a say in the curriculum and receive inclusion training in preparation for employing one of their top-rated students at the end of the program. The sponsorship is tax-deductible.</p>
+=======
+              <p>Partner companies sponsor the training and provide mentors.</p>
+              <p>They have a say in the curriculum and receive inclusion training in preparation for employing one of their top-rated students at the end of the program.</p>
+              <p>The sponsorship is tax-deductible.</p>
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254
             </div>
             <div class="column column-med centered">
               <img src="{{ url_for('static', filename='img/chalkboard.jpg') }}" alt="" aria-hidden="true">
               <h3>Training</h3>
+<<<<<<< HEAD
               <p>Accepted students receive living stipends, childcare if needed, and six months of full-time training that includes laptops, lectures, building assignments, projects, and experienced guidance and feedback. Upon completion of the program, they are placed with a partner company.</p>
+=======
+              <p>Accepted students receive living stipends, laptops, childcare if needed, and six months of full-time training that includes lectures, projects, open-source contributions, and experienced guidance.</p>
+              <p>Upon completion of the program, students are placed with partner companies.</p>
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254
             </div>
         </div>
       </div>
@@ -57,16 +84,27 @@
           <h1>How to Help</h1>
           <p class="justify">
             <ul>
+<<<<<<< HEAD
               <li>Encourage your company to <a href="https://goo.gl/forms/Q88hao4ApxVFl76N2" class="hover-link" target="_blank">sign up to sponsor and hire students</a>.</li>
               <li><a href="https://goo.gl/forms/jgD3BWCEg5RN8XwN2" class="hover-link" target="_blank">Sign up to volunteer</a>.</li>
               <li>Offer your space for the first six-month class in San Francisco.</li>
+=======
+              <li>Encourage your company to <a href="{{ url_for('render_sponsor_page') }}">sponsor and hire students</a>.</li>
+<!--               <li>Encourage your company to <a href="https://goo.gl/forms/Q88hao4ApxVFl76N2" class="hover-link" target="_blank">sponsor and hire students</a>.</li> -->
+              <li><a href="https://goo.gl/forms/jgD3BWCEg5RN8XwN2" class="hover-link" target="_blank">Sign up to volunteer</a>.</li>
+              <li><a href="https://twitter.com/TechtonicaOrg/status/842485189531983872">Host the first class in your space for a month</a>.</li>
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254
               <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JK79ZYMRLEWDA" class="hover-link" target="_blank">Donate</a> (donations are tax-deductible and you can sign up to donate monthly).</li>
             </ul>
           </p>
           <p class="justify">To receive updates, please <a id="open-popup" class="hover-link newsletter pad-lv3 pad-tb0" href="#" onclick="openPopupForm(); return false;">sign up for our newsletter</a>.</p>
         </div>
         <div class="column">
+<<<<<<< HEAD
           <img src="{{ url_for('static', filename='img/ttl-rails-group-min.jpg') }}" alt="Twenty-five Techtonica attendees and volunteers standing together after a workshop." class="full-width-img">
+=======
+          <img src="{{ url_for('static', filename='img/listening-volunteers-min.png') }}" alt="Twenty-five Techtonica attendees and volunteers standing together after a workshop." class="full-width-img">
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254
         </div>
       </div>
       <div class="row row__center our-supporters" id="supporters">
@@ -135,6 +173,12 @@
               <a href="https://twitter.com/avh4" target="_blank">
                 <img src="{{ url_for('static', filename='img/Aaron-VonderHaar.jpg') }}" alt="Aaron VonderHaar" class="twenty-percent-width max-size-100px margin-25">
               </a>
+<<<<<<< HEAD
+=======
+              <a href="https://www.linkedin.com/in/ariannawillett/" target="_blank">
+                <img src="{{ url_for('static', filename='img/Arianna-Willett.jpg') }}" alt="Arianna Willett" class="twenty-percent-width max-size-100px margin-25">
+              </a>
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254
 
             </div>
           </div>

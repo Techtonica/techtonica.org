@@ -49,6 +49,7 @@ $(document).ready(function() {
     openPopupForm();
     setCookie('techtonica-visited', 'yes', 9999)
   }
+<<<<<<< HEAD
 
   function scrollDown(name, time) {
     var aTag = $('.' + name);
@@ -83,4 +84,6 @@ $(document).ready(function() {
     $('.nav-bar').toggleClass('small-screen-nav');
     $('.nav-link').toggleClass('nav-link--mobile');
   });
+=======
+>>>>>>> 6428d26692927051e9fd0e20238b4e56d0a04254
 });
