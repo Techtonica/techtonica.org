@@ -34,7 +34,7 @@ def render_careers_page():
     '''
     Renders the careers page from jinja2 template
     '''
-    return render_template('careers.html')
+    return redirect(url_for('openings'))
 
 
 @app.route('/conduct/')
@@ -67,6 +67,14 @@ def render_faqs_page():
     Renders the about page from jinja2 template
     '''
     return render_template('faqs.html')
+
+
+@app.route('/openings/')
+def render_about_page():
+    '''
+    Renders the about page from jinja2 template
+    '''
+    return render_template('openings.html')
 
 
 if __name__ == '__main__':
