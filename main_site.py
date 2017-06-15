@@ -2,7 +2,7 @@
 This is the main Python file that sets up rendering and templating
 for Techtonica.org
 """
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 from flask_sslify import SSLify
 
 __author__ = "Harry Staley <staleyh@craftedtech.net>"
@@ -70,7 +70,7 @@ def render_faqs_page():
 
 
 @app.route('/openings/')
-def render_about_page():
+def render_openings_page():
     '''
     Renders the about page from jinja2 template
     '''
