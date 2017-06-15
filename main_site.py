@@ -34,7 +34,7 @@ def render_careers_page():
     '''
     Renders the careers page from jinja2 template
     '''
-    return redirect(url_for('openings'))
+    return redirect(url_for('render_openings_page'))
 
 
 @app.route('/conduct/')
