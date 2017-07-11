@@ -5,18 +5,87 @@
 {% endblock title %}
 
 {% block content %}
-  <div class="row row__center about-us">
+
+<!--section for michelle and erin-->
+  <div class="row row__center blue-background michelle-glauser" id="michelleglauser">
+    <div class = "column">
+      <img src="{{ url_for('static', filename='img/michelle_glauser_photo-min.jpg') }}" 
+           alt="Techtonica's Founder and CEO"
+           class="resize-400px">
+    </div>
+    <div class="column">
+      <h2><a href="http://michelleglauser.com" target="_blank">Michelle Glauser</a>, Techtonica's Founder and CEO</h2>
+      <p class="justify">Since becoming a software engineer in 2012, she's worked for a better, more diverse software industry by organizing support groups, meetups, workshops, and the #ILookLikeAnEngineer ad campaign. Michelle's experience working in tech and volunteering in the community in San Francisco revealed two glaring issues: lack of diversity on tech teams and high income disparity. Techtonica is her vision to help tech companies and people who need more opportunities thrive together.</p>
+    </div>
+    </div>
+  <div class="row row__center blue-background erin-allard" id="erinallard">
+    <div class = "column">
+      <img src="{{ url_for('static', filename='img/erin_allard_photo-min.jpg') }}" 
+           alt="Instructor"
+           class="resize-400px">
+    </div>
+    <div class="column">
+      <h2>Erin Allard, Class Instructor</h2>
+      <p class="justify"></p>
+    </div>
+    </div>
+
+
+
+<!--section for board members-->
+  <div class="row row__center board-members" id="boardmembers">  
+    <h1 class="blue-h1">Board Members</h1>
+    <div class="row">
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='(img/(filename).jpg)') }}" 
+           alt="(name of board member + their position)"
+           class="resize-200px">
+              <footer>(name of board member + their position)</footer>
+            </div>
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='(img/(filename).jpg)') }}" 
+           alt="(name of board member + their position)"
+           class="resize-200px">
+              <footer>(name of board member + their position)</footer>
+            </div>
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='(img/(filename).jpg)') }}" 
+           alt="(name of board member + their position)"
+           class="resize-200px">
+              <footer>(name of board member + their position)</footer>
+            </div>
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='(img/(filename).jpg)') }}" 
+           alt="(name of board member + their position)"
+           class="resize-200px">
+              <footer>(name of board member + their position)</footer>
+            </div>
+            <div class="column centered">
+              <img src="{{ url_for('static', filename='(img/(filename).jpg)') }}" 
+           alt="(name of board member + their position)"
+           class="resize-200px">
+              <footer>(name of board member + their position)</footer>
+            </div>
+          </div>
+          </div>
+
+
+<!--section for original picture and paragraph-->
+  <div class="row row__center techtonica-squad" id="techtonicasquad">
     <div class="column hidden-med">
       <img src="{{ url_for('static', filename='img/april-workshop-group-min.jpg') }}"
            alt="Fifteen participants, mostly women, gathered after a workshop."
            class="full-width-img">
     </div>
     <div class="column">
-      <h1 class="blue-h1">About Us</h1>
       <p class="justify">The Techtonica Squad includes software engineers, community volunteers and leaders, non-profit and startup founders, teachers, curriculum development specialists, venture capitalists, and social impact strategists.</p>
-      <p class="justify">Techtonica's founder and CEO is <a href="http://michelleglauser.com" target="_blank">Michelle Glauser</a>. Since becoming a software engineer in 2012, she's worked for a better, more diverse software industry by organizing support groups, meetups, workshops, and the #ILookLikeAnEngineer ad campaign. Michelle's experience working in tech and volunteering in the community in San Francisco revealed two glaring issues: lack of diversity on tech teams and high income disparity. Techtonica is her vision to help tech companies and people who need more opportunities thrive together.</p>
       <p class="justify">Please check out <a href="{{ url_for('render_faqs_page') }}">our FAQs</a> for more information.</p>
       <a href="mailto:info@badmail.techtonica.org?Subject=Techtonica%20Contact%20Us" class="contact" target="_blank" ><img src="{{ url_for('static', filename='img/contact-us.jpg') }}" class="contact" alt="Contact us at info@techtonica.org"></a>
     </div>
+    </div>
+
   </div>
+
+
+
 {% endblock content %}
