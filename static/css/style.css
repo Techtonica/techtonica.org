@@ -166,6 +166,14 @@ button {
   max-height: 100px;
   max-width: 100px; }
 
+.resize-400px {
+  max-height: 400px;
+  max-width: 400px; }
+
+.resize-200px {
+  max-height: 200px;
+  max-width: 200px; }
+
 .margin-25 {
   margin: 25px; }
 
