@@ -11,6 +11,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700; }
 
 h1, h2 {
+  color: white;
+  text-shadow: 2px 2px 5px #666;
+  font-size: 2em;
   letter-spacing: 2px; }
 
 h3, h4, h5, h6 {
