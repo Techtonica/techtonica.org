@@ -220,6 +220,11 @@ button {
   #orange-button:hover {
     color: white; }
 
+#quotes {
+  color: white;
+  font-size: 2em;
+  letter-spacing: 2px; }
+
 a:hover {
   color: #16C1F3; }
 
