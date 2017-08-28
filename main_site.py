@@ -5,9 +5,6 @@ for Techtonica.org
 from flask import Flask, render_template, redirect, url_for
 from flask_sslify import SSLify
 
-__author__ = "Harry Staley <staleyh@craftedtech.net>"
-__version__ = "1.0"
-
 app = Flask(__name__)
 sslify = SSLify(app)
 
@@ -21,12 +18,12 @@ def render_home_page():
     return render_template('home.html')
 
 
-@app.route('/about/')
-def render_about_page():
+@app.route('/team/')
+def render_team_page():
     '''
-    Renders the about page from jinja2 template
+    Renders the team page from jinja2 template
     '''
-    return render_template('about.html')
+    return render_template('team.html')
 
 
 @app.route('/careers/')
@@ -56,7 +53,7 @@ def render_thankyou_page():
 @app.route('/sponsor/')
 def render_sponsor_page():
     '''
-    Renders the careers page from jinja2 template
+    Renders the sponsor page from jinja2 template
     '''
     return render_template('sponsor.html')
 
@@ -64,7 +61,7 @@ def render_sponsor_page():
 @app.route('/faqs/')
 def render_faqs_page():
     '''
-    Renders the about page from jinja2 template
+    Renders the FAQs page from jinja2 template
     '''
     return render_template('faqs.html')
 
@@ -72,7 +69,7 @@ def render_faqs_page():
 @app.route('/openings/')
 def render_openings_page():
     '''
-    Renders the about page from jinja2 template
+    Renders the openings page from jinja2 template
     '''
     return render_template('openings.html')
 
