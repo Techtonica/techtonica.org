@@ -107,6 +107,17 @@
   }
 }
 
+.apprenticeship-header {
+  @include prefix(background-size, cover, webkit moz o);
+  @include prefix(display, flex, webkit moz o);
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100vh;
+  background: url(../img/apprenticeship-mentor.jpg) $main-blue no-repeat top right fixed;
+  background-size: cover;
+}
+
 .full-width-img {
   width: 100%;
 }
