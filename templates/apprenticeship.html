@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Techtonica Apprenticeship
+{% endblock title %}
+
+{% block content %}
+  <div class="main-content">
+      <div class="apprenticeship-header" title="Mentor and apprentice">
+        <div class="main-header__text blue-background">
+          <h1 class="main-header__header">Apprenticeship</h1>
+          <p>Techtonica’s tech apprenticeship and job placement program is for Bay Area adults of underrepresented genders and low incomes.
+          </p>
+        </div>
+      </div>
+      <div class="row row__center what-we-do" id="whatwedo">
+        <div class="column">
+          <h1 class="blue-h1">The Program</h1>
+          <p class="justify">
+          Techtonica's apprenticeship is a free, full-time, six-month program that provides hands-on tech training and job placement to local women and non-binary adults with low incomes. 
+          The first month consists of full-time training. Top performers who meet all requirements will be invited to continue for another five months with stipends.</p>
+          <p>Apprentices will do full-stack web development using JavaScript. Upon successful completion of six months, top participants are placed with partner companies.
+          </p>
+        </div>
+        <div class="column">
+          <img src="{{ url_for('static', filename='img/pairing-at-TTL-min.jpg') }}" alt="Two women code at the Tenderloin Tech Lab." class="full-width-img">
+        </div>
+      </div>
+      <div class="row row__center blue-background why-why" id="why">
+        <div class="column">
+          <img src="{{ url_for('static', filename='img/working-at-laptops-min.jpg') }}" alt="Several coding workshops participants working at laptops" class="full-width-img">
+        </div>
+        <div class="column">
+          <h1>Eligibility</h1>
+          <p class="justify">You are eligible to apply for Techtonica’s apprenticeship if you:
+            <ul>
+              <li>are a woman or non-binary, feminine-adjacent adult</li>
+              <li>are digitally literate, meaning you are very familiar and good with computers and the internet, can type 30+ WPM, and you know how to use a mouse/trackpad, browsers, and email</li>
+              <li>currently earn less than $50,000 per year</li>
+              <li>have housing that will be stable for the duration of the program</li>
+              <li>have lived in the Bay Area for at least a year</li>
+              <li>can legally be employed by our partner companies</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+      <div class="row row__baseline how-it-works" id="howitworks">
+        <h1 class="blue-h1">Application Process</h1>
+        <div class="row">
+          <div class="column column-med centered">
+            <img src="{{ url_for('static', filename='img/lightbulb.png') }}" alt="" aria-hidden="true">
+            <h3>1. Fill out the interest form.</h3>
+            <p>Fill out <a href="bit.ly/free-coding-classes">the interest form</a> completely. Submit by 9/15 for the fall 2017 application round.          
+            </p>
+          </div>
+          <div class="column column-med centered">
+            <img src="{{ url_for('static', filename='img/conversation.png') }}" alt="conversation bubbles icon" aria-hidden="true">
+            <h3>2. If invited, join one of our introductions.</h3>
+            <p>Learn how a web page is made and code your own. There will be several sessions to choose from. Fall 2017's sessions will be between 9/20 and 9/24 in Oakland and San Francisco.</p>
+          </div>
+          <div class="column column-med centered">
+            <img src="{{ url_for('static', filename='img/chalkboard.jpg') }}" alt="chalkboard icon" aria-hidden="true">
+            <h3>3. Attend a coding workshop.</h3>
+            <p>There will be several workshops for you to choose from. Fall 2017's workshops will be on 10/14 and 10/15 in Oakland and San Francisco.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column column-med centered">
+<!--             <img src="{{ url_for('static', filename='img/lightbulb.png') }}" alt="lightbulb" aria-hidden="true"> -->
+            <h3>4. Complete the take-home challenge.</h3>
+            <p>We'll give you a coding challenge to work on at home.</p>
+          </div>
+          <div class="column column-med centered">
+<!--             <img src="{{ url_for('static', filename='img/conversation.png') }}" alt="conversation bubbles icon" aria-hidden="true"> -->
+            <h3>5. Attend an in-person assessment.</h3>
+            <p>Schedule a time to meet us individually to be assessed for fit.</p>
+          </div>
+          <div class="column column-med centered">
+<!--             <img src="{{ url_for('static', filename='img/chalkboard.jpg') }}" alt="chalkboard" aria-hidden="true"> -->
+            <h3>6. Fill out the application form.</h3>
+            <p>The final step is to fill out a long application.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row row__center blue-background howtohelp">
+        <div class="column how-to-help" id="howtohelp">
+          <h1>What We Look For</h1>
+                  <p class="justify">
+             This program is very competitive; we select participants who continuously prove that they are:
+          <ul>
+            <li>self-motivated</li>
+            <li>resilient</li>
+            <li>logical</li>
+            <li>humble</li>
+            <li>respectful</li>
+            <li>persistent</li>
+            <li>punctual</li>
+            <li>responsive to feedback</li>
+            <li>willing to ask questions</li>
+            <li>long-term goal setters</li>
+            <li>able and willing to work with anyone</li>
+            <li>take pride in owning their learning</li>
+            <li>always curious and ready to learn and improve</li>
+            <li>transparent, compassionate communicators</li>
+            <li>hard-working and ready to make sacrifices</li>
+            <li>dedicated to seeing things through to the end</li>
+            <li>willing to meet the apprentice expectations, including abiding by <a href="/conduct">Techtonica's Code of Conduct</a></li>
+          </p>
+        </div>
+        <div class="column">
+          <img src="{{ url_for('static', filename='img/focused-participant-min.jpg') }}" alt="Focused participant at a laptop" class="full-width-img">
+        </div>
+      </div>
+{% endblock content %}

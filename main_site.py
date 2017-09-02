@@ -74,6 +74,14 @@ def render_openings_page():
     return render_template('openings.html')
 
 
+@app.route('/apprenticeship/')
+def render_apprenticeship_page():
+    '''
+    Renders the apprenticeship page from jinja2 template
+    '''
+    return render_template('apprenticeship.html')
+
+
 if __name__ == '__main__':
     app.debug = False
     # app.run(host='0.0.0.0', port=9999)
