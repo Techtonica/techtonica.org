@@ -87,7 +87,7 @@
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/laptop-techtonica-sticker-student.jpg) $main-blue no-repeat top right fixed;
+  background: url(../img/laptop-techtonica-sticker-participant.jpg) $main-blue no-repeat top right fixed;
   background-size: cover;
 }
 
@@ -315,7 +315,7 @@ a:hover {
   .main-header {
     display: block;
     position: relative;
-    background: url(../img/laptop-techtonica-sticker-student.jpg) $main-blue no-repeat top center;
+    background: url(../img/laptop-techtonica-sticker-participant.jpg) $main-blue no-repeat top center;
     @include prefix(background-size, contain, webkit moz o);
   }
 

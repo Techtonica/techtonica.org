@@ -6,11 +6,11 @@ currently hosted on DreamHost.
 ### Who
 
 The main audience of the website is made up of (potential) volunteers and
-sponsors. (Students will be contacted via local organizations.)
+sponsors. (Apprentices will be contacted via local organizations.)
 
 ### What
 
-We need to effectively communicate that Techtonica and its students are worth
+We need to effectively communicate that Techtonica and its apprentices are worth
 supporting.
 
 ### How
