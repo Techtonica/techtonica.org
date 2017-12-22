@@ -9,8 +9,8 @@
       <div class="main-header">
         <div class="main-header__text blue-background">
           <h1 class="main-header__header">#BridgeTheTechGap</h1>
-          <p>We partner with tech companies to offer tech apprenticeships with stipends and job placement to Bay Area women and non-binary, feminine-adjacent adults with low incomes.</p>
-          <h2><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JK79ZYMRLEWDA" class="sponsor" id="orange-button" target="_blank">Make a donation today!</a></h2>
+          <p>We offer tech apprenticeships with stipends and job placement to Bay Area women and non-binary, feminine-adjacent adults with low incomes.</p>
+          <h2><a href="{{ url_for('render_donate_page') }}" class="sponsor" id="orange-button" target="_blank">Make a donation today!</a></h2>
         </div>
       </div>
       <div class="row row__center what-we-do" id="whatwedo">
@@ -60,7 +60,7 @@
           <h1>How to Help</h1>
           <p class="justify">
             <ul>
-              <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JK79ZYMRLEWDA" class="hover-link" target="_blank">Donate</a> (donations are tax-deductible, $1000 will get your face on this page, and you can sign up to donate monthly).</li>
+              <li><a href="{{ url_for('render_faqs_page') }}" class="hover-link" target="_blank">Donate</a> (donations are tax-deductible, $1000 will get your face on this page, and you can sign up to donate monthly).</li>
               <li>Encourage your company to <a href="{{ url_for('render_sponsor_page') }}">sponsor and hire apprentices</a>.</li>
 <!--               <li>Encourage your company to <a href="https://goo.gl/forms/Q88hao4ApxVFl76N2" class="hover-link" target="_blank">sponsor and hire apprentices</a></li> -->
               <li><a href="http://bit.ly/volunteer-with-Techtonica" class="hover-link" target="_blank">Sign up to volunteer</a>.</li>
@@ -200,7 +200,7 @@
           </div>
         </div>
         <div class="row row__center blue-background a-word-from-supporters" id="a-word">
-          <h2 id="quotes">“[The participants] were so impressive. I was blown away. Any one of them would be a great asset.” -Michelle Krejci, supporter and engineer</h2>
+          <h2 id="quotes">“[The participants] were so impressive. I was blown away. Any one of them would be a great asset.” -Michelle Krejci, Pantheon engineer</h2>
             </div>
       </div>
 {% endblock content %}
