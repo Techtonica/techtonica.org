@@ -81,6 +81,13 @@ def render_apprenticeship_page():
     '''
     return render_template('apprenticeship.html')
 
+@app.route('/donate/')
+def render_home_page():
+    '''
+    Renders the donate page from jinja2 template
+    '''
+    return render_template('donate.html')
+
 
 if __name__ == '__main__':
     app.debug = False
