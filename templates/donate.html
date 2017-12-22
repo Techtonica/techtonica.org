@@ -6,202 +6,29 @@
 
 {% block content %}
   <div class="main-content">
-      <div class="main-header">
-        <div class="main-header__text blue-background">
-          <h1 class="main-header__header">#BridgeTheTechGap</h1>
-          <p>Your donation will directly benefit the participants of our apprenticeship program, help increase diversity in tech, and empower locals in need!</p>
-          <h2><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JK79ZYMRLEWDA" class="sponsor" id="orange-button" target="_blank">Make a donation today!</a></h2>
-        </div>
+    <div class="main-header">
+      <div class="main-header__text blue-background">
+        <h1 class="main-header__header">Help us bridge the tech opportunity gap.</h1>
+        <p>Donate today to directly benefit the participants of our six-month tech apprenticeship program, help increase diversity in tech, and empower locals in need!</p>
+      </div>
       </div>
       <div class="row row__center what-we-do" id="whatwedo">
+        <h1 class="blue-h1">Donate through one of the following</h1>
         <div class="column">
-          <h1 class="blue-h1">Donate Now!</h1>
-          <h2><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JK79ZYMRLEWDA" class="sponsor" id="orange-button" target="_blank">PayPal</a></h2>
-          <p class="justify">We're like a coding bootcamp, but free, and we cover more than just web development. Our full-time program is longer than most at six months, it's followed by job placement, and it's specifically for local women and non-binary femme adults in need. Companies partner with us to provide mentoring and to formulate criteria and curriculum. (See what else sets us apart in <a href="{{ url_for('render_faqs_page') }}">our FAQs</a>.)</p>
-        </div>
-        <div class="column">
-          <img src="{{ url_for('static', filename='img/michelle-teaching-small-min.jpg') }}" alt="Two women sit at a computer, working together on some code." class="full-width-img">
-        </div>
-      </div>
-      <div class="row row__center blue-background why-why" id="why">
-        <div class="column">
-          <img src="{{ url_for('static', filename='img/Tenderloin.jpg') }}" alt="Street, sidewalks, and building in the Tenderloin neighborhood of San Francisco." class="full-width-img">
+          <h2>Credit, Debit, or PayPal</h2>
+          <h3><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JK79ZYMRLEWDA" class="sponsor" id="orange-button" target="_blank">Click here to donate to Social Good's PayPal.</a></h3>
         </div>
         <div class="column">
-          <h1>Why</h1>
-          <p class="justify">The tech industry in the Bay Area is causing displacement and increasing income disparity. The industry also needs to build more diverse technical teams.</p>
-          <p class="justify">We asked, "What if we could help tech companies build much-needed diverse technical teams by having them sponsor training for underrepresented, underprivileged locals who need jobs the most?"</p>
-        </div>
-      </div>
-      <div class="row row__baseline how-it-works" id="howitworks">
-        <h1 class="blue-h1">How it Works</h1>
-        <div class="row">
-            <div class="column column-med centered">
-              <img src="{{ url_for('static', filename='img/lightbulb.png') }}" alt="" aria-hidden="true">
-              <h3>Vetting</h3>
-              <p>Techtonica conducts free intro workshops with local organizations and labs.</p> <p>We invite the best participants to apply to be full-time apprentices.</p>
-            </div>
-            <div class="column column-med centered">
-              <img src="{{ url_for('static', filename='img/conversation.png') }}" alt="" aria-hidden="true">
-              <h3>Partner Companies</h3>
-              <p>Partner companies sponsor the apprenticeships and provide mentors.</p>
-              <p>They have a say in the curriculum and receive inclusion training in preparation for employing one of their top-rated apprentices at the end of the program.</p>
-              <p>The sponsorship is tax-deductible.</p>
-            </div>
-            <div class="column column-med centered">
-              <img src="{{ url_for('static', filename='img/chalkboard.jpg') }}" alt="" aria-hidden="true">
-              <h3>Apprenticeship</h3>
-              <p>Accepted apprentices receive living stipends, laptops, and up to six months of full-time, hands-on training that includes lectures, projects, open-source contributions, and experienced guidance.</p>
-              <p>Upon completion of the program, apprentices are placed with partner companies.</p>
-            </div>
-        </div>
-      </div>
-      <div class="row row__center blue-background howtohelp">
-        <div class="column how-to-help" id="howtohelp">
-          <h1>How to Help</h1>
-          <p class="justify">
-            <ul>
-              <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=JK79ZYMRLEWDA" class="hover-link" target="_blank">Donate</a> (donations are tax-deductible, $1000 will get your face on this page, and you can sign up to donate monthly).</li>
-              <li>Encourage your company to <a href="{{ url_for('render_sponsor_page') }}">sponsor and hire apprentices</a>.</li>
-<!--               <li>Encourage your company to <a href="https://goo.gl/forms/Q88hao4ApxVFl76N2" class="hover-link" target="_blank">sponsor and hire apprentices</a></li> -->
-              <li><a href="http://bit.ly/volunteer-with-Techtonica" class="hover-link" target="_blank">Sign up to volunteer</a>.</li>
-            </ul>
-         </p>
-          <p class="justify">To receive updates, please <a id="open-popup" class="hover-link newsletter pad-lv3 pad-tb0" href="http://eepurl.com/cNFqmj" target="_blank">sign up for our newsletter</a>.</p>
+          <h2>Venmo</h2>
+          <h3><a href="/" class="sponsor" id="orange-button" target="_blank">Venmo your donation to @socialgoodfund and indicate it's for Techtonica.</a></h3>
         </div>
         <div class="column">
-          <img src="{{ url_for('static', filename='img/listening-volunteers-min.png') }}" alt="Volunteers listening to woman speaking" class="full-width-img">
+          <h2>Check</h2>
+          <h3><a href="/" class="sponsor" id="orange-button" target="_blank">Write your check to Social Good Fund, indicate it's for Techtonica on the memo line, and mail it to: 
+            P.O. Box 5473
+            Richmond, CA 94805</a><h3>
         </div>
       </div>
-      <div class="row row__center our-supporters" id="supporters">
-          <h1 class="blue-h1">Thank you for your support!</h1>
-          <div class="row">
-            <div class="column centered">
-              <a href="http://sfpl.org/" target="_blank">
-                <img src="{{ url_for('static', filename='img/sfpl-logo.jpg') }}"
-                  alt="San Francisco Public Library logo"
-                  class="twenty-percent-width min-width-250 margin-25">
-              </a>
-              <a href="https://blog.rackspace.com/the-rackspace-startup-program" target="_blank">
-                <img src="{{ url_for('static', filename='img/rackspace-startups-logo.png') }}"
-                  alt="Rackspace Startups logo"
-                  class="twenty-percent-width min-width-250 margin-25">
-              </a>
-              <a href="https://www.stanthonysf.org/" target="_blank">
-                <img src="{{ url_for('static', filename='img/st-anthonys.jpg') }}"
-                  alt="St. Anthony Foundation logo"
-                  class="twenty-percent-width min-width-250 margin-25">
-              </a>
-              <a href="https://www.zendesk.com/" target="_blank">
-                <img src="{{ url_for('static', filename='img/zendesk-logo-min.png') }}"
-                  alt="Zendesk logo"
-                  class="twenty-percent-width min-width-250 margin-25">
-              </a>
-              <a href="https://www.python.org/psf/" target="_blank">
-                <img src="{{ url_for('static', filename='img/python-software-foundation-logo.jpg') }}"
-                  alt="Python Software Foundation logo"
-                  class="twenty-percent-width min-width-250 margin-25">
-              </a>
-              <a href="http://www.kaporcenter.org/" target="_blank">
-                <img src="{{ url_for('static', filename='img/kapor-center-for-social-impact-logo.jpg') }}"
-                  alt="Kapor Center for Social Impact logo"
-                  class="twenty-percent-width min-width-250 margin-25">
-              </a>
-              <a href="https://www.scienceexchange.com/" target="_blank">
-                <img src="{{ url_for('static', filename='img/scienceexchange_logo.png') }}"
-                  alt="Science Exchange logo"
-                  class="twenty-percent-width min-width-250 margin-25">
-              </a>
-              <a href="https://www.beezwax.net" target="_blank">
-                <img src="{{ url_for('static', filename='img/beezwax-logo.png')}}"
-                  alt="Beezwax logo"
-                  class="twenty-percent-width min-width-250 margin-25">
-              </a>
-              <a href="http://sfpl.org/?pg=0200006301" target="_blank">
-                <img src="{{ url_for('static', filename='img/bridge-at-main.jpg') }}"
-                  alt="The Bridge at Main: Learning resources, classes, and people who can help."
-                  class="twenty-percent-width min-width-250 margin-25">
-              </a>
-              <a href="https://stripe.com/" target="_blank">
-                <img src="{{ url_for('static', filename='img/stripe.png') }}"
-                  alt="Stripe logo"
-                  class="twenty-percent-width min-width-250 margin-25">
-              </a>
-              <a href="https://pantheon.io/" target="_blank">
-                  <img src="{{ url_for('static', filename='img/pantheon-logo-min.jpg') }}"
-                  alt="Pantheon.io logo"
-                  class="twenty-percent-width min-width-250 margin-25">
-              </a>
-              <a href="https://redfin.com" target="_blank">
-                <img src="{{ url_for('static', filename='img/redfin-logo.png') }}"
-                  alt="Redfin logo"
-                  class="twenty-percent-width min-width-250 margin-25">
-              </a>
-              <a href="https://exygy.com/" target="_blank">
-                <img src="{{ url_for('static', filename='img/exygy-logo-min.jpg') }}"
-                  alt="Exygy logo"
-                  class="twenty-percent-width min-width-250 margin-25">
-              </a>
-              <a href="https://www.cloverhealth.com/" target="_blank">
-                <img src="{{ url_for('static', filename='img/clover-health-logo-min.png') }}"
-                  alt="Clover Health logo"
-                  class="twenty-percent-width min-width-250 margin-25">
-              </a>
-              <a href="https://www.moo.com/us/" target="_blank">
-                <img src="{{ url_for('static', filename='img/moo-logo-min.png') }}" 
-                  alt="Moo logo" 
-                  class="twenty-percent-width min-width-250 margin-25">
-              </a>
-              <a href="https://www.quantcast.com" target="_blank">
-                <img src="{{ url_for('static', filename='img/quantcast-logo-min.png') }}" 
-                  alt="Quantcast logo" 
-                  class="twenty-percent-width min-width-250 margin-25">
-              </a>
-              <a href="https://www.ancestry.com" target="_blank">
-                <img src="{{ url_for('static', filename='img/ancestry-logo-min.png') }}" 
-                  alt="Ancestry logo" 
-                  class="twenty-percent-width min-width-250 margin-25">
-              </a>
-              <a href="https://github.com/gsong" target="_blank">
-                <img src="{{ url_for('static', filename='img/George-Song.png') }}" 
-                  alt="George Song" 
-                  class="twenty-percent-width max-size-100px margin-25">
-              </a>
-              <a href="https://twitter.com/scott_triglia" target="_blank">
-                <img src="{{ url_for('static', filename='img/Scott-Triglia.jpg') }}" 
-                alt="Scott Triglia" 
-                class="twenty-percent-width max-size-100px margin-25">
-              </a>
-              <a href="https://www.linkedin.com/in/vwfchan/" target="_blank">
-                <img src="{{ url_for('static', filename='img/Vivien-Chan.jpg') }}" 
-                  alt="Vivien Chan" 
-                  class="twenty-percent-width max-size-100px margin-25">
-              </a>
-              <a href="https://twitter.com/avh4" target="_blank">
-                <img src="{{ url_for('static', filename='img/Aaron-VonderHaar-min.jpg') }}" 
-                  alt="Aaron VonderHaar" 
-                  class="twenty-percent-width max-size-100px margin-25">
-              </a>
-              <a href="https://www.linkedin.com/in/ariannawillett/" target="_blank">
-                <img src="{{ url_for('static', filename='img/Arianna-Willett-min.jpg') }}" 
-                  alt="Arianna Willett" 
-                  class="twenty-percent-width max-size-100px margin-25">
-              </a>
-              <a href="https://www.linkedin.com/in/bnakamura/" target="_blank">
-                <img src="{{ url_for('static', filename='img/Beth-Nakamura-min.jpg') }}" 
-                  alt="Beth Nakamura" 
-                  class="twenty-percent-width max-size-100px margin-25">
-              </a>
-              <a href="https://twitter.com/sharonw" target="_blank">
-                <img src="{{ url_for('static', filename='img/Sharon-Wong-min.jpg') }}" 
-                  alt="Sharon Wong" 
-                  class="twenty-percent-width max-size-100px margin-25">
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="row row__center blue-background a-word-from-supporters" id="a-word">
-          <h2 id="quotes">“[The participants] were so impressive. I was blown away. Any one of them would be a great asset.” -Michelle Krejci, supporter and engineer</h2>
-            </div>
-      </div>
+    </div>
+  </div>
 {% endblock content %}
