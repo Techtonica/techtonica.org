@@ -73,6 +73,26 @@ def render_openings_page():
     '''
     return render_template('openings.html')
 
+@app.route('/openings/facilitator/')
+def render_facilitator_page():
+    '''
+    Renders the openings page from jinja2 template
+    '''
+    return render_template('facilitator.html')
+
+@app.route('/openings/businessdev/')
+def render_businessdev_page():
+    '''
+    Renders the openings page from jinja2 template
+    '''
+    return render_template('businessdev.html')
+
+@app.route('/openings/board/')
+def render_board_page():
+    '''
+    Renders the openings page from jinja2 template
+    '''
+    return render_template('board.html')
 
 @app.route('/apprenticeship/')
 def render_apprenticeship_page():

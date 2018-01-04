@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Techtonica: Bridging the Tech Gap — Careers
+{% endblock title %}
+
+{% block content %}
+  <div class="row row__center about-us">
+    <div class="column hidden-med">
+      <img src="{{ url_for('static', filename='img/make-a-difference-instructor.jpg') }}"
+           alt="A mentor works with a participant at a laptop." 
+           class="fixed-img" style="width:38%;">
+    </div>
+    <div class="column">
+      <h1 class="blue-h1">Openings</h1>
+      <p class="justify">Techtonica is a new nonprofit that offers women and non-binary, feminine-adjacent adults with low incomes free tech training, along with living and childcare stipends, then places them in positions at sponsoring companies that are ready to support more diverse teams. You can <a href="https://medium.com/@michelleglauser/techtonica-how-to-diversify-tech-and-help-neighbors-in-need-837d5f0b40bc">read more here</a>.</p>
+      <h3>Make an Impact as Our Business Development Representative!</h3>
+
+      <p class="justify">Techtonica offers a life-changing learning experience to participants. We care deeply about helping our apprentices become high-quality developers.</p>
+
+      <p class="justify">We are seeking a committed individual to secure sponsors for Techtonica’s apprenticeship program so we can help more women and non-binary adults with low incomes learn tech skills and work in the industry.</p>
+
+      <p class="justify">The ideal candidate will be passionate about the cause and the position and have the ability to create positive partnerships and successfully close deals quickly.</p>
+
+      <p class="justify">Responsibilities:
+      <ul>
+        <li>Work part-time</li>
+        <li>Coordinate with CEO on strategy (the program’s selling points) and progress</li>
+        <li>Quickly create, drive, and manage pipeline opportunities through the sales cycle</li>
+        <li>Reach out and follow up with new and existing potential organizations to donate, sponsor, and hire</li>
+        <li>Manage sponsor outreach in Salesforce’s Nonprofit CRM</li>
+      </ul>
+      </p>
+
+      <p class="justify">What we're looking for:
+        <ul>
+          <li>Proven experience in building strong financial partnerships</li>
+          <li>Proven working experience as a business development manager or a relevant role</li>
+          <li>Friendly and energetic personality</li>
+          <li>Great at negotiating, opportunity-spotting, and being adaptable with offerings</li>
+          <li>Familiarity with pipeline tools and managing multiple clients</li>
+          <li>Ability to juggle multiple tasks and manage multiple priorities at the same time without mixing them up</li>
+          <li>Proficiency in CRM software (Salesforce)</li>
+          <li>Proficiency in English</li>
+        </ul>
+      </p>
+      <a href="mailto:info@badmail.techtonica.org?Subject=Techtonica%20Contact%20Us" class="contact" target="_blank" ><img src="{{ url_for('static', filename='img/contact-us.jpg') }}" class="contact" alt="Contact us at info@techtonica.org"></a>
+    </div>
+  </div>
+{% endblock content %}
