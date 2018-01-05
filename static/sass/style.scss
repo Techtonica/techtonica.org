@@ -199,11 +199,11 @@
 }
 
 #quotes {
-  
+
   color: white;
   font-size: 2em;
   letter-spacing: 2px;
-  
+
 }
 
 a:hover {
@@ -217,8 +217,8 @@ a:hover {
 }
 
 .stars {
-  height: 90px; 
-  margin-right: 5px; 
+  height: 90px;
+  margin-right: 5px;
   margin-bottom: 5px;
 }
 
@@ -230,6 +230,26 @@ a:hover {
 
 .hidden-lg {
   display: none;
+}
+
+table.mentor {
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+
+  td {
+    border-bottom: 1px solid #000;
+	padding: 1rem;
+
+	ul {
+		margin: 0;
+	}
+  }
+
+  td:first-of-type {
+    border-right: 1px solid #000;
+	vertical-align: top;
+  }
 }
 
 @media only screen and (max-width: 1024px) {

@@ -262,6 +262,19 @@ a:hover {
 .hidden-lg {
   display: none; }
 
+table.mentor {
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000; }
+  table.mentor td {
+    border-bottom: 1px solid #000;
+    padding: 1rem; }
+    table.mentor td ul {
+      margin: 0; }
+  table.mentor td:first-of-type {
+    border-right: 1px solid #000;
+    vertical-align: top; }
+
 @media only screen and (max-width: 1024px) {
   .row {
     padding: 2em; }

@@ -94,6 +94,13 @@ def render_board_page():
     '''
     return render_template('board.html')
 
+@app.route('/mentor/')
+def render_mentor_page():
+    '''
+    Renders the mentor page from jinja2 template
+    '''
+    return render_template('mentor.html')
+
 @app.route('/apprenticeship/')
 def render_apprenticeship_page():
     '''
