@@ -22,7 +22,9 @@
         </div>
         <div class="column">
 <!--           <img src="{{ url_for('static', filename='img/michelle-teaching-small-min.jpg') }}" alt="Two women sit at a computer, working together on some code." class="full-width-img"> -->
-          <img src="{{ url_for('static', filename='img/apprentices-2018-min.jpg') }}" alt="First cohort of 2018 at the Embarcadero." class="full-width-img">
+          <a href="{{ url_for('render_sponsor_page') }}">
+            <img src="{{ url_for('static', filename='img/apprentices-2018-min.jpg') }}" alt="First cohort of 2018 at the Embarcadero." class="full-width-img">
+          </a>
         </div>
       </div>
       <div class="row row__center blue-background why-why" id="why">
