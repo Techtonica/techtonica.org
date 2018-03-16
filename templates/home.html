@@ -9,17 +9,20 @@
       <div class="main-header">
         <div class="main-header__text blue-background">
           <h1 class="main-header__header">#BridgeTheTechGap</h1>
-          <p>We offer tech apprenticeships with stipends and job placement to Bay Area women and non-binary, feminine-adjacent adults with low incomes.</p>
-          <h2><a href="{{ url_for('render_donate_page') }}" class="sponsor" id="orange-button" target="_blank">Make a donation today!</a></h2>
+          <p>We partner with companies to offer tech apprenticeships with stipends and job placement to Bay Area women and non-binary adults with low incomes. We're seeking sponsors now!</p>
+          <h2><a href="{{ url_for('render_sponsor_page') }}" class="sponsor" id="orange-button" target="_blank">Become a sponsor!</a></h2>
         </div>
       </div>
       <div class="row row__center what-we-do" id="whatwedo">
         <div class="column">
-          <h1 class="blue-h1">What We Do</h1>
-          <p class="justify">We're like a coding bootcamp, but free, and we cover more than just web development. Our full-time program is longer than most at six months, it's followed by job placement, and it's specifically for local women and non-binary femme adults in need. Companies partner with us to provide mentoring and to formulate criteria and curriculum. (See what else sets us apart in <a href="{{ url_for('render_faqs_page') }}">our FAQs</a>.)</p>
+          <h1 class="blue-h1">Our Apprentices</h1>
+          <p class="justify">Does your company care about its social footprint? Are you hiring engineers? We are seeking sponsors for our apprentices, who were the 8% of applicants selected for our program. By the time they graduate in June 2018, they will do more than 900 hours of project-based learning developed by industry professionals. To secure one of the apprentices for your team, please <a href="{{ url_for('render_sponsor_page') }}">check out more details here</a> and get in touch!
+<!--           <h1 class="blue-h1">What We Do</h1>
+          <p class="justify">We're like a coding bootcamp, but free, and we cover more than just web development. Our full-time program is longer than most at six months, it's followed by job placement, and it's specifically for local women and non-binary femme adults in need. Companies partner with us to provide mentoring and to formulate criteria and curriculum. (See what else sets us apart in <a href="{{ url_for('render_faqs_page') }}">our FAQs</a>.)</p> -->
         </div>
         <div class="column">
-          <img src="{{ url_for('static', filename='img/michelle-teaching-small-min.jpg') }}" alt="Two women sit at a computer, working together on some code." class="full-width-img">
+<!--           <img src="{{ url_for('static', filename='img/michelle-teaching-small-min.jpg') }}" alt="Two women sit at a computer, working together on some code." class="full-width-img"> -->
+          <img src="{{ url_for('static', filename='img/apprentices-2018-min.jpg') }}" alt="First cohort of 2018 at the Embarcadero." class="full-width-img">
         </div>
       </div>
       <div class="row row__center blue-background why-why" id="why">
