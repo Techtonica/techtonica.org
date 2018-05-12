@@ -115,6 +115,12 @@ def render_donate_page():
     '''
     return render_template('donate.html')
 
+@app.route('/volunteer/')
+def render_volunteer_page():
+    '''
+    Renders the volunteer page from jinja2 template
+    '''
+    return render_template('volunteer.html')
 
 if __name__ == '__main__':
     app.debug = False
