@@ -12,10 +12,6 @@ $(document).ready(function() {
     scrollDown('what-we-do', 1000);
   });
 
-  $('.howtohelp').click(function() {
-    scrollDown('how-to-help', 1000);
-  });
-
   $('.supporters').click(function() {
     scrollDown('our-supporters', 1000)
   });

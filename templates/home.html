@@ -60,23 +60,6 @@
             </div>
         </div>
       </div>
-      <div class="row row__center blue-background howtohelp">
-        <div class="column how-to-help" id="howtohelp">
-          <h1>How to Help</h1>
-          <p class="justify">
-            <ul>
-              <li><a href="{{ url_for('render_donate_page') }}" class="hover-link" target="_blank">Donate</a> (donations are tax-deductible, $1000 will get your face on this page, and you can sign up to donate monthly).</li>
-              <li>Encourage your company to <a href="{{ url_for('render_sponsor_page') }}">sponsor and hire apprentices</a>.</li>
-<!--               <li>Encourage your company to <a href="https://goo.gl/forms/Q88hao4ApxVFl76N2" class="hover-link" target="_blank">sponsor and hire apprentices</a></li> -->
-              <li><a href="http://bit.ly/volunteer-with-Techtonica" class="hover-link" target="_blank">Sign up to volunteer</a>.</li>
-            </ul>
-         </p>
-          <p class="justify">To receive updates, please <a id="open-popup" class="hover-link newsletter pad-lv3 pad-tb0" href="http://eepurl.com/cNFqmj" target="_blank">sign up for our newsletter</a>.</p>
-        </div>
-        <div class="column">
-          <img src="{{ url_for('static', filename='img/listening-volunteers-min.png') }}" alt="Volunteers listening to woman speaking" class="full-width-img">
-        </div>
-      </div>
       <div class="row row__center our-supporters" id="supporters">
           <h1 class="blue-h1">Thank you for your support!</h1>
           <div class="row">
@@ -151,59 +134,64 @@
                   alt="Clover Health logo"
                   class="twenty-percent-width min-width-250 margin-25">
               </a>
+              <a href="https://worldwidewomen.co/" target="_blank">
+                <img src="{{ url_for('static', filename='img/world-wide-women-badge.png') }}"
+                  alt="WorldWideWomen badge"
+                  class="twenty-percent-width min-width-250 margin-25">
+              </a>
               <a href="https://www.moo.com/us/" target="_blank">
-                <img src="{{ url_for('static', filename='img/moo-logo-min.png') }}" 
-                  alt="Moo logo" 
+                <img src="{{ url_for('static', filename='img/moo-logo-min.png') }}"
+                  alt="Moo logo"
                   class="twenty-percent-width min-width-250 margin-25">
               </a>
               <a href="https://www.quantcast.com" target="_blank">
-                <img src="{{ url_for('static', filename='img/quantcast-logo-min.png') }}" 
-                  alt="Quantcast logo" 
+                <img src="{{ url_for('static', filename='img/quantcast-logo-min.png') }}"
+                  alt="Quantcast logo"
                   class="twenty-percent-width min-width-250 margin-25">
               </a>
               <a href="https://www.ancestry.com" target="_blank">
-                <img src="{{ url_for('static', filename='img/ancestry-logo-min.png') }}" 
-                  alt="Ancestry logo" 
+                <img src="{{ url_for('static', filename='img/ancestry-logo-min.png') }}"
+                  alt="Ancestry logo"
                   class="twenty-percent-width min-width-250 margin-25">
               </a>
               <a href="https://github.com/gsong" target="_blank">
-                <img src="{{ url_for('static', filename='img/George-Song.png') }}" 
-                  alt="George Song" 
+                <img src="{{ url_for('static', filename='img/George-Song.png') }}"
+                  alt="George Song"
                   class="twenty-percent-width max-size-100px margin-25">
               </a>
               <a href="https://twitter.com/scott_triglia" target="_blank">
-                <img src="{{ url_for('static', filename='img/Scott-Triglia.jpg') }}" 
-                alt="Scott Triglia" 
+                <img src="{{ url_for('static', filename='img/Scott-Triglia.jpg') }}"
+                alt="Scott Triglia"
                 class="twenty-percent-width max-size-100px margin-25">
               </a>
               <a href="https://www.linkedin.com/in/vwfchan/" target="_blank">
-                <img src="{{ url_for('static', filename='img/Vivien-Chan.jpg') }}" 
-                  alt="Vivien Chan" 
+                <img src="{{ url_for('static', filename='img/Vivien-Chan.jpg') }}"
+                  alt="Vivien Chan"
                   class="twenty-percent-width max-size-100px margin-25">
               </a>
               <a href="https://twitter.com/avh4" target="_blank">
-                <img src="{{ url_for('static', filename='img/Aaron-VonderHaar-min.jpg') }}" 
-                  alt="Aaron VonderHaar" 
+                <img src="{{ url_for('static', filename='img/Aaron-VonderHaar-min.jpg') }}"
+                  alt="Aaron VonderHaar"
                   class="twenty-percent-width max-size-100px margin-25">
               </a>
               <a href="https://www.linkedin.com/in/ariannawillett/" target="_blank">
-                <img src="{{ url_for('static', filename='img/Arianna-Willett-min.jpg') }}" 
-                  alt="Arianna Willett" 
+                <img src="{{ url_for('static', filename='img/Arianna-Willett-min.jpg') }}"
+                  alt="Arianna Willett"
                   class="twenty-percent-width max-size-100px margin-25">
               </a>
               <a href="https://www.linkedin.com/in/bnakamura/" target="_blank">
-                <img src="{{ url_for('static', filename='img/Beth-Nakamura-min.jpg') }}" 
-                  alt="Beth Nakamura" 
+                <img src="{{ url_for('static', filename='img/Beth-Nakamura-min.jpg') }}"
+                  alt="Beth Nakamura"
                   class="twenty-percent-width max-size-100px margin-25">
               </a>
               <a href="https://twitter.com/sharonw" target="_blank">
-                <img src="{{ url_for('static', filename='img/Sharon-Wong-min.jpg') }}" 
-                  alt="Sharon Wong" 
+                <img src="{{ url_for('static', filename='img/Sharon-Wong-min.jpg') }}"
+                  alt="Sharon Wong"
                   class="twenty-percent-width max-size-100px margin-25">
               </a>
               <a href="https://twitter.com/internetross" target="_blank">
-                <img src="{{ url_for('static', filename='img/Ross-Chapman-min.jpg') }}" 
-                  alt="Ross Chapman" 
+                <img src="{{ url_for('static', filename='img/Ross-Chapman-min.jpg') }}"
+                  alt="Ross Chapman"
                   class="twenty-percent-width max-size-100px margin-25">
               </a>
             </div>
