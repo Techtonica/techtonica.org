@@ -114,7 +114,18 @@
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/apprenticeship-mentor.jpg) $main-blue no-repeat top right fixed;
+  background: url(../img/apprentices-long-min.jpg) $main-blue no-repeat top right fixed;
+  background-size: cover;
+}
+
+.apprentice-header {
+  @include prefix(background-size, cover, webkit moz o);
+  @include prefix(display, flex, webkit moz o);
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100vh;
+  background: url(../img/laptop-techtonica-sticker-participant.jpg) $main-blue no-repeat top right fixed;
   background-size: cover;
 }
 
