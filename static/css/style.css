@@ -2,56 +2,70 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-size: 1.2em;
-  line-height: 1.4em; }
+  line-height: 1.4em;
+}
 
 h1, h2, h3, h4, h5, h6 {
   margin: 1.5rem 0;
   color: #0093B5;
   line-height: 1.3em;
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 h1, h2 {
-  letter-spacing: 2px; }
+  letter-spacing: 2px;
+}
 
 h3, h4, h5, h6 {
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+}
 
 body, h1, h2, h3, h4, h5, h6, p {
-  font-family: 'lato', helvetica, sans-serif; }
+  font-family: "lato", helvetica, sans-serif;
+}
 
 h1 {
   color: white;
   text-shadow: 2px 2px 5px #666;
   font-size: 4em;
-  letter-spacing: 4px; }
+  letter-spacing: 4px;
+}
 
 a {
   color: #0093B5;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 button {
   background-color: white;
-  border: 0; }
+  border: 0;
+}
 
 .blue-h1 {
   color: #05556D;
-  text-shadow: 0px 0px 1px #ccc; }
+  text-shadow: 0px 0px 1px #ccc;
+}
 
 .blue-background {
   background-color: #0093B5;
-  color: white; }
-  .blue-background a {
-    color: white;
-    text-decoration: underline;
-    text-shadow: 1px 1px 1px #666; }
-  .blue-background a:hover {
-    color: #16C1F3; }
+  color: white;
+}
+.blue-background a {
+  color: white;
+  text-decoration: underline;
+  text-shadow: 1px 1px 1px #666;
+}
+.blue-background a:hover {
+  color: #16C1F3;
+}
 
 .centered {
-  text-align: center; }
+  text-align: center;
+}
 
 .justify {
-  text-align: justify; }
+  text-align: justify;
+}
 
 .row {
   -webkit-display: flex;
@@ -59,19 +73,23 @@ button {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  padding: 3rem 5rem; }
+  padding: 3rem 5rem;
+}
 
 .row__center {
-  align-items: center; }
+  align-items: center;
+}
 
 .row__baseline {
-  align-items: baseline; }
+  align-items: baseline;
+}
 
 .column {
   -webkit-flex: 1;
   -moz-flex: 1;
   flex: 1;
-  padding: 0 1rem; }
+  padding: 0 1rem;
+}
 
 .nav-bar {
   -webkit-display: inline-flex;
@@ -87,7 +105,8 @@ button {
   height: 5rem;
   background-color: white;
   box-shadow: 0 0 8px 1px #ccc;
-  z-index: 100; }
+  z-index: 100;
+}
 
 .nav-bar-inner {
   -webkit-display: inline-flex;
@@ -98,15 +117,18 @@ button {
   align-items: center;
   width: 100%;
   padding: 5px 1rem 5px 0;
-  background: white; }
+  background: white;
+}
 
 .nav-link {
   flex-grow: 1;
   padding: 1em 0;
-  text-shadow: 0px 0px 1px #ccc; }
+  text-shadow: 0px 0px 1px #ccc;
+}
 
 .nav-link:hover {
-  color: #16C1F3; }
+  color: #16C1F3;
+}
 
 .img-link {
   -webkit-flex: 10;
@@ -114,17 +136,21 @@ button {
   -o-flex: 10;
   flex: 10;
   display: inline-block;
-  order: 1; }
+  order: 1;
+}
 
 .logo {
   width: 170px;
-  padding-left: 1.25rem; }
+  padding-left: 1.25rem;
+}
 
 .mc-closeModal {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
 
 .main-content {
-  margin-top: 4rem; }
+  margin-top: 4rem;
+}
 
 .main-header {
   -webkit-background-size: cover;
@@ -140,18 +166,23 @@ button {
   width: 100%;
   height: 100vh;
   background: url(../img/laptop-techtonica-sticker-participant.jpg) #0093B5 no-repeat top right fixed;
-  background-size: cover; }
+  background-size: cover;
+}
 
 .main-header__text {
   max-width: 50%;
   padding: 0 1.5em;
-  text-shadow: 1px 1px 1px #666; }
+  text-shadow: 1px 1px 1px #666;
+}
 
 .main-header__header {
-  font-size: calc(28px + 24 * (100vw - 320px) / 960); }
-  @media only screen and (min-width: 1200px) {
-    .main-header__header {
-      font-size: 3.5rem; } }
+  font-size: calc(28px + 24 * (100vw - 320px) / 960);
+}
+@media only screen and (min-width: 1200px) {
+  .main-header__header {
+    font-size: 3.5rem;
+  }
+}
 
 .apprenticeship-header {
   -webkit-background-size: cover;
@@ -166,20 +197,45 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/apprenticeship-mentor.jpg) #0093B5 no-repeat top right fixed;
-  background-size: cover; }
+  background: url(../img/apprentices-long-min.jpg) #0093B5 no-repeat top right fixed;
+  background-size: cover;
+}
+
+.apprentice-header {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-display: flex;
+  -moz-display: flex;
+  -o-display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100vh;
+  background: url(../img/laptop-techtonica-sticker-participant.jpg) #0093B5 no-repeat top right fixed;
+  background-size: cover;
+}
 
 .full-width-img {
-  width: 100%; }
+  width: 100%;
+}
 
 .twenty-percent-width {
-  width: 20%; }
+  width: 20%;
+}
+
+.fifteen-percent-width {
+  width: 15%;
+}
 
 .ten-percent-width {
   width: 10%; }
 
 .min-width-250 {
-  min-width: 250px; }
+  min-width: 250px;
+}
 
 .max-size-75px {
   max-height: 75px;
@@ -187,27 +243,33 @@ button {
 
 .resize-400px {
   max-height: 400px;
-  max-width: 400px; }
+  max-width: 400px;
+}
 
 .resize-200px {
   max-height: 200px;
-  max-width: 200px; }
+  max-width: 200px;
+}
 
 .margin-25 {
-  margin: 25px; }
+  margin: 25px;
+}
 
 .fixed-img {
   width: 30%;
   position: fixed;
-  top: 150px; }
+  top: 150px;
+}
 
 .hiring {
   width: 4.5rem;
-  margin: 0.5rem; }
+  margin: 0.5rem;
+}
 
 .social-media {
   width: 3rem;
-  margin: 0.5rem; }
+  margin: 0.5rem;
+}
 
 .contact-us,
 .donate, .sponsor {
@@ -218,111 +280,139 @@ button {
   color: white;
   display: inline-block;
   background-color: #fc7625;
-  text-align: center; }
-  .contact-us:hover,
-  .donate:hover, .sponsor:hover {
-    background-color: #16C1F3;
-    color: white;
-    transition: .3s; }
+  text-align: center;
+}
+.contact-us:hover,
+.donate:hover, .sponsor:hover {
+  background-color: #16C1F3;
+  color: white;
+  transition: 0.3s;
+}
 
 .contact-us {
   margin: 0.5em 0;
-  padding: 0.75em 1.5em; }
+  padding: 0.75em 1.5em;
+}
 
 .sponsor {
   line-height: 36px;
   padding: 25px;
-  margin: 0; }
+  margin: 0;
+}
 
 #orange-button {
-  text-decoration: none; }
-  #orange-button:hover {
-    color: white; }
+  text-decoration: none;
+}
+#orange-button:hover {
+  color: white;
+}
 
 #quotes {
   color: white;
   font-size: 2em;
-  letter-spacing: 2px; }
+  letter-spacing: 2px;
+}
 
 a:hover {
-  color: #16C1F3; }
+  color: #16C1F3;
+}
 
 .sponsor-p {
   font-size: 20px;
   line-height: 35px;
-  text-align: center; }
+  text-align: center;
+}
 
 .stars {
   height: 90px;
   margin-right: 5px;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+}
 
 .sponsorship-levels-img {
   width: 90%;
   height: 90%;
-  padding: 5%; }
+  padding: 5%;
+}
 
 .hidden-lg {
-  display: none; }
+  display: none;
+}
 
 table.mentor {
   border-top: 1px solid #000;
   border-left: 1px solid #000;
-  border-right: 1px solid #000; }
-  table.mentor td {
-    border-bottom: 1px solid #000;
-    padding: 1rem; }
-    table.mentor td ul {
-      margin: 0; }
-  table.mentor td:first-of-type {
-    border-right: 1px solid #000;
-    vertical-align: top; }
+  border-right: 1px solid #000;
+}
+table.mentor td {
+  border-bottom: 1px solid #000;
+  padding: 1rem;
+}
+table.mentor td ul {
+  margin: 0;
+}
+table.mentor td:first-of-type {
+  border-right: 1px solid #000;
+  vertical-align: top;
+}
 
 @media only screen and (max-width: 1024px) {
   .row {
-    padding: 2em; }
+    padding: 2em;
+  }
 
   h1 {
-    font-size: 3.5em; } }
+    font-size: 3.5em;
+  }
+}
 @media only screen and (max-width: 910px) {
   .row {
-    padding: 1.5em 1em; }
+    padding: 1.5em 1em;
+  }
 
   .column-med {
     -webkit-flex: 0 0 40%;
     -moz-flex: 0 0 40%;
     -o-flex: 0 0 40%;
-    flex: 0 0 40%; }
+    flex: 0 0 40%;
+  }
 
   .hidden-med {
-    display: none; }
+    display: none;
+  }
 
   .column {
     -webkit-flex: 0 0 100%;
     -moz-flex: 0 0 100%;
     -o-flex: 0 0 100%;
-    flex: 0 0 100%; }
+    flex: 0 0 100%;
+  }
 
   h1 {
     font-size: 2em;
-    letter-spacing: 0.5px; }
+    letter-spacing: 0.5px;
+  }
 
   .donate {
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     -o-border-radius: 0px;
     border-radius: 0px;
-    color: #fc7625; }
-    .donate:hover {
-      background-color: #fc7625;
-      color: white; }
+    color: #fc7625;
+  }
+  .donate:hover {
+    background-color: #fc7625;
+    color: white;
+  }
 
   .nav-bar {
-    justify-content: space-between; }
+    justify-content: space-between;
+  }
 
   .small-screen-nav {
     flex-flow: column-reverse nowrap;
-    justify-content: flex-end; }
+    justify-content: flex-end;
+  }
 
   .img-link {
     align-items: center;
@@ -330,10 +420,12 @@ table.mentor {
     height: 100%;
     left: 0;
     position: absolute;
-    top: 0; }
+    top: 0;
+  }
 
   .nav-link {
-    display: none; }
+    display: none;
+  }
 
   .nav-link--mobile {
     display: inline-block;
@@ -343,10 +435,12 @@ table.mentor {
     background-color: white;
     text-align: center;
     min-height: 1.4em;
-    z-index: 1; }
+    z-index: 1;
+  }
 
   .nav-link--mobile:last-child {
-    border-bottom: 1px solid #ccc; }
+    border-bottom: 1px solid #ccc;
+  }
 
   .main-header {
     display: block;
@@ -355,23 +449,28 @@ table.mentor {
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
-    background-size: contain; }
+    background-size: contain;
+  }
 
   .main-header__text {
     position: absolute;
     bottom: 0;
     max-width: 100%;
     width: auto;
-    padding: 0 1em; }
+    padding: 0 1em;
+  }
 
   .main-content {
-    margin-top: 5rem; }
+    margin-top: 5rem;
+  }
 
   .hidden-sm {
-    display: none; }
+    display: none;
+  }
 
   .hidden-lg {
-    display: inline-block; }
+    display: inline-block;
+  }
 
   .lines-button {
     position: absolute;
@@ -379,7 +478,7 @@ table.mentor {
     top: 0;
     margin: 0.5rem 0;
     padding: 1.5rem 1rem;
-    transition: .3s;
+    transition: 0.3s;
     cursor: pointer;
     user-select: none;
     border-radius: 0.4285714286rem; }
@@ -415,59 +514,80 @@ table.mentor {
       top: -0.75rem; }
 
   .lines-button:hover {
-    opacity: 1; }
-    .lines-button:hover .lines:before {
-      top: 1rem; }
-    .lines-button:hover .lines:after {
-      top: -1rem; }
+    opacity: 1;
+  }
+  .lines-button:hover .lines:before {
+    top: 1rem;
+  }
+  .lines-button:hover .lines:after {
+    top: -1rem;
+  }
 
   .lines-button.x.close .lines {
     /*hide the middle line*/
     background: transparent;
-    /*overlay the lines by setting both their top values to 0*/ }
-    .lines-button.x.close .lines:before, .lines-button.x.close .lines:after {
-      transform-origin: 50% 50%;
-      top: 0;
-      width: 2.5em; }
-    .lines-button.x.close .lines:before {
-      transform: rotate3d(0, 0, 1, 45deg); }
-    .lines-button.x.close .lines:after {
-      transform: rotate3d(0, 0, 1, -45deg); }
+    /*overlay the lines by setting both their top values to 0*/
+  }
+  .lines-button.x.close .lines:before, .lines-button.x.close .lines:after {
+    transform-origin: 50% 50%;
+    top: 0;
+    width: 2.5em;
+  }
+  .lines-button.x.close .lines:before {
+    transform: rotate3d(0, 0, 1, 45deg);
+  }
+  .lines-button.x.close .lines:after {
+    transform: rotate3d(0, 0, 1, -45deg);
+  }
 
   .contact-us {
-    display: block; }
+    display: block;
+  }
 
   .nav-bar-inner {
     padding: 0;
-    margin-top: 5rem; } }
+    margin-top: 5rem;
+  }
+}
 /* iphone 4 and 4s media query */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
   .main-header__text {
     font-size: 1rem;
-    height: 50vh; } }
+    height: 50vh;
+  }
+}
 /* iphone 4 and 4s landscape media query */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .main-header {
     background-size: cover;
-    font-size: 14px; }
+    font-size: 14px;
+  }
 
   .main-content {
-    font-size: 14px; } }
+    font-size: 14px;
+  }
+}
 /* Samsung Galaxy s5 portrait media query */
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
   .main-header__text {
-    font-size: 1rem; }
+    font-size: 1rem;
+  }
 
   .main-header_text p {
-    margin-bottom: 20px; } }
+    margin-bottom: 20px;
+  }
+}
 /* Samsung Galaxy s5 landscape media query */
 @media screen and (device-width: 640px) and (device-height: 360px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
   .main-header__text {
     font-size: 1rem;
-    height: 50vh; }
+    height: 50vh;
+  }
 
   .main-header {
     height: 500px;
-    background-size: cover; } }
+    background-size: cover;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
