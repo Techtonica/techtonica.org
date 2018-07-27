@@ -175,12 +175,15 @@ button {
 .twenty-percent-width {
   width: 20%; }
 
+.fifteen-percent-width {
+  width: 15%; }
+
 .min-width-250 {
   min-width: 250px; }
 
-.max-size-100px {
-  max-height: 100px;
-  max-width: 100px; }
+.max-size-75px {
+  max-height: 75px;
+  max-width: 75px; }
 
 .resize-400px {
   max-height: 400px;
@@ -379,7 +382,7 @@ table.mentor {
     transition: .3s;
     cursor: pointer;
     user-select: none;
-    border-radius: 0.42857rem; }
+    border-radius: 0.4285714286rem; }
     .lines-button:hover {
       opacity: 1; }
     .lines-button:active {
@@ -389,23 +392,23 @@ table.mentor {
   .lines {
     display: inline-block;
     width: 3rem;
-    height: 0.42857rem;
+    height: 0.4285714286rem;
     background: #16C1F3;
-    border-radius: 0.21429rem;
+    border-radius: 0.2142857143rem;
     transition: 0.3s;
     position: relative;
     /*create the upper and lower lines as pseudo-elements of the middle line*/ }
     .lines:before, .lines:after {
       display: inline-block;
       width: 3rem;
-      height: 0.42857rem;
+      height: 0.4285714286rem;
       background: #16C1F3;
-      border-radius: 0.21429rem;
+      border-radius: 0.2142857143rem;
       transition: 0.3s;
       position: absolute;
       left: 0;
       content: '';
-      transform-origin: 0.21429rem center; }
+      transform-origin: 0.2142857143rem center; }
     .lines:before {
       top: 0.75rem; }
     .lines:after {
