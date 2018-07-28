@@ -197,7 +197,7 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/apprentices-long-min.jpg) #0093B5 no-repeat top right fixed;
+  background: url(../img/laptop-techtonica-sticker-participant.jpg) #0093B5 no-repeat top right fixed;
   background-size: cover;
 }
 
@@ -214,7 +214,7 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/laptop-techtonica-sticker-participant.jpg) #0093B5 no-repeat top right fixed;
+  background: url(../img/apprentices-long-min.jpg) #0093B5 no-repeat top right fixed;
   background-size: cover;
 }
 
@@ -226,12 +226,9 @@ button {
   width: 20%;
 }
 
-.fifteen-percent-width {
-  width: 15%;
-}
-
 .ten-percent-width {
-  width: 10%; }
+  width: 10%;
+}
 
 .min-width-250 {
   min-width: 250px;
@@ -239,7 +236,8 @@ button {
 
 .max-size-75px {
   max-height: 75px;
-  max-width: 75px; }
+  max-width: 75px;
+}
 
 .resize-400px {
   max-height: 400px;
@@ -311,6 +309,13 @@ button {
   color: white;
   font-size: 2em;
   letter-spacing: 2px;
+}
+
+.large-white-text {
+  color: white;
+  font-size: 2em;
+  letter-spacing: 2px;
+  text-align: center;
 }
 
 a:hover {
@@ -481,12 +486,15 @@ table.mentor td:first-of-type {
     transition: 0.3s;
     cursor: pointer;
     user-select: none;
-    border-radius: 0.4285714286rem; }
-    .lines-button:hover {
-      opacity: 1; }
-    .lines-button:active {
-      transition: 0;
-      background: rgba(0, 0, 0, 0.1); }
+    border-radius: 0.4285714286rem;
+  }
+  .lines-button:hover {
+    opacity: 1;
+  }
+  .lines-button:active {
+    transition: 0;
+    background: rgba(0, 0, 0, 0.1);
+  }
 
   .lines {
     display: inline-block;
@@ -496,22 +504,26 @@ table.mentor td:first-of-type {
     border-radius: 0.2142857143rem;
     transition: 0.3s;
     position: relative;
-    /*create the upper and lower lines as pseudo-elements of the middle line*/ }
-    .lines:before, .lines:after {
-      display: inline-block;
-      width: 3rem;
-      height: 0.4285714286rem;
-      background: #16C1F3;
-      border-radius: 0.2142857143rem;
-      transition: 0.3s;
-      position: absolute;
-      left: 0;
-      content: '';
-      transform-origin: 0.2142857143rem center; }
-    .lines:before {
-      top: 0.75rem; }
-    .lines:after {
-      top: -0.75rem; }
+    /*create the upper and lower lines as pseudo-elements of the middle line*/
+  }
+  .lines:before, .lines:after {
+    display: inline-block;
+    width: 3rem;
+    height: 0.4285714286rem;
+    background: #16C1F3;
+    border-radius: 0.2142857143rem;
+    transition: 0.3s;
+    position: absolute;
+    left: 0;
+    content: "";
+    transform-origin: 0.2142857143rem center;
+  }
+  .lines:before {
+    top: 0.75rem;
+  }
+  .lines:after {
+    top: -0.75rem;
+  }
 
   .lines-button:hover {
     opacity: 1;
