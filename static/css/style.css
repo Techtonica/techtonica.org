@@ -244,6 +244,10 @@ button {
   max-width: 100%;
 }
 
+.max-width-75-percent {
+  max-width: 75%;
+}
+
 .resize-400px {
   max-height: 400px;
   max-width: 400px;
