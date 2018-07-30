@@ -3,3 +3,6 @@
 css/style.css.map
 *.pyc
 *.codekit*
+.env
+env
+env*
