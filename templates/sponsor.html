@@ -9,7 +9,7 @@
     <div class="apprentice-header">
     	<img id="apprentice-hero" src="{{ url_for('static', filename='img/apprentices-long-min.jpg') }}">
     </div>
-    <div class="row row__center blue-background">
+    <div class="row row__center blue-background" style="padding:0;">
     	<h2 class="large-white-text">Sponsor today to help #BridgeTheTechGap!</h2>
     </div>
     <div class="row row__center">
@@ -17,7 +17,7 @@
           <p class="justify">By sponsoring, you're empowering local women and non-binary adults in need with employable tech skills. You’ll also build diversity in tech, gain new perspectives, receive a tax exemption, and lift the local community.</p>
           <p class="justify">Make a positive social impact while filling your technical talent needs.</p>
 	  <p class="justify"><a href="#">Download our info sheet</a></p>
-	  <h2><a href="{{ url_for('render_sponsor_page') }}" class="sponsor" id="orange-button" target="_blank">Contact us about sponsoring</a></h2>
+	  <h2><a href="{{ url_for('render_sponsor_page') }}" class="sponsor" id="orange-button" target="_blank">Discuss sponsoring</a></h2>
         </div>
         <div class="column">
           <a href="">
@@ -35,16 +35,12 @@
         </div>
     </div>
     <div class="row row__center">
-	<div class="column">
+	<div class="column centered">
 	    <a href="https://github.com/Techtonica/curriculum">
-	        <img src="{{ url_for('static', filename='img/technical-topics.png') }}" />
-	    </a>
-	</div>
-	<div class="column">
-	    <a href="">
-	    	<img src="{{ url_for('static', filename='img/1000-hours.png') }}" />
+	        <img src="{{ url_for('static', filename='img/topics-hours.png') }}" class="max-width-100-percent"/>
 	    </a>
         <a href="">Watch demos and placements here</a>
+        </div>
 	</div>
     </div>		
 </div>
