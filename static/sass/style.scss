@@ -518,3 +518,47 @@ table.mentor {
         background-size: cover;
     }
 }
+
+.progress-bg {
+  margin: 0 auto;
+  width: 65%;
+  height: 78px;
+  border-radius: 10px;
+  text-align: center;
+  -moz-box-shadow:    inset 0 0 10px #ccc;
+  -webkit-box-shadow: inset 0 0 10px black;
+  box-shadow:         inset 0 0 10px black;
+  background-color: white;
+}
+
+.progress-bar {
+  height: 78px;
+  border-radius: 10px;
+  float: left;
+  width: 50%;
+  background-color: #fc7625; 
+}
+
+.progress-bg h3.goal, .progress-bg h3.raised {
+  line-height: 78px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: inline;
+}
+
+.progress-bg h3.goal {
+  color: #fff;
+}
+
+.progress-bg h3.goal {
+  color: #fc7625;
+  text-align: center;
+}
+
+.progress-bg h3.goal {
+  float: right;
+  display: inline;
+  padding: 0 25px 0 0;
+  text-align: center;
+}
