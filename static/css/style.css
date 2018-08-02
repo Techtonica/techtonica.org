@@ -197,7 +197,7 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/apprentices-long-min.jpg) #0093B5 no-repeat top right fixed;
+  background: url(../img/laptop-techtonica-sticker-participant.jpg) #0093B5 no-repeat top right fixed;
   background-size: cover;
 }
 
@@ -213,9 +213,10 @@ button {
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  height: 100vh;
-  background: url(../img/laptop-techtonica-sticker-participant.jpg) #0093B5 no-repeat top right fixed;
-  background-size: cover;
+}
+
+#apprentice-hero {
+  width: 100%;
 }
 
 .full-width-img {
@@ -226,12 +227,9 @@ button {
   width: 20%;
 }
 
-.fifteen-percent-width {
-  width: 15%;
-}
-
 .ten-percent-width {
-  width: 10%; }
+  width: 10%;
+}
 
 .min-width-250 {
   min-width: 250px;
@@ -239,7 +237,16 @@ button {
 
 .max-size-75px {
   max-height: 75px;
-  max-width: 75px; }
+  max-width: 75px;
+}
+
+.max-width-100-percent {
+  max-width: 100%;
+}
+
+.max-width-75-percent {
+  max-width: 75%;
+}
 
 .resize-400px {
   max-height: 400px;
@@ -311,6 +318,13 @@ button {
   color: white;
   font-size: 2em;
   letter-spacing: 2px;
+}
+
+.large-white-text {
+  color: white;
+  font-size: 2em;
+  letter-spacing: 2px;
+  text-align: center;
 }
 
 a:hover {
@@ -481,12 +495,15 @@ table.mentor td:first-of-type {
     transition: 0.3s;
     cursor: pointer;
     user-select: none;
-    border-radius: 0.4285714286rem; }
-    .lines-button:hover {
-      opacity: 1; }
-    .lines-button:active {
-      transition: 0;
-      background: rgba(0, 0, 0, 0.1); }
+    border-radius: 0.4285714286rem;
+  }
+  .lines-button:hover {
+    opacity: 1;
+  }
+  .lines-button:active {
+    transition: 0;
+    background: rgba(0, 0, 0, 0.1);
+  }
 
   .lines {
     display: inline-block;
@@ -496,22 +513,26 @@ table.mentor td:first-of-type {
     border-radius: 0.2142857143rem;
     transition: 0.3s;
     position: relative;
-    /*create the upper and lower lines as pseudo-elements of the middle line*/ }
-    .lines:before, .lines:after {
-      display: inline-block;
-      width: 3rem;
-      height: 0.4285714286rem;
-      background: #16C1F3;
-      border-radius: 0.2142857143rem;
-      transition: 0.3s;
-      position: absolute;
-      left: 0;
-      content: '';
-      transform-origin: 0.2142857143rem center; }
-    .lines:before {
-      top: 0.75rem; }
-    .lines:after {
-      top: -0.75rem; }
+    /*create the upper and lower lines as pseudo-elements of the middle line*/
+  }
+  .lines:before, .lines:after {
+    display: inline-block;
+    width: 3rem;
+    height: 0.4285714286rem;
+    background: #16C1F3;
+    border-radius: 0.2142857143rem;
+    transition: 0.3s;
+    position: absolute;
+    left: 0;
+    content: "";
+    transform-origin: 0.2142857143rem center;
+  }
+  .lines:before {
+    top: 0.75rem;
+  }
+  .lines:after {
+    top: -0.75rem;
+  }
 
   .lines-button:hover {
     opacity: 1;
@@ -588,6 +609,49 @@ table.mentor td:first-of-type {
     height: 500px;
     background-size: cover;
   }
+}
+.progress-bg {
+  margin: 0 auto;
+  width: 65%;
+  height: 78px;
+  border-radius: 10px;
+  text-align: center;
+  -moz-box-shadow: inset 0 0 10px #ccc;
+  -webkit-box-shadow: inset 0 0 10px black;
+  box-shadow: inset 0 0 10px black;
+  background-color: white;
+}
+
+.progress-bar {
+  height: 78px;
+  border-radius: 10px;
+  float: left;
+  width: 50%;
+  background-color: #fc7625;
+}
+
+.progress-bg h3.goal, .progress-bg h3.raised {
+  line-height: 78px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: inline;
+}
+
+.progress-bg h3.goal {
+  color: #fff;
+}
+
+.progress-bg h3.goal {
+  color: #fc7625;
+  text-align: center;
+}
+
+.progress-bg h3.goal {
+  float: right;
+  display: inline;
+  padding: 0 25px 0 0;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
