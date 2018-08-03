@@ -39,6 +39,30 @@
       b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
       s.parentNode.insertBefore(b, s);})();
     </script>
+     <script type="text/javascript">
+        $( function() {
+            var pusher = new Pusher('{{ settings.PUSHER_KEY }}');
+            var channel = pusher.subscribe('webhooks');
+            updater = function(user){
+                var msg = '<tr><td>'+ events.event +'</td>';
+                {% if events.object_count is not none %}
+                    {% for event in events %}
+                        msg = msg;
+                    {% endfor %}
+                {% endif %}
+                // msg = msg + '</tr>';
+                // $("tbody").prepend(msg);
+            };
+            channel.bind('event', function(data) {
+              $("#eventbrite").append(
+                    "<li>" + data.name.text + "</li>"
+                );
+            });
+            // channel.bind('User', function(user) {
+            //     updater(user);
+            // });
+        });
+    </script>
     <!-- Facebook Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
