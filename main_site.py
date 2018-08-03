@@ -7,10 +7,10 @@ import os
 from flask import Flask, render_template, redirect, url_for, request
 from flask_sslify import SSLify
 import pusher
+from eventbrite import Eventbrite
 
 # We fetch our constants by taking them from environment variables
 #   defined in the .env file.
-EVENTBRITE_EVENT_ID = os.environ['EVENTBRITE_EVENT_ID']
 EVENTBRITE_OAUTH_TOKEN= os.environ['EVENTBRITE_OAUTH_TOKEN']
 PUSHER_APP_ID = os.environ['PUSHER_APP_ID']
 PUSHER_KEY = os.environ['PUSHER_KEY']
@@ -32,14 +32,8 @@ sslify = SSLify(app)
 @app.route('/')
 def render_home_page():
     # Get Eventbrite details
-    event = eventbrite.get_event(EVENTBRITE_EVENT_ID)
-
-    # Get the attendee list
-    attendees = eventbrite.get_event_attendees(EVENTBRITE_EVENT_ID)
-
-    # Reverse so latest to sign up is at the top
-    attendees['attendees'].reverse()
-
+    user = eventbrite.get_user()
+    events = eventbrite.event_search(**{'user.id' : user['id']})
 
     '''
     Renders the home page from jinja2 template
@@ -47,8 +41,7 @@ def render_home_page():
     return render_template(
         'home.html',
         settings={'PUSHER_KEY': PUSHER_KEY},
-        event=event,
-        attendees=attendees
+        events=events,
     )
 
 
@@ -160,9 +153,8 @@ def render_volunteer_page():
 def webhook():
     # Use the API client to convert from a webhook to an API object (a Python dict with some extra methods).
     api_object = eventbrite.webhook_to_object(request)
-
     # Use pusher to add content to to the HTML page.
-    p.trigger(u'webhooks', u'Attendee', api_object)
+    p.trigger(u'webhooks', u'event', api_object)
     return ""
 
 if __name__ == '__main__':
