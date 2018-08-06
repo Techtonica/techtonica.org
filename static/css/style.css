@@ -259,14 +259,11 @@ button {
   padding: 25px;
   margin: 0; }
 
-/*
 #orange-button {
-  text-decoration: none;
-  &:hover {
-    color: $white;
-  }
-}
-*/
+  text-decoration: none; }
+  #orange-button:hover {
+    color: white; }
+
 #quotes {
   color: white;
   font-size: 2em;
