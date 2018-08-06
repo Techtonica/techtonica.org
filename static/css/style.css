@@ -248,11 +248,7 @@ button {
     transition: .3s; }
 
 .sponsor:hover .link-on-blue {
-  color: #05556D;
-  transition: 0s; }
-
-.hovered-link-on-blue:hover {
-  color: #ccc; }
+  color: #05556D; }
 
 .contact-us {
   margin: 0.5em 0;
