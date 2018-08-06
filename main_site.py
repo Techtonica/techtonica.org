@@ -6,7 +6,7 @@ import os
 
 from flask import Flask, render_template, redirect, url_for, request
 from flask_sslify import SSLify
-import pusher
+#import pusher
 
 # We fetch our constants by taking them from environment variables
 #   defined in the .env file.
