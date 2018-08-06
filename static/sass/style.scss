@@ -204,6 +204,14 @@
   }
 }
 
+.sponsor:hover .link-on-blue {
+  color: $dark-blue;
+}
+
+.hovered-link-on-blue:hover {
+  color: $light-gray; 
+}
+
 .contact-us {
   margin: 0.5em 0;
   padding: 0.75em 1.5em;
@@ -215,12 +223,14 @@
   margin: 0;
 }
 
+/*
 #orange-button {
   text-decoration: none;
   &:hover {
     color: white;
   }
 }
+*/
 
 #quotes {
   color: white;
