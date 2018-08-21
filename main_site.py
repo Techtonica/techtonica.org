@@ -114,6 +114,13 @@ def render_facilitator_page():
     '''
     return render_template('facilitator.html')
 
+@app.route('/openings/curriculumdev/')
+def render_curriculumdev_page():
+    '''
+    Renders the openings page from jinja2 template
+    '''
+    return render_template('curriculumdev.html')
+
 @app.route('/openings/businessdev/')
 def render_businessdev_page():
     '''
