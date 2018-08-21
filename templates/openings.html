@@ -25,7 +25,7 @@
         <a href="{{ url_for('render_board_page') }}"><h3>Board Member</h3></a>
       </p>
       <div>
-        <a href="mailto:info@badmail.techtonica.org?Subject=Techtonica%20Contact%20Us" class="contact" target="_blank" ><img src="{{ url_for('static', filename='img/contact-us.jpg') }}" class="contact" alt="Contact us at info@techtonica.org"></a>
+        {% include 'contactbutton.html' %}
       </div>
     </div>
   </div>

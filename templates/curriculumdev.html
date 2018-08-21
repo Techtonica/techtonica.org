@@ -46,7 +46,7 @@
           <li>Previous experience as a professional software developer preferred</li>
         </ul>
       </p>
-      <a href="mailto:info@badmail.techtonica.org?Subject=Techtonica%20Contact%20Us" class="contact" target="_blank" ><img src="{{ url_for('static', filename='img/contact-us.jpg') }}" class="contact" alt="Contact us at info@techtonica.org"></a>
+      {% include 'contactbutton.html' %}
     </div>
   </div>
 {% endblock content %}
