@@ -9,21 +9,18 @@
       <div class="apprenticeship-header" title="Mentor and apprentice">
         <div class="main-header__text blue-background">
           <h1 class="main-header__header">Apprenticeship</h1>
-          <p>Techtonica's apprenticeship is intensive, hands-on tech learning for local women and non-binary adults with low incomes. 
+          <p>Techtonica's software engineering apprenticeship program is six months of intensive, hands-on tech learning for local women and non-binary adults with low incomes. 
           </p>
         </div>
       </div>
       <div class="row row__center what-we-do" id="whatwedo">
         <div class="column">
           <h1 class="blue-h1">The Program</h1>
-          <p class="justify">Apprentices will learn to do full-stack web development using JavaScript. What bootcamps and apprenticeships like Techtonica have in common is the fact that they are intensive training. However, bootcamps can be pretty passive classroom learning with students and they cost between $15,000 and $30,000.</p> 
-          <p class="justify">An apprenticeship aims to be more like the workplace to make the transition into the industry better—instead of having an instructor constantly guiding you, a facilitator gives you assignments and you're expected to figure out what to do with volunteers, mentors, tech groups, and other apprentices. In the best-case scenarios, there are regular check-ins with managers and mentors provide support. We’re making Techtonica’s program as hands-on and project-based as possible to best prepare you for work in tech.
+          <p class="justify">Techtonica's apprenticeship program is a full-time, six-month program that provides the opportunity for local women and non-binary, feminine-adjacent adults with low incomes to learn technical skills and start their first job in tech. We select apprentices who are independent but good at collaborating, motivated to succeed, dedicated to the commitment of learning to code, flexible, curious, open-minded, and excited for long-term careers in the field, have a good attitude and a growth mindset, can calmly manage extended periods of frustration (troubleshooting is something you'll face forever in tech!), and want to pay it forward. We aim to empower those most underrepresented in tech and to help tech become more diverse.</p>
+          <p class="justify">The program runs Monday through Friday, 9am-6pm for six months in San Francisco, starting in January 2019. After the first trial month of full-time training, participants who work the hardest and meet and exceed expectations will be invited to continue for the last five months with stipends based upon need and funding available.</p> 
+          <p class="justify">Techtonica apprentices will learn to do full-stack web development using JavaScript. Upon successful completion of the program, as many apprentices as possible are placed with partner companies via a two-way interview and rating system.</p> 
+          <p class="justify">What bootcamps and Techtonica have in common is the fact that they are intensive training. However, bootcamps can be pretty passive classroom learning with students and they cost between $15,000 and $30,000. Techtonica aims to be more like the workplace to make the transition into the industry better—instead of having an instructor constantly guiding you (which you won't have in any software engineering job), a facilitator gives you general assignments and you're expected to figure out what to do on your own or in collaboration with volunteers, mentors, tech groups, and other apprentices. In the best jobs, there are regular check-ins with very understanding managers and mentors provide regular support, but that is not always the case. Techtonica’s program is as hands-on and project-based as possible to best prepare you for work in tech.
           </p>
-          <p class="justify">
-          After the first trial month, participants who work the hardest and meet and exceed expectations will be invited to continue for up to five months with stipends. Upon successful completion of the program, as many apprentices as possible are placed with partner companies via a two-way interview and rating system.
-          </p>
-          </br>
-          <p class="justify">We hope to start the next apprenticeship in January 2019 in San Francisco. <!-- <a href="https://www.dropbox.com/s/t1vjptwg8qp5djg/Techtonica%20Apprenticeship%20Application%20Flyer.pdf?dl=0" target="_blank">Download an informational flyer here.</a> --></p>
         </div>
         <div class="column">
           <img src="{{ url_for('static', filename='img/pairing-at-TTL-min.jpg') }}" alt="Two women code at the Tenderloin Tech Lab." class="full-width-img">
@@ -35,16 +32,37 @@
         </div>
         <div class="column">
           <h1>Eligibility</h1>
-          <p class="justify">You are eligible to apply for Techtonica’s apprenticeship if you:
+          <p class="justify">You are eligible to apply for Techtonica’s full-time program if you:
             <ul>
-              <li>are a woman or non-binary, feminine-adjacent adult</li>
-              <li>are digitally literate, meaning you are very familiar and good with computers and the internet, can type 40+ WPM, and you know how to use a mouse/trackpad, browsers, and email</li>
-              <li>meet our socioeconomic criteria (less than $50,000 in income and net worth)</li>
-              <li>have housing that will be stable for the duration of the program</li>
+              <li>are a woman (cis OR trans) or non-binary, feminine-adjacent adult</li>
+              <li>are digitally literate, meaning you are very familiar and good with computers and the internet, can type 40+ WPM with accuracy, and you know how to use a mouse/trackpad, browsers, and email</li>
+              <li>at the very least graduated from high school or received your GED</li>
+              <li>can commit to always being present and on time and prepared</li>
+              <li>are dedicated to building a long-term career in tech</li>
+              <li>have less than $50,000 in annual income and net worth</li>
+              <li>have lived in the Bay Area for at least one year</li>
+              <li>have housing that will be stable for the entirety of 2019</li>
               <li>have lived in the Bay Area for at least a year</li>
-              <li>can legally be employed by our partner companies</li>
-              <li>are prepared to appear in Techtonica's media and pitch yourself to Techtonica's partners</li>
+              <li>are legally employable in the United States</li>
+              <li>agree to work at whichever partner company we match you with upon successful completion of the program</li>
+              <li>are willing to appear in Techtonica's media and pitch yourself to Techtonica's partners</li>
               <li>have not attended a full-time coding bootcamp or completed a C.S. degree in the last six years</li>
+              <li>have not already worked as a software engineer or web developer in the last six years</li>
+              <li>agree to abide by <a href="{{ url_for('render_conduct_page') }}" title="Code of Conduct" target="_blank">Techtonica's Code of Conduct</a>, <a href="https://docs.google.com/document/d/1IWny-IXB-XDWW21l3JODwPuh1QOVBFQbii_DjvF0g00/edit?usp=sharing" target="_blank">Apprenticeship Expectations</a>, and <a href="https://docs.google.com/document/d/1N4y9x9InPjmk9dHTa6Wge9AvpZm_-nFlF3E8iDxmtgI/edit?usp=sharing" target="_blank">Apprenticeship Agreement</a></li>
+            </ul>
+          </p>
+          <p class="justify">You are probably not a good fit if you:
+            <ul>
+              <li>would rather be passively trained than learn through discovery</li>
+              <li>prefer always being told exactly what to do</li>
+              <li>don't like when plans change</li>
+              <li>can't advocate for yourself</li>
+              <li>don't like details</li>
+              <li>don't get along with everyone</li>
+              <li>are quickly frustrated every time you get stuck on a problem</li>
+              <li>don't feel comfortable asking questions until you understand complicated concepts</li>
+              <li>can't lay aside learning everything about something in place of just learning enough to make progress on your work</li>
+              <li>take longer than most people to learn and apply new concepts</li>
             </ul>
           </p>
         </div>
@@ -54,36 +72,32 @@
         <div class="row">
           <div class="column column-med centered">
             <img src="{{ url_for('static', filename='img/lightbulb.png') }}" alt="" aria-hidden="true">
-            <h3>1. Fill out the interest form.</h3>
-            <p>Fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUdyIAfcU5KSqtYH5J5iPRgu-yycHdebnUKygQLEv-m7oVMw/viewform?usp=sf_link" target="_blank">the interest form</a> completely. Submit as soon as you can and watch for a follow-up email.          
+            <h3>1. Interest and long application forms</h3>
+            <p>Thoroughly fill out <a href="" target="_blank">the interest form</a> and the following long application form completely by 11:59 PM Pacific on Sunday, November 11th.        
             </p>
           </div>
           <div class="column column-med centered">
-            <img src="{{ url_for('static', filename='img/conversation.png') }}" alt="conversation bubbles icon" aria-hidden="true">
-            <h3>2. If invited, join one of our introductions.</h3>
-            <p>Learn how a web page is made and code your own while being assessed. There will be several sessions to choose from in Oakland and San Francisco.</p>
+            <h3>2. Two invite-only digital literacy testing and JavaScript events</h3>
+            <p>Participate in two of the events offered the evenings of 11/12, 11/14, 11/19, and the mornings and afternoons of 11/17 and 11/18.</p>
           </div>
           <div class="column column-med centered">
-            <img src="{{ url_for('static', filename='img/chalkboard.jpg') }}" alt="chalkboard icon" aria-hidden="true">
-            <h3>3. Attend a coding workshop.</h3>
-            <p>There will be workshops for you to choose from in Oakland and San Francisco.</p>
+            <h3>3. Code challenges</h3>
+            <p>Complete a take-home code challenge during the week of Thanksgiving.</p>
           </div>
         </div>
         <div class="row">
           <div class="column column-med centered">
-<!--             <img src="{{ url_for('static', filename='img/lightbulb.png') }}" alt="lightbulb" aria-hidden="true"> -->
-            <h3>4. Complete the take-home challenge.</h3>
-            <p>We'll give you a coding challenge to work on at home.</p>
+            <h3>4. Staff interviews</h3>
+            <p>Participate in staff interviews during the last week of November.</p>
           </div>
           <div class="column column-med centered">
-<!--             <img src="{{ url_for('static', filename='img/conversation.png') }}" alt="conversation bubbles icon" aria-hidden="true"> -->
-            <h3>5. Fill out the application.</h3>
-            <p>Thoughtfully complete the long application.</p>
+            <h3>5. Board interviews</h3>
+            <p>Participate in board interviews during the last week of November.</p>
           </div>
+        </div>
+        <div class="row">
           <div class="column column-med centered">
-<!--             <img src="{{ url_for('static', filename='img/chalkboard.jpg') }}" alt="chalkboard" aria-hidden="true"> -->
-            <h3>6. Interview with a staff member and a board member.</h3>
-            <p>Schedule a time to meet us individually to be assessed for fit.</p>
+            <p>Accepted applicants will be required to submit some more information to confirm participation and join onboarding on Saturday, December 15th. You'll also be given some pre-work to complete before the start of the full-time training in January.</p>
           </div>
         </div>
       </div>
@@ -99,10 +113,15 @@
               <li>logical</li>
               <li>humble</li>
               <li>respectful</li>
+              <li>independent</li>
+              <li>curious</li>
+              <li>open-minded</li>
+              <li>flexible</li>
               <li>persistent</li>
               <li>optimistic</li>
               <li>punctual</li>
               <li>committed</li>
+              <li>communicative</li>
               <li>collaborative</li>
               <li>responsive to feedback</li>
               <li>willing to ask questions</li>
@@ -114,7 +133,7 @@
               <li>transparent and compassionate communicators</li>
               <li>hard-working and ready to make sacrifices</li>
               <li>dedicated to seeing things through to the end</li>
-              <li>willing to meet the apprentice expectations, including abiding by <a href="/conduct">Techtonica's Code of Conduct</a></li>
+              <li>willing to meet the <a href="https://docs.google.com/document/d/1IWny-IXB-XDWW21l3JODwPuh1QOVBFQbii_DjvF0g00/edit?usp=sharing" target="_blank">Apprenticeship Expectations</a>, including abiding by <a href="/conduct">Techtonica's Code of Conduct</a></li>
             </ul>
           </p>
         </div>
@@ -123,13 +142,13 @@
         </div>
       </div>
       <div class="row row__baseline how-it-works" id="howitworks">
-        <h1 class="blue-h1">How to Prepare</h1>
+        <h1 class="blue-h1">How to Prepare to Apply</h1>
         <div class="row">
           <div class="column column-med centered">
             <h3>1. Learn as much JavaScript ahead of time as possible—<a href="http://freecodecamp.org">Free Code Camp</a> and <a>Codecademy</a> are great for this.</h3>
           </div>
           <div class="column column-med centered">
-            <h3>2. Attend coding meetups, like the <a href="https://www.meetup.com/Women-Who-Code-SF/">Women Who Code</a> JavaScript study group.</h3>
+            <h3>2. Attend coding meetups, like the <a href="https://www.meetup.com/Women-Who-Code-SF/">Women Who Code</a> JavaScript study group to practice getting to know people.</h3>
           </div>
           <div class="column column-med centered">
             <h3>3. Develop your typing and Mac keyboard shortcut skills.</h3>
@@ -138,15 +157,15 @@
         <div class="row">
           <div class="column column-med centered">
 <!--             <img src="{{ url_for('static', filename='img/lightbulb.png') }}" alt="lightbulb" aria-hidden="true"> -->
-            <h3>4. Make sure your life is ready to take care of itself for a while (automate your bill-paying and make freezer meals to save time, for example).</h3>
+            <h3>4. Learn about different Bay Area companies and long-term pathways in tech to start getting an idea of your career goals.</h3>
           </div>
           <div class="column column-med centered">
 <!--             <img src="{{ url_for('static', filename='img/conversation.png') }}" alt="conversation bubbles icon" aria-hidden="true"> -->
-            <h3>5. Use social media to start building a network of people who can help you when you get stuck.</h3>
+            <h3>5. Practice learning and applying concepts quickly.</h3>
           </div>
           <div class="column column-med centered">
 <!--             <img src="{{ url_for('static', filename='img/chalkboard.jpg') }}" alt="chalkboard" aria-hidden="true"> -->
-            <h3>6. Make a list of things that re-charge you so you can turn to it when needed.</h3>
+            <h3>6. Practice talking out loud about your thought process and collaborating with others.</h3>
           </div>
         </div>
       </div>
