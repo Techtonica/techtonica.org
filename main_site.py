@@ -163,6 +163,13 @@ def render_volunteer_page():
     '''
     return render_template('volunteer.html')
 
+@app.route('/news/')
+def render_news_page():
+    '''
+    Renders the news page from jinja2 template
+    '''
+    return render_template('news.html')
+
 # @app.route('/webhook/', methods=['POST'])
 # def webhook():
 #     # Use the API client to convert from a webhook to an API object (a Python dict with some extra methods).
