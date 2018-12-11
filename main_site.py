@@ -107,12 +107,12 @@ def render_openings_page():
     '''
     return render_template('openings.html')
 
-@app.route('/openings/tpm/')
-def render_tpm_page():
+@app.route('/openings/tapm/')
+def render_tapm_page():
     '''
     Renders the openings page from jinja2 template
     '''
-    return render_template('tpm.html')
+    return render_template('tapm.html')
 
 @app.route('/openings/curriculumdev/')
 def render_curriculumdev_page():
