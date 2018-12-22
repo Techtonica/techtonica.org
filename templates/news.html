@@ -5,32 +5,27 @@
 {% endblock title %}
 
 {% block content %}
-
-<div class="row row__center blue-background" id="news-items">
-	<h1>In the news</h1>
+<div class="row row__center blue-background" id="news-title" style="padding:0;">
+	<h1>In The News</h1>
 </div>
-<div class="row">
-	<h2>don't take our word for it</h2>
+<div class="row row__center">
+	<h2>News from Techtonica</h2>
+	<p>maybe I just need way more content lorem ipsum dolor sit amet and whatever yo yo we gon get schwifty up in hyur</p>
+</div>
+<div class="row row__center blue-background">
+	<h2 class="large-white-text">In other media</h2>
 	<div class="column centered">
-		<div class="row">
+			<p><a href="http://www.upworthy.com/how-do-we-get-more-diversity-in-tech-companies-easy-pay-for-it" target="_blank">How do we get more diversity in tech companies? Easy: Pay for it.</a></p>
+			<p>Upworthy, August 2017</p>
+			<p><a href="https://www.facebook.com/Upworthy/videos/1878354758872040/" target="_blank">Tech companies have a diversity problem. This woman raised her hand to help solve it.</a></p>
+			<p>Upworthy, July 2017</p>
 			<p><a href="http://www.yesmagazine.org/peace-justice/how-low-income-mothers-are-breaking-into-the-tech-industry-20170512" target="_blank">“How Low-Income Mothers Are Breaking Into the Tech Industry”</a></p>
 			<p>yes! Magazine, May 2017</p>
 		</div>
-		<div class="row">
-			<p><a href="https://www.facebook.com/Upworthy/videos/1878354758872040/" target="_blank">Tech companies have a diversity problem. This woman raised her hand to help solve it.</a></p>
-			<p>Upworthy, July 2017</p>
-		</div>
-		<div class="row">
-			<p><a href="http://www.upworthy.com/how-do-we-get-more-diversity-in-tech-companies-easy-pay-for-it" target="_blank">How do we get more diversity in tech companies? Easy: Pay for it.</a></p>
-			<p>Upworthy, August 2017</p>
-		</div>
-	</div>
-	<div class="column centered">
-		<h2>TODO: press releases</h2>
 	</div>
 </div>
-<div class="row">
+<div class="row row__center blue-background">
+	<a href="https://www.dropbox.com/sh/e3x5gf8e4lc07u5/AAAIVwyfnD0PvxEt93XzBz1fa?dl=0" class="contact-us" id="orange-button" target="_blank">Logos for press</a>
 	{% include 'contactbutton.html' %}
-</div>
 </div>
 {% endblock content %}
