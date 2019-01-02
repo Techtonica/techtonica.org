@@ -21,7 +21,7 @@ h3, h4, h5, h6 {
 }
 
 body, h1, h2, h3, h4, h5, h6, p {
-  font-family: 'lato', helvetica, sans-serif;
+  font-family: "lato", helvetica, sans-serif;
 }
 
 h1 {
@@ -293,7 +293,7 @@ button {
 .donate:hover, .sponsor:hover {
   background-color: #16C1F3;
   color: white;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .sponsor:hover .link-on-blue {
@@ -501,10 +501,10 @@ table.mentor td:first-of-type {
     top: 0;
     margin: 0.5rem 0;
     padding: 1.5rem 1rem;
-    transition: .3s;
+    transition: 0.3s;
     cursor: pointer;
     user-select: none;
-    border-radius: 0.42857rem;
+    border-radius: 0.4285714286rem;
   }
   .lines-button:hover {
     opacity: 1;
@@ -517,9 +517,9 @@ table.mentor td:first-of-type {
   .lines {
     display: inline-block;
     width: 3rem;
-    height: 0.42857rem;
+    height: 0.4285714286rem;
     background: #16C1F3;
-    border-radius: 0.21429rem;
+    border-radius: 0.2142857143rem;
     transition: 0.3s;
     position: relative;
     /*create the upper and lower lines as pseudo-elements of the middle line*/
@@ -527,14 +527,14 @@ table.mentor td:first-of-type {
   .lines:before, .lines:after {
     display: inline-block;
     width: 3rem;
-    height: 0.42857rem;
+    height: 0.4285714286rem;
     background: #16C1F3;
-    border-radius: 0.21429rem;
+    border-radius: 0.2142857143rem;
     transition: 0.3s;
     position: absolute;
     left: 0;
-    content: '';
-    transform-origin: 0.21429rem center;
+    content: "";
+    transform-origin: 0.2142857143rem center;
   }
   .lines:before {
     top: 0.75rem;
@@ -580,7 +580,7 @@ table.mentor td:first-of-type {
   }
 }
 /* iphone 4 and 4s media query */
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
   .main-header__text {
     font-size: 1rem;
     height: 50vh;
@@ -670,7 +670,7 @@ table.mentor td:first-of-type {
 .collapsible {
   color: #0093B5;
   cursor: pointer;
-  padding: 25px;
+  margin: 25px;
   text-align: left;
   outline: none;
   font-size: 1.2em;
@@ -693,6 +693,19 @@ table.mentor td:first-of-type {
 .collapsible-content {
   padding: 25px;
   display: none;
+}
+
+ul.hidden-bullets {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+p.press-release-summary {
+  font-style: italic;
+}
+
+p.press-release-bold {
+  font-style: bold;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -583,7 +583,7 @@ table.mentor {
 .collapsible {
   color: $main-blue;
   cursor: pointer;
-  padding: 25px;
+  margin: 25px;
   text-align: left;
   outline: none;
   font-size: 1.2em;
@@ -606,4 +606,17 @@ table.mentor {
 .collapsible-content {
   padding: 25px;
   display: none;
+}
+
+ul.hidden-bullets {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+p.press-release-summary {
+  font-style: italic;
+}
+
+p.press-release-bold {
+  font-style: bold;
 }
