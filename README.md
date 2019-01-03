@@ -1,22 +1,18 @@
 # Techtonica
 
-This repo is for [the Techtonica website](http://techtonica.org), which is
-currently hosted on DreamHost.
+This repo is for [the Techtonica website](http://techtonica.org), which is currently hosted on DreamHost.
 
 ### Who
 
-The main audience of the website is made up of (potential) volunteers and
-sponsors. (Apprentices will be contacted via local organizations.)
+The audience of the website is made up of (potential) volunteers and sponsors. (Apprentices will be contacted via local organizations.)
 
 ### What
 
-We need to effectively communicate that Techtonica and its apprentices are worth
-supporting.
+We need to effectively communicate that Techtonica and its apprentices are worth supporting.
 
 ### How
 
-There should be a good understanding of how the program works with vetting,
-training, mentoring, and hiring.
+There should be a good understanding of how the program works with vetting, training, mentoring, and hiring.
 
 
 ## Getting Started
