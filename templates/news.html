@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Techtonica: Bridging the Tech Gap
+{% endblock title %}
+
+{% block content %}
+<div class="row row__center blue-background" id="news-title" style="padding:0;">
+	<h1>In The News</h1>
+</div>
+<div class="column centered">
+	<h2>News from Techtonica</h2>
+	<!-- N.B. collapsible expects that button class collapsible live at the same depth as div class collapsible-content. -->
+	<ul class="hidden-bullets">
+		<li>
+			<button class="collapsible">Agari announces support for Techtonica</button>
+			<div class="collapsible-content justify">
+				<p class="press-release-summary">Agari becomes Techtonica’s newest advocate-level sponsor for the 2019 apprenticeship.</p>
+				<p>SAN FRANCISCO, CA Dec. 3rd, 2018---Agari is happy to announce they are becoming a sponsor of Bay Area nonprofit, Techtonica. Agari joins a growing group of Bay Area companies dedicated to Techtonica’s mission of empowering local women and non-binary adults with low incomes through tech training and job placement.</p>
+				<p>“We are so excited to have Agari join us as an advocate sponsor for our next cohort that will be starting in January,” said Techtonica Founder & CEO, Michelle Glauser. “Agari’s work in cybersecurity and email protection provides a unique opportunity for our future apprentices.”</p>
+				<p>“We believe that optimizing our hiring process to find engineers who enhance our community over solely looking for ‘rock star’ individuals leads to a better outcome and a more diverse technology workforce,” said Chris Haag, Senior Director of Engineering at Agari. “We're supporting Techtonica's mission to provide training and support to women and non-binary adults with low incomes and look forward to supporting the 2019 cohort through their classes and internship.”</p>
+				<p>Techtonica’s six months of full-time technical training ends in June 2019, at which time a graduate of the program will begin working at Agari.</p>
+				<p class="press-release-bold">About Techtonica</p>
+				<p>Founded in 2016 by Michelle Glauser, Techtonica is an apprenticeship program based in San Francisco that partners with tech companies to provide free, intensive tech training and job placement specifically for Bay Area women and non-binary adults who have low incomes. Learn more at <a href="https://techtonica.org/" target="_blank">techtonica.org</a>.</p>
+				<p class="press-release-bold">About Kintone</p>
+				<p>Agari is the only cloud-native solution that uses predictive AI to stop advanced email attacks. Winner of Best Email Security Solution by SC Magazine in 2018, the Agari Email Trust Platform™ prevents ransomware, ATO, phishing, BEC and other identity deception attacks, restoring trust to digital channels for businesses, governments, and consumers worldwide. Learn more at <a href="https://www.agari.com" target="_blank">www.agari.com</a>.</p>
+				<p><a href="https://www.agari.com" target="_blank"><img src="{{ url_for('static', filename='img/agari-logo-min.png') }}" alt="Agari logo" class="resize-200px"></a></p>
+				<p>Media Contact:</p>
+				<p>Clinton Karr</p>
+				<p><a href="mailto:agari@summitstrategygroup.net">agari@summitstrategygroup.net</a></p>
+				<p><a href="tel:415-993-1010">(415) 993-1010</a></p>
+			</div>
+		</li>
+		<li>
+			<button class="collapsible">Kintone announces support for Techtonica</button>
+			<div class="collapsible-content justify">
+				<p class="press-release-summary">Kintone becomes Techtonica’s newest advocate-level sponsor for the 2019 apprenticeship.</p>
+				<p>SAN FRANCISCO, CA Dec. 17, 2018---Kintone proudly announces becoming a sponsor of Bay Area nonprofit, Techtonica. Kintone will be joining a growing group of Bay Area companies dedicated to Techtonica’s mission of empowering local women and non-binary adults with low incomes through tech training and job placement.</p>
+				<p>“We are thrilled to have Kintone join us as an advocate sponsor for our next cohort that will be starting in January,” said Techtonica Founder & CEO, Michelle Glauser.</p>
+				<p>“We’re thrilled to support Techtonica,” said Kintone CEO Dave Landa. “As a cloud-based database platform company on a mission to make teamwork better globally, this is an excellent opportunity to affirm our commitment to diversity and inclusion of underserved communities in the tech industry.”</p>
+				<p>Techtonica’s six months of full-time training for its apprentices ends in June and one lucky individual will start working at Kintone thereafter.</p>
+				<p class="press-release-bold">About Techtonica</p>
+				<p>Founded in 2016 by Michelle Glauser, Techtonica is an apprenticeship program based in San Francisco that partners with tech companies to provide free, intensive tech training and job placement specifically for Bay Area women and non-binary adults who have low incomes. Learn more at <a href="https://techtonica.org/" target="_blank">techtonica.org</a>.</p>
+				<p class="press-release-bold">About Kintone</p>
+				<p>San Francisco-based Kintone is making teamwork better with its no-code application platform that provides organizations with a customizable workspace that integrates multiple data sources for deeper insight into business processes. Kintone eliminates the cost and maintenance requirements of traditional off-the-shelf applications while dramatically increasing team and workflow efficiency. More than 10,000 companies have built, deployed and use over 500,000 applications on Kintone. Kintone is provided by Cybozu Inc, a Tokyo-based public company founded in 1997. Both Kintone and Cybozu are designated as great workplaces by Great Place to Work, a global authority on high performing workplace cultures. For more information, please visit <a href="https://www.kintone.com/" target="_blank">https://www.kintone.com/</a></p>
+				<p><a href="https://www.kintone.com/" target="_blank"><img src="{{ url_for('static', filename='img/kintone-logo-min.png') }}" alt="Kintone logo" class="resize-200px"></a></p>
+			</div>
+		</li>
+	</ul>
+</div>
+<div class="column centered blue-background">
+	<h2 class="white-text">In other media</h2>
+	<ul class="hidden-bullets">
+		<li>
+			<p><a href="http://www.upworthy.com/how-do-we-get-more-diversity-in-tech-companies-easy-pay-for-it" target="_blank">How do we get more diversity in tech companies? Easy: Pay for it.</a></p>
+			<p>Upworthy, August 2017</p>
+		</li>
+		<li>
+			<p><a href="https://www.facebook.com/Upworthy/videos/1878354758872040/" target="_blank">Tech companies have a diversity problem. This woman raised her hand to help solve it.</a></p>
+			<p>Upworthy, July 2017</p>
+		</li>
+		<li>
+			<p><a href="http://www.yesmagazine.org/peace-justice/how-low-income-mothers-are-breaking-into-the-tech-industry-20170512" target="_blank">“How Low-Income Mothers Are Breaking Into the Tech Industry”</a></p>
+			<p>yes! Magazine, May 2017</p>
+		</li>
+	</ul>
+	<div class="row row__center blue-background">
+		<a href="https://www.dropbox.com/sh/e3x5gf8e4lc07u5/AAAIVwyfnD0PvxEt93XzBz1fa?dl=0" class="contact-us" id="orange-button" target="_blank">Logos for press</a>
+		{% include 'contactbutton.html' %}
+	</div>
+</div>
+{% endblock content %}

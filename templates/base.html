@@ -97,6 +97,7 @@
           <a href="{{ url_for('render_faqs_page') }}" title="FAQs"><img src="{{ url_for('static', filename='img/faqs-icon.png') }}" class="social-media" alt="Techtonica FAQs"></a>
           <a href="mailto:info@techtonica.org" title="Email"><img src="{{ url_for('static', filename='img/mail-icon.png') }}" class="social-media" alt="Techtonica Email"></a>
           <a href="https://www.eventbrite.com/o/techtonica-11297022451" title="Events"><img src="{{ url_for('static', filename='img/calendar-icon.png') }}" class="social-media" alt="Techtonica Events"></a>
+          <a href="{{ url_for('render_news_page') }}" title="News"><img src="{{ url_for('static', filename='img/news-icon.png') }}" class="social-media" alt="Techtonica News"></a>
           <a href="{{ url_for('render_openings_page') }}" title="Openings"><img src="{{ url_for('static', filename='img/we-are-hiring.png') }}" class="hiring" alt="Techtonica Careers"></a>
        </p>
         <p class="centered">All content ©Techtonica, a fiscally-sponsored project of <a href="http://www.socialgoodfund.org" target="_blank">SocialGood</a> (Nonprofit EIN: 46-1323531)</p>
@@ -107,6 +108,7 @@
       <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
     {% endblock %}
      <script type="text/javascript" src="{{ url_for('static', filename='js/scroll.js') }}"></script>
+     <script type="text/javascript" src="{{ url_for('static', filename='js/collapsible.js') }}"></script>
     <script type="text/javascript" src="https://s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
   </body>
 </html>

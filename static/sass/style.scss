@@ -232,6 +232,12 @@
   letter-spacing: 2px;
 }
 
+.white-text {
+  color: $white;
+  padding: 1.5rem;
+  margin: 0;
+}
+
 .large-white-text {
   color: $white;
   font-size: 2em;
@@ -573,4 +579,45 @@ table.mentor {
 
 .blue-background h3 {
   color: white;
+}
+
+.collapsible {
+  color: $main-blue;
+  cursor: pointer;
+  margin: 25px;
+  text-align: left;
+  outline: none;
+  font-size: 1.2em;
+  &:hover{
+    color: $dark-blue;
+  }
+  &::before {
+    content: "+ ";
+    text-decoration: none;
+  }
+}
+
+.collapsible-active {
+  color: $dark-blue;
+  &::before {
+    content: "- ";
+  }
+}
+
+.collapsible-content {
+  padding: 25px;
+  display: none;
+}
+
+ul.hidden-bullets {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+p.press-release-summary {
+  font-style: italic;
+}
+
+p.press-release-bold {
+  font-style: bold;
 }
