@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<!--section for michelle and erin-->
+<!--section for staff-->
   <div class="row row__center blue-background">
     <div class = "column centered">
       <img src="{{ url_for('static', filename='img/Michelle-Glauser-min.jpg') }}"
@@ -18,8 +18,6 @@
       <p class="justify">Since becoming a software engineer in 2012, she's worked for a better, more diverse software industry by organizing support groups, meetups, workshops, and the #ILookLikeAnEngineer ad campaign. Michelle's experience working in tech and volunteering in the community in San Francisco revealed two glaring issues: lack of diversity on tech teams and high income disparity. Techtonica is her vision to help tech companies and people who need more opportunities thrive together.</p>
     </div>
   </div>
-
-
 
 <!--section for board members-->
   <div class="row row__center board-members" id="boardmembers">
@@ -41,7 +39,6 @@
       </div>
     </div>
 
-
     <div class="row">
       <div class="column centered">
         <img src="{{ url_for('static', filename='img/Nicole-Tiefensee-min.jpg') }}"
@@ -59,15 +56,15 @@
       </div>
     </div>
     <div class="row">
-      <!-- Third row of board members here. -->
+      <div class="column centered">
+        <img src="{{ url_for('static', filename='img/Suneet-Deol-min.jpg') }}"
+         alt="Suneet Deol"
+         class="resize-200px">
+        <footer><a href="https://www.linkedin.com/in/suneetdeol/" target="_blank">Suneet Deol</a></footer>
+        <p>Suneet Deol is a Senior Technical Program Manager at Box. Previously, she managed product ops and programs at SanDisk, a Western Digital brand, and worked as a Sales Engineer at Cal Sensors. At work, Suneet merges her technical and operations background to manage efficient and productive programs. Off the clock, she enjoys helping women find STEM careers, traveling, and healthy doses of Netflix and chocolate. Suneet holds a BS in Engineering from UC Davis and an MBA from USC’s Marshall School of Business.</p>
+      </div>
     </div>
-
-
   </div>
-
-
-
-
 
 <!--section for original picture and paragraph-->
   <div class="row row__center techtonica-squad" id="techtonicasquad">
@@ -84,7 +81,5 @@
     </div>
 
   </div>
-
-
 
 {% endblock content %}
