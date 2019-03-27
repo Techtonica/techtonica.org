@@ -664,6 +664,18 @@ table.mentor td:first-of-type {
   text-align: center;
 }
 
+/* Events Stuff */
+
+.event-item {
+  max-width: 30%;
+  flex-basis: 25%;
+  padding: 1rem 2rem;
+}
+
+.event-item__address {
+  font-size: 1rem;
+}
+
 .blue-background h3 {
   color: white;
 }

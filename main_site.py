@@ -4,51 +4,51 @@ for Techtonica.org
 """
 import os
 
+from dateutil.parser import parse
+from eventbrite import Eventbrite
 from flask import Flask, render_template, redirect, url_for, request
 from flask_sslify import SSLify
-#import pusher
 
 # We fetch our constants by taking them from environment variables
 #   defined in the .env file.
-# EVENTBRITE_EVENT_ID = os.environ['EVENTBRITE_EVENT_ID']
-# EVENTBRITE_OAUTH_TOKEN= os.environ['EVENTBRITE_OAUTH_TOKEN']
-# PUSHER_APP_ID = os.environ['PUSHER_APP_ID']
-# PUSHER_KEY = os.environ['PUSHER_KEY']
-# PUSHER_SECRET = os.environ['PUSHER_SECRET']
+EVENTBRITE_OAUTH_TOKEN= os.environ['EVENTBRITE_OAUTH_TOKEN']
 
 # Instantiate the Eventbrite API client.
-# eventbrite = eventbrite.Eventbrite(EVENTBRITE_OAUTH_TOKEN)
-
-# Instantiate the pusher object. This library is used to push actions
-#   to the browser when they occur.
-
-# p = pusher.Pusher(app_id=PUSHER_APP_ID, key=PUSHER_KEY, secret=PUSHER_SECRET)
+eb = Eventbrite(EVENTBRITE_OAUTH_TOKEN)
 
 app = Flask(__name__)
 sslify = SSLify(app)
 
+class Event(object):
+    def __init__(self, event_dict):
+        self.title = event_dict['name']['text']
+        self.url = event_dict['url']
+        self.location_title = event_dict['venue']['name']
+        self.address = event_dict['venue']['address']['localized_multi_line_address_display']
+        self.date = parse(event_dict['start']['local']).strftime("%B %-d, %Y, %-I:%M%p PDT")
 
 # MAIN HANDLERS
 @app.route('/')
 def render_home_page():
-    # # Get Eventbrite details
-    # event = eventbrite.get_event(EVENTBRITE_EVENT_ID)
+    # Get Eventbrite details
+    user = eb.get_user()
+    search_params = {
+        'user.id' : user['id'],
+        'sort_by': 'date',
+        'expand': 'venue',
+    }
+    events = eb.event_search(**search_params)
+    formatted_events = []
 
-    # # Get the attendee list
-    # attendees = eventbrite.get_event_attendees(EVENTBRITE_EVENT_ID)
-
-    # # Reverse so latest to sign up is at the top
-    # attendees['attendees'].reverse()
-
+    for e in events['events']:
+        formatted_events.append(Event(e))
 
     '''
     Renders the home page from jinja2 template
     '''
     return render_template(
         'home.html',
-        # settings={'PUSHER_KEY': PUSHER_KEY},
-        # event=event,
-        # attendees=attendees
+        events=formatted_events,
     )
 
 
@@ -162,22 +162,6 @@ def render_volunteer_page():
     Renders the volunteer page from jinja2 template
     '''
     return render_template('volunteer.html')
-
-@app.route('/news/')
-def render_news_page():
-    '''
-    Renders the news page from jinja2 template
-    '''
-    return render_template('news.html')
-
-# @app.route('/webhook/', methods=['POST'])
-# def webhook():
-#     # Use the API client to convert from a webhook to an API object (a Python dict with some extra methods).
-#     api_object = eventbrite.webhook_to_object(request)
-
-#     # Use pusher to add content to to the HTML page.
-#     p.trigger(u'webhooks', u'Attendee', api_object)
-#     return ""
 
 if __name__ == '__main__':
     app.debug = False
