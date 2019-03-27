@@ -3,11 +3,12 @@ This is the main Python file that sets up rendering and templating
 for Techtonica.org
 """
 import os
+import pusher
 
+from dateutil.parser import parse
+from eventbrite import Eventbrite
 from flask import Flask, render_template, redirect, url_for, request
 from flask_sslify import SSLify
-import pusher
-from eventbrite import Eventbrite
 
 # We fetch our constants by taking them from environment variables
 #   defined in the .env file.
@@ -17,7 +18,7 @@ PUSHER_KEY = os.environ['PUSHER_KEY']
 PUSHER_SECRET = os.environ['PUSHER_SECRET']
 
 # Instantiate the Eventbrite API client.
-eventbrite = eventbrite.Eventbrite(EVENTBRITE_OAUTH_TOKEN)
+eb = Eventbrite(EVENTBRITE_OAUTH_TOKEN)
 
 # Instantiate the pusher object. This library is used to push actions
 #   to the browser when they occur.
@@ -27,13 +28,32 @@ p = pusher.Pusher(app_id=PUSHER_APP_ID, key=PUSHER_KEY, secret=PUSHER_SECRET)
 app = Flask(__name__)
 sslify = SSLify(app)
 
+class Event(object):
+    def __init__(self, event_dict):
+        self.title = event_dict['name']['text']
+        self.url = event_dict['url']
+        self.location_title = event_dict['venue']['name']
+        self.address = event_dict['venue']['address']['localized_multi_line_address_display']
+        self.date = parse(event_dict['start']['local']).strftime("%B %-d, %Y, %-I:%M%p PDT")
 
 # MAIN HANDLERS
 @app.route('/')
 def render_home_page():
     # Get Eventbrite details
-    user = eventbrite.get_user()
-    events = eventbrite.event_search(**{'user.id' : user['id']})
+    user = eb.get_user()
+    search_params = {
+        'user.id' : user['id'],
+        'sort_by': 'date',
+        'expand': 'venue',
+    }
+    events = eb.event_search(**search_params)
+    formatted_events = []
+
+    for e in events['events']:
+        formatted_events.append(Event(e))
+    formatted_events.append(Event(e))
+    formatted_events.append(Event(e))
+
 
     '''
     Renders the home page from jinja2 template
@@ -41,7 +61,7 @@ def render_home_page():
     return render_template(
         'home.html',
         settings={'PUSHER_KEY': PUSHER_KEY},
-        events=events,
+        events=formatted_events,
     )
 
 
@@ -152,7 +172,7 @@ def render_volunteer_page():
 @app.route('/webhook/', methods=['POST'])
 def webhook():
     # Use the API client to convert from a webhook to an API object (a Python dict with some extra methods).
-    api_object = eventbrite.webhook_to_object(request)
+    api_object = eb.webhook_to_object(request)
     # Use pusher to add content to to the HTML page.
     p.trigger(u'webhooks', u'event', api_object)
     return ""

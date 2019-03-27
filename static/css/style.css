@@ -654,4 +654,15 @@ table.mentor td:first-of-type {
   text-align: center;
 }
 
+/* Events Stuff */
+
+.event-item {
+  flex-basis: 25%;
+  padding: 1rem 2rem;
+}
+
+.event-item__address {
+  font-size: 1rem;
+}
+
 /*# sourceMappingURL=style.css.map */
