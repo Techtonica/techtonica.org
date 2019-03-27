@@ -51,9 +51,6 @@ def render_home_page():
 
     for e in events['events']:
         formatted_events.append(Event(e))
-    formatted_events.append(Event(e))
-    formatted_events.append(Event(e))
-
 
     '''
     Renders the home page from jinja2 template
