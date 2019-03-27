@@ -3,7 +3,6 @@ This is the main Python file that sets up rendering and templating
 for Techtonica.org
 """
 import os
-import pusher
 
 from dateutil.parser import parse
 from eventbrite import Eventbrite
@@ -13,17 +12,9 @@ from flask_sslify import SSLify
 # We fetch our constants by taking them from environment variables
 #   defined in the .env file.
 EVENTBRITE_OAUTH_TOKEN= os.environ['EVENTBRITE_OAUTH_TOKEN']
-PUSHER_APP_ID = os.environ['PUSHER_APP_ID']
-PUSHER_KEY = os.environ['PUSHER_KEY']
-PUSHER_SECRET = os.environ['PUSHER_SECRET']
 
 # Instantiate the Eventbrite API client.
 eb = Eventbrite(EVENTBRITE_OAUTH_TOKEN)
-
-# Instantiate the pusher object. This library is used to push actions
-#   to the browser when they occur.
-
-p = pusher.Pusher(app_id=PUSHER_APP_ID, key=PUSHER_KEY, secret=PUSHER_SECRET)
 
 app = Flask(__name__)
 sslify = SSLify(app)
@@ -57,7 +48,6 @@ def render_home_page():
     '''
     return render_template(
         'home.html',
-        settings={'PUSHER_KEY': PUSHER_KEY},
         events=formatted_events,
     )
 
@@ -165,14 +155,6 @@ def render_volunteer_page():
     Renders the volunteer page from jinja2 template
     '''
     return render_template('volunteer.html')
-
-@app.route('/webhook/', methods=['POST'])
-def webhook():
-    # Use the API client to convert from a webhook to an API object (a Python dict with some extra methods).
-    api_object = eb.webhook_to_object(request)
-    # Use pusher to add content to to the HTML page.
-    p.trigger(u'webhooks', u'event', api_object)
-    return ""
 
 if __name__ == '__main__':
     app.debug = False
