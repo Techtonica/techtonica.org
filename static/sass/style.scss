@@ -32,7 +32,7 @@
   width: 100%;
   height: 5rem;
   background-color: $white;
-  box-shadow: 0 0 8px 1px #ccc;
+  box-shadow: 0 0 8px 1px $light-gray;
   z-index: 100;
 }
 
@@ -45,7 +45,7 @@
   align-items: center;
   width: 100%;
   padding: 5px 1rem 5px 0;
-  background: white;
+  background: $white;
 }
 
 .nav-link {
@@ -114,7 +114,7 @@
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/laptop-techtonica-sticker-participant.jpg) $main-blue no-repeat top right fixed;
+  background: url(../img/apprentices-2019-long-cropped-min.jpg) $main-blue no-repeat top fixed;
   background-size: cover;
 }
 
@@ -192,16 +192,20 @@
 .contact-us,
 .donate, .sponsor {
   @include prefix(border-radius, 8px, webkit moz o);
-  color: white;
+  color: $white;
   display: inline-block;
   background-color: $focal-orange;
   text-align: center;
 
   &:hover {
     background-color: $light-blue;
-    color: white;
+    color: $white;
     transition: .3s;
   }
+}
+
+.sponsor:hover .link-on-blue {
+  color: $dark-blue;
 }
 
 .contact-us {
@@ -218,18 +222,24 @@
 #orange-button {
   text-decoration: none;
   &:hover {
-    color: white;
+    color: $white;
   }
 }
 
 #quotes {
-  color: white;
+  color: $white;
   font-size: 2em;
   letter-spacing: 2px;
 }
 
+.white-text {
+  color: $white;
+  padding: 1.5rem;
+  margin: 0;
+}
+
 .large-white-text {
-  color: white;
+  color: $white;
   font-size: 2em;
   letter-spacing: 2px;
   text-align: center;
@@ -319,7 +329,7 @@ table.mentor {
     color: $focal-orange;
     &:hover {
       background-color: $focal-orange;
-      color: white;
+      color: $white;
     }
   }
 
@@ -529,10 +539,10 @@ table.mentor {
   height: 78px;
   border-radius: 10px;
   text-align: center;
-  -moz-box-shadow:    inset 0 0 10px #ccc;
+  -moz-box-shadow:    inset 0 0 10px $light-gray;
   -webkit-box-shadow: inset 0 0 10px black;
   box-shadow:         inset 0 0 10px black;
-  background-color: white;
+  background-color: $white;
 }
 
 .progress-bar {
@@ -540,7 +550,7 @@ table.mentor {
   border-radius: 10px;
   float: left;
   width: 50%;
-  background-color: #fc7625; 
+  background-color: $focal-orange; 
 }
 
 .progress-bg h3.goal, .progress-bg h3.raised {
@@ -556,7 +566,7 @@ table.mentor {
 }
 
 .progress-bg h3.goal {
-  color: #fc7625;
+  color: $focal-orange;
   text-align: center;
 }
 
@@ -565,4 +575,49 @@ table.mentor {
   display: inline;
   padding: 0 25px 0 0;
   text-align: center;
+}
+
+.blue-background h3 {
+  color: white;
+}
+
+.collapsible {
+  color: $main-blue;
+  cursor: pointer;
+  margin: 25px;
+  text-align: left;
+  outline: none;
+  font-size: 1.2em;
+  &:hover{
+    color: $dark-blue;
+  }
+  &::before {
+    content: "+ ";
+    text-decoration: none;
+  }
+}
+
+.collapsible-active {
+  color: $dark-blue;
+  &::before {
+    content: "- ";
+  }
+}
+
+.collapsible-content {
+  padding: 25px;
+  display: none;
+}
+
+ul.hidden-bullets {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+p.press-release-summary {
+  font-style: italic;
+}
+
+p.press-release-bold {
+  font-style: bold;
 }

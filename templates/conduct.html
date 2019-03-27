@@ -53,6 +53,7 @@
                 <li>Harassing or unwanted photography or recording, including logging online activity for harassment purposes</li>
                 <li>Sustained, uninvited disruption</li>
                 <li>Other conduct which could reasonably be considered inappropriate in a professional setting</li>
+                <li>Recruiting or trying to recruit participants of Techtonica's programs outside of formal sponsorship agreements</li>
                 <li>Advocating for, or encouraging, any of the above behavior</li>  
               </ul>
            </p>
@@ -93,11 +94,11 @@ Gracefully accepting constructive criticism</li>
               </ul>
            </p>
             <h3>Reporting</h3>
-            <p class="justify">If you experience or witness (or have experienced or have witnessed) violations of the Code of Conduct or have any other concerns, please notify a Techtonica staff member, <a href="mailto:info@badmail.techtonica.org?Subject=Techtonica%20Contact%20Us" class="contact" target="_blank" >info@techtonica.org</a>, or <a href="https://goo.gl/forms/5gGxKLDgFUTBlmEO2">submit an online report here</a>. 
+            <p class="justify">If you experience or witness (or have experienced or have witnessed) violations of the Code of Conduct or have any other concerns, please notify a Techtonica staff member or <a href="https://goo.gl/forms/5gGxKLDgFUTBlmEO2">submit an online report here</a>. 
            </p>
             <p class="justify">Code of Conduct violations can be reported by:
               <ul>
-                <li>Emailing <a href="mailto:info@badmail.techtonica.org?Subject=Techtonica%20Contact%20Us" class="contact" target="_blank" >info@techtonica.org</a></li>
+                <li>Emailing info@techtonica.org</li>
                 <li>Contacting a staff member privately on via email, by text or phone call, or in person</li>
                 <li>Communicating with the event organizer (if you’re at an event—all events must come with contact information for an organizer)</li>
                 <li>Anonymous reports can also be made by filling out this <a href="https://goo.gl/forms/5gGxKLDgFUTBlmEO2">form</a></li>
@@ -206,7 +207,7 @@ Gracefully accepting constructive criticism</li>
          </p>
         </div>
       </div>
-      <a href="mailto:info@badmail.techtonica.org?Subject=Techtonica%20Contact%20Us" class="contact" target="_blank" ><img src="{{ url_for('static', filename='img/contact-us.jpg') }}" class="contact" alt="Contact us at info@techtonica.org"></a>
+      {% include 'contactbutton.html' %}
     </div>
   </div>
 {% endblock content %}

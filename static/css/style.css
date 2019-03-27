@@ -197,7 +197,7 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/laptop-techtonica-sticker-participant.jpg) #0093B5 no-repeat top right fixed;
+  background: url(../img/apprentices-2019-long-cropped-min.jpg) #0093B5 no-repeat top fixed;
   background-size: cover;
 }
 
@@ -296,6 +296,10 @@ button {
   transition: 0.3s;
 }
 
+.sponsor:hover .link-on-blue {
+  color: #05556D;
+}
+
 .contact-us {
   margin: 0.5em 0;
   padding: 0.75em 1.5em;
@@ -318,6 +322,12 @@ button {
   color: white;
   font-size: 2em;
   letter-spacing: 2px;
+}
+
+.white-text {
+  color: white;
+  padding: 1.5rem;
+  margin: 0;
 }
 
 .large-white-text {
@@ -664,6 +674,51 @@ table.mentor td:first-of-type {
 
 .event-item__address {
   font-size: 1rem;
+}
+
+.blue-background h3 {
+  color: white;
+}
+
+.collapsible {
+  color: #0093B5;
+  cursor: pointer;
+  margin: 25px;
+  text-align: left;
+  outline: none;
+  font-size: 1.2em;
+}
+.collapsible:hover {
+  color: #05556D;
+}
+.collapsible::before {
+  content: "+ ";
+  text-decoration: none;
+}
+
+.collapsible-active {
+  color: #05556D;
+}
+.collapsible-active::before {
+  content: "- ";
+}
+
+.collapsible-content {
+  padding: 25px;
+  display: none;
+}
+
+ul.hidden-bullets {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+p.press-release-summary {
+  font-style: italic;
+}
+
+p.press-release-bold {
+  font-style: bold;
 }
 
 /*# sourceMappingURL=style.css.map */

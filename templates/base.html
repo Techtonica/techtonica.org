@@ -9,10 +9,10 @@
         Techtonica: Bridging the Tech Gap
       {% endblock title %}
     </title>
-    <meta name="description" content="We partner with tech companies to offer tech apprenticeships with living and childcare stipends and job placement to local women and non-binary, feminine-adjacent adults with low incomes." />
-    <meta name="keywords" content="Techtonica, coding school for women, coding academy, learn how to code, programming courses, low income, free tech training, coding, women's empowerment, education for women, LGBT, LGBTQIA+, non-binary feminine-adjacent adults, genderqueer adults, adult education, vocational training, tech jobs, San Francisco, sf, software engineering, learn to code, software developer school, Michelle Glauser" />
+    <meta name="description" content="We partner with tech companies to offer tech apprenticeships with living and childcare stipends and job placement to local women and non-binary adults with low incomes." />
+    <meta name="keywords" content="Techtonica, coding school for women, coding academy, learn how to code, programming courses, low income, free tech training, coding, women's empowerment, education for women, LGBT, LGBTQIA+, non-binary adults, genderqueer adults, adult education, vocational training, tech jobs, San Francisco, sf, software engineering, learn to code, software developer school, Michelle Glauser" />
     <meta property="og:title" content="Techtonica: Bridging the Tech Gap"/>
-    <meta property="og:description" content="Tuition-free tech training and job placement at sponsoring companies for women and non-binary, feminine-adjacent adults with low incomes."/>
+    <meta property="og:description" content="Tuition-free tech training with living stipends and job placement at sponsoring companies for women and non-binary adults with low incomes."/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="http://techtonica.org"/>
     <meta property="og:image" content="{{ url_for('static', filename='img/laptop-techtonica-sticker-participant.jpg') }}"/>
@@ -71,6 +71,7 @@
         </button>
           <a href="{{ url_for('render_donate_page') }}" class="nav-link">Donate</a>
           <a href="{{ url_for('render_sponsor_page') }}" class="nav-link">Sponsor</a>
+          <a href="{{ url_for('render_openings_page') }}" class="nav-link">Openings</a>
           <a href="{{ url_for('render_team_page') }}" class="nav-link">Team</a>
           <a href="{{ url_for('render_faqs_page') }}" class="nav-link">FAQs</a>
           <a href="{{ url_for('render_home_page') }}#supporters" class="supporters nav-link">Supporters</a>
@@ -88,7 +89,7 @@
       <div class="column">
         <p class="centered">
           <a href="https://twitter.com/TechtonicaOrg" target="_blank" title="Twitter"><img src="{{ url_for('static', filename='img/twitter-blue.png') }}" class="social-media" alt="Techtonica Twitter"></a>
-          <a href="https://www.linkedin.com/company/12897075" target="_blank" title="LinkedIn"><img src="{{ url_for('static', filename='img/linkedin-blue.png') }}" class="social-media" alt="Techtonica LinkedIn"></a>
+          <a href="https://www.linkedin.com/company/techtonica/" target="_blank" title="LinkedIn"><img src="{{ url_for('static', filename='img/linkedin-blue.png') }}" class="social-media" alt="Techtonica LinkedIn"></a>
           <a href="https://www.facebook.com/Techtonica/" target="_blank" title="Facebook"><img src="{{ url_for('static', filename='img/facebook-blue.png') }}" class="social-media" alt="Techtonica Facebook"></a>
           <a href="https://medium.com/techtonica/" target="_blank" title="Medium"><img src="{{ url_for('static', filename='img/medium.png') }}" class="social-media" alt="Techtonica Medium Publication"></a>
           <a href="https://www.youtube.com/channel/UCZHRjd_jS91oEj0ecJ0kZsg" target="_blank" title="YouTube"><img src="{{ url_for('static', filename='img/youtube.png') }}" class="social-media" alt="Techtonica YouTube"></a>
@@ -96,9 +97,10 @@
           <a href="{{ url_for('render_faqs_page') }}" title="FAQs"><img src="{{ url_for('static', filename='img/faqs-icon.png') }}" class="social-media" alt="Techtonica FAQs"></a>
           <a href="mailto:info@techtonica.org" title="Email"><img src="{{ url_for('static', filename='img/mail-icon.png') }}" class="social-media" alt="Techtonica Email"></a>
           <a href="https://www.eventbrite.com/o/techtonica-11297022451" title="Events"><img src="{{ url_for('static', filename='img/calendar-icon.png') }}" class="social-media" alt="Techtonica Events"></a>
+          <a href="{{ url_for('render_news_page') }}" title="News"><img src="{{ url_for('static', filename='img/news-icon.png') }}" class="social-media" alt="Techtonica News"></a>
           <a href="{{ url_for('render_openings_page') }}" title="Openings"><img src="{{ url_for('static', filename='img/we-are-hiring.png') }}" class="hiring" alt="Techtonica Careers"></a>
        </p>
-        <p class="centered">All content ©Techtonica, a fiscally-sponsored project of <a href="http://www.socialgoodfund.org" target="_blank">SocialGood</a> (EIN: 46-1323531)</p>
+        <p class="centered">All content ©Techtonica, a fiscally-sponsored project of <a href="http://www.socialgoodfund.org" target="_blank">SocialGood</a> (Nonprofit EIN: 46-1323531)</p>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
@@ -106,6 +108,7 @@
       <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
     {% endblock %}
      <script type="text/javascript" src="{{ url_for('static', filename='js/scroll.js') }}"></script>
+     <script type="text/javascript" src="{{ url_for('static', filename='js/collapsible.js') }}"></script>
     <script type="text/javascript" src="https://s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
   </body>
 </html>

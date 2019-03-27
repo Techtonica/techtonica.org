@@ -37,11 +37,6 @@ function cookieExists(cname) {
   }
 }
 
-$('a.badmail').on('click', function(){
-  var href = $(this).attr('href');
-  $(this).attr('href', href.replace('badmail.', ''));
-});
-
 $(document).ready(function() {
 
   // check cookie to see if the user has visited if not popup newsletter registration.

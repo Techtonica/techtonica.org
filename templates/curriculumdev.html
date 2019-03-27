@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Techtonica: Bridging the Tech Gap — Careers
+{% endblock title %}
+
+{% block content %}
+  <div class="row row__center about-us">
+    <div class="column hidden-med">
+      <img src="{{ url_for('static', filename='img/make-a-difference-instructor.jpg') }}"
+           alt="A mentor works with a participant at a laptop." 
+           class="fixed-img" style="width:38%;">
+    </div>
+    <div class="column">
+      <h1 class="blue-h1">Openings</h1>
+      <p class="justify">Techtonica is a nonprofit that offers six months of full-time software engineering training with living stipends to Bay Area women and non-binary adults with low incomes. After graduation, Techtonica places graduates into engineering jobs with sponsor companies. You can <a href="https://medium.com/@michelleglauser/techtonica-how-to-diversify-tech-and-help-neighbors-in-need-837d5f0b40bc">read more here</a>.</p>
+      <h3>Make an Impact as Our Curriculum Developer!</h3>
+
+      <p class="justify">Techtonica offers a life-changing learning experience to participants. We care deeply about helping our apprentices become high-quality developers.</p>
+
+      <p class="justify">We're looking for a curriculum developer for our six-month, full-time software engineering training. We have existing materials from our first 2018 cohort (see <a href="https://github.com/Techtonica/curriculum/blob/master/README.md">some of the subjects we cover here</a>) that you will build upon and improve. This is a part-time position.</p>
+
+      <p class="justify">Responsibilities:
+      <ul>
+        <li>Decide on the overall plan and pacing for the curriculum, including the balance of lessons, projects, and assessments, while incorporating feedback from the first cohort of apprentices</li>
+        <li>Develop and improve topic outlines, projects, and assessments</li>
+        <li>Break down necessary work into individual pieces that can be developed by volunteers and manage that development</li>
+        <li>Review work of volunteers for accuracy, completeness, and overall quality</li>
+      </ul>
+      </p>
+
+      <p class="justify">What we're looking for:
+        <ul>
+          <li>You can clearly explain technical topics in writing and in a way that is rigorous but can be understood by beginners</li>
+          <li>You know what is needed to become a high-quality, entry-level software engineer and have good ideas about how to get people to that point</li>
+          <li>You have an understanding of socioeconomic differences and experiences that our participants have faced</li>
+        </ul>
+      </p>
+
+      <p class="justify">Preferred previous experience:
+        <ul>
+          <li>Developing a technical curriculum</li>
+          <li>Teaching</li>
+          <li>Professional software development</li>
+        </ul>
+      </p>
+      <p class="justify">
+        This role may lead into <a href="{{ url_for('render_tapm_page') }}">our full-time Technical Apprenticeship Program Manager role</a>.
+      </p>
+      {% include 'contactbutton.html' %}
+    </div>
+  </div>
+{% endblock content %}

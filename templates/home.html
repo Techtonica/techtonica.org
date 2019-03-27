@@ -9,14 +9,14 @@
       <div class="main-header">
         <div class="main-header__text blue-background">
           <h1 class="main-header__header">#BridgeTheTechGap</h1>
-          <p>We offer six months of full-time training with living stipends and laptops to Bay Area women and non-binary adults with low incomes, then place graduates with sponsor companies for full-time work (internships and contracting are fine). We're seeking sponsors now!</p>
-          <h2><a href="{{ url_for('render_sponsor_page') }}" class="sponsor" id="orange-button" target="_blank">Become a sponsor!</a></h2>
+          <p>We offer six months of free, full-time tech training with living stipends and laptops to Bay Area women and non-binary adults with low incomes, then place graduates into jobs with sponsor companies.</p>
+          <h2><a href="{{ url_for('render_volunteer_page') }}" class="sponsor" id="orange-button" target="_blank">Volunteer today!</a></h2>
         </div>
       </div>
       <div class="row row__center what-we-do" id="whatwedo">
         <div class="column">
           <h1 class="blue-h1">Our Apprentices</h1>
-          <p class="justify">Is your company hiring engineers? Do you care about your social footprint and diversity? We are seeking sponsors for our apprentices, who make it through a rigorous, seven-step application process that includes multiple workshops, interviews, and a code challenge. By the time each cohort graduates and is ready for placement on your team, they will have done more than 1,000 hours of collaborative, project-based learning developed by industry professionals. To secure one of the apprentices for your team, please <a href="{{ url_for('render_sponsor_page') }}">check out more details here</a> and get in touch!
+          <p class="justify">Is your company hiring engineers? Do you care about your social footprint and diversity? We are seeking sponsors for our apprentices, who make it through a rigorous, lengthy application process that includes multiple workshops, interviews, and a code challenge. By the time each cohort graduates and is ready for placement on your team, they will have done more than 1,000 hours of collaborative, project-based learning developed by industry professionals. To secure one of the apprentices for your team, please <a href="{{ url_for('render_sponsor_page') }}">check out more details here</a> and get in touch!
         </div>
         <div class="column">
           <a href="{{ url_for('render_sponsor_page') }}">
@@ -192,6 +192,71 @@
                   alt="Rally Health logo"
                   class="twenty-percent-width margin-25">
               </a>
+              <a href="https://www.techhireoakland.org/" target="_blank">
+                <img src="{{ url_for('static', filename='img/TechHire-logo-min.png') }}"
+                  alt="TechHire logo"
+                  class="twenty-percent-width margin-25">
+              </a>
+              <a href="https://www.onelogin.com/" target="_blank">
+                <img src="{{ url_for('static', filename='img/onelogin-logo-min.png') }}"
+                  alt="OneLogin logo"
+                  class="twenty-percent-width margin-25">
+              </a>
+              <a href="https://www.agari.com/" target="_blank">
+                <img src="{{ url_for('static', filename='img/agari-logo-min.png') }}"
+                  alt="Agari logo"
+                  class="twenty-percent-width margin-25">
+              </a>
+              <a href="https://www.kintone.com/" target="_blank">
+                <img src="{{ url_for('static', filename='img/kintone-logo-min.png') }}"
+                  alt="Kintone logo"
+                  class="twenty-percent-width margin-25">
+              </a>
+              <a href="https://www.autonomic.ai/" target="_blank">
+                <img src="{{ url_for('static', filename='img/Autonomic-logo-min.png') }}"
+                  alt="Autonomic logo"
+                  class="twenty-percent-width margin-25">
+              </a>
+              <a href="https://mailchimp.com" target="_blank">
+                <img src="{{ url_for('static', filename='img/mailchimp-logo-min.png') }}"
+                  alt="Mailchimp logo"
+                  class="twenty-percent-width margin-25">
+              </a>
+              <a href="https://virtualpostmail.com" target="_blank">
+                <img src="{{ url_for('static', filename='img/virtualpostmail-logo-min.png') }}"
+                  alt="VirtualPostMail logo"
+                  class="twenty-percent-width margin-25">
+              </a>
+              <a href="https://www.scu-social-entrepreneurship.org/" target="_blank">
+                <img src="{{ url_for('static', filename='img/miller-center-logo-min.png') }}"
+                  alt="Miller Center for Social Entrepreneurship logo"
+                  class="twenty-percent-width margin-25">
+              </a>
+              <a href="https://www.redbubble.com/" target="_blank">
+                <img src="{{ url_for('static', filename='img/Redbubble-logo-min.png') }}"
+                  alt="Redbubble logo"
+                  class="twenty-percent-width margin-25">
+              </a>
+              <a href="https://www.airbnb.com/" target="_blank">
+                <img src="{{ url_for('static', filename='img/Airbnb-logo-min.png') }}"
+                  alt="Airbnb logo"
+                  class="twenty-percent-width margin-25">
+              </a>
+              <a href="https://www.surveymonkey.com/" target="_blank">
+                <img src="{{ url_for('static', filename='img/SurveyMonkey-logo-min.png') }}"
+                  alt="SurveyMonkey logo"
+                  class="twenty-percent-width margin-25">
+              </a>
+              <a href="https://www.appdynamics.com/" target="_blank">
+                <img src="{{ url_for('static', filename='img/AppDynamics-logo-min.jpg') }}"
+                  alt="AppDynamics logo"
+                  class="twenty-percent-width margin-25">
+              </a>
+              <a href="https://www.indeed.com/" target="_blank">
+                <img src="{{ url_for('static', filename='img/Indeed-logo-min.png') }}"
+                  alt="Indeed logo"
+                  class="twenty-percent-width margin-25">
+              </a>
             </div>
           </div>
           <div class="row">       
@@ -236,11 +301,16 @@
                   alt="Ross Chapman"
                   class="ten-percent-width margin-25">
               </a>
+              <a href="http://nicolefv.com/" target="_blank">
+                <img src="{{ url_for('static', filename='img/Nicole-Forsgren-min.jpg') }}"
+                  alt="Nicole Forsgren"
+                  class="ten-percent-width margin-25">
+              </a>
             </div>
           </div>
         </div>
         <div class="row row__center blue-background a-word-from-supporters" id="a-word">
-          <h2 id="quotes">“[The participants] were so impressive. I was blown away. Any one of them would be a great asset.” -Michelle Krejci, Pantheon engineer</h2>
+          <h2 id="quotes">“The apprentices are so impressive—any one of them would be a great asset. The Bay Area often brags of innovation but it’s Techtonica that delivers.” -Michelle Krejci, Service Engineer Tech Lead at Pantheon</h2>
             </div>
       </div>
 {% endblock content %}
