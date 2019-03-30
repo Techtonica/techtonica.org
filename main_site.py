@@ -11,7 +11,7 @@ from flask_sslify import SSLify
 
 # We fetch our constants by taking them from environment variables
 #   defined in the .env file.
-EVENTBRITE_OAUTH_TOKEN= os.environ['EVENTBRITE_OAUTH_TOKEN']
+EVENTBRITE_OAUTH_TOKEN = os.environ['EVENTBRITE_OAUTH_TOKEN']
 
 # Instantiate the Eventbrite API client.
 eb = Eventbrite(EVENTBRITE_OAUTH_TOKEN)
@@ -33,7 +33,7 @@ def render_home_page():
     # Get Eventbrite details
     user = eb.get_user()
     search_params = {
-        'user.id' : user['id'],
+        'user.id': user['id'],
         'sort_by': 'date',
         'expand': 'venue',
     }
@@ -48,7 +48,7 @@ def render_home_page():
     '''
     return render_template(
         'home.html',
-        events=formatted_events,
+        events=formatted_events[0:3],
     )
 
 
@@ -162,6 +162,13 @@ def render_volunteer_page():
     Renders the volunteer page from jinja2 template
     '''
     return render_template('volunteer.html')
+
+@app.route('/news/')
+def render_news_page():
+    '''
+    Renders the news page from jinja2 template
+    '''
+    return render_template('news.html')
 
 if __name__ == '__main__':
     app.debug = False
