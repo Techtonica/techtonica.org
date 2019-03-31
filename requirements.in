@@ -1,4 +1,6 @@
 Flask
 Flask-SSLify
 Jinja2
+eventbrite
 pip-tools
+python-dateutil
