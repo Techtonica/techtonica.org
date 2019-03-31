@@ -5,9 +5,12 @@ for Techtonica.org
 import os
 
 from dateutil.parser import parse
+from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
 from flask import Flask, redirect, render_template, url_for
 from flask_sslify import SSLify
+
+load_dotenv(find_dotenv(usecwd=True))
 
 # We fetch our constants by taking them from environment variables
 #   defined in the .env file.
