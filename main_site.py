@@ -5,13 +5,16 @@ for Techtonica.org
 import os
 
 from dateutil.parser import parse
+from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
-from flask import Flask, render_template, redirect, url_for, request
+from flask import Flask, redirect, render_template, url_for
 from flask_sslify import SSLify
+
+load_dotenv(find_dotenv(usecwd=True))
 
 # We fetch our constants by taking them from environment variables
 #   defined in the .env file.
-EVENTBRITE_OAUTH_TOKEN = os.environ['EVENTBRITE_OAUTH_TOKEN']
+EVENTBRITE_OAUTH_TOKEN = os.environ["EVENTBRITE_OAUTH_TOKEN"]
 
 # Instantiate the Eventbrite API client.
 eb = Eventbrite(EVENTBRITE_OAUTH_TOKEN)
@@ -19,93 +22,93 @@ eb = Eventbrite(EVENTBRITE_OAUTH_TOKEN)
 app = Flask(__name__)
 sslify = SSLify(app)
 
+
 class Event(object):
     def __init__(self, event_dict):
-        self.title = event_dict['name']['text']
-        self.url = event_dict['url']
-        self.location_title = event_dict['venue']['name']
-        self.address = event_dict['venue']['address']['localized_multi_line_address_display']
-        self.date = parse(event_dict['start']['local']).strftime("%B %-d, %Y, %-I:%M%p PDT")
+        self.title = event_dict["name"]["text"]
+        self.url = event_dict["url"]
+        self.location_title = event_dict["venue"]["name"]
+        self.address = event_dict["venue"]["address"][
+            "localized_multi_line_address_display"
+        ]
+        self.date = parse(event_dict["start"]["local"]).strftime(
+            "%B %-d, %Y, %-I:%M%p PDT"
+        )
+
 
 # MAIN HANDLERS
-@app.route('/')
+@app.route("/")
 def render_home_page():
     # Get Eventbrite details
     user = eb.get_user()
-    search_params = {
-        'user.id': user['id'],
-        'sort_by': 'date',
-        'expand': 'venue',
-    }
+    search_params = {"user.id": user["id"], "sort_by": "date", "expand": "venue"}
     events = eb.event_search(**search_params)
     formatted_events = []
 
-    for e in events['events']:
+    for e in events["events"]:
         formatted_events.append(Event(e))
 
-    '''
+    """
     Renders the home page from jinja2 template
-    '''
-    return render_template(
-        'home.html',
-        events=formatted_events[0:3],
-    )
+    """
+    return render_template("home.html", events=formatted_events[0:3])
 
 
-@app.route('/team/')
+@app.route("/team/")
 def render_team_page():
-    '''
+    """
     Renders the team page from jinja2 template
-    '''
-    return render_template('team.html')
+    """
+    return render_template("team.html")
 
 
-@app.route('/careers/')
+@app.route("/careers/")
 def render_careers_page():
-    '''
+    """
     Renders the careers page from jinja2 template
-    '''
-    return redirect(url_for('render_openings_page'))
+    """
+    return redirect(url_for("render_openings_page"))
 
 
-@app.route('/conduct/')
+@app.route("/conduct/")
 def render_conduct_page():
-    '''
+    """
     Renders the conduct page from jinja2 template
-    '''
-    return render_template('conduct.html')
+    """
+    return render_template("conduct.html")
 
 
-@app.route('/thankyou/')
+@app.route("/thankyou/")
 def render_thankyou_page():
-    '''
+    """
     Renders the newsletter signup's thank you page from jinja2 template.
-    '''
-    return render_template('thankyou.html')
+    """
+    return render_template("thankyou.html")
 
 
-@app.route('/sponsor/')
+@app.route("/sponsor/")
 def render_sponsor_page():
-    '''
+    """
     Renders the sponsor page from jinja2 template
-    '''
-    return render_template('sponsor.html')
+    """
+    return render_template("sponsor.html")
 
 
-@app.route('/faqs/')
+@app.route("/faqs/")
 def render_faqs_page():
-    '''
+    """
     Renders the FAQs page from jinja2 template
-    '''
-    return render_template('faqs.html')
+    """
+    return render_template("faqs.html")
 
 
-@app.route('/openings/')
+@app.route("/openings/")
 def render_openings_page():
-    '''
+    """
     Renders the openings page from jinja2 template
-    '''
-    return render_template('openings.html')
+    """
+    return render_template("openings.html")
+
 
 # @app.route('/openings/tapm/')
 # def render_tapm_page():
@@ -114,62 +117,71 @@ def render_openings_page():
 #     '''
 #     return render_template('tapm.html')
 
-@app.route('/openings/curriculumdev/')
+
+@app.route("/openings/curriculumdev/")
 def render_curriculumdev_page():
-    '''
+    """
     Renders the openings page from jinja2 template
-    '''
-    return render_template('curriculumdev.html')
+    """
+    return render_template("curriculumdev.html")
 
-@app.route('/openings/businessdev/')
+
+@app.route("/openings/businessdev/")
 def render_businessdev_page():
-    '''
+    """
     Renders the openings page from jinja2 template
-    '''
-    return render_template('businessdev.html')
+    """
+    return render_template("businessdev.html")
 
-@app.route('/openings/board/')
+
+@app.route("/openings/board/")
 def render_board_page():
-    '''
+    """
     Renders the openings page from jinja2 template
-    '''
-    return render_template('board.html')
+    """
+    return render_template("board.html")
 
-@app.route('/mentor/')
+
+@app.route("/mentor/")
 def render_mentor_page():
-    '''
+    """
     Renders the mentor page from jinja2 template
-    '''
-    return render_template('mentor.html')
+    """
+    return render_template("mentor.html")
 
-@app.route('/apprenticeship/')
+
+@app.route("/apprenticeship/")
 def render_apprenticeship_page():
-    '''
+    """
     Renders the apprenticeship page from jinja2 template
-    '''
-    return render_template('apprenticeship.html')
+    """
+    return render_template("apprenticeship.html")
 
-@app.route('/donate/')
+
+@app.route("/donate/")
 def render_donate_page():
-    '''
+    """
     Renders the donate page from jinja2 template
-    '''
-    return render_template('donate.html')
+    """
+    return render_template("donate.html")
 
-@app.route('/volunteer/')
+
+@app.route("/volunteer/")
 def render_volunteer_page():
-    '''
+    """
     Renders the volunteer page from jinja2 template
-    '''
-    return render_template('volunteer.html')
+    """
+    return render_template("volunteer.html")
 
-@app.route('/news/')
+
+@app.route("/news/")
 def render_news_page():
-    '''
+    """
     Renders the news page from jinja2 template
-    '''
-    return render_template('news.html')
+    """
+    return render_template("news.html")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     app.debug = False
     # app.run(host='0.0.0.0', port=9999)

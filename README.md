@@ -39,6 +39,11 @@ FLASK_DEBUG=1 FLASK_APP=main_site.py flask run
 
 Browse to <http://localhost:5000>.
 
+Styling changes should be made to the Sass (.scss) files and then compiled to CSS using one of the following commands:
+```sh
+sass static/sass/style.scss static/css/style.css
+sass --watch static/sass/style.scss static/css/style.css 
+```
 
 ## Deployment to DreamHost
 
