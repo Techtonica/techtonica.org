@@ -53,7 +53,6 @@ def render_home_page():
     """
     return render_template("home.html", events=formatted_events[0:3])
 
-
 @app.route("/team/")
 def render_team_page():
     """
