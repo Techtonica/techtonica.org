@@ -125,12 +125,12 @@ def render_curriculumdev_page():
     return render_template("curriculumdev.html")
 
 
-@app.route("/openings/businessdev/")
-def render_businessdev_page():
+@app.route("/openings/partnerdevmanager/")
+def render_partnerdevmanager_page():
     """
     Renders the openings page from jinja2 template
     """
-    return render_template("businessdev.html")
+    return render_template("partnerdevmanager.html")
 
 
 @app.route("/openings/board/")
