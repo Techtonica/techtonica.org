@@ -14,10 +14,9 @@ We need to effectively communicate that Techtonica and its apprentices are worth
 
 There should be a good understanding of how the program works with vetting, training, mentoring, and hiring.
 
-
 ## Getting Started
 
-This app uses Python 2.7; please stick to this version.
+This app uses Python 3.6; please stick to this version.
 
 ### Running Locally
 
@@ -40,9 +39,10 @@ FLASK_DEBUG=1 FLASK_APP=main_site.py flask run
 Browse to <http://localhost:5000>.
 
 Styling changes should be made to the Sass (.scss) files and then compiled to CSS using one of the following commands:
+
 ```sh
 sass static/sass/style.scss static/css/style.css
-sass --watch static/sass/style.scss static/css/style.css 
+sass --watch static/sass/style.scss static/css/style.css
 ```
 
 ## Deployment to DreamHost
