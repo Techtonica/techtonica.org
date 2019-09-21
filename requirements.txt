@@ -4,20 +4,20 @@
 #
 #    pip-compile
 #
-certifi==2019.3.9         # via requests
+certifi==2019.6.16        # via requests
 chardet==3.0.4            # via requests
-click==6.7                # via flask, pip-tools
+click==7.0                # via flask, pip-tools
 eventbrite==3.3.3
 flask-sslify==0.1.5
-flask==0.12.3
+flask==1.1.1
 idna==2.8                 # via requests
-itsdangerous==0.24        # via flask
+itsdangerous==1.1.0       # via flask
 jinja2==2.10.1
-markupsafe==1.0           # via jinja2
-pip-tools==3.5.0
+markupsafe==1.1.1         # via jinja2
+pip-tools==4.0.0
 python-dateutil==2.8.0
-python-dotenv==0.10.1
-requests==2.21.0          # via eventbrite
-six==1.11.0               # via pip-tools, python-dateutil
-urllib3==1.25.2           # via requests
-werkzeug==0.12.2          # via flask
+python-dotenv==0.10.3
+requests==2.22.0          # via eventbrite
+six==1.12.0               # via pip-tools, python-dateutil
+urllib3==1.25.3           # via requests
+werkzeug==0.15.5          # via flask
