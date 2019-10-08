@@ -60,7 +60,7 @@
         <h1>Upcoming Events</h1>
         <div class="row row__center blue-background">
           {% for event in events %}
-            <div class="column centered blue-background event-item" id="eventbrite">
+            <div class="column centered blue-background event-item">
               <h3 class="blue-background"><a href="{{event.url}}">{{event.title}}</a></h3>
               <p class="event-item__address blue-background">{{event.date}}</p>
               <p class="event-item__address blue-background">{{event.location_title}}
