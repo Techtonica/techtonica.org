@@ -6,14 +6,16 @@
 
 {% block content %}
   <div class="main-content">
-      <div class="main-header">
+
+      <header role="banner" class="main-header">
         <div class="main-header__text blue-background">
           <h1 class="main-header__header">#BridgeTheTechGap</h1>
           <p>We offer six months of free, full-time tech training with living stipends and laptops to Bay Area women and non-binary adults with low incomes, then place graduates into jobs with sponsor companies.</p>
           <h2><a href="{{ url_for('render_mentor_page') }}" class="sponsor" id="orange-button" target="_blank">Mentor today!</a></h2>
         </div>
-      </div>
-      <div class="row row__center what-we-do" id="whatwedo">
+      </header>
+
+      <section class="row row__center what-we-do" id="whatwedo">
         <div class="column">
           <h1 class="blue-h1">Our Apprentices</h1>
           <p class="justify">Is your company hiring engineers? Do you care about your social footprint and diversity? We are seeking sponsors for our apprentices, who make it through a rigorous, lengthy application process that includes multiple workshops, interviews, and a code challenge. By the time each cohort graduates and is ready for placement on your team, they will have done more than 1,000 hours of collaborative, project-based learning developed by industry professionals. To secure one of the apprentices for your team, please <a href="{{ url_for('render_sponsor_page') }}">check out more details here</a> and get in touch!
@@ -23,8 +25,9 @@
             <img src="{{ url_for('static', filename='img/apprentices-2018-min.jpg') }}" alt="2018 apprenticeship cohort" class="full-width-img">
           </a>
         </div>
-      </div>
-      <div class="row row__center blue-background why-why" id="why">
+      </section>
+
+      <section class="row row__center blue-background why-why" id="why">
         <div class="column">
           <img src="{{ url_for('static', filename='img/Tenderloin.jpg') }}" alt="Street, sidewalks, and building in the Tenderloin neighborhood of San Francisco." class="full-width-img">
         </div>
@@ -33,8 +36,9 @@
           <p class="justify">The tech industry in the Bay Area is causing displacement and increasing income disparity. The industry also needs to build more diverse technical teams.</p>
           <p class="justify">We asked, "What if we could help tech companies build much-needed diverse technical teams by having them sponsor training for and hire underrepresented, underprivileged locals who need jobs the most?"</p>
         </div>
-      </div>
-      <div class="row row__baseline how-it-works" id="howitworks">
+      </section>
+
+      <section class="row row__baseline how-it-works" id="howitworks">
         <h1 class="blue-h1">How it Works</h1>
         <div class="row">
             <div class="column column-med centered">
@@ -55,8 +59,9 @@
               <p>Upon completion of the program, apprentices are placed with hiring partners.</p>
             </div>
         </div>
-      </div>
-      <div class="row row__baseline blue-background">
+      </section>
+
+      <section class="row row__baseline blue-background">
         <h1>Upcoming Events</h1>
         <div class="row row__center blue-background">
           {% for event in events %}
@@ -72,8 +77,9 @@
             </div>
           {% endfor %}
         </div>
-      </div>
-      <div class="row row__center our-supporters" id="supporters">
+      </section>
+
+      <section class="row row__center our-supporters" id="supporters">
           <h1 class="blue-h1">Thank you for your support!</h1>
           <div class="row">
             <div class="column centered">
@@ -352,5 +358,5 @@
         <div class="row row__center blue-background a-word-from-supporters" id="a-word">
           <h2 id="quotes">“The apprentices are so impressive—any one of them would be a great asset. The Bay Area often brags of innovation but it’s Techtonica that delivers.” -Michelle Krejci, Service Engineer Tech Lead at Pantheon</h2>
             </div>
-      </div>
+      </section>
 {% endblock content %}

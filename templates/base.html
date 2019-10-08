@@ -61,7 +61,7 @@
   </head>
   <body>
     <!-- BEGIN HEADER -->
-    <nav class="nav-bar banner-visible">
+    <nav role="navigation" class="nav-bar banner-visible">
       <div class="nav-bar-inner">
         <a href="{{ url_for('render_home_page') }}" class="img-link">
           <img src="{{ url_for('static', filename='img/techtonica_logo.png') }}" alt="Techtonica" class="logo">
@@ -85,7 +85,7 @@
       {% endblock content %}
     </main>
     <!-- BEGIN FOOTER -->
-    <div class="row row__center gray-background">
+    <footer role="contentinfo" class="row row__center gray-background">
       <div class="column">
         <p class="centered">
           <a href="https://twitter.com/TechtonicaOrg" target="_blank" title="Twitter"><img src="{{ url_for('static', filename='img/twitter-blue.png') }}" class="social-media" alt="Techtonica Twitter"></a>
@@ -102,7 +102,8 @@
        </p>
         <p class="centered">All content ©Techtonica, a fiscally-sponsored project of <a href="https://www.socialgoodfund.org" target="_blank">SocialGood</a> (Nonprofit EIN: 46-1323531)</p>
       </div>
-    </div>
+    </footer>
+
     <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
     {% block popup %}
       <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
