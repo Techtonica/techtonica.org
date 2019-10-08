@@ -17,7 +17,7 @@
     <meta property="og:url" content="http://techtonica.org"/>
     <meta property="og:image" content="{{ url_for('static', filename='img/three-participants-at-laptops-min.jpg') }}"/>
     <link href="{{ url_for('static', filename='img/favicon.ico') }}" rel="icon" type="image/x-icon" />
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
     <link rel="preload" href="{{ url_for('static', filename='img/three-participants-at-laptops-min.jpg') }}" as="image">
     <script>
@@ -82,6 +82,10 @@
         <p class="centered">All content &copy; Techtonica, a fiscally-sponsored project of <a href="http://www.socialgoodfund.org" target="_blank" rel="noopener noreferrer">SocialGood</a> (Nonprofit EIN: 46-1323531)</p>
       </div>
     </div>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
     {% block popup %}
       <script defer src="{{ url_for('static', filename='js/index.js') }}"></script>
