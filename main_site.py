@@ -39,14 +39,18 @@ class Event(object):
 # MAIN HANDLERS
 @app.route("/")
 def render_home_page():
-    # Get Eventbrite details
-    user = eb.get_user()
-    search_params = {"user.id": user["id"], "sort_by": "date", "expand": "venue"}
-    events = eb.event_search(**search_params)
     formatted_events = []
+    try:
+        # Get Eventbrite details
+        user = eb.get_user()
+        search_params = {"user.id": user["id"], "sort_by": "date", "expand": "venue"}
+        events = eb.event_search(**search_params)
+        formatted_events = []
 
-    for e in events["events"]:
-        formatted_events.append(Event(e))
+        for e in events["events"]:
+            formatted_events.append(Event(e))
+    except:
+        pass
 
     """
     Renders the home page from jinja2 template
