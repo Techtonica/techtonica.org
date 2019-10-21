@@ -59,6 +59,9 @@
       <div class="row row__baseline blue-background">
         <h1>Upcoming Events</h1>
         <div class="row row__center blue-background">
+          {% if not events %}
+            <h3>[Event data currently unavailable. Please check back later!]</h3>
+          {% endif %}
           {% for event in events %}
             <div class="column centered blue-background event-item" id="eventbrite">
               <h3 class="blue-background"><a href="{{event.url}}">{{event.title}}</a></h3>

@@ -39,22 +39,32 @@ class Event(object):
 # MAIN HANDLERS
 @app.route("/")
 def render_home_page():
-    formatted_events = []
-    try:
-        # Get Eventbrite details
-        user = eb.get_user()
-        search_params = {"user.id": user["id"], "sort_by": "date", "expand": "venue"}
-        events = eb.event_search(**search_params)
-        formatted_events = []
-
-        for e in events["events"]:
-            formatted_events.append(Event(e))
-    except:
-        pass
-
     """
     Renders the home page from jinja2 template
     """
+
+    # Get Eventbrite details
+    user = eb.get_user()
+    search_params = {"user.id": user["id"], "sort_by": "date", "expand": "venue"}
+    try:
+        events = eb.event_search(**search_params)
+    # A problem was happening on 2019-09-21 wherein Eventbrite was giving back
+    # an HTML-based (instead of JSON-enabled) 403 page -- which said, among
+    # other things, "The Team is currently working to return you to the service
+    # as quickly as possible.".  Hopefully this is exceedingly rare in most
+    # cases, but if and when it does happen, we still want to fail gracefully.
+
+    # In theory this will be a ValueError, with a .message value of "No JSON
+    # object could be decoded", and we could have a specialized except-handler
+    # for that.  However, it seems to me that we want _all_ exceptions to still
+    # fail gracefully, so just doing a catch-all:
+    except:
+        events = { "events": [] }
+        pass
+
+    formatted_events = []
+    for e in events["events"]:
+        formatted_events.append(Event(e))
     return render_template("home.html", events=formatted_events[0:3])
 
 @app.route("/team/")
