@@ -91,6 +91,14 @@ def render_conduct_page():
     return render_template("conduct.html")
 
 
+@app.route("/privacy/")
+def render_privacy_page():
+    """
+    Renders the privacy page from jinja2 template
+    """
+    return render_template("privacy.html")
+
+
 @app.route("/thankyou/")
 def render_thankyou_page():
     """
