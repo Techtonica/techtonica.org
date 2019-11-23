@@ -60,7 +60,7 @@
         <h1>Upcoming Events</h1>
         <div class="row row__center blue-background">
           {% if not events %}
-            <h3>[Event data currently unavailable. Please check back later!]</h3>
+            <h3>[Unable to load events here. Check <a href="https://www.eventbrite.com/o/techtonica-11297022451">Eventbrite</a> for current listing.]</h3>
           {% endif %}
           {% for event in events %}
             <div class="column centered blue-background event-item" id="eventbrite">

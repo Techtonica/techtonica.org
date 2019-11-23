@@ -5,25 +5,25 @@ for Techtonica.org
 import os
 
 from dateutil.parser import parse
+
+# We fetch our constants by taking them from environment variables
+#   defined in the .env file.
 from dotenv import find_dotenv, load_dotenv
+
 from eventbrite import Eventbrite
 from flask import Flask, redirect, render_template, url_for
 from flask_sslify import SSLify
 
 load_dotenv(find_dotenv(usecwd=True))
+IS_DEVELOPMENT = os.environ.get('FLASK_DEBUG') != None
 
-# We fetch our constants by taking them from environment variables
-#   defined in the .env file.
-EVENTBRITE_OAUTH_TOKEN = os.environ["EVENTBRITE_OAUTH_TOKEN"]
+def safe_env_var(name, required=False, error_message=None):
+    value = os.environ.get(name)
+    if required and not value:
+        raise LookupError("env[%s] missing. %s" % (name, error_message))
+    return value
 
-# Instantiate the Eventbrite API client.
-eb = Eventbrite(EVENTBRITE_OAUTH_TOKEN)
-
-app = Flask(__name__)
-sslify = SSLify(app)
-
-
-class Event(object):
+class EventbriteEvent(object):
     def __init__(self, event_dict):
         self.title = event_dict["name"]["text"]
         self.url = event_dict["url"]
@@ -35,6 +35,45 @@ class Event(object):
             "%B %-d, %Y, %-I:%M%p PDT"
         )
 
+class StubEventbriteClient(object):
+    def get_user(self):
+        return False
+
+class EventbriteClient(object):
+    def __init__(self, enabled=True):
+        if enabled:
+            self.oauth_token = safe_env_var("EVENTBRITE_OAUTH_TOKEN", True, "find a copy of .env")
+            self.client = Eventbrite(self.oauth_token)
+        else:
+            self.client = StubEventbriteClient()  
+
+    def get_formatted_events(self):
+        try:
+            # Get Eventbrite details
+            user = self.client.get_user()
+            if not user:
+                return []
+                
+            search_params = {"user.id": user["id"], "sort_by": "date", "expand": "venue"}
+            events = self.client.event_search(**search_params)
+            # A problem was happening on 2019-09-21 wherein Eventbrite was giving back
+            # an HTML-based (instead of JSON-enabled) 403 page -- which said, among
+            # other things, "The Team is currently working to return you to the service
+            # as quickly as possible.".  Hopefully this is exceedingly rare in most
+            # cases, but if and when it does happen, we still want to fail gracefully.
+
+            # In theory this will be a ValueError, with a .message value of "No JSON
+            # object could be decoded", and we could have a specialized except-handler
+            # for that.  However, it seems to me that we want _all_ exceptions to still
+            # fail gracefully, so just doing a catch-all:
+            return [EventbriteEvent(e) for e in events["events"]]
+        except:
+            return []
+
+eb_client = EventbriteClient(not IS_DEVELOPMENT)
+
+app = Flask(__name__)
+sslify = SSLify(app)
 
 # MAIN HANDLERS
 @app.route("/")
@@ -42,29 +81,7 @@ def render_home_page():
     """
     Renders the home page from jinja2 template
     """
-
-    # Get Eventbrite details
-    user = eb.get_user()
-    search_params = {"user.id": user["id"], "sort_by": "date", "expand": "venue"}
-    try:
-        events = eb.event_search(**search_params)
-    # A problem was happening on 2019-09-21 wherein Eventbrite was giving back
-    # an HTML-based (instead of JSON-enabled) 403 page -- which said, among
-    # other things, "The Team is currently working to return you to the service
-    # as quickly as possible.".  Hopefully this is exceedingly rare in most
-    # cases, but if and when it does happen, we still want to fail gracefully.
-
-    # In theory this will be a ValueError, with a .message value of "No JSON
-    # object could be decoded", and we could have a specialized except-handler
-    # for that.  However, it seems to me that we want _all_ exceptions to still
-    # fail gracefully, so just doing a catch-all:
-    except:
-        events = { "events": [] }
-        pass
-
-    formatted_events = []
-    for e in events["events"]:
-        formatted_events.append(Event(e))
+    formatted_events = eb_client.get_formatted_events()
     return render_template("home.html", events=formatted_events[0:3])
 
 @app.route("/team/")
