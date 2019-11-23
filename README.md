@@ -16,7 +16,7 @@ There should be a good understanding of how the program works with vetting, trai
 
 ## Getting Started
 
-This app uses Python 3.6; please stick to this version.
+This app uses Python 3.6; please stick to this version. If you use [pyenv](https://github.com/pyenv/pyenv) this should happen automatically.
 
 ### Running Locally
 
