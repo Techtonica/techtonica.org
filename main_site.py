@@ -93,9 +93,7 @@ def render_openings_page():
 """
 @app.route("/openings/seam/")
 def render_seam_page():
-    """
     Renders the openings page from jinja2 template
-    """
     return render_template("seam.html")
 """
 
