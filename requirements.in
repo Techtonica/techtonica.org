@@ -5,3 +5,5 @@ eventbrite
 pendulum
 pip-tools
 python-dotenv
+requests
+sendgrid
