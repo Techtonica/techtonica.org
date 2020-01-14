@@ -56,6 +56,7 @@
             </div>
         </div>
       </div>
+
       <div class="row row__baseline blue-background">
         <h1>Upcoming Events</h1>
         <div class="row row__center blue-background">
@@ -66,16 +67,16 @@
             <div class="column centered blue-background event-item" id="eventbrite">
               <h3 class="blue-background"><a href="{{event.url}}">{{event.title}}</a></h3>
               <p class="event-item__address blue-background">{{event.date}}</p>
-              <p class="event-item__address blue-background">{{event.location_title}}
+              <p class="event-item__address blue-background">{{event.venue}}
                 {% for a in event.address %}
                   <br>{{a}}
                 {% endfor %}
               </p>
-              {{event.venue}}
             </div>
           {% endfor %}
         </div>
       </div>
+
       <div class="row row__center our-supporters" id="supporters">
           <h1 class="blue-h1">Thank you for your support!</h1>
           <div class="row">

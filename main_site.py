@@ -3,8 +3,8 @@ This is the main Python file that sets up rendering and templating
 for Techtonica.org
 """
 import os
-
 from dateutil.parser import parse
+import pendulum
 
 # We fetch our constants by taking them from environment variables
 #   defined in the .env file.
@@ -147,14 +147,12 @@ def render_openings_page():
     """
     return render_template("openings.html")
 
-
-@app.route('/openings/seam/')
+"""
+@app.route("/openings/seam/")
 def render_seam_page():
-    '''
     Renders the openings page from jinja2 template
-    '''
-    return render_template('seam.html')
-
+    return render_template("seam.html")
+"""
 
 @app.route("/openings/curriculumdev/")
 def render_curriculumdev_page():
@@ -210,6 +208,30 @@ def render_news_page():
     Renders the news page from jinja2 template
     """
     return render_template("news.html")
+
+
+def get_events():
+    group_id = eventbrite.get_user()["id"]
+    response = eventbrite.get(
+        f"/organizations/{group_id}/events/",
+        data={"status": "live", "order_by": "start_asc", "page_size": 4},
+        expand=("venue",),
+    )
+    events = [Event(event) for event in response["events"]]
+    return events
+
+
+class Event(object):
+    def __init__(self, event):
+        self.title = event["name"]["text"]
+        self.url = event["url"]
+        self.venue = event["venue"]["name"]
+        self.address = event["venue"]["address"]["localized_multi_line_address_display"]
+        self.date = (
+            pendulum.parse(event["start"]["local"])
+            .set(tz=event["start"]["timezone"])
+            .format("MMMM D, YYYY, h:mmA zz")
+        )
 
 
 if __name__ == "__main__":

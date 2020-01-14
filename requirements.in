@@ -2,6 +2,8 @@ Flask
 Flask-SSLify
 Jinja2
 eventbrite
+pendulum
 pip-tools
-python-dateutil
 python-dotenv
+requests
+sendgrid
