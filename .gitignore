@@ -6,4 +6,6 @@ css/style.css.map
 .env
 env
 env*
+.venv
+venv
 .vscode
