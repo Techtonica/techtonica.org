@@ -84,6 +84,15 @@ button {
   align-items: baseline;
 }
 
+.row--alternatingColumns:nth-child(even) {
+  flex-direction: row;
+
+}
+
+.row--alternatingColumns:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
 .column {
   -webkit-flex: 1;
   -moz-flex: 1;

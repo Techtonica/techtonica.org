@@ -1,0 +1,26 @@
+{
+    "employees": [
+        {
+            "name": "Michelle Glauser",
+            "link_url": "https://linkedin.com/in/michelleglauser",
+            "photo_filename": "Michelle-Glauser-min.jpg",
+            "title": "Founder and CEO",
+            "blurb": "Since becoming a software engineer in 2012, she's worked for a better, more diverse software industry by organizing support groups, meetups, workshops, and the #ILookLikeAnEngineer ad campaign. Michelle's experience working in tech and volunteering in the community in San Francisco revealed two glaring issues: lack of diversity on tech teams and high income disparity. Techtonica is her vision to help tech companies and people who need more opportunities thrive together."
+        },
+        {
+            "name": "TaLea Carpenter",
+            "link_url": "https://www.linkedin.com/in/talea-carpenter/",
+            "photo_filename": "TaLea-min.jpg",
+            "title": "Associate Program Manager",
+            "blurb": "Before learning to code, TaLea spent the majority of her time homeschooling her children and making music. She has been recording music for over a decade and sees coding as another creative outlet. She worked at Ancestry following her training at Techtonica and is happy to be in a position to empower others."
+        },
+        {
+            "name": "Tiffany Quach",
+            "link_url": "https://linkedin.com/in/tiffanyaquach/",
+            "photo_filename": "Tiffany-Quach-min.jpg",
+            "title": "Partnership Development Manager",
+            "blurb": "Tiffany has over 10 years of professional experience working in social impact. Prior to joining Techtonica, she managed a STEM and Environmental Education program for youth from communities that organizations have previously failed to engage. She is an experienced community builder and is impassioned about diversity, equity, and inclusion across all sectors. She is now excited to help create an inclusive tech ecosystem through partnership and relationship building."
+        }
+    ],
+    "board_members": []
+}

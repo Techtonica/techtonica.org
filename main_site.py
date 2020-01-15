@@ -5,6 +5,7 @@ for Techtonica.org
 import os
 from dateutil.parser import parse
 import pendulum
+import json
 
 # We fetch our constants by taking them from environment variables
 #   defined in the .env file.
@@ -89,7 +90,9 @@ def render_team_page():
     """
     Renders the team page from jinja2 template
     """
-    return render_template("team.html")
+    with open('./team.json') as f:
+        team = json.load(f)
+    return render_template("team.html", team=team)
 
 
 @app.route("/careers/")
