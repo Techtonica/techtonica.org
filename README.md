@@ -7,6 +7,7 @@ currently hosted on DreamHost.
 - [What](#what)
 - [How](#how)
 - [Getting Started](#getting-started)
+  - [Install Pre-Commit Hooks](#install-pre-commit-hooks)
   - [Running Locally](#running-locally)
   - [Using Docker to Run Locally](#using-docker-to-run-locally)
   - [CSS / SCSS](#css--scss)
@@ -32,7 +33,19 @@ training, mentoring, and hiring.
 
 ## Getting Started
 
-This app uses Python 3.6; please stick to this version.
+This app uses Python 3.6; please stick to this version when doing development.
+
+### Install Pre-Commit Hooks
+
+This project uses various pre-commit hooks to ensure code quality and formatting
+consistency.
+
+1. [`Install pre-commit`](https://pre-commit.com/#install) globally.
+1. Install the project pre-commit hooks:
+
+   ```sh
+   pre-commit install -f --install-hooks
+   ```
 
 ### Running Locally
 
@@ -45,7 +58,7 @@ environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 Install the project dependencies. In the project root run:
 
 ```sh
-pip install -r requirements.txt
+pip install -r dev.txt
 ```
 
 Start the application's server:
@@ -78,6 +91,8 @@ To rebuild app: `docker build --tag techtonica .`
 Styling changes should be made to the Sass (.scss) files and then compiled to
 CSS using one of the following commands:
 
+👷‍♀️ **TODO**: Document how install Sass.
+
 ```sh
 sass static/sass/style.scss static/css/style.css
 sass --watch static/sass/style.scss static/css/style.css
@@ -93,6 +108,23 @@ dependencies. If you need to add or remove a Python library dependency:
 
    ```sh
    pip-compile -U
+   ```
+
+Once the new library is used in the code base, you'll need to update the
+[isort](https://timothycrosley.github.io/isort/) config to reflect third party
+library usage:
+
+```sh
+pre-commit run seed-isort-config -a --hook-stage manual
+```
+
+For development dependencies:
+
+1. Edit `dev.in`
+1. Generate `dev.txt`:
+
+   ```sh
+   pip-compile -U dev.in
    ```
 
 ## Deployment to DreamHost

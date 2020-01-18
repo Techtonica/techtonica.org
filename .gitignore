@@ -1,11 +1,11 @@
-.DS_Store
-.sass-cache/
-css/style.css.map
-*.pyc
 *.codekit*
+*.pyc
+.DS_Store
 .env
+.sass-cache/
+.venv
+.vscode
+css/style.css.map
 env
 env*
-.venv
 venv
-.vscode
