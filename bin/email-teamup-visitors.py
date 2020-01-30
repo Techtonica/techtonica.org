@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import ast
 import os
+import sys
 from datetime import date, timedelta
 
 import requests
@@ -155,5 +156,10 @@ def get_next_weekday():
 
 if __name__ == "__main__":
     visitors = get_visitors()
-    if visitors:
+    if len(sys.argv) > 1 and sys.argv[1] == "dry-run":
+        if visitors:
+            print(f"Next visitors: {', '.join(visitors)}")
+        else:
+            print("No visitors")
+    elif visitors:
         send_email(VISITOR_EMAIL_FROM, VISITOR_EMAIL_TO, VISITOR_EMAIL_CC, visitors)
