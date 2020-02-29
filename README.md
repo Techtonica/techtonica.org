@@ -42,6 +42,8 @@ FLASK_DEBUG=1 FLASK_APP=main_site.py flask run
 
 Browse to <http://localhost:5000>.
 
+### CSS / SCSS
+
 Styling changes should be made to the Sass (.scss) files and then compiled to
 CSS using one of the following commands:
 
