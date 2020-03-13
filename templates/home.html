@@ -67,11 +67,13 @@
             <div class="column centered blue-background event-item" id="eventbrite">
               <h3 class="blue-background"><a href="{{event.url}}">{{event.title}}</a></h3>
               <p class="event-item__address blue-background">{{event.date}}</p>
+              {% if event.venue %}
               <p class="event-item__address blue-background">{{event.venue}}
                 {% for a in event.address %}
                   <br>{{a}}
                 {% endfor %}
               </p>
+              {% endif %}
             </div>
           {% endfor %}
         </div>
