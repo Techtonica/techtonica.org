@@ -6,22 +6,22 @@
 #
 certifi==2019.11.28       # via requests
 chardet==3.0.4            # via requests
-click==7.0                # via flask, pip-tools
-eventbrite==3.3.3
-flask-sslify==0.1.5
-flask==1.1.1
-idna==2.8                 # via requests
+click==7.1.1              # via flask, pip-tools
+eventbrite==3.3.3         # via -r requirements.in
+flask-sslify==0.1.5       # via -r requirements.in
+flask==1.1.1              # via -r requirements.in, flask-sslify
+idna==2.9                 # via requests
 itsdangerous==1.1.0       # via flask
-jinja2==2.10.3
+jinja2==2.11.1            # via -r requirements.in, flask
 markupsafe==1.1.1         # via jinja2
-pendulum==2.0.5
-pip-tools==4.3.0
+pendulum==2.1.0           # via -r requirements.in
+pip-tools==4.5.1          # via -r requirements.in
 python-dateutil==2.8.1    # via pendulum
-python-dotenv==0.10.3
-python-http-client==3.2.1  # via sendgrid
+python-dotenv==0.12.0     # via -r requirements.in
+python-http-client==3.2.6  # via sendgrid
 pytzdata==2019.3          # via pendulum
-requests==2.22.0
-sendgrid==6.1.0
-six==1.13.0               # via pip-tools, python-dateutil
-urllib3==1.25.7           # via requests
-werkzeug==0.16.0          # via flask
+requests==2.23.0          # via -r requirements.in, eventbrite
+sendgrid==6.1.3           # via -r requirements.in
+six==1.14.0               # via pip-tools, python-dateutil
+urllib3==1.25.8           # via requests
+werkzeug==1.0.0           # via flask

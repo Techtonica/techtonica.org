@@ -61,7 +61,7 @@ dependencies. If you need to add or remove a Python library dependency:
 1. Generate `requirements.txt`:
 
    ```sh
-   pip-compile --build-isolation -U
+   pip-compile -U
    ```
 
 ## Deployment to DreamHost
