@@ -90,12 +90,14 @@ def render_openings_page():
     """
     return render_template("openings.html")
 
+
 """
 @app.route("/openings/seam/")
 def render_seam_page():
     Renders the openings page from jinja2 template
     return render_template("seam.html")
 """
+
 
 @app.route("/openings/curriculumdev/")
 def render_curriculumdev_page():
@@ -168,13 +170,19 @@ class Event(object):
     def __init__(self, event):
         self.title = event["name"]["text"]
         self.url = event["url"]
-        self.venue = event["venue"]["name"]
-        self.address = event["venue"]["address"]["localized_multi_line_address_display"]
+        self.venue = None
+        self.address = None
         self.date = (
             pendulum.parse(event["start"]["local"])
             .set(tz=event["start"]["timezone"])
             .format("MMMM D, YYYY, h:mmA zz")
         )
+
+        if event["venue"]:
+            self.venue = event["venue"]["name"]
+            self.address = event["venue"]["address"][
+                "localized_multi_line_address_display"
+            ]
 
 
 if __name__ == "__main__":
