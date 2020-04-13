@@ -39,6 +39,15 @@ VISITOR_EMAIL_FROM=('me@example.com', 'Example Person')
 VISITOR_EMAIL_TO=['joe@example.com', 'jane@example.com']
 VISITOR_EMAIL_CC=['doe@example.com']
 ```
+
+Currently the script is run via a cron job, where the website is hosted
+(DreamHost):
+
+```sh
+$ crontab -l
+MAILTO="info@techtonica.org"
+0 15 * * 1-5 ${HOME}/techtonica.org/bin/python ${HOME}/techtonica.org/techtonica/bin/email-teamup-visitors.py # noqa
+```
 """
 
 TEAMUP_API_KEY = os.getenv("TEAMUP_API_KEY")
