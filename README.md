@@ -24,6 +24,8 @@ This app uses Python 3.6; please stick to this version.
 
 ### Running Locally
 
+If you prefer using docker, please go [here](#user-content-using-docker-to-run-locally).
+
 It is recommended you use a virtual environment tool to keep dependencies
 required by different projects separate. [Learn more about Python virtual
 environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
@@ -120,3 +122,20 @@ dependencies. If you need to add or remove a Python library dependency:
    ```sh
    cd .. && touch tmp/restart.txt
    ```
+
+### Using Docker to Run Locally
+
+#### First Time Using Docker?
+
+1. Download [Docker Desktop](https://www.docker.com/products/docker-desktop)
+2. `cd` into the folder that holds your techtonica.org repo
+3. Build your app: `docker build --tag techtonica .`
+4. Run your app: `docker run techtonica`
+
+_When there are updates to the Dockerfile, you will have to rebuild your app in order for those changes to take effect_
+
+#### For Docker Pros
+
+To run app: `docker run techtonica`
+
+To rebuild app: `docker build --tag techtonica .`
