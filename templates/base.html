@@ -91,8 +91,11 @@
     {% block popup %}
       <script defer src="{{ url_for('static', filename='js/index.js') }}"></script>
     {% endblock %}
-     <script defer src="{{ url_for('static', filename='js/scroll.js') }}"></script>
-     <script defer src="{{ url_for('static', filename='js/collapsible.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/scroll.js') }}"></script>
+    <script defer src="{{ url_for('static', filename='js/collapsible.js') }}"></script>
     <script defer src="https://s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6032726.js"></script>
+    <!-- End of HubSpot Embed Code -->
   </body>
 </html>
