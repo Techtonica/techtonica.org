@@ -51,7 +51,7 @@ CSS using one of the following commands:
 
 ```sh
 sass static/sass/style.scss static/css/style.css
-sass --watch static/sass/style.scss static/css/style.css
+sass --watch static/sass/style.scss:static/css/style.css
 ```
 
 ### Updating Dependencies
