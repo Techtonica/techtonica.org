@@ -3,17 +3,29 @@
 This repo is for [the Techtonica website](http://techtonica.org), which is
 currently hosted on DreamHost.
 
-### Who
+- [Who](#who)
+- [What](#what)
+- [How](#how)
+- [Getting Started](#getting-started)
+  - [Running Locally](#running-locally)
+  - [Using Docker to Run Locally](#using-docker-to-run-locally)
+  - [CSS / SCSS](#css--scss)
+  - [Updating Dependencies](#updating-dependencies)
+- [Deployment to DreamHost](#deployment-to-dreamhost)
+  - [Initial Setup](#initial-setup)
+  - [Updating the Site](#updating-the-site)
+
+## Who
 
 The audience of the website is made up of (potential) volunteers and sponsors.
 (Apprentices will be contacted via local organizations.)
 
-### What
+## What
 
 We need to effectively communicate that Techtonica and its apprentices are
 worth supporting.
 
-### How
+## How
 
 There should be a good understanding of how the program works with vetting,
 training, mentoring, and hiring.
@@ -24,7 +36,7 @@ This app uses Python 3.6; please stick to this version.
 
 ### Running Locally
 
-If you prefer using docker, please go [here](#user-content-using-docker-to-run-locally).
+[If you prefer using Docker, see instructions](#using-docker-to-run-locally).
 
 It is recommended you use a virtual environment tool to keep dependencies
 required by different projects separate. [Learn more about Python virtual
@@ -43,6 +55,23 @@ FLASK_DEBUG=1 FLASK_APP=main_site.py flask run
 ```
 
 Browse to <http://localhost:5000>.
+
+### Using Docker to Run Locally
+
+#### First Time Using Docker?
+
+1. Download [Docker Desktop](https://www.docker.com/products/docker-desktop)
+2. `cd` into the folder that holds your techtonica.org repo
+3. Build your app: `docker build --tag techtonica .`
+4. Run your app: `docker run techtonica`
+
+_When there are updates to the Dockerfile, you will have to rebuild your app in order for those changes to take effect_
+
+#### For Docker Pros
+
+To run app: `docker run techtonica`
+
+To rebuild app: `docker build --tag techtonica .`
 
 ### CSS / SCSS
 
@@ -68,7 +97,7 @@ dependencies. If you need to add or remove a Python library dependency:
 
 ## Deployment to DreamHost
 
-## Initial Setup
+### Initial Setup
 
 1. Follow the instructions in the [Setting up and deploying Python Flask to
    Dreamhost](https://mattcarrier.com/flask-dreamhost-setup/) blog post.
@@ -80,7 +109,7 @@ dependencies. If you need to add or remove a Python library dependency:
    pip install -U pip setuptools pip-tools
    ```
 
-## Updating the Site
+### Updating the Site
 
 1. Log in via SSH using your SSH key.
 
@@ -122,20 +151,3 @@ dependencies. If you need to add or remove a Python library dependency:
    ```sh
    cd .. && touch tmp/restart.txt
    ```
-
-### Using Docker to Run Locally
-
-#### First Time Using Docker?
-
-1. Download [Docker Desktop](https://www.docker.com/products/docker-desktop)
-2. `cd` into the folder that holds your techtonica.org repo
-3. Build your app: `docker build --tag techtonica .`
-4. Run your app: `docker run techtonica`
-
-_When there are updates to the Dockerfile, you will have to rebuild your app in order for those changes to take effect_
-
-#### For Docker Pros
-
-To run app: `docker run techtonica`
-
-To rebuild app: `docker build --tag techtonica .`
