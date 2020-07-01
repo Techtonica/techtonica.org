@@ -1,113 +1,168 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
+Mentoring {% endblock title %} {% block content %}
+<div class="row row__center about-us">
+  <div class="column">
+    <h1 class="blue-h1">Mentor an Apprentice</h1>
+    <p class="justify">
+      Techtonica is a rigorous, six-month training program followed by job
+      placement for Bay Area women and non-binary adults with low incomes. Our
+      apprentices will benefit from the experience, insight, and support of
+      someone who understands their desire to become software engineers and has
+      successfully achieved that goal themselves. To improve our apprentices’
+      probability of success, we pair them with a mentor who can serve in the
+      following roles:
+    </p>
+    <ul>
+      <li>
+        Advisor – Mentors share their professional wisdom, give feedback on
+        projects, and are available to be a sounding board for apprentices’
+        ideas.
+      </li>
+      <li>
+        Role Model – A mentor’s insight into their professional journey helps
+        our apprentices see their own path into a new career.
+      </li>
+      <li>
+        Supporter – Learning to code can be a difficult and frustrating
+        endeavor. It is incredibly important to have a mentor who listens with a
+        sympathetic ear, acknowledges disappointments, and celebrates triumphs.
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="row row__center blue-background">
+  <div class="column">
+    <h3>Benefits to Mentors</h3>
 
-{% block title %}
-  Techtonica: Bridging the Tech Gap — Mentoring
-{% endblock title %}
+    <ul>
+      <li>
+        Techtonica mentors have a direct impact on creating a more diverse,
+        inclusive tech industry.
+      </li>
+      <li>
+        Mentoring builds leadership skills in coaching, counseling, listening,
+        and modeling.
+      </li>
+      <li>
+        Mentors have the opportunity to connect not only with their assigned
+        apprentices, but with other apprentices, Techtonica staff and board
+        members, fellow mentors, as well as other Techtonica supporters.
+      </li>
+    </ul>
 
-{% block content %}
-  	<div class="row row__center about-us">
-	    <div class="column">
-	    	<h1 class="blue-h1">Mentor an Apprentice</h1>
-			<p class="justify">Techtonica is a rigorous, six-month training program followed by job placement for Bay Area women and non-binary adults with low incomes. Our apprentices will benefit from the experience, insight, and support of someone who understands their desire to become software engineers and has successfully achieved that goal themselves. To improve our apprentices’ probability of success, we pair them with a mentor who can serve in the following roles:</p>
-		  	<ul>
-				<li>Advisor – Mentors share their professional wisdom, give feedback on projects, and are available to be a sounding board for apprentices’ ideas.</li>
-				<li>Role Model – A mentor’s insight into their professional journey helps our apprentices see their own path into a new career.</li>
-				<li>Supporter – Learning to code can be a difficult and frustrating endeavor. It is incredibly important to have a mentor who listens with a sympathetic ear, acknowledges disappointments, and celebrates triumphs.</li>
-		  	</ul>
-		</div>
-	</div>
-	<div class="row row__center blue-background">
-		<div class="column">
-		  <h3>Benefits to Mentors</h3>
+    <h3>Eligibility</h3>
+    <p class="justify">
+      In order to best serve our apprentices, mentors must be:
+    </p>
+    <ul>
+      <li>18 years or older</li>
+      <li>Employed as a Software Engineer or in a closely-related field</li>
+      <li>
+        Able to attend most mentor events (at least remotely), including the
+        matching on December 7th, 2019
+      </li>
+    </ul>
+  </div>
+  <div class="column">
+    <a href="{{ url_for('render_sponsor_page') }}">
+      <img
+        src="{{ url_for('static', filename='img/whiteboarding-practice-min.jpg') }}"
+        alt="Two people practicing whiteboarding."
+        class="full-width-img"
+      />
+    </a>
+  </div>
+</div>
+<div class="row row__center">
+  <div class="column">
+    <h3>Roles and Expectations</h3>
+    <table class="mentor" cellpadding="0" cellspacing="0">
+      <tr>
+        <td>Mentors</td>
+        <td>
+          <ul>
+            <li>
+              Provide encouragement, professional advice, and technical
+              guidance.
+            </li>
+            <li>Stay accessible, committed, and engaged with apprentices.</li>
+            <li>
+              Outside of program hours (Monday through Friday from 8:30 to 5:30
+              PM), meet with apprentices in-person or via video call at least
+              two hours per week for the duration of the training (six months)
+              and placement (six months).
+            </li>
+            <li>Respond to apprentice communications within 24 hours.</li>
+            <li>Submit regular reports to program staff.</li>
+            <li>Participate in program assessments as asked.</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Apprentices</td>
+        <td>
+          <ul>
+            <li>
+              Meet with their mentors at least two hours per week for the
+              duration of the training (six months) and placement (six months).
+            </li>
+            <li>Stay accessible, committed, and engaged with mentors.</li>
+            <li>Participate in program assessments.</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>Techtonica</td>
+        <td>
+          <ul>
+            <li>Recruit, select, and match mentors with apprentices.</li>
+            <li>
+              Provide support and resources to facilitate apprentice/mentor
+              relationship.
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </table>
 
-		    <ul>
-				<li>Techtonica mentors have a direct impact on creating a more diverse, inclusive tech industry.</li>
-				<li>Mentoring builds leadership skills in coaching, counseling, listening, and modeling.</li>
-				<li>Mentors have the opportunity to connect not only with their assigned apprentices, but with other apprentices, Techtonica staff and board members, fellow mentors, as well as other Techtonica supporters.</li>
-			</ul>
+    <h3>January 2020 Cohort Timeline</h3>
+    <table class="mentor" cellpadding="0" cellspacing="0">
+      <tr>
+        <td>October 18th - November 15th</td>
+        <td>Mentor applications open</td>
+      </tr>
+      <tr>
+        <td>November 18th - November 25th</td>
+        <td>Mentor interviews</td>
+      </tr>
+      <tr>
+        <td>November 27th</td>
+        <td>Mentor selections</td>
+      </tr>
+      <tr>
+        <td>December 7th</td>
+        <td>Mentor matching and apprentice onboarding</td>
+      </tr>
+      <tr>
+        <td>January - June 2020</td>
+        <td>Techtonica Training</td>
+      </tr>
+      <tr>
+        <td>July - December 2020</td>
+        <td>Support during placement with Techtonica partners</td>
+      </tr>
+    </table>
 
-		    <h3>Eligibility</h3>
-		    <p class="justify">In order to best serve our apprentices, mentors must be:</p>
-		    <ul>
-			  	<li>18 years or older</li>
-				<li>Employed as a Software Engineer or in a closely-related field</li>
-				<li>Able to attend most mentor events (at least remotely), including the matching on December 7th, 2019</li>
-			</ul>
-		</div>
-		<div class="column">
-			<a href="{{ url_for('render_sponsor_page') }}">
-            <img src="{{ url_for('static', filename='img/whiteboarding-practice-min.jpg') }}" alt="Two people practicing whiteboarding." class="full-width-img">
-          </a>
-		</div>
-	</div>
-	<div class="row row__center">
-		<div class="column">
-		  	<h3>Roles and Expectations</h3>
-		 	<table class="mentor" cellpadding=0 cellspacing=0>
-				<tr>
-				    <td>Mentors</td>
-				    <td>
-					    <ul>
-						  <li>Provide encouragement, professional advice, and technical guidance.</li>
-					  	  <li>Stay accessible, committed, and engaged with apprentices.</li>
-						  <li>Outside of program hours (Monday through Friday from 8:30 to 5:30 PM), meet with apprentices in-person or via video call at least two hours per week for the duration of the training (six months) and placement (six months).</li>
-						  <li>Respond to apprentice communications within 24 hours.</li>
-						  <li>Submit regular reports to program staff.</li>
-						  <li>Participate in program assessments as asked.</li>
-						</ul>
-				  </td>
-			    </tr>
-				<tr>
-				  	<td>Apprentices</td>
-				  	<td>
-						<ul>
-						  <li>Meet with their mentors at least two hours per week for the duration of the training (six months) and placement (six months).</li>
-						  <li>Stay accessible, committed, and engaged with mentors.</li>
-						  <li>Participate in program assessments.</li>
-						</ul>
-				  	</td>
-			    </tr>
-				<tr>
-				  	<td>Techtonica</td>
-				  	<td>
-						<ul>
-						  <li>Recruit, select, and match mentors with apprentices.</li>
-						  <li>Provide support and resources to facilitate apprentice/mentor relationship.</li>
-						</ul>
-				  	</td>
-			    </tr>
-	  	  	</table>
-
-		    <h3>January 2020 Cohort Timeline</h3>
-		    <table class="mentor" cellpadding=0 cellspacing=0>
-				<tr>
-				    <td>October 18th - November 15th</td>
-			  	    <td>Mentor applications open</td>
-			    </tr>
-			    <tr>
-				    <td>November 18th - November 25th</td>
-			  	    <td>Mentor interviews</td>
-			    </tr>
-			    <tr>
-				    <td>November 27th</td>
-			  	    <td>Mentor selections</td>
-			    </tr>
-				<tr>
-				    <td>December 7th</td>
-			  	    <td>Mentor matching and apprentice onboarding</td>
-			    </tr>
-				<tr>
-				    <td>January - June 2020</td>
-			  	    <td>Techtonica Training</td>
-			    </tr>
-				<tr>
-				    <td>July - December 2020</td>
-				    <td>Support during placement with Techtonica partners</td>
-			    </tr>
-		    </table>
-
-	      	<p class="justify">If this sounds like a commitment that you can make, please apply now!</p>
-	      	<a href="https://docs.google.com/forms/d/1o2sd2UncpYCybysLL62sWQludOgByshl2T9kUrKDnOI/viewform" class="sponsor" id="orange-button" target="_blank" >Apply to become a mentor</a>
-	    </div>
-	</div>
+    <p class="justify">
+      If this sounds like a commitment that you can make, please apply now!
+    </p>
+    <a
+      href="https://docs.google.com/forms/d/1o2sd2UncpYCybysLL62sWQludOgByshl2T9kUrKDnOI/viewform"
+      class="sponsor"
+      id="orange-button"
+      target="_blank"
+      >Apply to become a mentor</a
+    >
+  </div>
+</div>
 {% endblock content %}

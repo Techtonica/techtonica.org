@@ -1,21 +1,26 @@
-{% extends "base.html" %}
-
-{% block title %}
-	Techtonica: Bridging the Tech Gap
-{% endblock title %}
-
-{% block popup %}{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap {%
+endblock title %} {% block popup %}{% endblock %} {% block content %}
 
 <div class="row row__center">
-	<div class="column">
-    	<h1 class="blue-h1">Thank you!</h1>
-    	<h3>We will be in touch!</h3>
-    	<p>In the meantime, you can check out <a href="{{ url_for('render_home_page') }}">our home page</a> or look through <a href="{{ url_for('render_faqs_page') }}">our frequently-asked questions (FAQs)</a>. 
-    </div>
-    <div class="column">
-    	<img src="{{ url_for('static', filename='img/bridge-the-tech-gap-participant.png') }}" alt="Participant at computer, image has 'Bridge the tech gap' on it." class="full-width-img">
+  <div class="column">
+    <h1 class="blue-h1">Thank you!</h1>
+    <h3>We will be in touch!</h3>
+    <p>
+      In the meantime, you can check out
+      <a href="{{ url_for('render_home_page') }}">our home page</a> or look
+      through
+      <a href="{{ url_for('render_faqs_page') }}"
+        >our frequently-asked questions (FAQs)</a
+      >.
+    </p>
+  </div>
+
+  <div class="column">
+    <img
+      src="{{ url_for('static', filename='img/bridge-the-tech-gap-participant.png') }}"
+      alt="Participant at computer, image has 'Bridge the tech gap' on it."
+      class="full-width-img"
+    />
   </div>
 </div>
 

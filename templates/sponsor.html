@@ -1,222 +1,480 @@
-{% extends "base.html" %}
-
-{% block title %}
-	Techtonica: Bridging the Tech Gap
-{% endblock title %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap {%
+endblock title %} {% block content %}
 <div class="main-content">
-    <div class="apprentice-header">
-    	<img id="apprentice-hero" src="{{ url_for('static', filename='img/apprentices-2019-long-cropped-min.jpg') }}">
+  <div class="apprentice-header">
+    <img
+      id="apprentice-hero"
+      src="{{ url_for('static', filename='img/apprentices-2019-long-cropped-min.jpg') }}"
+    />
+  </div>
+  <div class="row row__center blue-background" style="padding: 0;">
+    <h2 class="large-white-text">Sponsor today to help #BridgeTheTechGap!</h2>
+  </div>
+  <div class="row row__center">
+    <div class="column">
+      <p class="justify">
+        Techtonica offers six months of software engineering training with
+        monthly living and childcare stipends and laptops to local women and
+        non-binary adults with low incomes, then places graduates with sponsors.
+      </p>
+      <p class="justify">
+        By sponsoring, you're empowering the people most underrepresented in
+        tech and most in need. You’ll also save time and money on recruiting,
+        build diversity in tech, expand your network, gain new perspectives,
+        make better products, receive a tax exemption, join other distinguished
+        supporters, and lift the local community.
+      </p>
+      <p class="justify">
+        Make a positive social impact while filling your technical talent needs.
+      </p>
+      <h2>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdNrE6qtdhND2eN3e4PbRfxa4ro1EKiQ3zYkKhYVxtbRXSsGg/viewform?usp=sf_link"
+          class="sponsor"
+          id="orange-button"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Discuss sponsoring</a
+        >
+      </h2>
+      <h2>
+        <a
+          href="https://www.dropbox.com/s/50gf4c3x4329lq9/Sponsoring%20and%20Hiring%20with%20Techtonica%20Info%20Sheet%202020.pdf?dl=0"
+          class="sponsor"
+          id="orange-button"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Download our sponsor info sheet</a
+        >
+      </h2>
+      <h2>
+        <a
+          href="https://www.youtube.com/watch?v=kgmLELNiWz4"
+          class="sponsor"
+          id="orange-button"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Watch our mid-cohort updates and sponsor info event from 3/25</a
+        >
+      </h2>
     </div>
-    <div class="row row__center blue-background" style="padding:0;">
-    	<h2 class="large-white-text">Sponsor today to help #BridgeTheTechGap!</h2>
+    <div class="column">
+      <a
+        href="https://www.dropbox.com/s/nvit8r1zrp3zx7v/Sponsoring%20and%20Hiring%20with%20Techtonica%20Info%20Sheet%202019.pdf?dl=0"
+      >
+        <img
+          src="{{ url_for('static', filename='img/sponsor-benefits.png') }}"
+          alt="Sponsor benefits chart"
+          class="full-width-img"
+        />
+      </a>
     </div>
-    <div class="row row__center">
-        <div class="column">
-          	<p class="justify">Techtonica offers six months of software engineering training with monthly living and childcare stipends and laptops to local women and non-binary adults with low incomes, then places graduates with sponsors.</p>
-			<p class="justify">By sponsoring, you're empowering the people most underrepresented in tech and most in need. You’ll also save time and money on recruiting, build diversity in tech, expand your network, gain new perspectives, make better products, receive a tax exemption, join other distinguished supporters, and lift the local community.</p>
-            <p class="justify">Make a positive social impact while filling your technical talent needs.</p>
-		    <h2><a href="https://docs.google.com/forms/d/e/1FAIpQLSdNrE6qtdhND2eN3e4PbRfxa4ro1EKiQ3zYkKhYVxtbRXSsGg/viewform?usp=sf_link" class="sponsor" id="orange-button" target="_blank" rel="noopener noreferrer">Discuss sponsoring</a></h2>
-	  	    <h2><a href="https://www.dropbox.com/s/50gf4c3x4329lq9/Sponsoring%20and%20Hiring%20with%20Techtonica%20Info%20Sheet%202020.pdf?dl=0" class="sponsor" id="orange-button" target="_blank" rel="noopener noreferrer">Download our sponsor info sheet</a></h2>
-	  	    <h2><a href="https://www.youtube.com/watch?v=kgmLELNiWz4" class="sponsor" id="orange-button" target="_blank" rel="noopener noreferrer">Watch our mid-cohort updates and sponsor info event from 3/25</a></h2>
-        </div>
-        <div class="column">
-          <a href="https://www.dropbox.com/s/nvit8r1zrp3zx7v/Sponsoring%20and%20Hiring%20with%20Techtonica%20Info%20Sheet%202019.pdf?dl=0">
-            <img src="{{ url_for('static', filename='img/sponsor-benefits.png') }}" alt="Sponsor benefits chart" class="full-width-img">
-          </a>
-    	</div>
+  </div>
+  <div class="row row__center blue-background">
+    <div class="column">
+      <a href="https://www.facebook.com/Techtonica/videos/631534610547199/">
+        <img
+          src="{{ url_for('static', filename='img/project-demo-min.jpg') }}"
+          alt="Participant holding a microphone and gesturing to a project demo"
+          class="full-width-img"
+        />
+      </a>
     </div>
-    <div class="row row__center blue-background">
-        <div class="column">
-			<a href="https://www.facebook.com/Techtonica/videos/631534610547199/">
-				<img src="{{ url_for('static', filename='img/project-demo-min.jpg') }}" alt="Participant holding a microphone and gesturing to a project demo" class="full-width-img">
-			</a>
-		</div>
-        <div class="column">
-          <p class="justify">We have a rigorous application process that includes HTML/CSS workshops, a JavaScript workshop, a code challenge, a long application, pairing, and interviews by staff as well as board members. Our acceptance rate is 8%. The characteristics we both seek in applicants and seek to strengthen in participants are resilience, autonomy, commitment, positivty & adaptability, collaboration, curiosity, and logic.</p>
-          <p class="justify">Developed by industry professionals, our six-month, sponsor-approved, open-source training covers full-stack JavaScript using hands-on projects. Participants build several projects, including a final project that is demoed during interviews and the graduation celebration—<a href="https://www.facebook.com/Techtonica/videos/631534610547199/" target="_blank" rel="noopener noreferrer">watch our 2018 project demos and placement announcements here.</a></p>
-          <p class="justify">Our participants spend the last weeks of training preparing to join the companies they've been matched with.</p>
-        </div>
+    <div class="column">
+      <p class="justify">
+        We have a rigorous application process that includes HTML/CSS workshops,
+        a JavaScript workshop, a code challenge, a long application, pairing,
+        and interviews by staff as well as board members. Our acceptance rate is
+        8%. The characteristics we both seek in applicants and seek to
+        strengthen in participants are resilience, autonomy, commitment,
+        positivty & adaptability, collaboration, curiosity, and logic.
+      </p>
+      <p class="justify">
+        Developed by industry professionals, our six-month, sponsor-approved,
+        open-source training covers full-stack JavaScript using hands-on
+        projects. Participants build several projects, including a final project
+        that is demoed during interviews and the graduation celebration—<a
+          href="https://www.facebook.com/Techtonica/videos/631534610547199/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >watch our 2018 project demos and placement announcements here.</a
+        >
+      </p>
+      <p class="justify">
+        Our participants spend the last weeks of training preparing to join the
+        companies they've been matched with.
+      </p>
     </div>
-    <div class="row row__center">
-		<div class="column centered">
-		    <a href="https://github.com/Techtonica/curriculum">
-		        <img src="{{ url_for('static', filename='img/topics-hours.png') }}" class="max-width-75-percent"/>
-		    </a>
-		</div>
-	</div>
-	<div class="row row__center blue-background">
-		<div class="column">
-			<p class="justify">Most of our participants are people of color, and we place 100% with hiring partners. All of our graduates still work in tech and most are still working with the companies we placed them with. <a href="https://medium.com/@techtonicaorg" target="_blank">Read more about our participants here</a>.</p>
-			<p class="justify">The best talent can’t be confined to gender, race, status, or age—let’s bring the best local talent to the best of tech.</p>
-		</div>
-		<div class="column centered">
-			<img src="{{ url_for('static', filename='img/2019-demographics.png') }}" class="max-width-75-percent" alt="Latinx: 36%, Black: 32%, East Asian: 14%, Southeast Asian: 9%, White: 9%"/>
-		</div>
-	</div>
-	<div class="row row__center">
-		<h1 class="blue-h1 centered">Join our hiring partners!</h1>
-		<div class="row">
-			<div class="column centered">
-				<a href="https://pantheon.io/" target="_blank" rel="noopener noreferrer">
-	                <img src="{{ url_for('static', filename='img/pantheon-logo-min.jpg') }}"
-	                  alt="Pantheon.io logo"
-	                  class="twenty-percent-width margin-25">
-	            </a>
-	            <a href="https://redfin.com" target="_blank" rel="noopener noreferrer">
-	                <img src="{{ url_for('static', filename='img/redfin-logo.png') }}"
-	                  alt="Redfin logo"
-	                  class="twenty-percent-width margin-25">
-	            </a>
-	            <a href="https://www.ancestry.com" target="_blank" rel="noopener noreferrer">
-	                <img src="{{ url_for('static', filename='img/ancestry-logo-min.png') }}"
-	                  alt="Ancestry logo"
-	                  class="twenty-percent-width margin-25">
-	            </a>
-	              <a href="https://www.hugeinc.com/" target="_blank" rel="noopener noreferrer">
-	                <img src="{{ url_for('static', filename='img/huge-logo-min.png') }}"
-	                  alt="Huge logo"
-	                  class="twenty-percent-width margin-25">
-	            </a>    
-	            <a href="https://mixpanel.com/" target="_blank" rel="noopener noreferrer">
-	                <img src="{{ url_for('static', filename='img/mixpanel-logo-min.png') }}"
-	                  alt="Mixpanel logo"
-	                  class="twenty-percent-width margin-25">
-	            </a>   
-	            <a href="https://www.rallyhealth.com/" target="_blank" rel="noopener noreferrer">
-	                <img src="{{ url_for('static', filename='img/rally-health-logo-min.png') }}"
-	                  alt="Rally Health logo"
-	                  class="twenty-percent-width margin-25">
-	            </a>
-	            <a href="https://www.agari.com/" target="_blank" rel="noopener noreferrer">
-	                <img src="{{ url_for('static', filename='img/agari-logo-min.png') }}"
-	                  alt="Agari logo"
-	                  class="twenty-percent-width margin-25">
-	            </a>
-	            <a href="https://www.kintone.com/" target="_blank" rel="noopener noreferrer">
-	                <img src="{{ url_for('static', filename='img/kintone-logo-min.png') }}"
-	                  alt="Kintone logo"
-	                  class="twenty-percent-width margin-25">
-	            </a>
-	            <a href="https://www.autonomic.ai/" target="_blank" rel="noopener noreferrer">
-	                <img src="{{ url_for('static', filename='img/Autonomic-logo-min.png') }}"
-	                  alt="Autonomic logo"
-	                  class="twenty-percent-width margin-25">
-	            </a>
-              	<a href="https://www.quantcast.com" target="_blank" rel="noopener noreferrer">
-	                <img src="{{ url_for('static', filename='img/quantcast-logo-min.png') }}"
-	                  alt="Quantcast logo"
-	                  class="twenty-percent-width margin-25">
-	            </a>
-	            <a href="https://www.surveymonkey.com/" target="_blank" rel="noopener noreferrer">
-	                <img src="{{ url_for('static', filename='img/SurveyMonkey-logo-min.png') }}"
-	                  alt="SurveyMonkey logo"
-	                  class="twenty-percent-width margin-25">
-	            </a>
-	            <a href="https://www.appdynamics.com/" target="_blank" rel="noopener noreferrer">
-	                <img src="{{ url_for('static', filename='img/AppDynamics-logo-min.jpg') }}"
-	                  alt="AppDynamics logo"
-	                  class="twenty-percent-width margin-25">
-	            </a>
-	            <a href="https://www.indeed.com/" target="_blank" rel="noopener noreferrer">
-	                <img src="{{ url_for('static', filename='img/Indeed-logo-min.png') }}"
-	                  alt="Indeed logo"
-	                  class="twenty-percent-width margin-25">
-	            </a>
-              	<a href="https://blend.com/" target="_blank" rel="noopener noreferrer">
-	                <img src="{{ url_for('static', filename='img/Blend-logo.png') }}"
-	                  alt="Blend logo"
-	                  class="twenty-percent-width margin-25">
-              	</a>
-              	<a href="https://meraki.cisco.com/" target="_blank" rel="noopener noreferrer">
-	                <img src="{{ url_for('static', filename='img/Cisco-Meraki-logo.jpg') }}"
-	                  alt="Cisco Meraki logo"
-	                  class="twenty-percent-width margin-25">
-              	</a>
-              	<a href="https://remix.com" target="_blank" rel="noopener noreferrer">
-                	<img src="{{ url_for('static', filename='img/Remix-logo-min.png') }}"
-                  	  alt="Remix logo"
-                  	  class="twenty-percent-width margin-25">
-              	</a>
-              	<a href="https://www.purestorage.com/" target="_blank" rel="noopener noreferrer">
-                	<img src="{{ url_for('static', filename='img/Pure-Storage-logo-min.png') }}"
-                  	  alt="Pure Storage logo"
-                  	  class="twenty-percent-width margin-25">
-              	</a>
-              	<a href="https://www.grove.co/" target="_blank" rel="noopener noreferrer">
-	                <img src="{{ url_for('static', filename='img/Grove-Collaborative-logo-min.png') }}"
-	                  alt="Grove Collaborative logo"
-	                  class="twenty-percent-width margin-25">
-	            </a>
-	            <a href="https://www.freenome.com/" target="_blank" rel="noopener noreferrer">
-                	<img src="{{ url_for('static', filename='img/Freenome-logo-min.png') }}"
-                      alt="Freenome logo"
-                      class="twenty-percent-width margin-25">
-              	</a>
-			</div>
-		</div>
-	</div>
-	<div class="row row__center blue-background">
-<!-- 		<h2 class="large-white-text">Become a sponsor today!</h2> -->
-<!-- 		<div class="progress-bg">
+  </div>
+  <div class="row row__center">
+    <div class="column centered">
+      <a href="https://github.com/Techtonica/curriculum">
+        <img
+          src="{{ url_for('static', filename='img/topics-hours.png') }}"
+          class="max-width-75-percent"
+        />
+      </a>
+    </div>
+  </div>
+  <div class="row row__center blue-background">
+    <div class="column">
+      <p class="justify">
+        Most of our participants are people of color, and we place 100% with
+        hiring partners. All of our graduates still work in tech and most are
+        still working with the companies we placed them with.
+        <a href="https://medium.com/@techtonicaorg" target="_blank"
+          >Read more about our participants here</a
+        >.
+      </p>
+      <p class="justify">
+        The best talent can’t be confined to gender, race, status, or age—let’s
+        bring the best local talent to the best of tech.
+      </p>
+    </div>
+    <div class="column centered">
+      <img
+        src="{{ url_for('static', filename='img/2019-demographics.png') }}"
+        class="max-width-75-percent"
+        alt="Latinx: 36%, Black: 32%, East Asian: 14%, Southeast Asian: 9%, White: 9%"
+      />
+    </div>
+  </div>
+  <div class="row row__center">
+    <h1 class="blue-h1 centered">Join our hiring partners!</h1>
+    <div class="row">
+      <div class="column centered">
+        <a
+          href="https://pantheon.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/pantheon-logo-min.jpg') }}"
+            alt="Pantheon.io logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a href="https://redfin.com" target="_blank" rel="noopener noreferrer">
+          <img
+            src="{{ url_for('static', filename='img/redfin-logo.png') }}"
+            alt="Redfin logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.ancestry.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/ancestry-logo-min.png') }}"
+            alt="Ancestry logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.hugeinc.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/huge-logo-min.png') }}"
+            alt="Huge logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://mixpanel.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/mixpanel-logo-min.png') }}"
+            alt="Mixpanel logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.rallyhealth.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/rally-health-logo-min.png') }}"
+            alt="Rally Health logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.agari.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/agari-logo-min.png') }}"
+            alt="Agari logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.kintone.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/kintone-logo-min.png') }}"
+            alt="Kintone logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.autonomic.ai/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Autonomic-logo-min.png') }}"
+            alt="Autonomic logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.quantcast.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/quantcast-logo-min.png') }}"
+            alt="Quantcast logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.surveymonkey.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/SurveyMonkey-logo-min.png') }}"
+            alt="SurveyMonkey logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.appdynamics.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/AppDynamics-logo-min.jpg') }}"
+            alt="AppDynamics logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.indeed.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Indeed-logo-min.png') }}"
+            alt="Indeed logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a href="https://blend.com/" target="_blank" rel="noopener noreferrer">
+          <img
+            src="{{ url_for('static', filename='img/Blend-logo.png') }}"
+            alt="Blend logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://meraki.cisco.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Cisco-Meraki-logo.jpg') }}"
+            alt="Cisco Meraki logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a href="https://remix.com" target="_blank" rel="noopener noreferrer">
+          <img
+            src="{{ url_for('static', filename='img/Remix-logo-min.png') }}"
+            alt="Remix logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.purestorage.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Pure-Storage-logo-min.png') }}"
+            alt="Pure Storage logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.grove.co/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Grove-Collaborative-logo-min.png') }}"
+            alt="Grove Collaborative logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.freenome.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Freenome-logo-min.png') }}"
+            alt="Freenome logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="row row__center blue-background">
+    <!-- 		<h2 class="large-white-text">Become a sponsor today!</h2> -->
+    <!-- 		<div class="progress-bg">
 	    	<div class="progress-bar">
 	        	<h3 class="raised large-white-text">50% of our goal</h3>
 	        </div>
 	        	<h3 class="goal"></h3>
 	    </div> -->
-	    <h2 class="large-white-text">Did you know 87% of Techtonica graduates are still with our sponsor companies? Here are some testimonials:</h2>
-			<p class="justify">“Everyone is super happy with the program and the quality of the apprentices. It was beyond what most were expecting.” —Jerome Despret, Director of Engineering at Pantheon</p>
-			<p class="justify">“Mentoring [our Techtonica grad] at Meraki has been incredibly rewarding, as I see her grow into a stronger and stronger engineer every week.” —Alexandra Savramis, Software Engineer at Cisco Meraki</p>
-			<p class="justify">“You could honestly match us with any one of them and it would be great.” —Jill Berardini, Software Engineer at Rally Health</p>
-			<p class="justify">“[Our Techtonica graduate] is beloved.” —Rachel Glickman, Director of Inclusion, Diversity, and Employee Relations at Rally Health</p>
-			<p class="justify">“We were very impressed by the level of foresight that went into the curriculum design.” —Michael Kyle, Director of Talent at Redbubble</p>
-	</div>
-	<div class="row row__center">
-		<div class="row row__center">
-			<h1 class="blue-h1 centered">How Hiring Works</h1>
-		</div>
-		<div class="row row__center">
-			<div class="column">
-				<h2>Sponsor</h2>
-				<p class="justify">Become a sponsor at the advocate level—this process includes signing an advocate sponsor agreement, receiving an invoice, paying the sponsorship fee, and announcing the partnership.</p>
-			</div>
-			<div class="column">
-				<img src="{{ url_for('static', filename='img/applicants-workshop.jpg') }}" alt="2018 cohort" class="full-width-img">
-			</div>
-		</div>
-		<div class="row row__center">
-			<div class="column">
-				<img src="{{ url_for('static', filename='img/apprentice-volunteers-2-min.jpg') }}" alt="2018 apprenticeship cohort" class="full-width-img">
-			</div>
-			<div class="column">
-				<h2>Get Involved and Strategize</h2>
-				<p class="justify">Get involved with Techtonica—you can volunteer, arrange a visit/video call, etc.</p>
-				<p class="justify">Determine your future employee’s position, team, duties, manager, and mentor. Possible positions include: software engineer, support engineer, technical program manager, sales engineer, QA engineer, and other "tech plus/adjacent" roles. See <a href="https://docs.google.com/document/d/1I0wWk9d1jPiZyqYwxC039BH3rHpXIPSeGOxSKmu-ucE/edit?usp=sharing" target="_blank">this doc for some of our past placement job descriptions</a>.</p>
-			</div>
-		</div>
-		<div class="row row__center">
-			<div class="column">
-				<h2>Find Your Match and Prepare</h2>
-				<p class="justify">Mutually rate and match with participants after they build their final projects.</p>
-				<p class="justify">Collaborate with your future employee on how to spend the last month preparing to join your team. Negotiate start date, pay (at least $30/hour), and other details.</p>
-			</div>
-			<div class="column">
-				<img src="{{ url_for('static', filename='img/apprentice-with-volunteer.jpg') }}" alt="2018 apprenticeship cohort" class="full-width-img">
-			</div>
-		</div>
-		<div class="row row__center">
-			<div class="column">
-				<img src="{{ url_for('static', filename='img/apprentice-volunteers-min.jpg') }}" alt="2018 apprenticeship cohort" class="full-width-img">
-			</div>
-			<div class="column">
-				<h2>Employ</h2>
-				<p class="justify">Enjoy having your matched graduate on your team for at least 1,000 hours!</p>
-			</div>
-		</div>
-		<div class="row row__center">
-			<h2><a href="https://docs.google.com/forms/d/e/1FAIpQLSdNrE6qtdhND2eN3e4PbRfxa4ro1EKiQ3zYkKhYVxtbRXSsGg/viewform?usp=sf_link" class="sponsor" id="orange-button" target="_blank" rel="noopener noreferrer">Contact us about sponsoring</a></h2>
-		</div>
-	</div>
-</div>		
+    <h2 class="large-white-text">
+      Did you know 87% of Techtonica graduates are still with our sponsor
+      companies? Here are some testimonials:
+    </h2>
+    <p class="justify">
+      “Everyone is super happy with the program and the quality of the
+      apprentices. It was beyond what most were expecting.” —Jerome Despret,
+      Director of Engineering at Pantheon
+    </p>
+    <p class="justify">
+      “Mentoring [our Techtonica grad] at Meraki has been incredibly rewarding,
+      as I see her grow into a stronger and stronger engineer every week.”
+      —Alexandra Savramis, Software Engineer at Cisco Meraki
+    </p>
+    <p class="justify">
+      “You could honestly match us with any one of them and it would be great.”
+      —Jill Berardini, Software Engineer at Rally Health
+    </p>
+    <p class="justify">
+      “[Our Techtonica graduate] is beloved.” —Rachel Glickman, Director of
+      Inclusion, Diversity, and Employee Relations at Rally Health
+    </p>
+    <p class="justify">
+      “We were very impressed by the level of foresight that went into the
+      curriculum design.” —Michael Kyle, Director of Talent at Redbubble
+    </p>
+  </div>
+  <div class="row row__center">
+    <div class="row row__center">
+      <h1 class="blue-h1 centered">How Hiring Works</h1>
+    </div>
+    <div class="row row__center">
+      <div class="column">
+        <h2>Sponsor</h2>
+        <p class="justify">
+          Become a sponsor at the advocate level—this process includes signing
+          an advocate sponsor agreement, receiving an invoice, paying the
+          sponsorship fee, and announcing the partnership.
+        </p>
+      </div>
+      <div class="column">
+        <img
+          src="{{ url_for('static', filename='img/applicants-workshop.jpg') }}"
+          alt="2018 cohort"
+          class="full-width-img"
+        />
+      </div>
+    </div>
+    <div class="row row__center">
+      <div class="column">
+        <img
+          src="{{ url_for('static', filename='img/apprentice-volunteers-2-min.jpg') }}"
+          alt="2018 apprenticeship cohort"
+          class="full-width-img"
+        />
+      </div>
+      <div class="column">
+        <h2>Get Involved and Strategize</h2>
+        <p class="justify">
+          Get involved with Techtonica—you can volunteer, arrange a visit/video
+          call, etc.
+        </p>
+        <p class="justify">
+          Determine your future employee’s position, team, duties, manager, and
+          mentor. Possible positions include: software engineer, support
+          engineer, technical program manager, sales engineer, QA engineer, and
+          other "tech plus/adjacent" roles. See
+          <a
+            href="https://docs.google.com/document/d/1I0wWk9d1jPiZyqYwxC039BH3rHpXIPSeGOxSKmu-ucE/edit?usp=sharing"
+            target="_blank"
+            >this doc for some of our past placement job descriptions</a
+          >.
+        </p>
+      </div>
+    </div>
+    <div class="row row__center">
+      <div class="column">
+        <h2>Find Your Match and Prepare</h2>
+        <p class="justify">
+          Mutually rate and match with participants after they build their final
+          projects.
+        </p>
+        <p class="justify">
+          Collaborate with your future employee on how to spend the last month
+          preparing to join your team. Negotiate start date, pay (at least
+          $30/hour), and other details.
+        </p>
+      </div>
+      <div class="column">
+        <img
+          src="{{ url_for('static', filename='img/apprentice-with-volunteer.jpg') }}"
+          alt="2018 apprenticeship cohort"
+          class="full-width-img"
+        />
+      </div>
+    </div>
+    <div class="row row__center">
+      <div class="column">
+        <img
+          src="{{ url_for('static', filename='img/apprentice-volunteers-min.jpg') }}"
+          alt="2018 apprenticeship cohort"
+          class="full-width-img"
+        />
+      </div>
+      <div class="column">
+        <h2>Employ</h2>
+        <p class="justify">
+          Enjoy having your matched graduate on your team for at least 1,000
+          hours!
+        </p>
+      </div>
+    </div>
+    <div class="row row__center">
+      <h2>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdNrE6qtdhND2eN3e4PbRfxa4ro1EKiQ3zYkKhYVxtbRXSsGg/viewform?usp=sf_link"
+          class="sponsor"
+          id="orange-button"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Contact us about sponsoring</a
+        >
+      </h2>
+    </div>
+  </div>
+</div>
 {% endblock content %}

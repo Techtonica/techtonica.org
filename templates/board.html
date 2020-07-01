@@ -1,52 +1,101 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
+Careers {% endblock title %} {% block content %}
+<div class="row row__center about-us">
+  <div class="column hidden-med">
+    <img
+      src="{{ url_for('static', filename='img/make-a-difference-instructor.jpg') }}"
+      alt="A mentor works with a participant at a laptop."
+      class="fixed-img"
+      style="width: 38%;"
+    />
+  </div>
+  <div class="column">
+    <h1 class="blue-h1">Openings</h1>
+    <p class="justify">
+      Techtonica is a nonprofit that offers women and non-binary adults with low
+      incomes free tech training, along with living and childcare stipends, then
+      places them in positions at sponsoring companies that are ready to support
+      more diverse teams. You can
+      <a
+        href="https://medium.com/@michelleglauser/techtonica-how-to-diversify-tech-and-help-neighbors-in-need-837d5f0b40bc"
+        >read more here</a
+      >.
+    </p>
+    <div>
+      <h3>Make an Impact as a Board Member!</h3>
+      <p>
+        If you are an experienced leader who cares deeply about compassionately
+        empowering local neighbors with low incomes, join us! We are especially
+        seeking seasoned, well-connected board members who are passionate about
+        diversity and inclusion and social justice, who are strong fundraisers
+        and marketers, who are in the San Francisco Bay Area, and who can relate
+        to the people we serve on multiple levels: 75%+ of our participants are
+        people of color, and all of them are local women or non-binary adults
+        with low incomes.
+      </p>
 
-{% block title %}
-  Techtonica: Bridging the Tech Gap — Careers
-{% endblock title %}
-
-{% block content %}
-  <div class="row row__center about-us">
-    <div class="column hidden-med">
-      <img src="{{ url_for('static', filename='img/make-a-difference-instructor.jpg') }}"
-           alt="A mentor works with a participant at a laptop." 
-           class="fixed-img" style="width:38%;">
+      <h3>You are willing and able to:</h3>
+      <ul>
+        <li>
+          Regularly make time to attend and prepare for meetings—we currently
+          have a board meeting the first Monday evening of each month and a
+          committee check-in on the third Monday evening of each month. Be
+          involved in the topics when you miss meetings.
+        </li>
+        <li>
+          Answer emails within two days and be available to give opinions on
+          matters that pop up via Slack or text.
+        </li>
+        <li>
+          Determine and be informed about Techtonica’s mission, services,
+          policies, programs, and events.
+        </li>
+        <li>Make decisions efficiently and be open to others’ ideas.</li>
+        <li>Communicate clearly and respectfully.</li>
+        <li>Participate in fundraising.</li>
+        <li>Attend one workshop per year.</li>
+        <li>Speak to participants once per year.</li>
+        <li>Help organize one event per year.</li>
+        <li>
+          Commit at least one new large
+          <a href="http://techtonica.org/sponsor">sponsor</a> per year.
+        </li>
+        <li>
+          Donate (or find someone to donate) at least $1,750 per year, starting
+          with your first month.
+        </li>
+        <li>Build partnerships with 2 community orgs per year.</li>
+        <li>Lead or participate in organizational committees.</li>
+        <li>Be a Techtonica ambassador at events, speaking gigs, etc.</li>
+        <li>Act at all times for the benefit of Techtonica and its purpose.</li>
+        <li>
+          Disclose possible conflicts of interest, abstain from voting when a
+          conflict may exist, and avoid self-dealing activities.
+        </li>
+        <li>
+          Seek outside help such as lawyers, accountants, and other professional
+          services as needed by Techtonica.
+        </li>
+        <li>
+          Ensure up-to-date personnel policies, complies with employment laws,
+          and follows these policies and laws.
+        </li>
+        <li>Consult or advise staff in your area of expertise.</li>
+        <li>Providing thought partnership to the CEO and staff.</li>
+        <li>
+          Use modern, online tech tools such as Google Drive and Google Calendar
+          to manage organizational needs.
+        </li>
+      </ul>
+      <p>
+        If this sounds like a good role for you, please contact us with your
+        LinkedIn profile and a little bit about how you relate to the target
+        audience.
+      </p>
     </div>
-    <div class="column">
-      <h1 class="blue-h1">Openings</h1>
-      <p class="justify">Techtonica is a nonprofit that offers women and non-binary adults with low incomes free tech training, along with living and childcare stipends, then places them in positions at sponsoring companies that are ready to support more diverse teams. You can <a href="https://medium.com/@michelleglauser/techtonica-how-to-diversify-tech-and-help-neighbors-in-need-837d5f0b40bc">read more here</a>.</p>
-      <div>
-        <h3>Make an Impact as a Board Member!</h3>
-        <p>If you are an experienced leader who cares deeply about compassionately empowering local neighbors with low incomes, join us! We are especially seeking seasoned, well-connected board members who are passionate about diversity and inclusion and social justice, who are strong fundraisers and marketers, who are in the San Francisco Bay Area, and who can relate to the people we serve on multiple levels: 75%+ of our participants are people of color, and all of them are local women or non-binary adults with low incomes.</p>
-
-        <h3>You are willing and able to:</h3>
-        <ul>
-          <li>Regularly make time to attend and prepare for meetings—we currently have a board meeting the first Monday evening of each month and a committee check-in on the third Monday evening of each month. Be involved in the topics when you miss meetings.</li>
-          <li>Answer emails within two days and be available to give opinions on matters that pop up via Slack or text.</li>
-          <li>Determine and be informed about Techtonica’s mission, services, policies, programs, and events.</li>
-          <li>Make decisions efficiently and be open to others’ ideas.</li>
-          <li>Communicate clearly and respectfully.</li>
-          <li>Participate in fundraising.</li>
-          <li>Attend one workshop per year.</li>
-          <li>Speak to participants once per year.</li>
-          <li>Help organize one event per year.</li>
-          <li>Commit at least one new large <a href="http://techtonica.org/sponsor">sponsor</a> per year.</li>
-          <li>Donate (or find someone to donate) at least $1,750 per year, starting with your first month.</li>
-          <li>Build partnerships with 2 community orgs per year.</li>
-          <li>Lead or participate in organizational committees.</li>
-          <li>Be a Techtonica ambassador at events, speaking gigs, etc.</li>
-          <li>Act at all times for the benefit of Techtonica and its purpose.</li>
-          <li>Disclose possible conflicts of interest, abstain from voting when a conflict may exist, and avoid self-dealing activities.</li>
-          <li>Seek outside help such as lawyers, accountants, and other professional services as needed by Techtonica.</li>
-          <li>Ensure up-to-date personnel policies, complies with employment laws, and follows these policies and laws.</li>
-          <li>Consult or advise staff in your area of expertise.</li>
-          <li>Providing thought partnership to the CEO and staff.</li>
-          <li>Use modern, online tech tools such as Google Drive and Google Calendar to manage organizational needs.</li>
-        </ul>
-        <p>If this sounds like a good role for you, please contact us with your LinkedIn profile and a little bit about how you relate to the target audience.</p>
-      </div>
-      <div>
-        {% include 'contactbutton.html' %}
-      </div>
+    <div>
+      {% include 'contactbutton.html' %}
     </div>
   </div>
+</div>
 {% endblock content %}

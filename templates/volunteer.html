@@ -1,48 +1,104 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap {%
+endblock title %} {% block content %}
 
-{% block title %}
-  Techtonica: Bridging the Tech Gap
-{% endblock title %}
-
-{% block content %}
-
-  <div class="row row__center blue-background">
-    <div class="column">
-      <h1>How to Help</h1>
-      <p class="justify">
-        <ul>
-          <li><a href="{{ url_for('render_donate_page') }}" class="hover-link" target="_blank" rel="noopener noreferrer">Donate</a> (donations are tax-deductible, $5000 will get your face on our home page, and you can sign up to donate monthly).</li>
-          <li>Encourage your company to <a href="{{ url_for('render_sponsor_page') }}">sponsor and hire apprentices</a>.</li>
-          <li><a href="http://bit.ly/volunteer-with-Techtonica" class="hover-link" target="_blank" rel="noopener noreferrer">Sign up to volunteer</a>.</li>
-        </ul>
-     </p>
-      <p class="justify">To receive updates, please <a id="open-popup" class="hover-link newsletter pad-lv3 pad-tb0" href="http://eepurl.com/cNFqmj" target="_blank" rel="noopener noreferrer">sign up for our newsletter</a>.</p>
-    </div>
-    <div class="column">
-      <img src="{{ url_for('static', filename='img/listening-volunteers-min.png') }}" alt="Volunteers listening to woman speaking" class="full-width-img">
-    </div>
+<div class="row row__center blue-background">
+  <div class="column">
+    <h1>How to Help</h1>
+    <ul>
+      <li>
+        <a
+          href="{{ url_for('render_donate_page') }}"
+          class="hover-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Donate</a
+        >
+        (donations are tax-deductible, $5000 will get your face on our home
+        page, and you can sign up to donate monthly).
+      </li>
+      <li>
+        Encourage your company to
+        <a href="{{ url_for('render_sponsor_page') }}"
+          >sponsor and hire apprentices</a
+        >.
+      </li>
+      <li>
+        <a
+          href="http://bit.ly/volunteer-with-Techtonica"
+          class="hover-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Sign up to volunteer</a
+        >.
+      </li>
+    </ul>
+    <p class="justify">
+      To receive updates, please
+      <a
+        id="open-popup"
+        class="hover-link newsletter pad-lv3 pad-tb0"
+        href="http://eepurl.com/cNFqmj"
+        target="_blank"
+        rel="noopener noreferrer"
+        >sign up for our newsletter</a
+      >.
+    </p>
   </div>
+  <div class="column">
+    <img
+      src="{{ url_for('static', filename='img/listening-volunteers-min.png') }}"
+      alt="Volunteers listening to woman speaking"
+      class="full-width-img"
+    />
+  </div>
+</div>
 
-  <div class="row">
-    <div class="column centered">
-      <ul>
-        <h2>Visit us</h2>
-        <li><a href="https://www.eventbrite.com/o/techtonica-11297022451" target="_blank" rel="noopener noreferrer">
+<div class="row">
+  <div class="column centered">
+    <ul>
+      <h2>Visit us</h2>
+      <li>
+        <a
+          href="https://www.eventbrite.com/o/techtonica-11297022451"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Our events on Eventbrite
-        </a></li>
-        <li><a href="https://teamup.com/ksnie3b3q5frepnd92" target="_blank" rel="noopener noreferrer">
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://teamup.com/ksnie3b3q5frepnd92"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Schedule a visit on our calendar
-        </a></li>
-      </ul>
-    </div>
-
-    <div class="column centered">
-      <ul>
-        <h2>Open-source projects</h2>
-        <li><a href="https://github.com/Techtonica/curriculum/issues" target="_blank" rel="noopener noreferrer">Contribute to our curriculum</a></li>
-        <li><a href="https://github.com/MichelleGlauser/techtonica/issues" target="_blank" rel="noopener noreferrer">Contribute to our website</a></li>
-      </ul>
-    </div>
+        </a>
+      </li>
+    </ul>
   </div>
+
+  <div class="column centered">
+    <ul>
+      <h2>Open-source projects</h2>
+      <li>
+        <a
+          href="https://github.com/Techtonica/curriculum/issues"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Contribute to our curriculum</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/MichelleGlauser/techtonica/issues"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Contribute to our website</a
+        >
+      </li>
+    </ul>
+  </div>
+</div>
 
 {% endblock content %}

@@ -1,377 +1,757 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap {%
+endblock title %} {% block content %}
+<div class="main-content">
+  <div class="main-header">
+    <div class="main-header__text blue-background">
+      <h1 class="main-header__header">#BridgeTheTechGap</h1>
+      <p>
+        We offer six months of free, full-time tech training with living
+        stipends and laptops to Bay Area women and non-binary adults with low
+        incomes, then place graduates into jobs with sponsor companies.
+      </p>
+      <h2>
+        <a
+          href="{{ url_for('render_apprenticeship_page') }}"
+          class="sponsor"
+          id="orange-button"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Sponsor today!</a
+        >
+      </h2>
+    </div>
+  </div>
+  <div class="row row__center what-we-do" id="whatwedo">
+    <div class="column">
+      <h1 class="blue-h1">Our Apprentices</h1>
+      <p class="justify">
+        Is your company hiring engineers? Do you care about your social
+        footprint and diversity? We are seeking sponsors for our apprentices,
+        who make it through a rigorous, lengthy application process that
+        includes multiple workshops, interviews, and a code challenge. By the
+        time each cohort graduates and is ready for placement on your team, they
+        will have done more than 1,000 hours of collaborative, project-based
+        learning developed by industry professionals. To secure one of the
+        apprentices for your team, please
+        <a href="{{ url_for('render_sponsor_page') }}"
+          >check out more details here</a
+        >
+        and get in touch!
+      </p>
+    </div>
 
-{% block title %}
-  Techtonica: Bridging the Tech Gap
-{% endblock title %}
+    <div class="column">
+      <a href="{{ url_for('render_sponsor_page') }}">
+        <img
+          src="{{ url_for('static', filename='img/apprentices-2018-min.jpg') }}"
+          alt="2018 apprenticeship cohort"
+          class="full-width-img"
+        />
+      </a>
+    </div>
+  </div>
+  <div class="row row__center blue-background why-why" id="why">
+    <div class="column">
+      <img
+        src="{{ url_for('static', filename='img/Tenderloin.jpg') }}"
+        alt="Street, sidewalks, and building in the Tenderloin neighborhood of San Francisco."
+        class="full-width-img"
+      />
+    </div>
+    <div class="column">
+      <h1>Why</h1>
+      <p class="justify">
+        The tech industry in the Bay Area is causing displacement and increasing
+        income disparity. The industry also needs to build more diverse
+        technical teams.
+      </p>
+      <p class="justify">
+        We asked, "What if we could help tech companies build much-needed
+        diverse technical teams by having them sponsor training for and hire
+        underrepresented, underprivileged locals who need jobs the most?"
+      </p>
+    </div>
+  </div>
+  <div class="row row__baseline how-it-works" id="howitworks">
+    <h1 class="blue-h1">How it Works</h1>
+    <div class="row">
+      <div class="column column-med centered">
+        <img
+          src="{{ url_for('static', filename='img/lightbulb.png') }}"
+          alt=""
+          aria-hidden="true"
+        />
+        <h3>Vetting</h3>
+        <p>
+          Techtonica conducts free intro workshops with local organizations and
+          labs.
+        </p>
+        <p>
+          We invite the most resilient, independent, committed, positive,
+          collaborative, curious, calm participants to apply to be full-time
+          apprentices.
+        </p>
+      </div>
+      <div class="column column-med centered">
+        <img
+          src="{{ url_for('static', filename='img/conversation.png') }}"
+          alt=""
+          aria-hidden="true"
+        />
+        <h3>Sponsor Companies</h3>
+        <p>
+          Companies that have sponsored at the Advocate Level
+          <a href="{{ url_for('render_sponsor_page') }}"
+            >cover the apprentices' pre-placement training</a
+          >
+          and provide mentors.
+        </p>
+        <p>
+          They have a say in the curriculum and receive inclusion training in
+          preparation for employing their top-rated apprentices at the end of
+          the program.
+        </p>
+      </div>
+      <div class="column column-med centered">
+        <img
+          src="{{ url_for('static', filename='img/chalkboard.jpg') }}"
+          alt=""
+          aria-hidden="true"
+        />
+        <h3>Apprenticeship</h3>
+        <p>
+          Accepted apprentices receive living stipends, laptops, and more than
+          1,000 hours of full-time, project-based, collaborative training.
+        </p>
+        <p>
+          Upon completion of the program, apprentices are placed with hiring
+          partners.
+        </p>
+      </div>
+    </div>
+  </div>
 
-{% block content %}
-  <div class="main-content">
-      <div class="main-header">
-        <div class="main-header__text blue-background">
-          <h1 class="main-header__header">#BridgeTheTechGap</h1>
-          <p>We offer six months of free, full-time tech training with living stipends and laptops to Bay Area women and non-binary adults with low incomes, then place graduates into jobs with sponsor companies.</p>
-          <h2><a href="{{ url_for('render_apprenticeship_page') }}" class="sponsor" id="orange-button" target="_blank" rel="noopener noreferrer">Sponsor today!</a></h2>
-        </div>
+  <div class="row row__baseline blue-background">
+    <h1>Upcoming Events</h1>
+    <div class="row row__center blue-background">
+      {% if not events %}
+      <h3>Event data currently unavailable. Please check back later!</h3>
+      {% endif %} {% for event in events %}
+      <div class="column centered blue-background event-item" id="eventbrite">
+        <h3 class="blue-background">
+          <a href="{{event.url}}">{{event.title}}</a>
+        </h3>
+        <p class="event-item__address blue-background">{{event.date}}</p>
+        {% if event.venue %}
+        <p class="event-item__address blue-background">
+          {{event.venue}} {% for a in event.address %} <br />{{a}} {% endfor %}
+        </p>
+        {% endif %}
       </div>
-      <div class="row row__center what-we-do" id="whatwedo">
-        <div class="column">
-          <h1 class="blue-h1">Our Apprentices</h1>
-          <p class="justify">Is your company hiring engineers? Do you care about your social footprint and diversity? We are seeking sponsors for our apprentices, who make it through a rigorous, lengthy application process that includes multiple workshops, interviews, and a code challenge. By the time each cohort graduates and is ready for placement on your team, they will have done more than 1,000 hours of collaborative, project-based learning developed by industry professionals. To secure one of the apprentices for your team, please <a href="{{ url_for('render_sponsor_page') }}">check out more details here</a> and get in touch!
-        </div>
-        <div class="column">
-          <a href="{{ url_for('render_sponsor_page') }}">
-            <img src="{{ url_for('static', filename='img/apprentices-2018-min.jpg') }}" alt="2018 apprenticeship cohort" class="full-width-img">
-          </a>
-        </div>
-      </div>
-      <div class="row row__center blue-background why-why" id="why">
-        <div class="column">
-          <img src="{{ url_for('static', filename='img/Tenderloin.jpg') }}" alt="Street, sidewalks, and building in the Tenderloin neighborhood of San Francisco." class="full-width-img">
-        </div>
-        <div class="column">
-          <h1>Why</h1>
-          <p class="justify">The tech industry in the Bay Area is causing displacement and increasing income disparity. The industry also needs to build more diverse technical teams.</p>
-          <p class="justify">We asked, "What if we could help tech companies build much-needed diverse technical teams by having them sponsor training for and hire underrepresented, underprivileged locals who need jobs the most?"</p>
-        </div>
-      </div>
-      <div class="row row__baseline how-it-works" id="howitworks">
-        <h1 class="blue-h1">How it Works</h1>
-        <div class="row">
-            <div class="column column-med centered">
-              <img src="{{ url_for('static', filename='img/lightbulb.png') }}" alt="" aria-hidden="true">
-              <h3>Vetting</h3>
-              <p>Techtonica conducts free intro workshops with local organizations and labs.</p> <p>We invite the most resilient, independent, committed, positive, collaborative, curious, calm participants to apply to be full-time apprentices.</p>
-            </div>
-            <div class="column column-med centered">
-              <img src="{{ url_for('static', filename='img/conversation.png') }}" alt="" aria-hidden="true">
-              <h3>Sponsor Companies</h3>
-              <p>Companies that have sponsored at the Advocate Level <a href="{{ url_for('render_sponsor_page') }}">cover the apprentices' pre-placement training</a> and provide mentors.</p>
-              <p>They have a say in the curriculum and receive inclusion training in preparation for employing their top-rated apprentices at the end of the program.</p>
-            </div>
-            <div class="column column-med centered">
-              <img src="{{ url_for('static', filename='img/chalkboard.jpg') }}" alt="" aria-hidden="true">
-              <h3>Apprenticeship</h3>
-              <p>Accepted apprentices receive living stipends, laptops, and more than 1,000 hours of full-time, project-based, collaborative training.</p>
-              <p>Upon completion of the program, apprentices are placed with hiring partners.</p>
-            </div>
-        </div>
-      </div>
+      {% endfor %}
+    </div>
+  </div>
 
-      <div class="row row__baseline blue-background">
-        <h1>Upcoming Events</h1>
-        <div class="row row__center blue-background">
-          {% if not events %}
-            <h3>Event data currently unavailable. Please check back later!</h3>
-          {% endif %}
-          {% for event in events %}
-            <div class="column centered blue-background event-item" id="eventbrite">
-              <h3 class="blue-background"><a href="{{event.url}}">{{event.title}}</a></h3>
-              <p class="event-item__address blue-background">{{event.date}}</p>
-              {% if event.venue %}
-              <p class="event-item__address blue-background">{{event.venue}}
-                {% for a in event.address %}
-                  <br>{{a}}
-                {% endfor %}
-              </p>
-              {% endif %}
-            </div>
-          {% endfor %}
-        </div>
+  <div class="row row__center our-supporters" id="supporters">
+    <h1 class="blue-h1">Thank you for your support!</h1>
+    <div class="row">
+      <div class="column centered">
+        <a href="http://sfpl.org/" target="_blank" rel="noopener noreferrer">
+          <img
+            src="{{ url_for('static', filename='img/sfpl-logo.jpg') }}"
+            alt="San Francisco Public Library logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://blog.rackspace.com/the-rackspace-startup-program"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/rackspace-startups-logo.png') }}"
+            alt="Rackspace Startups logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.stanthonysf.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/st-anthonys.jpg') }}"
+            alt="St. Anthony Foundation logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.zendesk.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/zendesk-logo-min.png') }}"
+            alt="Zendesk logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.python.org/psf/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/python-software-foundation-logo.jpg') }}"
+            alt="Python Software Foundation logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="http://www.kaporcenter.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/kapor-center-for-social-impact-logo.jpg') }}"
+            alt="Kapor Center for Social Impact logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.scienceexchange.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/scienceexchange_logo.png') }}"
+            alt="Science Exchange logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.beezwax.net"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/beezwax-logo.png')}}"
+            alt="Beezwax logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="http://sfpl.org/?pg=0200006301"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/bridge-at-main.jpg') }}"
+            alt="The Bridge at Main: Learning resources, classes, and people who can help."
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a href="https://stripe.com/" target="_blank" rel="noopener noreferrer">
+          <img
+            src="{{ url_for('static', filename='img/stripe.png') }}"
+            alt="Stripe logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://pantheon.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/pantheon-logo-min.jpg') }}"
+            alt="Pantheon.io logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a href="https://redfin.com" target="_blank" rel="noopener noreferrer">
+          <img
+            src="{{ url_for('static', filename='img/redfin-logo.png') }}"
+            alt="Redfin logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a href="https://exygy.com/" target="_blank" rel="noopener noreferrer">
+          <img
+            src="{{ url_for('static', filename='img/exygy-logo-min.jpg') }}"
+            alt="Exygy logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.cloverhealth.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/clover-health-logo-min.png') }}"
+            alt="Clover Health logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://worldwidewomen.co/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/world-wide-women-min.png') }}"
+            alt="WorldWideWomen logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.moo.com/us/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/moo-logo-min.png') }}"
+            alt="Moo logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.quantcast.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/quantcast-logo-min.png') }}"
+            alt="Quantcast logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.ancestry.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/ancestry-logo-min.png') }}"
+            alt="Ancestry logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.wikimedia.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/wikimedia-foundation-logo-min.png') }}"
+            alt="Wikimedia Foundation logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+          <img
+            src="{{ url_for('static', filename='img/github-logo-min.png') }}"
+            alt="GitHub logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.hugeinc.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/huge-logo-min.png') }}"
+            alt="Huge logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://mixpanel.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/mixpanel-logo-min.png') }}"
+            alt="Mixpanel logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.rallyhealth.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/rally-health-logo-min.png') }}"
+            alt="Rally Health logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.techhireoakland.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/TechHire-logo-min.png') }}"
+            alt="TechHire logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.onelogin.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/onelogin-logo-min.png') }}"
+            alt="OneLogin logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.agari.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/agari-logo-min.png') }}"
+            alt="Agari logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.kintone.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/kintone-logo-min.png') }}"
+            alt="Kintone logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.autonomic.ai/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Autonomic-logo-min.png') }}"
+            alt="Autonomic logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://mailchimp.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/mailchimp-logo-min.png') }}"
+            alt="Mailchimp logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://virtualpostmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/virtualpostmail-logo-min.png') }}"
+            alt="VirtualPostMail logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.scu-social-entrepreneurship.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/miller-center-logo-min.png') }}"
+            alt="Miller Center for Social Entrepreneurship logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.redbubble.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Redbubble-logo-min.png') }}"
+            alt="Redbubble logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.airbnb.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Airbnb-logo-min.png') }}"
+            alt="Airbnb logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.surveymonkey.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/SurveyMonkey-logo-min.png') }}"
+            alt="SurveyMonkey logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.appdynamics.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/AppDynamics-logo-min.jpg') }}"
+            alt="AppDynamics logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.indeed.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Indeed-logo-min.png') }}"
+            alt="Indeed logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a href="https://scale.ai/" target="_blank" rel="noopener noreferrer">
+          <img
+            src="{{ url_for('static', filename='img/Scale-logo.png') }}"
+            alt="Scale logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.getpostman.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Postman-logo.png') }}"
+            alt="Postman logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a href="https://blend.com/" target="_blank" rel="noopener noreferrer">
+          <img
+            src="{{ url_for('static', filename='img/Blend-logo.png') }}"
+            alt="Blend logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://meraki.cisco.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Cisco-Meraki-logo.jpg') }}"
+            alt="Cisco Meraki logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a href="https://branch.io/" target="_blank" rel="noopener noreferrer">
+          <img
+            src="{{ url_for('static', filename='img/Branch-logo.jpg') }}"
+            alt="Branch logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a href="https://remix.com" target="_blank" rel="noopener noreferrer">
+          <img
+            src="{{ url_for('static', filename='img/Remix-logo-min.png') }}"
+            alt="Remix logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.tonal.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Tonal-logo-min.png') }}"
+            alt="Tonal logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.purestorage.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Pure-Storage-logo-min.png') }}"
+            alt="Pure Storage logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.grove.co/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Grove-Collaborative-logo-min.png') }}"
+            alt="Grove Collaborative logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.freenome.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Freenome-logo-min.png') }}"
+            alt="Freenome logo"
+            class="twenty-percent-width margin-25"
+          />
+        </a>
       </div>
-
-      <div class="row row__center our-supporters" id="supporters">
-          <h1 class="blue-h1">Thank you for your support!</h1>
-          <div class="row">
-            <div class="column centered">
-              <a href="http://sfpl.org/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/sfpl-logo.jpg') }}"
-                  alt="San Francisco Public Library logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://blog.rackspace.com/the-rackspace-startup-program" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/rackspace-startups-logo.png') }}"
-                  alt="Rackspace Startups logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.stanthonysf.org/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/st-anthonys.jpg') }}"
-                  alt="St. Anthony Foundation logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.zendesk.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/zendesk-logo-min.png') }}"
-                  alt="Zendesk logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.python.org/psf/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/python-software-foundation-logo.jpg') }}"
-                  alt="Python Software Foundation logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="http://www.kaporcenter.org/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/kapor-center-for-social-impact-logo.jpg') }}"
-                  alt="Kapor Center for Social Impact logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.scienceexchange.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/scienceexchange_logo.png') }}"
-                  alt="Science Exchange logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.beezwax.net" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/beezwax-logo.png')}}"
-                  alt="Beezwax logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="http://sfpl.org/?pg=0200006301" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/bridge-at-main.jpg') }}"
-                  alt="The Bridge at Main: Learning resources, classes, and people who can help."
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://stripe.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/stripe.png') }}"
-                  alt="Stripe logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://pantheon.io/" target="_blank" rel="noopener noreferrer">
-                  <img src="{{ url_for('static', filename='img/pantheon-logo-min.jpg') }}"
-                  alt="Pantheon.io logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://redfin.com" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/redfin-logo.png') }}"
-                  alt="Redfin logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://exygy.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/exygy-logo-min.jpg') }}"
-                  alt="Exygy logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.cloverhealth.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/clover-health-logo-min.png') }}"
-                  alt="Clover Health logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://worldwidewomen.co/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/world-wide-women-min.png') }}"
-                  alt="WorldWideWomen logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.moo.com/us/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/moo-logo-min.png') }}"
-                  alt="Moo logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.quantcast.com" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/quantcast-logo-min.png') }}"
-                  alt="Quantcast logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.ancestry.com" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/ancestry-logo-min.png') }}"
-                  alt="Ancestry logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.wikimedia.org/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/wikimedia-foundation-logo-min.png') }}"
-                  alt="Wikimedia Foundation logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/github-logo-min.png') }}"
-                  alt="GitHub logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.hugeinc.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/huge-logo-min.png') }}"
-                  alt="Huge logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://mixpanel.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/mixpanel-logo-min.png') }}"
-                  alt="Mixpanel logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.rallyhealth.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/rally-health-logo-min.png') }}"
-                  alt="Rally Health logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.techhireoakland.org/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/TechHire-logo-min.png') }}"
-                  alt="TechHire logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.onelogin.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/onelogin-logo-min.png') }}"
-                  alt="OneLogin logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.agari.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/agari-logo-min.png') }}"
-                  alt="Agari logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.kintone.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/kintone-logo-min.png') }}"
-                  alt="Kintone logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.autonomic.ai/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Autonomic-logo-min.png') }}"
-                  alt="Autonomic logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://mailchimp.com" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/mailchimp-logo-min.png') }}"
-                  alt="Mailchimp logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://virtualpostmail.com" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/virtualpostmail-logo-min.png') }}"
-                  alt="VirtualPostMail logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.scu-social-entrepreneurship.org/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/miller-center-logo-min.png') }}"
-                  alt="Miller Center for Social Entrepreneurship logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.redbubble.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Redbubble-logo-min.png') }}"
-                  alt="Redbubble logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.airbnb.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Airbnb-logo-min.png') }}"
-                  alt="Airbnb logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.surveymonkey.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/SurveyMonkey-logo-min.png') }}"
-                  alt="SurveyMonkey logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.appdynamics.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/AppDynamics-logo-min.jpg') }}"
-                  alt="AppDynamics logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.indeed.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Indeed-logo-min.png') }}"
-                  alt="Indeed logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://scale.ai/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Scale-logo.png') }}"
-                  alt="Scale logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.getpostman.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Postman-logo.png') }}"
-                  alt="Postman logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://blend.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Blend-logo.png') }}"
-                  alt="Blend logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://meraki.cisco.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Cisco-Meraki-logo.jpg') }}"
-                  alt="Cisco Meraki logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://branch.io/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Branch-logo.jpg') }}"
-                  alt="Branch logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://remix.com" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Remix-logo-min.png') }}"
-                  alt="Remix logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.tonal.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Tonal-logo-min.png') }}"
-                  alt="Tonal logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.purestorage.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Pure-Storage-logo-min.png') }}"
-                  alt="Pure Storage logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.grove.co/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Grove-Collaborative-logo-min.png') }}"
-                  alt="Grove Collaborative logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-              <a href="https://www.freenome.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Freenome-logo-min.png') }}"
-                  alt="Freenome logo"
-                  class="twenty-percent-width margin-25">
-              </a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="column centered">
-              <a href="https://github.com/gsong" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/George-Song.png') }}"
-                  alt="George Song"
-                  class="ten-percent-width margin-25">
-              </a>
-              <a href="https://twitter.com/scott_triglia" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Scott-Triglia.jpg') }}"
-                alt="Scott Triglia"
-                class="ten-percent-width margin-25">
-              </a>
-              <a href="https://www.linkedin.com/in/vwfchan/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Vivien-Chan.jpg') }}"
-                  alt="Vivien Chan"
-                  class="ten-percent-width margin-25">
-              </a>
-              <a href="https://twitter.com/avh4" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Aaron-VonderHaar-min.jpg') }}"
-                  alt="Aaron VonderHaar"
-                  class="ten-percent-width margin-25">
-              </a>
-              <a href="https://www.linkedin.com/in/ariannawillett/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Arianna-Willett-min.jpg') }}"
-                  alt="Arianna Willett"
-                  class="ten-percent-width margin-25">
-              </a>
-              <a href="https://www.linkedin.com/in/bnakamura/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Beth-Nakamura-min.jpg') }}"
-                  alt="Beth Nakamura"
-                  class="ten-percent-width margin-25">
-              </a>
-              <a href="https://twitter.com/sharonw" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Sharon-Wong-min.jpg') }}"
-                  alt="Sharon Wong"
-                  class="ten-percent-width margin-25">
-              </a>
-              <a href="https://twitter.com/internetross" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Ross-Chapman-min.jpg') }}"
-                  alt="Ross Chapman"
-                  class="ten-percent-width margin-25">
-              </a>
-              <a href="http://nicolefv.com/" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Nicole-Forsgren-min.jpg') }}"
-                  alt="Nicole Forsgren"
-                  class="ten-percent-width margin-25">
-              </a>
-              <a href="https://twitter.com/jeffiel" target="_blank" rel="noopener noreferrer">
-                <img src="{{ url_for('static', filename='img/Erica-Jeff-Lawson.png') }}"
-                  alt="Erica & Jeff Lawson"
-                  class="ten-percent-width margin-25">
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="row row__center blue-background a-word-from-supporters" id="a-word">
-          <h2 id="quotes">“The apprentices are so impressive—any one of them would be a great asset. The Bay Area often brags of innovation but it’s Techtonica that delivers.” -Michelle Krejci, Service Engineer Tech Lead at Pantheon</h2>
-            </div>
+    </div>
+    <div class="row">
+      <div class="column centered">
+        <a
+          href="https://github.com/gsong"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/George-Song.png') }}"
+            alt="George Song"
+            class="ten-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://twitter.com/scott_triglia"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Scott-Triglia.jpg') }}"
+            alt="Scott Triglia"
+            class="ten-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/vwfchan/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Vivien-Chan.jpg') }}"
+            alt="Vivien Chan"
+            class="ten-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://twitter.com/avh4"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Aaron-VonderHaar-min.jpg') }}"
+            alt="Aaron VonderHaar"
+            class="ten-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/ariannawillett/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Arianna-Willett-min.jpg') }}"
+            alt="Arianna Willett"
+            class="ten-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/bnakamura/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Beth-Nakamura-min.jpg') }}"
+            alt="Beth Nakamura"
+            class="ten-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://twitter.com/sharonw"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Sharon-Wong-min.jpg') }}"
+            alt="Sharon Wong"
+            class="ten-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://twitter.com/internetross"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Ross-Chapman-min.jpg') }}"
+            alt="Ross Chapman"
+            class="ten-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="http://nicolefv.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Nicole-Forsgren-min.jpg') }}"
+            alt="Nicole Forsgren"
+            class="ten-percent-width margin-25"
+          />
+        </a>
+        <a
+          href="https://twitter.com/jeffiel"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Erica-Jeff-Lawson.png') }}"
+            alt="Erica & Jeff Lawson"
+            class="ten-percent-width margin-25"
+          />
+        </a>
       </div>
+    </div>
+  </div>
+  <div
+    class="row row__center blue-background a-word-from-supporters"
+    id="a-word"
+  >
+    <h2 id="quotes">
+      “The apprentices are so impressive—any one of them would be a great asset.
+      The Bay Area often brags of innovation but it’s Techtonica that delivers.”
+      -Michelle Krejci, Service Engineer Tech Lead at Pantheon
+    </h2>
+  </div>
+</div>
 {% endblock content %}

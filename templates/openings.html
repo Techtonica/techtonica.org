@@ -1,27 +1,32 @@
-{% extends "base.html" %}
-
-{% block title %}
-  Techtonica: Bridging the Tech Gap — Careers
-{% endblock title %}
-
-{% block content %}
-  <div class="row row__center about-us">
-    <div class="column hidden-med">
-      <img src="{{ url_for('static', filename='img/make-a-difference-instructor.jpg') }}"
-           alt="A mentor works with a participant at a laptop." 
-           class="fixed-img" style="width:38%;">
-    </div>
-    <div class="column">
-      <h1 class="blue-h1">Openings</h1>
-      <p class="justify">Techtonica is a nonprofit that offers women and non-binary adults with low incomes free tech training, along with living and childcare stipends, then places them in positions at sponsoring companies that are ready to support more diverse teams. You can <a href="https://medium.com/@michelleglauser/techtonica-how-to-diversify-tech-and-help-neighbors-in-need-837d5f0b40bc">read more here</a>.</p>
-      <p>Make an Impact as Our:</p>
-      <p class="justify">
-        <h3>No openings at the moment; please check back later</h3>
-        <!-- <a href="{{ url_for('render_board_page') }}"><h3>Board Member</h3></a> -->
-      </p>
-      <div>
-        {% include 'contactbutton.html' %}
-      </div>
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
+Careers {% endblock title %} {% block content %}
+<div class="row row__center about-us">
+  <div class="column hidden-med">
+    <img
+      src="{{ url_for('static', filename='img/make-a-difference-instructor.jpg') }}"
+      alt="A mentor works with a participant at a laptop."
+      class="fixed-img"
+      style="width: 38%;"
+    />
+  </div>
+  <div class="column">
+    <h1 class="blue-h1">Openings</h1>
+    <p class="justify">
+      Techtonica is a nonprofit that offers women and non-binary adults with low
+      incomes free tech training, along with living and childcare stipends, then
+      places them in positions at sponsoring companies that are ready to support
+      more diverse teams. You can
+      <a
+        href="https://medium.com/@michelleglauser/techtonica-how-to-diversify-tech-and-help-neighbors-in-need-837d5f0b40bc"
+        >read more here</a
+      >.
+    </p>
+    <p>Make an Impact as Our:</p>
+    <h3 class="justify">No openings at the moment; please check back later</h3>
+    <!-- <a href="{{ url_for('render_board_page') }}"><h3>Board Member</h3></a> -->
+    <div>
+      {% include 'contactbutton.html' %}
     </div>
   </div>
+</div>
 {% endblock content %}

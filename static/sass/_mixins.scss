@@ -7,7 +7,7 @@
   @each $prefix in $prefixes {
     #{'-' + $prefix + '-' + $property}: $value;
   }
- 
+
   // Output standard non-prefixed declaration
   #{$property}: $value;
 }
@@ -19,6 +19,6 @@
   width: $button-size;
   height: $button-size/7;
   background: $light-blue;
-  border-radius: $button-size/14; 
+  border-radius: $button-size/14;
   transition: $transition;
 }

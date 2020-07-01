@@ -1,5 +1,5 @@
-@import 'settings';
-@import 'mixins';
+@import "settings";
+@import "mixins";
 
 .row {
   @include prefix(display, flex, webkit moz);
@@ -69,11 +69,9 @@
   padding-left: 1.25rem;
 }
 
-.mc-closeModal{
-  text-shadow:-1px -1px 0 #000,
-               1px -1px 0 #000,
-               -1px 1px 0 #000,
-                1px 1px 0 #000;
+.mc-closeModal {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .main-content {
@@ -87,7 +85,8 @@
   justify-content: flex-end;
   width: 100%;
   height: 75vh;
-  background: url(../img/three-participants-at-laptops-min.jpg) $main-blue no-repeat top right fixed;
+  background: url(../img/three-participants-at-laptops-min.jpg) $main-blue
+    no-repeat top right fixed;
   background-size: cover;
 }
 
@@ -102,7 +101,7 @@
   font-size: calc(28px + 24 * (100vw - 320px) / 960);
 
   // Caps max fontsize above x-large-screen breakpoint.
-  @media only screen and (min-width:1200px) {
+  @media only screen and (min-width: 1200px) {
     font-size: 3.5rem;
   }
 }
@@ -114,7 +113,8 @@
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/apprentices-2019-h2-long-cropped-min.jpg) $main-blue no-repeat top fixed;
+  background: url(../img/apprentices-2019-h2-long-cropped-min.jpg) $main-blue
+    no-repeat top fixed;
   background-size: cover;
 }
 
@@ -134,16 +134,16 @@
   width: 100%;
 }
 
-.twenty-percent-width{
-  width:20%;
+.twenty-percent-width {
+  width: 20%;
 }
 
-.ten-percent-width{
-  width:10%;
+.ten-percent-width {
+  width: 10%;
 }
 
 .min-width-250 {
-  min-width:250px;
+  min-width: 250px;
 }
 
 .max-size-75px {
@@ -169,14 +169,14 @@
   max-width: 200px;
 }
 
-.margin-25{
-  margin:25px;
+.margin-25 {
+  margin: 25px;
 }
 
 .fixed-img {
-  width:30%;
-  position:fixed;
-  top:150px;
+  width: 30%;
+  position: fixed;
+  top: 150px;
 }
 
 .hiring {
@@ -190,7 +190,8 @@
 }
 
 .contact-us,
-.donate, .sponsor {
+.donate,
+.sponsor {
   @include prefix(border-radius, 8px, webkit moz o);
   color: $white;
   display: inline-block;
@@ -200,7 +201,7 @@
   &:hover {
     background-color: $light-blue;
     color: $white;
-    transition: .3s;
+    transition: 0.3s;
   }
 }
 
@@ -278,16 +279,16 @@ table.mentor {
 
   td {
     border-bottom: 1px solid #000;
-	padding: 1rem;
+    padding: 1rem;
 
-	ul {
-		margin: 0;
-	}
+    ul {
+      margin: 0;
+    }
   }
 
   td:first-of-type {
     border-right: 1px solid #000;
-	vertical-align: top;
+    vertical-align: top;
   }
 }
 
@@ -300,7 +301,6 @@ table.mentor {
     font-size: 3.5em;
   }
 }
-
 
 @media only screen and (max-width: 910px) {
   .row {
@@ -333,7 +333,6 @@ table.mentor {
     }
   }
 
-
   .nav-bar {
     justify-content: space-between;
   }
@@ -364,7 +363,7 @@ table.mentor {
     background-color: $white;
     text-align: center;
     min-height: 1.4em;
-    z-index: 1
+    z-index: 1;
   }
 
   .nav-link--mobile:last-child {
@@ -374,16 +373,17 @@ table.mentor {
   .main-header {
     display: block;
     position: relative;
-    background: url(../img/three-participants-at-laptops-min.jpg) $main-blue no-repeat top center;
+    background: url(../img/three-participants-at-laptops-min.jpg) $main-blue
+      no-repeat top center;
     @include prefix(background-size, contain, webkit moz o);
   }
 
   .main-header__text {
-        position: absolute;
-        bottom: 0;
-        max-width: 100%;
-        width: auto;
-        padding: 0 1em;
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    width: auto;
+    padding: 0 1em;
   }
 
   .main-content {
@@ -404,7 +404,7 @@ table.mentor {
     top: 0;
     margin: 0.5rem 0;
     padding: $button-size/2 $button-size/3;
-    transition: .3s;
+    transition: 0.3s;
     cursor: pointer;
     user-select: none;
     border-radius: $button-size/7;
@@ -415,7 +415,7 @@ table.mentor {
 
     &:active {
       transition: 0;
-      background: rgba(0,0,0,.1);
+      background: rgba(0, 0, 0, 0.1);
     }
   }
 
@@ -425,23 +425,32 @@ table.mentor {
     position: relative;
 
     /*create the upper and lower lines as pseudo-elements of the middle line*/
-    &:before, &:after {
-     @include line;
+    &:before,
+    &:after {
+      @include line;
       position: absolute;
-        left: 0;
-      content: '';
+      left: 0;
+      content: "";
       transform-origin: $button-size/14 center;
     }
-    &:before { top: $button-size/4; }
-    &:after { top: -$button-size/4; }
+    &:before {
+      top: $button-size/4;
+    }
+    &:after {
+      top: -$button-size/4;
+    }
   }
 
   .lines-button:hover {
     opacity: 1;
 
     .lines {
-      &:before { top: $button-size/3; }
-      &:after { top: -$button-size/3; }
+      &:before {
+        top: $button-size/3;
+      }
+      &:after {
+        top: -$button-size/3;
+      }
     }
   }
 
@@ -450,18 +459,19 @@ table.mentor {
     background: transparent;
 
     /*overlay the lines by setting both their top values to 0*/
-    &:before, &:after {
+    &:before,
+    &:after {
       transform-origin: 50% 50%;
       top: 0;
       width: 2.5em;
     }
 
     // rotate the lines to form the x shape
-    &:before{
-      transform: rotate3d(0,0,1,45deg);
+    &:before {
+      transform: rotate3d(0, 0, 1, 45deg);
     }
-    &:after{
-      transform: rotate3d(0,0,1,-45deg);
+    &:after {
+      transform: rotate3d(0, 0, 1, -45deg);
     }
   }
   .contact-us {
@@ -475,62 +485,44 @@ table.mentor {
 }
 
 /* iphone 4 and 4s media query */
-@media only screen and (min-device-width: 320px)
-  and
-  (max-device-width: 480px)
-  and
-  (-webkit-device-pixel-ratio: 2)
-  and
-  (device-aspect-ratio: 2/3){
-    .main-header__text{
-      font-size: 1rem;
-      height: 50vh;
-    }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
+  .main-header__text {
+    font-size: 1rem;
+    height: 50vh;
+  }
 }
 
 /* iphone 4 and 4s landscape media query */
-@media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
-  .main-header{
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .main-header {
     background-size: cover;
     font-size: 14px;
   }
-  .main-content{
+  .main-content {
     font-size: 14px;
   }
 }
 
 /* Samsung Galaxy s5 portrait media query */
-@media screen
-  and (device-width: 360px)
-  and (device-height: 640px)
-  and (-webkit-device-pixel-ratio: 3)
-  and (orientation: portrait) {
-    .main-header__text{
-      font-size: 1rem;
-    }
-    .main-header_text p{
-      margin-bottom: 20px;
-    }
+@media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+  .main-header__text {
+    font-size: 1rem;
+  }
+  .main-header_text p {
+    margin-bottom: 20px;
+  }
 }
 
 /* Samsung Galaxy s5 landscape media query */
-@media screen
-  and (device-width: 640px)
-  and (device-height: 360px)
-  and (-webkit-device-pixel-ratio: 3)
-  and (orientation: landscape) {
-    .main-header__text{
-      font-size: 1rem;
-      height: 50vh;
-    }
-    .main-header{
-        height: 500px;
-        background-size: cover;
-    }
+@media screen and (device-width: 640px) and (device-height: 360px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+  .main-header__text {
+    font-size: 1rem;
+    height: 50vh;
+  }
+  .main-header {
+    height: 500px;
+    background-size: cover;
+  }
 }
 
 .progress-bg {
@@ -539,9 +531,9 @@ table.mentor {
   height: 78px;
   border-radius: 10px;
   text-align: center;
-  -moz-box-shadow:    inset 0 0 10px $light-gray;
+  -moz-box-shadow: inset 0 0 10px $light-gray;
   -webkit-box-shadow: inset 0 0 10px black;
-  box-shadow:         inset 0 0 10px black;
+  box-shadow: inset 0 0 10px black;
   background-color: $white;
 }
 
@@ -550,10 +542,11 @@ table.mentor {
   border-radius: 10px;
   float: left;
   width: 50%;
-  background-color: $focal-orange; 
+  background-color: $focal-orange;
 }
 
-.progress-bg h3.goal, .progress-bg h3.raised {
+.progress-bg h3.goal,
+.progress-bg h3.raised {
   line-height: 78px;
   margin: 0;
   padding: 0;
@@ -600,7 +593,7 @@ table.mentor {
   text-align: left;
   outline: none;
   font-size: 1.2em;
-  &:hover{
+  &:hover {
     color: $dark-blue;
   }
   &::before {

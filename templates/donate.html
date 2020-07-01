@@ -1,49 +1,92 @@
-{% extends "base.html" %}
-
-{% block title %}
-  Techtonica: Bridging the Tech Gap
-{% endblock title %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap {%
+endblock title %} {% block content %}
 <div class="row row__center blue-background">
   <div class="column">
     <h1>Help us bridge the tech gap</h1>
-    <p class="justify">Donate today to directly benefit the participants of our six-month tech apprenticeship program, help increase diversity in tech, and empower locals in need!</p>
+    <p class="justify">
+      Donate today to directly benefit the participants of our six-month tech
+      apprenticeship program, help increase diversity in tech, and empower
+      locals in need!
+    </p>
   </div>
   <div class="column">
-    <img src="{{ url_for('static', filename='img/group-workshop-min.jpg') }}" alt="Volunteers and students taking a group picture" class="full-width-img">
+    <img
+      src="{{ url_for('static', filename='img/group-workshop-min.jpg') }}"
+      alt="Volunteers and students taking a group picture"
+      class="full-width-img"
+    />
   </div>
 </div>
-{<div class="row row__center what-we-do" id="whatwedo" style="padding-bottom:0;">
+{
+<div
+  class="row row__center what-we-do"
+  id="whatwedo"
+  style="padding-bottom: 0;"
+>
   <h1 class="blue-h1">How to Donate</h1>
 </div>
 
-<div class="row" style="padding-top:0;">
+<div class="row" style="padding-top: 0;">
   <div class="column">
     <h2>Credit Card</h2>
-    <h3><a href="http://techtonica.wedid.it/" class="sponsor" target="_blank" rel="noopener noreferrer">Click here to donate with a card.</a></h3>
+    <h3>
+      <a
+        href="http://techtonica.wedid.it/"
+        class="sponsor"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Click here to donate with a card.</a
+      >
+    </h3>
   </div>
   <div class="column">
     <h2>Venmo</h2>
-    <h3><a href="#" onclick="return false;" class="sponsor" target="_blank" rel="noopener noreferrer">Venmo your donation to @socialgoodfund (Social Good Fund Executive Director Michael Pace) and indicate it's for Techtonica.</a></h3>
+    <h3>
+      <a
+        href="#"
+        onclick="return false;"
+        class="sponsor"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Venmo your donation to @socialgoodfund (Social Good Fund Executive
+        Director Michael Pace) and indicate it's for Techtonica.</a
+      >
+    </h3>
   </div>
   <div class="column">
     <h2>Direct Deposit</h2>
-    <h3><a href="#" onclick="return false;" class="sponsor" target="_blank" rel="noopener noreferrer">Account owner: Social Good Fund</br>
-    Bank: Chase</br>
-    Account number: 200399753</br>
-    Routing number: 071000013</br>
-    Note: For Techtonica</br>
-    Then fill out a <object><a href = https://docs.google.com/forms/d/e/1FAIpQLSdHtWIvwCV7PED5tDt8Wura-py8-Voqtepj5n1HTtU8Usmv5A/viewform class="link-on-blue">deposit form </a>or <a href = https://docs.google.com/forms/d/e/1FAIpQLScjCF6_xzIn-Uht3MDOr1__3YpIYDCTzx80cIE0KVCsPqcYKQ/viewform class="link-on-blue">contact form</a> to let us know.</object></a></h3>
+    <h3 class="sponsor" target="_blank" rel="noopener noreferrer">
+      Account owner: Social Good Fund<br />
+      Bank: Chase<br />
+      Account number: 200399753<br />
+      Routing number: 071000013<br />
+      Note: For Techtonica<br />
+      Then fill out a
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdHtWIvwCV7PED5tDt8Wura-py8-Voqtepj5n1HTtU8Usmv5A/viewform"
+        class="link-on-blue"
+        >deposit form</a
+      >
+      or
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLScjCF6_xzIn-Uht3MDOr1__3YpIYDCTzx80cIE0KVCsPqcYKQ/viewform"
+        class="link-on-blue"
+        >contact form</a
+      >
+      to let us know.
+    </h3>
   </div>
   <div class="column">
     <h2>Check</h2>
-    <h3><a href="#" onclick="return false;" class="sponsor" target="_blank" rel="noopener noreferrer">Write your check to Social Good Fund, indicate it's for Techtonica on the memo line, and mail it to: </br>
-      Social Good Fund</br>
-      P.O. Box 5473</br>
-      Richmond, CA 94805</a><h3>
+    <h3 class="sponsor" target="_blank" rel="noopener noreferrer">
+      Write your check to Social Good Fund, indicate it's for Techtonica on the
+      memo line, and mail it to: <br />
+      Social Good Fund<br />
+      P.O. Box 5473<br />
+      Richmond, CA 94805
+    </h3>
   </div>
-<!--   <div class="column">
+  <!--   <div class="column">
     <h2>Amazon</h2>
     <h3><a href="https://www.amazon.com/registry/wishlist/1XEZ5MMI0XLQF/ref=cm_sw_r_cp_ep_ws_aMCUAb3W607XK" class="sponsor" target="_blank" rel="noopener noreferrer">Purchase an item from our Amazon wish list.</a></h3>
   </div> -->
