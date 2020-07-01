@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  website:
+    build:
+      context: .
+    image: techtonica/website
+    environment:
+      FLASK_DEBUG: 1
+      FLASK_APP: main_site.py
+    command: flask run --host=0.0.0.0
+    volumes:
+      - .:/app:cached
+    ports:
+      - ${SERVER_PORT:-5000}:${SERVER_PORT:-5000}

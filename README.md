@@ -75,16 +75,17 @@ Browse to <http://localhost:5000>.
 
 1. Download [Docker Desktop](https://www.docker.com/products/docker-desktop)
 2. `cd` into the folder that holds your techtonica.org repo
-3. Build your app: `docker build --tag techtonica .`
-4. Run your app: `docker run techtonica`
+3. Build your app: `docker-compose build --pull`
+4. Run your app: `docker-compose up`
 
-_When there are updates to the Dockerfile, you will have to rebuild your app in order for those changes to take effect_
+_When there are updates to the Dockerfile, you will have to rebuild your app in
+order for those changes to take effect._
 
 #### For Docker Pros
 
-To run app: `docker run techtonica`
+To run app: `docker-compose up`
 
-To rebuild app: `docker build --tag techtonica .`
+To rebuild app: `docker-compose build --pull`
 
 ### CSS / SCSS
 

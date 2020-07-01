@@ -1,14 +1,6 @@
-FROM debian:buster-slim
+FROM python:3.6.8-slim
+
+COPY requirements.txt /tmp
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 WORKDIR /app
-
-COPY . ./
-
-RUN apt-get update -y && \
-    apt-get install -y python-pip
-
-RUN pip install -r requirements.txt
-
-ENTRYPOINT [ "python" ]
-
-CMD [ "main_site.py" ]
