@@ -1,4 +1,4 @@
-version: "3"
+version: "3.7"
 
 services:
   website:
@@ -9,7 +9,7 @@ services:
       FLASK_DEBUG: 1
       FLASK_APP: main_site.py
     command: flask run --host=0.0.0.0
-    ports:
-      - "5000:5000"
     volumes:
-      - ./:/app
+      - .:/app:cached
+    ports:
+      - ${SERVER_PORT:-5000}:${SERVER_PORT:-5000}

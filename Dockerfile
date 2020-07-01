@@ -1,11 +1,6 @@
-FROM python:3.6-slim
+FROM python:3.6.8-slim
+
+COPY requirements.txt /tmp
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 WORKDIR /app
-
-RUN apt-get update -y && \
-    apt-get install -y python-pip
-
-WORKDIR /app
-COPY . /app
-
-RUN pip install -r requirements.txt
