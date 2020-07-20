@@ -1,6 +1,6 @@
-$main-blue: #0093B5;
-$light-blue: #16C1F3;
-$dark-blue: #05556D;
+$main-blue: #0093b5;
+$light-blue: #16c1f3;
+$dark-blue: #05556d;
 $white: white;
 $light-gray: #ccc;
 $dark-gray: #666;
@@ -9,8 +9,8 @@ $thin-dark-text-shadow: 1px 1px 1px $dark-gray;
 $thin-light-text-shadow: 0px 0px 1px $light-gray;
 $focal-orange: #fc7625;
 
-$button-size : 3rem; 
-$transition: .3s; // increase this to see the transformations in slow-motion
+$button-size: 3rem;
+$transition: 0.3s; // increase this to see the transformations in slow-motion
 
 body {
   margin: 0;
@@ -19,23 +19,39 @@ body {
   line-height: 1.4em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 1.5rem 0;
   color: $main-blue;
   line-height: 1.3em;
   font-weight: 700;
 }
 
-h1, h2 {
+h1,
+h2 {
   letter-spacing: 2px;
 }
 
-h3, h4, h5, h6 {
+h3,
+h4,
+h5,
+h6 {
   letter-spacing: 1px;
 }
 
-body, h1, h2, h3, h4, h5, h6, p {
-  font-family: 'lato', helvetica, sans-serif;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "lato", helvetica, sans-serif;
 }
 
 h1 {

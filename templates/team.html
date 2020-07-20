@@ -1,166 +1,429 @@
-{% extends "base.html" %}
-
-{% block title %}
-  Techtonica: Bridging the Tech Gap — About Us
-{% endblock title %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
+About Us {% endblock title %} {% block content %}
 
 <!--section for staff-->
+<div class="row row__center blue-background">
+  <div class="column centered">
+    <h1>Staff</h1>
+  </div>
   <div class="row row__center blue-background">
     <div class="column centered">
-      <h1>Staff</h1>
+      <img
+        src="{{ url_for('static', filename='img/Michelle-Glauser-min.jpg') }}"
+        alt="Michelle Glauser"
+        class="resize-400px"
+      />
     </div>
-    <div class="row row__center blue-background">
-      <div class = "column centered">
-        <img src="{{ url_for('static', filename='img/Michelle-Glauser-min.jpg') }}"
-             alt="Michelle Glauser"
-             class="resize-400px">
-      </div>
-      <div class="column centered">
-          <h2><a href="https://linkedin.com/in/michelleglauser" target="_blank" rel="noopener noreferrer">Michelle Glauser, Founder and CEO</a></h2>
-          <p class="justify">Since becoming a software engineer in 2012, she's worked for a better, more diverse software industry by organizing support groups, meetups, workshops, and the #ILookLikeAnEngineer ad campaign. Michelle's experience working in tech and volunteering in the community in San Francisco revealed two glaring issues: lack of diversity on tech teams and high income disparity. Techtonica is her vision to help tech companies and people who need more opportunities thrive together.</p>
-      </div>
-    </div>
-
-    <div class="row row__center blue-background">
-      <div class="column centered">
-          <h2><a href="https://www.linkedin.com/in/talea-carpenter/" target="_blank" rel="noopener noreferrer">TaLea Carpenter, <br>Associate Program Manager</a></h2>
-          <p class="justify">Before learning to code, TaLea spent the majority of her time
-homeschooling her children and making music. She has been recording music for over a decade and sees coding as another creative outlet. TaLea has organized both youth and parent/child coding workshops and co-organized a computer and wifi fundraiser for YoungBlood Coleman Park & Rec located in San Francisco, California. She worked at Ancestry following her training at Techtonica and is happy to be in a position to empower
-others.</p>
-      </div>
-      <div class = "column centered">
-        <img src="{{ url_for('static', filename='img/TaLea-min.jpg') }}"
-            alt="TaLea Carpenter"
-            class="resize-400px">
-      </div>
-    </div>
-
-    <div class="row row__center blue-background">
-      <div class = "column centered">
-        <img src="{{ url_for('static', filename='img/Tiffany-Quach-min.jpg') }}"
-            alt="Tiffany Quach"
-            class="resize-400px">
-      </div>
-      <div class="column centered">
-          <h2><a href="https://linkedin.com/in/tiffanyaquach/" target="_blank" rel="noopener noreferrer">Tiffany Quach, <br>Partnership Development Manager</a></h2>
-          <p class="justify">Tiffany has over 10 years of professional experience working in social impact. Prior to joining Techtonica, she managed a STEM and Environmental Education program for youth from communities that organizations have previously failed to engage. She is an experienced community builder and is impassioned about diversity, equity, and inclusion across all sectors. She is now excited to help create an inclusive tech ecosystem through partnership and relationship building.</p>
-        </div>
-    </div>
-    <div class="row row__center blue-background">
-      <div class="column centered">
-        <h2><a href="https://www.linkedin.com/in/bill-dephillips/" target="_blank" rel="noopener noreferrer">Bill DePhillips, Software Engineering Apprenticeship Manager</a></h2>
-        <p class="justify">
-          Bill has worked as a software engineer for over ten years in the Bay Area, most recently at <a href="https://www.goodreads.com">Goodreads</a>, an app to help you find your next favorite book. As an English major, he appreciates the need for pathways into tech that differ from the typical Computer Science route. A long-time volunteer and supporter of Techtonica, alongside other like-minded organizations, Bill is thrilled to be able to spend his efforts full-time on helping our participants learn the joy of coding as well as disrupting the industry from within by bringing long-missing voices to the table.
-        </p>
-      </div>
-      <div class = "column centered">
-        <img src="{{ url_for('static', filename='img/bill-dephillips-min.jpg') }}"
-             alt="Bill DePhillips"
-             class="resize-400px">
-      </div>
-    </div>
+    <div class="column centered">
+      <h2>
+        <a
+          href="https://linkedin.com/in/michelleglauser"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Michelle Glauser, Founder and CEO</a
+        >
+      </h2>
+      <p class="justify">
+        Since becoming a software engineer in 2012, she's worked for a better,
+        more diverse software industry by organizing support groups, meetups,
+        workshops, and the #ILookLikeAnEngineer ad campaign. Michelle's
+        experience working in tech and volunteering in the community in San
+        Francisco revealed two glaring issues: lack of diversity on tech teams
+        and high income disparity. Techtonica is her vision to help tech
+        companies and people who need more opportunities thrive together.
+      </p>
     </div>
   </div>
+
+  <div class="row row__center blue-background">
+    <div class="column centered">
+      <h2>
+        <a
+          href="https://www.linkedin.com/in/talea-carpenter/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >TaLea Carpenter, <br />Associate Program Manager</a
+        >
+      </h2>
+      <p class="justify">
+        Before learning to code, TaLea spent the majority of her time
+        homeschooling her children and making music. She has been recording
+        music for over a decade and sees coding as another creative outlet.
+        TaLea has organized both youth and parent/child coding workshops and
+        co-organized a computer and wifi fundraiser for YoungBlood Coleman Park
+        & Rec located in San Francisco, California. She worked at Ancestry
+        following her training at Techtonica and is happy to be in a position to
+        empower others.
+      </p>
+    </div>
+    <div class="column centered">
+      <img
+        src="{{ url_for('static', filename='img/TaLea-min.jpg') }}"
+        alt="TaLea Carpenter"
+        class="resize-400px"
+      />
+    </div>
+  </div>
+
+  <div class="row row__center blue-background">
+    <div class="column centered">
+      <img
+        src="{{ url_for('static', filename='img/Tiffany-Quach-min.jpg') }}"
+        alt="Tiffany Quach"
+        class="resize-400px"
+      />
+    </div>
+    <div class="column centered">
+      <h2>
+        <a
+          href="https://linkedin.com/in/tiffanyaquach/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Tiffany Quach, <br />Partnership Development Manager</a
+        >
+      </h2>
+      <p class="justify">
+        Tiffany has over 10 years of professional experience working in social
+        impact. Prior to joining Techtonica, she managed a STEM and
+        Environmental Education program for youth from communities that
+        organizations have previously failed to engage. She is an experienced
+        community builder and is impassioned about diversity, equity, and
+        inclusion across all sectors. She is now excited to help create an
+        inclusive tech ecosystem through partnership and relationship building.
+      </p>
+    </div>
+  </div>
+  <div class="row row__center blue-background">
+    <div class="column centered">
+      <h2>
+        <a
+          href="https://www.linkedin.com/in/bill-dephillips/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Bill DePhillips, Software Engineering Apprenticeship Manager</a
+        >
+      </h2>
+      <p class="justify">
+        Bill has worked as a software engineer for over ten years in the Bay
+        Area, most recently at
+        <a href="https://www.goodreads.com">Goodreads</a>, an app to help you
+        find your next favorite book. As an English major, he appreciates the
+        need for pathways into tech that differ from the typical Computer
+        Science route. A long-time volunteer and supporter of Techtonica,
+        alongside other like-minded organizations, Bill is thrilled to be able
+        to spend his efforts full-time on helping our participants learn the joy
+        of coding as well as disrupting the industry from within by bringing
+        long-missing voices to the table.
+      </p>
+    </div>
+    <div class="column centered">
+      <img
+        src="{{ url_for('static', filename='img/bill-dephillips-min.jpg') }}"
+        alt="Bill DePhillips"
+        class="resize-400px"
+      />
+    </div>
+  </div>
+</div>
 
 <!--section for board members-->
-  <div class="row row__center board-members" id="boardmembers">
-    <h1 class="blue-h1">Board Members</h1>
-    <div class="row">
-      <div class="column centered">
-        <img src="{{ url_for('static', filename='img/Alexandria-Spiva-min.jpg') }}"
-         alt="Alexandria Spiva"
-         class="resize-200px">
-       <footer><a href="https://www.linkedin.com/in/alexandria-spiva" target="_blank" rel="noopener noreferrer">Alexandria Spiva</a></footer>
-       <p>Alexandria has worked in tech for 13 years — at Yahoo, Facebook, LinkedIn, Airbnb, The Chan Zuckerberg Initiative, and currently Lyft. Alexandria has carried roles of Recruiter + D&I  thought leader to elevate programs and partnerships, along with re-designing approaches to hiring. Beyond her day-to-day, she does her knowledge-sharing through think tank sessions with various non-profits and panels such as Black Girls Code, Grace Hopper Conference, and Expat Women. She is passionate about diversity engagement and community building.</p>
-      </div>
-      <div class="column centered">
-        <img src="{{ url_for('static', filename='img/Kristina-Jobert-min.png') }}"
-          alt="Kristina Jobert"
-          class="resize-200px">
-        <footer><a href="https://www.linkedin.com/in/kristinajobert/" target="_blank" rel="noopener noreferrer">Kristina Jobert</a></footer>
-        <p>Kristina Jobert is a Director of Client Success and Solutions Architect at Verticurl, a global technology consulting firm, where she helps clients leverage their sales and marketing processes and tech stack. She has 8 years of experience in the software, SaaS, and cloud technology industry having worked for companies such as AdRoll and Neustar. She holds an undergraduate degree from the University of Arizona alongside her professional certifications from cloud companies like Salesforce and Marketo. Kristina is passionate about women in tech and strives to provide a gateway for women of color who aspire to learn code and advance in the tech field. In her spare time she enjoys spending time with her partner in crime, Stanley the Corgi.</p>
-      </div>
+<div class="row row__center board-members" id="boardmembers">
+  <h1 class="blue-h1">Board Members</h1>
+  <div class="row">
+    <div class="column centered">
+      <img
+        src="{{ url_for('static', filename='img/Alexandria-Spiva-min.jpg') }}"
+        alt="Alexandria Spiva"
+        class="resize-200px"
+      />
+      <footer>
+        <a
+          href="https://www.linkedin.com/in/alexandria-spiva"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Alexandria Spiva</a
+        >
+      </footer>
+      <p>
+        Alexandria has worked in tech for 13 years — at Yahoo, Facebook,
+        LinkedIn, Airbnb, The Chan Zuckerberg Initiative, and currently Lyft.
+        Alexandria has carried roles of Recruiter + D&I thought leader to
+        elevate programs and partnerships, along with re-designing approaches to
+        hiring. Beyond her day-to-day, she does her knowledge-sharing through
+        think tank sessions with various non-profits and panels such as Black
+        Girls Code, Grace Hopper Conference, and Expat Women. She is passionate
+        about diversity engagement and community building.
+      </p>
     </div>
-
-    <div class="row">
-      <div class="column centered">
-        <img src="{{ url_for('static', filename='img/Krys-Flores-min.png') }}"
-          alt="Kry Flores"
-          class="resize-200px">
-        <footer><a href="https://www.linkedin.com/in/krystalflores/" target="_blank" rel="noopener noreferrer">Krys Flores</a></footer>
-        <p>Krys is a Senior Software Engineer at EarnUp, a fintech company that helps people pay bills on time and get out of debt faster. She is committed to increasing the number of female and Latinx computer programmers. Krys does this by giving technical talks and volunteering. In her talks, she seeks to give a face to those who are not usually represented amongst conference speakers. She believes the more you see, the more there will be. Krys is also a huge advocate of equal opportunities in the workforce, especially equal pay. In 2019 she was featured in the #NothingLess Micro Documentary by Hired. In 2018, she gave the talk “Applying Sheryl Sandberg’s Lean In principles in technology” as part of the Visionary Voices program.</p>
-      </div>
-      <div class="column centered">
-        <img src="{{ url_for('static', filename='img/Leah-Alpert-min.png') }}"
-          alt="Leah Alpert"
-          class="resize-200px">
-        <footer><a href="https://www.linkedin.com/in/leah-alpert-640b17b0" target="_blank" rel="noopener noreferrer">Leah Alpert</a></footer>
-        <p>Leah Alpert is a software engineering manager at Collective Health where she works on reinventing the way people interact with their health benefits. Leah is passionate about increasing the representation of women and underrepresented minorities in software engineering roles. After graduating from MIT with a degree in computer science, Leah spent the summer teaching computer science in Ghana before returning to San Francisco to work as a software engineer at Khan Academy. At Khan Academy, she built tools to help teachers and parents improve student outcomes. Now, at Collective Health, she leads engineering teams and runs the tech diversity team with the goal creating a more diverse and inclusive tech environment.</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="column centered">
-        <img src="{{ url_for('static', filename='img/Melissa-Lucas-min.jpg') }}"
-         alt="Melissa Lucas"
-         class="resize-200px">
-        <footer><a href="https://www.linkedin.com/in/melissalucas/" target="_blank" rel="noopener noreferrer">Melissa Lucas</a></footer>
-        <p>
-            Melissa is editorial director for communications at CENIC, which operates a private internet network for most of California’s public research and education institutions, enabling researchers and students to discover and share new knowledge. She brings over 20 years of experience in nonprofit communications, marketing, publishing, outreach, and fundraising, and has worked in health care policy and civic technology for social services. After finishing her degree at UC Santa Cruz and working for reproductive rights in Costa Rica, only a strong, true mission gets her fired up. She’s thrilled to help spread the word about Techtonica.</p>
-      </div>
-      <div class="column centered">
-        <img src="{{ url_for('static', filename='img/Michelle-Grover-min.jpg') }}"
-          alt="Michelle Grover"
-          class="resize-200px">
-        <footer><a href="https://www.linkedin.com/in/michelle-grover-24b835149/" target="_blank" rel="noopener noreferrer">Michelle Grover</a></footer>
-        <p>Michelle started in technology in 1995 as a Systems Support Engineer by accident. She was originally in college for Physics and Structural Engineering but during the summer took on temporary work as the receptionist at AirTouch Paging (which became Verizon). At the end of her 90 days as a temp, Michelle was offered a permanent position as a Systems Support Engineer. She started with TripIt in October 2014 and was responsible for the Tripit R&D Team which includes the mobile, platform, and datamapper (itinerary parser) team and the Concur Mobile Teams in Bellevue, Prague, and Rot. Michelle has a teenaged son. In her spare time she volunteers at several organizations that focus on getting more women and girls interested in Software Development.</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="column centered">
-        <img src="{{ url_for('static', filename='img/Suneet-Deol-min.jpg') }}"
-         alt="Suneet Deol"
-         class="resize-200px">
-        <footer><a href="https://www.linkedin.com/in/suneetdeol/" target="_blank" rel="noopener noreferrer">Suneet Deol</a></footer>
-        <p>Suneet Deol is a Senior Technical Program Manager at Box. Previously, she managed product ops and programs at SanDisk, a Western Digital brand, and worked as a Sales Engineer at Cal Sensors. At work, Suneet merges her technical and operations background to manage efficient and productive programs. Off the clock, she enjoys helping women find STEM careers, traveling, and healthy doses of Netflix and chocolate. Suneet holds a BS in Engineering from UC Davis and an MBA from USC’s Marshall School of Business.</p>
-      </div>
-      <div class="column centered">
-        <img src="{{ url_for('static', filename='img/Zen-Mak-min.jpg') }}"
-         alt="Zen Mak"
-         class="resize-200px">
-	     <footer><a href="https://www.linkedin.com/in/zenmak/" target="_blank" rel="noopener noreferrer">Zen Mak</a></footer>
-	     <p>Zen Mak is the founder & CEO of Rallyworks. She previously led talent for high-growth and established companies including SquareTrade, Envoy, X - The Moonshot Factory (formerly known as Google X). Zen is a staunch advocate for best in class recruiting, people operations, diversity, inclusion & belonging initiatives and works tirelessly to help startups and companies navigate the talent landscape. In her spare time, you’ll find her working on her Landcruiser readying it for another Overlanding trip, solving Rubik’s cubes, or with her three dogs at parks in Oakland.</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="column centered">
-        <img src="{{ url_for('static', filename='img/nyghtowl.jpeg') }}"
-         alt="Melanie Warrick"
-         class="resize-200px">
-        <footer><a href="https://www.linkedin.com/in/melaniewarrick/" target="_blank" rel="noopener noreferrer">Melanie Warrick</a></footer>
-        <p>Melanie Warrick is at Google driving applied machine learning and Cloud advocacy. Previously, she implemented machine learning applications at Change.org as well as built a neural net software platform at a start-up. Before becoming a software engineer, she worked for over 10 years in business consulting at firms such as Accenture on projects for Fortune 500 companies and non-profits like CARE and Oxfam. Her global experience includes working in places like Kenya, Peru, England, Bangladesh, and Japan, and across many industries such as technology, retail, healthcare, media, non-profit, and energy. She holds an MBA and an undergraduate film degree from USC. Working with different organizations and independently, she has mentored and sponsored hundreds of people entering into technology and business fields.</p>
-      </div>
+    <div class="column centered">
+      <img
+        src="{{ url_for('static', filename='img/Kristina-Jobert-min.png') }}"
+        alt="Kristina Jobert"
+        class="resize-200px"
+      />
+      <footer>
+        <a
+          href="https://www.linkedin.com/in/kristinajobert/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Kristina Jobert</a
+        >
+      </footer>
+      <p>
+        Kristina Jobert is a Director of Client Success and Solutions Architect
+        at Verticurl, a global technology consulting firm, where she helps
+        clients leverage their sales and marketing processes and tech stack. She
+        has 8 years of experience in the software, SaaS, and cloud technology
+        industry having worked for companies such as AdRoll and Neustar. She
+        holds an undergraduate degree from the University of Arizona alongside
+        her professional certifications from cloud companies like Salesforce and
+        Marketo. Kristina is passionate about women in tech and strives to
+        provide a gateway for women of color who aspire to learn code and
+        advance in the tech field. In her spare time she enjoys spending time
+        with her partner in crime, Stanley the Corgi.
+      </p>
     </div>
   </div>
+
+  <div class="row">
+    <div class="column centered">
+      <img
+        src="{{ url_for('static', filename='img/Krys-Flores-min.png') }}"
+        alt="Kry Flores"
+        class="resize-200px"
+      />
+      <footer>
+        <a
+          href="https://www.linkedin.com/in/krystalflores/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Krys Flores</a
+        >
+      </footer>
+      <p>
+        Krys is a Senior Software Engineer at EarnUp, a fintech company that
+        helps people pay bills on time and get out of debt faster. She is
+        committed to increasing the number of female and Latinx computer
+        programmers. Krys does this by giving technical talks and volunteering.
+        In her talks, she seeks to give a face to those who are not usually
+        represented amongst conference speakers. She believes the more you see,
+        the more there will be. Krys is also a huge advocate of equal
+        opportunities in the workforce, especially equal pay. In 2019 she was
+        featured in the #NothingLess Micro Documentary by Hired. In 2018, she
+        gave the talk “Applying Sheryl Sandberg’s Lean In principles in
+        technology” as part of the Visionary Voices program.
+      </p>
+    </div>
+    <div class="column centered">
+      <img
+        src="{{ url_for('static', filename='img/Leah-Alpert-min.png') }}"
+        alt="Leah Alpert"
+        class="resize-200px"
+      />
+      <footer>
+        <a
+          href="https://www.linkedin.com/in/leah-alpert-640b17b0"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Leah Alpert</a
+        >
+      </footer>
+      <p>
+        Leah Alpert is a software engineering manager at Collective Health where
+        she works on reinventing the way people interact with their health
+        benefits. Leah is passionate about increasing the representation of
+        women and underrepresented minorities in software engineering roles.
+        After graduating from MIT with a degree in computer science, Leah spent
+        the summer teaching computer science in Ghana before returning to San
+        Francisco to work as a software engineer at Khan Academy. At Khan
+        Academy, she built tools to help teachers and parents improve student
+        outcomes. Now, at Collective Health, she leads engineering teams and
+        runs the tech diversity team with the goal creating a more diverse and
+        inclusive tech environment.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column centered">
+      <img
+        src="{{ url_for('static', filename='img/Melissa-Lucas-min.jpg') }}"
+        alt="Melissa Lucas"
+        class="resize-200px"
+      />
+      <footer>
+        <a
+          href="https://www.linkedin.com/in/melissalucas/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Melissa Lucas</a
+        >
+      </footer>
+      <p>
+        Melissa is editorial director for communications at CENIC, which
+        operates a private internet network for most of California’s public
+        research and education institutions, enabling researchers and students
+        to discover and share new knowledge. She brings over 20 years of
+        experience in nonprofit communications, marketing, publishing, outreach,
+        and fundraising, and has worked in health care policy and civic
+        technology for social services. After finishing her degree at UC Santa
+        Cruz and working for reproductive rights in Costa Rica, only a strong,
+        true mission gets her fired up. She’s thrilled to help spread the word
+        about Techtonica.
+      </p>
+    </div>
+    <div class="column centered">
+      <img
+        src="{{ url_for('static', filename='img/Michelle-Grover-min.jpg') }}"
+        alt="Michelle Grover"
+        class="resize-200px"
+      />
+      <footer>
+        <a
+          href="https://www.linkedin.com/in/michelle-grover-24b835149/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Michelle Grover</a
+        >
+      </footer>
+      <p>
+        Michelle started in technology in 1995 as a Systems Support Engineer by
+        accident. She was originally in college for Physics and Structural
+        Engineering but during the summer took on temporary work as the
+        receptionist at AirTouch Paging (which became Verizon). At the end of
+        her 90 days as a temp, Michelle was offered a permanent position as a
+        Systems Support Engineer. She started with TripIt in October 2014 and
+        was responsible for the Tripit R&D Team which includes the mobile,
+        platform, and datamapper (itinerary parser) team and the Concur Mobile
+        Teams in Bellevue, Prague, and Rot. Michelle has a teenaged son. In her
+        spare time she volunteers at several organizations that focus on getting
+        more women and girls interested in Software Development.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column centered">
+      <img
+        src="{{ url_for('static', filename='img/Suneet-Deol-min.jpg') }}"
+        alt="Suneet Deol"
+        class="resize-200px"
+      />
+      <footer>
+        <a
+          href="https://www.linkedin.com/in/suneetdeol/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Suneet Deol</a
+        >
+      </footer>
+      <p>
+        Suneet Deol is a Senior Technical Program Manager at Box. Previously,
+        she managed product ops and programs at SanDisk, a Western Digital
+        brand, and worked as a Sales Engineer at Cal Sensors. At work, Suneet
+        merges her technical and operations background to manage efficient and
+        productive programs. Off the clock, she enjoys helping women find STEM
+        careers, traveling, and healthy doses of Netflix and chocolate. Suneet
+        holds a BS in Engineering from UC Davis and an MBA from USC’s Marshall
+        School of Business.
+      </p>
+    </div>
+    <div class="column centered">
+      <img
+        src="{{ url_for('static', filename='img/Zen-Mak-min.jpg') }}"
+        alt="Zen Mak"
+        class="resize-200px"
+      />
+      <footer>
+        <a
+          href="https://www.linkedin.com/in/zenmak/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Zen Mak</a
+        >
+      </footer>
+      <p>
+        Zen Mak is the founder & CEO of Rallyworks. She previously led talent
+        for high-growth and established companies including SquareTrade, Envoy,
+        X - The Moonshot Factory (formerly known as Google X). Zen is a staunch
+        advocate for best in class recruiting, people operations, diversity,
+        inclusion & belonging initiatives and works tirelessly to help startups
+        and companies navigate the talent landscape. In her spare time, you’ll
+        find her working on her Landcruiser readying it for another Overlanding
+        trip, solving Rubik’s cubes, or with her three dogs at parks in Oakland.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column centered">
+      <img
+        src="{{ url_for('static', filename='img/nyghtowl.jpeg') }}"
+        alt="Melanie Warrick"
+        class="resize-200px"
+      />
+      <footer>
+        <a
+          href="https://www.linkedin.com/in/melaniewarrick/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Melanie Warrick</a
+        >
+      </footer>
+      <p>
+        Melanie Warrick is at Google driving applied machine learning and Cloud
+        advocacy. Previously, she implemented machine learning applications at
+        Change.org as well as built a neural net software platform at a
+        start-up. Before becoming a software engineer, she worked for over 10
+        years in business consulting at firms such as Accenture on projects for
+        Fortune 500 companies and non-profits like CARE and Oxfam. Her global
+        experience includes working in places like Kenya, Peru, England,
+        Bangladesh, and Japan, and across many industries such as technology,
+        retail, healthcare, media, non-profit, and energy. She holds an MBA and
+        an undergraduate film degree from USC. Working with different
+        organizations and independently, she has mentored and sponsored hundreds
+        of people entering into technology and business fields.
+      </p>
+    </div>
+  </div>
+</div>
 
 <!--section for original picture and paragraph-->
-  <div class="row row__center techtonica-squad" id="techtonicasquad">
-    <div class="column hidden-med">
-      <img src="{{ url_for('static', filename='img/april-workshop-group-min.jpg') }}"
-           alt="Fifteen participants, mostly women, gathered after a workshop."
-           class="full-width-img">
-    </div>
-    <div class="column">
-      <p class="justify">The Techtonica Squad includes software engineers, community volunteers and leaders, non-profit and startup founders, teachers, curriculum development specialists, venture capitalists, and social impact strategists.</p>
-      <p class="justify">Apply for <a href="{{ url_for('render_openings_page') }}">open roles</a> or to be <a href="http://bit.ly/volunteer-with-Techtonica" class="hover-link" target="_blank" rel="noopener noreferrer">a volunteer</a> or <a href="{{ url_for('render_mentor_page') }}">mentor</a>.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScjCF6_xzIn-Uht3MDOr1__3YpIYDCTzx80cIE0KVCsPqcYKQ/viewform?usp=sf_link" class="contact-us" id="orange-button" target="_blank" rel="noopener noreferrer">Contact us</a>
-    </div>
-    </div>
-
+<div class="row row__center techtonica-squad" id="techtonicasquad">
+  <div class="column hidden-med">
+    <img
+      src="{{ url_for('static', filename='img/april-workshop-group-min.jpg') }}"
+      alt="Fifteen participants, mostly women, gathered after a workshop."
+      class="full-width-img"
+    />
   </div>
+  <div class="column">
+    <p class="justify">
+      The Techtonica Squad includes software engineers, community volunteers and
+      leaders, non-profit and startup founders, teachers, curriculum development
+      specialists, venture capitalists, and social impact strategists.
+    </p>
+    <p class="justify">
+      Apply for
+      <a href="{{ url_for('render_openings_page') }}">open roles</a> or to be
+      <a
+        href="http://bit.ly/volunteer-with-Techtonica"
+        class="hover-link"
+        target="_blank"
+        rel="noopener noreferrer"
+        >a volunteer</a
+      >
+      or <a href="{{ url_for('render_mentor_page') }}">mentor</a>.
+    </p>
+    <a
+      href="https://docs.google.com/forms/d/e/1FAIpQLScjCF6_xzIn-Uht3MDOr1__3YpIYDCTzx80cIE0KVCsPqcYKQ/viewform?usp=sf_link"
+      class="contact-us"
+      id="orange-button"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Contact us</a
+    >
+  </div>
+</div>
 
 {% endblock content %}

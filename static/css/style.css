@@ -5,22 +5,38 @@ body {
   line-height: 1.4em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 1.5rem 0;
-  color: #0093B5;
+  color: #0093b5;
   line-height: 1.3em;
   font-weight: 700;
 }
 
-h1, h2 {
+h1,
+h2 {
   letter-spacing: 2px;
 }
 
-h3, h4, h5, h6 {
+h3,
+h4,
+h5,
+h6 {
   letter-spacing: 1px;
 }
 
-body, h1, h2, h3, h4, h5, h6, p {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   font-family: "lato", helvetica, sans-serif;
 }
 
@@ -32,7 +48,7 @@ h1 {
 }
 
 a {
-  color: #0093B5;
+  color: #0093b5;
   text-decoration: none;
 }
 
@@ -42,12 +58,12 @@ button {
 }
 
 .blue-h1 {
-  color: #05556D;
+  color: #05556d;
   text-shadow: 0px 0px 1px #ccc;
 }
 
 .blue-background {
-  background-color: #0093B5;
+  background-color: #0093b5;
   color: white;
 }
 .blue-background a {
@@ -56,7 +72,7 @@ button {
   text-shadow: 1px 1px 1px #666;
 }
 .blue-background a:hover {
-  color: #16C1F3;
+  color: #16c1f3;
 }
 
 .centered {
@@ -127,7 +143,7 @@ button {
 }
 
 .nav-link:hover {
-  color: #16C1F3;
+  color: #16c1f3;
 }
 
 .img-link {
@@ -145,7 +161,8 @@ button {
 }
 
 .mc-closeModal {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .main-content {
@@ -165,7 +182,8 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 75vh;
-  background: url(../img/three-participants-at-laptops-min.jpg) #0093B5 no-repeat top right fixed;
+  background: url(../img/three-participants-at-laptops-min.jpg) #0093b5
+    no-repeat top right fixed;
   background-size: cover;
 }
 
@@ -197,7 +215,8 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/apprentices-2019-h2-long-cropped-min.jpg) #0093B5 no-repeat top fixed;
+  background: url(../img/apprentices-2019-h2-long-cropped-min.jpg) #0093b5
+    no-repeat top fixed;
   background-size: cover;
 }
 
@@ -279,7 +298,8 @@ button {
 }
 
 .contact-us,
-.donate, .sponsor {
+.donate,
+.sponsor {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -o-border-radius: 8px;
@@ -290,14 +310,15 @@ button {
   text-align: center;
 }
 .contact-us:hover,
-.donate:hover, .sponsor:hover {
-  background-color: #16C1F3;
+.donate:hover,
+.sponsor:hover {
+  background-color: #16c1f3;
   color: white;
   transition: 0.3s;
 }
 
 .sponsor:hover .link-on-blue {
-  color: #05556D;
+  color: #05556d;
 }
 
 .contact-us {
@@ -338,7 +359,7 @@ button {
 }
 
 a:hover {
-  color: #16C1F3;
+  color: #16c1f3;
 }
 
 .sponsor-p {
@@ -469,7 +490,8 @@ table.mentor td:first-of-type {
   .main-header {
     display: block;
     position: relative;
-    background: url(../img/three-participants-at-laptops-min.jpg) #0093B5 no-repeat top center;
+    background: url(../img/three-participants-at-laptops-min.jpg) #0093b5
+      no-repeat top center;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
@@ -519,17 +541,18 @@ table.mentor td:first-of-type {
     display: inline-block;
     width: 3rem;
     height: 0.4285714286rem;
-    background: #16C1F3;
+    background: #16c1f3;
     border-radius: 0.2142857143rem;
     transition: 0.3s;
     position: relative;
     /*create the upper and lower lines as pseudo-elements of the middle line*/
   }
-  .lines:before, .lines:after {
+  .lines:before,
+  .lines:after {
     display: inline-block;
     width: 3rem;
     height: 0.4285714286rem;
-    background: #16C1F3;
+    background: #16c1f3;
     border-radius: 0.2142857143rem;
     transition: 0.3s;
     position: absolute;
@@ -559,7 +582,8 @@ table.mentor td:first-of-type {
     background: transparent;
     /*overlay the lines by setting both their top values to 0*/
   }
-  .lines-button.x.close .lines:before, .lines-button.x.close .lines:after {
+  .lines-button.x.close .lines:before,
+  .lines-button.x.close .lines:after {
     transform-origin: 50% 50%;
     top: 0;
     width: 2.5em;
@@ -640,7 +664,8 @@ table.mentor td:first-of-type {
   background-color: #fc7625;
 }
 
-.progress-bg h3.goal, .progress-bg h3.raised {
+.progress-bg h3.goal,
+.progress-bg h3.raised {
   line-height: 78px;
   margin: 0;
   padding: 0;
@@ -680,7 +705,7 @@ table.mentor td:first-of-type {
 }
 
 .collapsible {
-  color: #0093B5;
+  color: #0093b5;
   cursor: pointer;
   margin: 25px;
   text-align: left;
@@ -688,7 +713,7 @@ table.mentor td:first-of-type {
   font-size: 1.2em;
 }
 .collapsible:hover {
-  color: #05556D;
+  color: #05556d;
 }
 .collapsible::before {
   content: "+ ";
@@ -696,7 +721,7 @@ table.mentor td:first-of-type {
 }
 
 .collapsible-active {
-  color: #05556D;
+  color: #05556d;
 }
 .collapsible-active::before {
   content: "- ";
