@@ -1,9 +1,15 @@
 version: '3'
 
 services:
-  techtonica:
-    build: .
-    ports:
-      - "5000:5000"
-    volumes:
-      - ./:/app
+    website:
+      build:
+        context: .
+      image: techtonica/website
+      environment:
+        FLASK_DEBUG: 1
+        FLASK_APP: main_site.py
+      command: flask run --host=0.0.0.0
+      ports:
+        - "5000:5000"
+      volumes:
+        - ./:/app
