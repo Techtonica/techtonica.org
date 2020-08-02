@@ -94,6 +94,9 @@
   max-width: 50%;
   padding: 0 1.5em;
   text-shadow: $thin-dark-text-shadow;
+  background-color: #0093b5cc;
+  border-top-left-radius: 25px;
+  border-top: 5px solid #007395cc;
 }
 
 .main-header__header {
@@ -430,7 +433,7 @@ table.mentor {
       @include line;
       position: absolute;
       left: 0;
-      content: "";
+      content: '';
       transform-origin: $button-size/14 center;
     }
     &:before {
@@ -597,7 +600,7 @@ table.mentor {
     color: $dark-blue;
   }
   &::before {
-    content: "+ ";
+    content: '+ ';
     text-decoration: none;
   }
 }
@@ -605,7 +608,7 @@ table.mentor {
 .collapsible-active {
   color: $dark-blue;
   &::before {
-    content: "- ";
+    content: '- ';
   }
 }
 

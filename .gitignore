@@ -9,3 +9,7 @@ css/style.css.map
 env
 env*
 venv
+.vscode
+static/css/style.css
+static/css/style.css.map
+
