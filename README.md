@@ -95,7 +95,7 @@ CSS using one of the following commands:
 
 ```sh
 sass static/sass/style.scss static/css/style.css
-sass --watch static/sass/style.scss:static/css/style.css
+sass --watch static/sass/style.scss static/css/style.css
 ```
 
 ### Updating Dependencies
@@ -183,21 +183,3 @@ For development dependencies:
    ```sh
    cd .. && touch tmp/restart.txt
    ```
-
-### Using Docker to Run Locally
-
-#### First Time Using Docker?
-
-1. Download [Docker Desktop](https://www.docker.com/products/docker-desktop)
-2. `cd` into the folder that holds your techtonica.org repo
-3. Build your app: `docker build --tag techtonica .`
-4. Run your app: `docker run techtonica`
-
-_When there are updates to the Dockerfile, you will have to rebuild your app in order for those changes to take effect_
-
-#### For Docker Pros
-
-To run app: `docker run techtonica`
-
-To rebuild app: `docker build --tag techtonica .`
-
