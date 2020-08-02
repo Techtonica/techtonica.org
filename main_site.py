@@ -3,6 +3,7 @@ This is the main Python file that sets up rendering and templating
 for Techtonica.org
 """
 import os
+import sys
 
 import pendulum
 from dotenv import find_dotenv, load_dotenv
@@ -11,7 +12,12 @@ from flask import Flask, redirect, render_template, url_for
 from flask_sslify import SSLify
 
 load_dotenv(find_dotenv(usecwd=True))
-eventbrite = Eventbrite(os.environ["EVENTBRITE_OAUTH_TOKEN"])
+
+# Gracefully handle running locally without eventbrite token
+try:
+    eventbrite = Eventbrite(os.environ["EVENTBRITE_OAUTH_TOKEN"])
+except:
+    print("Not able to authenticate to EventBrite")
 
 app = Flask(__name__)
 sslify = SSLify(app)
@@ -23,8 +29,11 @@ def render_home_page():
     """
     Renders the home page from jinja2 template
     """
-    events = get_events()
-    return render_template("home.html", events=events)
+    try:
+        events = get_events()
+        return render_template("home.html", events=events)
+    except:
+        return render_template("home.html")
 
 
 @app.route("/team/")
@@ -156,14 +165,19 @@ def render_news_page():
 
 
 def get_events():
-    group_id = eventbrite.get_user()["id"]
-    response = eventbrite.get(
-        f"/organizations/{group_id}/events/",
-        data={"status": "live", "order_by": "start_asc", "page_size": 4},
-        expand=("venue",),
-    )
-    events = [Event(event) for event in response["events"]]
-    return events
+    try:
+        group_id = eventbrite.get_user()["id"]
+        response = eventbrite.get(
+            f"/organizations/{group_id}/events/",
+            data={"status": "live", "order_by": "start_asc", "page_size": 4},
+            expand=("venue",),
+        )
+        events = [Event(event) for event in response["events"]]
+        return events
+    except NameError:
+        # Gracefully handle failures getting events from EventBrite
+        print("Not returning EventBrite Events:", sys.exc_info()[1])
+        return []
 
 
 class Event(object):
