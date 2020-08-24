@@ -1,14 +1,11 @@
-FROM debian:buster-slim
+FROM python:3.6-slim
 
 WORKDIR /app
-
-COPY . ./
 
 RUN apt-get update -y && \
     apt-get install -y python-pip
 
+WORKDIR /app
+COPY . /app
+
 RUN pip install -r requirements.txt
-
-ENTRYPOINT [ "python" ]
-
-CMD [ "main_site.py" ]
