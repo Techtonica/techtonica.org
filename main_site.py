@@ -102,27 +102,26 @@ def render_openings_page():
 
 @app.route("/openings/seam/")
 def render_seam_page():
-    Renders the openings page from jinja2 template
+    """
+    Renders the SEAM page from jinja2 template
+    """
     return render_template("seam.html")
 
 
-"""
 @app.route("/openings/curriculumdev/")
 def render_curriculumdev_page():
     """
-    Renders the openings page from jinja2 template
+    Renders the curriculum dev page from jinja2 template
     """
     return render_template("curriculumdev.html")
-"""
 
-"""
+
 @app.route("/openings/board/")
 def render_board_page():
     """
-    Renders the openings page from jinja2 template
+    Renders the board page from jinja2 template
     """
     return render_template("board.html")
-"""
 
 
 @app.route("/mentor/")
