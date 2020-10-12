@@ -17,7 +17,7 @@ load_dotenv(find_dotenv(usecwd=True))
 try:
     eventbrite = Eventbrite(os.environ["EVENTBRITE_OAUTH_TOKEN"])
 except:
-    print("Not able to authenticate to EventBrite")
+    print("Not able to authenticate to Eventbrite")
 
 app = Flask(__name__)
 sslify = SSLify(app)
@@ -100,18 +100,18 @@ def render_openings_page():
     return render_template("openings.html")
 
 
-"""
 @app.route("/openings/seam/")
 def render_seam_page():
-    Renders the openings page from jinja2 template
+    """
+    Renders the SEAM page from jinja2 template
+    """
     return render_template("seam.html")
-"""
 
 
 @app.route("/openings/curriculumdev/")
 def render_curriculumdev_page():
     """
-    Renders the openings page from jinja2 template
+    Renders the curriculum dev page from jinja2 template
     """
     return render_template("curriculumdev.html")
 
@@ -119,7 +119,7 @@ def render_curriculumdev_page():
 @app.route("/openings/board/")
 def render_board_page():
     """
-    Renders the openings page from jinja2 template
+    Renders the board page from jinja2 template
     """
     return render_template("board.html")
 
@@ -175,8 +175,8 @@ def get_events():
         events = [Event(event) for event in response["events"]]
         return events
     except NameError:
-        # Gracefully handle failures getting events from EventBrite
-        print("Not returning EventBrite Events:", sys.exc_info()[1])
+        # Gracefully handle failures getting events from Eventbrite
+        print("Not returning Eventbrite Events:", sys.exc_info()[1])
         return []
 
 
