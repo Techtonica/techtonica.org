@@ -1,0 +1,324 @@
+{% extends "base.html" %} {% block title %} Techtonica Apprenticeship {%
+endblock title %} {% block content %}
+<div class="main-content">
+  <div class="apprenticeship-header" title="Full-Time Program">
+    <div class="main-header__text blue-background">
+      <h1 class="main-header__header">Full-Time Program</h1>
+      <p>
+        Six months of free, intensive, hands-on tech learning, followed by six months of placement or job search support for local women and non-binary adults with low incomes.
+      </p>
+    </div>
+  </div>
+  <div class="row row__center what-we-do" id="whatwedo">
+    <div class="column">
+      <h1 class="blue-h1">The Program</h1>
+      <p class="justify">
+        Techtonica's full-time software engineering training program is a free, virtual year-long program that provides the opportunity for women and non-binary, femme adults with low incomes to learn technical skills and start their first job in tech. We select participants who are independent but good at collaborating, motivated to succeed, committed to learning to code, flexible, curious, open-minded, and excited for long-term careers in the field, have a good attitude and a growth mindset, can calmly manage extended periods of frustration (troubleshooting is something you'll face forever in tech!), and want to pay it forward. We aim to empower those most underrepresented in tech and to help tech become more diverse and inclusive.
+      </p>
+      <p class="justify">
+        92% of our participants so far have been people of color, 25% have a disability, 10% identify outside the gender binary, and 8% are veterans.
+      </p>
+      <p class="justify">
+        The program runs Monday through Friday, 9:00 AM to 6:00 PM (Pacific Time) for one year, starting with training at Techtonica starting in January or July, and followed by six months of placement and community support or job search and community support. After the first trial month of full-time training, participants who work
+        the hardest and meet and exceed expectations will be invited to continue for the next five months of training with stipends based upon need and funding available. (We still recommend you save up as much as possible as stipends may not cover all your costs.)
+      </p>
+      <p class="justify">
+        Techtonica participants will learn to do full-stack web development using JavaScript. Upon successful completion of the program, a limited number of graduates are placed with partner companies via a two-way interview and rating system. If you are placed with a company and you both meet the requirements, you may earn an OJT ("On-the-Job Training") certificate from the State of California's Division of Apprenticeship Standards.
+      </p>
+      <p class="justify">
+        What bootcamps and Techtonica have in common is the fact that they are intensive training. However, bootcamps can be pretty passive classroom learning with students and they cost between $15,000 and $30,000. Techtonica aims to be more like the workplace to make the transition
+        into the industry better—instead of having an instructor constantly guiding you (which you won't have in any software engineering job), you
+        are given a general schedule of topics and assignments (see [our curriculum repo](https://github.com/techtonica/curriculum) for an idea of the resources provided) and you're expected to figure out what to do        on your own or in collaboration with volunteers, mentors, tech groups, and other participants. Because our resources are open-source, they are
+        continuously being improved and you can even make improvements as you work through them. In the best jobs, there are regular check-ins with
+        very understanding managers and mentors provide regular support, but that is not always the case. Techtonica’s program is as hands-on and
+        project-based as possible to best prepare you for work in tech. You'll also be expected to speak and present in front of people often—a very
+        useful skill to have for a successful career.
+      </p>
+      <p class="justify">
+        The schedule includes assessments to give you a reason to review what you've learned, to provide you with feedback on where you need to
+        improve, and to prepare you for successful placement. As we consider your progress, we take everything you do in the program into account
+        (not just assessments)—if you're on time and present, if you're meeting deadlines, if you're completing assignments, if you're following
+        process, if you're communicating about your needs, if you're consistently meeting with your mentors, if you're building your network,
+        if you're collaborating well, if you're solving problems, if you're dealing with the stress of an intensive program well, if you're lifting
+        others with you, if you're reading instructions, how your mentor feels you're doing, how you indicate you're doing in surveys and one-on-ones,
+        etc. If we see any indications you’re struggling in one area, we look more closely at everything else and we seek a plan for improvement.
+        Consistent problems and lack of improvement could indicate someone’s not ready to continue the program. The board discusses such cases to decide what should be done.
+      </p>
+      <p class="justify">
+        Intensive programs, career transitions, and learning and working with technical concepts—these are all stressful, difficult things. If we accept you to our program, we believe in your ability to step up to the
+        challenge, and you should believe in that ability and look at every new step as something preparing you for tech. In many ways, tech will be much harder than this program and this is your chance to work out how you’re going to react when faced with bigger challenges. Are you able to train yourself to calmly accept challenges, to open your minds to growth, and to learn whatever’s needed to succeed?
+      </p>
+    </div>
+    <div class="column">
+      <img
+        src="{{ url_for('static', filename='img/practice-interviewing-at-Symantec-min.jpg') }}"
+        alt="Three women talk technical interviewing at Symantec."
+        class="full-width-img"
+      />
+      <img
+        src="{{ url_for('static', filename='img/two-way-interview-min.jpg') }}"
+        alt="Two people from a company interviewing a participant."
+        class="full-width-img"
+      />
+      <img
+        src="{{ url_for('static', filename='img/coding-on-a-whiteboard-min.jpg') }}"
+        alt="Black woman coding on a whiteboard."
+        class="full-width-img"
+      />
+      <img
+        src="{{ url_for('static', filename='img/four-smiling-people-at-laptops.jpg') }}"
+        alt="Four women sitting at laptops and smiling."
+        class="full-width-img"
+      />
+    </div>
+  </div>
+  <div class="row row__center blue-background why-why" id="why">
+    <div class="column">
+      <img
+        src="{{ url_for('static', filename='img/interview-practice-min.jpg') }}"
+        alt="Two Asian women practicing technical interviewing."
+        class="full-width-img"
+      />
+      <img
+        src="{{ url_for('static', filename='img/whiteboarding-practice-min.jpg') }}"
+        alt="Two people practicing technical whiteboarding."
+        class="full-width-img"
+      />
+      <img
+        src="{{ url_for('static', filename='img/final-project-presentation-min.jpg') }}"
+        alt="Black woman presenting her software project."
+        class="full-width-img"
+      />
+    </div>
+    <div class="column">
+      <h1>Eligibility</h1>
+      <p class="justify">
+        You are eligible to apply for Techtonica’s full-time program if you:
+      </p>
+      <ul>
+        <li>are a woman (cis OR trans) or non-binary adult</li>
+        <li>
+          are digitally literate, meaning you are very familiar and good with computers and the internet, can type 40+ WPM with accuracy, and you know how to use a mouse/trackpad, browsers, and email
+        </li>
+        <li>
+          at the very least graduated from high school or received your GED
+        </li>
+        <li>can commit to always being present and on time and prepared</li>
+        <li>are willing to be part of the program during Pacific Time hours</li>
+        <li>are willing to be in the Bay Area during placement</li>
+        <li>are dedicated to building a long-term career in tech</li>
+        <li>have less than $70,000 in annual income and net worth</li>
+        <li>
+          have housing that will be stable for the entirety of the six months of
+          the program and six months of placement
+        </li>
+        <li>are legally employable in the United States</li>
+        <li>
+          agree to work at a partner company if we match you upon successful completion of six months of training
+        </li>
+        <li>
+          are willing to appear in Techtonica's media and pitch yourself to Techtonica's partners
+        </li>
+        <li>
+          have not attended a full-time coding bootcamp, completed a C.S. degree, or worked as a software engineer in the last six years
+        </li>
+        <li>can have high-speed internet set up by the start of the program</li>
+        <li>
+          agree to abide by
+          <a
+            href="{{ url_for('render_conduct_page') }}"
+            title="Code of Conduct"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Techtonica's Code of Conduct</a
+          >,
+          <a
+            href="https://docs.google.com/document/d/1bPp3wT4YUo2PuNSYLMwIW9TkU6trd7NSuR9ieHv9MME/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Participant Handbook</a
+          >, and
+          <a
+            href="https://docs.google.com/document/d/1mLzYmGJKu3AIzfkblI5bSuiREZ_leUJrG8gs5gcoHSw/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Participant Agreement</a
+          >
+        </li>
+      </ul>
+      <p class="justify">You are probably not a good fit if you:</p>
+      <ul>
+        <li>would rather be passively trained than learn through discovery</li>
+        <li>prefer always being told exactly what to do</li>
+        <li>don't like when plans change</li>
+        <li>can't advocate for yourself</li>
+        <li>don't like details</li>
+        <li>don't get along with everyone</li>
+        <li>are quickly frustrated every time you get stuck on a problem</li>
+        <li>don't feel comfortable asking questions until you understand complicated concepts
+        </li>
+        <li>can't lay aside learning everything about something in place of just learning enough to make progress on your work
+        </li>
+        <li>take longer than most people to learn and apply new concepts</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row row__baseline how-it-works" id="howitworks">
+    <h1 class="blue-h1">Application Process</h1>
+    <div class="row">
+      <div class="column column-med centered">
+        <h3>0. Complete the 111 lessons of <a
+        href="https://www.freecodecamp.org/learn/"
+        target="blank"
+        ref="noopener noreferrer"
+        >freeCodeCamp's</a> Basic JavaScript section.</h3>
+        >
+        <p>
+          Log in and expand the "JavaScript Algorithms and Data Structures Certification" section. Complete the first 111 lessons about Basic JavaScript. This should take 4-6 hours. Be ready to upload a screenshot of what you have completed.
+        </p>
+      </div>
+      <div class="column column-med centered">
+        <h3>1. Interest and long application forms</h3>
+        <p>
+          Thoroughly fill out and submit the interest form and the long application form
+          (linked to upon submitting the first form—the long form will take some time, so don't start too late!) by the deadline.
+        </p>
+      </div>
+      <div class="column column-med centered">
+        <h3>
+          2. Two invite-only digital literacy testing and JavaScript events
+        </h3>
+        <p>
+          Participate in two of the application workshops offered (details will be sent to selected applicants).
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column column-med centered">
+        <h3>3. Code challenges</h3>
+        <p>Complete a JavaScript code challenge.</p>
+      </div>
+      <div class="column column-med centered">
+        <h3>4. Staff interviews</h3>
+        <p>Participate in staff interviews.</p>
+      </div>
+      <div class="column column-med centered">
+        <h3>5. Board interviews</h3>
+        <p>Participate in board interviews.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column column-med centered">
+        <h2>
+          <a
+            href="http://bit.ly/free-coding-classes"
+            class="sponsor"
+            target="_blank"
+            >Apply by November 16th for January 2021!</a
+          >
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column column-med centered">
+        <p>
+          Accepted applicants will be required to submit some more information to confirm participation, join onboarding about one month before the full-time start date, and complete pre-work by the full-time start date.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row row__center blue-background howtohelp">
+    <div class="column how-to-help" id="howtohelp">
+      <h1>What We Look For</h1>
+      <p class="justify">
+        This program is very competitive; we select and graduate participants who continuously prove that they are:
+      </p>
+
+      <ul>
+        <li>self-motivated</li>
+        <li>resilient</li>
+        <li>logical</li>
+        <li>humble</li>
+        <li>respectful</li>
+        <li>independent</li>
+        <li>open-minded</li>
+        <li>flexible</li>
+        <li>persistent</li>
+        <li>optimistic</li>
+        <li>punctual</li>
+        <li>committed</li>
+        <li>responsive to feedback</li>
+        <li>willing to ask questions</li>
+        <li>able to set and reach goals</li>
+        <li>able to deal with stress well</li>
+        <li>able and willing to work with anyone</li>
+        <li>proud of owning their learning</li>
+        <li>always curious and ready to learn and improve</li>
+        <li>transparent and compassionate communicators</li>
+        <li>hard-working and ready to make sacrifices</li>
+        <li>dedicated to seeing things through to the end</li>
+        <li>
+          willing to meet the
+          <a
+            href="https://docs.google.com/document/d/1IWny-IXB-XDWW21l3JODwPuh1QOVBFQbii_DjvF0g00/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Program Expectations</a
+          > and abide by
+          <a href="/conduct">Techtonica's Code of Conduct</a>
+        </li>
+      </ul>
+    </div>
+    <div class="column">
+      <img
+        src="{{ url_for('static', filename='img/presenting-at-event-min.jpg') }}"
+        alt="Person giving a talk at an event"
+        class="full-width-img"
+      />
+      <img
+        src="{{ url_for('static', filename='img/person-at-desk-with-monitor-and-laptop-min.jpg') }}"
+        alt="Latina woman coding at a desk with monitor and laptop."
+        class="full-width-img"
+      />
+    </div>
+  </div>
+  <div class="row row__baseline how-it-works" id="howitworks">
+    <h1 class="blue-h1">How to Prepare</h1>
+    <div class="row">
+      <div class="column column-med centered">
+        <h3>
+          0. Learn as much JavaScript ahead of time as possible—<a
+            href="http://freecodecamp.org"
+            >freeCodeCamp</a
+          > and <a>Codecademy</a> are great for this.
+        </h3>
+      </div>
+      <div class="column column-med centered">
+        <h3>
+          1. Attend coding meetups, like the
+          <a href="https://www.meetup.com/Women-Who-Code-SF/">Women Who Code</a>
+          JavaScript study group to practice getting to know people.
+        </h3>
+      </div>
+      <div class="column column-med centered">
+        <h3>2. Develop your typing and Mac keyboard shortcut skills.</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column column-med centered">
+        <h3>
+          3. Learn about different Bay Area companies and long-term pathways in tech to start formulating an idea of your career goals.
+        </h3>
+      </div>
+      <div class="column column-med centered">
+        <h3>4. Practice learning and applying concepts quickly.</h3>
+      </div>
+      <div class="column column-med centered">
+        <h3>
+          5. Practice talking out loud about your thought process and collaborating with others.
+        </h3>
+      </div>
+    </div>
+  </div>
+  {% endblock content %}
+</div>
