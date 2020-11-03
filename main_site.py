@@ -135,7 +135,7 @@ def render_mentor_page():
 @app.route("/full-time-program/")
 def render_ft_program_page():
     """
-    Renders the apprenticeship page from jinja2 template
+    Renders the full-time program page from jinja2 template
     """
     return render_template("full-time-program.html")
 

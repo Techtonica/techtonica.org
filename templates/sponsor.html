@@ -1,10 +1,10 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap {%
 endblock title %} {% block content %}
 <div class="main-content">
-  <div class="apprentice-header">
+  <div class="program-header">
     <img
-      id="apprentice-hero"
-      src="{{ url_for('static', filename='img/apprentices-2019-long-cropped-min.jpg') }}"
+      id="program-hero"
+      src="{{ url_for('static', filename='img/2019-H1-cohort-long-cropped-min.jpg') }}"
     />
   </div>
   <div class="row row__center blue-background" style="padding: 0;">
@@ -373,7 +373,7 @@ endblock title %} {% block content %}
     </p>
     <p class="justify">
       “Everyone is super happy with the program and the quality of the
-      apprentices. It was beyond what most were expecting.” —Jerome Despret,
+      {participants}. It was beyond what most were expecting.” —Jerome Despret,
       Director of Engineering at Pantheon
     </p>
     <p class="justify">
@@ -418,8 +418,8 @@ endblock title %} {% block content %}
     <div class="row row__center">
       <div class="column">
         <img
-          src="{{ url_for('static', filename='img/apprentice-volunteers-2-min.jpg') }}"
-          alt="2018 apprenticeship cohort"
+          src="{{ url_for('static', filename='img/atlassian-volunteers-2-min.jpg') }}"
+          alt="2018 volunteering at Atlassian"
           class="full-width-img"
         />
       </div>
@@ -457,8 +457,8 @@ endblock title %} {% block content %}
       </div>
       <div class="column">
         <img
-          src="{{ url_for('static', filename='img/apprentice-with-volunteer.jpg') }}"
-          alt="2018 apprenticeship cohort"
+          src="{{ url_for('static', filename='img/atlassian-volunteer-with-participant.jpg') }}"
+          alt="2018 Atlassian volunteer with participant"
           class="full-width-img"
         />
       </div>
@@ -466,16 +466,15 @@ endblock title %} {% block content %}
     <div class="row row__center">
       <div class="column">
         <img
-          src="{{ url_for('static', filename='img/apprentice-volunteers-min.jpg') }}"
-          alt="2018 apprenticeship cohort"
+          src="{{ url_for('static', filename='img/atlassian-volunteers-min.jpg') }}"
+          alt="2018 Atlassian volunteering"
           class="full-width-img"
         />
       </div>
       <div class="column">
         <h2>Employ</h2>
         <p class="justify">
-          Enjoy having your matched graduate on your team for at least 1,000
-          hours!
+          Enjoy having your matched graduate on your team for at least 1,000 hours!
         </p>
       </div>
     </div>

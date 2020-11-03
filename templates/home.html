@@ -11,7 +11,7 @@ endblock title %} {% block content %}
       </p>
       <h2>
         <a
-          href="{{ url_for('render_apprenticeship_page') }}"
+          href="{{ url_for('render_ft_program_page') }}"
           class="sponsor"
           id="orange-button"
           target="_blank"
@@ -23,20 +23,17 @@ endblock title %} {% block content %}
   </div>
   <div class="row row__center what-we-do" id="whatwedo">
     <div class="column">
-      <h1 class="blue-h1">Our Apprentices</h1>
+      <h1 class="blue-h1">Our Participants</h1>
       <p class="justify">
-        Is your company hiring engineers? Do you care about your social footprint and diversity? We are seeking sponsors for our apprentices, who make it through a rigorous, lengthy application process that includes multiple workshops, interviews, and a code challenge. By the time each cohort graduates and is ready for placement on your team, they will have done more than 1,000 hours of collaborative, project-based learning developed by industry professionals. To secure one of the apprentices for your team, please
-        <a href="{{ url_for('render_sponsor_page') }}"
-          >check out more details here</a
-        > and get in touch!
+        Is your company hiring engineers? Do you care about your social footprint and diversity? We are seeking sponsors for our full-time program participants, who make it through a rigorous, lengthy application process that includes multiple workshops, interviews, and a code challenge. By the time each cohort graduates and is ready for placement on your team, they will have done more than 1,000 hours of collaborative, project-based learning developed by industry professionals. To secure one of our graduates for your team, please <a href="{{ url_for('render_sponsor_page') }}">check out more details here</a> and get in touch!
       </p>
     </div>
 
     <div class="column">
       <a href="{{ url_for('render_sponsor_page') }}">
         <img
-          src="{{ url_for('static', filename='img/apprentices-2018-min.jpg') }}"
-          alt="2018 apprenticeship cohort"
+          src="{{ url_for('static', filename='img/2018-graduates-min.jpg') }}"
+          alt="2018 cohort"
           class="full-width-img"
         />
       </a>
@@ -80,8 +77,8 @@ endblock title %} {% block content %}
         </p>
         <p>
           We invite the most resilient, independent, committed, positive,
-          collaborative, curious, calm participants to apply to be full-time
-          apprentices.
+          collaborative, curious, calm participants to apply to our full-time
+          program.
         </p>
       </div>
       <div class="column column-med centered">
@@ -94,13 +91,12 @@ endblock title %} {% block content %}
         <p>
           Companies that have sponsored at the Advocate Level
           <a href="{{ url_for('render_sponsor_page') }}"
-            >cover the apprentices' pre-placement training</a
-          >
-          and provide mentors.
+            >cover the full-time program participants' pre-placement training</a
+          > and provide mentors.
         </p>
         <p>
           They have a say in the curriculum and receive inclusion training in
-          preparation for employing their top-rated apprentices at the end of
+          preparation for employing their top-rated interviewees at the end of
           the program.
         </p>
       </div>
@@ -110,14 +106,12 @@ endblock title %} {% block content %}
           alt=""
           aria-hidden="true"
         />
-        <h3>Apprenticeship</h3>
+        <h3>Full-Time Program</h3>
         <p>
-          Accepted apprentices receive living stipends, laptops, and more than
-          1,000 hours of full-time, project-based, collaborative training.
+          As needed, accepted participants receive living stipends, laptops, and more than 1,000 hours of full-time, project-based, collaborative training.
         </p>
         <p>
-          Upon completion of the program, apprentices are placed with hiring
-          partners.
+          We place a limited number of graduates with partner companies.
         </p>
       </div>
     </div>
@@ -749,7 +743,7 @@ endblock title %} {% block content %}
     id="a-word"
   >
     <h2 id="quotes">
-      “The apprentices are so impressive—any one of them would be a great asset.
+      “The {participants} are so impressive—any one of them would be a great asset.
       The Bay Area often brags of innovation but it’s Techtonica that delivers.”
       -Michelle Krejci, Service Engineer Tech Lead at Pantheon
     </h2>
