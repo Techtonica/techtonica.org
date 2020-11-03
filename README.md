@@ -19,11 +19,11 @@ currently hosted on DreamHost.
 ## Who
 
 The audience of the website is made up of (potential) volunteers and sponsors.
-(Apprentices will be contacted via local organizations.)
+(Participants will be contacted via local organizations.)
 
 ## What
 
-We need to effectively communicate that Techtonica and its apprentices are
+We need to effectively communicate that Techtonica and its participants are
 worth supporting.
 
 ## How

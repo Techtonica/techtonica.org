@@ -109,19 +109,19 @@
   }
 }
 
-.apprenticeship-header {
+.program-header {
   @include prefix(background-size, cover, webkit moz o);
   @include prefix(display, flex, webkit moz o);
   align-items: flex-end;
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/apprentices-2019-h2-long-cropped-min.jpg) $main-blue
+  background: url(../img/2019-h2-cohort-long-cropped-min.jpg) $main-blue
     no-repeat top fixed;
   background-size: cover;
 }
 
-.apprentice-header {
+.sponsor-header {
   @include prefix(background-size, cover, webkit moz o);
   @include prefix(display, flex, webkit moz o);
   align-items: center;
@@ -129,7 +129,7 @@
   width: 100%;
 }
 
-#apprentice-hero {
+#sponsor-hero {
   width: 100%;
 }
 

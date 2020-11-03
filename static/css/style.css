@@ -203,7 +203,7 @@ button {
   }
 }
 
-.apprenticeship-header {
+.program-header {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -216,11 +216,11 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/apprentices-2019-h2-long-cropped-min.jpg) #0093b5 no-repeat top fixed;
+  background: url(../img/2019-h2-cohort-long-cropped-min.jpg) #0093b5 no-repeat top fixed;
   background-size: cover;
 }
 
-.apprentice-header {
+.sponsor-header {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -234,7 +234,7 @@ button {
   width: 100%;
 }
 
-#apprentice-hero {
+#sponsor-hero {
   width: 100%;
 }
 
@@ -413,7 +413,9 @@ table.mentor td:first-of-type {
 @media only screen and (max-width: 910px) {
   .row {
     padding: 1.5em 1em;
-    
+    width: 90%;
+    margin: auto;
+    overflow-x: hidden;
   }
 
   .column-med {
