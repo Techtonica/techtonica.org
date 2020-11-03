@@ -121,7 +121,7 @@
   background-size: cover;
 }
 
-.program-header {
+.sponsor-header {
   @include prefix(background-size, cover, webkit moz o);
   @include prefix(display, flex, webkit moz o);
   align-items: center;
@@ -129,7 +129,7 @@
   width: 100%;
 }
 
-#program-hero {
+#sponsor-hero {
   width: 100%;
 }
 
