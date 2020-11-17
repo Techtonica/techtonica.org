@@ -4,7 +4,7 @@ repos:
       - id: check-hooks-apply
       - id: check-useless-excludes
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.1.0
+    rev: v3.3.0
     hooks:
       - id: check-added-large-files
       - id: check-case-conflict
@@ -21,20 +21,22 @@ repos:
         pass_filenames: false
         stages: [manual]
   - repo: https://github.com/pre-commit/mirrors-isort
-    rev: v4.3.21
+    rev: v5.6.4
     hooks:
       - id: isort
   - repo: https://github.com/python/black
-    rev: 19.10b0
+    rev: 20.8b1
     hooks:
       - id: black
   - repo: https://gitlab.com/pycqa/flake8
-    rev: 3.8.3
+    rev: 3.8.4
     hooks:
       - id: flake8
         additional_dependencies: ["flake8-bugbear"]
-  - repo: https://github.com/prettier/prettier
-    rev: 2.0.5
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v2.1.2
     hooks:
       - id: prettier
+default_language_version:
+  python: python3.6
 minimum_pre_commit_version: "1.21"
