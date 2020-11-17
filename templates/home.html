@@ -25,7 +25,18 @@ endblock title %} {% block content %}
     <div class="column">
       <h1 class="blue-h1">Our Participants</h1>
       <p class="justify">
-        Is your company hiring engineers? Do you care about your social footprint and diversity? We are seeking sponsors for our full-time program participants, who make it through a rigorous, lengthy application process that includes multiple workshops, interviews, and a code challenge. By the time each cohort graduates and is ready for placement on your team, they will have done more than 1,000 hours of collaborative, project-based learning developed by industry professionals. To secure one of our graduates for your team, please <a href="{{ url_for('render_sponsor_page') }}">check out more details here</a> and get in touch!
+        Is your company hiring engineers? Do you care about your social
+        footprint and diversity? We are seeking sponsors for our full-time
+        program participants, who make it through a rigorous, lengthy
+        application process that includes multiple workshops, interviews, and a
+        code challenge. By the time each cohort graduates and is ready for
+        placement on your team, they will have done more than 1,000 hours of
+        collaborative, project-based learning developed by industry
+        professionals. To secure one of our graduates for your team, please
+        <a href="{{ url_for('render_sponsor_page') }}"
+          >check out more details here</a
+        >
+        and get in touch!
       </p>
     </div>
 
@@ -92,7 +103,8 @@ endblock title %} {% block content %}
           Companies that have sponsored at the Advocate Level
           <a href="{{ url_for('render_sponsor_page') }}"
             >cover the full-time program participants' pre-placement training</a
-          > and provide mentors.
+          >
+          and provide mentors.
         </p>
         <p>
           They have a say in the curriculum and receive inclusion training in
@@ -108,11 +120,11 @@ endblock title %} {% block content %}
         />
         <h3>Full-Time Program</h3>
         <p>
-          As needed, accepted participants receive living stipends, laptops, and more than 1,000 hours of full-time, project-based, collaborative training.
+          As needed, accepted participants receive living stipends, laptops, and
+          more than 1,000 hours of full-time, project-based, collaborative
+          training.
         </p>
-        <p>
-          We place a limited number of graduates with partner companies.
-        </p>
+        <p>We place a limited number of graduates with partner companies.</p>
       </div>
     </div>
   </div>
@@ -726,9 +738,11 @@ endblock title %} {% block content %}
             class="ten-percent-width margin-25"
           />
         </a>
-        <a href="https://twitter.com/jeffiel"
+        <a
+          href="https://twitter.com/jeffiel"
           target="_blank"
-          rel="noopener noreferrer">
+          rel="noopener noreferrer"
+        >
           <img
             src="{{ url_for('static', filename='img/Erica-Jeff-Lawson.png') }}"
             alt="Erica & Jeff Lawson"
@@ -743,9 +757,9 @@ endblock title %} {% block content %}
     id="a-word"
   >
     <h2 id="quotes">
-      “The {participants} are so impressive—any one of them would be a great asset.
-      The Bay Area often brags of innovation but it’s Techtonica that delivers.”
-      -Michelle Krejci, Service Engineer Tech Lead at Pantheon
+      “The {participants} are so impressive—any one of them would be a great
+      asset. The Bay Area often brags of innovation but it’s Techtonica that
+      delivers.” -Michelle Krejci, Service Engineer Tech Lead at Pantheon
     </h2>
   </div>
 </div>
