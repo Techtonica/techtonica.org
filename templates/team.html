@@ -355,7 +355,10 @@ About Us {% endblock title %} {% block content %}
 </div>
 
 <!--section for original picture and paragraph-->
-<div class="row row__center techtonica-squad" id="techtonicasquad">
+<div
+  class="row row__center techtonica-squad blue-background"
+  id="techtonicasquad"
+>
   <div class="column hidden-med">
     <img
       src="{{ url_for('static', filename='img/april-workshop-group-min.jpg') }}"
@@ -363,7 +366,7 @@ About Us {% endblock title %} {% block content %}
       class="full-width-img"
     />
   </div>
-  <div class="column">
+  <div class="column blue-background">
     <p class="justify">
       The Techtonica Squad includes software engineers, community volunteers and
       leaders, non-profit and startup founders, teachers, curriculum development
@@ -379,7 +382,8 @@ About Us {% endblock title %} {% block content %}
         rel="noopener noreferrer"
         >a volunteer</a
       >
-      or <a href="{{ url_for('render_mentor_page') }}">mentor</a>.
+      or <a href="{{ url_for('render_mentor_page') }}">mentor</a>. Through the
+      following form you may also request a speaker.
     </p>
     <a
       href="https://docs.google.com/forms/d/e/1FAIpQLScjCF6_xzIn-Uht3MDOr1__3YpIYDCTzx80cIE0KVCsPqcYKQ/viewform?usp=sf_link"
