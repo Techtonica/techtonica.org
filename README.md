@@ -151,11 +151,11 @@ e. deploy develop to staging
 
 f. merge develop into main
 
-g. push main to Github
+g. push main to GitHub
 
 h. deploy main to techtonica.org
 
-i. Tag the date when you deployed
+i. tag the date after deployment
 
 
 ### Initial Setup
