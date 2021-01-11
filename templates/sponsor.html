@@ -1,5 +1,6 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap {%
 endblock title %} {% block content %}
+
 <div class="main-content">
   <div class="sponsor-header">
     <img
@@ -132,12 +133,8 @@ endblock title %} {% block content %}
         bring the best talent to the best of tech.
       </p>
     </div>
-    <div class="column centered">
-      <img
-        src="{{ url_for('static', filename='img/2019-demographics.png') }}"
-        class="max-width-75-percent"
-        alt="Latinx: 36%, Black: 32%, East Asian: 14%, Southeast Asian: 9%, White: 9%"
-      />
+    <div class="column center">
+      <canvas id="myChart" width="700" height="350"></canvas>
     </div>
   </div>
   <div class="row row__center">

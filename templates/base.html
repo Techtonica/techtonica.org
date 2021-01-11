@@ -304,6 +304,16 @@
       src="https://s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js"
       data-dojo-config="usePlainJson: true, isDebug: false"
     ></script>
+
+    <script
+      defer
+      src="{{ url_for('static', filename='js/piechart.js') }}"
+    ></script>
+
+    <script scr="./js/piechart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
     <!-- Start of HubSpot Embed Code -->
     <script
       type="text/javascript"
