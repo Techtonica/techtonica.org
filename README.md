@@ -34,7 +34,6 @@ training, mentoring, and hiring.
 Detailed instructions on how to update the website:
 https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit
 
-
 ## Getting Started
 
 This app uses Python 3.6; please stick to this version when doing development.
@@ -137,7 +136,7 @@ For development dependencies:
 
 ## Deployment to DreamHost
 
-Make sure you branch off develop, if you want to make changes. 
+Make sure you branch off develop, if you want to make changes.
 
 a. push changes to new branch
 
@@ -157,7 +156,6 @@ h. deploy main to techtonica.org
 
 i. tag the date after deployment
 
-
 ### Initial Setup
 
 1. Follow the instructions in the [Setting up and deploying Python Flask to
@@ -172,8 +170,7 @@ i. tag the date after deployment
 
 ### Updating the Site
 
-Important: Only ever Pull form the server! 
-
+Important: Only ever Pull form the server!
 
 1. Log in via SSH using your SSH key.
 
@@ -201,7 +198,7 @@ Important: Only ever Pull form the server!
    cd techtonica
    ```
 
-1. Pull the latest code using 
+1. Pull the latest code using
 
    ```sh
    git pull
@@ -218,13 +215,13 @@ Important: Only ever Pull form the server!
    ```sh
    cd .. && touch tmp/restart.txt
    ```
-   
+
 1. Deactivate virtual envirement and exit server:
 
    ```sh
    deactivate
    ```
-   
+
    ```sh
    exit
    ```
