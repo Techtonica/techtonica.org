@@ -31,6 +31,10 @@ worth supporting.
 There should be a good understanding of how the program works with vetting,
 training, mentoring, and hiring.
 
+Detailed instructions on how to update the website:
+https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit
+
+
 ## Getting Started
 
 This app uses Python 3.6; please stick to this version when doing development.
@@ -133,6 +137,27 @@ For development dependencies:
 
 ## Deployment to DreamHost
 
+Make sure you branch off develop, if you want to make changes. 
+
+a. push changes to new branch
+
+b. merge new branch into develop
+
+c. push develop to GitHub
+
+d. delete new branch
+
+e. deploy develop to staging
+
+f. merge develop into main
+
+g. push main to GitHub
+
+h. deploy main to techtonica.org
+
+i. tag the date after deployment
+
+
 ### Initial Setup
 
 1. Follow the instructions in the [Setting up and deploying Python Flask to
@@ -146,6 +171,9 @@ For development dependencies:
    ```
 
 ### Updating the Site
+
+Important: Only ever Pull form the server! 
+
 
 1. Log in via SSH using your SSH key.
 
@@ -173,8 +201,11 @@ For development dependencies:
    cd techtonica
    ```
 
-1. Use the usual `git` commands to get the latest code or check out another
-   branch.
+1. Pull the latest code using 
+
+   ```sh
+   git pull
+   ```
 
 1. Update requirements:
 
@@ -186,4 +217,14 @@ For development dependencies:
 
    ```sh
    cd .. && touch tmp/restart.txt
+   ```
+   
+1. Deactivate virtual envirement and exit server:
+
+   ```sh
+   deactivate
+   ```
+   
+   ```sh
+   exit
    ```
