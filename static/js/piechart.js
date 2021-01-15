@@ -31,8 +31,8 @@ let myChart = new Chart(ctx, {
         fontColor: "#ffffff",
       },
     },
-    labels: {
-      display: false,
+    label: {
+      display: true,
     },
 
     plugins: {
