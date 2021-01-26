@@ -1,8 +1,21 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
 Mentoring {% endblock title %} {% block content %}
-<div class="row row__center about-us">
+<div class="row row__center">
   <div class="column">
     <h1 class="blue-h1">Mentor a Program Participant</h1>
+  </div>
+  <div class="column">
+    <a href="{{ url_for('render_sponsor_page') }}">
+      <img
+        src="{{ url_for('static', filename='img/mentor-programm.jpg') }}"
+        alt="Two people with a Laptop."
+        class="full-width-img"
+      />
+    </a>
+  </div>
+</div>
+<div class="row row__center about-us">
+  <div class="column">
     <p class="justify">
       Techtonica is a rigorous, six-month training program followed by job
       placement for Bay Area women and non-binary adults with low incomes. Our
@@ -70,6 +83,13 @@ Mentoring {% endblock title %} {% block content %}
       <img
         src="{{ url_for('static', filename='img/whiteboarding-practice-min.jpg') }}"
         alt="Two people practicing whiteboarding."
+        class="full-width-img"
+      />
+    </a>
+    <a href="{{ url_for('render_sponsor_page') }}">
+      <img
+        src="{{ url_for('static', filename='img/mentor-programm1.jpg') }}"
+        alt="Two people with a Laptop."
         class="full-width-img"
       />
     </a>
@@ -155,7 +175,10 @@ Mentoring {% endblock title %} {% block content %}
         <td>Support during placement or job search</td>
       </tr>
     </table>
-
+  </div>
+</div>
+<div class="column row row__center blue-background">
+  <div class="column">
     <p class="justify">
       If this sounds like a commitment that you can make, please apply now!
     </p>
@@ -166,6 +189,16 @@ Mentoring {% endblock title %} {% block content %}
       target="_blank"
       >Apply to become a mentor by November 30th, 2020</a
     >
+  </div>
+  <div class="column centered">
+    <a href="{{ url_for('render_sponsor_page') }}">
+      <img
+        src="{{ url_for('static', filename='img/mentor-programm2.jpg') }}"
+        alt="Mentor with Participant."
+        width="400"
+        height="250"
+      />
+    </a>
   </div>
 </div>
 {% endblock content %}
