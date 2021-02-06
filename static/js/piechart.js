@@ -3,8 +3,7 @@ let labels = [
   "Black",
   "East Asian",
   "White",
-  "South East Asian",
-  "Central Asian",
+  "South East/ Central Asian",
   "Latinx",
 ];
 let colorHex = [
@@ -12,7 +11,6 @@ let colorHex = [
   "rgb(255, 159, 64)",
   "rgb(255, 205, 86)",
   "rgb(75, 192, 192)",
-  "#B0E0E6",
   "rgb(54, 162, 235)",
 ];
 
@@ -25,7 +23,7 @@ let myChart = new Chart(ctx, {
       {
         label: "Techtonica Demographics",
         backgroundColor: colorHex,
-        data: [27, 22, 5, 12, 5, 27],
+        data: [27, 22, 5, 17, 27],
       },
     ],
   },
