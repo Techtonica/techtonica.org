@@ -77,18 +77,17 @@ Browse to <http://localhost:5000>.
 #### First Time Using Docker?
 
 1. Download [Docker Desktop](https://www.docker.com/products/docker-desktop)
-2. `cd` into the folder that holds your techtonica.org repo
-3. Build your app: `docker-compose build --pull`
-4. Run your app: `docker-compose up`
+1. `cd` into the folder that holds your techtonica.org repo
+1. Run your app: `docker-compose up`
 
-_When there are updates to the Dockerfile, you will have to rebuild your app in
-order for those changes to take effect._
+⚠️ _When there are updates to `requirements.txt` or `Dockerfile`, you will have to
+rebuild the Docker image in order for those changes to take effect._
 
 #### For Docker Pros
 
-To run app: `docker-compose up`
-
-To rebuild app: `docker-compose build --pull`
+- To run app: `docker-compose up`
+- To rebuild Docker image: `docker build . -t techtonica/website --pull`
+- To push latest image to Docker Hub: `docker push techtonica/website`
 
 ### CSS / SCSS
 

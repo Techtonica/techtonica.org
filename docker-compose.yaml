@@ -2,8 +2,6 @@ version: "3.7"
 
 services:
   website:
-    build:
-      context: .
     image: techtonica/website
     environment:
       FLASK_DEBUG: 1
