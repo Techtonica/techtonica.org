@@ -108,6 +108,14 @@ def render_seam_page():
     return render_template("seam.html")
 
 
+@app.route("/openings/tapm/")
+def render_tapm_page():
+    """
+    Renders the TAPM page from jinja2 template
+    """
+    return render_template("tapm.html")
+
+
 @app.route("/openings/curriculumdev/")
 def render_curriculumdev_page():
     """
