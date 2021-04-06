@@ -52,7 +52,7 @@ six==1.15.0
     # via python-dateutil
 starkbank-ecdsa==1.1.0
     # via sendgrid
-urllib3==1.26.3
+urllib3==1.26.4
     # via requests
 werkzeug==1.0.1
     # via flask
