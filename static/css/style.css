@@ -416,7 +416,7 @@ table.mentor td:first-of-type {
 @media only screen and (max-width: 910px) {
   .row {
     padding: 1.5em 1em;
-    width: 90%;
+    width: 96%;
     margin: auto;
     overflow-x: hidden;
   }
@@ -440,8 +440,15 @@ table.mentor td:first-of-type {
   }
 
   h1 {
-    font-size: 2em;
-    letter-spacing: 0.5px;
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  .large-white-text {
+    font-size: 1.5em;
   }
 
   .donate {
