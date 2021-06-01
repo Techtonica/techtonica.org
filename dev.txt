@@ -4,8 +4,6 @@
 #
 #    pip-compile dev.in
 #
-appnope==0.1.2
-    # via ipython
 backcall==0.2.0
     # via ipython
 certifi==2020.12.5
@@ -88,7 +86,7 @@ starkbank-ecdsa==1.1.0
     # via sendgrid
 traitlets==4.3.3
     # via ipython
-urllib3==1.26.3
+urllib3==1.26.5
     # via requests
 wcwidth==0.2.5
     # via prompt-toolkit
