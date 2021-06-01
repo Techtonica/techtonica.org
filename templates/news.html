@@ -872,6 +872,7 @@ endblock title %} {% block content %}
     {% include 'contactbutton.html' %}
   </div>
 </div>
+<<<<<<< HEAD
 <div class="row row_center">
   <div class="column">
     <a href="https://twitter.com/TechtonicaOrg">Twitter Feed</a>
@@ -890,21 +891,41 @@ endblock title %} {% block content %}
   </div>
   <div class="column">
     <a href=" https://medium.com/techtonica">Medium Feed</a>
-    <div id="medium-widget"></div>
-    <script src="https://medium-widget.pixelpoint.io/widget.js"></script>
-    <script>
-      MediumWidget.Init({
-        renderTo: "#medium-widget",
-        params: {
-          resource: "https://medium.com/techtonica",
-          postsPerLine: 1,
-          limit: 50,
-          picture: "small",
-          fields: ["description", "author", "claps", "publishAt"],
-          ratio: "landscape",
-        },
-      });
-    </script>
+    =======
+    <div class="row">
+      <div class="column">
+        <div><a href="https://twitter.com/TechtonicaOrg">Twitter Feed</a></div>
+        <a
+          class="twitter-timeline"
+          href="https://twitter.com/TechtonicaOrg?ref_src=twsrc%5Etfw"
+          >Tweets by TechtonicaOrg</a
+        >
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charset="utf-8"
+        ></script>
+      </div>
+      <div class="column">
+        <a href="https://medium.com/techtonica">Medium Feed</a>
+        >>>>>>> NewsFeed
+        <div id="medium-widget"></div>
+        <script src="https://medium-widget.pixelpoint.io/widget.js"></script>
+        <script>
+          MediumWidget.Init({
+            renderTo: "#medium-widget",
+            params: {
+              resource: "https://medium.com/techtonica",
+              postsPerLine: 1,
+              limit: 50,
+              picture: "small",
+              fields: ["description", "author", "claps", "publishAt"],
+              ratio: "landscape",
+            },
+          });
+        </script>
+      </div>
+    </div>
+    <<<<<<< HEAD ======= >>>>>>> NewsFeed {% endblock content %}
   </div>
 </div>
-{% endblock content %}
