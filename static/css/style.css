@@ -403,6 +403,11 @@ table.mentor td:first-of-type {
   border-right: 1px solid #000;
   vertical-align: top;
 }
+.twitterfeed {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 
 @media only screen and (max-width: 1024px) {
   .row {
