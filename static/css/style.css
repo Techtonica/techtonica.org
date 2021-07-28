@@ -420,10 +420,11 @@ table.mentor td:first-of-type {
 }
 @media only screen and (max-width: 910px) {
   .row {
-    padding: 1.5em 1em;
-    width: 96%;
+    padding: 1em 1em;
+    width: 100%;
     margin: auto;
     overflow-x: hidden;
+    box-sizing: border-box
   }
 
   .column-med {
