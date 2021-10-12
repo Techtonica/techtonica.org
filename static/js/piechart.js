@@ -9,13 +9,13 @@ let labels = [
   "Pacific Islander & Native American/Alaskan Native/First Nations"
 ];
 let colorHex = [
-  "rgb(255, 99, 132)",
-  "rgb(255, 163, 140)"
-  "rgb(255, 159, 64)",
-  "rgb(255, 205, 86)",
   "rgb(75, 192, 192)",
   "rgb(54, 162, 235)",
-  "rgb(84, 73, 86)"
+  "rgb(201, 155, 203)",
+  "rgb(255, 99, 132)",
+  "rgb(255, 163, 140)",
+  "rgb(255, 159, 64)",
+  "rgb(255, 205, 86)"
 ];
 
 let myChart = new Chart(ctx, {
