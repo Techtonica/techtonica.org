@@ -14,12 +14,12 @@ click==7.1.2
     #   pip-tools
 eventbrite==3.3.5
     # via -r requirements.in
-flask-sslify==0.1.5
-    # via -r requirements.in
 flask==1.1.2
     # via
     #   -r requirements.in
     #   flask-sslify
+flask-sslify==0.1.5
+    # via -r requirements.in
 idna==2.10
     # via requests
 itsdangerous==1.1.0
@@ -50,7 +50,7 @@ sendgrid==6.5.0
     # via -r requirements.in
 six==1.15.0
     # via python-dateutil
-starkbank-ecdsa==1.1.0
+starkbank-ecdsa==2.0.1
     # via sendgrid
 urllib3==1.26.3
     # via requests
