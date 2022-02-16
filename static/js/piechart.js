@@ -27,7 +27,7 @@ let myChart = new Chart(ctx, {
       {
         label: "Techtonica Demographics",
         backgroundColor: colorHex,
-        data: [25, 23, 22, 12, 10, 6, 2],
+        data: [22, 23, 23, 10, 15, 6, 1],
       },
     ],
   },
