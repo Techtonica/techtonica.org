@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap {%
+endblock title %} {% block content %}
+<div class="main-content">
+  <div class="row row__baseline blue-background">
+    <h1>Testimonials</h1>
+    <div class="row row__center blue-background">
+      <h3>Share what you love about Techtonica and mention us for the chance to be featured!</h3>
+    </div>
+  </div>
+
+  <div class="row row__center our-supporters" id="supporters">
+    <div class="row">
+      <div class="column centered">
+        <a href="https://LINK HERE" target="_blank" rel="noopener noreferrer">
+          <img
+            src="{{ url_for('static', filename='img/MINIMIZED SQUARE SCREENSHOT OF POST, COMMENT, ETC.') }}"
+            alt="DESCRIPTION OF THE IMAGE INCLUDING TEXT"
+            class="twenty-percent-width margin-25"/>
+        </a>
+        <a href="https://LINK HERE" target="_blank" rel="noopener noreferrer">
+          <img
+            src="{{ url_for('static', filename='img/MINIMIZED SQUARE SCREENSHOT OF POST, COMMENT, ETC.') }}"
+            alt="DESCRIPTION OF THE IMAGE INCLUDING TEXT"
+            class="twenty-percent-width margin-25"/>
+        </a>
+        <a href="https://LINK HERE" target="_blank" rel="noopener noreferrer">
+          <img
+            src="{{ url_for('static', filename='img/MINIMIZED SQUARE SCREENSHOT OF POST, COMMENT, ETC.') }}"
+            alt="DESCRIPTION OF THE IMAGE INCLUDING TEXT"
+            class="twenty-percent-width margin-25"/>
+        </a>
+      </div>
+    </div>
+  </div>
+<!--   <div
+    class="row row__center blue-background a-word-from-supporters"
+    id="a-word"
+  >
+    <h2 id="quotes">
+      “The {participants} are so impressive—any one of them would be a great
+      asset. The Bay Area often brags of innovation but it’s Techtonica that
+      delivers.” -Michelle Krejci, Service Engineer Tech Lead at Pantheon
+    </h2>
+  </div> -->
+</div>
+{% endblock content %}
