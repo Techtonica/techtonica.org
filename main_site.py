@@ -115,6 +115,12 @@ def render_tapm_page():
     """
     return render_template("tapm.html")
 
+@app.route("/openings/partnerdevmanager/")
+def render_partnerdevmanager_page():
+    """
+    Renders the Partnership Development Manager JD from jinja2 template
+    """
+    return render_template("partnerdevmanager.html")
 
 @app.route("/openings/curriculumdev/")
 def render_curriculumdev_page():
