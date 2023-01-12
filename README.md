@@ -18,18 +18,15 @@ currently hosted on DreamHost.
 
 ## Who
 
-The audience of the website is made up of (potential) volunteers and sponsors.
-(Participants will be contacted via local organizations.)
+The audience of the website is made up of (potential) volunteers, sponsors, and program participants.
 
 ## What
 
-We need to effectively communicate that Techtonica and its participants are
-worth supporting.
+We need to effectively communicate that Techtonica and its participants are worth supporting and share details of the program for potential applicants and volunteers.
 
 ## How
 
-There should be a good understanding of how the program works with vetting,
-training, mentoring, and hiring.
+There should be a good understanding of how the program works with vetting, training, mentoring, and placements.
 
 Detailed instructions on how to update the website:
 https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit
