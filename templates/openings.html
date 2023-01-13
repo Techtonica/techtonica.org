@@ -1,9 +1,11 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
 Careers {% endblock title %} {% block content %}
+<meta property="og:image"
+  content="{{ url_for('static', filename='img/Team-Meeting-min.png') }}"/>
 <div class="row row__center about-us">
   <div class="column hidden-med">
     <img
-      src="{{ url_for('static', filename='img/make-a-difference-instructor.jpg') }}"
+      src="{{ url_for('static', filename='img/Team-Meeting-min.png') }}"
       alt="A mentor works with a participant at a laptop."
       class="fixed-img"
       style="width: 38%"
