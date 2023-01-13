@@ -1,36 +1,39 @@
-{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
-Careers {% endblock title %} {% block content %}
 <meta property="og:image"
   content="{{ url_for('static', filename='img/Team-Meeting-min.png') }}"/>
-<div class="row row__center about-us">
-  <div class="column hidden-med">
-    <img
-      src="{{ url_for('static', filename='img/Team-Meeting-min.png') }}"
-      alt="A mentor works with a participant at a laptop."
-      class="fixed-img"
-      style="width: 38%"
-    />
-  </div>
-  <div class="column">
-    <h1 class="blue-h1">Openings</h1>
-    <p class="justify">
-      Techtonica is a nonprofit that offers women and non-binary adults with low
-      incomes free tech training, along with living and childcare stipends, then
-      places them in positions at sponsoring companies that are ready to support
-      more diverse teams.
-    </p>
-    <p class="justify"></p>
-    <!-- <h3>No openings at the moment; please check back later</h3> -->
-    <p>
-      <a href="{{ url_for('render_partnershipsmanager_page') }}">
-        <h3>Partnerships Manager</h3></a>
-    </p>
-    <p>
-      <a href="{{ url_for('render_board_page') }}">
-        <h3>Advisory Board Member (Volunteer Role)</h3></a>
-    </p>
+<link rel="preload" href="{{ url_for('static', 
+  filename='img/Team-Meeting-min.png') }}" as="image"/>
+{% extends "base.html" %} 
+{% block title %} Techtonica: Bridging the Tech Gap — Careers {% endblock title %} 
+{% block content %}
+  <div class="row row__center about-us">
+    <div class="column hidden-med">
+      <img
+        src="{{ url_for('static', filename='img/Team-Meeting-min.png') }}"
+        alt="A mentor works with a participant at a laptop."
+        class="fixed-img"
+        style="width: 38%"
+      />
+    </div>
+    <div class="column">
+      <h1 class="blue-h1">Openings</h1>
+      <p class="justify">
+        Techtonica is a nonprofit that offers women and non-binary adults with low
+        incomes free tech training, along with living and childcare stipends, then
+        places them in positions at sponsoring companies that are ready to support
+        more diverse teams.
+      </p>
+      <p class="justify"></p>
+      <!-- <h3>No openings at the moment; please check back later</h3> -->
+      <p>
+        <a href="{{ url_for('render_partnershipsmanager_page') }}">
+          <h3>Partnerships Manager</h3></a>
+      </p>
+      <p>
+        <a href="{{ url_for('render_board_page') }}">
+          <h3>Advisory Board Member (Volunteer Role)</h3></a>
+      </p>
 
-    <div>{% include 'contactbutton.html' %}</div>
+      <div>{% include 'contactbutton.html' %}</div>
+    </div>
   </div>
-</div>
 {% endblock content %}
