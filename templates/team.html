@@ -127,20 +127,7 @@ About Us {% endblock title %} {% block content %}
     </div>
   </div>
   
-    <div class="row row__center blue-background">
-    <div class="column centered">
-      <h2>
-        <a
-          href="https://www.linkedin.com/in/ruthdirvin/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Ruthie Irvin (they/them), <br />Technical Assistant
-          (TPM)</a>
-      </h2>
-      <p class="justify">
-        Ruthie's graduation from the 2022-H2 cohort marked their transition from careers in tech support and public school teaching into software engineering. As the technical assistant, Ruthie continues to develop their JavaScript skills by revisiting and revising the curriculum ahead of the new participants, and by offering study groups and tutoring. Outside of work, Ruthie spends time with their spouse Zach and the two kids they share, tends to houseplants, plays Fortnite, and shuffles tarot and oracle cards. They hope to help bridge the tech gap by showing up authentically in the field as as neurodivergent, disabled, queer person that advocates for the accommodations they need, and teaches others to do the same.
-      </p>
-    </div>
+ <div class="row row__center blue-background">
     <div class="column centered">
       <img
         src="{{ url_for('static', filename='img/Ruthie-min.png') }}"
@@ -148,16 +135,23 @@ About Us {% endblock title %} {% block content %}
         class="resize-400px"
       />
     </div>
+    <div class="column centered">
+      <h2>
+        <a
+          href="https://www.linkedin.com/in/ruthdirvin/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Ruthie Irvin (they/them), <br/>
+          Technical Assistant
+          (TA)</a>
+      </h2>
+      <p class="justify">
+        Ruthie's graduation from the 2022-H2 cohort marked their transition from careers in tech support and public school teaching into software engineering. As the technical assistant, Ruthie continues to develop their JavaScript skills by revisiting and revising the curriculum ahead of the new participants, and by offering study groups and tutoring. Outside of work, Ruthie spends time with their spouse Zach and the two kids they share, tends to houseplants, plays Fortnite, and shuffles tarot and oracle cards. They hope to help bridge the tech gap by showing up authentically in the field as as neurodivergent, disabled, queer person that advocates for the accommodations they need, and teaches others to do the same.
+      </p>
+    </div>
   </div>
 
   <div class="row row__center blue-background">
-    <div class="column centered">
-      <img
-        src="{{ url_for('static', filename='img/Joy-Sau-min.png') }}"
-        alt="Joy Sau"
-        class="resize-400px"
-      />
-    </div>
     <div class="column centered">
       <h2>
         <a
@@ -176,6 +170,13 @@ About Us {% endblock title %} {% block content %}
         customer care, and doing other project-related tasks. Working with Techtonica 
         has given her a platform to make many lives better.
       </p>
+    </div>
+    <div class="column centered">
+     <img
+        src="{{ url_for('static', filename='img/Joy-Sau-min.png') }}"
+        alt="Joy Sau"
+        class="resize-400px"
+      />
     </div>
   </div>  
 </div>
