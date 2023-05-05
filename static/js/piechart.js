@@ -6,7 +6,7 @@ let labels = [
   "Southeast Asian",
   "White",
   "Central & South Asian",
-  "Pacific Islander & Indigenous/Native American/Alaskan Native/First Nations & Middle Eastern"
+  "Pacific Islander & Indigenous/First Nations & Middle Eastern"
 ];
 let colorHex = [
   "rgb(75, 192, 192)",
