@@ -100,12 +100,12 @@ def render_openings_page():
     return render_template("openings.html")
 
 
-@app.route("/openings/seam/")
-def render_seam_page():
+@app.route("/openings/stem/")
+def render_stem_page():
     """
-    Renders the SEAM page from jinja2 template
+    Renders the STEM page from jinja2 template
     """
-    return render_template("seam.html")
+    return render_template("stem.html")
 
 
 @app.route("/openings/tapm/")
