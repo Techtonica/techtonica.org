@@ -85,8 +85,7 @@
   justify-content: flex-end;
   width: 100%;
   height: 75vh;
-  background: url(../img/three-participants-at-laptops-min.jpg) $main-blue
-    no-repeat top right fixed;
+  background: url(../img/three-participants-at-laptops-min.jpg) $main-blue no-repeat top right fixed;
   background-size: cover;
 }
 
@@ -116,8 +115,7 @@
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/2022-H1-Launch-Celebration.png) $main-blue
-    no-repeat top fixed;
+  background: url(../img/2022-H1-Launch-Celebration.png) $main-blue no-repeat top fixed;
   background-size: cover;
 }
 
@@ -238,6 +236,7 @@
 
 #orange-button {
   text-decoration: none;
+
   &:hover {
     color: $white;
   }
@@ -347,6 +346,7 @@ table.mentor {
   .donate {
     @include prefix(border-radius, 0px, webkit moz o);
     color: $focal-orange;
+
     &:hover {
       background-color: $focal-orange;
       color: $white;
@@ -393,8 +393,7 @@ table.mentor {
   .main-header {
     display: block;
     position: relative;
-    background: url(../img/three-participants-at-laptops-min.jpg) $main-blue
-      no-repeat top center;
+    background: url(../img/three-participants-at-laptops-min.jpg) $main-blue no-repeat top center;
     @include prefix(background-size, contain, webkit moz o);
   }
 
@@ -453,9 +452,11 @@ table.mentor {
       content: "";
       transform-origin: $button-size/14 center;
     }
+
     &:before {
       top: $button-size/4;
     }
+
     &:after {
       top: -$button-size/4;
     }
@@ -468,6 +469,7 @@ table.mentor {
       &:before {
         top: $button-size/3;
       }
+
       &:after {
         top: -$button-size/3;
       }
@@ -490,10 +492,12 @@ table.mentor {
     &:before {
       transform: rotate3d(0, 0, 1, 45deg);
     }
+
     &:after {
       transform: rotate3d(0, 0, 1, -45deg);
     }
   }
+
   .contact-us {
     display: block;
   }
@@ -518,6 +522,7 @@ table.mentor {
     background-size: cover;
     font-size: 14px;
   }
+
   .main-content {
     font-size: 14px;
   }
@@ -528,6 +533,7 @@ table.mentor {
   .main-header__text {
     font-size: 1rem;
   }
+
   .main-header_text p {
     margin-bottom: 20px;
   }
@@ -539,6 +545,7 @@ table.mentor {
     font-size: 1rem;
     height: 50vh;
   }
+
   .main-header {
     height: 500px;
     background-size: cover;
@@ -613,9 +620,11 @@ table.mentor {
   text-align: left;
   outline: none;
   font-size: 1.2em;
+
   &:hover {
     color: $dark-blue;
   }
+
   &::before {
     content: "+ ";
     text-decoration: none;
@@ -624,6 +633,7 @@ table.mentor {
 
 .collapsible-active {
   color: $dark-blue;
+
   &::before {
     content: "- ";
   }
@@ -645,4 +655,184 @@ p.press-release-summary {
 
 p.press-release-bold {
   font-style: bold;
+}
+
+/* Styles for the timeline */
+#timeline-row {
+  --primary-color: #00556e;
+  h1{
+    text-align: center;
+  }
+  
+}
+
+.hints {
+  text-align: center;
+  padding: 1.4rem 0;
+  font-weight: 400;
+  background-color: #fff !important;
+}
+
+mark {
+  padding: .2rem .7rem;
+  border-radius: 4rem;
+  background-color: #fc5d23;
+}
+
+// .timeline-wrapper::-webkit-scrollbar {
+//   display: none;
+// }
+
+.timeline-wrapper {
+  max-width: 100vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+}
+
+.timeline {
+  height: .12rem;
+  padding: 0 4rem;
+  background-color: #282828;
+  list-style-type: none;
+  --scale: 1;
+  display: flex;
+  position: absolute;
+}
+
+.timeline li {
+  position: relative;
+  width: 20rem;
+}
+
+.timeline li::before,
+.timeline li::after,
+.timeline li.title,
+.data {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(var(--scale));
+  transition: .5s ease;
+}
+
+.timeline li::before {
+  content: "";
+  top: 1rem;
+
+  display: inline-block;
+  width: 0.12rem;
+  height: 1rem;
+  background-color: #888;
+}
+
+.timeline li:nth-child(even)::before {
+  top: -1rem;
+}
+
+.timeline li:hover::before {
+  height: 1.5rem;
+  background-color: #e5313e;
+
+}
+
+.timeline li::after {
+  content: attr(data-date);
+  top: -3.4rem;
+}
+
+.timeline li:nth-child(odd):after {
+  top: 3.4rem;
+}
+
+.timeline li:hover:after,
+.timeline li .title {
+  color: #00556e;
+}
+
+.timeline li .title {
+  top: 2.4rem;
+  font: 600 1.1rem 'Lato', sans-serif;
+  white-space: pre;
+  opacity: 0;
+}
+
+.timeline li:nth-child(even)>.title {
+  top: 1.4rem;
+}
+
+.timeline li:nth-child(odd)>.title {
+  top: -1.4rem;
+}
+
+.timeline li:hover .title {
+  display: block;
+  margin-top: 1.5rem;
+  opacity: 1;
+}
+
+.data {
+  width: 1.3rem;
+  height: 1.3rem;
+  background-color: #888;
+  color: #fff;
+  border-radius: 50%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  overflow: hidden;
+  transition: .3s ease;
+
+}
+
+.timeline li:hover .data {
+  background-color: #00556e;
+  --scale: 1;
+  cursor: pointer;
+  z-index: 200;
+
+}
+
+.data.show {
+  width: 25rem;
+  height: 25rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-image: linear-gradient(45deg, #0091B8, #379db8);
+  box-shadow: 0 .1rem .4rem #0004;
+  z-index: 100;
+}
+
+.data h3,
+.data small {
+  color: #fc5d23;
+  text-transform: capitalize;
+  margin-left: 0.7rem;
+}
+
+.data p {
+  padding: 1rem;
+  color: #fff;
+  border-radius: 1rem;
+  margin-left: 0.7rem;
+}
+
+.data.show p {
+  margin-left: 0;
+}
+
+.data .close {
+  align-self: flex-start;
+  background-color: #fc5d23;
+  padding: .5rem .8rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+}
+
+.data a {
+  color: #fc5d23;
+  margin-left: .3rem;
 }
