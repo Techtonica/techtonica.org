@@ -101,6 +101,44 @@ sass static/sass/style.scss static/css/style.css
 sass --watch static/sass/style.scss static/css/style.css
 ```
 
+### Updating the Demographics Chart for the Apply Section
+
+![This is an example of the chart that can be found on the full-time-program.html page.](static/img/2023-H1-Cohort-Demographics.jpg)
+
+
+At the moment, we do not have styling in place that will enable us to have a coded, adequately sized piechart while still maintaining mobile responsiveness. Until that happens, here is how to update the piechart when numbers change.
+
+1. Start the server.
+2. Open the browser and navigate to the Apply page.
+3. Update the `data` section in `static/js/piechart.js#L30`.
+4. Uncomment out following in `full-time-program.html`.
+ ```
+   <!-- <div class="blue-background">
+      <canvas id="myChart" width="700" height="350"></canvas>
+   </div> -->
+ ```
+5. Take a screenshot of the piechart on the rendered page.
+6. Add the screenshot to the `static/img` directory saved with YEAR-H#-Cohort-Demographics.jpg, ex. 2023-H1-Cohort-Demographics.jpg.
+7. Update `full-time-program.html` to point to the new image you just added. Update the alt text if necessary.
+ ```
+  <img
+      src="{{ url_for('static', filename='img/2023-H1-Cohort-Demographics.jpg') }}"
+      alt="2023 Cohort Demographics."
+      class="full-width-img"
+   />
+ ```
+8. Recomment the following.
+ ```
+   <!-- <div class="blue-background">
+      <canvas id="myChart" width="700" height="350"></canvas>
+   </div> -->
+ ```
+9. Stop the server
+10. Commit your code and open a pull request
+
+
+
+
 ### Updating Dependencies
 
 This project uses [pip-tools](https://github.com/jazzband/pip-tools) to manage
@@ -221,3 +259,6 @@ Important: Only ever Pull form the server!
    ```sh
    exit
    ```
+
+
+[def]: static/img/2023-H1-Cohort-Demographics.jpg
