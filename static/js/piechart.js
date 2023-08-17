@@ -33,7 +33,7 @@ let myChart = new Chart(ctx, {
   },
 
   options: {
-    responsive: false,
+    responsive: true,
     legend: {
       display: true,
       position: "bottom",
