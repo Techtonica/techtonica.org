@@ -34,6 +34,7 @@ let myChart = new Chart(ctx, {
 
   options: {
     responsive: true,
+    maintainAspectRatio: false,
     legend: {
       display: true,
       position: "bottom",
