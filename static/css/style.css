@@ -428,6 +428,15 @@ table.mentor td:first-of-type {
   vertical-align: top;
 }
 
+.videowrapper {
+  max-width: 560px;
+  /* you have to have a size or this method doesn't work */
+  max-height: 315px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 2rem;
+}
+
 @media only screen and (max-width: 1024px) {
   .row {
     padding: 2em;
@@ -630,14 +639,6 @@ table.mentor td:first-of-type {
   .nav-bar-inner {
     padding: 0;
     margin-top: 5rem;
-  }
-
-  iframe#youtubeiframe {
-    height: 140px;
-    width: 315px;
-    padding-inline-start: 0;
-    padding-bottom: 0.5rem;
-    padding-top: 0.5rem;
   }
 }
 /* iphone 4 and 4s media query */
