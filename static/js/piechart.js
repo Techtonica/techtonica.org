@@ -34,10 +34,11 @@ let myChart = new Chart(ctx, {
 
   options: {
     responsive: true,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     legend: {
       display: true,
       position: "bottom",
+      size: 40,
       labels: {
         fontColor: "#ffffff",
       },

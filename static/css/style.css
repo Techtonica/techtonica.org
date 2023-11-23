@@ -428,6 +428,14 @@ table.mentor td:first-of-type {
   vertical-align: top;
 }
 
+#chartcontainer {
+  position: relative;
+  min-height: auto;
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+}
+
 @media only screen and (max-width: 1024px) {
   .row {
     padding: 2em;
