@@ -428,6 +428,13 @@ table.mentor td:first-of-type {
   vertical-align: top;
 }
 
+#chartcontainer {
+  position: relative;
+  min-height: auto;
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+
 .videowrapper {
   max-width: 560px;
   /* you have to have a size or this method doesn't work */
