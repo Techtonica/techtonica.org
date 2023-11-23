@@ -98,7 +98,7 @@
   border-top: 5px solid #007395cc;
 }
 
-#myChart{
+#myChart {
   display: block;
   width: 700px;
   height: 350px;
@@ -293,11 +293,11 @@ a:hover {
   display: none;
 }
 
-iframe#youtubeiframe{
+iframe#youtubeiframe {
   width: 560px;
   height: 315px;
   padding-inline-start: 15rem;
-  padding-bottom: 0.5rem; 
+  padding-bottom: 0.5rem;
   padding-top: 0.5rem;
 }
 
@@ -329,7 +329,13 @@ table.mentor {
   flex-grow:1;
 }
 
-
+.videowrapper {
+  max-width: 560px; /* you have to have a size or this method doesn't work */
+  max-height: 315px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 2rem;
+}
 
 @media only screen and (max-width: 1024px) {
   .row {
@@ -529,14 +535,6 @@ table.mentor {
   .nav-bar-inner {
     padding: 0;
     margin-top: 5rem;
-  }
-
-  iframe#youtubeiframe{
-    height:140px;
-    width: 315px;
-    padding-inline-start: 0;
-    padding-bottom: 0.5rem; 
-    padding-top: 0.5rem;
   }
 }
 
