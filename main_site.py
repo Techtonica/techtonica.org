@@ -184,6 +184,12 @@ def render_testimonials_page():
     """
     return render_template("testimonials.html")
 
+@app.route("/consulting/")
+def render_testimonials_page():
+    """
+    Renders the consulting page from jinja2 template
+    """
+    return render_template("consulting.html")
 
 def get_events():
     try:
