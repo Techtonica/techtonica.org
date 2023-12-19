@@ -184,7 +184,6 @@ def render_testimonials_page():
     """
     return render_template("testimonials.html")
 
-
 def get_events():
     try:
         group_id = eventbrite.get_user()["id"]

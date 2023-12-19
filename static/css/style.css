@@ -57,6 +57,10 @@ button {
   border: 0;
 }
 
+ol > li > span {
+  font-weight: bold;
+}
+
 .blue-h1 {
   color: #05556d;
   text-shadow: 0px 0px 1px #ccc;
