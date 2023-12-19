@@ -432,18 +432,30 @@ endblock title %} {% block content %}
   </div>
   <div class="row row__center blue-background">
     <h2 class="large-white-text">
-      Techtonica Consulting
+      <a id="remove-techtonica-consulting-link" href="#techtonica-consulting">Techtonica Consulting</a>
     </h2>
-    <p class="justify">
-      Techtonica Consulting, an extension of Techtonica's mission, will offer
-      an alternative real-world software engineering experience to its graduates.
-      These graduates, who have completed extensive training and come from
-      diverse backgrounds, will have the opportunity to work on real software
-      projects while being supervised by senior software engineers. Techtonica
-      Consulting is dedicated to serving a broad spectrum of industries, from
-      large Fortune 100 companies to small businesses and entrepreneurs, providing
-      tailored tech solutions to meet their unique needs.
-    </p>
+    <div class="row row__center">
+      <div class="column centered">
+      <p class="justify">
+        Techtonica Consulting, an extension of Techtonica's mission, will offer
+        an alternative real-world software engineering experience to its graduates.
+        These graduates, who have completed extensive training and come from
+        diverse backgrounds, will have the opportunity to work on real software
+        projects while being supervised by senior software engineers. Techtonica
+        Consulting is dedicated to serving a broad spectrum of industries, from
+        large Fortune 100 companies to small businesses and entrepreneurs, providing
+        tailored tech solutions to meet their unique needs.
+      </p>
+      </div>
+      <div class="column centered">
+        <img
+          src="{{ url_for('static', filename='img/techtonica-consultant-and-volunteer-min.png') }}"
+          alt="techtonica participant with a volunteer discussing code"
+          width="400"
+          height="450"
+        />
+      </div>
+    </div>
     <h3>How It Works</h3>
     <ol>
       <li>
@@ -562,26 +574,24 @@ endblock title %} {% block content %}
         </ul>
       </li>
     </ol>
-  </div>
-  <div class="row row__center">
-    <div class="column">
-      <p class="justify">
-          At Techtonica Consulting, we meticulously follow these steps to foster
-          seamless collaborations with your company or project. We provide
-          invaluable real-world software engineering solutions, all while offering
-          our graduates a hands-on learning experience and mentorship within a
-          professional environment.
-      </p>
-    </div>
-    <div class="column centered">
-      <a href="{{ url_for('render_sponsor_page') }}">
+    <div class="row row__center">
+      <div class="column">
+        <p class="justify">
+            At Techtonica Consulting, we meticulously follow these steps to foster
+            seamless collaborations with your company or project. We provide
+            invaluable real-world software engineering solutions, all while offering
+            our graduates a hands-on learning experience and mentorship within a
+            professional environment.
+        </p>
+      </div>
+      <div class="column centered">
         <img
-          src="{{ url_for('static', filename='img/mentor-programm2.jpg') }}"
-          alt="placeholder alt text for placeholder image"
-          width="400"
+          src="{{ url_for('static', filename='img/techtonica-graduate-squares-min.png') }}"
+          alt="techtonica participants in zoom video call squares"
+          width="350"
           height="250"
         />
-      </a>
+      </div>
     </div>
   </div>
   <div class="row row__center">
