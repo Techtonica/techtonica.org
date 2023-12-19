@@ -453,7 +453,12 @@ table.mentor td:first-of-type {
   margin-bottom: 2rem;
 }
 
-#remove-techtonica-consulting-link {
+a.techtonica-consulting {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.techtonica-consulting:hover {
   color: inherit;
   text-decoration: none;
 }
