@@ -214,7 +214,7 @@ def process_donation():
 
     try:
         # Make the payment request
-        response = payments_api.create_payment(location_id=square_location_id, body=create_payment_request)
+        response = payments_api.create_payment(location_id=Client.location_id, body=create_payment_request)
         return jsonify(response), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 400
