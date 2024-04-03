@@ -10,15 +10,34 @@ from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
 from flask import Flask, redirect, render_template, url_for
 from flask_sslify import SSLify
-from squareconnect.apis.payments_api import PaymentsApi
-from squareconnect.models import CreatePaymentRequest, Money
+from square.client import Client
+# from squareconnect.apis.payments_api import PaymentsApi
+# from squareconnect.models import CreatePaymentRequest, Money
 
 
 load_dotenv(find_dotenv(usecwd=True))
 
-# Square credentials
-square_access_token = 'YOUR_ACCESS_TOKEN'
-square_location_id = 'YOUR_LOCATION_ID'
+# Setting Square credentials
+client = Client(
+    access_token=os.environ['SQUARE_ACCESS_TOKEN'],
+    environment='sandbox')
+
+result = client.locations.list_locations()
+
+if result.is_success():
+    for location in result.body['locations']:
+        print(f"{location['id']}: ", end="")
+        print(f"{location['name']}, ", end="")
+        print(f"{location['address']['address_line_1']}, ", end="")
+        print(f"{location['address']['locality']}")
+
+elif result.is_error():
+    for error in result.errors:
+        print(error['category'])
+        print(error['code'])
+        print(error['detail'])
+# square_access_token = 'YOUR_ACCESS_TOKEN'
+# square_location_id = 'YOUR_LOCATION_ID'
 
 # Gracefully handle running locally without eventbrite token
 try:
