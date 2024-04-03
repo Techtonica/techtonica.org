@@ -10,14 +10,17 @@ from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
 from flask import Flask, redirect, render_template, url_for
 from flask_sslify import SSLify
+# (Square 2) imports
 from square.client import Client
+
+# (Square 1) imports
 # from squareconnect.apis.payments_api import PaymentsApi
 # from squareconnect.models import CreatePaymentRequest, Money
 
 
 load_dotenv(find_dotenv(usecwd=True))
 
-# Setting Square credentials
+# (Square 2) credentials
 client = Client(
     access_token=os.environ['SQUARE_ACCESS_TOKEN'],
     environment='sandbox')
@@ -36,6 +39,8 @@ elif result.is_error():
         print(error['category'])
         print(error['code'])
         print(error['detail'])
+
+# (Square 1) credentials
 # square_access_token = 'YOUR_ACCESS_TOKEN'
 # square_location_id = 'YOUR_LOCATION_ID'
 
@@ -194,7 +199,7 @@ def render_donate_page():
     """
     return render_template("donate.html")
 
-
+# (Square 1) api endpoint
 @app.route('/donate/submit', methods=['POST'])
 def process_donation():
     # Parse request data
