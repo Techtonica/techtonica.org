@@ -14,8 +14,8 @@ from flask_sslify import SSLify
 from square.client import Client
 
 # (Square 1) imports
-# from squareconnect.apis.payments_api import PaymentsApi
-# from squareconnect.models import CreatePaymentRequest, Money
+from squareconnect.apis.payments_api import PaymentsApi
+from squareconnect.models import CreatePaymentRequest, Money
 
 
 load_dotenv(find_dotenv(usecwd=True))
@@ -39,10 +39,6 @@ elif result.is_error():
         print(error['category'])
         print(error['code'])
         print(error['detail'])
-
-# (Square 1) credentials
-# square_access_token = 'YOUR_ACCESS_TOKEN'
-# square_location_id = 'YOUR_LOCATION_ID'
 
 # Gracefully handle running locally without eventbrite token
 try:
@@ -214,7 +210,7 @@ def process_donation():
 
     # Initialize PaymentsApi
     payments_api = PaymentsApi()
-    payments_api.api_client.configuration.access_token = square_access_token
+    payments_api.api_client.configuration.access_token = Client.access_token
 
     try:
         # Make the payment request
