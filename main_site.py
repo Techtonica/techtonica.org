@@ -14,8 +14,8 @@ from flask_sslify import SSLify
 from square.client import Client
 
 # (Square 1) imports
-from squareconnect.apis.payments_api import PaymentsApi
-from squareconnect.models import CreatePaymentRequest, Money
+from square.apis.payments_api import PaymentsApi
+from square.models import CreatePaymentRequest, Money
 
 
 load_dotenv(find_dotenv(usecwd=True))
