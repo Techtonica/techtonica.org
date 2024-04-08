@@ -14,8 +14,8 @@ from flask_sslify import SSLify
 from square.client import Client
 
 # (Square 1) imports
-from square.apis.payments_api import PaymentsApi
-from square.models import CreatePaymentRequest, Money
+# from square.apis.payments_api import PaymentsApi
+# from square.models import CreatePaymentRequest, Money
 
 
 load_dotenv(find_dotenv(usecwd=True))
@@ -39,6 +39,28 @@ elif result.is_error():
         print(error['category'])
         print(error['code'])
         print(error['detail'])
+
+# (Square 3) payment route
+@app.post("/process-payment")
+def create_payment(payment: Payment):
+    logging.info("Creating payment")
+    # Charge the customer's card
+    create_payment_response = client.payments.create_payment(
+        body={
+            "source_id": payment.token,
+            "idempotency_key": str(uuid.uuid4()),
+            "amount_money": {
+                "amount": 100,  # $1.00 charge
+                "currency": ACCOUNT_CURRENCY,
+            },
+        }
+    )
+
+    logging.info("Payment created")
+    if create_payment_response.is_success():
+        return create_payment_response.body
+    elif create_payment_response.is_error():
+        return create_payment_response
 
 # Gracefully handle running locally without eventbrite token
 try:
