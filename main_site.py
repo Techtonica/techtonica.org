@@ -10,17 +10,11 @@ from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
 from flask import Flask, redirect, render_template, url_for
 from flask_sslify import SSLify
-# (Square 2) imports
 from square.client import Client
-
-# (Square 1) imports
-# from square.apis.payments_api import PaymentsApi
-# from square.models import CreatePaymentRequest, Money
-
 
 load_dotenv(find_dotenv(usecwd=True))
 
-# (Square 2) credentials
+# (Square) credentials
 client = Client(
     access_token=os.environ['SQUARE_ACCESS_TOKEN'],
     environment='sandbox')
@@ -40,7 +34,7 @@ elif result.is_error():
         print(error['code'])
         print(error['detail'])
 
-# (Square 3) payment route
+# (Square) payment route
 @app.post("/process-payment")
 def create_payment(payment: Payment):
     logging.info("Creating payment")
@@ -216,30 +210,6 @@ def render_donate_page():
     Renders the donate page from jinja2 template
     """
     return render_template("donate.html")
-
-# (Square 1) api endpoint
-@app.route('/donate/submit', methods=['POST'])
-def process_donation():
-    # Parse request data
-    data = request.json
-
-    # Construct payment request
-    create_payment_request = CreatePaymentRequest(
-        source_id=data['nonce'],
-        amount_money=Money(amount=data['amount'], currency='USD'),
-        idempotency_key=data['idempotency_key']
-    )
-
-    # Initialize PaymentsApi
-    payments_api = PaymentsApi()
-    payments_api.api_client.configuration.access_token = Client.access_token
-
-    try:
-        # Make the payment request
-        response = payments_api.create_payment(location_id=Client.location_id, body=create_payment_request)
-        return jsonify(response), 200
-    except Exception as e:
-        return jsonify({'error': str(e)}), 400
 
 
 @app.route("/volunteer/")
