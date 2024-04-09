@@ -16,7 +16,8 @@ load_dotenv(find_dotenv(usecwd=True))
 
 # (Square) credentials
 client = Client(
-    access_token=os.environ['SQUARE_ACCESS_TOKEN'],
+    access_token='EAAAl_0QhSnq0KtkiiftPFciQnKzncpiOrxnvLC-cYWs7gAkHmlWUvrwh6Y7gNgy',
+    #os.environ['SQUARE_ACCESS_TOKEN'],
     environment='sandbox')
 
 result = client.locations.list_locations()
@@ -34,27 +35,7 @@ elif result.is_error():
         print(error['code'])
         print(error['detail'])
 
-# (Square) payment route
-@app.post("/process-payment")
-def create_payment(payment: Payment):
-    logging.info("Creating payment")
-    # Charge the customer's card
-    create_payment_response = client.payments.create_payment(
-        body={
-            "source_id": payment.token,
-            "idempotency_key": str(uuid.uuid4()),
-            "amount_money": {
-                "amount": 100,  # $1.00 charge
-                "currency": ACCOUNT_CURRENCY,
-            },
-        }
-    )
 
-    logging.info("Payment created")
-    if create_payment_response.is_success():
-        return create_payment_response.body
-    elif create_payment_response.is_error():
-        return create_payment_response
 
 # Gracefully handle running locally without eventbrite token
 try:
@@ -211,6 +192,29 @@ def render_donate_page():
     """
     return render_template("donate.html")
 
+Payment = client.payments
+
+# (Square) payment route
+@app.route("/process-payment", methods=['POST'])
+def create_payment(payment: Payment):
+    logging.info("Creating payment")
+    # Charge the customer's card
+    create_payment_response = client.payments.create_payment(
+        body={
+            "source_id": payment.token,
+            "idempotency_key": str(uuid.uuid4()),
+            "amount_money": {
+                "amount": 100,  # $1.00 charge
+                "currency": ACCOUNT_CURRENCY,
+            },
+        }
+    )
+
+    logging.info("Payment created")
+    if create_payment_response.is_success():
+        return create_payment_response.body
+    elif create_payment_response.is_error():
+        return create_payment_response
 
 @app.route("/volunteer/")
 def render_volunteer_page():
