@@ -312,15 +312,15 @@ class Payment(BaseModel):
     token: str
     idempotencyKey: str
 
-app = FastAPI()
-app.mount("/static", StaticFiles(directory="static"), name="static")
+payapp = FastAPI()
+payapp.mount("/static", StaticFiles(directory="static"), name="static")
 
-@app.get("/donate/make-donation", response_class=HTMLResponse)
-def read_root():
+@payapp.route("/donate/make-donation", methods=['GET'])
+def get_form():
     return generate_payment_html()
 
 # (Square) payment route
-@app.route("/process-payment", methods=['POST'])
+@payapp.route("/process-payment", methods=['POST'])
 def create_payment(payment: Payment):
     logging.info("Creating payment")
     # Charge the customer's card
