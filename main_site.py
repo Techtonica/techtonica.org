@@ -17,6 +17,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from square.client import Client
+from uuid import uuid4
 
 load_dotenv(find_dotenv(usecwd=True))
 
@@ -317,7 +318,19 @@ app2.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.route("/donation-form")
 def render_donation_form():
-    return render_template("donation-form.html")
+    context = {
+        PAYMENT_FORM_URL: PAYMENT_FORM_URL,
+        APPLICATION_ID: APPLICATION_ID,
+        LOCATION_ID: LOCATION_ID,
+        ACCOUNT_CURRENCY: ACCOUNT_CURRENCY,
+        ACCOUNT_COUNTRY: ACCOUNT_COUNTRY
+    }
+    return render_template("donation-form.html", PAYMENT_FORM_URL= PAYMENT_FORM_URL,
+        APPLICATION_ID= APPLICATION_ID,
+        LOCATION_ID= LOCATION_ID,
+        ACCOUNT_CURRENCY= ACCOUNT_CURRENCY,
+        ACCOUNT_COUNTRY= ACCOUNT_COUNTRY,
+        idempotencyKey= str( uuid4() ))
 
 # (Square) payment route
 @app2.route("/process-payment", methods=['POST'])
