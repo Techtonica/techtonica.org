@@ -250,21 +250,27 @@ Important: Only ever Pull form the server!
 
   // kill running staging environment
   pkill gunicorn_staging
+
   // enable and start the environment
   systemctl --user enable gunicorn_staging
   systemctl --user start gunicorn_staging
   systemctl --user status gunicorn_staging
-  
+
+
+
   // kill running testing environment
   pkill gunicorn_testing
-  // enable and start the environment
+
+// enable and start the environment
   systemctl --user enable gunicorn_testing
   systemctl --user start gunicorn_testing
   systemctl --user status gunicorn_testing
 
-  
+
+
   // kill running production environment
   pkill gunicorn_techtonica
+ 
   // enable and start the environment
   systemctl --user enable gunicorn_techtonica
   systemctl --user start gunicorn_techtonica
