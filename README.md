@@ -253,7 +253,7 @@ Important: Only ever Pull form the server!
 
   // enable and start the environment
   systemctl --user enable gunicorn_staging
-  systemctl --user start gunicorn_staging
+  systemctl --user restart gunicorn_staging // notice this command say restart instead of start to ensure cache is cleared
   systemctl --user status gunicorn_staging
 
 
@@ -263,7 +263,7 @@ Important: Only ever Pull form the server!
 
 // enable and start the environment
   systemctl --user enable gunicorn_testing
-  systemctl --user start gunicorn_testing
+  systemctl --user restart gunicorn_testing // notice this command say restart instead of start to ensure cache is cleared
   systemctl --user status gunicorn_testing
 
 
@@ -273,7 +273,7 @@ Important: Only ever Pull form the server!
  
   // enable and start the environment
   systemctl --user enable gunicorn_techtonica
-  systemctl --user start gunicorn_techtonica
+  systemctl --user restart gunicorn_techtonica // notice this command say restart instead of start to ensure cache is cleared
   systemctl --user status gunicorn_techtonica
   ```
 
