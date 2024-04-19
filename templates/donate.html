@@ -30,13 +30,32 @@ endblock title %} {% block content %}
   <div class="column">
     <h2>Credit Card</h2>
     <h3>
-      <a
+      <!--<a
         href="{{ url_for('render_donation_form') }}"
         class="sponsor"
         target="_blank"
         rel="noopener noreferrer"
-        >Click here to donate with a card.</a
+        >Coming soon!</a
+      > -->
+      <button 
+      class="sponsor"
+      style="font-family:lato,helvetica,sans-serif;font-size:1.17em;"
+      onclick="toggleDevGate()"
       >
+        Coming soon!
+      </button>
+      <form 
+      id="dev-gate" 
+      style="display:none;margin-top:1em;" 
+      action="{{ url_for('check-dev') }}" 
+      method="POST">
+        <input type="hidden" id="dev-redirect" value="{{ url_for('render_donation_form') }}">
+        <input type="hidden" id="nondev-redirect" value="{{ url_for('render_donate_page') }}">
+        <label for="dev-pwd">Developer Password:</label><br>
+        <input type="password" id="dev-pwd" name="dev-pwd">
+        <input type="submit" name="submit" value="submit">
+      </form>
+      <div id="error" style="display:none;color:red;">invalid password</div>
     </h3>
   </div>
   <div class="column">
@@ -92,5 +111,34 @@ endblock title %} {% block content %}
     <h3><a href="https://www.amazon.com/registry/wishlist/1XEZ5MMI0XLQF/ref=cm_sw_r_cp_ep_ws_aMCUAb3W607XK" class="sponsor" target="_blank" rel="noopener noreferrer">Purchase an item from our Amazon wish list.</a></h3>
   </div> -->
 </div>
+
+<script type="application/javascript">
+  function toggleDevGate(){
+    var x = document.getElementById("dev-gate");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+  }
+
+  $(document).ready(function() {
+      $('#dev-gate').on('submit',function(e){
+        $.ajax({
+          data: {
+            devpwd: $('#dev-pwd').val(),
+            devredirect: $('#dev-redirect').val(),
+            nondevredirect: $('#nondev-redirect').val(),
+          },
+          type: 'POST',
+          url: '/check-dev'
+        })
+        .done(function(data){
+          $('#error').text(data.error).show();
+        });
+        e.preventDefault();
+      });
+    });
+</script>
 
 {% endblock content %}
