@@ -47,15 +47,14 @@ endblock title %} {% block content %}
       <form 
       id="dev-gate" 
       style="display:none;margin-top:1em;" 
-      action="{{ url_for('check-dev') }}" 
-      method="POST">
-        <input type="hidden" id="dev-redirect" value="{{ url_for('render_donation_form') }}">
-        <input type="hidden" id="nondev-redirect" value="{{ url_for('render_donate_page') }}">
+      method="POST"
+      action="{{url_for('check_dev_password')}}">
+        <input type="hidden" id="devredirect" value="{{ url_for('render_donation_form') }}">
+        <input type="hidden" id="nondevredirect" value="{{ url_for('render_donate_page') }}">
         <label for="dev-pwd">Developer Password:</label><br>
-        <input type="password" id="dev-pwd" name="dev-pwd">
+        <input type="password" id="devpwd" name="devpwd">
         <input type="submit" name="submit" value="submit">
       </form>
-      <div id="error" style="display:none;color:red;">invalid password</div>
     </h3>
   </div>
   <div class="column">
@@ -112,6 +111,8 @@ endblock title %} {% block content %}
   </div> -->
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script type="application/javascript">
   function toggleDevGate(){
     var x = document.getElementById("dev-gate");
@@ -121,24 +122,6 @@ endblock title %} {% block content %}
     x.style.display = "none";
   }
   }
-
-  $(document).ready(function() {
-      $('#dev-gate').on('submit',function(e){
-        $.ajax({
-          data: {
-            devpwd: $('#dev-pwd').val(),
-            devredirect: $('#dev-redirect').val(),
-            nondevredirect: $('#nondev-redirect').val(),
-          },
-          type: 'POST',
-          url: '/check-dev'
-        })
-        .done(function(data){
-          $('#error').text(data.error).show();
-        });
-        e.preventDefault();
-      });
-    });
 </script>
 
 {% endblock content %}
