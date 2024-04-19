@@ -9,7 +9,7 @@ import configparser
 import pendulum
 from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
-from flask import Flask, redirect, render_template, url_for
+from flask import Flask, redirect, render_template, url_for, request, jsonify
 from flask_sslify import SSLify
 
 from fastapi import FastAPI
@@ -76,24 +76,28 @@ app = Flask(__name__)
 sslify = SSLify(app)
 
 # DEVELOPER PASSWORD
-@app.route("/check-dev", methods=['POST'])
+@app.route("/check-dev-password", methods=['GET','POST'])
 def check_dev_password():
     """
-    Checks for developer password before rendering the requested page
+    Checks for developer password before rendering the requested page,
+    returns error if password is incorrect or there is no redirect url
     """
-    dev_redirect = request.form['devredirect']
-    nondev_redirect = request.form['nondevredirect']
-    input_password = request.form['devpwd']
+    print("Checking developer password...")
+    dev_redirect = request.form.get('devredirect')
+    nondev_redirect = request.form.get('nondevredirect')
+    input_password = request.form.get('devpwd')
 
-    if inputpassword == dev_password:
-        if dev_redirect != ""
-            return redirect(dev_redirect, [pwd=input_password])
-        else if nondev_redirect != ""
-            return redirect(nondev_redirect)
-        else
+    if input_password == dev_password:
+        print("dev password validated!")
+        if dev_redirect != "":
+            return redirect(url_for(dev_redirect, pwd=input_password))
+        elif nondev_redirect != "":
+            return redirect(url_for(nondev_redirect))
+        else:
             return "Error: No redirect found", 404
-    else
-        return jsonify({'error':"Error! Incorrect password"})
+    else:
+        print("ERROR: Incorrect dev password")
+        return "Error: Access denied", 400
 
 
 # MAIN HANDLERS
@@ -234,7 +238,7 @@ def render_ft_program_page():
     return render_template("full-time-program.html")
 
 
-@app.route("/donate/")
+@app.route("/donate/", methods=['GET', 'POST'])
 def render_donate_page():
     """
     Renders the donate page from jinja2 template
@@ -253,7 +257,7 @@ app2.mount("/static", StaticFiles(directory="static"), name="static")
 def render_donation_form():
     if request.args[pwd] != dev_password:
         return "Access denied", 400
-    else
+    else:
         context = {
             PAYMENT_FORM_URL: PAYMENT_FORM_URL,
             APPLICATION_ID: APPLICATION_ID,
