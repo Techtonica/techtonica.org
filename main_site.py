@@ -82,16 +82,17 @@ def check_dev_password():
     Checks for developer password before rendering the requested page,
     returns error if password is incorrect or there is no redirect url
     """
-    print("Checking developer password...")
+    print("Dev access requested")
     dev_redirect = request.form.get('devredirect')
     nondev_redirect = request.form.get('nondevredirect')
     input_password = request.form.get('devpwd')
+    print("Requested route: " + str(dev_redirect))
 
-    if input_password == dev_password:
+    if input_password is not None and input_password == dev_password:
         print("dev password validated!")
-        if dev_redirect != "":
+        if dev_redirect is not None:
             return redirect(url_for(dev_redirect, pwd=input_password))
-        elif nondev_redirect != "":
+        elif nondev_redirect is not None:
             return redirect(url_for(nondev_redirect))
         else:
             return "Error: No redirect found", 404
@@ -255,7 +256,7 @@ app2.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.route("/donation-form")
 def render_donation_form():
-    if request.args[pwd] != dev_password:
+    if request.args['pwd'] != dev_password:
         return "Access denied", 400
     else:
         context = {

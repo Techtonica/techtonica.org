@@ -49,9 +49,9 @@ endblock title %} {% block content %}
       style="display:none;margin-top:1em;" 
       method="POST"
       action="{{url_for('check_dev_password')}}">
-        <input type="hidden" id="devredirect" value="{{ url_for('render_donation_form') }}">
-        <input type="hidden" id="nondevredirect" value="{{ url_for('render_donate_page') }}">
-        <label for="dev-pwd">Developer Password:</label><br>
+        <input style="display:none" type="text" id="devredirect" name="devredirect" value="render_donation_form">
+        <input style="display:none" type="text" id="nondevredirect" name="nondevredirect" value="render_donate_page">
+        <label for="devpwd">Developer Password:</label><br>
         <input type="password" id="devpwd" name="devpwd">
         <input type="submit" name="submit" value="submit">
       </form>
