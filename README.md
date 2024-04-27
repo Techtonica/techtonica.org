@@ -248,33 +248,21 @@ Important: Only ever Pull form the server!
 
   ```sh
 
-  // kill running staging environment
-  pkill gunicorn_staging
-
-  // enable and start the environment
-  systemctl --user enable gunicorn_staging
-  systemctl --user restart gunicorn_staging // notice this command say restart instead of start to ensure cache is cleared
+  // staging.techtonica.org
+  systemctl --user s stop unicorn_staging
+  systemctl --user restart gunicorn_staging 
   systemctl --user status gunicorn_staging
 
-
-
-  // kill running testing environment
-  pkill gunicorn_testing
-
-// enable and start the environment
-  systemctl --user enable gunicorn_testing
-  systemctl --user restart gunicorn_testing // notice this command say restart instead of start to ensure cache is cleared
+	       // testing.techtonica.org
+  systemctl --user stop gunicorn_testing
+  systemctl --user restart gunicorn_testing
   systemctl --user status gunicorn_testing
 
-
-
-  // kill running production environment
-  pkill gunicorn_techtonica
- 
-  // enable and start the environment
+  // techtonica.org
   systemctl --user enable gunicorn_techtonica
-  systemctl --user restart gunicorn_techtonica // notice this command say restart instead of start to ensure cache is cleared
+  systemctl --user restart gunicorn_techtonica
   systemctl --user status gunicorn_techtonica
+
   ```
 
 1. Deactivate virtual envirement and exit server:
