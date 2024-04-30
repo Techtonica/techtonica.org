@@ -161,6 +161,12 @@ def render_donate_page():
     """
     return render_template("donate.html")
 
+@app.route("/donation-form")
+def render_donation_form():
+    """
+    Renders the donation-form page from jinja2 template
+    """
+    return render_template("donation-form.html")
 
 @app.route("/volunteer/")
 def render_volunteer_page():
