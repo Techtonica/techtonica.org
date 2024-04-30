@@ -9,7 +9,7 @@ import configparser
 import pendulum
 from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
-from flask import Flask, redirect, render_template, url_for
+from flask import Flask, redirect, render_template, url_for, request, jsonify
 from flask_sslify import SSLify
 
 from fastapi import FastAPI
@@ -47,6 +47,9 @@ elif result.is_error():
 config = configparser.ConfigParser()
 config.read("config.ini")
 
+# Retrieve developer password
+dev_password = config.get("DEFAULT", "dev_password")
+
 # Retrieve credentials based on is_prod
 CONFIG_TYPE = config.get("DEFAULT", "environment").upper()
 PAYMENT_FORM_URL = (
@@ -63,11 +66,6 @@ ACCOUNT_CURRENCY = location["currency"]
 ACCOUNT_COUNTRY = location["country"]
 
 
-
-
-
-
-
 # Gracefully handle running locally without eventbrite token
 try:
     eventbrite = Eventbrite(os.environ["EVENTBRITE_OAUTH_TOKEN"])
@@ -76,6 +74,31 @@ except BaseException:
 
 app = Flask(__name__)
 sslify = SSLify(app)
+
+# DEVELOPER PASSWORD
+@app.route("/check-dev-password", methods=['GET','POST'])
+def check_dev_password():
+    """
+    Checks for developer password before rendering the requested page,
+    returns error if password is incorrect or there is no redirect url
+    """
+    print("Dev access requested")
+    dev_redirect = request.form.get('devredirect')
+    nondev_redirect = request.form.get('nondevredirect')
+    input_password = request.form.get('devpwd')
+    print("Requested route: " + str(dev_redirect))
+
+    if input_password is not None and input_password == dev_password:
+        print("dev password validated!")
+        if dev_redirect is not None:
+            return redirect(url_for(dev_redirect, pwd=input_password))
+        elif nondev_redirect is not None:
+            return redirect(url_for(nondev_redirect))
+        else:
+            return "Error: No redirect found", 404
+    else:
+        print("ERROR: Incorrect dev password")
+        return "Error: Access denied", 400
 
 
 # MAIN HANDLERS
@@ -209,98 +232,13 @@ def render_ft_program_page():
     return render_template("full-time-program.html")
 
 
-@app.route("/donate/")
+@app.route("/donate/", methods=['GET', 'POST'])
 def render_donate_page():
     """
     Renders the donate page from jinja2 template
     """
     return render_template("donate.html")
 
-
-def generate_payment_html():
-    html_content = (
-        """<!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Make Payment</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- link to the Web SDK library -->
-        <script type="text/javascript" src="""
-        + PAYMENT_FORM_URL
-        + """></script>
-
-        <script type="application/javascript">
-            window.applicationId = '"""
-        + APPLICATION_ID
-        + """';
-            window.locationId = '"""
-        + LOCATION_ID
-        + """';
-            window.currency = '"""
-        + ACCOUNT_CURRENCY
-        + """';
-            window.country = '"""
-        + ACCOUNT_COUNTRY
-        + """';
-            window.idempotencyKey = '"""
-        + str(uuid.uuid4())
-        + """';
-        </script>
-
-        <!-- link to the custom styles for Web SDK -->
-        <link rel='stylesheet', href='/static/stylesheets/sq-payment.css' />
-        <link rel='stylesheet', href='/static/stylesheets/style.css' />
-      </head>
-
-      <body>
-        <form class="payment-form" id="fast-checkout">
-          <div class="wrapper">
-            <div id="apple-pay-button" alt="apple-pay" type="button"></div>
-            <div id="google-pay-button" alt="google-pay" type="button"></div>
-            <div class="border">
-              <span>OR</span>
-            </div>
-
-            <div id="ach-wrapper">
-              <label for="ach-account-holder-name">Full Name</label>
-              <input
-                id="ach-account-holder-name"
-                type="text"
-                placeholder="Jane Doe"
-                name="ach-account-holder-name"
-                autocomplete="name"
-              />
-              <span id="ach-message"></span>
-              <button id="ach-button" type="button">
-                Pay with Bank Account
-              </button>
-              <div class="border">
-                <span>OR</span>
-              </div>
-            </div>
-
-            <div id="card-container"></div>
-            <button id="card-button" type="button">
-              Pay with Card
-            </button>
-            <span id="payment-flow-message">
-          </div>
-        </form>
-        <script type="text/javascript" src="/static/js/sq-ach.js"></script>
-        <script type="text/javascript" src="/static/js/sq-apple-pay.js"></script>
-        <script type="text/javascript" src="/static/js/sq-google-pay.js"></script>
-        <script type="text/javascript" src="/static/js/sq-card-pay.js"></script>
-      </body>
-
-      <!-- link to the local Web SDK initialization -->
-      <script type="text/javascript" src="/static/js/sq-payment-flow.js"></script>
-    </html>
-    """
-    )
-    return HTMLResponse(content=html_content, status_code=200)
 
 class Payment(BaseModel):
     token: str
@@ -311,19 +249,22 @@ app2.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.route("/donation-form")
 def render_donation_form():
-    context = {
-        PAYMENT_FORM_URL: PAYMENT_FORM_URL,
-        APPLICATION_ID: APPLICATION_ID,
-        LOCATION_ID: LOCATION_ID,
-        ACCOUNT_CURRENCY: ACCOUNT_CURRENCY,
-        ACCOUNT_COUNTRY: ACCOUNT_COUNTRY
-    }
-    return render_template("donation-form.html", PAYMENT_FORM_URL= PAYMENT_FORM_URL,
-        APPLICATION_ID= APPLICATION_ID,
-        LOCATION_ID= LOCATION_ID,
-        ACCOUNT_CURRENCY= ACCOUNT_CURRENCY,
-        ACCOUNT_COUNTRY= ACCOUNT_COUNTRY,
-        idempotencyKey= str( uuid4() ))
+    if request.args['pwd'] != dev_password:
+        return "Access denied", 400
+    else:
+        context = {
+            PAYMENT_FORM_URL: PAYMENT_FORM_URL,
+            APPLICATION_ID: APPLICATION_ID,
+            LOCATION_ID: LOCATION_ID,
+            ACCOUNT_CURRENCY: ACCOUNT_CURRENCY,
+            ACCOUNT_COUNTRY: ACCOUNT_COUNTRY
+        }
+        return render_template("donation-form.html", PAYMENT_FORM_URL= PAYMENT_FORM_URL,
+            APPLICATION_ID= APPLICATION_ID,
+            LOCATION_ID= LOCATION_ID,
+            ACCOUNT_CURRENCY= ACCOUNT_CURRENCY,
+            ACCOUNT_COUNTRY= ACCOUNT_COUNTRY,
+            idempotencyKey= str( uuid4() ))
 
 # (Square) payment route
 @app2.route("/process-payment", methods=['POST'])
