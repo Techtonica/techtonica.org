@@ -261,7 +261,7 @@ Important: Only ever Pull form the server!
   systemctl --user status gunicorn_testing
 
   // techtonica.org
-  systemctl --user enable gunicorn_techtonica
+  systemctl --user stop gunicorn_techtonica
   systemctl --user enable gunicorn_techtonica
   systemctl --user restart gunicorn_techtonica
   systemctl --user status gunicorn_techtonica
