@@ -57,9 +57,9 @@ PAYMENT_FORM_URL = (
     if CONFIG_TYPE == "PRODUCTION"
     else "https://sandbox.web.squarecdn.com/v1/square.js"
 )
-APPLICATION_ID = config.get(CONFIG_TYPE, "square_application_id")
-LOCATION_ID = config.get(CONFIG_TYPE, "square_location_id")
-ACCESS_TOKEN = config.get(CONFIG_TYPE, "square_access_token")
+APPLICATION_ID = "sandbox-sq0idb-EatW_1CuQHzCGlGDkkxJhw"
+LOCATION_ID = "L0VNGH5V47Y5Q"
+ACCESS_TOKEN = " EAAAl_0QhSnq0KtkiiftPFciQnKzncpiOrxnvLC-cYWs7gAkHmlWUvrwh6Y7gNgy"
 
 location = client.locations.retrieve_location(location_id=LOCATION_ID).body["location"]
 ACCOUNT_CURRENCY = location["currency"]
