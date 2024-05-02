@@ -244,11 +244,26 @@ Important: Only ever Pull form the server!
    pip-sync
    ```
 
-1. "Restart" the passenger process:
+1. "Restart" the server to showcase new changes 
 
-   ```sh
-   cd .. && touch tmp/restart.txt
-   ```
+  ```sh
+
+  // staging.techtonica.org
+  systemctl --user s stop unicorn_staging
+  systemctl --user restart gunicorn_staging 
+  systemctl --user status gunicorn_staging
+
+	       // testing.techtonica.org
+  systemctl --user stop gunicorn_testing
+  systemctl --user restart gunicorn_testing
+  systemctl --user status gunicorn_testing
+
+  // techtonica.org
+  systemctl --user enable gunicorn_techtonica
+  systemctl --user restart gunicorn_techtonica
+  systemctl --user status gunicorn_techtonica
+
+  ```
 
 1. Deactivate virtual envirement and exit server:
 
