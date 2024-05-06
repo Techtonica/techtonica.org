@@ -249,16 +249,19 @@ Important: Only ever Pull form the server!
   ```sh
 
   // staging.techtonica.org
-  systemctl --user s stop unicorn_staging
+  systemctl --user stop gunicorn_staging
+  systemctl --user enable gunicorn_staging
   systemctl --user restart gunicorn_staging 
   systemctl --user status gunicorn_staging
 
-	       // testing.techtonica.org
+	// testing.techtonica.org
   systemctl --user stop gunicorn_testing
+  systemctl --user enable gunicorn_testing
   systemctl --user restart gunicorn_testing
   systemctl --user status gunicorn_testing
 
   // techtonica.org
+  systemctl --user stop gunicorn_techtonica
   systemctl --user enable gunicorn_techtonica
   systemctl --user restart gunicorn_techtonica
   systemctl --user status gunicorn_techtonica
