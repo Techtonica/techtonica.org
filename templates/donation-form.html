@@ -1,5 +1,10 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
 Donation Form {% endblock title %} {% block content %}
+<!-- link to the Web SDK library -->
+<script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
+<!-- link to the custom styles for Web SDK -->
+<link rel='stylesheet', href='/static/css/sq-payment.css' />
+
 <div class="row row__center about-us">
   <div class="column hidden-med">
     <form class="payment-form" id="fast-checkout">
@@ -30,4 +35,7 @@ Donation Form {% endblock title %} {% block content %}
     </form>
   </div>
 </div>
+
+<!-- link to the local Web SDK initialization -->
+<script type="text/javascript" src="/static/js/payment.js"></script>
 {% endblock content %}
