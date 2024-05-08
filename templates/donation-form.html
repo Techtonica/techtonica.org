@@ -1,19 +1,6 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
 Donation Form {% endblock title %} {% block content %}
 
-        <!-- link to the Web SDK library -->
-        <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
-
-        <script type="text/javascript" src='{{ PAYMENT_FORM_URL }}'></script>
-
-        <script type="application/javascript">
-            window.applicationId = "{{ APPLICATION_ID }}";
-            window.locationId = "{{ LOCATION_ID }}";
-            window.currency = "{{ ACCOUNT_CURRENCY }}";
-            window.country = "{{ ACCOUNT_COUNTRY }}";
-            window.idempotencyKey = "{{ idempotencyKey }}";
-        </script>
-
         <!-- link to the custom styles for Web SDK -->
         <link rel='stylesheet', href='/static/css/sq-payment.css' />
       </head>
@@ -46,9 +33,6 @@ Donation Form {% endblock title %} {% block content %}
           </div>
         </form>
       </body>
-
-      <!-- link to the local Web SDK initialization -->
-      <script type="text/javascript" src="/static/js/payment.js"></script>
 
       {% endblock content %}
 {% endblock content %}
