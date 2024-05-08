@@ -175,7 +175,7 @@ def render_donation_form():
     idempotencyKey= str( uuid4() )
     """
 
-    return render_template("donation-form.html", APPLICATION_ID= 'sandbox-sq0idb-EatW_1CuQHzCGlGDkkxJhw')
+    return render_template("donation-form.html", APPLICATION_ID='sandbox-sq0idb-EatW_1CuQHzCGlGDkkxJhw')
 
 @app.route("/volunteer/")
 def render_volunteer_page():
