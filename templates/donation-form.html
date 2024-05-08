@@ -1,29 +1,33 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
 Donation Form {% endblock title %} {% block content %}
-  <form class="payment-form" id="fast-checkout">
-    <div class="wrapper">
-      <div id="ach-wrapper">
-        <label for="ach-account-holder-name">Full Name</label>
-        <input
-          id="ach-account-holder-name"
-          type="text"
-          placeholder="Jane Doe"
-          name="ach-account-holder-name"
-          autocomplete="name"
-        />
-        <span id="ach-message"></span>
-        <button id="ach-button" type="button">
-          Pay with Bank Account
-        </button>
-        <div class="border">
-          <span>OR</span>
+<div class="row row__center about-us">
+  <div class="column hidden-med">
+    <form class="payment-form" id="fast-checkout">
+      <div class="wrapper">
+        <div id="ach-wrapper">
+          <label for="ach-account-holder-name">Full Name</label>
+          <input
+            id="ach-account-holder-name"
+            type="text"
+            placeholder="Jane Doe"
+            name="ach-account-holder-name"
+            autocomplete="name"
+          />
+          <span id="ach-message"></span>
+          <button id="ach-button" type="button">
+            Pay with Bank Account
+          </button>
+          <div class="border">
+            <span>OR</span>
+          </div>
         </div>
+        <div id="card-container"></div>
+        <button id="card-button" type="button">
+          Pay with Card
+        </button>
+        <span id="payment-flow-message">
       </div>
-      <div id="card-container"></div>
-      <button id="card-button" type="button">
-        Pay with Card
-      </button>
-      <span id="payment-flow-message">
-    </div>
-  </form>
+    </form>
+  </div>
+</div>
 {% endblock content %}
