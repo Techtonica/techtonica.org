@@ -173,14 +173,15 @@ def render_donation_form():
     """
     Renders the donation-form page from jinja2 template
     """
-
+    """
+    'idempotencyKey'=str( uuid4() )
+    """
     return render_template("donation-form.html", 
-        'APPLICATION_ID'='sandbox-sq0idb-EatW_1CuQHzCGlGDkkxJhw', 
-        'PAYMENT_FORM_URL'="https://sandbox.web.squarecdn.com/v1/square.js",
-        'LOCATION_ID'='L0VNGH5V47Y5Q',
-        'ACCOUNT_CURRENCY'="USD",
-        'ACCOUNT_COUNTRY'="ACCOUNT_COUNTRY",
-        'idempotencyKey'=str( uuid4() ))
+        APPLICATION_ID='sandbox-sq0idb-EatW_1CuQHzCGlGDkkxJhw', 
+        PAYMENT_FORM_URL="https://sandbox.web.squarecdn.com/v1/square.js",
+        LOCATION_ID='L0VNGH5V47Y5Q',
+        ACCOUNT_CURRENCY="USD",
+        ACCOUNT_COUNTRY="ACCOUNT_COUNTRY")
 
 @app.route("/volunteer/")
 def render_volunteer_page():
