@@ -3,6 +3,7 @@ Donation Form {% endblock title %} {% block content %}
 <!-- link to the Web SDK library -->
 <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
 <script type="text/javascript" src='{{ PAYMENT_FORM_URL }}'></script>
+<script type="text/javascript" src="/static/js/payment.js"></script>
 <script type="application/javascript">
   window.applicationId = "{{ APPLICATION_ID }}";
   window.locationId = "{{ LOCATION_ID }}";
@@ -37,7 +38,7 @@ Donation Form {% endblock title %} {% block content %}
         <div id="card-container"></div>
         <button id="card-button" type="button">
           Pay with Card
-          Testing for break: donation-form.html & main_site.py (8)
+          Testing for break: donation-form.html & main_site.py (9)
         </button>
         <span id="payment-flow-message">
       </div>
