@@ -10,6 +10,7 @@ from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
 from flask import Flask, redirect, render_template, url_for
 from flask_sslify import SSLify
+from uuid import uuid4
 
 load_dotenv(find_dotenv(usecwd=True))
 
