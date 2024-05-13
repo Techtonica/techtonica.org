@@ -7,3 +7,6 @@ pip-tools
 python-dotenv
 requests
 sendgrid
+fastapi
+squareup
+pydantic
