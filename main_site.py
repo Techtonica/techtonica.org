@@ -6,10 +6,15 @@ import os
 import sys
 
 import pendulum
-from dotenv import find_dotenv, load_dotenv
+from dotenv import find_dotenv, load_dotenv1
 from eventbrite import Eventbrite
-from flask import Flask, redirect, render_template, url_for
+from flask import Flask, redirect, render_template, url_for, request, jsonify
 from flask_sslify import SSLify
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel
+from square.client import Client
 from uuid import uuid4
 
 load_dotenv(find_dotenv(usecwd=True))
