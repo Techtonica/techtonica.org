@@ -6,7 +6,7 @@ import os
 import sys
 
 import pendulum
-from dotenv import find_dotenv, load_dotenv1
+from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
 from flask import Flask, redirect, render_template, url_for, request, jsonify
 from flask_sslify import SSLify
