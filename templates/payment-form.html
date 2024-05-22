@@ -10,14 +10,12 @@ Donation Form {% endblock title %} {% block content %}
   window.country = "{{ ACCOUNT_COUNTRY }}";
   window.idempotencyKey = "{{ idempotencyKey }}";
 </script>
-<!-- link to the custom styles for Web SDK -->
-<link rel='stylesheet', href='/static/css/sq-payment.css' />
 
 <div class="row row__center about-us">
   <div class="column hidden-med">
     <form class="payment-form" id="fast-checkout">
       <div class="wrapper">
-        <div id="ach-wrapper">
+        <!-- <div id="ach-wrapper">
           <label for="ach-account-holder-name">Full Name</label>
           <input
             id="ach-account-holder-name"
@@ -33,7 +31,7 @@ Donation Form {% endblock title %} {% block content %}
           <div class="border">
             <span>OR</span>
           </div>
-        </div>
+        </div> -->
         <div id="card-container"></div>
         <button id="card-button" type="button">
           Pay with Card
