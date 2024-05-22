@@ -19,7 +19,7 @@ async function CardPay(fieldEl, buttonEl) {
       try {
         const result = await card.tokenize();
         if (result.status === 'OK') {
-          // Use global method from sq-payment-flow.js
+          // Use global method from payment.js
           window.createPayment(result.token);
         }
       } catch (e) {
@@ -85,82 +85,10 @@ async function ACHPay(buttonEl) {
     buttonEl.addEventListener('click', eventHandler);
   }
 
-async function ApplePay(buttonEl) {
-    const paymentRequest = window.payments.paymentRequest(
-      // Use global method from sq-payment-flow.js
-      window.getPaymentRequest()
-    );
-
-    let applePay;
-    try {
-      applePay = await window.payments.applePay(paymentRequest);
-    } catch (e) {
-      console.error(e)
-      return;
-    }
-
-    async function eventHandler(event) {
-      // Clear any existing messages
-      window.paymentFlowMessageEl.innerText = '';
-
-      try {
-        const result = await applePay.tokenize();
-        if (result.status === 'OK') {
-          // Use global method from sq-payment-flow.js
-          window.createPayment(result.token);
-        }
-      } catch (e) {
-        if (e.message) {
-          window.showError(`Error: ${e.message}`);
-        } else {
-          window.showError('Something went wrong');
-        }
-      }
-    }
-
-    buttonEl.addEventListener('click', eventHandler);
-  }
-
-async function GooglePay(buttonEl) {
-    const paymentRequest = window.payments.paymentRequest(
-      // Use global method from sq-payment-flow.js
-      window.getPaymentRequest()
-    );
-    const googlePay = await payments.googlePay(paymentRequest);
-    await googlePay.attach(buttonEl);
-
-    async function eventHandler(event) {
-      // Clear any existing messages
-      window.paymentFlowMessageEl.innerText = '';
-
-      try {
-        const result = await googlePay.tokenize();
-        if (result.status === 'OK') {
-          // Use global method from sq-payment-flow.js
-          window.createPayment(result.token);
-        }
-      } catch (e) {
-        if (e.message) {
-          window.showError(`Error: ${e.message}`);
-        } else {
-          window.showError('Something went wrong');
-        }
-      }
-    }
-
-    buttonEl.addEventListener('click', eventHandler);
-}
-
 async function SquarePaymentFlow() {
 
     // Create card payment object and attach to page
     CardPay(document.getElementById('card-container'), document.getElementById('card-button'));
-
-    // Create Apple pay instance
-    ApplePay(document.getElementById('apple-pay-button'));
-
-    // Create Google pay instance
-    GooglePay(document.getElementById('google-pay-button'));
 
     // Create ACH payment
     ACHPay(document.getElementById('ach-button'));
@@ -212,35 +140,5 @@ async function SquarePaymentFlow() {
       console.error('Error:', error);
     }
   }
-
-  // Hardcoded for testing purpose, only used for Apple Pay and Google Pay
-  window.getPaymentRequest = function() {
-    return {
-      countryCode: window.country,
-      currencyCode: window.currency,
-      lineItems: [
-        { amount: '1.23', label: 'Cat', pending: false },
-        { amount: '4.56', label: 'Dog', pending: false },
-      ],
-      requestBillingContact: false,
-      requestShippingContact: true,
-      shippingContact: {
-        addressLines: ['123 Test St', ''],
-        city: 'San Francisco',
-        countryCode: 'US',
-        email: 'test@test.com',
-        familyName: 'Last Name',
-        givenName: 'First Name',
-        phone: '1111111111',
-        postalCode: '94109',
-        state: 'CA',
-      },
-      shippingOptions: [
-        { amount: '0.00', id: 'FREE', label: 'Free' },
-        { amount: '9.99', id: 'XP', label: 'Express' },
-      ],
-      total: { amount: '1.00', label: 'Total', pending: false },
-    };
-  };
 
   SquarePaymentFlow();
