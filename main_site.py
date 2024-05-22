@@ -254,12 +254,12 @@ class Payment(BaseModel):
 app2 = FastAPI()
 app2.mount("/static", StaticFiles(directory="static"), name="static")
 
-@app.route("/donation-form")
-def render_donation_form():
+@app.route("/payment-form")
+def render_payment_form():
     """
-    Renders the donation-form page from jinja2 template
+    Renders the payment-form page from jinja2 template
     """
-    return render_template("donation-form.html", 
+    return render_template("payment-form.html", 
         APPLICATION_ID='sandbox-sq0idb-EatW_1CuQHzCGlGDkkxJhw', 
         PAYMENT_FORM_URL="https://sandbox.web.squarecdn.com/v1/square.js",
         LOCATION_ID='L0VNGH5V47Y5Q',
