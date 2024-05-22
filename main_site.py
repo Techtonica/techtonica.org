@@ -252,7 +252,7 @@ class Payment(BaseModel):
     idempotencyKey: str
 
 app2 = FastAPI()
-app2.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.route("/payment-form")
 def render_payment_form():
@@ -268,7 +268,7 @@ def render_payment_form():
         idempotencyKey=str( uuid4() ))
 
 # (Square) payment route
-@app2.post("/process-payment")
+@app.post("/process-payment")
 def create_payment(payment: Payment):
     logging.info("Creating payment")
     # Charge the customer's card
