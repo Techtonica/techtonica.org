@@ -167,19 +167,6 @@ def render_donate_page():
     """
     return render_template("donate.html")
 
-@app.route("/donation-form")
-def render_donation_form():
-    """
-    Renders the donation-form page from jinja2 template
-    """
-    return render_template("donation-form.html", 
-        APPLICATION_ID='sandbox-sq0idb-EatW_1CuQHzCGlGDkkxJhw', 
-        PAYMENT_FORM_URL="https://sandbox.web.squarecdn.com/v1/square.js",
-        LOCATION_ID='L0VNGH5V47Y5Q',
-        ACCOUNT_CURRENCY="USD",
-        ACCOUNT_COUNTRY="ACCOUNT_COUNTRY",
-        idempotencyKey=str( uuid4() ))
-
 @app.route("/volunteer/")
 def render_volunteer_page():
     """
@@ -236,6 +223,50 @@ class Event(object):
                 "localized_multi_line_address_display"
             ]
 
+
+# ONLINE PAYMENT HANDLING
+
+class Payment(BaseModel):
+    token: str
+    idempotencyKey: str
+
+app2 = FastAPI()
+app2.mount("/static", StaticFiles(directory="static"), name="static")
+
+@app.route("/donation-form")
+def render_donation_form():
+    """
+    Renders the donation-form page from jinja2 template
+    """
+    return render_template("donation-form.html", 
+        APPLICATION_ID='sandbox-sq0idb-EatW_1CuQHzCGlGDkkxJhw', 
+        PAYMENT_FORM_URL="https://sandbox.web.squarecdn.com/v1/square.js",
+        LOCATION_ID='L0VNGH5V47Y5Q',
+        ACCOUNT_CURRENCY="USD",
+        ACCOUNT_COUNTRY="ACCOUNT_COUNTRY",
+        idempotencyKey=str( uuid4() ))
+
+# (Square) payment route
+@app2.route("/process-payment", methods=['POST'])
+def create_payment(payment: Payment):
+    logging.info("Creating payment")
+    # Charge the customer's card
+    create_payment_response = client.payments.create_payment(
+        body={
+            "source_id": payment.token,
+            "idempotency_key": str(uuid.uuid4()),
+            "amount_money": {
+                "amount": 100,  # $1.00 charge
+                "currency": ACCOUNT_CURRENCY,
+            },
+        }
+    )
+
+    logging.info("Payment created")
+    if create_payment_response.is_success():
+        return create_payment_response.body
+    elif create_payment_response.is_error():
+        return create_payment_response
 
 if __name__ == "__main__":
     app.debug = False
