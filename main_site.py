@@ -275,7 +275,7 @@ def render_payment_form():
         idempotencyKey=str( uuid4() ))
 
 # (Square) payment route
-@app2.route("/process-payment", methods=['POST'])
+@app2.post("/process-payment")
 def create_payment(payment: Payment):
     logging.info("Creating payment")
     # Charge the customer's card
