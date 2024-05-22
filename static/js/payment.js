@@ -34,6 +34,7 @@ async function CardPay(fieldEl, buttonEl) {
     buttonEl.addEventListener('click', eventHandler);
   }
 
+  /*
 async function ACHPay(buttonEl) {
     const accountHolderNameEl = document.getElementById('ach-account-holder-name');
     const achMessageEl = document.getElementById('ach-message');
@@ -84,6 +85,7 @@ async function ACHPay(buttonEl) {
 
     buttonEl.addEventListener('click', eventHandler);
   }
+*/
 
 async function SquarePaymentFlow() {
 
@@ -91,7 +93,7 @@ async function SquarePaymentFlow() {
     CardPay(document.getElementById('card-container'), document.getElementById('card-button'));
 
     // Create ACH payment
-    ACHPay(document.getElementById('ach-button'));
+    //ACHPay(document.getElementById('ach-button'));
   }
 
   window.payments = Square.payments(window.applicationId, window.locationId);
