@@ -13,6 +13,7 @@ from flask_sslify import SSLify
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.wsgi import WSGIMiddleware
 from pydantic import BaseModel
 from square.client import Client
 from uuid import uuid4

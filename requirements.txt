@@ -4,6 +4,8 @@
 #
 #    pip-compile
 #
+a2wsgi==1.10.4
+    # via -r requirements.in
 annotated-types==0.6.0
     # via pydantic
 anyio==4.3.0
