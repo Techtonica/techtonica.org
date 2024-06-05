@@ -122,6 +122,13 @@ def render_tapm_page():
 #     """
 #     return render_template("partnershipsmanager.html")
 
+@app.route("/openings/sponsorshipslead/")
+def render_sponsorshipslead_page():
+    """
+    Renders the Sponsorships Lead JD from jinja2 template
+    """
+    return render_template("sponsorshipslead.html")
+
 @app.route("/openings/curriculumdev/")
 def render_curriculumdev_page():
     """
