@@ -3,7 +3,7 @@ Job Posting Form {% endblock title %} {% block content %}
 
 <div class="row row__center about-us">
   <div class="column hidden-med">
-    <form action="{{ url_for('upload_posting') }}" method="POST" class="job-form" id="job-form">
+    <form action="{{ url_for('send_posting') }}" method="POST" class="job-form" id="job-form">
       <div class="wrapper">
         <label for="firstname">First name:</label>
         <input type="text" id="firstname" name="firstname">
