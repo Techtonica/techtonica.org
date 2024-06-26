@@ -6,6 +6,7 @@ import os
 import sys
 
 import pendulum
+import requests
 from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
 from flask import Flask, redirect, render_template, url_for, request, jsonify
@@ -296,6 +297,27 @@ def create_payment(payment: Payment):
         return create_payment_response.body
     elif create_payment_response.is_error():
         return create_payment_response
+
+
+@app.route("/job-posting-form")
+def render_job_posting_form():
+    """
+    Renders the job-posting-form page from jinja2 template
+    """
+    return render_template("job-posting-form.html")
+
+class Posting:
+    firstname: str
+    lastname: str
+    email: str
+
+
+@app.route('/upload-posting', methods=['POST'])
+def upload_posting():
+    data = request.form
+    print(f"Received data: {data}")
+    return jsonify({'message': 'Data received successfully', 'received_data': data})
+
 
 if __name__ == "__main__":
     app.debug = False
