@@ -7,6 +7,7 @@ import sys
 
 import pendulum
 import requests
+import json
 from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
 from flask import Flask, redirect, render_template, url_for, request, jsonify
@@ -308,7 +309,13 @@ class Posting:
 @app.route('/upload-posting', methods=['POST'])
 def upload_posting():
     data = request.form
-    print(f"Received data: {data}")
+    print(f"Received data: {json.dumps(data)}")
+    url = 'https://hooks.slack.com/services/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'
+
+    x = requests.post(url, 
+        json = {'text': f"A new job has been posted! Details: {json.dumps(data)}"})
+
+    print(f"Message sent: {x.text}")
     return jsonify({'message': 'Data received successfully', 'received_data': data})
 
 
