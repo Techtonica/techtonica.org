@@ -30,31 +30,13 @@ endblock title %} {% block content %}
   <div class="column">
     <h2>Credit Card</h2>
     <h3>
-      <!--<a
-        href="{{ url_for('render_donation_form') }}"
+      <a
+        href="http://techtonica.wedid.it/"
         class="sponsor"
         target="_blank"
         rel="noopener noreferrer"
-        >Coming soon!</a
-      > -->
-      <button 
-      class="sponsor"
-      style="font-family:lato,helvetica,sans-serif;font-size:1.17em;"
-      onclick="toggleDevGate()"
+        >Click here to donate with a card.</a
       >
-        Coming soon!
-      </button>
-      <form 
-      id="dev-gate" 
-      style="display:none;margin-top:1em;" 
-      method="POST"
-      action="{{url_for('check_dev_password')}}">
-        <input style="display:none" type="text" id="devredirect" name="devredirect" value="render_donation_form">
-        <input style="display:none" type="text" id="nondevredirect" name="nondevredirect" value="render_donate_page">
-        <label for="devpwd">Developer Password:</label><br>
-        <input type="password" id="devpwd" name="devpwd">
-        <input type="submit" name="submit" value="submit">
-      </form>
     </h3>
   </div>
   <div class="column">
@@ -110,18 +92,5 @@ endblock title %} {% block content %}
     <h3><a href="https://www.amazon.com/registry/wishlist/1XEZ5MMI0XLQF/ref=cm_sw_r_cp_ep_ws_aMCUAb3W607XK" class="sponsor" target="_blank" rel="noopener noreferrer">Purchase an item from our Amazon wish list.</a></h3>
   </div> -->
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script type="application/javascript">
-  function toggleDevGate(){
-    var x = document.getElementById("dev-gate");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-  }
-</script>
 
 {% endblock content %}
