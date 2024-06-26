@@ -313,8 +313,8 @@ class Posting:
     email: str
 
 
-@app.route('/upload-posting', methods=['POST'])
-def upload_posting():
+@app.route('/send-posting', methods=['POST'])
+def send_posting():
     data = request.form
     print(f"Received data: {json.dumps(data)}")
     url = 'https://hooks.slack.com/services/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'
