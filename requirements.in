@@ -11,3 +11,4 @@ fastapi
 squareup
 pydantic
 a2wsgi
+configparser

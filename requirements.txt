@@ -22,6 +22,8 @@ click==8.1.7
     # via
     #   flask
     #   pip-tools
+configparser==7.0.0
+    # via -r requirements.in
 deprecation==2.1.0
     # via squareup
 eventbrite==3.3.5
