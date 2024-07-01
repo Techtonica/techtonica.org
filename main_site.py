@@ -5,11 +5,21 @@ for Techtonica.org
 import os
 import sys
 
+import configparser
 import pendulum
+import requests
+import json
 from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
-from flask import Flask, redirect, render_template, url_for
+from flask import Flask, redirect, render_template, url_for, request, jsonify
 from flask_sslify import SSLify
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.wsgi import WSGIMiddleware
+from pydantic import BaseModel
+from square.client import Client
+from uuid import uuid4
 
 load_dotenv(find_dotenv(usecwd=True))
 
@@ -168,7 +178,6 @@ def render_donate_page():
     """
     return render_template("donate.html")
 
-
 @app.route("/volunteer/")
 def render_volunteer_page():
     """
@@ -224,6 +233,101 @@ class Event(object):
             self.address = event["venue"]["address"][
                 "localized_multi_line_address_display"
             ]
+
+
+# ONLINE PAYMENT HANDLING ********************************************************
+
+config = configparser.ConfigParser()
+config.read("config.ini")
+
+# Slack credentials
+SLACK_WEBHOOK = config.get("slack", "slack_webhook")
+
+# Square credentials
+CONFIG_TYPE = config.get("default", "environment")
+PAYMENT_FORM_URL = (
+    "https://web.squarecdn.com/v1/square.js"
+    if CONFIG_TYPE == "production"
+    else "https://sandbox.web.squarecdn.com/v1/square.js"
+)
+APPLICATION_ID = config.get(CONFIG_TYPE, "square_application_id")
+LOCATION_ID = config.get(CONFIG_TYPE, "square_location_id")
+ACCESS_TOKEN = config.get(CONFIG_TYPE, "square_access_token")
+
+client = Client(
+    access_token=ACCESS_TOKEN,
+    environment=config.get("default", "environment"),
+    user_agent_detail="techtonica_payment",
+)
+
+
+
+class Payment(BaseModel):
+    token: str
+    idempotencyKey: str
+
+app2 = FastAPI()
+app2.mount("/static", StaticFiles(directory="static"), name="static")
+
+@app.route("/payment-form")
+def render_payment_form():
+    """
+    Renders the payment-form page from jinja2 template
+    """
+    return render_template("payment-form.html", 
+        APPLICATION_ID='sandbox-sq0idb-EatW_1CuQHzCGlGDkkxJhw', #revoked
+        PAYMENT_FORM_URL="https://sandbox.web.squarecdn.com/v1/square.js",
+        LOCATION_ID='L0VNGH5V47Y5Q',
+        ACCOUNT_CURRENCY="USD",
+        ACCOUNT_COUNTRY="ACCOUNT_COUNTRY",
+        idempotencyKey=str( uuid4() ))
+
+# (Square) payment route
+@app2.route("/process-payment")
+def create_payment(payment: Payment):
+    logging.info("Creating payment")
+    # Charge the customer's card
+    create_payment_response = client.payments.create_payment(
+        body={
+            "source_id": payment.token,
+            "idempotency_key": str(uuid.uuid4()),
+            "amount_money": {
+                "amount": 100,  # $1.00 charge
+                "currency": ACCOUNT_CURRENCY,
+            },
+        }
+    )
+
+    logging.info("Payment created")
+    if create_payment_response.is_success():
+        return create_payment_response.body
+    elif create_payment_response.is_error():
+        return create_payment_response
+
+
+@app.route("/job-posting-form")
+def render_job_posting_form():
+    """
+    Renders the job-posting-form page from jinja2 template
+    """
+    return render_template("job-posting-form.html")
+
+class Posting:
+    firstname: str
+    lastname: str
+    email: str
+
+# Slack route
+@app.route('/send-posting', methods=['POST'])
+def send_posting():
+    data = request.form
+    print(f"Received data: {json.dumps(data)}")
+
+    x = requests.post(SLACK_WEBHOOK, 
+        json = {'text': f"A new job has been posted! Details: {json.dumps(data)}"})
+
+    print(f"Message sent: {x.text}")
+    return jsonify({'message': 'Data received successfully', 'received_data': data})
 
 
 if __name__ == "__main__":
