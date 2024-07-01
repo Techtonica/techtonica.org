@@ -5,6 +5,7 @@ for Techtonica.org
 import os
 import sys
 
+import configparser
 import pendulum
 import requests
 import json
@@ -234,13 +235,36 @@ class Event(object):
             ]
 
 
-# ONLINE PAYMENT HANDLING
+# ONLINE PAYMENT HANDLING ********************************************************
 
-# (Square) credentials
+config = configparser.ConfigParser()
+config.read("config.ini")
+
+# Slack credentials
+SLACK_WEBHOOK = config.get("SLACK", "slack_webhook")
+
+# Square credentials
+CONFIG_TYPE = config.get("DEFAULT", "environment").upper()
+PAYMENT_FORM_URL = (
+    "https://web.squarecdn.com/v1/square.js"
+    if CONFIG_TYPE == "PRODUCTION"
+    else "https://sandbox.web.squarecdn.com/v1/square.js"
+)
+APPLICATION_ID = config.get(CONFIG_TYPE, "square_application_id")
+LOCATION_ID = config.get(CONFIG_TYPE, "square_location_id")
+ACCESS_TOKEN = config.get(CONFIG_TYPE, "square_access_token")
+
 client = Client(
-    access_token='EAAAl_0QhSnq0KtkiiftPFciQnKzncpiOrxnvLC-cYWs7gAkHmlWUvrwh6Y7gNgy',
-    #os.environ['SQUARE_ACCESS_TOKEN'],
-    environment='sandbox')
+    access_token=ACCESS_TOKEN,
+    environment=config.get("DEFAULT", "environment"),
+    user_agent_detail="techtonica_payment",
+)
+
+location = client.locations.retrieve_location(location_id=LOCATION_ID).body["location"]
+ACCOUNT_CURRENCY = location["currency"]
+ACCOUNT_COUNTRY = location["country"]
+
+
 
 result = client.locations.list_locations()
 
@@ -270,7 +294,7 @@ def render_payment_form():
     Renders the payment-form page from jinja2 template
     """
     return render_template("payment-form.html", 
-        APPLICATION_ID='sandbox-sq0idb-EatW_1CuQHzCGlGDkkxJhw', 
+        APPLICATION_ID='sandbox-sq0idb-EatW_1CuQHzCGlGDkkxJhw', #revoked
         PAYMENT_FORM_URL="https://sandbox.web.squarecdn.com/v1/square.js",
         LOCATION_ID='L0VNGH5V47Y5Q',
         ACCOUNT_CURRENCY="USD",
@@ -312,14 +336,13 @@ class Posting:
     lastname: str
     email: str
 
-
+# Slack route
 @app.route('/send-posting', methods=['POST'])
 def send_posting():
     data = request.form
     print(f"Received data: {json.dumps(data)}")
-    url = 'https://hooks.slack.com/services/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'
 
-    x = requests.post(url, 
+    x = requests.post(SLACK_WEBHOOK, 
         json = {'text': f"A new job has been posted! Details: {json.dumps(data)}"})
 
     print(f"Message sent: {x.text}")
