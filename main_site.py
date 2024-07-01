@@ -241,13 +241,13 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 
 # Slack credentials
-SLACK_WEBHOOK = config.get("SLACK", "slack_webhook")
+SLACK_WEBHOOK = config.get("slack", "slack_webhook")
 
 # Square credentials
-CONFIG_TYPE = config.get("DEFAULT", "environment").upper()
+CONFIG_TYPE = config.get("default", "environment")
 PAYMENT_FORM_URL = (
     "https://web.squarecdn.com/v1/square.js"
-    if CONFIG_TYPE == "PRODUCTION"
+    if CONFIG_TYPE == "production"
     else "https://sandbox.web.squarecdn.com/v1/square.js"
 )
 APPLICATION_ID = config.get(CONFIG_TYPE, "square_application_id")
@@ -256,30 +256,11 @@ ACCESS_TOKEN = config.get(CONFIG_TYPE, "square_access_token")
 
 client = Client(
     access_token=ACCESS_TOKEN,
-    environment=config.get("DEFAULT", "environment"),
+    environment=config.get("default", "environment"),
     user_agent_detail="techtonica_payment",
 )
 
-location = client.locations.retrieve_location(location_id=LOCATION_ID).body["location"]
-ACCOUNT_CURRENCY = location["currency"]
-ACCOUNT_COUNTRY = location["country"]
 
-
-
-result = client.locations.list_locations()
-
-if result.is_success():
-    for location in result.body['locations']:
-        print(f"{location['id']}: ", end="")
-        print(f"{location['name']}, ", end="")
-        print(f"{location['address']['address_line_1']}, ", end="")
-        print(f"{location['address']['locality']}")
-
-elif result.is_error():
-    for error in result.errors:
-        print(error['category'])
-        print(error['code'])
-        print(error['detail'])
 
 class Payment(BaseModel):
     token: str
