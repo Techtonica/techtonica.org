@@ -239,11 +239,8 @@ class Event(object):
 # ONLINE PAYMENT HANDLING ********************************************************
 
 # FastApi() setup
-fastapp = FastAPI()
 
-app.wsgi_app = DispatcherMiddleware(app.wsgi_app, {
-    '/fast': ASGIMiddleware(fastapp),
-})
+fastapp = ASGIMiddleware(FastAPI())
 
 fastapp.mount("/static", StaticFiles(directory="static"), name="static")
 
