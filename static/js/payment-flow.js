@@ -28,7 +28,7 @@ async function SquarePaymentFlow() {
     });
 
     try {
-      const response = await fetch('process-payment', {
+      const response = await fetch('/fastapp/process-payment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

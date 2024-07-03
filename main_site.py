@@ -16,7 +16,8 @@ from flask_sslify import SSLify
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
-from fastapi.middleware.wsgi import WSGIMiddleware
+from werkzeug.middleware.dispatcher import DispatcherMiddleware
+from a2wsgi import ASGIMiddleware
 from pydantic import BaseModel
 from square.client import Client
 from uuid import uuid4
@@ -266,8 +267,14 @@ class Payment(BaseModel):
     token: str
     idempotencyKey: str
 
-app2 = FastAPI()
-app2.mount("/static", StaticFiles(directory="static"), name="static")
+fastapp = FastAPI()
+
+app.wsgi_app = DispatcherMiddleware(app.wsgi_app, {
+    '/fast': ASGIMiddleware(fastapp),
+})
+
+fastapp.mount("/static", StaticFiles(directory="static"), name="static")
+
 
 @app.route("/payment-form")
 def render_payment_form():
@@ -283,7 +290,7 @@ def render_payment_form():
         idempotencyKey=str( uuid4() ))
 
 # (Square) payment route
-@app2.route("/process-payment")
+@fastapp.route("/process-payment")
 def create_payment(payment: Payment):
     logging.info("Creating payment")
     # Charge the customer's card
