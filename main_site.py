@@ -238,6 +238,16 @@ class Event(object):
 
 # ONLINE PAYMENT HANDLING ********************************************************
 
+# FastApi() setup
+fastapp = FastAPI()
+
+app.wsgi_app = DispatcherMiddleware(app.wsgi_app, {
+    '/fast': ASGIMiddleware(fastapp),
+})
+
+fastapp.mount("/static", StaticFiles(directory="static"), name="static")
+
+# Config setting
 config = configparser.ConfigParser()
 config.read("config.ini")
 
@@ -262,19 +272,9 @@ client = Client(
 )
 
 
-
 class Payment(BaseModel):
     token: str
     idempotencyKey: str
-
-fastapp = FastAPI()
-
-app.wsgi_app = DispatcherMiddleware(app.wsgi_app, {
-    '/fast': ASGIMiddleware(fastapp),
-})
-
-fastapp.mount("/static", StaticFiles(directory="static"), name="static")
-
 
 @app.route("/payment-form")
 def render_payment_form():
@@ -289,7 +289,7 @@ def render_payment_form():
         ACCOUNT_COUNTRY="ACCOUNT_COUNTRY",
         idempotencyKey=str( uuid4() ))
 
-# (Square) payment route
+# Square payment api route
 @fastapp.route("/process-payment")
 def create_payment(payment: Payment):
     logging.info("Creating payment")
@@ -312,17 +312,18 @@ def create_payment(payment: Payment):
         return create_payment_response
 
 
+
+class Posting:
+    firstname: str
+    lastname: str
+    email: str
+
 @app.route("/job-posting-form")
 def render_job_posting_form():
     """
     Renders the job-posting-form page from jinja2 template
     """
     return render_template("job-posting-form.html")
-
-class Posting:
-    firstname: str
-    lastname: str
-    email: str
 
 # Slack route
 @app.route('/send-posting', methods=['POST'])
