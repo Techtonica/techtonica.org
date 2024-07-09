@@ -240,7 +240,12 @@ class Event(object):
 
 # FastApi() setup
 
-fastapp = ASGIMiddleware(FastAPI())
+fastapp = FastAPI()	
+
+
+app.wsgi_app = DispatcherMiddleware(app.wsgi_app, {	fastapp = ASGIMiddleware(FastAPI())
+    '/fast': ASGIMiddleware(fastapp),	
+})
 
 fastapp.mount("/static", StaticFiles(directory="static"), name="static")
 
