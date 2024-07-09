@@ -238,17 +238,6 @@ class Event(object):
 
 # ONLINE PAYMENT HANDLING ********************************************************
 
-# FastApi() setup
-
-fastapp = FastAPI()	
-
-
-app.wsgi_app = DispatcherMiddleware(app.wsgi_app, {	fastapp = ASGIMiddleware(FastAPI())
-    '/fast': ASGIMiddleware(fastapp),	
-})
-
-fastapp.mount("/static", StaticFiles(directory="static"), name="static")
-
 # Config setting
 config = configparser.ConfigParser()
 config.read("config.ini")
@@ -277,6 +266,16 @@ client = Client(
 class Payment(BaseModel):
     token: str
     idempotencyKey: str
+
+# FastApi() setup
+fastapp = FastAPI()	
+
+app.wsgi_app = DispatcherMiddleware(app.wsgi_app, {	fastapp = ASGIMiddleware(FastAPI())
+    '/fast': ASGIMiddleware(fastapp),	
+})
+
+fastapp.mount("/static", StaticFiles(directory="static"), name="static")
+
 
 @app.route("/payment-form")
 def render_payment_form():
@@ -327,7 +326,7 @@ def render_job_posting_form():
     """
     return render_template("job-posting-form.html")
 
-# Slack route
+# Slack webhook route
 @app.route('/send-posting', methods=['POST'])
 def send_posting():
     data = request.form
