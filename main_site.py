@@ -270,7 +270,7 @@ class Payment(BaseModel):
 # FastApi() setup
 fastapp = FastAPI()	
 
-app.wsgi_app = DispatcherMiddleware(app.wsgi_app, {	fastapp = ASGIMiddleware(FastAPI())
+app.wsgi_app = DispatcherMiddleware(app.wsgi_app, {	fastapp: ASGIMiddleware(FastAPI()),
    '/fast': ASGIMiddleware(fastapp),	
 })
 
