@@ -291,7 +291,7 @@ def render_payment_form():
         idempotencyKey=str( uuid4() ))
 
 # Square payment api route
-@fastapp.route("/process-payment")
+@app.route("/process-payment")
 def create_payment(payment: Payment):
     logging.info("Creating payment")
     # Charge the customer's card
