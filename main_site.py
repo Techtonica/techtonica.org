@@ -268,13 +268,13 @@ class Payment(BaseModel):
     idempotencyKey: str
 
 # FastApi() setup
-fastapp = FastAPI()	
+# fastapp = FastAPI()	
 
-app.wsgi_app = DispatcherMiddleware(app.wsgi_app, {	fastapp = ASGIMiddleware(FastAPI())
-    '/fast': ASGIMiddleware(fastapp),	
-})
+# app.wsgi_app = DispatcherMiddleware(app.wsgi_app, {	fastapp = ASGIMiddleware(FastAPI())
+#    '/fast': ASGIMiddleware(fastapp),	
+# })
 
-fastapp.mount("/static", StaticFiles(directory="static"), name="static")
+# fastapp.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 @app.route("/payment-form")
