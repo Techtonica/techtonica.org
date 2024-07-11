@@ -46,6 +46,8 @@ window.createPayment = async function(token) {
       }
     } else {
       window.showSuccess('Payment Successful!');
+
+      //TO-DO: Send slack message here?
     }
   } catch (error) {
     console.error('Error:', error);

@@ -271,7 +271,7 @@ def render_payment_form():
     Renders the payment-form page from jinja2 template
     """
     return render_template("payment-form.html",
-        APPLICATION_ID=APPLICATION_ID, #revoked
+        APPLICATION_ID=APPLICATION_ID,
         PAYMENT_FORM_URL=PAYMENT_FORM_URL,
         LOCATION_ID=LOCATION_ID,
         ACCOUNT_CURRENCY="USD",

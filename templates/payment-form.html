@@ -15,6 +15,17 @@ Donation Form {% endblock title %} {% block content %}
   <div class="column hidden-med">
     <form class="payment-form" id="fast-checkout">
       <div class="wrapper">
+        <h3>Contact Info</h3>
+        <div class="details-wrapper">
+          <label for="firstname">First name:</label>
+          <input type="text" id="firstname" name="firstname">
+          <label for="lastname">Last name:</label>
+          <input type="text" id="lastname" name="lastname">
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email">
+          <label for="details">Details:</label>
+          <input type="text" id="details" name="details">
+        </div>
         <!-- <div id="ach-wrapper">
           <label for="ach-account-holder-name">Full Name</label>
           <input
@@ -32,6 +43,7 @@ Donation Form {% endblock title %} {% block content %}
             <span>OR</span>
           </div>
         </div> -->
+        <h3>Payment Info</h3>
         <div id="card-container"></div>
         <button id="card-button" type="button">
           Pay with Card

@@ -814,3 +814,13 @@ p.press-release-bold {
 #payment-flow-message.success {
   color: #3374ff;
 }
+
+.details-wrapper {
+  margin-bottom: 2em;
+}
+
+.details-wrapper > input {
+  min-width: 90%;
+  margin-bottom: .75em;
+  padding: .25em;
+}

@@ -889,4 +889,14 @@ p.press-release-bold {
   color: #3374ff;
 }
 
+.details-wrapper {
+  margin-bottom: 2em;
+}
+
+.details-wrapper > input {
+  min-width: 90%;
+  margin-bottom: 0.75em;
+  padding: 0.25em;
+}
+
 /*# sourceMappingURL=style.css.map */
