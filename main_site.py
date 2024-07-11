@@ -13,11 +13,6 @@ from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
 from flask import Flask, redirect, render_template, url_for, request, jsonify
 from flask_sslify import SSLify
-from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles
-from werkzeug.middleware.dispatcher import DispatcherMiddleware
-from a2wsgi import ASGIMiddleware
 from pydantic import BaseModel
 from square.client import Client
 from uuid import uuid4
@@ -247,11 +242,15 @@ SLACK_WEBHOOK = config.get("slack", "slack_webhook")
 
 # Square credentials
 CONFIG_TYPE = config.get("default", "environment")
-PAYMENT_FORM_URL = (
-    "https://web.squarecdn.com/v1/square.js"
-    if CONFIG_TYPE == "production"
-    else "https://sandbox.web.squarecdn.com/v1/square.js"
-)
+if CONFIG_TYPE == "production":
+    PAYMENT_FORM_URL = "https://web.squarecdn.com/v1/square.js"
+else:
+    PAYMENT_FORM_URL= "https://sandbox.web.squarecdn.com/v1/square.js"
+# PAYMENT_FORM_URL = (
+#     "https://web.squarecdn.com/v1/square.js"
+#     if CONFIG_TYPE == "production"
+#     else "https://sandbox.web.squarecdn.com/v1/square.js"
+# )
 APPLICATION_ID = config.get(CONFIG_TYPE, "square_application_id")
 LOCATION_ID = config.get(CONFIG_TYPE, "square_location_id")
 ACCESS_TOKEN = config.get(CONFIG_TYPE, "square_access_token")
@@ -262,55 +261,53 @@ client = Client(
     user_agent_detail="techtonica_payment",
 )
 
+print('payment url', PAYMENT_FORM_URL)
+print('app id', APPLICATION_ID)
 
 class Payment(BaseModel):
     token: str
     idempotencyKey: str
-
-# FastApi() setup
-fastapp = FastAPI()	
-
-app.wsgi_app = DispatcherMiddleware(app.wsgi_app, {	fastapp: ASGIMiddleware(FastAPI()),
-   '/fast': ASGIMiddleware(fastapp),	
-})
-
-fastapp.mount("/static", StaticFiles(directory="static"), name="static")
-
 
 @app.route("/payment-form")
 def render_payment_form():
     """
     Renders the payment-form page from jinja2 template
     """
-    return render_template("payment-form.html", 
-        APPLICATION_ID='sandbox-sq0idb-EatW_1CuQHzCGlGDkkxJhw', #revoked
-        PAYMENT_FORM_URL="https://sandbox.web.squarecdn.com/v1/square.js",
-        LOCATION_ID='L0VNGH5V47Y5Q',
+    return render_template("payment-form.html",
+        APPLICATION_ID=APPLICATION_ID, #revoked
+        PAYMENT_FORM_URL=PAYMENT_FORM_URL,
+        LOCATION_ID=LOCATION_ID,
         ACCOUNT_CURRENCY="USD",
         ACCOUNT_COUNTRY="ACCOUNT_COUNTRY",
         idempotencyKey=str( uuid4() ))
 
 # Square payment api route
-@fastapp.route("/process-payment")
-def create_payment(payment: Payment):
-    logging.info("Creating payment")
+@app.route("/process-payment", methods = ['POST'])
+def create_payment():
     # Charge the customer's card
+    account_currency = "USD" # TODO: Are you hard-coding this to USD?
+    data = request.json
+    print(data)
+
     create_payment_response = client.payments.create_payment(
         body={
-            "source_id": payment.token,
-            "idempotency_key": str(uuid.uuid4()),
+            "source_id": data.get('token'),
+#             "idempotency_key": str(uuid4()), # TODO: Are you sure this shouldn't be request.form.get('idempotency_key')?
+            "idempotency_key": data.get('idempotencyKey'),
             "amount_money": {
                 "amount": 100,  # $1.00 charge
-                "currency": ACCOUNT_CURRENCY,
+                "currency": account_currency,
             },
         }
     )
 
-    logging.info("Payment created")
+    print("Payment created", create_payment_response)
     if create_payment_response.is_success():
+        print('success')
         return create_payment_response.body
     elif create_payment_response.is_error():
-        return create_payment_response
+        print('error')
+        return {'errors': create_payment_response.errors}
 
 
 
@@ -332,7 +329,7 @@ def send_posting():
     data = request.form
     print(f"Received data: {json.dumps(data)}")
 
-    x = requests.post(SLACK_WEBHOOK, 
+    x = requests.post(SLACK_WEBHOOK,
         json = {'text': f"A new job has been posted! Details: {json.dumps(data)}"})
 
     print(f"Message sent: {x.text}")
