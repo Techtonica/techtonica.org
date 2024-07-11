@@ -261,9 +261,6 @@ client = Client(
     user_agent_detail="techtonica_payment",
 )
 
-print('payment url', PAYMENT_FORM_URL)
-print('app id', APPLICATION_ID)
-
 class Payment(BaseModel):
     token: str
     idempotencyKey: str
