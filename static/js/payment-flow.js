@@ -47,9 +47,33 @@ window.createPayment = async function(token) {
     } else {
       window.showSuccess('Payment Successful!');
 
-      //TO-DO: Send slack message here?
+      window.sendSlackNotification();
     }
   } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+window.sendSlackNotification = async function() {
+  var notificationValues = {
+    firstName: document.getElementById('firstname').value,
+    lastName: document.getElementById('lastname').value,
+    email: document.getElementById('email').value,
+    details: document.getElementById('details').value
+  };
+
+  var dataJsonString = JSON.stringify(notificationValues);
+
+  try {
+    const response = await fetch('/send-posting', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: dataJsonString
+    });
+  }
+  catch (error) {
     console.error('Error:', error);
   }
 }

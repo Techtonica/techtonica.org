@@ -306,24 +306,10 @@ def create_payment():
         print('error')
         return {'errors': create_payment_response.errors}
 
-
-
-class Posting:
-    firstname: str
-    lastname: str
-    email: str
-
-@app.route("/job-posting-form")
-def render_job_posting_form():
-    """
-    Renders the job-posting-form page from jinja2 template
-    """
-    return render_template("job-posting-form.html")
-
 # Slack webhook route
 @app.route('/send-posting', methods=['POST'])
 def send_posting():
-    data = request.form
+    data = request.json
     print(f"Received data: {json.dumps(data)}")
 
     x = requests.post(SLACK_WEBHOOK,
