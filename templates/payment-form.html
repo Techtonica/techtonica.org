@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
-Donation Form {% endblock title %} {% block content %}
+Post A Job {% endblock title %} {% block content %}
 <!-- link to the Web SDK library -->
 <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
 <script type="text/javascript" src='{{ PAYMENT_FORM_URL }}'></script>
@@ -16,7 +16,7 @@ Donation Form {% endblock title %} {% block content %}
     <form class="payment-form" id="fast-checkout">
       <div class="wrapper">
         <h3>Contact Info</h3>
-        <div class="details-wrapper">
+        <div id="details-wrapper" class="details-wrapper">
           <label for="firstname">First name:</label>
           <input type="text" id="firstname" name="firstname">
           <label for="lastname">Last name:</label>
