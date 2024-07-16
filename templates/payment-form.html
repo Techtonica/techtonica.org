@@ -11,7 +11,14 @@ Post A Job {% endblock title %} {% block content %}
   window.idempotencyKey = "{{ idempotencyKey }}";
 </script>
 
-<div class="row row__center about-us">
+<div class="row row__center about-us blue-background">
+    <h1>
+      Post A Job
+    </h1>
+    <p>
+      Have a job opening but your company isn’t ready to become a hiring partner? <br>
+      Submit the job for $100 and we’ll share with our graduates who have 0-5 years of experience.
+    </p>
   <div class="column hidden-med">
     <form class="payment-form" id="fast-checkout">
       <div class="wrapper">
@@ -22,9 +29,9 @@ Post A Job {% endblock title %} {% block content %}
           <label for="lastname">Last name:</label>
           <input type="text" id="lastname" name="lastname">
           <label for="email">Email:</label>
-          <input type="text" id="email" name="email">
+          <input type="email" id="email" name="email">
           <label for="details">Details:</label>
-          <input type="text" id="details" name="details">
+          <textarea id="details" name="details">Share your job details here...</textarea>
         </div>
         <!-- <div id="ach-wrapper">
           <label for="ach-account-holder-name">Full Name</label>

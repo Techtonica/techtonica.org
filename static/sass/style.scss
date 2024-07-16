@@ -733,6 +733,10 @@ p.press-release-bold {
   color: black;
 }
 
+#fast-checkout h3 {
+  color: $main-blue;
+}
+
 #fast-checkout input {
   border-radius: 6px;
   position: relative;
@@ -820,6 +824,13 @@ p.press-release-bold {
 }
 
 .details-wrapper > input {
+  min-width: 90%;
+  margin-bottom: .75em;
+  padding: .25em;
+}
+
+.details-wrapper > textarea {
+  min-height: 6em;
   min-width: 90%;
   margin-bottom: .75em;
   padding: .25em;
