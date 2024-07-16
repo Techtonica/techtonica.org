@@ -901,6 +901,8 @@ p.press-release-bold {
   min-width: 90%;
   margin-bottom: 0.75em;
   padding: 0.25em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
 }
 
 .details-wrapper > textarea {
@@ -908,6 +910,8 @@ p.press-release-bold {
   min-width: 90%;
   margin-bottom: 0.75em;
   padding: 0.25em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
 }
 
 /*# sourceMappingURL=style.css.map */
