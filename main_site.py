@@ -289,10 +289,9 @@ def create_payment():
     create_payment_response = client.payments.create_payment(
         body={
             "source_id": data.get('token'),
-#             "idempotency_key": str(uuid4()), # TODO: Are you sure this shouldn't be request.form.get('idempotency_key')?
             "idempotency_key": data.get('idempotencyKey'),
             "amount_money": {
-                "amount": 100,  # $1.00 charge
+                "amount": 10000,  # $100.00 charge
                 "currency": account_currency,
             },
         }
