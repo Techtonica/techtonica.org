@@ -69,6 +69,15 @@ FLASK_DEBUG=1 FLASK_APP=main_site.py flask run
 
 Browse to <http://localhost:5000>.
 
+### Run Locally as HTTPS using flask_run_cert
+
+This is required for being able to render and test the Square payment elements.
+
+```sh
+pip install pyopenssl  
+FLASK_DEBUG=1 FLASK_APP=main_site.py FLASK_RUN_CERT=adhoc flask run
+```
+
 ### Using Docker to Run Locally
 
 #### First Time Using Docker?
@@ -168,6 +177,21 @@ For development dependencies:
    pip-compile -U dev.in
    ```
 
+⚠️ _You need Python version 3.8.10 and pip version 23 in order to properly update dependencies. If this is not the version you are working with, see the next instructions below on how to set up a virtual environment using anaconda._
+
+## Setting up virtualenv with Anaconda
+
+```sh
+#create your virtualenv using anaconda
+conda create -n py3810 python=3.8.10
+#activate it
+conda activate py3810
+#install pip version 23
+pip install --upgrade pip==23
+#install and upgrade pip-tools
+python -m pip install -U pip-tools
+```
+
 ## Deployment to DreamHost
 
 Make sure you branch off develop, if you want to make changes.
@@ -200,6 +224,27 @@ i. tag the date after deployment
 
    ```sh
    pip install -U pip setuptools pip-tools
+   ```
+1. Create a `config.ini` file in the root directory of the repo (either locally or in whichever Dreamhost server) if there isn't one already present, and populate it with the necessary keys.
+
+   ```sh
+   [default]
+   # Acceptable values are sandbox or production
+   environment = sandbox
+   dev_password = dev_password
+
+   [production]
+   square_application_id = production_application_id
+   square_access_token = production_access_token
+   square_location_id = production_location_id
+
+   [sandbox]
+   square_application_id = <sandbox app id>
+   square_access_token = <sandbox access token>
+   square_location_id = <sandbox location id>
+
+   [slack]
+   slack_webhook =  <slack webhook>
    ```
 
 ### Updating the Site
