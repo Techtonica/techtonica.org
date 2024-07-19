@@ -309,10 +309,10 @@ def create_payment():
 @app.route('/send-posting', methods=['POST'])
 def send_posting():
     data = request.json
-    print(f"Received data: {json.dumps(data)}")
+    print(f"Received data: {data}")
 
     x = requests.post(SLACK_WEBHOOK,
-        json = {'text': f"A new job has been posted! Details: {json.dumps(data)}"})
+        json = {'text': f"A new job has been posted to Techtonica! Read the details below to see if you're a good fit \n Name: {data['firstName']} {data['lastName']} \n Email: {data['email']} \n Details: {data['details']}"})
 
     print(f"Message sent: {x.text}")
     return jsonify({'message': 'Data received successfully', 'received_data': data})
