@@ -839,3 +839,14 @@ p.press-release-bold {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
 }
+
+#payment-page {
+  padding: 1.5em;
+}
+
+#payment-page > h1, 
+#payment-page > p {
+  max-width: 65%;
+  margin: auto;
+  text-align: center;
+}
