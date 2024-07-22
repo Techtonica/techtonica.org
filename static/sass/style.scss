@@ -752,12 +752,20 @@ p.press-release-bold {
 }
 
 #fast-checkout button {
-  background: white;
-  color: black;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  justify-content: center;
-  line-height: 18px;
-  padding: 13px;
+  @include prefix(border-radius, 8px, webkit moz o);
+  color: $white;
+  display: inline-block;
+  background-color: $focal-orange;
+  text-align: center;
+  font-size: 1.5em;
+  text-shadow: 1px 1px 1px #666;
+
+  &:hover {
+    background-color: $light-blue;
+    color: $white;
+    transition: 0.3s;
+  }
+
 }
 
 #fast-checkout .border {

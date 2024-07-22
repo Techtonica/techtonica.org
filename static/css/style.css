@@ -826,12 +826,21 @@ p.press-release-bold {
 }
 
 #fast-checkout button {
-  background: white;
-  color: black;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  justify-content: center;
-  line-height: 18px;
-  padding: 13px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  color: white;
+  display: inline-block;
+  background-color: #fc7625;
+  text-align: center;
+  font-size: 1.5em;
+  text-shadow: 1px 1px 1px #666;
+}
+#fast-checkout button:hover {
+  background-color: #16c1f3;
+  color: white;
+  transition: 0.3s;
 }
 
 #fast-checkout .border {
