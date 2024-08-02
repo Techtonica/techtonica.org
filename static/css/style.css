@@ -779,20 +779,6 @@ p.press-release-bold {
   align-items: center;
 }
 
-@media (max-width: 1050px) {
-  .payment-form {
-    border-radius: 0;
-    margin: 0;
-    height: 110vh;
-    max-width: 100%;
-  }
-}
-@media (max-width: 600px) {
-  .payment-form {
-    padding: 30px;
-    box-sizing: border-box;
-  }
-}
 #apple-pay-button {
   height: 48px;
   width: 100%;
@@ -817,7 +803,6 @@ p.press-release-bold {
 }
 
 #fast-checkout .wrapper {
-  max-width: 343px;
   position: relative;
 }
 
@@ -902,25 +887,60 @@ p.press-release-bold {
   color: #3374ff;
 }
 
-.details-wrapper {
+.wrapper {
+  max-width: 50%;
+  justify-content: center;
+}
+
+#card-container {
+  max-width: 387px;
+  margin: auto;
+}
+
+#info-wrapper {
   margin-bottom: 2em;
 }
 
-.details-wrapper > input {
+#info-wrapper > fieldset {
+  box-sizing: border-box;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+legend {
+  color: rgba(0, 115, 149, 0.8);
+}
+
+#info-wrapper > fieldset > label {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  color: rgba(0, 115, 149, 0.8);
+}
+
+#info-wrapper > fieldset > input[type=text],
+#info-wrapper > fieldset > input[type=email],
+#info-wrapper > fieldset > textarea {
   min-width: 90%;
-  margin-bottom: 0.75em;
+  margin: auto auto 1em auto;
   padding: 0.25em;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
 }
 
-.details-wrapper > textarea {
+#info-wrapper > fieldset > textarea {
   min-height: 6em;
-  min-width: 90%;
-  margin-bottom: 0.75em;
-  padding: 0.25em;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
+}
+
+input[type=radio] {
+  width: 50px;
+}
+
+#radio-wrapper {
+  width: 100%;
+  margin-bottom: 1em;
+  color: rgba(0, 115, 149, 0.8);
 }
 
 #payment-page {
@@ -932,6 +952,34 @@ p.press-release-bold {
   max-width: 65%;
   margin: auto;
   text-align: center;
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    max-width: 75%;
+  }
+  #info-wrapper {
+    max-width: 100%;
+    min-width: none;
+  }
+}
+@media (max-width: 600px) {
+  .payment-form {
+    margin: 0px;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+  .wrapper {
+    max-width: 100%;
+  }
+  #info-wrapper {
+    max-width: 100%;
+    min-width: none;
+  }
+  #info-wrapper > fieldset {
+    margin: 0px;
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
