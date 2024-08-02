@@ -312,7 +312,7 @@ def send_posting():
     print(f"Received data: {data}")
 
     x = requests.post(SLACK_WEBHOOK,
-        json = {'text': f"A new job has been posted to Techtonica! Read the details below to see if you're a good fit \n Name: {data['firstName']} {data['lastName']} \n Email: {data['email']} \n Details: {data['details']}"})
+        json = {'text': f"A new job has been posted to Techtonica! Read the details below to see if you're a good fit!  \n\n JOB DETAILS \n Job Title: {data['jobTitle']} \n Company: {data['company']} \n Type: {data['type']} \n Education Requirement: {data['educationReq']} \n Location: {data['location']} \n Referral offered: {data['referral']} \n Salary Range: {data['salaryRange']} \n Description: {data['description']} \n Application Link: {data['applicationLink']} \n \n CONTACT INFO \n Name: {data['firstName']} {data['lastName']}  \n Email: {data['email']}  \n "})
 
     print(f"Message sent: {x.text}")
     return jsonify({'message': 'Data received successfully', 'received_data': data})
