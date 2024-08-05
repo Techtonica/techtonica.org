@@ -55,11 +55,27 @@ window.createPayment = async function(token) {
 }
 
 window.sendSlackNotification = async function() {
+  var referralValue = "no";
+  
+  document.getElementsByName("referral").forEach(radio => {
+    if(radio.checked){
+      referralValue = radio.value;
+    }
+  });
+
   var notificationValues = {
     firstName: document.getElementById('firstname').value,
     lastName: document.getElementById('lastname').value,
     email: document.getElementById('email').value,
-    details: document.getElementById('details').value
+    jobTitle: document.getElementById('jobtitle').value,
+    company: document.getElementById('company').value,
+    type: document.getElementById('type').value,
+    educationReq: document.getElementById('educationreq').value,
+    location: document.getElementById('location').value, 
+    referral: referralValue,
+    salaryRange: document.getElementById('salaryrange').value,
+    description: document.getElementById('description').value,
+    applicationLink: document.getElementById('applicationlink').value
   };
 
   var dataJsonString = JSON.stringify(notificationValues);
