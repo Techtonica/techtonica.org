@@ -273,7 +273,7 @@ def render_payment_form():
     """
     return redirect(url_for('render_job_form'))
 
- @app.route("/share-a-job")
+@app.route("/share-a-job")
 def render_job_form():
     """
     Renders the job-form page from jinja2 template
