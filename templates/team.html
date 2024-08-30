@@ -109,8 +109,30 @@ About Us {% endblock title %} {% block content %}
       </p>
     </div>
   </div>
-  
-  <div class="row row__center blue-background">
+    <div class="row row__center blue-background">
+    <div class="column centered">
+      <img
+        src="{{ url_for('static', filename='img/maggie-fero-min.jpeg') }}"
+        alt="Margaret Fero, a white nonbinary person with their hair up, smiles at the camera in high-contrast lipstick"
+        class="resize-200px"
+      />
+      <footer>
+        <a
+          href="https://www.linkedin.com/in/margaretfero/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Margaret Fero (they/them), <br/>Sponsorships Lead</a>
+      </footer>
+      <p class="justify">
+        Margaret Fero is an interdisciplinary hacker with professional experience in 
+        education, technical writing, software development, and information security.
+        They are excited to apply their background to share Techtonica's mission with 
+        companies and individuals who share our desire to economically empower people 
+        whose perspectives may otherwise not be represented in key conversations about
+        technology. In their spare time, Margaret enjoys basking in the many useful 
+        services of local libraries.
+      </p>
+    </div>
     <div class="column centered">
       <img
         src="{{ url_for('static', filename='img/Michelle-Glauser-min.jpg') }}"
@@ -134,8 +156,7 @@ About Us {% endblock title %} {% block content %}
         advocate. She loves biking, reading, making and eating cookies, and 
         going on walks with her fluffy dog.
       </p>
-    </div>
-  </div>  
+    </div> 
 </div>
 
 <!--section for board members-->
