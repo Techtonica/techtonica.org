@@ -265,12 +265,20 @@ class Payment(BaseModel):
     token: str
     idempotencyKey: str
 
+#old route - redirects to avoid breaking old links
 @app.route("/payment-form")
 def render_payment_form():
     """
-    Renders the payment-form page from jinja2 template
+    Redirects to current job-form route
     """
-    return render_template("payment-form.html",
+    return redirect(url_for('render_job_form'))
+
+@app.route("/share-a-job")
+def render_job_form():
+    """
+    Renders the job-form page from jinja2 template
+    """
+    return render_template("job-form.html",
         APPLICATION_ID=APPLICATION_ID,
         PAYMENT_FORM_URL=PAYMENT_FORM_URL,
         LOCATION_ID=LOCATION_ID,
