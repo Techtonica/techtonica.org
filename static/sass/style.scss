@@ -144,18 +144,18 @@
 
 .full-width-img {
   width: 100%;
-  max-width: 2880px;
+  max-width: 2440px;
   height: auto;
 }
 
-@media screen and (min-width: 2881px) {
-  .full-width-img {
-    width: 2880px !important;
-    height: auto !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
+// @media screen and (min-width: 2881px) {
+//   .full-width-img {
+//     width: 2880px !important;
+//     height: auto !important;
+//     margin-left: auto !important;
+//     margin-right: auto !important;
+//   }
+// }
 
 .forty-percent-width {
   width: 40%;
