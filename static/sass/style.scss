@@ -98,9 +98,15 @@
 }
 
 #myChart {
-  display: block;
-  width: 700px;
-  height: 350px;
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 2880px) {
+  #myChart {
+    width: 2880px;
+    height: 1800px;
+  }
 }
 
 .main-header__header {
