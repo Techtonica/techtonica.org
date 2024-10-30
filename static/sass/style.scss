@@ -916,9 +916,10 @@ input[type="radio"] {
 }
 
 .faq-content {
-  max-height: 0;
+  visibility: hidden;
+  height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-out;
+  transition: visibility 0.3s ease-out, height 0.3s ease-out;
 }
 
 .faq-title {
