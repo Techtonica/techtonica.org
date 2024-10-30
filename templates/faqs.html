@@ -18,7 +18,7 @@ FAQs {% endblock title %} {% block content %}
       </p>
     </div>
     <p>&nbsp;</p>
-    
+
     <h3 id="different" class="faq-header">
       <span class="faq-title">What makes Techtonica different?</span>
       <button class="toggle-button">Toggle</button>
@@ -503,5 +503,20 @@ FAQs {% endblock title %} {% block content %}
     <p>&nbsp;</p>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqHeaders = document.querySelectorAll('.faq-header');
+    
+    faqHeaders.forEach(header => {
+      const content = header.nextElementSibling;
+      const toggleButton = header.querySelector('.toggle-button');
+  
+      toggleButton.addEventListener('click', () => {
+        content.style.maxHeight = content.style.maxHeight === '0px' ? `${content.scrollHeight}px` : '0';
+      });
+    });
+  });
+  </script>
 
 {% endblock content %}
