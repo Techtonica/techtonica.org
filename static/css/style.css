@@ -286,8 +286,8 @@ button {
 .resize-200px {
   /* Ensure each teams image is square */
   object-fit: cover;
-  width: 230px;
-  height: 230px;
+  width: 200px;
+  height: 200px;
 }
 
 .margin-25 {
