@@ -506,48 +506,48 @@ FAQs {% endblock title %} {% block content %}
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    let activeIndex = -1;
-
     const faqWrappers = document.querySelectorAll('.faq-wrapper');
     
-    faqWrappers.forEach((wrapper, index) => {
+    faqWrappers.forEach((wrapper) => {
       const header = wrapper.querySelector('.faq-header');
       const content = wrapper.querySelector('.faq-content');
       const toggleButton = header.querySelector('.toggle-button');
 
-      toggleButton.addEventListener('click', () => {
-        if (activeIndex !== index) {
-          closeAllFaqs();
-          openFaq(index);
-        } else {
-          closeFaq(index);
-        }
-
-        function closeAllFaqs() {
-          faqWrappers.forEach((wrapper, i) => {
-            if (i !== index) {
-              wrapper.style.top = '';
-              wrapper.classList.remove('expanded');
-            }
-          });
-        }
-
-        function openFaq(activeIndex) {
-          faqWrappers[activeIndex].style.top = `${wrapper.getBoundingClientRect().top}px`;
-          faqWrappers[activeIndex].classList.add('expanded');
-          activeIndex = index;
-        }
-
-        function closeFaq(closeIndex) {
-          faqWrappers[closeIndex].style.top = '';
-          faqWrappers[closeIndex].classList.remove('expanded');
-          activeIndex = -1;
-        }
-      });
-
       // Initial state
       content.style.visibility = 'hidden';
       content.style.height = '0';
+
+      toggleButton.addEventListener('click', () => {
+        const isActive = wrapper.classList.toggle('expanded');
+        
+        if (!isActive) {
+          closeFaq(wrapper);
+        } else {
+          openFaq(wrapper);
+        }
+      });
+
+      function openFaq(wrapper) {
+        const topPosition = wrapper.getBoundingClientRect().top;
+        wrapper.style.top = `${topPosition}px`;
+        wrapper.classList.add('expanded');
+        updateOtherFaqs(wrapper);
+      }
+
+      function closeFaq(wrapper) {
+        wrapper.style.top = '';
+        wrapper.classList.remove('expanded');
+        updateOtherFaqs(wrapper);
+      }
+
+      function updateOtherFaqs(openedWrapper) {
+        faqWrappers.forEach((otherWrapper) => {
+          if (otherWrapper !== openedWrapper && otherWrapper.classList.contains('expanded')) {
+            const topPosition = otherWrapper.getBoundingClientRect().top;
+            otherWrapper.style.top = `${topPosition + 20}px`; // Add some offset
+          }
+        });
+      }
     });
   });
 </script>
