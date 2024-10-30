@@ -144,6 +144,13 @@
 
 .full-width-img {
   width: 100%;
+  max-width: 2880px;
+}
+
+@media screen and (max-width: 2880px) {
+  .element {
+    width: 100%;
+  }
 }
 
 .forty-percent-width {
