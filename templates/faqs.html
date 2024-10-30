@@ -506,23 +506,43 @@ FAQs {% endblock title %} {% block content %}
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    let activeIndex = -1;
+
     const faqWrappers = document.querySelectorAll('.faq-wrapper');
     
-    faqWrappers.forEach(wrapper => {
+    faqWrappers.forEach((wrapper, index) => {
       const header = wrapper.querySelector('.faq-header');
       const content = wrapper.querySelector('.faq-content');
       const toggleButton = header.querySelector('.toggle-button');
 
       toggleButton.addEventListener('click', () => {
-        content.style.visibility = content.style.visibility === 'hidden' ? 'visible' : 'hidden';
-        content.style.height = content.style.height === 'auto' ? '0' : 'auto';
-        
-        // Adjust the position of other expanded FAQs
-        faqWrappers.forEach(otherWrapper => {
-          if (otherWrapper !== wrapper && otherWrapper.classList.contains('expanded')) {
-            otherWrapper.style.top = `${wrapper.getBoundingClientRect().top}px`;
-          }
-        });
+        if (activeIndex !== index) {
+          closeAllFaqs();
+          openFaq(index);
+        } else {
+          closeFaq(index);
+        }
+
+        function closeAllFaqs() {
+          faqWrappers.forEach((wrapper, i) => {
+            if (i !== index) {
+              wrapper.style.top = '';
+              wrapper.classList.remove('expanded');
+            }
+          });
+        }
+
+        function openFaq(activeIndex) {
+          faqWrappers[activeIndex].style.top = `${wrapper.getBoundingClientRect().top}px`;
+          faqWrappers[activeIndex].classList.add('expanded');
+          activeIndex = index;
+        }
+
+        function closeFaq(closeIndex) {
+          faqWrappers[closeIndex].style.top = '';
+          faqWrappers[closeIndex].classList.remove('expanded');
+          activeIndex = -1;
+        }
       });
 
       // Initial state
@@ -530,6 +550,6 @@ FAQs {% endblock title %} {% block content %}
       content.style.height = '0';
     });
   });
-  </script>
+</script>
 
 {% endblock content %}
