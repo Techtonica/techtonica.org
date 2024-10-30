@@ -284,8 +284,10 @@ button {
 }
 
 .resize-200px {
-  max-height: 200px;
-  max-width: 200px;
+  /* Ensure each teams image is square */
+  object-fit: cover;
+  width: 230px;
+  height: 230px;
 }
 
 .margin-25 {
