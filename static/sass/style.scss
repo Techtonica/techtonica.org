@@ -945,3 +945,8 @@ input[type="radio"] {
 .toggle-button:hover {
   text-decoration: underline;
 }
+
+.expanded {
+  visibility: visible !important;
+  height: auto !important;
+}
