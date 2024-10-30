@@ -150,11 +150,10 @@
 
 @media screen and (min-width: 2881px) {
   .full-width-img {
-    width: 2880px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: red; /* Temporary for testing */
+    width: 2880px !important;
+    height: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
