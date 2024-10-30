@@ -6,7 +6,7 @@ let labels = [
   "Southeast Asian",
   "White",
   "Central & South Asian",
-  "Pacific Islander & Native American/Alaskan Native/First Nations"
+  "Pacific Islander & Indigenous/First Nations & Middle Eastern"
 ];
 let colorHex = [
   "rgb(75, 192, 192)",
@@ -27,16 +27,18 @@ let myChart = new Chart(ctx, {
       {
         label: "Techtonica Demographics",
         backgroundColor: colorHex,
-        data: [25, 23, 22, 12, 10, 6, 2],
+        data: [22, 24, 19, 12, 14, 7, 2],
       },
     ],
   },
 
   options: {
-    responsive: false,
+    responsive: true,
+    maintainAspectRatio: true,
     legend: {
       display: true,
       position: "bottom",
+      size: 40,
       labels: {
         fontColor: "#ffffff",
       },

@@ -4,26 +4,7 @@ endblock title %} {% block content %}
 <div class="row row__center blue-background">
   <div class="column">
     <h1>How to Help</h1>
-    <p class="justify">Techtonica could use your help with a few things this month:</p>
-    <ul>
-      <li>
-        Conduct 45-minute practice interviews <a
-          href="https://www.eventbrite.com/e/volunteers-practice-technical-interviews-with-our-current-participants-tickets-187784487457?aff=ebdsoporgprofile"
-          class="hover-link" target="_blank" rel="noopener noreferrer">(see our available times)</a>.
-      </li>
-      <li>
-        <a href="https://teamup.com/ksnie3b3q5frepnd92" class="hover-link" target="_blank" rel="noopener noreferrer">Schedule a time to offer technical help/pair 
-        programming with final projects</a>.
-      <li>
-        <a href="https://www.eventbrite.com/e/volunteer-at-techtonicas-3-hour-application-workshop-tickets-180476077807?aff=ebdsoporgprofile"
-        class="hover-link" target="_blank" rel="noopener noreferrer">Help rate applicants on Oct 26th, Oct 28th, Nov 2nd and Nov 4th</a>.
-      </li>
-      <li>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf4Zap9U0k6iQvEBfPEFCYpWPfA0lLsd7nIVpICDZdc7A0ULQ/viewform"
-        class="hover-link" target="_blank" rel="noopener noreferrer">Apply to mentor the January 2022 cohort by Nov 16th</a>.
-      </li>
-    </ul>
-    <p class="justify">You can also help us by:</p>
+    <p class="justify">You can help us by:</p>
     <ul>
       <li>
         <a href="{{ url_for('render_donate_page') }}" class="hover-link" target="_blank"
@@ -36,9 +17,21 @@ endblock title %} {% block content %}
         <a href="{{ url_for('render_sponsor_page') }}">sponsor and hire our full-time program participants</a>.
       </li>
       <li>
-        <a href="https://docs.google.com/document/d/1Fl9obaF3kdusiEb8dUW8lszzCACRbKSd5GQqwDdFirU/edit"
-          class="hover-link" target="_blank" rel="noopener noreferrer">Signing up to volunteer</a>.
+        <a href="{{ url_for('render_mentor_page') }}"
+          class="hover-link" target="_blank" rel="noopener noreferrer">Applying to be a mentor for our current cohort</a>.
       </li>
+       <li>
+        <a href="https://docs.google.com/document/d/1Fl9obaF3kdusiEb8dUW8lszzCACRbKSd5GQqwDdFirU/edit"
+          class="hover-link" target="_blank" rel="noopener noreferrer">Sign up to volunteer at the following opportunities</a>:
+      </li>
+        <ul>
+          <li>Speaker / Brown Bag Sessions</li>
+          <li>Facilitate a Study Sessions</li>
+          <li>Pre-Applicant Workshops</li>
+          <li>Pre-Applicant Pair Programming Sessions</li>
+          <li>Mock Interviews</li>
+          <li>...and more...</li>
+        </ul>
     </ul>
     <p class="justify">
       To receive updates, please
@@ -54,7 +47,7 @@ endblock title %} {% block content %}
 
 <div class="row">
   <div class="column centered">
-    <ul>
+    <ul class="hidden-bullets">
       <h2>Visit us</h2>
       <li>
         <a href="https://www.eventbrite.com/o/techtonica-11297022451" target="_blank" rel="noopener noreferrer">
@@ -70,7 +63,7 @@ endblock title %} {% block content %}
   </div>
 
   <div class="column centered">
-    <ul>
+    <ul class="hidden-bullets">
       <h2>Open-source projects</h2>
       <li>
         <a href="https://github.com/Techtonica/curriculum/issues" target="_blank" rel="noopener noreferrer">Contribute
