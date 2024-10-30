@@ -18,18 +18,15 @@ currently hosted on DreamHost.
 
 ## Who
 
-The audience of the website is made up of (potential) volunteers and sponsors.
-(Participants will be contacted via local organizations.)
+The audience of the website is made up of (potential) volunteers, sponsors, and program participants.
 
 ## What
 
-We need to effectively communicate that Techtonica and its participants are
-worth supporting.
+We need to effectively communicate that Techtonica and its participants are worth supporting and share details of the program for potential applicants and volunteers.
 
 ## How
 
-There should be a good understanding of how the program works with vetting,
-training, mentoring, and hiring.
+There should be a good understanding of how the program works with vetting, training, mentoring, and placements.
 
 Detailed instructions on how to update the website:
 https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit
@@ -72,6 +69,15 @@ FLASK_DEBUG=1 FLASK_APP=main_site.py flask run
 
 Browse to <http://localhost:5000>.
 
+### Run Locally as HTTPS using flask_run_cert
+
+This is required for being able to render and test the Square payment elements.
+
+```sh
+pip install pyopenssl  
+FLASK_DEBUG=1 FLASK_APP=main_site.py FLASK_RUN_CERT=adhoc flask run
+```
+
 ### Using Docker to Run Locally
 
 #### First Time Using Docker?
@@ -104,6 +110,44 @@ sass static/sass/style.scss static/css/style.css
 sass --watch static/sass/style.scss static/css/style.css
 ```
 
+### Updating the Demographics Chart for the Apply Section
+
+![This is an example of the chart that can be found on the full-time-program.html page.](static/img/2023-H1-Cohort-Demographics.jpg)
+
+
+At the moment, we do not have styling in place that will enable us to have a coded, adequately sized piechart while still maintaining mobile responsiveness. Until that happens, here is how to update the piechart when numbers change.
+
+1. Start the server.
+2. Open the browser and navigate to the Apply page.
+3. Update the `data` section in `static/js/piechart.js#L30`.
+4. Uncomment out following in `full-time-program.html`.
+ ```
+   <!-- <div class="blue-background">
+      <canvas id="myChart" width="700" height="350"></canvas>
+   </div> -->
+ ```
+5. Take a screenshot of the piechart on the rendered page.
+6. Add the screenshot to the `static/img` directory saved with YEAR-H#-Cohort-Demographics.jpg, ex. 2023-H1-Cohort-Demographics.jpg.
+7. Update `full-time-program.html` to point to the new image you just added. Update the alt text if necessary.
+ ```
+  <img
+      src="{{ url_for('static', filename='img/2023-H1-Cohort-Demographics.jpg') }}"
+      alt="2023 Cohort Demographics."
+      class="full-width-img"
+   />
+ ```
+8. Recomment the following.
+ ```
+   <!-- <div class="blue-background">
+      <canvas id="myChart" width="700" height="350"></canvas>
+   </div> -->
+ ```
+9. Stop the server
+10. Commit your code and open a pull request
+
+
+
+
 ### Updating Dependencies
 
 This project uses [pip-tools](https://github.com/jazzband/pip-tools) to manage
@@ -132,6 +176,21 @@ For development dependencies:
    ```sh
    pip-compile -U dev.in
    ```
+
+⚠️ _You need Python version 3.8.10 and pip version 23 in order to properly update dependencies. If this is not the version you are working with, see the next instructions below on how to set up a virtual environment using anaconda._
+
+## Setting up virtualenv with Anaconda
+
+```sh
+#create your virtualenv using anaconda
+conda create -n py3810 python=3.8.10
+#activate it
+conda activate py3810
+#install pip version 23
+pip install --upgrade pip==23
+#install and upgrade pip-tools
+python -m pip install -U pip-tools
+```
 
 ## Deployment to DreamHost
 
@@ -165,6 +224,27 @@ i. tag the date after deployment
 
    ```sh
    pip install -U pip setuptools pip-tools
+   ```
+1. Create a `config.ini` file in the root directory of the repo (either locally or in whichever Dreamhost server) if there isn't one already present, and populate it with the necessary keys.
+
+   ```sh
+   [default]
+   # Acceptable values are sandbox or production
+   environment = sandbox
+   dev_password = dev_password
+
+   [production]
+   square_application_id = production_application_id
+   square_access_token = production_access_token
+   square_location_id = production_location_id
+
+   [sandbox]
+   square_application_id = <sandbox app id>
+   square_access_token = <sandbox access token>
+   square_location_id = <sandbox location id>
+
+   [slack]
+   slack_webhook =  <slack webhook>
    ```
 
 ### Updating the Site
@@ -209,11 +289,29 @@ Important: Only ever Pull form the server!
    pip-sync
    ```
 
-1. "Restart" the passenger process:
+1. "Restart" the server to showcase new changes 
 
-   ```sh
-   cd .. && touch tmp/restart.txt
-   ```
+  ```sh
+
+  // staging.techtonica.org
+  systemctl --user stop gunicorn_staging
+  systemctl --user enable gunicorn_staging
+  systemctl --user restart gunicorn_staging 
+  systemctl --user status gunicorn_staging
+
+	// testing.techtonica.org
+  systemctl --user stop gunicorn_testing
+  systemctl --user enable gunicorn_testing
+  systemctl --user restart gunicorn_testing
+  systemctl --user status gunicorn_testing
+
+  // techtonica.org
+  systemctl --user stop gunicorn_techtonica
+  systemctl --user enable gunicorn_techtonica
+  systemctl --user restart gunicorn_techtonica
+  systemctl --user status gunicorn_techtonica
+
+  ```
 
 1. Deactivate virtual envirement and exit server:
 
@@ -224,3 +322,6 @@ Important: Only ever Pull form the server!
    ```sh
    exit
    ```
+
+
+[def]: static/img/2023-H1-Cohort-Demographics.jpg

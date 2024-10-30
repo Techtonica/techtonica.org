@@ -1,17 +1,21 @@
 let ctx = document.getElementById("myChart").getContext("2d");
 let labels = [
   "Black",
-  "East Asian",
-  "White",
-  "South East/ Central Asian",
   "Latinx",
+  "East Asian",
+  "Southeast Asian",
+  "White",
+  "Central & South Asian",
+  "Pacific Islander & Indigenous/First Nations & Middle Eastern"
 ];
 let colorHex = [
-  "rgb(255, 99, 132)",
-  "rgb(255, 159, 64)",
-  "rgb(255, 205, 86)",
   "rgb(75, 192, 192)",
   "rgb(54, 162, 235)",
+  "rgb(201, 155, 203)",
+  "rgb(255, 99, 132)",
+  "rgb(255, 163, 140)",
+  "rgb(255, 159, 64)",
+  "rgb(255, 205, 86)"
 ];
 
 let myChart = new Chart(ctx, {
@@ -23,16 +27,18 @@ let myChart = new Chart(ctx, {
       {
         label: "Techtonica Demographics",
         backgroundColor: colorHex,
-        data: [27, 22, 5, 17, 27],
+        data: [22, 24, 19, 12, 14, 7, 2],
       },
     ],
   },
 
   options: {
-    responsive: false,
+    responsive: true,
+    maintainAspectRatio: true,
     legend: {
       display: true,
       position: "bottom",
+      size: 40,
       labels: {
         fontColor: "#ffffff",
       },
