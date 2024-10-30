@@ -4,30 +4,7 @@ endblock title %} {% block content %}
 <div class="row row__center blue-background">
   <div class="column">
     <h1>How to Help</h1>
-    <p class="justify">Techtonica could use your help with a few things this month:</p>
-    <ul>
-      <li>
-        <a href="https://www.eventbrite.com/e/virtual-volunteers-help-techtonica-participants-with-javascript-tickets-347424424807?aff=ebdsoporgprofile"
-        class="hover-link" target="_blank" rel="noopener noreferrer">Help our new participants with JS and their pre-work</a>.
-      </li>
-      <li>
-         Help us during our study groups <a href="https://www.eventbrite.com/e/techtonicas-javascript-study-group-night-tickets-245939420427?aff=ebdsoporgprofile"
-          class="hover-link" target="_blank" rel="noopener noreferrer">(see our available dates and times)</a>.
-      </li>
-       <li>
-        <a href="https://www.eventbrite.com/e/techtonica-june-2022-virtual-graduation-celebration-and-fundraiser-tickets-342258934687?aff=ebdsoporgprofile"
-        class="hover-link" target="_blank" rel="noopener noreferrer">Join us to celebrate the graduation of our current cohort on June 29th</a>.
-      </li>
-      <li>
-        <a href="https://www.eventbrite.com/e/2022-h2-virtual-launch-celebration-and-community-reunion-tickets-347441967277?aff=ebdsoporgprofile"
-        class="hover-link" target="_blank" rel="noopener noreferrer">Join us to celebrate the launch of the new cohort on August 3rd</a>.
-      </li>
-      <li>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf4Zap9U0k6iQvEBfPEFCYpWPfA0lLsd7nIVpICDZdc7A0ULQ/viewform"
-        class="hover-link" target="_blank" rel="noopener noreferrer">Apply to mentor the July 2022 cohort</a>.
-      </li>
-     </ul>
-    <p class="justify">You can also help us by:</p>
+    <p class="justify">You can help us by:</p>
     <ul>
       <li>
         <a href="{{ url_for('render_donate_page') }}" class="hover-link" target="_blank"
@@ -40,9 +17,21 @@ endblock title %} {% block content %}
         <a href="{{ url_for('render_sponsor_page') }}">sponsor and hire our full-time program participants</a>.
       </li>
       <li>
-        <a href="https://docs.google.com/document/d/1Fl9obaF3kdusiEb8dUW8lszzCACRbKSd5GQqwDdFirU/edit"
-          class="hover-link" target="_blank" rel="noopener noreferrer">Signing up to volunteer</a>.
+        <a href="{{ url_for('render_mentor_page') }}"
+          class="hover-link" target="_blank" rel="noopener noreferrer">Applying to be a mentor for our current cohort</a>.
       </li>
+       <li>
+        <a href="https://docs.google.com/document/d/1Fl9obaF3kdusiEb8dUW8lszzCACRbKSd5GQqwDdFirU/edit"
+          class="hover-link" target="_blank" rel="noopener noreferrer">Sign up to volunteer at the following opportunities</a>:
+      </li>
+        <ul>
+          <li>Speaker / Brown Bag Sessions</li>
+          <li>Facilitate a Study Sessions</li>
+          <li>Pre-Applicant Workshops</li>
+          <li>Pre-Applicant Pair Programming Sessions</li>
+          <li>Mock Interviews</li>
+          <li>...and more...</li>
+        </ul>
     </ul>
     <p class="justify">
       To receive updates, please
@@ -58,7 +47,7 @@ endblock title %} {% block content %}
 
 <div class="row">
   <div class="column centered">
-    <ul>
+    <ul class="hidden-bullets">
       <h2>Visit us</h2>
       <li>
         <a href="https://www.eventbrite.com/o/techtonica-11297022451" target="_blank" rel="noopener noreferrer">
@@ -74,7 +63,7 @@ endblock title %} {% block content %}
   </div>
 
   <div class="column centered">
-    <ul>
+    <ul class="hidden-bullets">
       <h2>Open-source projects</h2>
       <li>
         <a href="https://github.com/Techtonica/curriculum/issues" target="_blank" rel="noopener noreferrer">Contribute

@@ -85,18 +85,22 @@
   justify-content: flex-end;
   width: 100%;
   height: 75vh;
-  background: url(../img/three-participants-at-laptops-min.jpg) $main-blue
-    no-repeat top right fixed;
+  background: url(../img/three-participants-at-laptops-min.jpg) $main-blue no-repeat top right fixed;
   background-size: cover;
 }
 
 .main-header__text {
   max-width: 50%;
   padding: 0 1.5em;
-  text-shadow: $thin-dark-text-shadow;
   background-color: #0093b5cc;
   border-top-left-radius: 25px;
   border-top: 5px solid #007395cc;
+}
+
+#myChart {
+  display: block;
+  width: 700px;
+  height: 350px;
 }
 
 .main-header__header {
@@ -116,8 +120,7 @@
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/2022-H1-Launch-Celebration.png) $main-blue
-    no-repeat top fixed;
+  background: url(../img/2022-H1-Launch-Celebration.png) $main-blue no-repeat top fixed;
   background-size: cover;
 }
 
@@ -238,6 +241,7 @@
 
 #orange-button {
   text-decoration: none;
+
   &:hover {
     color: $white;
   }
@@ -288,6 +292,14 @@ a:hover {
   display: none;
 }
 
+iframe#youtubeiframe {
+  width: 560px;
+  height: 315px;
+  padding-inline-start: 15rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
 table.mentor {
   border-top: 1px solid #000;
   border-left: 1px solid #000;
@@ -306,6 +318,22 @@ table.mentor {
     border-right: 1px solid #000;
     vertical-align: top;
   }
+}
+
+#chartcontainer {
+  position:relative;
+  min-height:auto;
+  width:100%;
+  display: flex;
+  flex-grow:1;
+}
+
+.videowrapper {
+  max-width: 560px; /* you have to have a size or this method doesn't work */
+  max-height: 315px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 2rem;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -347,6 +375,7 @@ table.mentor {
   .donate {
     @include prefix(border-radius, 0px, webkit moz o);
     color: $focal-orange;
+
     &:hover {
       background-color: $focal-orange;
       color: $white;
@@ -393,8 +422,7 @@ table.mentor {
   .main-header {
     display: block;
     position: relative;
-    background: url(../img/three-participants-at-laptops-min.jpg) $main-blue
-      no-repeat top center;
+    background: url(../img/three-participants-at-laptops-min.jpg) $main-blue no-repeat top center;
     @include prefix(background-size, contain, webkit moz o);
   }
 
@@ -453,9 +481,11 @@ table.mentor {
       content: "";
       transform-origin: $button-size/14 center;
     }
+
     &:before {
       top: $button-size/4;
     }
+
     &:after {
       top: -$button-size/4;
     }
@@ -468,6 +498,7 @@ table.mentor {
       &:before {
         top: $button-size/3;
       }
+
       &:after {
         top: -$button-size/3;
       }
@@ -490,10 +521,12 @@ table.mentor {
     &:before {
       transform: rotate3d(0, 0, 1, 45deg);
     }
+
     &:after {
       transform: rotate3d(0, 0, 1, -45deg);
     }
   }
+
   .contact-us {
     display: block;
   }
@@ -518,6 +551,7 @@ table.mentor {
     background-size: cover;
     font-size: 14px;
   }
+
   .main-content {
     font-size: 14px;
   }
@@ -528,6 +562,7 @@ table.mentor {
   .main-header__text {
     font-size: 1rem;
   }
+
   .main-header_text p {
     margin-bottom: 20px;
   }
@@ -539,6 +574,7 @@ table.mentor {
     font-size: 1rem;
     height: 50vh;
   }
+
   .main-header {
     height: 500px;
     background-size: cover;
@@ -613,9 +649,11 @@ table.mentor {
   text-align: left;
   outline: none;
   font-size: 1.2em;
+
   &:hover {
     color: $dark-blue;
   }
+
   &::before {
     content: "+ ";
     text-decoration: none;
@@ -624,6 +662,7 @@ table.mentor {
 
 .collapsible-active {
   color: $dark-blue;
+
   &::before {
     content: "- ";
   }
@@ -645,4 +684,229 @@ p.press-release-summary {
 
 p.press-release-bold {
   font-style: bold;
+}
+
+/* Square Payment Styling */
+
+.payment-form {
+  padding: 50px 0px 50px 0px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.payment-form {
+  align-items: center;
+}
+
+#apple-pay-button {
+  height: 48px;
+  width: 100%;
+  display: inline-block;
+  -webkit-appearance: -apple-pay-button;
+  -apple-pay-button-type: plain;
+  -apple-pay-button-style: black;
+}
+
+#fast-checkout {
+  background: #fafafa;
+  color: black;
+}
+
+#fast-checkout h3 {
+  color: $main-blue;
+}
+
+#fast-checkout input {
+  border-radius: 6px;
+  position: relative;
+}
+
+#fast-checkout .wrapper {
+  position: relative;
+}
+
+#fast-checkout button {
+  width: 100%;
+}
+
+#fast-checkout button {
+  @include prefix(border-radius, 8px, webkit moz o);
+  color: $white;
+  display: inline-block;
+  background-color: $focal-orange;
+  text-align: center;
+  font-size: 1.5em;
+
+  &:hover {
+    background-color: $light-blue;
+    color: $white;
+    transition: 0.3s;
+  }
+
+}
+
+#fast-checkout .border {
+  color: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.1);
+  height: 1px;
+  width: 100%;
+  margin: 30px 0;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+#fast-checkout .border span {
+  position: absolute;
+  top: -10px;
+  background: #fafafa;
+  padding: 0 10px;
+  left: calc(50% - 1em - 5px);
+}
+
+#ach-wrapper {
+  display: none;
+}
+
+#ach-wrapper input:first-of-type {
+  margin-bottom: 10px;
+}
+
+#ach-message {
+  width: 100%;
+  margin-top: 11px;
+  margin-bottom: 11px;
+  font-size: 14px;
+  display: inline-block;
+  color: #bf0020;
+}
+
+#ach-message:empty:before, #message:empty:before {
+  content: "\200b";
+}
+
+#payment-flow-message {
+  width: 100%;
+  margin-top: 11px;
+  margin-bottom: 11px;
+  height: 100px;
+  display: block;
+}
+
+#payment-flow-message.error {
+  color: #bf0020;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+#payment-flow-message.success {
+  color: #3374ff;
+}
+
+.wrapper {
+  max-width: 50%;
+  justify-content: center;
+}
+
+#card-container {
+  max-width: 387px;
+  margin: auto;
+}
+
+#info-wrapper {
+  margin-bottom: 2em;
+}
+
+#info-wrapper > fieldset {
+  box-sizing: border-box;
+  margin: 1em;
+  padding: 1em;
+
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+legend {
+  color: #007395cc;
+}
+
+#info-wrapper > fieldset > label {
+  margin-top: 1em;
+  margin-bottom: .5em;
+  color: #007395cc;
+}
+
+#info-wrapper > fieldset > input[type="text"],
+#info-wrapper > fieldset > input[type="email"],
+#info-wrapper > fieldset > textarea {
+  min-width: 90%;
+  margin: auto auto 1em auto;
+  padding: .25em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+#info-wrapper > fieldset > textarea {
+  min-height: 6em;
+}
+
+input[type="radio"] {
+  width: 50px;
+}
+
+#radio-wrapper {
+  width: 100%;
+  margin-bottom: 1em;
+  color: #007395cc;
+}
+
+#payment-page {
+  padding: 1.5em;
+}
+
+#payment-page > h1, 
+#payment-page > p {
+  max-width: 65%;
+  margin: auto;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+
+  .wrapper {
+    max-width: 75%;
+  }
+
+  #info-wrapper {
+    max-width: 100%;
+    min-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .payment-form {
+    margin: 0px;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+
+  .wrapper {
+    max-width: 100%;
+  }
+
+  #info-wrapper {
+    max-width: 100%;
+    min-width: none;
+  }
+
+  #info-wrapper > fieldset {
+    margin: 0px;
+    width: 100%;
+  }
 }

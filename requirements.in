@@ -3,7 +3,12 @@ Flask-SSLify
 Jinja2
 eventbrite
 pendulum
-pip-tools
+pip-tools==7.4.1
 python-dotenv
 requests
 sendgrid
+fastapi
+squareup
+pydantic
+a2wsgi
+configparser

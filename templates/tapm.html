@@ -10,13 +10,15 @@ Careers {% endblock title %} {% block content %}
     />
   </div>
   <div class="column">
-    <h1 class="blue-h1">Openings</h1>
+    <h1 class="blue-h1"><a href="{{ url_for('render_openings_page') }}" title="Openings"
+      >Openings</a></h1>
     <p class="justify">
-      Techtonica is a nonprofit that helps women and non-binary adults with low
-      incomes overcome barriers into the tech industry by providing laptops,
-      stipends, technical training, and placements.
+      Techtonica is a fiscally-sponsored nonprofit that offers U.S. women and non-binary adults seeking 
+      economic empowerment, software engineering training with need-based, sliding-scale, subsidized 
+      tuition and stipend scholarships, then places them in positions at sponsoring companies 
+      that are ready to support more diverse teams or supports them during the job search.
     </p>
-    <h3>Make an Impact as Our Technical Associate Program Manager</h3>
+    <h3>Make an Impact as Our Technical Associate Program Manager (TAPM)</h3>
 
     <p class="justify">
       Techtonica offers a life-changing learning experience to program
@@ -26,10 +28,11 @@ Careers {% endblock title %} {% block content %}
 
     <p class="justify">
       We are looking for a self-motivated individual to start immediately as a
-      full-time Technical Associate Program Manager. This role would be a good
-      fit for someone with JavaScript coding knowledge, especially if you are
-      interested in focusing mostly on community organizing or program/project
-      management.
+      full-time Technical Associate Program Manager, starting at a minimum of 25
+      hours a week with intention to increase to 40 hours a week following the 
+      probationary period of 45 days. This role would be a good opportunity for someone 
+      with JavaScript coding knowledge, especially if you are interested in 
+      focusing mostly on community organizing or program/project management.
     </p>
 
     <p class="justify">
@@ -50,7 +53,7 @@ Careers {% endblock title %} {% block content %}
     </p>
 
     <p class="justify">
-      This full-time role's compensation will start between $40,000 and $73,000
+      This full-time role's compensation will start between $40,000 and $72,800
       (depending on experience and location). We can provide benefits to
       full-time employees, but we cannot provide visa sponsorship at this time.
     </p>
@@ -59,9 +62,10 @@ Careers {% endblock title %} {% block content %}
     <ul>
       <li>Report to and collaborate with the program technical lead</li>
       <li>
-        Manage Techtonica’s application process (JavaScript pre-req study
-        groups, application forms, JavaScript workshops, code challenges,
-        interviews, and scheduling of board interviews)
+        Manage Techtonica’s application and onboarding processes (JavaScript 
+        pre-req study groups, application forms, JavaScript workshops, code 
+        challenges, interviews, scheduling of board interviews, collecting 
+        pictures, saving files to Dropbox, posting on Medium, etc.)
       </li>
       <li>Organize and manage Techtonica events</li>
       <li>
@@ -91,7 +95,15 @@ Careers {% endblock title %} {% block content %}
 
     <p class="justify">What we're looking for:</p>
     <ul>
+      <li>Commitment to being at Techtonica for at least six months</li>
       <li>Self-motivation and desire to make continual improvements</li>
+      <li>The ability to follow up with emails and other communication</li>
+      <li>The ability to work independently and asynchronously</li>
+      <li>Experience creating and maintaining online communities</li>
+      <li>
+        The ability to handle many different projects and tasks simultaneously
+        and independently
+      </li>
       <li>
         Excellent communication, interpersonal, trust-building, and leadership
         skills
@@ -117,14 +129,16 @@ Careers {% endblock title %} {% block content %}
         diversity-and-inclusion-in-tech issues
       </li>
       <li>
-        The ability to handle many different projects and tasks simultaneously
-        and independently
-      </li>
-      <li>Commitment to being at Techtonica for at least six months</li>
-      <li>
         The ability to relate to our target audience (women and non-binary
         adults, mostly people of color, with low incomes) on as many levels as
         possible
+      </li>
+      <li>Strong written communication skills in English</li>
+      <li>The ability to follow 
+        <a href="{{ url_for('render_conduct_page') }}" title="Code of Conduct" target="_blank"
+        rel="noopener noreferrer">
+        Techtonica's Code of Conduct
+        </a>
       </li>
     </ul>
 
@@ -132,10 +146,10 @@ Careers {% endblock title %} {% block content %}
       The interview process involves showing you are a good fit for the role. We
       may ask you to join us for an interview (online), contribute to the
       curriculum, pair, and meet board members. Please send your resume or a
-      link to your LinkedIn profile and a link to your GitHub profile to
-      info@techtonica.org if this role sounds like a good fit for you.
+      link to your LinkedIn profile and a link to your GitHub profile to both
+      dtibrey AT techtonica.org and info AT techtonica.org (in the same email) if this 
+      role sounds like a good fit for you.
     </p>
-    {% include 'contactbutton.html' %}
     <p></p>
     <br />
   </div>
