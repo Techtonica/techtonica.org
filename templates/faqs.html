@@ -636,27 +636,39 @@ FAQs {% endblock title %} {% block content %}
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const faqWrappers = document.querySelectorAll('.faq-wrapper');
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqWrappers = document.querySelectorAll('.faq-wrapper');
+    
+    faqWrappers.forEach(wrapper => {
+      const header = wrapper.querySelector('.faq-header');
+      const content = wrapper.querySelector('.faq-content');
+      const toggleIcon = header.querySelector('.toggle-icon');
   
-  faqWrappers.forEach(wrapper => {
-    const header = wrapper.querySelector('.faq-header');
-    const content = wrapper.querySelector('.faq-content');
-    const toggleIcon = header.querySelector('.toggle-icon');
-
-    toggleIcon.addEventListener('click', () => {
-      content.style.visibility = content.style.visibility === 'hidden'? 'visible' : 'hidden';
-      content.style.height = content.style.height === 'auto'? '0' : 'auto';
-      
-      // Adjust the position of other expanded FAQs
+      let isExpanded = false;
+  
+      toggleIcon.addEventListener('click', () => {
+        if (!isExpanded) {
+          content.style.display = 'none';
+          toggleIcon.querySelector('.toggle-icon-plus').style.display = 'inline-block';
+          toggleIcon.querySelector('.toggle-icon-minus').style.display = 'none';
+        } else {
+          content.style.display = '';
+          toggleIcon.querySelector('.toggle-icon-plus').style.display = 'none';
+          toggleIcon.querySelector('.toggle-icon-minus').style.display = 'inline-block';
+        }
+  
+        isExpanded = !isExpanded;
+      });
+  
+      // Prevent overlap when expanding
       faqWrappers.forEach(otherWrapper => {
-        if (otherWrapper!== wrapper && otherWrapper.classList.contains('expanded')) {
-          otherWrapper.style.top = `${wrapper.getBoundingClientRect().top}px`;
+        if (otherWrapper !== wrapper) {
+          otherWrapper.style.position = 'relative';
+          otherWrapper.style.zIndex = '1';
         }
       });
     });
   });
-});
-</script>
+  </script>
 
 {% endblock content %}
