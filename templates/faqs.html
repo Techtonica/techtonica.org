@@ -2,7 +2,7 @@
 FAQs {% endblock title %} {% block content %}
 
 <div class="row row__center what-we-do" id="whatwedo">
-  <div class="column">
+  <div class="column faq-wrapper">
     <h1 class="blue-h1">Frequently Asked Questions About Techtonica</h1>
     <p>&nbsp;</p>
     <h3 class="faq-header">
@@ -506,16 +506,28 @@ FAQs {% endblock title %} {% block content %}
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const faqHeaders = document.querySelectorAll('.faq-header');
+    const faqWrappers = document.querySelectorAll('.faq-wrapper');
     
-    faqHeaders.forEach(header => {
-      const content = header.nextElementSibling;
+    faqWrappers.forEach(wrapper => {
+      const header = wrapper.querySelector('.faq-header');
+      const content = wrapper.querySelector('.faq-content');
       const toggleButton = header.querySelector('.toggle-button');
 
       toggleButton.addEventListener('click', () => {
         content.style.visibility = content.style.visibility === 'hidden' ? 'visible' : 'hidden';
         content.style.height = content.style.height === 'auto' ? '0' : 'auto';
+        
+        // Adjust the position of other expanded FAQs
+        faqWrappers.forEach(otherWrapper => {
+          if (otherWrapper !== wrapper && otherWrapper.classList.contains('expanded')) {
+            otherWrapper.style.top = `${wrapper.getBoundingClientRect().top}px`;
+          }
+        });
       });
+
+      // Initial state
+      content.style.visibility = 'hidden';
+      content.style.height = '0';
     });
   });
   </script>

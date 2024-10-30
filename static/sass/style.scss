@@ -911,6 +911,10 @@ input[type="radio"] {
   }
 }
 
+.faq-wrapper {
+  position: relative;
+}
+
 .faq-header {
   margin-bottom: 15px;
 }
@@ -920,6 +924,10 @@ input[type="radio"] {
   height: 0;
   overflow: hidden;
   transition: visibility 0.3s ease-out, height 0.3s ease-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .faq-title {
