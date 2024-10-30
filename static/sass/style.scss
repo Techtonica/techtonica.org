@@ -910,3 +910,29 @@ input[type="radio"] {
     width: 100%;
   }
 }
+
+.faq-header {
+  margin-bottom: 15px;
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.faq-title {
+  display: block;
+}
+
+.toggle-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+.toggle-button:hover {
+  text-decoration: underline;
+}
