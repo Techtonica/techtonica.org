@@ -97,6 +97,10 @@ button {
   align-items: center;
 }
 
+.staff-team {
+  align-items: flex-start;
+}
+
 .row__baseline {
   align-items: baseline;
 }
