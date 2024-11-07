@@ -313,14 +313,37 @@ button {
   top: 150px;
 }
 
-.hiring {
-  width: 4.5rem;
-  margin: 0.5rem;
+.social-media, .hiring {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.25rem;
 }
 
-.social-media {
-  width: 3rem;
-  margin: 0.5rem;
+.hiring {
+  width: 4.5rem;
+}
+
+.icon-text {
+  font-size: 0.7rem; /* Smaller text size */
+  text-align: center;
+  line-height: 1.2;
+  margin-top: 0.25rem;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  width: 60px;
 }
 
 .contact-us,
@@ -630,6 +653,23 @@ table.mentor td:first-of-type {
   .nav-bar-inner {
     padding: 0;
     margin-top: 5rem;
+  }
+
+  .social-link {
+    width: 50px; /* Slightly smaller width for mobile */
+  }
+
+  .social-media, .hiring {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .hiring {
+    width: 3.75rem;
+  }
+
+  .icon-text {
+    font-size: 0.6rem; /* Even smaller text for mobile */
   }
 }
 /* iphone 4 and 4s media query */

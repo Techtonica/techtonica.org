@@ -613,8 +613,9 @@
     <!-- BEGIN FOOTER -->
     <div class="row row__center gray-background">
       <div class="column">
-        <p class="centered">
+        <p class="centered social-links">
           <a
+            class="social-link"
             href="https://twitter.com/TechtonicaOrg"
             target="_blank"
             rel="noopener noreferrer"
@@ -623,8 +624,11 @@
               src="{{ url_for('static', filename='img/twitter-blue.png') }}"
               class="social-media"
               alt="Techtonica Twitter"
-          /></a>
+              />
+            <span class="icon-text">Twitter</span>
+            </a>
           <a
+            class="social-link"
             href="https://www.linkedin.com/company/techtonica/"
             target="_blank"
             rel="noopener noreferrer"
@@ -633,8 +637,11 @@
               src="{{ url_for('static', filename='img/linkedin-blue.png') }}"
               class="social-media"
               alt="Techtonica LinkedIn"
-          /></a>
+              />
+              <span class="icon-text">Linkedin</span>
+            </a>
           <a
+            class="social-link"
             href="https://www.facebook.com/Techtonica/"
             target="_blank"
             rel="noopener noreferrer"
@@ -643,8 +650,11 @@
               src="{{ url_for('static', filename='img/facebook-blue.png') }}"
               class="social-media"
               alt="Techtonica Facebook"
-          /></a>
+              />
+              <span class="icon-text">Facebook</span>
+            </a>
           <a
+            class="social-link"
             href="https://www.instagram.com/TechtonicaOrg/"
             target="_blank"
             rel="noopener noreferrer"
@@ -653,8 +663,11 @@
               src="{{ url_for('static', filename='img/instagram-icon.png') }}"
               class="social-media"
               alt="Techtonica Instagram"
-          /></a>
+              />
+              <span class="icon-text">Instagram</span>
+            </a>
           <a
+            class="social-link"
             href="https://medium.com/techtonica/"
             target="_blank"
             rel="noopener noreferrer"
@@ -663,8 +676,11 @@
               src="{{ url_for('static', filename='img/medium.png') }}"
               class="social-media"
               alt="Techtonica Medium Publication"
-          /></a>
+              />
+              <span class="icon-text">Medium</span>
+            </a>
           <a
+            class="social-link"
             href="https://www.youtube.com/channel/UCZHRjd_jS91oEj0ecJ0kZsg"
             target="_blank"
             rel="noopener noreferrer"
@@ -673,45 +689,60 @@
               src="{{ url_for('static', filename='img/youtube.png') }}"
               class="social-media"
               alt="Techtonica YouTube"
-          /></a>
-          <a href="{{ url_for('render_conduct_page') }}" title="Code of Conduct"
+              />
+              <span class="icon-text">YouTube</span>
+            </a>
+          <a class="social-link" href="{{ url_for('render_conduct_page') }}" title="Code of Conduct"
             ><img
               src="{{ url_for('static', filename='img/code-of-conduct-blue.jpg') }}"
               class="social-media"
               alt="Techtonica Code of Conduct"
-          /></a>
-          <a href="{{ url_for('render_faqs_page') }}" title="FAQs"
+              />
+              <span class="icon-text">Code of Conduct</span>
+            </a>
+          <a class="social-link" href="{{ url_for('render_faqs_page') }}" title="FAQs"
             ><img
               src="{{ url_for('static', filename='img/faqs-icon.png') }}"
               class="social-media"
               alt="Techtonica FAQs"
-          /></a>
-          <a href="mailto:info@techtonica.org" title="Email"
+              />
+              <span class="icon-text">FAQs</span>
+            </a>
+          <a class="social-link" href="mailto:info@techtonica.org" title="Email"
             ><img
               src="{{ url_for('static', filename='img/mail-icon.png') }}"
               class="social-media"
               alt="Techtonica Email"
-          /></a>
+              />
+              <span class="icon-text">Email</span>
+            </a>
           <a
+            class="social-link"
             href="https://www.eventbrite.com/o/techtonica-11297022451"
             title="Events"
             ><img
               src="{{ url_for('static', filename='img/calendar-icon.png') }}"
               class="social-media"
               alt="Techtonica Events"
-          /></a>
-          <a href="{{ url_for('render_news_page') }}" title="News"
+              />
+              <span class="icon-text">Events</span>
+            </a>
+          <a class="social-link" href="{{ url_for('render_news_page') }}" title="News"
             ><img
               src="{{ url_for('static', filename='img/news-icon.png') }}"
               class="social-media"
               alt="Techtonica News"
-          /></a>
-          <a href="{{ url_for('render_openings_page') }}" title="Openings"
+              />
+              <span class="icon-text">News</span>
+            </a>
+          <a class="social-link" href="{{ url_for('render_openings_page') }}" title="Openings"
             ><img
               src="{{ url_for('static', filename='img/we-are-hiring.png') }}"
               class="hiring"
               alt="Techtonica Careers"
-          /></a>
+              />
+              <span class="icon-text">Careers</span>
+            </a>
         </p>
         <p class="centered">
           All content &copy; Techtonica, a fiscally-sponsored project of
