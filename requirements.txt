@@ -4,6 +4,7 @@
 #
 #    pip-compile
 #
+
 a2wsgi==1.10.4
     # via -r requirements.in
 annotated-types==0.6.0
@@ -14,7 +15,7 @@ build==1.2.1
     # via pip-tools
 cachecontrol==0.12.14
     # via squareup
-certifi==2020.12.5
+certifi==2022.12.7
     # via requests
 chardet==4.0.0
     # via requests
