@@ -114,12 +114,20 @@ def render_openings_page():
 #     return render_template("stem.html")
 
 
-@app.route("/openings/tapm/")
-def render_tapm_page():
+# @app.route("/openings/tapm/")
+# def render_tapm_page():
+#     """
+#     Renders the TAPM page from jinja2 template
+#     """
+#     return render_template("tapm.html")
+
+@app.route("/openings/ta/")
+def render_ta_page():
     """
-    Renders the TAPM page from jinja2 template
+    Renders the TA page from jinja2 template
     """
-    return render_template("tapm.html")
+    return render_template("ta.html")
+
 
 # @app.route("/openings/partnershipsmanager/")
 # def render_partnershipsmanager_page():
@@ -135,12 +143,12 @@ def render_sponsorshipslead_page():
     """
     return render_template("sponsorshipslead.html")
 
-@app.route("/openings/curriculumdev/")
-def render_curriculumdev_page():
-    """
-    Renders the curriculum dev page from jinja2 template
-    """
-    return render_template("curriculumdev.html")
+# @app.route("/openings/curriculumdev/")
+# def render_curriculumdev_page():
+#     """
+#     Renders the curriculum dev page from jinja2 template
+#     """
+#     return render_template("curriculumdev.html")
 
 
 @app.route("/openings/board/")
