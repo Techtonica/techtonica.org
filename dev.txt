@@ -38,7 +38,7 @@ exceptiongroup==1.2.2
     # via anyio
 fastapi==0.115.6
     # via -r requirements.in
-flask==1.1.2
+flask==2.2.5
     # via
     #   -r requirements.in
     #   flask-sslify
@@ -49,7 +49,9 @@ idna==2.10
     #   anyio
     #   requests
 importlib-metadata==8.5.0
-    # via build
+    # via
+    #   build
+    #   flask
 ipdb==0.13.4
     # via -r dev.in
 ipython==7.16.1
@@ -60,7 +62,7 @@ ipython-genutils==0.2.0
     # via traitlets
 isort==5.7.0
     # via -r dev.in
-itsdangerous==1.1.0
+itsdangerous==2.2.0
     # via flask
 jedi==0.18.0
     # via ipython
