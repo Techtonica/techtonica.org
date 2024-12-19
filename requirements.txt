@@ -100,7 +100,7 @@ squareup==22.0.0.20220921
     # via -r requirements.in
 starkbank-ecdsa==1.1.0
     # via sendgrid
-starlette==0.40.0
+starlette==0.38.0
     # via fastapi
 tomli==2.0.1
     # via
