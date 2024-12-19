@@ -30,7 +30,7 @@ eventbrite==3.3.5
     # via -r requirements.in
 exceptiongroup==1.2.1
     # via anyio
-fastapi
+fastapi>=0.100.0,<0.120.0
     # via -r requirements.in
 flask==1.1.2
     # via
@@ -100,7 +100,7 @@ squareup==22.0.0.20220921
     # via -r requirements.in
 starkbank-ecdsa==1.1.0
     # via sendgrid
-starlette
+starlette>=0.37.2,<0.39.0
     # via fastapi
 tomli==2.0.1
     # via
