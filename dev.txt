@@ -64,14 +64,12 @@ itsdangerous==1.1.0
     # via flask
 jedi==0.18.0
     # via ipython
-jinja2==2.11.3
+jinja2==3.1.4
     # via
     #   -r requirements.in
     #   flask
 jsonpickle==1.5.2
-    # via
-    #   apimatic-core
-    #   squareup
+    # via squareup
 markupsafe==2.1.5
     # via
     #   jinja2
