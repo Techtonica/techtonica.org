@@ -38,7 +38,7 @@ flask==2.2.5
     #   flask-sslify
 flask-sslify==0.1.5
     # via -r requirements.in
-idna==2.10
+idna==3.7
     # via
     #   anyio
     #   requests
