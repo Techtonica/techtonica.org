@@ -18,7 +18,7 @@ cachecontrol==0.12.14
     # via squareup
 certifi==2020.12.5
     # via requests
-chardet==4.0.0
+charset-normalizer==3.4.0
     # via requests
 click==8.1.7
     # via
@@ -69,9 +69,7 @@ jinja2==2.11.3
     #   -r requirements.in
     #   flask
 jsonpickle==1.5.2
-    # via
-    #   apimatic-core
-    #   squareup
+    # via squareup
 markupsafe==2.1.5
     # via
     #   jinja2
@@ -118,7 +116,7 @@ python-http-client==3.3.1
     # via sendgrid
 pytzdata==2020.1
     # via pendulum
-requests==2.25.1
+requests==2.32.2
     # via
     #   -r requirements.in
     #   cachecontrol
