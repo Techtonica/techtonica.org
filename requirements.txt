@@ -14,7 +14,7 @@ build==1.2.1
     # via pip-tools
 cachecontrol==0.12.14
     # via squareup
-certifi==2020.12.5
+certifi==2024.7.4
     # via requests
 charset-normalizer==3.4.0
     # via requests
