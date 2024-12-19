@@ -30,7 +30,7 @@ eventbrite==3.3.5
     # via -r requirements.in
 exceptiongroup==1.2.1
     # via anyio
-fastapi>=0.100.0,<0.120.0
+fastapi==0.115.6
     # via -r requirements.in
 flask==1.1.2
     # via
@@ -52,8 +52,10 @@ jinja2==2.11.3
     #   flask
 jsonpickle==1.5.2
     # via squareup
-markupsafe==1.1.1
-    # via jinja2
+markupsafe==2.1.5
+    # via
+    #   jinja2
+    #   werkzeug
 msgpack==1.0.8
     # via cachecontrol
 packaging==24.0
@@ -100,7 +102,7 @@ squareup==22.0.0.20220921
     # via -r requirements.in
 starkbank-ecdsa==2.0.1
     # via sendgrid
-starlette>=0.37.2,<0.39.0
+starlette==0.41.3
     # via fastapi
 tomli==2.0.1
     # via
@@ -116,7 +118,7 @@ typing-extensions==4.11.0
     #   starlette
 urllib3==1.26.3
     # via requests
-werkzeug==1.0.1
+werkzeug==3.0.6
     # via flask
 wheel==0.43.0
     # via pip-tools
