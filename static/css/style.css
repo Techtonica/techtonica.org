@@ -279,6 +279,10 @@ button {
   width: 20%;
 }
 
+.fifteen-percent-width {
+  width: 15%;
+}
+
 .ten-percent-width {
   width: 10%;
 }
