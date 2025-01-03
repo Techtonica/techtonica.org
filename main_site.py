@@ -166,6 +166,12 @@ def render_mentor_page():
     """
     return render_template("mentor.html")
 
+@app.route("/mvp/")
+def render_mvp_page():
+    """
+    Renders the MVP page from jinja2 template
+    """
+    return render_template("mvp.html")
 
 @app.route("/full-time-program/")
 def render_ft_program_page():
