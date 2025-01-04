@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Transition to Participant{% endblock %}
+{% block content %}
+<h1>Transition to Participant</h1>
+<section class="transition-form">
+    <h2>Complete Your Enrollment</h2>
+    <form action="{{ url_for('complete_transition') }}" method="post">
+        <label for="participant_id">Participant ID:</label>
+        <input type="text" id="participant_id" name="participant_id" required>
+        
+        <label for="program">Confirm Program:</label>
+        <input type="text" id="program" name="program" value="{{ application.program }}" readonly>
+        
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" required>
+        
+        <button type="submit">Complete Enrollment</button>
+    </form>
+</section>
+{% endblock %}

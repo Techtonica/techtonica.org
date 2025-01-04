@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Participant Dashboard{% endblock %}
+{% block content %}
+<h1>Participant Dashboard</h1>
+<section class="enrolled-courses">
+    <h2>Enrolled Courses</h2>
+    {% if courses %}
+        <ul>
+            {% for course in courses %}
+            <li>
+                <h3>{{ course.title }}</h3>
+                <p>Staff: {{ course.staff.username }}</p>
+                <a href="{{ url_for('course_content', course_id=course.id) }}">View Course</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You are not enrolled in any courses yet.</p>
+    {% endif %}
+</section>
+<section class="assignments">
+    <h2>Upcoming Assignments</h2>
+    {% if assignments %}
+        <ul>
+            {% for assignment in assignments %}
+            <li>
+                <h3>{{ assignment.title }}</h3>
+                <p>Due: {{ assignment.due_date.strftime('%Y-%m-%d %H:%M') }}</p>
+                <a href="{{ url_for('assignment_submission', assignment_id=assignment.id) }}">Submit Assignment</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No upcoming assignments.</p>
+    {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Submit Assignment{% endblock %}
+{% block content %}
+<h1>Submit Assignment: {{ assignment.title }}</h1>
+<form action="{{ url_for('assignment_submission', assignment_id=assignment.id) }}" method="post" enctype="multipart/form-data">
+    <label for="submission_content">Submission Content:</label>
+    <textarea id="submission_content" name="submission_content" rows="10" cols="50" required></textarea>
+    
+    <label for="file_upload">File Upload (optional):</label>
+    <input type="file" id="file_upload" name="file_upload">
+    
+    <button type="submit">Submit Assignment</button>
+</form>
+{% endblock %}

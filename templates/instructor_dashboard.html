@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Staff Dashboard{% endblock %}
+{% block content %}
+<h1>Staff Dashboard</h1>
+<section class="courses">
+    <h2>Your Courses</h2>
+    {% if courses %}
+        <ul>
+            {% for course in courses %}
+            <li>
+                <h3>{{ course.title }}</h3>
+                <p>Participants: {{ course.participants|length }}</p>
+                <a href="{{ url_for('course_content', course_id=course.id) }}">Manage Course</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You are not teaching any courses yet.</p>
+    {% endif %}
+</section>
+<section class="assignments">
+    <h2>Recent Submissions</h2>
+    <ul>
+        {% for submission in recent_submissions %}
+        <li>
+            <h3>{{ submission.assignment_title }}</h3>
+            <p>Participant: {{ submission.participant_name }}</p>
+            <a href="{{ url_for('grade_assignment', submission_id=submission.id) }}">Grade Submission</a>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}

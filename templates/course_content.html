@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}{{ course.title }}{% endblock %}
+{% block content %}
+<h1>{{ course.title }}</h1>
+<section class="course-info">
+    <p>Staff: {{ course.staff.username }}</p>
+    <p>Description: {{ course.description }}</p>
+</section>
+<section class="course-assignments">
+    <h2>Assignments</h2>
+    {% if course.assignments %}
+        <ul>
+            {% for assignment in course.assignments %}
+            <li>
+                <h3>{{ assignment.title }}</h3>
+                <p>Due: {{ assignment.due_date.strftime('%Y-%m-%d %H:%M') }}</p>
+                {% if current_user.is_participant %}
+                    <a href="{{ url_for('assignment_submission', assignment_id=assignment.id) }}">Submit Assignment</a>
+                {% elif current_user.is_staff %}
+                    <a href="{{ url_for('edit_assignment', assignment_id=assignment.id) }}">Edit Assignment</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No assignments for this course yet.</p>
+    {% endif %}
+</section>
+{% endblock %}

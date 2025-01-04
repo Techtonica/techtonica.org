@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+<h1>Admin Dashboard</h1>
+<section class="application-list">
+    <h2>Recent Applications</h2>
+    {% if applications %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Applicant Name</th>
+                    <th>Program</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for application in applications %}
+                <tr>
+                    <td>{{ application.full_name }}</td>
+                    <td>{{ application.program }}</td>
+                    <td>{{ application.status }}</td>
+                    <td><a href="{{ url_for('review_application', application_id=application.id) }}">Review</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No applications to review.</p>
+    {% endif %}
+</section>
+{% endblock %}

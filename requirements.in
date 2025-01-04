@@ -1,5 +1,7 @@
+bcrypt
 Flask
 Flask-SSLify
+Flask-Login
 Jinja2
 eventbrite
 pendulum
@@ -12,3 +14,4 @@ squareup
 pydantic
 a2wsgi
 configparser
+werkzeug

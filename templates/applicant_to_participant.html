@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Applicant to Participant Transition{% endblock %}
+{% block content %}
+<h1>Applicant to Participant Transition</h1>
+<section class="transition-list">
+    <h2>Accepted Applicants</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Applicant Name</th>
+                <th>Program</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for applicant in accepted_applicants %}
+            <tr>
+                <td>{{ applicant.full_name }}</td>
+                <td>{{ applicant.program }}</td>
+                <td>{{ applicant.status }}</td>
+                <td>
+                    <a href="{{ url_for('enroll_participant', applicant_id=applicant.id) }}">Enroll as Participant</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}
