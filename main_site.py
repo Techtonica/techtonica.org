@@ -13,7 +13,7 @@ from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
 from flask import Flask, redirect, render_template, url_for, request, jsonify, flash
 from flask_sslify import SSLify
-from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user # UserMixin, 
 from pydantic import BaseModel
 from square.client import Client
@@ -21,8 +21,8 @@ from uuid import uuid4
 from werkzeug.security import generate_password_hash, check_password_hash
 # from application_automation.routes import application_bp
 # from course_management.routes import course_bp
-from models import db, User, Application, Course, Assignment, Submission, Message
-from config import Config
+# from models import db, User, Application, Course, Assignment, Submission, Message
+# from config import Config
 
 load_dotenv(find_dotenv(usecwd=True))
 
@@ -341,46 +341,46 @@ def send_posting():
 
 
 
-# ============================================
-# MVP credentially, user, login, logout set up 
-# ============================================
+# ===========================================================
+# Application Automation & Course Management System Routes
+# ===========================================================
 
-app = Flask(__name__)
-db = SQLAlchemy(app)
-app.config.from_object(Config)
+# app = Flask(__name__)
+# db = SQLAlchemy(app)
+# app.config.from_object(Config)
 login_manager = LoginManager(app)
 login_manager.login_view = 'sign_in'
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
+# @login_manager.user_loader
+# def load_user(user_id):
+#     return User.query.get(int(user_id))
 
 @app.route('/index')
 def index():
     return render_template('index.html')
 
-@app.route('/apply', methods=['GET', 'POST'])
+@app.route('/apply') #, methods=['GET', 'POST'])
 def application_form():
-    if request.method == 'POST':
-        application = Application(
-            full_name=request.form['full_name'],
-            email=request.form['email'],
-            program=request.form['program'],
-            statement=request.form['statement'],
-            user_id=current_user.id if current_user.is_authenticated else None
-        )
-        db.session.add(application)
-        db.session.commit()
-        flash('Application submitted successfully!', 'success')
-        return redirect(url_for('application_dashboard'))
+    # if request.method == 'POST':
+    #     application = Application(
+    #         full_name=request.form['full_name'],
+    #         email=request.form['email'],
+    #         program=request.form['program'],
+    #         statement=request.form['statement'],
+    #         user_id=current_user.id if current_user.is_authenticated else None
+    #     )
+    #     db.session.add(application)
+    #     db.session.commit()
+        # flash('Application submitted successfully!', 'success')
+        # return redirect(url_for('application_dashboard'))
     return render_template('application_form.html')
 
 @app.route('/application-dashboard')
 @login_required
 def application_dashboard():
-    application = Application.query.filter_by(user_id=current_user.id).first()
-    messages = Message.query.filter_by(user_id=current_user.id).order_by(Message.timestamp.desc()).all()
-    return render_template('application_dashboard.html', application=application, messages=messages)
+    # application = Application.query.filter_by(user_id=current_user.id).first()
+    # messages = Message.query.filter_by(user_id=current_user.id).order_by(Message.timestamp.desc()).all()
+    return render_template('application_dashboard.html') #, application=application, messages=messages)
 
 @app.route('/admin-dashboard')
 @login_required
@@ -388,8 +388,8 @@ def admin_dashboard():
     if not current_user.is_admin:
         flash('Access denied. Admin privileges required.', 'error')
         return redirect(url_for('index'))
-    applications = Application.query.order_by(Application.created_at.desc()).limit(10).all()
-    return render_template('admin_dashboard.html', applications=applications)
+    # applications = Application.query.order_by(Application.created_at.desc()).limit(10).all()
+    return render_template('admin_dashboard.html') #, applications=applications)
 
 @app.route('/participant-dashboard')
 @login_required
@@ -398,8 +398,8 @@ def participant_dashboard():
         flash('Access denied. Participant privileges required.', 'error')
         return redirect(url_for('index'))
     enrolled_courses = current_user.enrolled_courses
-    assignments = Assignment.query.filter(Assignment.course_id.in_([c.id for c in enrolled_courses])).all()
-    return render_template('participant_dashboard.html', courses=enrolled_courses, assignments=assignments)
+    # assignments = Assignment.query.filter(Assignment.course_id.in_([c.id for c in enrolled_courses])).all()
+    return render_template('participant_dashboard.html', courses=enrolled_courses) #, assignments=assignments)
 
 @app.route('/staff-dashboard')
 @login_required
@@ -407,53 +407,53 @@ def staff_dashboard():
     if not current_user.is_staff:
         flash('Access denied. Staff privileges required.', 'error')
         return redirect(url_for('index'))
-    courses = Course.query.filter_by(staff_id=current_user.id).all()
-    return render_template('staff_dashboard.html', courses=courses)
+    # courses = Course.query.filter_by(staff_id=current_user.id).all()
+    return render_template('staff_dashboard.html') #, courses=courses)
 
 @app.route('/course/<int:course_id>')
 @login_required
 def course_content(course_id):
-    course = Course.query.get_or_404(course_id)
-    return render_template('course_content.html', course=course)
+    # course = Course.query.get_or_404(course_id)
+    return render_template('course_content.html') #, course=course)
 
 @app.route('/assignment/<int:assignment_id>', methods=['GET', 'POST'])
 @login_required
 def assignment_submission(assignment_id):
-    assignment = Assignment.query.get_or_404(assignment_id)
-    if request.method == 'POST':
-        submission = Submission(
-            assignment_id=assignment_id,
-            participant_id=current_user.id,
-            content=request.form['content']
-        )
-        db.session.add(submission)
-        db.session.commit()
-        flash('Assignment submitted successfully!', 'success')
-        return redirect(url_for('participant_dashboard'))
-    return render_template('assignment_submission.html', assignment=assignment)
+    # assignment = Assignment.query.get_or_404(assignment_id)
+    # if request.method == 'POST':
+    #     submission = Submission(
+    #         assignment_id=assignment_id,
+    #         participant_id=current_user.id,
+    #         content=request.form['content']
+    #     )
+    #     db.session.add(submission)
+    #     db.session.commit()
+    #     flash('Assignment submitted successfully!', 'success')
+    #     return redirect(url_for('participant_dashboard'))
+    return render_template('assignment_submission.html') #, assignment=assignment)
 
-@app.route('/sign-in', methods=['GET', 'POST'])
+@app.route('/sign-in') #, methods=['GET', 'POST'])
 def sign_in():
-    if request.method == 'POST':
-        user = User.query.filter_by(username=request.form['username']).first()
-        if user and check_password_hash(user.password_hash, request.form['password']):
-            login_user(user)
-            return redirect(url_for('index'))
-        flash('Invalid username or password', 'error')
+    # if request.method == 'POST':
+    #     user = User.query.filter_by(username=request.form['username']).first()
+    #     if user and check_password_hash(user.password_hash, request.form['password']):
+    #         login_user(user)
+    #         return redirect(url_for('index'))
+    #     flash('Invalid username or password', 'error')
     return render_template('sign_in.html')
 
-@app.route('/register', methods=['GET', 'POST'])
+@app.route('/register') #, methods=['GET', 'POST'])
 def register():
-    if request.method == 'POST':
-        user = User(
-            username=request.form['username'],
-            email=request.form['email'],
-            password_hash=generate_password_hash(request.form['password'])
-        )
-        db.session.add(user)
-        db.session.commit()
-        flash('Registration successful. Please sign in.', 'success')
-        return redirect(url_for('sign_in'))
+    # if request.method == 'POST':
+    #     user = User(
+    #         username=request.form['username'],
+    #         email=request.form['email'],
+    #         password_hash=generate_password_hash(request.form['password'])
+    #     )
+    #     db.session.add(user)
+    #     db.session.commit()
+    #     flash('Registration successful. Please sign in.', 'success')
+    #     return redirect(url_for('sign_in'))
     return render_template('register.html')
 
 @app.route('/logout')
