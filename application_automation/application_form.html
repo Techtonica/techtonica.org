@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Application Form{% endblock %}
+{% block content %}
+<h1>Application Form</h1>
+<form action="{{ url_for('application_form') }}" method="post">
+    <label for="full_name">Full Name:</label>
+    <input type="text" id="full_name" name="full_name" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="program">Desired Program:</label>
+    <select id="program" name="program" required>
+        <option value="">Select a program</option>
+        <option value="full-time">Full Time Program</option>
+        <option value="seeker">Seeker Program</option>
+        <option value="consulting">Consulting</option>
+    </select>
+    
+    <label for="statement">Personal Statement:</label>
+    <textarea id="statement" name="statement" rows="5" required></textarea>
+    
+    <button type="submit">Submit Application</button>
+</form>
+{% endblock %}

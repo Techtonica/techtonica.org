@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Application Dashboard{% endblock %}
+{% block content %}
+<h1>Your Application Dashboard</h1>
+<section class="application-status">
+    <h2>Application Status</h2>
+    {% if application %}
+        <p>Current Status: {{ application.status }}</p>
+        <ul>
+            <li class="{{ 'completed' if application.status != 'Submitted' else '' }}">Application Submitted</li>
+            <li class="{{ 'completed' if application.status in ['Reviewed', 'Accepted', 'Rejected'] else '' }}">Application Reviewed</li>
+            <li class="{{ 'completed' if application.status in ['Accepted', 'Rejected'] else '' }}">Decision Made</li>
+        </ul>
+    {% else %}
+        <p>You haven't submitted an application yet. <a href="{{ url_for('application_form') }}">Apply now</a></p>
+    {% endif %}
+</section>
+<section class="messages">
+    <h2>Messages</h2>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>
+                <p><strong>{{ message.sender }}</strong>: {{ message.content }}</p>
+                <small>{{ message.timestamp.strftime('%Y-%m-%d %H:%M') }}</small>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No messages yet.</p>
+    {% endif %}
+</section>
+{% endblock %}
+
+        <!-- Need to handle incomplete or in between status such as "In Review" -->

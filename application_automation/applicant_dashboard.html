@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Applicant Dashboard{% endblock %}
+
+{% block content %}
+<h1>Applicant Dashboard</h1>
+<h2>Your Applications</h2>
+<ul>
+{% for application in applications %}
+    <li>
+        Application #{{ application.id }} - Status: {{ application.status }}
+        {% if application.status == 'Accepted' %}
+        <a href="{{ url_for('course.course_list') }}">View Available Courses</a>
+        {% endif %}
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

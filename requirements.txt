@@ -10,6 +10,8 @@ annotated-types==0.6.0
     # via pydantic
 anyio==4.3.0
     # via starlette
+bcrypt==3.2.0
+    # via -r requirements.in
 build==1.2.1
     # via pip-tools
 cachecontrol==0.12.14
@@ -37,6 +39,10 @@ flask==2.2.5
     #   -r requirements.in
     #   flask-sslify
 flask-sslify==0.1.5
+    # via -r requirements.in
+flask-SQLAlchemy==2.5.1
+    # via -r requirements.in
+flask-Login==0.5.0
     # via -r requirements.in
 idna==3.7
     # via

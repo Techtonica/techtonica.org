@@ -610,9 +610,33 @@
         <a href="{{ url_for('render_sponsor_page') }}" class="nav-link">Partner</a>
         <!--         <a href="{{ url_for('render_home_page') }}#supporters" class="supporters nav-link">Supporters</a> -->
         <a href="{{ url_for('render_ft_program_page') }}" class="nav-link">Apply</a>
+        
+        <!-- Application Automation & Course Management System Nav Entry -->
+        {% if current_user.is_authenticated %}
+            {% if current_user.is_participant %}
+                <li><a href="{{ url_for('participant_dashboard') }}">Participant Dashboard</a></li>
+            {% elif current_user.is_staff %}
+                <li><a href="{{ url_for('staff_dashboard') }}">Staff Dashboard</a></li>
+            {% elif current_user.is_admin %}
+                <li><a href="{{ url_for('admin_dashboard') }}">Admin Dashboard</a></li>
+            {% else %}
+                <li><a href="{{ url_for('application_dashboard') }}">Application Dashboard</a></li>
+            {% endif %}
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+        {% else %}
+            <li><a href="{{ url_for('sign_in') }}">Sign In</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+        {% endif %}
       </div>
     </nav>
     <!-- BEGIN MAIN CONTENT -->
+    <!-- {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %} -->
     <div class="main-content">{% block content %} {% endblock content %}</div>
     <!-- BEGIN FOOTER -->
     <div class="row row__center gray-background">

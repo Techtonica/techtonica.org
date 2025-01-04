@@ -1046,4 +1046,88 @@ input[type=radio] {
   }
 }
 
+/* Course and assignment lists */
+.enrolled-courses ul, .assignments ul, .courses ul {
+  list-style-type: none;
+}
+
+.enrolled-courses li, .assignments li, .courses li {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Features list */
+.features ul {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+.features li::before {
+  content: "✓";
+  color: #007bff;
+  margin-right: 0.5rem;
+}
+
+/* Application status */
+.application-status ul {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+.application-status li {
+  margin-bottom: 0.5rem;
+}
+
+.application-status li.completed::before {
+  content: "✓";
+  color: #28a745;
+  margin-right: 0.5rem;
+}
+
+/* Messages */
+.messages ul {
+  list-style-type: none;
+}
+
+.messages li {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* Alerts */
+.alert {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
 /*# sourceMappingURL=style.css.map */
