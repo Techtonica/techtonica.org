@@ -14,7 +14,7 @@ from eventbrite import Eventbrite
 from flask import Flask, redirect, render_template, url_for, request, jsonify, flash
 from flask_sslify import SSLify
 # from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager, login_user, login_required, logout_user, current_user # UserMixin, 
+from flask_login import LoginManager, login_user, login_required, logout_user, current_user # type: ignore # UserMixin, 
 from pydantic import BaseModel
 from square.client import Client
 from uuid import uuid4
@@ -535,5 +535,5 @@ def logout():
 
 if __name__ == "__main__":
     app.debug = False
-    db.create_all()
+    # db.create_all()
     # app.run(host='0.0.0.0', port=9999)
