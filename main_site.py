@@ -121,12 +121,12 @@ def render_openings_page():
 #     """
 #     return render_template("tapm.html")
 
-@app.route("/openings/ta/")
-def render_ta_page():
-    """
-    Renders the TA page from jinja2 template
-    """
-    return render_template("ta.html")
+# @app.route("/openings/ta/")
+# def render_ta_page():
+#     """
+#     Renders the TA page from jinja2 template
+#     """
+#     return render_template("ta.html")
 
 
 # @app.route("/openings/partnershipsmanager/")
