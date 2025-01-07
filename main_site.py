@@ -98,7 +98,7 @@ def render_faqs_page():
     return render_template("faqs.html")
 
 
-@app.route("/openings_page/")
+@app.route("/openings/")
 def render_openings_page():
     """
     Renders the openings page from jinja2 template
