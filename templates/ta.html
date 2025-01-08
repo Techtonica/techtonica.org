@@ -1,0 +1,154 @@
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
+Careers {% endblock title %} {% block content %}
+<div class="row row__center about-us">
+  <div class="column hidden-med">
+    <img
+      src="{{ url_for('static', filename='img/make-a-difference-instructor.jpg') }}"
+      alt="A mentor works with a participant at a laptop."
+      class="fixed-img"
+      style="width: 38%"
+    />
+  </div>
+  <div class="column">
+    <h1 class="blue-h1"><a href="{{ url_for('render_openings_page') }}" title="Openings"
+      >Openings</a></h1>
+    <p class="justify">
+      Techtonica is a fiscally-sponsored nonprofit that offers U.S. women and non-binary adults seeking 
+      economic empowerment, software engineering training with need-based, sliding-scale, subsidized 
+      tuition and stipend scholarships, then places them in positions at sponsoring companies 
+      that are ready to support more diverse teams or supports them during the job search.
+    </p>
+    <h3>Make an Impact as Our Technical Assistant (TA)</h3>
+
+    <p class="justify">
+      Techtonica offers a life-changing learning experience to program
+      participants. We care deeply about helping our program participants become
+      high-quality developers.
+    </p>
+
+    <p class="justify">
+      We are looking for a self-motivated individual to start immediately as a
+      full-time Technical Assistant, starting at 15 hours weekly. This role would be a good opportunity for someone 
+      with JavaScript coding knowledge, especially if you are interested in 
+      focusing mostly on community organizing or program/project management.
+    </p>
+
+    <p class="justify">
+      <b
+        ><i
+          >We are normally located in San Francisco and most of our staff and
+          participants live in the Bay Area. The current cohort is virtual, so
+          this role is remote, but we need someone who can work during West
+          Coast hours (9-6 PM Pacific Time).</i
+        ></b
+      >
+    </p>
+
+    <p class="justify">
+      Our participants are women and non-binary adults and most of them are
+      people of color. We are seeking an individual who can relate to the target
+      audience on as many levels as possible.
+    </p>
+
+    <p class="justify">
+      This part-time role's compensation will start at $30 an hour. We can provide
+      benefits to full-time employees, but we cannot provide visa sponsorship at this time.
+    </p>
+
+    <p class="justify">Responsibilities:</p>
+    <ul>
+      <li>Report to and collaborate with the program technical lead</li>
+      <li>
+        Cover technical topics with the cohort (this includes showing via live coding)
+      </li>
+      <li>Share your technical knowledge during meetings</li>
+      <li>Pair and debug with participants</li>
+      <li>
+        Update program materials as needed (instruction, schedules, notes, summaries,
+        assignments, schedules, etc.) that is up-to-date with full-stack
+        JavaScript best practices
+        <a href="https://github.com/Techtonica/curriculum/blob/master/README.md"
+          >some of the subjects we cover here</a
+        >
+      </li>
+      <li>Review code challenges with participants</li>
+      <li>Conduct technical office hours for the participants</li>
+      <li>Answer technical questions</li>
+      <li>Quiz participants to make sure they all know what they need to</li>
+      <li>
+        Identify the topics specific participants need stronger knowledge 
+        about, help them understand, connect them with helpful resources, 
+        and check that they’ve made improvement
+      </li>
+      <li>Other duties and responsibilities as assigned</li>
+    </ul>
+
+    <p class="justify">What we're looking for:</p>
+    <ul>
+      <li>Commitment to being at Techtonica for at least six months</li>
+      <li>Self-motivation and desire to make continual improvements</li>
+      <li>The ability to follow up with emails and other communication</li>
+      <li>The ability to work independently and asynchronously</li>
+      <li>Experience creating and maintaining online communities</li>
+      <li>
+        The ability to handle many different projects and tasks simultaneously
+        and independently
+      </li>
+      <li>
+        Excellent communication, interpersonal, trust-building, and leadership
+        skills
+      </li>
+      <li>
+        The ability to quickly familiarize yourself with Techtonica’s vision and
+        all people involved (staff, participants, board members, volunteers,
+        etc.)
+      </li>
+      <li>
+        Basic knowledge of web development (bonus points for full-stack
+        JavaScript)
+      </li>
+      <li>Strong moral values and discipline</li>
+      <li>Organization, commitment, and adaptability</li>
+      <li>
+        Understanding of socioeconomic experiences that our program participants
+        have faced
+      </li>
+      <li>Extroversion that is respectful of introversion</li>
+      <li>
+        Being passionate and informed about social justice and
+        diversity-and-inclusion-in-tech issues
+      </li>
+      <li>
+        The ability to relate to our target audience (women and non-binary
+        adults, mostly people of color, with low incomes) on as many levels as
+        possible
+      </li>
+      <li>Strong written communication skills in English</li>
+      <li>The ability to follow 
+        <a href="{{ url_for('render_conduct_page') }}" title="Code of Conduct" target="_blank"
+        rel="noopener noreferrer">
+        Techtonica's Code of Conduct
+        </a>
+      </li>
+    </ul>
+
+    <p>
+      The interview process involves showing you are a good fit for the role. We
+      may ask you to join us for an interview (online), contribute to the
+      curriculum, pair, and meet board members. Please send your resume or a
+      link to your LinkedIn profile and a link to your GitHub profile to both
+      dtibrey AT techtonica.org and info AT techtonica.org (in the same email) if this 
+      role sounds like a good fit for you.
+    </p>
+    <p></p>
+    <br />
+  </div>
+</div>
+<img
+  height="1"
+  width="1"
+  style="display: none"
+  alt=""
+  src="https://px.ads.linkedin.com/collect/?pid=1694756&conversionId=1681988&fmt=gif"
+/>
+{% endblock content %}

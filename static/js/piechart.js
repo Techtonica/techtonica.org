@@ -22,47 +22,39 @@ let myChart = new Chart(ctx, {
   type: "pie",
   data: {
     labels: labels,
-
-    datasets: [
-      {
-        label: "Techtonica Demographics",
-        backgroundColor: colorHex,
-        data: [22, 24, 19, 12, 14, 7, 2],
-      },
-    ],
+    datasets: [{
+      label: "Techtonica Demographics",
+      backgroundColor: colorHex,
+      data: [22, 24, 19, 12, 14, 7, 2],
+    }],
   },
-
   options: {
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     legend: {
       display: true,
       position: "bottom",
-      size: 40,
+      align: "center",
       labels: {
         fontColor: "#ffffff",
       },
     },
-    label: {
-      display: true,
-    },
-
     plugins: {
       datalabels: {
         color: "#fff",
-        anchor: "end",
-        align: "start",
-        offset: -3,
+        anchor: "center",
+        align: "center",
+        offset: 0,
         borderWidth: 2,
         borderColor: "#fff",
         borderRadius: 25,
-        clip: "false",
+        clip: false,
         backgroundColor: (context) => {
           return context.dataset.backgroundColor;
         },
         font: {
           weight: "bold",
-          size: 10,
+          size: 16, // Increased font size
         },
         formatter: (value, context) => {
           return value + "%";
@@ -71,3 +63,22 @@ let myChart = new Chart(ctx, {
     },
   },
 });
+
+// Function to resize the chart
+function resizeChart() {
+  let canvas = document.getElementById("myChart");
+  let width = Math.min(2880, window.innerWidth);
+  let height = Math.min(1800, window.innerHeight);
+
+  canvas.style.width = width + 'px';
+  canvas.style.height = height + 'px';
+
+  // Update chart size
+  myChart.resize();
+}
+
+// Initial resize
+resizeChart();
+
+// Resize on window resize
+window.addEventListener('resize', resizeChart);
