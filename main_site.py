@@ -89,6 +89,12 @@ def render_sponsor_page():
     """
     return render_template("sponsor.html")
 
+@app.route("/consulting/")
+def render_consulting_page():
+    """
+    Renders the consulting page from jinja2 template
+    """
+    return render_template("consulting.html")
 
 @app.route("/faqs/")
 def render_faqs_page():
