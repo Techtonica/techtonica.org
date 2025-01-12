@@ -33,7 +33,7 @@ https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/
 
 ## Getting Started
 
-This app uses Python 3.6; please stick to this version when doing development.
+This app uses Python 3.8.10; please stick to this version when doing development.
 
 ### Install Pre-Commit Hooks
 
