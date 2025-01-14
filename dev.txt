@@ -64,9 +64,7 @@ flask==3.0.3
 flask-sslify==0.1.5
     # via -r requirements.in
 gunicorn==23.0.0
-    # via
-    #   -r dev.in
-    #   -r requirements.in
+    # via -r requirements.in
 idna==3.10
     # via
     #   anyio
