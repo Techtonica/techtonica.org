@@ -260,7 +260,10 @@ button {
 #sponsor-hero {
   width: 100%;
 }
-
+#consulting-hero {
+  width: 100%;
+  padding-top: 5%;
+}
 .full-width-img {
   width: 100%;
   max-width: 2440px;
