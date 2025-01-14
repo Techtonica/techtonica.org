@@ -76,6 +76,11 @@ button {
   color: #16c1f3;
 }
 
+.white-background {
+  background-color: white;
+  color: #0093b5;
+}
+
 .centered {
   text-align: center;
 }
@@ -255,7 +260,10 @@ button {
 #sponsor-hero {
   width: 100%;
 }
-
+#consulting-hero {
+  width: 100%;
+  padding-top: 5%;
+}
 .full-width-img {
   width: 100%;
   max-width: 2440px;
@@ -277,6 +285,10 @@ button {
 
 .twenty-percent-width {
   width: 20%;
+}
+
+.fifteen-percent-width {
+  width: 15%;
 }
 
 .ten-percent-width {
@@ -672,7 +684,6 @@ table.mentor td:first-of-type {
     padding: 0;
     margin-top: 5rem;
   }
-
   .social-link {
     width: 50px; /* Slightly smaller width for mobile */
   }
@@ -1016,6 +1027,23 @@ input[type=radio] {
   max-width: 65%;
   margin: auto;
   text-align: center;
+}
+
+#consulting-list{
+  list-style-position: inside;
+  border-style: solid;
+  border-color: #05556d;
+  border-width: thick;
+  padding: 3% 5% 3% 5%;
+}
+
+#consulting-bullet-items{
+  border-style: solid;
+  border-color: #05556d;
+  border-radius: 5px;
+  padding: 1%;
+  margin:1%;
+  list-style-type:none;
 }
 
 @media (max-width: 900px) {
