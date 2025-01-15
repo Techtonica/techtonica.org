@@ -565,6 +565,44 @@
           transform: rotate(360deg);
         }
       }
+<<<<<<< HEAD
+=======
+      /* Dropdown Nav Items Styling */
+      .nav-item {
+        position: relative;
+        display: block;
+      }
+
+      .dropdown-toggle::after {
+        content: " ▾";
+        padding-right: 10px;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-menu .dropdown-item {
+        color: rgba(0, 147, 181, 1);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-menu .dropdown-item:hover {
+        background-color: #f1f1f1;
+      }
+
+      .nav-item:hover .dropdown-menu {
+        display: block;
+      }
+      /* End of Dropdown Nav Items Styling */
+>>>>>>> 4cf2d4a (creates dropdowns for menu items and automatic formating using Prettier)
     </style>
     <script>
       function open_window(cause_id, domain_link) {
@@ -883,6 +921,7 @@
           >Donate</a
         >
         <!--         <a href="{{ url_for('render_news_page') }}" class="nav-link">News</a> -->
+<<<<<<< HEAD
         <a href="{{ url_for('render_team_page') }}" class="nav-link">Team</a>
         <a href="{{ url_for('render_faqs_page') }}" class="nav-link">FAQs</a>
         <a href="{{ url_for('render_testimonials_page') }}" class="nav-link"
@@ -900,6 +939,55 @@
         <a href="{{ url_for('render_sponsor_page') }}" class="nav-link"
           >Partner</a
         >
+=======
+        <!-- About Us Dropdown -->
+        <div class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle">About Us</a>
+          <div class="dropdown-menu">
+            <a
+              class="nav-link dropdown-item"
+              href="{{ url_for('render_team_page') }}"
+              >Team</a
+            >
+            <a
+              class="nav-link dropdown-item"
+              href="{{ url_for('render_faqs_page') }}"
+              >FAQs</a
+            >
+            <a
+              class="nav-link dropdown-item"
+              href="{{ url_for('render_testimonials_page') }}"
+              >Testimonials</a
+            >
+          </div>
+        </div>
+        <!-- End of About Us Dropdown -->
+        <a href="{{ url_for('render_volunteer_page') }}" class="nav-link"
+          >Volunteer</a
+        >
+        <!-- Sponsor Dropdown -->
+        <div class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle">Sponsor</a>
+          <div class="dropdown-menu">
+            <a
+              class="nav-link dropdown-item"
+              href="{{ url_for('render_consulting_page') }}"
+              >Consulting</a
+            >
+            <a
+              class="nav-link dropdown-item"
+              href="{{ url_for('render_job_form') }}"
+              >Post a Job</a
+            >
+            <a
+              class="nav-link dropdown-item"
+              href="{{ url_for('render_sponsor_page') }}"
+              >Partner</a
+            >
+          </div>
+        </div>
+        <!-- End of Sponsor Dropdown -->
+>>>>>>> 4cf2d4a (creates dropdowns for menu items and automatic formating using Prettier)
         <!--         <a href="{{ url_for('render_home_page') }}#supporters" class="supporters nav-link">Supporters</a> -->
         <a href="{{ url_for('render_ft_program_page') }}" class="nav-link"
           >Apply</a
