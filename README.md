@@ -11,6 +11,8 @@ currently hosted on DreamHost.
   - [Running Locally](#running-locally)
   - [Using Docker to Run Locally](#using-docker-to-run-locally)
   - [CSS / SCSS](#css--scss)
+  - [Square Testing](#square-testing)
+  - [Updating Demographics Chart](#updating-the-demographics-chart-for-the-apply-section)
   - [Updating Dependencies](#updating-dependencies)
 - [Deployment to DreamHost](#deployment-to-dreamhost)
   - [Initial Setup](#initial-setup)
@@ -33,7 +35,36 @@ https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/
 
 ## Getting Started
 
-This app uses Python 3.6; please stick to this version when doing development.
+You need Python version 3.8.10 and pip version 23 in order to properly update dependencies.
+
+Using Python 3.8.10 and pip 23 helps ensure compatibility and consistency between your local development environment and the server environment. This minimizes potential issues during deployment by keeping dependencies in sync with the versions expected by the servers and eliminates discrepancies caused by different versions, ensuring that code runs the same way on every developer's machine.
+
+### Set Up Virtual Environment
+
+It is recommended you use a virtual environment tool to keep dependencies
+required by different projects separate. [Learn more about Python virtual
+environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
+
+Set up virtual environment with Python 3.8.10 and Pip 23:
+
+```
+brew install pyenv
+pyenv install 3.8.10
+pyenv local 3.8.10
+python -m venv venv
+source venv/bin/activate
+```
+
+**Note: if you are running into an error with running `python -m venv venv` you may need to instead use the full path to the python executable when creating your virual environment. An example is `/Users/yourPCName/.pyenv/versions/3.8.10/bin/python -m venv venv`**
+
+### Install Dependecies
+
+Install the project dependencies. In the project root run:
+
+```
+pip install --upgrade pip==23.0
+pip install pre-commit
+```
 
 ### Install Pre-Commit Hooks
 
@@ -43,23 +74,42 @@ consistency.
 1. [`Install pre-commit`](https://pre-commit.com/#install) globally.
 1. Install the project pre-commit hooks:
 
-   ```sh
-   pre-commit install -f --install-hooks
-   ```
+```
+pre-commit install -f --install-hooks
+pip install -r requirements.txt
+```
+
+### Create Config.ini File
+
+```
+touch config.ini
+```
+
+And then copy and paste this code into your new file:
+
+```sh
+   [default]
+   # Acceptable values are sandbox or production
+   environment = sandbox
+   dev_password = dev_password
+
+   [production]
+   square_application_id = production_application_id
+   square_access_token = production_access_token
+   square_location_id = production_location_id
+
+   [sandbox]
+   square_application_id = <sandbox app id>
+   square_access_token = <sandbox access token>
+   square_location_id = <sandbox location id>
+
+   [slack]
+   slack_webhook =  <slack webhook>
+```
 
 ### Running Locally
 
 [If you prefer using Docker, see instructions](#using-docker-to-run-locally).
-
-It is recommended you use a virtual environment tool to keep dependencies
-required by different projects separate. [Learn more about Python virtual
-environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
-
-Install the project dependencies. In the project root run:
-
-```sh
-pip install -r dev.txt
-```
 
 Start the application's server:
 
@@ -74,7 +124,7 @@ Browse to <http://localhost:5000>.
 This is required for being able to render and test the Square payment elements.
 
 ```sh
-pip install pyopenssl  
+pip install pyopenssl
 FLASK_DEBUG=1 FLASK_APP=main_site.py FLASK_RUN_CERT=adhoc flask run
 ```
 
@@ -110,10 +160,36 @@ sass static/sass/style.scss static/css/style.css
 sass --watch static/sass/style.scss static/css/style.css
 ```
 
+### Square Testing
+
+There are features on the site that use Square for payments and will periodically need testing (especially if their libraries get updated). Currently this is only the "Post a Job" page.
+
+**Setup**
+
+1. Secrets required for the Square payment API and Slack webhook are stored in a config.ini file in the root directory of our repository.
+2. This file is listed in our .gitignore file and will not be included when pushing or pulling updates.
+3. You will need to manually add it into your local repository to test these features locally, and will also need to manually add it into whatever Dreamhost server (testing, staging, or production) that you are using as well, if it’s not already there.
+4. BE CAREFUL ABOUT environment VALUE! If it’s set to production it will actually charge the cards you test with, so be sure to set it to sandbox when testing locally or on staging or testing.
+5. Please see the "Updating Techtonica's Website" doc to get the keys and secrets.
+
+**Running Locally**
+
+Run your server using the following command, it will bypass any HTTPS cert errors.
+
+```
+FLASK_DEBUG=1 FLASK_APP=main_site.py FLASK_RUN_CERT=adhoc flask run
+```
+
+When navigating to the site, if your browser pops up an HTTPS insecure warning, click "Advanced" and "[Proceed to 127.0.0.1 (unsafe)](chrome-error://chromewebdata/#)"
+<img width="720" alt="image" src="https://github.com/user-attachments/assets/20fe29d5-051d-44d4-9d05-6e797012d207" />
+
+Navigate to one of the pages that uses Square, currently "Post a Job".
+
+Follow the instructions on the page, and when instructed to enter a credit card number, use one of the following numbers found [here](https://developer.squareup.com/docs/devtools/sandbox/payments).
+
 ### Updating the Demographics Chart for the Apply Section
 
 ![This is an example of the chart that can be found on the full-time-program.html page.](static/img/2023-H1-Cohort-Demographics.jpg)
-
 
 At the moment, we do not have styling in place that will enable us to have a coded, adequately sized piechart while still maintaining mobile responsiveness. Until that happens, here is how to update the piechart when numbers change.
 
@@ -121,32 +197,35 @@ At the moment, we do not have styling in place that will enable us to have a cod
 2. Open the browser and navigate to the Apply page.
 3. Update the `data` section in `static/js/piechart.js#L30`.
 4. Uncomment out following in `full-time-program.html`.
- ```
-   <!-- <div class="blue-background">
-      <canvas id="myChart" width="700" height="350"></canvas>
-   </div> -->
- ```
+
+```
+  <!-- <div class="blue-background">
+     <canvas id="myChart" width="700" height="350"></canvas>
+  </div> -->
+```
+
 5. Take a screenshot of the piechart on the rendered page.
 6. Add the screenshot to the `static/img` directory saved with YEAR-H#-Cohort-Demographics.jpg, ex. 2023-H1-Cohort-Demographics.jpg.
 7. Update `full-time-program.html` to point to the new image you just added. Update the alt text if necessary.
- ```
-  <img
-      src="{{ url_for('static', filename='img/2023-H1-Cohort-Demographics.jpg') }}"
-      alt="2023 Cohort Demographics."
-      class="full-width-img"
-   />
- ```
+
+```
+ <img
+     src="{{ url_for('static', filename='img/2023-H1-Cohort-Demographics.jpg') }}"
+     alt="2023 Cohort Demographics."
+     class="full-width-img"
+  />
+```
+
 8. Recomment the following.
- ```
-   <!-- <div class="blue-background">
-      <canvas id="myChart" width="700" height="350"></canvas>
-   </div> -->
- ```
+
+```
+  <!-- <div class="blue-background">
+     <canvas id="myChart" width="700" height="350"></canvas>
+  </div> -->
+```
+
 9. Stop the server
 10. Commit your code and open a pull request
-
-
-
 
 ### Updating Dependencies
 
@@ -225,7 +304,8 @@ i. tag the date after deployment
    ```sh
    pip install -U pip setuptools pip-tools
    ```
-1. Create a `config.ini` file in the root directory of the repo (either locally or in whichever Dreamhost server) if there isn't one already present, and populate it with the necessary keys.
+
+1. Create a `config.ini` file in the root directory of the repo in whichever Dreamhost server if there isn't one already present, and populate it with the necessary keys.
 
    ```sh
    [default]
@@ -249,7 +329,7 @@ i. tag the date after deployment
 
 ### Updating the Site
 
-Important: Only ever Pull form the server!
+Important: Only ever Pull from the server!
 
 1. Log in via SSH using your SSH key.
 
@@ -289,29 +369,29 @@ Important: Only ever Pull form the server!
    pip-sync
    ```
 
-1. "Restart" the server to showcase new changes 
+1. "Restart" the server to showcase new changes
 
-  ```sh
+```sh
 
-  // staging.techtonica.org
-  systemctl --user stop gunicorn_staging
-  systemctl --user enable gunicorn_staging
-  systemctl --user restart gunicorn_staging 
-  systemctl --user status gunicorn_staging
+// staging.techtonica.org
+systemctl --user stop gunicorn_staging
+systemctl --user enable gunicorn_staging
+systemctl --user restart gunicorn_staging
+systemctl --user status gunicorn_staging
 
 	// testing.techtonica.org
-  systemctl --user stop gunicorn_testing
-  systemctl --user enable gunicorn_testing
-  systemctl --user restart gunicorn_testing
-  systemctl --user status gunicorn_testing
+systemctl --user stop gunicorn_testing
+systemctl --user enable gunicorn_testing
+systemctl --user restart gunicorn_testing
+systemctl --user status gunicorn_testing
 
-  // techtonica.org
-  systemctl --user stop gunicorn_techtonica
-  systemctl --user enable gunicorn_techtonica
-  systemctl --user restart gunicorn_techtonica
-  systemctl --user status gunicorn_techtonica
+// techtonica.org
+systemctl --user stop gunicorn_techtonica
+systemctl --user enable gunicorn_techtonica
+systemctl --user restart gunicorn_techtonica
+systemctl --user status gunicorn_techtonica
 
-  ```
+```
 
 1. Deactivate virtual envirement and exit server:
 
@@ -322,6 +402,5 @@ Important: Only ever Pull form the server!
    ```sh
    exit
    ```
-
 
 [def]: static/img/2023-H1-Cohort-Demographics.jpg
