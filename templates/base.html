@@ -565,6 +565,41 @@
           transform: rotate(360deg);
         }
       }
+      /* Dropdown Nav Items Styling */
+      .nav-item {
+        position: relative;
+        display: block;
+      }
+
+      .dropdown-toggle::after {
+        content: " ▾";
+        padding-right: 10px;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-menu .dropdown-item {
+        color: rgba(0, 147, 181, 1);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-menu .dropdown-item:hover {
+        background-color: #f1f1f1;
+      }
+
+      .nav-item:hover .dropdown-menu {
+        display: block;
+      }
+      /* End of Dropdown Nav Items Styling */
     </style>
     <script>
       function open_window(cause_id, domain_link) {
@@ -883,84 +918,53 @@
           >Donate</a
         >
         <!--         <a href="{{ url_for('render_news_page') }}" class="nav-link">News</a> -->
-        <!-- About Us dropdown -->
-        <div class="nav-link dropdown">
-          <a
-            href="#"
-            class="nav-link dropdown-toggle"
-            onclick="toggleDropdown(event, 'aboutUsDropdown')"
-            >About Us</a
-          >
-          <div class="dropdown-menu" id="aboutUsDropdown">
+        <!-- About Us Dropdown -->
+        <div class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle">About Us</a>
+          <div class="dropdown-menu">
             <a
-              href="{{ url_for('render_team_page') }}"
               class="nav-link dropdown-item"
+              href="{{ url_for('render_team_page') }}"
               >Team</a
             >
             <a
-              href="{{ url_for('render_faqs_page') }}"
               class="nav-link dropdown-item"
+              href="{{ url_for('render_faqs_page') }}"
               >FAQs</a
             >
             <a
-              href="{{ url_for('render_testimonials_page') }}"
               class="nav-link dropdown-item"
-
+              href="{{ url_for('render_testimonials_page') }}"
               >Testimonials</a
             >
           </div>
         </div>
         <!-- End of About Us Dropdown -->
-        <!-- Volunteer Dropdown -->
-        <div class="nav-link dropdown toggle">
-          <a
-            href="#"
-            class="nav-link dropdown-toggle"
-            onclick="toggleDropdown(event, 'volunteerDropdown')"
-            >Volunteer</a
-          >
-          <div class="dropdown-menu" id="volunteerDropdown">
+        <a href="{{ url_for('render_volunteer_page') }}" class="nav-link"
+          >Volunteer</a
+        >
+        <!-- Sponsor Dropdown -->
+        <div class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle">Sponsor</a>
+          <div class="dropdown-menu">
             <a
-              href="{{ url_for('render_volunteer_page') }}"
               class="nav-link dropdown-item"
-              >How to Help</a
-            >
-            <a
-              href="{{ url_for('render_mentor_page') }}"
-              class="nav-link dropdown-item"
-              >Mentor</a
-            >
-          </div>
-        </div>
-        <!-- End of Volunteer Dropdown -->
-        <!-- Partner Dropdown -->
-        <div class="nav-link dropdown">
-          <a
-            href="#"
-            class="nav-link dropdown-toggle"
-            onclick="toggleDropdown(event, 'partnerDropdown')"
-            >Partner</a
-          >
-          <div class="dropdown-menu" id="partnerDropdown">
-            <a
               href="{{ url_for('render_consulting_page') }}"
-              class="nav-link dropdown-item"
               >Consulting</a
             >
             <a
-              href="{{ url_for('render_job_form') }}"
               class="nav-link dropdown-item"
+              href="{{ url_for('render_job_form') }}"
               >Post a Job</a
             >
             <a
-              href="{{ url_for('render_sponsor_page') }}"
               class="nav-link dropdown-item"
-              >Sponsor</a
+              href="{{ url_for('render_sponsor_page') }}"
+              >Partner</a
             >
           </div>
         </div>
-        <!-- End of Partner Dropdown -->
-
+        <!-- End of Sponsor Dropdown -->
         <!--         <a href="{{ url_for('render_home_page') }}#supporters" class="supporters nav-link">Supporters</a> -->
         <a href="{{ url_for('render_ft_program_page') }}" class="nav-link"
           >Apply</a
@@ -986,6 +990,9 @@
             />
             <span class="icon-text">Linkedin</span>
           </a>
+            />
+            <span class="icon-text">Linkedin</span>
+          </a>
           <a
             class="social-link"
             href="https://twitter.com/TechtonicaOrg"
@@ -997,7 +1004,9 @@
               class="social-media"
               alt="Techtonica Twitter"
             />
+            />
             <span class="icon-text">Twitter</span>
+          </a>
           </a>
           <a
             class="social-link"
@@ -1009,6 +1018,9 @@
               src="{{ url_for('static', filename='img/instagram-icon.png') }}"
               class="social-media"
               alt="Techtonica Instagram"
+            />
+            <span class="icon-text">Instagram</span>
+          </a>
             />
             <span class="icon-text">Instagram</span>
           </a>
@@ -1025,11 +1037,17 @@
             />
             <span class="icon-text">YouTube</span>
           </a>
+            />
+            <span class="icon-text">YouTube</span>
+          </a>
           <a class="social-link" href="mailto:info@techtonica.org" title="Email"
             ><img
               src="{{ url_for('static', filename='img/mail-icon.png') }}"
               class="social-media"
               alt="Techtonica Email"
+            />
+            <span class="icon-text">Email</span>
+          </a>
             />
             <span class="icon-text">Email</span>
           </a>
@@ -1048,10 +1066,24 @@
             class="social-link"
             href="{{ url_for('render_news_page') }}"
             title="News"
+            />
+            <span class="icon-text">Events</span>
+          </a>
+          <a
+            class="social-link"
+            href="{{ url_for('render_news_page') }}"
+            title="News"
             ><img
               src="{{ url_for('static', filename='img/news-icon.png') }}"
               class="social-media"
               alt="Techtonica News"
+            />
+            <span class="icon-text">News</span>
+          </a>
+          <a
+            class="social-link"
+            href="{{ url_for('render_openings_page') }}"
+            title="Openings"
             />
             <span class="icon-text">News</span>
           </a>
@@ -1070,10 +1102,20 @@
             class="social-link"
             href="{{ url_for('render_conduct_page') }}"
             title="Code of Conduct"
+            />
+            <span class="icon-text">Careers</span>
+          </a>
+          <a
+            class="social-link"
+            href="{{ url_for('render_conduct_page') }}"
+            title="Code of Conduct"
             ><img
               src="{{ url_for('static', filename='img/code-of-conduct-blue.jpg') }}"
               class="social-media"
               alt="Techtonica Code of Conduct"
+            />
+            <span class="icon-text">Code of Conduct</span>
+          </a>
             />
             <span class="icon-text">Code of Conduct</span>
           </a>
