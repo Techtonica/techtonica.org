@@ -7,7 +7,12 @@ currently hosted on DreamHost.
 - [What](#what)
 - [How](#how)
 - [Getting Started](#getting-started)
+  - [Set Up Virtual Environment](#set-up-virtual-environment)
+  - [Install pip Version 23](#install-pip-version-23)
+  - [Install and Upgrade pip-tools](#install-and-upgrade-pip-tools)
   - [Install Pre-Commit Hooks](#install-pre-commit-hooks)
+  - [Install Requirements](#install-requirements)
+  - [Create Config.ini File](#create-configini-file)
   - [Running Locally](#running-locally)
   - [Using Docker to Run Locally](#using-docker-to-run-locally)
   - [CSS / SCSS](#css--scss)
@@ -57,13 +62,18 @@ source venv/bin/activate
 
 **Note: if you are running into an error with running `python -m venv venv` you may need to instead use the full path to the python executable when creating your virual environment. An example is `/Users/yourPCName/.pyenv/versions/3.8.10/bin/python -m venv venv`**
 
-### Install Dependecies
+### Install pip Version 23
 
-Install the project dependencies. In the project root run:
+Ensure you are running pip23 to match the version on the servers:
 
 ```
 pip install --upgrade pip==23.0
-pip install pre-commit
+```
+
+### Install and Upgrade pip-tools
+
+```
+python -m pip install -U pip-tools
 ```
 
 ### Install Pre-Commit Hooks
@@ -75,8 +85,14 @@ consistency.
 1. Install the project pre-commit hooks:
 
 ```
+pip install pre-commit
 pre-commit install -f --install-hooks
-pip install -r requirements.txt
+```
+
+### Install Requirements
+
+```
+pip install -r dev.txt
 ```
 
 ### Create Config.ini File
@@ -110,6 +126,18 @@ And then copy and paste this code into your new file:
 ### Running Locally
 
 [If you prefer using Docker, see instructions](#using-docker-to-run-locally).
+
+Activate your virtual environment:
+
+```
+source venv/bin/activate
+```
+
+Install any requirements if they've changed:
+
+```
+pip install -r dev.txt
+```
 
 Start the application's server:
 
@@ -231,8 +259,9 @@ At the moment, we do not have styling in place that will enable us to have a cod
 
 This project uses [pip-tools](https://github.com/jazzband/pip-tools) to manage
 dependencies. If you need to add or remove a Python library dependency:
+**If there are dependencies only needed for local development, these go in dev.in/dev.txt. Otherwise they go in requirements.in/requirements.txt**
 
-1. Edit `requirement.in`
+1. Edit `requirements.in`
 1. Generate `requirements.txt`:
 
    ```sh
@@ -255,21 +284,6 @@ For development dependencies:
    ```sh
    pip-compile -U dev.in
    ```
-
-⚠️ _You need Python version 3.8.10 and pip version 23 in order to properly update dependencies. If this is not the version you are working with, see the next instructions below on how to set up a virtual environment using anaconda._
-
-## Setting up virtualenv with Anaconda
-
-```sh
-#create your virtualenv using anaconda
-conda create -n py3810 python=3.8.10
-#activate it
-conda activate py3810
-#install pip version 23
-pip install --upgrade pip==23
-#install and upgrade pip-tools
-python -m pip install -U pip-tools
-```
 
 ## Deployment to DreamHost
 
