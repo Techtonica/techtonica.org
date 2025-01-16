@@ -566,14 +566,8 @@
         }
       }
       /* Dropdown Nav Items Styling */
-      .nav-item {
-        position: relative;
-        display: block;
-      }
-
       .dropdown-toggle::after {
         content: " ▾";
-        padding-right: 10px;
       }
 
       .dropdown-menu {
@@ -596,7 +590,7 @@
         background-color: #f1f1f1;
       }
 
-      .nav-item:hover .dropdown-menu {
+      .nav-link:hover .dropdown-menu {
         display: block;
       }
       /* End of Dropdown Nav Items Styling */
@@ -919,7 +913,7 @@
         >
         <!--         <a href="{{ url_for('render_news_page') }}" class="nav-link">News</a> -->
         <!-- About Us Dropdown -->
-        <div class="nav-item dropdown">
+        <div class="nav-link dropdown">
           <a href="#" class="nav-link dropdown-toggle">About Us</a>
           <div class="dropdown-menu">
             <a
@@ -944,7 +938,7 @@
           >Volunteer</a
         >
         <!-- Sponsor Dropdown -->
-        <div class="nav-item dropdown">
+        <div class="nav-link dropdown">
           <a href="#" class="nav-link dropdown-toggle">Sponsor</a>
           <div class="dropdown-menu">
             <a
