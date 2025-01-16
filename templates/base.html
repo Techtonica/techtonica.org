@@ -592,7 +592,7 @@
         background-color: #f1f1f1;
       }
 
-      .nav-link:hover .dropdown-menu {
+      .nav-link .dropdown-menu.show {
         display: block;
       }
       /* End of Dropdown Nav Items Styling */
@@ -936,8 +936,13 @@
 =======
         <!-- About Us Dropdown -->
         <div class="nav-link dropdown">
-          <a href="#" class="nav-link dropdown-toggle">About Us</a>
-          <div class="dropdown-menu">
+          <a
+            href="#"
+            class="nav-link dropdown-toggle"
+            onclick="toggleDropdown(event, 'aboutUsDropdown')"
+            >About Us</a
+          >
+          <div class="dropdown-menu" id="aboutUsDropdown">
             <a
               class="nav-link dropdown-item"
               href="{{ url_for('render_team_page') }}"
@@ -961,8 +966,13 @@
         >
         <!-- Sponsor Dropdown -->
         <div class="nav-link dropdown">
-          <a href="#" class="nav-link dropdown-toggle">Sponsor</a>
-          <div class="dropdown-menu">
+          <a
+            href="#"
+            class="nav-link dropdown-toggle"
+            onclick="toggleDropdown(event, 'sponsorDropdown')"
+            >Sponsor</a
+          >
+          <div class="dropdown-menu" id="sponsorDropdown">
             <a
               class="nav-link dropdown-item"
               href="{{ url_for('render_consulting_page') }}"
@@ -1152,6 +1162,16 @@
     <script scr="./js/piechart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+    <!-- dropdown nav menu items -->
+    <script>
+      function toggleDropdown(event, dropdownId) {
+        event.preventDefault();
+        var dropdown = document.getElementById(dropdownId);
+        dropdown.classList.toggle("show");
+      }
+    </script>
+    <!-- end of dropdown nav menu items -->
 
     <!-- Start of HubSpot Embed Code -->
     <script
