@@ -391,7 +391,7 @@ Important: Only ever Pull from the server! There are currently 3 main servers in
 
 ```sh
 
-// staging.techtonica.org
+# staging.techtonica.org
 systemctl --user stop gunicorn_staging
 systemctl --user enable gunicorn_staging
 systemctl --user restart gunicorn_staging
