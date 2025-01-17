@@ -403,7 +403,7 @@ systemctl --user enable gunicorn_testing
 systemctl --user restart gunicorn_testing
 systemctl --user status gunicorn_testing
 
-// techtonica.org
+# techtonica.org
 systemctl --user stop gunicorn_techtonica
 systemctl --user enable gunicorn_techtonica
 systemctl --user restart gunicorn_techtonica
