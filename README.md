@@ -45,7 +45,7 @@ Using Python 3.8.10 and pip 23 helps ensure compatibility and consistency betwee
 
 ### Set Up Virtual Environment
 
-It is recommended you use a virtual environment tool to keep dependencies
+It is recommended you use a virtual environment to keep dependencies
 required by different projects separate. [Learn more about Python virtual
 environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 
