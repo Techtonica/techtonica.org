@@ -411,7 +411,7 @@ systemctl --user status gunicorn_techtonica
 
 ```
 
-1. Deactivate virtual envirement and exit server:
+1. Deactivate virtual environment and exit server:
 
    ```sh
    deactivate
