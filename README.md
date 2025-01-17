@@ -39,7 +39,7 @@ There should be a good understanding of how the program works with vetting, trai
 
 ## Getting Started
 
-You need Python version 3.8.10 and pip version 23 in order to properly update dependencies.
+You need Python version 3.8.10 and pip version 23 in order to properly update dependencies and replicate the production server environment locally.
 
 Using Python 3.8.10 and pip 23 helps ensure compatibility and consistency between your local development environment and the server environment. This minimizes potential issues during deployment by keeping dependencies in sync with the versions expected by the servers and eliminates discrepancies caused by different versions, ensuring that code runs the same way on every developer's machine.
 
