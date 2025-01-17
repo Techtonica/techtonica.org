@@ -293,7 +293,7 @@ For development dependencies:
 
 ## Deployment to DreamHost
 
-Make sure you branch off develop, if you want to make changes.
+The below instructions describe how to deploy your feature branch once it has been tested and your PR has been approved. Make sure your feature branch was branched off of develop.
 
 a. push changes to new branch
 
