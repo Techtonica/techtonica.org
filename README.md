@@ -129,6 +129,8 @@ And then copy and paste this code into your new file (note: For the actual value
 
 ### Running Locally
 
+Each time you want to work on your code, you will need to activate your virtual environment and run the server locally. You do not need to do any of the setup instructions again (besides installing requirements, if those have changed). 
+
 [If you prefer using Docker, see instructions](#using-docker-to-run-locally).
 
 Activate your virtual environment:
