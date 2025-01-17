@@ -105,7 +105,7 @@ pip install -r dev.txt
 touch config.ini
 ```
 
-And then copy and paste this code into your new file:
+And then copy and paste this code into your new file (note: For the actual values, please see [Updating Techtonica's Website](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit?tab=t.0)):
 
 ```sh
    [default]
