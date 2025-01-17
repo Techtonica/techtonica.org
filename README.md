@@ -35,8 +35,7 @@ We need to effectively communicate that Techtonica and its participants are wort
 
 There should be a good understanding of how the program works with vetting, training, mentoring, and placements.
 
-Detailed instructions on how to update the website:
-https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit
+[Detailed instructions on how to update the website](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit)
 
 ## Getting Started
 
