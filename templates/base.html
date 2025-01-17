@@ -1113,11 +1113,31 @@
 
     <!-- dropdown nav menu items -->
     <script>
+      let activeDropdown = null;
+
       function toggleDropdown(event, dropdownId) {
         event.preventDefault();
+        event.stopPropagation();
         var dropdown = document.getElementById(dropdownId);
-        dropdown.classList.toggle("show");
+
+        if (activeDropdown === dropdown) {
+          dropdown.classList.remove("show");
+          activeDropdown = null;
+        } else {
+          if (activeDropdown) {
+            activeDropdown.classList.remove("show");
+          }
+          dropdown.classList.add("show");
+          activeDropdown = dropdown;
+        }
       }
+
+      document.addEventListener("click", function () {
+        if (activeDropdown) {
+          activeDropdown.classList.remove("show");
+          activeDropdown = null;
+        }
+      });
     </script>
     <!-- end of dropdown nav menu items -->
 
