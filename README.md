@@ -54,7 +54,7 @@ Set up virtual environment with Python 3.8.10 and Pip 23 using [pyenv](https://g
 ```
 # Install pyenv using brew
 brew install pyenv
-# Use pyenv to install version python 3.8.10 
+# Use pyenv to install version python 3.8.10
 pyenv install 3.8.10
 # Set your python version to 3.8.10
 pyenv local 3.8.10
@@ -129,7 +129,7 @@ And then copy and paste this code into your new file (note: For the actual value
 
 ### Running Locally
 
-Each time you want to work on your code, you will need to activate your virtual environment and run the server locally. You do not need to do any of the setup instructions again (besides installing requirements, if those have changed). 
+Each time you want to work on your code, you will need to activate your virtual environment and run the server locally. You do not need to do any of the setup instructions again (besides installing requirements, if those have changed).
 
 [If you prefer using Docker, see instructions](#using-docker-to-run-locally).
 
@@ -391,27 +391,27 @@ Important: Only ever Pull from the server! There are currently 3 main servers in
 
 1. "Restart" the server to showcase new changes
 
-```sh
+   ```sh
 
-# staging.techtonica.org
-systemctl --user stop gunicorn_staging
-systemctl --user enable gunicorn_staging
-systemctl --user restart gunicorn_staging
-systemctl --user status gunicorn_staging
+   # staging.techtonica.org
+   systemctl --user stop gunicorn_staging
+   systemctl --user enable gunicorn_staging
+   systemctl --user restart gunicorn_staging
+   systemctl --user status gunicorn_staging
 
-# testing.techtonica.org
-systemctl --user stop gunicorn_testing
-systemctl --user enable gunicorn_testing
-systemctl --user restart gunicorn_testing
-systemctl --user status gunicorn_testing
+   # testing.techtonica.org
+   systemctl --user stop gunicorn_testing
+   systemctl --user enable gunicorn_testing
+   systemctl --user restart gunicorn_testing
+   systemctl --user status gunicorn_testing
 
-# techtonica.org
-systemctl --user stop gunicorn_techtonica
-systemctl --user enable gunicorn_techtonica
-systemctl --user restart gunicorn_techtonica
-systemctl --user status gunicorn_techtonica
+   # techtonica.org
+   systemctl --user stop gunicorn_techtonica
+   systemctl --user enable gunicorn_techtonica
+   systemctl --user restart gunicorn_techtonica
+   systemctl --user status gunicorn_techtonica
 
-```
+   ```
 
 1. Deactivate virtual environment and exit server:
 
