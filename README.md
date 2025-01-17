@@ -347,7 +347,7 @@ i. tag the date after deployment
 
 ### Updating the Site
 
-Important: Only ever Pull from the server!
+Important: Only ever Pull from the server! There are currently 3 main servers in use: "staging", "techtonica.org" and "testing".
 
 1. Log in via SSH using your SSH key.
 
