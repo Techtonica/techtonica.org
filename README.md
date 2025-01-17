@@ -153,15 +153,6 @@ FLASK_DEBUG=1 FLASK_APP=main_site.py flask run
 
 Browse to <http://localhost:5000>.
 
-### Run Locally as HTTPS using flask_run_cert
-
-This is required for being able to render and test the Square payment elements.
-
-```sh
-pip install pyopenssl
-FLASK_DEBUG=1 FLASK_APP=main_site.py FLASK_RUN_CERT=adhoc flask run
-```
-
 ### Using Docker to Run Locally
 
 #### First Time Using Docker?
@@ -206,11 +197,12 @@ There are features on the site that use Square for payments and will periodicall
 4. BE CAREFUL ABOUT environment VALUE! If it’s set to production it will actually charge the cards you test with, so be sure to set it to sandbox when testing locally or on staging or testing.
 5. Please see the [Updating Techtonica's Website](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit?tab=t.0) doc to get the keys and secrets.
 
-**Running Locally**
+#### Running Locally
 
 Run your server using the following command, it will bypass any HTTPS cert errors.
 
-```
+```sh
+pip install pyopenssl
 FLASK_DEBUG=1 FLASK_APP=main_site.py FLASK_RUN_CERT=adhoc flask run
 ```
 
