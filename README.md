@@ -198,7 +198,7 @@ sass --watch static/sass/style.scss static/css/style.css
 
 There are features on the site that use Square for payments and will periodically need testing (especially if their libraries get updated). Currently this is only the "Post a Job" page.
 
-**Setup**
+#### Setup
 
 1. Secrets required for the Square payment API and Slack webhook are stored in a config.ini file in the root directory of our repository.
 2. This file is listed in our .gitignore file and will not be included when pushing or pulling updates.
