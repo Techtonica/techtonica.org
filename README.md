@@ -52,10 +52,15 @@ environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 Set up virtual environment with Python 3.8.10 and Pip 23:
 
 ```
+# Install pyenv using brew
 brew install pyenv
+# Use pyenv to install version python 3.8.10 
 pyenv install 3.8.10
+# Set your python version to 3.8.10
 pyenv local 3.8.10
+# Create a virtual environment using venv
 python -m venv venv
+# Activate your new virtual environment
 source venv/bin/activate
 ```
 
