@@ -397,7 +397,7 @@ systemctl --user enable gunicorn_staging
 systemctl --user restart gunicorn_staging
 systemctl --user status gunicorn_staging
 
-	// testing.techtonica.org
+# testing.techtonica.org
 systemctl --user stop gunicorn_testing
 systemctl --user enable gunicorn_testing
 systemctl --user restart gunicorn_testing
