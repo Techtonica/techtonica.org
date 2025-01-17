@@ -250,7 +250,7 @@ At the moment, we do not have styling in place that will enable us to have a cod
   />
 ```
 
-8. Recomment the following.
+8. Re-comment the following.
 
 ```
   <!-- <div class="blue-background">
