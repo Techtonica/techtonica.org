@@ -204,7 +204,7 @@ There are features on the site that use Square for payments and will periodicall
 2. This file is listed in our .gitignore file and will not be included when pushing or pulling updates.
 3. You will need to manually add it into your local repository to test these features locally, and will also need to manually add it into whatever Dreamhost server (testing, staging, or production) that you are using as well, if it’s not already there.
 4. BE CAREFUL ABOUT environment VALUE! If it’s set to production it will actually charge the cards you test with, so be sure to set it to sandbox when testing locally or on staging or testing.
-5. Please see the "Updating Techtonica's Website" doc to get the keys and secrets.
+5. Please see the [Updating Techtonica's Website](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit?tab=t.0) doc to get the keys and secrets.
 
 **Running Locally**
 
