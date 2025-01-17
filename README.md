@@ -259,11 +259,11 @@ This project uses [pip-tools](https://github.com/jazzband/pip-tools) to manage
 dependencies. If you need to add or remove a Python library dependency:
 **If there are dependencies only needed for local development, these go in dev.in/dev.txt. Otherwise they go in requirements.in/requirements.txt**
 
-1. Edit `requirements.in`
-1. Generate `requirements.txt`:
+1. Edit `requirements.in` or `dev.in` (referred to below as `file_name.in`)
+1. Generate the .txt file
 
    ```sh
-   pip-compile -U
+   pip-compile -U <file_name.in>
    ```
 
 Once the new library is used in the code base, you'll need to update the
@@ -273,15 +273,6 @@ library usage:
 ```sh
 pre-commit run seed-isort-config -a --hook-stage manual
 ```
-
-For development dependencies:
-
-1. Edit `dev.in`
-1. Generate `dev.txt`:
-
-   ```sh
-   pip-compile -U dev.in
-   ```
 
 ## Deployment to DreamHost
 
