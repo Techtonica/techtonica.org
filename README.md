@@ -278,23 +278,23 @@ pre-commit run seed-isort-config -a --hook-stage manual
 
 The below instructions describe how to deploy your feature branch once it has been tested and your PR has been approved. Make sure your feature branch was branched off of develop.
 
-a. push changes to new branch
+1. Push changes to feature branch
 
-b. merge new branch into develop
+1. Merge feature branch into develop
 
-c. push develop to GitHub
+1. Push develop to GitHub
 
-d. delete new branch
+1. Delete feature branch
 
-e. deploy develop to staging
+1. Deploy develop to staging
 
-f. merge develop into main
+1. Merge develop into main
 
-g. push main to GitHub
+1. Push main to GitHub
 
-h. deploy main to techtonica.org
+1. Deploy main to techtonica.org
 
-i. tag the date after deployment
+1. Tag the date after deployment
 
 ### Initial Setup
 
