@@ -276,27 +276,9 @@ pre-commit run seed-isort-config -a --hook-stage manual
 
 ## Deployment to DreamHost
 
-The below instructions describe how to deploy your feature branch once it has been tested and your PR has been approved. Make sure your feature branch was branched off of develop.
-
-1. Push changes to feature branch
-
-1. Merge feature branch into develop
-
-1. Push develop to GitHub
-
-1. Delete feature branch
-
-1. Deploy develop to staging
-
-1. Merge develop into main
-
-1. Push main to GitHub
-
-1. Deploy main to techtonica.org
-
-1. Tag the date after deployment
-
 ### Initial Setup
+
+The below instructions are for setting up a new server in DreamHost.
 
 1. Follow the instructions in the [Setting up and deploying Python Flask to
    Dreamhost](https://mattcarrier.com/flask-dreamhost-setup/) blog post.
@@ -329,6 +311,28 @@ The below instructions describe how to deploy your feature branch once it has be
    [slack]
    slack_webhook =  <slack webhook>
    ```
+
+### Deploy Feature Branch
+
+The below instructions describe how to deploy your feature branch once it has been tested and your PR has been approved. Make sure your feature branch was branched off of develop.
+
+1. Push changes to feature branch
+
+1. Merge feature branch into develop
+
+1. Push develop to GitHub
+
+1. Delete feature branch
+
+1. Deploy develop to staging
+
+1. Merge develop into main
+
+1. Push main to GitHub
+
+1. Deploy main to techtonica.org
+
+1. Tag the date after deployment
 
 ### Updating the Site
 
