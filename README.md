@@ -264,6 +264,7 @@ dependencies. If you need to add or remove a Python library dependency:
 
    ```sh
    pip-compile -U <file_name.in>
+   pip install -r <file_name.txt>
    ```
 
 Once the new library is used in the code base, you'll need to update the
