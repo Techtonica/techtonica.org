@@ -153,7 +153,7 @@ FLASK_DEBUG=1 FLASK_APP=main_site.py flask run
 
 Browse to <http://localhost:5000>.
 
-### Using Docker to Run Locally <a name="using-docker-to-run-locally"></a>
+### Using Docker to Run Locally
 
 #### First Time Using Docker?
 
