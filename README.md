@@ -256,8 +256,8 @@ At the moment, we do not have styling in place that will enable us to have a cod
 ### Updating Dependencies
 
 This project uses [pip-tools](https://github.com/jazzband/pip-tools) to manage
-dependencies. If you need to add or remove a Python library dependency:
-**If there are dependencies only needed for local development, these go in dev.in/dev.txt. Otherwise they go in requirements.in/requirements.txt**
+dependencies. _If there are dependencies only needed for local development, these go in dev.in/dev.txt. Otherwise they go in requirements.in/requirements.txt_. If you need to add or remove a Python library dependency:
+
 
 1. Edit `requirements.in` or `dev.in` (referred to below as `file_name.in`)
 1. Generate the .txt file
