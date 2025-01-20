@@ -157,7 +157,7 @@ Flask-SQLAlchemy==2.5.1
     # via -r requirements.in
 Flask-Migrate==3.1.0
     # via -r requirements.in
-mysqlclient==2.1.0
+# mysqlclient==2.1.0
     # via -r requirements.in
 # The following packages are considered to be unsafe in a requirements file:
 # pip
