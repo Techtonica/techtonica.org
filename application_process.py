@@ -5,7 +5,7 @@ application_bp = Blueprint('application', __name__)
 @application_bp.route('/form', methods=['GET', 'POST'])
 def form():
     if request.method == 'POST':
-        # Simulate form submission without database
+        # Simulate form submission without database; will log in console output
         flash('Application submitted successfully!', 'success')
         return redirect(url_for('application.dashboard'))
     return render_template('application/form.html')

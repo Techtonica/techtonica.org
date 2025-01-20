@@ -11,7 +11,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     password_hash = db.Column(db.String(128))
     is_admin = db.Column(db.Boolean, default=False)
-    is_student = db.Column(db.Boolean, default=False)
+    is_participant = db.Column(db.Boolean, default=False)
     is_instructor = db.Column(db.Boolean, default=False)
 
 class Application(db.Model):
