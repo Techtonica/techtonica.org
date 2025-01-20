@@ -12,7 +12,7 @@ class User(db.Model):
     password_hash = db.Column(db.String(128))
     is_admin = db.Column(db.Boolean, default=False)
     is_participant = db.Column(db.Boolean, default=False)
-    is_instructor = db.Column(db.Boolean, default=False)
+    is_program_staff = db.Column(db.Boolean, default=False)
 
 class Application(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -28,5 +28,5 @@ class Course(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(100), nullable=False)
     description = db.Column(db.Text)
-    instructor_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    instructor = db.relationship('User', backref=db.backref('courses_taught', lazy=True))
+    program_staff_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    program_staff = db.relationship('User', backref=db.backref('courses_taught', lazy=True))
