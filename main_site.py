@@ -19,9 +19,6 @@ from uuid import uuid4
 from application_process import application_bp
 from course_management import course_bp
 
-app.register_blueprint(application_bp, url_prefix='/application')
-app.register_blueprint(course_bp, url_prefix='/course')
-
 load_dotenv(find_dotenv(usecwd=True))
 
 # Gracefully handle running locally without eventbrite token
@@ -32,6 +29,11 @@ except BaseException:
 
 app = Flask(__name__)
 sslify = SSLify(app)
+
+
+# MVP
+app.register_blueprint(application_bp, url_prefix='/application')
+app.register_blueprint(course_bp, url_prefix='/course')
 
 
 # MAIN HANDLERS
