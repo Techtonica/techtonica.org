@@ -202,50 +202,6 @@ def render_volunteer_page():
     """
     return render_template("volunteer.html")
 
-# @app.route('/application/form', methods=['GET', 'POST'])
-# def application_form():
-#     """
-#     Renders the application form page from jinja2 template
-#     """
-#     if request.method == 'POST':
-#         # Simulate form submission without database
-#         flash('Application submitted successfully!', 'success')
-#         return redirect(url_for('application_dashboard'))
-#     return render_template('application/form.html')
-
-# @app.route('/application/dashboard')
-# def application_dashboard():
-#     """
-#     Renders the application dashboard page from jinja2 template
-#     with simulated applications
-#     """
-#     applications = [
-#         {'full_name': 'John Doe', 'email': 'john@example.com', 'program': 'Computer Science', 'status': 'Submitted'},
-#         {'full_name': 'Jane Smith', 'email': 'jane@example.com', 'program': 'Engineering', 'status': 'Under Review'}
-#     ]
-#     return render_template('application/dashboard.html', applications=applications)
-
-# @app.route('/course/list')
-# def course_list():
-#     """
-#     Renders the course list page from jinja2 template
-#     with simulated courses listed
-#     """
-#     courses = [
-#         {'id': 1, 'title': 'Introduction to Python'},
-#         {'id': 2, 'title': 'Web Development Fundamentals'}
-#     ]
-#     return render_template('course/list.html', courses=courses)
-
-# @app.route('/course/<int:course_id>')
-# def course_detail(course_id):
-#     """
-#     Renders the a specific course page from jinja2 template
-#     with simulated course contents
-#     """
-#     course = {'id': course_id, 'title': f'Course {course_id}', 'description': 'Course description goes here.'}
-#     return render_template('course/detail.html', course=course)
-
 @app.route("/news/")
 def render_news_page():
     """
