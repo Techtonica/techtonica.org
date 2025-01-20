@@ -3,7 +3,6 @@ Flask-SSLify
 Flask-SQLAlchemy # mvp
 Flask-Migrate # mvp
 mysqlclient # mvp
-python-dotenv # mvp
 Jinja2
 eventbrite
 pendulum
