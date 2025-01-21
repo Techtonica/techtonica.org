@@ -12,5 +12,3 @@ class Config:
         'max_overflow': 20,
         'pool_pre_ping': True
     }
-    # GITHUB_OAUTH_CLIENT_ID = os.environ.get('GITHUB_OAUTH_CLIENT_ID')
-    # GITHUB_OAUTH_CLIENT_SECRET = os.environ.get('GITHUB_OAUTH_CLIENT_SECRET')
