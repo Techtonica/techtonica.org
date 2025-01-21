@@ -2,7 +2,6 @@ Flask
 Flask-SSLify
 SQLAlchemy # mvp
 Flask-SQLAlchemy # mvp
-Flask-Migrate # mvp
 Flask-Login # mvp
 Flask-WTF # mvp
 PyMySQL # mvp
