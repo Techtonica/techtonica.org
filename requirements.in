@@ -4,9 +4,9 @@ Flask-SQLAlchemy # mvp
 Flask-Migrate # mvp
 Flask-Login
 Flask-WTF
-Flask-Dance
 PyMySQL
 bcrypt
+WTForms
 Jinja2
 eventbrite
 pendulum

@@ -617,6 +617,15 @@
         <a href="{{ url_for('application.dashboard') }}">Application Dashboard</a>
         <a href="{{ url_for('course.list') }}">Courses</a>
       </div>
+      <div>
+          Microblog:
+          <a href="{{ url_for('index') }}">Home</a>
+          {% if current_user.is_anonymous %}
+          <a href="{{ url_for('login') }}">Login</a>
+          {% else %}
+          <a href="{{ url_for('logout') }}">Logout</a>
+          {% endif %}
+      </div>
     </nav>
     <!-- BEGIN MAIN CONTENT -->
     <div class="main-content">{% block content %} {% endblock content %}</div>

@@ -12,13 +12,15 @@ import json
 from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
 from flask import Flask, redirect, render_template, url_for, request, jsonify
+from flask_login import LoginManager, current_user, login_user, logout_user, login_required
 from flask_sslify import SSLify
 from pydantic import BaseModel
 from square.client import Client
 from uuid import uuid4
-from flask_migrate import Migrate
 from models import db
 from config import Config
+from werkzeug.urls import url_parse
+from forms import LoginForm, RegistrationForm
 from application_process import application_bp
 from course_management import course_bp
 
@@ -34,13 +36,13 @@ app = Flask(__name__)
 sslify = SSLify(app)
 app.config.from_object(Config)
 db.init_app(app)
-migrate = Migrate(app, db)
-
+# migrate = Migrate(app, db)
 
 # MVP
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'
 app.register_blueprint(application_bp, url_prefix='/application')
 app.register_blueprint(course_bp, url_prefix='/course')
-
 
 # MAIN HANDLERS
 @app.route("/")
@@ -53,6 +55,46 @@ def render_home_page():
         return render_template("home.html", events=events)
     except BaseException:
         return render_template("home.html")
+
+@login_manager.user_loader
+def load_user(id):
+    return User.query.get(int(id))
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        if user is None or not user.check_password(form.password.data):
+            flash('Invalid username or password')
+            return redirect(url_for('login'))
+        login_user(user, remember=form.remember_me.data)
+        next_page = request.args.get('next')
+        if not next_page or url_parse(next_page).netloc != '':
+            next_page = url_for('index')
+        return redirect(next_page)
+    return render_template('login.html', title='Sign In', form=form)
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('index'))
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(username=form.username.data, email=form.email.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Congratulations, you are now a registered user!')
+        return redirect(url_for('login'))
+    return render_template('register.html', title='Register', form=form)
 
 
 @app.route("/team/")
