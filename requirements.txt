@@ -45,7 +45,7 @@ exceptiongroup==1.2.2
     # via anyio
 fastapi==0.115.6
     # via -r requirements.in
-flask==3.0.3
+flask==2.3.3
     # via
     #   -r requirements.in
     #   flask-sslify
