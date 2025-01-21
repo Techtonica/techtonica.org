@@ -16,6 +16,9 @@ from flask_sslify import SSLify
 from pydantic import BaseModel
 from square.client import Client
 from uuid import uuid4
+from flask_migrate import Migrate
+from models import db
+from config import Config
 from application_process import application_bp
 from course_management import course_bp
 
@@ -29,6 +32,9 @@ except BaseException:
 
 app = Flask(__name__)
 sslify = SSLify(app)
+app.config.from_object(Config)
+db.init_app(app)
+migrate = Migrate(app, db)
 
 
 # MVP

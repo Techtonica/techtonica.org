@@ -5,6 +5,11 @@ from datetime import datetime
 
 db = SQLAlchemy()
 
+enrollments = db.Table('enrollments',
+    db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
+    db.Column('course_id', db.Integer, db.ForeignKey('course.id'), primary_key=True)
+)
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
@@ -13,6 +18,7 @@ class User(db.Model):
     is_admin = db.Column(db.Boolean, default=False)
     is_participant = db.Column(db.Boolean, default=False)
     is_program_staff = db.Column(db.Boolean, default=False)
+    enrolled_courses = db.relationship('Course', secondary=enrollments, back_populates='participants')
 
 class Application(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -30,3 +36,4 @@ class Course(db.Model):
     description = db.Column(db.Text)
     program_staff_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     program_staff = db.relationship('User', backref=db.backref('courses_taught', lazy=True))
+    participants = db.relationship('User', secondary=enrollments, back_populates='enrolled_courses')

@@ -155,9 +155,17 @@ zipp==3.20.2
     #   importlib-resources
 Flask-SQLAlchemy==2.5.1
     # via -r requirements.in
-Flask-Migrate==3.1.0
+Flask-Migrate==2.7.0
     # via -r requirements.in
-# mysqlclient==2.1.0
+Flask-Login==0.5.0
+    # via -r requirements.in
+Flask-WTF==0.15.1
+    # via -r requirements.in
+Flask-Dance==5.1.0
+    # via -r requirements.in
+mysqlclient==2.1.0
+    # via -r requirements.in
+bcrypt==3.2.0
     # via -r requirements.in
 # The following packages are considered to be unsafe in a requirements file:
 # pip
