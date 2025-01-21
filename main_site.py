@@ -11,15 +11,15 @@ import requests
 import json
 from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
-from flask import Flask, redirect, render_template, url_for, request, jsonify
+from flask import Flask, redirect, render_template, url_for, request, jsonify, flash
 from flask_login import LoginManager, current_user, login_user, logout_user, login_required
+from werkzeug.urls import url_parse
 from flask_sslify import SSLify
 from pydantic import BaseModel
 from square.client import Client
 from uuid import uuid4
-from models import db
+from models import db, bcrypt, User
 from config import Config
-from werkzeug.urls import url_parse
 from forms import LoginForm, RegistrationForm
 from application_process import application_bp
 from course_management import course_bp
@@ -36,7 +36,7 @@ app = Flask(__name__)
 sslify = SSLify(app)
 app.config.from_object(Config)
 db.init_app(app)
-# migrate = Migrate(app, db)
+bcrypt.init_app(app)
 
 # MVP
 login_manager = LoginManager(app)
@@ -55,6 +55,11 @@ def render_home_page():
         return render_template("home.html", events=events)
     except BaseException:
         return render_template("home.html")
+
+@app.route('/index')
+@login_required
+def index():
+    return render_template('index.html', title='Home')
 
 @login_manager.user_loader
 def load_user(id):
@@ -95,7 +100,6 @@ def register():
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
-
 
 @app.route("/team/")
 def render_team_page():

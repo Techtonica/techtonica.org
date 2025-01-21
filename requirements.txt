@@ -145,9 +145,6 @@ tzdata==2024.2
     # via pendulum
 urllib3==2.2.3
     # via requests
-werkzeug==2.3.7
-    # via 
-    #   flask
 wheel==0.45.1
     # via pip-tools
 zipp==3.20.2
@@ -159,6 +156,9 @@ SQLAlchemy==1.4.18
 Flask-SQLAlchemy==3.0.2
     # via -r requirements.in
     # via Flask-SQLAlchemy
+Flask-Bcrypt==3.1.0
+    # via -r requirements.in
+    # via flask
 Flask-Login==0.5.0
     # via -r requirements.in
 Flask-WTF==0.15.1
@@ -169,6 +169,9 @@ bcrypt==3.2.0
     # via -r requirements.in
 WTForms==2.3.3
     # via -r requirements.in
+werkzeug==2.3.7
+    # via 
+    #   flask
 # The following packages are considered to be unsafe in a requirements file:
 # pip
 # setuptools

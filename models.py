@@ -1,21 +1,22 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
-from werkzeug.security import generate_password_hash, check_password_hash
+from flask_bcrypt import Bcrypt
 from datetime import datetime
 
 # contain the database models for both the application process and course management
 
 db = SQLAlchemy()
+bcrypt = Bcrypt()
 
 enrollments = db.Table('enrollments',
     db.Column('user_id', db.Integer, db.ForeignKey('user.id'), primary_key=True),
     db.Column('course_id', db.Integer, db.ForeignKey('course.id'), primary_key=True)
 )
 
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    username = db.Column(db.String(64), index=True, unique=True, nullable=False)
-    email = db.Column(db.String(120), index=True, unique=True, nullable=False)
+class User(UserMixin, db.Model):
+    id = db.Column(db.Integer, primary_key=True) #, autoincrement=True)
+    username = db.Column(db.String(64), index=True, unique=True) #, nullable=False)
+    email = db.Column(db.String(120), index=True, unique=True) #, nullable=False)
     password_hash = db.Column(db.String(128))
     is_admin = db.Column(db.Boolean, default=False)
     is_participant = db.Column(db.Boolean, default=False)
@@ -23,10 +24,10 @@ class User(db.Model):
     enrolled_courses = db.relationship('Course', secondary=enrollments, back_populates='participants')
     
     def set_password(self, password):
-            self.password_hash = generate_password_hash(password)
-
+        self.password_hash = bcrypt.generate_password_hash(password).decode('utf-8')
+    
     def check_password(self, password):
-        return check_password_hash(self.password_hash, password)
+        return bcrypt.check_password_hash(self.password_hash, password)
 
 class Application(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
