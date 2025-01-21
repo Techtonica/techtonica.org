@@ -3,7 +3,7 @@ import os
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'fallback-secret-key'
     SQLALCHEMY_DATABASE_URI = (
-        f"mysql://{os.environ.get('DB_USER')}:{os.environ.get('DB_PASSWORD')}@"
+        f"mysql+pymysql://{os.environ.get('DB_USER')}:{os.environ.get('DB_PASSWORD')}@"
         f"{os.environ.get('DB_HOST')}/{os.environ.get('DB_NAME')}"
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
