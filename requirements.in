@@ -1,12 +1,13 @@
 Flask
 Flask-SSLify
+SQLAlchemy # mvp
 Flask-SQLAlchemy # mvp
 Flask-Migrate # mvp
-Flask-Login
-Flask-WTF
-PyMySQL
-bcrypt
-WTForms
+Flask-Login # mvp
+Flask-WTF # mvp
+PyMySQL # mvp
+bcrypt # mvp
+WTForms # mvp
 Jinja2
 eventbrite
 pendulum
