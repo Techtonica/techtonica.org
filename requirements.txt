@@ -156,7 +156,7 @@ SQLAlchemy==1.4.18
 Flask-SQLAlchemy==3.0.2
     # via -r requirements.in
     # via Flask-SQLAlchemy
-Flask-Bcrypt==3.1.0
+Flask-Bcrypt==0.7.1
     # via -r requirements.in
     # via flask
 Flask-Login==0.5.0
