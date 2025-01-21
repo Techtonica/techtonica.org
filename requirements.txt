@@ -145,8 +145,9 @@ tzdata==2024.2
     # via pendulum
 urllib3==2.2.3
     # via requests
-werkzeug==2.0.1
-    # via flask
+werkzeug==2.3.7
+    # via 
+    #   flask
 wheel==0.45.1
     # via pip-tools
 zipp==3.20.2
