@@ -153,7 +153,7 @@ zipp==3.20.2
     # via
     #   importlib-metadata
     #   importlib-resources
-Flask-SQLAlchemy==2.7.0
+Flask-SQLAlchemy==2.5.1
     # via -r requirements.in
 Flask-Migrate==2.5.1
     # via -r requirements.in
