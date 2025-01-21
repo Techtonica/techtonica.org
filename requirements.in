@@ -5,7 +5,7 @@ Flask-Migrate # mvp
 Flask-Login
 Flask-WTF
 Flask-Dance
-mysqlclient
+PyMySQL
 bcrypt
 Jinja2
 eventbrite

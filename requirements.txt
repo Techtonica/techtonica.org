@@ -163,7 +163,7 @@ Flask-WTF==0.15.1
     # via -r requirements.in
 Flask-Dance==5.1.0
     # via -r requirements.in
-mysqlclient==2.1.0
+PyMySQL==1.0.2
     # via -r requirements.in
 bcrypt==3.2.0
     # via -r requirements.in
