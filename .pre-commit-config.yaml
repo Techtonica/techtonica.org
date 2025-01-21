@@ -20,10 +20,10 @@ repos:
         types: [python]
         pass_filenames: false
         stages: [manual]
-  - repo: https://github.com/pre-commit/pycqa/isort
-    rev: 5.10.1
-    hooks:
-      - id: isort
+  # - repo: https://github.com/pycqa/isort
+  #   rev: 5.10.1
+  #   hooks:
+  #     - id: isort
   - repo: https://github.com/python/black
     rev: 20.8b1
     hooks:
