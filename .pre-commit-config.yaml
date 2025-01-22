@@ -40,4 +40,3 @@ repos:
 default_language_version:
   python: python3.8.10
 minimum_pre_commit_version: "1.21"
-#testing after re-doing post commit .git/hook script
