@@ -35,8 +35,11 @@ def render_home_page():
     """
     Renders the home page from jinja2 template
     """
-    events = get_events()
-    return render_template("home.html", events=events)
+    try:
+        events = get_events()
+        return render_template("home.html", events=events)
+    except BaseException:
+        return render_template("home.html")
 
 
 @app.route("/team/")
