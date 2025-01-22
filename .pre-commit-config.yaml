@@ -20,10 +20,10 @@ repos:
         types: [python]
         pass_filenames: false
         stages: [manual]
-  # - repo: https://github.com/pycqa/isort
-  #   rev: 5.10.1
-  #   hooks:
-  #     - id: isort
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
   - repo: https://github.com/python/black
     rev: 20.8b1
     hooks:
@@ -40,3 +40,4 @@ repos:
 default_language_version:
   python: python3.8.10
 minimum_pre_commit_version: "1.21"
+# testing a change
