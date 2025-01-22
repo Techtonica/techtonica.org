@@ -11,19 +11,19 @@ repos:
       - id: detect-private-key
       - id: mixed-line-ending
         exclude_types: ["xml"]
-  - repo: local
-    hooks:
-      - id: seed-isort-config
-        name: seed-isort-config
-        entry: bin/seed-isort-config.sh
-        language: script
-        types: [python]
-        pass_filenames: false
-        stages: [manual]
-  - repo: https://github.com/pycqa/isort
-    rev: 5.12.0
-    hooks:
-      - id: isort
+  # - repo: local
+  #   hooks:
+  #     - id: seed-isort-config
+  #       name: seed-isort-config
+  #       entry: bin/seed-isort-config.sh
+  #       language: script
+  #       types: [python]
+  #       pass_filenames: false
+  #       stages: [manual]
+  # - repo: https://github.com/pycqa/isort
+  #   rev: 5.12.0
+  #   hooks:
+  #     - id: isort
   - repo: https://github.com/python/black
     rev: 20.8b1
     hooks:
@@ -40,4 +40,3 @@ repos:
 default_language_version:
   python: python3.8.10
 minimum_pre_commit_version: "1.21"
-#123
