@@ -266,16 +266,6 @@ dependencies. _If there are dependencies only needed for local development, thes
    pip install -r <file_name.txt>
    ```
 
-**N.B. The following isort config update is no longer necessary since isort 5, as per below screenshot of documentation**
-
-![screenshot of seed-isort-config update information](static/img/seed-isort-config-deprecated.png)
-
-~~Once the new library is used in the code base, you'll need to update the
-[isort](https://timothycrosley.github.io/isort/) config to reflect third party
-library usage:~~
-
-~~pre-commit run seed-isort-config -a --hook-stage manual~~
-
 ## Deployment to DreamHost
 
 ### Initial Setup
