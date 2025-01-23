@@ -36,7 +36,7 @@ def render_home_page():
     """
     Renders the home page from jinja2 template
     """
-    times = get_time()
+    times = get_time(datetime.datetime(2024, 12, 10, 12), True)
     try:
         events = get_events()
         return render_template("home.html", events=events, times=times)
@@ -185,7 +185,7 @@ def render_ft_program_page():
     """
     Renders the full-time program page from jinja2 template
     """
-    times = get_time()
+    times = get_time(datetime.datetime(2025, 1, 1, 12), False)
     return render_template("full-time-program.html", times=times)
 
 
@@ -237,16 +237,8 @@ def get_events():
         return []
 
 
-def get_time():
-    # change this variable to set application open date
-    # eventually to become env variable
-    app_open_date = datetime.datetime(2025, 1, 20, 12)
-    # change # of days added to extend initial application time
+def get_time(app_open_date, is_extended):
     today = datetime.datetime.today()
-    # change this variable to true if applications are extended
-    # eventually to become env variable
-    is_extended = False
-
     if is_extended:
         app_close_date = app_open_date + datetime.timedelta(days=42)
     else:
