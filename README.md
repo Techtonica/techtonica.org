@@ -195,12 +195,23 @@ pre-commit install
 
 ### Optional: Installing Prettier Plug-in Locally
 
-Problem: `git commit` triggers Prettier pre-commit hook, leading to unstaged changes (if applicable) as seen here, for example:
+#### Problem:
 
-Solution: Add Prettier plug-in to local IDE and adjust settings to format on-save.
-Thus, the Prettier pre-commit hook should not need to format your code. As seen below.
+`git commit` triggers Prettier pre-commit hook, leading to unstaged changes (if applicable) as seen here, for example:
 
-N.B. If you would rather not install the Prettier plug-in, be sure to commit the Prettier changes (if applicable) before pushing to remote.
+![Prettier Unstaged Changes](static/img/Prettier-hook-unstaged-changes.png)
+
+#### Solution:
+
+Add Prettier plug-in to local IDE and adjust settings to format on-save.
+
+![Prettier Plug-in In VS Code](static/img/Prettier-Plug-In.png)
+
+N.B. If you would rather not install the Prettier plug-in, be sure to commit the Prettier unstaged changes before pushing to remote.
+
+#### Result:
+
+Prettier pre-commit hook should not need to format your code and thus should not create new unstaged changes.
 
 ### Running Locally
 
