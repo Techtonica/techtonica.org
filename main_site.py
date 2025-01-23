@@ -185,8 +185,7 @@ def render_ft_program_page():
     """
     Renders the full-time program page from jinja2 template
     """
-    times = get_time()
-    return render_template("full-time-program.html", times=times)
+    return render_template("full-time-program.html")
 
 
 @app.route("/donate/")
@@ -241,11 +240,10 @@ def get_time():
     # change this variable to set application open date
     # eventually to become env variable
     app_open_date = datetime.datetime(2025, 1, 20, 12)
-    # change # of days added to extend initial application time
-    today = datetime.datetime.today()
     # change this variable to true if applications are extended
     # eventually to become env variable
     is_extended = False
+    today = datetime.datetime.today()
 
     if is_extended:
         app_close_date = app_open_date + datetime.timedelta(days=42)
