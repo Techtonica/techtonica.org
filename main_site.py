@@ -36,7 +36,9 @@ def render_home_page():
     """
     Renders the home page from jinja2 template
     """
-    times = get_time(datetime.datetime(2024, 12, 10, 12), True)
+    sponsor_app_open_date = os.environ["SPONSOR_APP_OPEN_DATE"]
+    sponsor_app_extend = os.environ["SPONSOR_APP_EXTENDED"]
+    times = get_time(sponsor_app_open_date, sponsor_app_extend)
     try:
         events = get_events()
         return render_template("home.html", events=events, times=times)
@@ -185,7 +187,9 @@ def render_ft_program_page():
     """
     Renders the full-time program page from jinja2 template
     """
-    times = get_time(datetime.datetime(2025, 1, 1, 12), False)
+    ft_app_open_date = os.environ["FT_APP_OPEN_DATE"]
+    ft_app_extend = os.environ["FT_APP_EXTENDED"]
+    times = get_time(ft_app_open_date, ft_app_extend)
     return render_template("full-time-program.html", times=times)
 
 
@@ -237,7 +241,10 @@ def get_events():
         return []
 
 
-def get_time(app_open_date, is_extended):
+def get_time(app_open_date_string, is_extended):
+    app_open_date = datetime.datetime.strptime(
+        app_open_date_string, "%m/%d/%y %H:%M:%S"
+    )
     today = datetime.datetime.today()
     if is_extended:
         app_close_date = app_open_date + datetime.timedelta(days=42)
