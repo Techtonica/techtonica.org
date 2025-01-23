@@ -4,6 +4,7 @@ for Techtonica.org
 """
 
 import configparser
+import datetime
 import os
 import sys
 from uuid import uuid4
@@ -35,11 +36,12 @@ def render_home_page():
     """
     Renders the home page from jinja2 template
     """
+    times = get_time()
     try:
         events = get_events()
-        return render_template("home.html", events=events)
+        return render_template("home.html", events=events, times=times)
     except BaseException:
-        return render_template("home.html")
+        return render_template("home.html", times=times)
 
 
 @app.route("/team/")
@@ -236,11 +238,23 @@ def get_events():
 
 
 def get_time():
-    # hardcoding dummy data to test rendering of full time program page
-    app_open = False
-    app_open_date = "application open date"
-    app_close_date = "application close date"
+    # change this variable to set application open date
+    # eventually to become env variable
+    app_open_date = datetime.datetime(2025, 1, 20, 12)
+    # change # of days added to extend initial application time
+    today = datetime.datetime.today()
+    # change this variable to true if applications are extended
+    # eventually to become env variable
+    is_extended = False
+
+    if is_extended:
+        app_close_date = app_open_date + datetime.timedelta(days=42)
+    else:
+        app_close_date = app_open_date + datetime.timedelta(days=28)
+    app_open = app_open_date <= today <= app_close_date
+
     return {
+        "is_extended": is_extended,
         "app_open": app_open,
         "app_open_date": app_open_date,
         "app_close_date": app_close_date,
