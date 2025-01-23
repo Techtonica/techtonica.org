@@ -3,6 +3,7 @@
 This repo is for [the Techtonica website](http://techtonica.org), which is
 currently hosted on DreamHost.
 
+<<<<<<< HEAD
 - [Techtonica](#techtonica)
   - [Who](#who)
   - [What](#what)
@@ -29,6 +30,29 @@ currently hosted on DreamHost.
     - [Initial Setup](#initial-setup)
     - [Deploy Feature Branch](#deploy-feature-branch)
     - [Updating the Site](#updating-the-site)
+=======
+- [Who](#who)
+- [What](#what)
+- [How](#how)
+- [Getting Started](#getting-started)
+  - [Set Up Virtual Environment](#set-up-virtual-environment)
+  - [Install pip Version 23](#install-pip-version-23)
+  - [Install and Upgrade pip-tools](#install-and-upgrade-pip-tools)
+  - [Install Pre-Commit Hooks](#install-pre-commit-hooks)
+  - [Install Requirements](#install-requirements)
+  - [Create Config.ini File](#create-configini-file)
+  - [Optional: Installing Prettier Plug-in Locally](#optional-installing-prettier-plug-in-locally)
+  - [Pre-Commit Hooks Guide](#pre-commit-hooks-guide)
+  - [Running Locally](#running-locally)
+  - [Using Docker to Run Locally](#using-docker-to-run-locally)
+  - [CSS / SCSS](#css--scss)
+  - [Square Testing](#square-testing)
+  - [Updating Demographics Chart](#updating-the-demographics-chart-for-the-apply-section)
+  - [Updating Dependencies](#updating-dependencies)
+- [Deployment to DreamHost](#deployment-to-dreamhost)
+  - [Initial Setup](#initial-setup)
+  - [Updating the Site](#updating-the-site)
+>>>>>>> 3164c99 (local set up for Prettier)
 
 ## Who
 
@@ -168,6 +192,15 @@ After upgrading, ensure you reinstall the hooks by running
 ```
 pre-commit install
 ```
+
+### Optional: Installing Prettier Plug-in Locally
+
+Problem: `git commit` triggers Prettier pre-commit hook, leading to unstaged changes (if applicable) as seen here, for example:
+
+Solution: Add Prettier plug-in to local IDE and adjust settings to format on-save.
+Thus, the Prettier pre-commit hook should not need to format your code. As seen below.
+
+N.B. If you would rather not install the Prettier plug-in, be sure to commit the Prettier changes (if applicable) before pushing to remote.
 
 ### Running Locally
 
