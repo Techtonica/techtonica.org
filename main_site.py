@@ -180,8 +180,7 @@ def render_ft_program_page():
     """
     Renders the full-time program page from jinja2 template
     """
-    times = get_time()
-    return render_template("full-time-program.html", times=times)
+    return render_template("full-time-program.html")
 
 
 @app.route("/donate/")
@@ -233,10 +232,27 @@ def get_events():
 
 
 def get_time():
+<<<<<<< HEAD
     # hardcoding dummy data to test rendering of full time program page
     app_open = False
     app_open_date = "application open date"
     app_close_date = "application close date"
+=======
+    # change this variable to set application open date
+    # eventually to become env variable
+    app_open_date = datetime.datetime(2025, 1, 20, 12)
+    # change this variable to true if applications are extended
+    # eventually to become env variable
+    is_extended = False
+    today = datetime.datetime.today()
+
+    if is_extended:
+        app_close_date = app_open_date + datetime.timedelta(days=42)
+    else:
+        app_close_date = app_open_date + datetime.timedelta(days=28)
+    app_open = app_open_date <= today <= app_close_date
+
+>>>>>>> c80a333 (Created helper function get_time() to generate global variables for use in dynamically updating time related sections of site pages.)
     return {
         "app_open": app_open,
         "app_open_date": app_open_date,
