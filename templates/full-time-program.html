@@ -1,5 +1,9 @@
-{% extends "base.html" %} {% block title %} Techtonica Full-Time Program {%
-endblock title %} {% block content %}
+def get_time(): # hardcoding dummy data to test rendering of full time program
+page app_open = False app_open_date = "application open date" app_close_date =
+"application close date" return { "app_open": app_open, "app_open_date":
+app_open_date, "app_close_date": app_close_date, } {% extends "base.html" %} {%
+block title %} Techtonica Full-Time Program {% endblock title %} {% block
+content %}
 <div class="main-content">
   <div class="program-header" title="Full-Time Program">
     <div class="main-header__text blue-background">
@@ -708,17 +712,17 @@ endblock title %} {% block content %}
     </div>
     <h2>
       {% if times.app_open %}
-      <!-- FT cohort application button that leads to short form -->
+      <!-- FT cohort application button that leads to short form when apps are open-->
       <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
         class="sponsor"
         id="orange-button"
         target="_blank"
         rel="noopener noreferrer"
-        >Apply by May 28th (12pm PT)!</a
+        >Apply by {{times.app_close_date.strftime("%B %w, %I %p")}} (PT)!</a
       >
       {% else %}
-      <!-- Uncomment when FT cohort application closes, comment apply today button above when application is closed -->
+      <!-- event sign up button appears when apps are closed -->
       <a
         href="https://www.eventbrite.com/o/techtonica-11297022451"
         class="sponsor"
