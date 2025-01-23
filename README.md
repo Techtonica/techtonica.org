@@ -13,6 +13,7 @@ currently hosted on DreamHost.
   - [Install Pre-Commit Hooks](#install-pre-commit-hooks)
   - [Install Requirements](#install-requirements)
   - [Create Config.ini File](#create-configini-file)
+  - [Optional: Installing Prettier Plug-in Locally](#optional-installing-prettier-plug-in-locally)
   - [Pre-Commit Hooks Guide](#pre-commit-hooks-guide)
   - [Running Locally](#running-locally)
   - [Using Docker to Run Locally](#using-docker-to-run-locally)
@@ -162,6 +163,15 @@ After upgrading, ensure you reinstall the hooks by running
 ```
 pre-commit install
 ```
+
+### Optional: Installing Prettier Plug-in Locally
+
+Problem: `git commit` triggers Prettier pre-commit hook, leading to unstaged changes (if applicable) as seen here, for example:
+
+Solution: Add Prettier plug-in to local IDE and adjust settings to format on-save.
+Thus, the Prettier pre-commit hook should not need to format your code. As seen below.
+
+N.B. If you would rather not install the Prettier plug-in, be sure to commit the Prettier changes (if applicable) before pushing to remote.
 
 ### Running Locally
 
