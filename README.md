@@ -49,22 +49,26 @@ It is recommended you use a virtual environment to keep dependencies
 required by different projects separate. [Learn more about Python virtual
 environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 
-Set up virtual environment with Python 3.12.8 and Pip 24 using [pyenv](https://github.com/pyenv/pyenv) and [venv](https://docs.python.org/3/library/venv.html):
+Set up virtual environment with Python 3.13.1 and Pip 24 using [pyenv](https://github.com/pyenv/pyenv) and [venv](https://docs.python.org/3/library/venv.html):
 
 ```
 # Install pyenv using brew
 brew install pyenv
-# Use pyenv to install version python 3.12.8
-pyenv install 3.12.8
-# Set your python version to 3.12.8
-pyenv local 3.12.8
+# Use pyenv to install version python 3.13.1
+pyenv install 3.13.1
+# Set your python version to 3.13.1
+pyenv local 3.13.1
 # Create a virtual environment using venv
 python -m venv venv
 # Activate your new virtual environment
 source venv/bin/activate
+# Verify pip version
+pip --version
+# If it is not the latest version 24.3.1, upgrade pip
+pip install --upgrade pip
 ```
 
-**Note: if you are running into an error with running `python -m venv venv` you may need to instead use the full path to the python executable when creating your virual environment. An example is `/Users/yourPCName/.pyenv/versions/3.12.8/bin/python -m venv venv`**
+**Note: if you are running into an error with running `python -m venv venv` you may need to instead use the full path to the python executable when creating your virual environment. An example is `/Users/yourPCName/.pyenv/versions/3.13.1/bin/python -m venv venv`**
 
 ### Install and Upgrade pip-tools
 
