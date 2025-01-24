@@ -74,11 +74,11 @@ packaging==24.2
     #   build
     #   deprecation
     #   gunicorn
-pendulum==3.0.0
+pendulum==3.0.0a1
     # via -r requirements.in
 pip-tools==7.4.1
     # via -r requirements.in
-pydantic==2.10.5
+pydantic==2.10.6
     # via
     #   -r requirements.in
     #   fastapi
@@ -114,7 +114,7 @@ squareup==40.0.0.220250123
     # via -r requirements.in
 starkbank-ecdsa==2.2.0
     # via sendgrid
-starlette==0.45.2
+starlette==0.45.3
     # via fastapi
 time-machine==2.16.0
     # via pendulum
