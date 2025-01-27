@@ -1,9 +1,5 @@
-def get_time(): # hardcoding dummy data to test rendering of full time program
-page app_open = False app_open_date = "application open date" app_close_date =
-"application close date" return { "app_open": app_open, "app_open_date":
-app_open_date, "app_close_date": app_close_date, } {% extends "base.html" %} {%
-block title %} Techtonica Full-Time Program {% endblock title %} {% block
-content %}
+{% extends "base.html" %} {% block title %} Techtonica Full-Time Program {%
+endblock title %} {% block content %}
 <div class="main-content">
   <div class="program-header" title="Full-Time Program">
     <div class="main-header__text blue-background">
