@@ -38,5 +38,5 @@ repos:
     hooks:
       - id: prettier
 default_language_version:
-  python: python3.8.10
+  python: python3.12
 minimum_pre_commit_version: "1.21"
