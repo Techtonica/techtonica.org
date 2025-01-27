@@ -715,7 +715,7 @@ endblock title %} {% block content %}
         id="orange-button"
         target="_blank"
         rel="noopener noreferrer"
-        >Apply by {{times.app_close_date.strftime("%B %w, %I %p")}} (PT)!</a
+        >Apply by {{times.app_close_date.strftime("%B %-d, %I %p")}} (PT)!</a
       >
       {% else %}
       <!-- event sign up button appears when apps are closed -->
