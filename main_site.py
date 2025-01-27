@@ -186,7 +186,10 @@ def render_ft_program_page():
     """
     Renders the full-time program page from jinja2 template
     """
-    return render_template("full-time-program.html")
+    ft_app_open_date = os.environ["FT_APP_OPEN_DATE"]
+    ft_app_extend = os.environ["FT_APP_EXTENDED"]
+    times = get_time(ft_app_open_date, ft_app_extend)
+    return render_template("full-time-program.html", times=times)
 
 
 @app.route("/donate/")
