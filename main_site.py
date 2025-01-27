@@ -240,22 +240,25 @@ def get_events():
         return []
 
 
-def get_time(app_open_date_string, is_extended):
+def get_time(app_open_date_string, is_extended_string):
+    is_extended = is_extended_string.lower() == "true"
     app_open_date = datetime.datetime.strptime(
         app_open_date_string, "%m/%d/%y %H:%M:%S"
     )
     today = datetime.datetime.today()
     if is_extended:
         app_close_date = app_open_date + datetime.timedelta(days=42)
+        date_string = app_close_date.strftime("%B %-d")
+        text = "Extended! Apply by {date} (12pm PT)!".format(date=date_string)
     else:
         app_close_date = app_open_date + datetime.timedelta(days=28)
+        date_string = app_close_date.strftime("%B %-d")
+        text = "Apply by {date} (12pm PT)!".format(date=date_string)
     app_open = app_open_date <= today <= app_close_date
 
     return {
-        "is_extended": is_extended,
         "app_open": app_open,
-        "app_open_date": app_open_date,
-        "app_close_date": app_close_date,
+        "text": text,
     }
 
 
