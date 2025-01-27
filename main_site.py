@@ -235,15 +235,11 @@ def get_events():
         return []
 
 
-def get_time():
-    # change this variable to set application open date
-    # eventually to become env variable
-    app_open_date = datetime.datetime(2025, 1, 20, 12)
-    # change this variable to true if applications are extended
-    # eventually to become env variable
-    is_extended = False
+def get_time(app_open_date_string, is_extended):
+    app_open_date = datetime.datetime.strptime(
+        app_open_date_string, "%m/%d/%y %H:%M:%S"
+    )
     today = datetime.datetime.today()
-
     if is_extended:
         app_close_date = app_open_date + datetime.timedelta(days=42)
     else:
