@@ -36,7 +36,9 @@ def render_home_page():
     """
     Renders the home page from jinja2 template
     """
-    times = get_time()
+    sponsor_app_open_date = os.environ["SPONSOR_APP_OPEN_DATE"]
+    sponsor_app_extend = os.environ["SPONSOR_APP_EXTENDED"]
+    times = get_time(sponsor_app_open_date, sponsor_app_extend)
     try:
         events = get_events()
         return render_template("home.html", events=events, times=times)
