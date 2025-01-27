@@ -883,23 +883,63 @@
           >Donate</a
         >
         <!--         <a href="{{ url_for('render_news_page') }}" class="nav-link">News</a> -->
-        <a href="{{ url_for('render_team_page') }}" class="nav-link">Team</a>
-        <a href="{{ url_for('render_faqs_page') }}" class="nav-link">FAQs</a>
-        <a href="{{ url_for('render_testimonials_page') }}" class="nav-link"
-          >Testimonials</a
-        >
+        <!-- About Us dropdown -->
+        <div class="nav-link dropdown">
+          <a
+            href="#"
+            class="nav-link dropdown-toggle"
+            onclick="toggleDropdown(event, 'aboutUsDropdown')"
+            >About Us</a
+          >
+          <div class="dropdown-menu" id="aboutUsDropdown">
+            <a
+              href="{{ url_for('render_team_page') }}"
+              class="nav-link dropdown-item"
+              >Team</a
+            >
+            <a
+              href="{{ url_for('render_faqs_page') }}"
+              class="nav-link dropdown-item"
+              >FAQs</a
+            >
+            <a
+              href="{{ url_for('render_testimonials_page') }}"
+              class="nav-link dropdown-item"
+              >Testimonials</a
+            >
+          </div>
+        </div>
+        <!-- End of About Us Dropdown -->
         <a href="{{ url_for('render_volunteer_page') }}" class="nav-link"
           >Volunteer</a
         >
-        <a href="{{ url_for('render_consulting_page') }}" class="nav-link"
-          >Consulting</a
-        >
-        <a href="{{ url_for('render_job_form') }}" class="nav-link"
-          >Post a Job</a
-        >
-        <a href="{{ url_for('render_sponsor_page') }}" class="nav-link"
-          >Partner</a
-        >
+        <!-- Sponsor Dropdown -->
+        <div class="nav-link dropdown">
+          <a
+            href="#"
+            class="nav-link dropdown-toggle"
+            onclick="toggleDropdown(event, 'sponsorDropdown')"
+            >Sponsor</a
+          >
+          <div class="dropdown-menu" id="sponsorDropdown">
+            <a
+              href="{{ url_for('render_consulting_page') }}"
+              class="nav-link dropdown-item"
+              >Consulting</a
+            >
+            <a
+              href="{{ url_for('render_job_form') }}"
+              class="nav-link dropdown-item"
+              >Post a Job</a
+            >
+            <a
+              href="{{ url_for('render_sponsor_page') }}"
+              class="nav-link dropdown-item"
+              >Partner</a
+            >
+          </div>
+        </div>
+        <!-- End of Sponsor Dropdown -->
         <!--         <a href="{{ url_for('render_home_page') }}#supporters" class="supporters nav-link">Supporters</a> -->
         <a href="{{ url_for('render_ft_program_page') }}" class="nav-link"
           >Apply</a
@@ -1070,7 +1110,35 @@
     <script scr="./js/piechart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <!-- dropdown nav menu items -->
+    <script>
+      let activeDropdown = null;
 
+      function toggleDropdown(event, dropdownId) {
+        event.preventDefault();
+        event.stopPropagation();
+        var dropdown = document.getElementById(dropdownId);
+
+        if (activeDropdown === dropdown) {
+          dropdown.classList.remove("show");
+          activeDropdown = null;
+        } else {
+          if (activeDropdown) {
+            activeDropdown.classList.remove("show");
+          }
+          dropdown.classList.add("show");
+          activeDropdown = dropdown;
+        }
+      }
+
+      document.addEventListener("click", function () {
+        if (activeDropdown) {
+          activeDropdown.classList.remove("show");
+          activeDropdown = null;
+        }
+      });
+    </script>
+    <!-- end of dropdown nav menu items -->
     <!-- Start of HubSpot Embed Code -->
     <script
       type="text/javascript"
