@@ -910,9 +910,26 @@
           </div>
         </div>
         <!-- End of About Us Dropdown -->
-        <a href="{{ url_for('render_volunteer_page') }}" class="nav-link"
-          >Volunteer</a
-        >
+        <div class="nav-link dropdown toggle">
+          <a
+            href="#"
+            class="nav-link dropdown-toggle"
+            onclick="toggleDropdown(event, 'volunteerDropdown')"
+            >Volunteer</a
+          >
+          <div class="dropdown-menu" id="volunteerDropdown">
+            <a
+              href="{{ url_for('render_volunteer_page') }}"
+              class="nav-link dropdown-item"
+              >How to Help</a
+            >
+            <a
+              href="{{ url_for('render_mentor_page') }}"
+              class="nav-link dropdown-item"
+              >Mentor</a
+            >
+          </div>
+        </div>
         <!-- Sponsor Dropdown -->
         <div class="nav-link dropdown">
           <a
