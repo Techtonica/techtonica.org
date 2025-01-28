@@ -13,6 +13,7 @@ currently hosted on DreamHost.
   - [Install Pre-Commit Hooks](#install-pre-commit-hooks)
   - [Install Requirements](#install-requirements)
   - [Create Config.ini File](#create-configini-file)
+  - [Pre-Commit Hooks Guide](#pre-commit-hooks-guide)
   - [Running Locally](#running-locally)
   - [Using Docker to Run Locally](#using-docker-to-run-locally)
   - [CSS / SCSS](#css--scss)
@@ -125,6 +126,41 @@ And then copy and paste this code into your new file (note: For the actual value
 
    [slack]
    slack_webhook =  <slack webhook>
+```
+
+### Pre-Commit Hooks Guide
+
+To manually run, test, and upgrade pre-commit hooks locally, follow these steps:
+
+To run hooks on specific files, use the command:
+
+```
+pre-commit run --files <file1> <file2>
+```
+
+For example, if you want to test a single file, you can use
+
+```
+pre-commit run --files main_site.py
+```
+
+To run all hooks on every file in the repository, use the
+command
+
+```
+pre-commit run --all-files
+```
+
+If you need to upgrade your hooks to their latest versions, run
+
+```
+pre-commit autoupdate
+```
+
+After upgrading, ensure you reinstall the hooks by running
+
+```
+pre-commit install
 ```
 
 ### Running Locally
