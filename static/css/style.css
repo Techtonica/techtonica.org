@@ -158,6 +158,7 @@ button {
 
 .dropdown-toggle::after {
   content: " ▾";
+  padding-left: 10px;
 }
 
 .dropdown-menu {
