@@ -11,15 +11,6 @@ repos:
       - id: detect-private-key
       - id: mixed-line-ending
         exclude_types: ["xml"]
-  - repo: local
-    hooks:
-      - id: seed-isort-config
-        name: seed-isort-config
-        entry: bin/seed-isort-config.sh
-        language: script
-        types: [python]
-        pass_filenames: false
-        stages: [manual]
   - repo: https://github.com/pre-commit/mirrors-isort
     rev: v5.7.0
     hooks:
