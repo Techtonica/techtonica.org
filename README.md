@@ -3,25 +3,32 @@
 This repo is for [the Techtonica website](http://techtonica.org), which is
 currently hosted on DreamHost.
 
-- [Who](#who)
-- [What](#what)
-- [How](#how)
-- [Getting Started](#getting-started)
-  - [Set Up Virtual Environment](#set-up-virtual-environment)
-  - [Install pip Version 23](#install-pip-version-23)
-  - [Install and Upgrade pip-tools](#install-and-upgrade-pip-tools)
-  - [Install Pre-Commit Hooks](#install-pre-commit-hooks)
-  - [Install Requirements](#install-requirements)
-  - [Create Config.ini File](#create-configini-file)
-  - [Running Locally](#running-locally)
-  - [Using Docker to Run Locally](#using-docker-to-run-locally)
-  - [CSS / SCSS](#css--scss)
-  - [Square Testing](#square-testing)
-  - [Updating Demographics Chart](#updating-the-demographics-chart-for-the-apply-section)
-  - [Updating Dependencies](#updating-dependencies)
-- [Deployment to DreamHost](#deployment-to-dreamhost)
-  - [Initial Setup](#initial-setup)
-  - [Updating the Site](#updating-the-site)
+- [Techtonica](#techtonica)
+  - [Who](#who)
+  - [What](#what)
+  - [How](#how)
+  - [Getting Started](#getting-started)
+    - [Set Up Virtual Environment](#set-up-virtual-environment)
+    - [Install pip Version 23](#install-pip-version-23)
+    - [Install and Upgrade pip-tools](#install-and-upgrade-pip-tools)
+    - [Install Pre-Commit Hooks](#install-pre-commit-hooks)
+    - [Install Requirements](#install-requirements)
+    - [Create Config.ini File](#create-configini-file)
+    - [Running Locally](#running-locally)
+    - [Using Docker to Run Locally](#using-docker-to-run-locally)
+      - [First Time Using Docker?](#first-time-using-docker)
+      - [For Docker Pros](#for-docker-pros)
+    - [CSS / SCSS](#css--scss)
+    - [Square Testing](#square-testing)
+      - [Setup](#setup)
+      - [Running Locally](#running-locally-1)
+    - [Updating the Demographics Chart for the Apply Section](#updating-the-demographics-chart-for-the-apply-section)
+    - [Updating Testimonials](#updating-testimonials)
+    - [Updating Dependencies](#updating-dependencies)
+  - [Deployment to DreamHost](#deployment-to-dreamhost)
+    - [Initial Setup](#initial-setup)
+    - [Deploy Feature Branch](#deploy-feature-branch)
+    - [Updating the Site](#updating-the-site)
 
 ## Who
 
@@ -252,6 +259,16 @@ At the moment, we do not have styling in place that will enable us to have a cod
 
 9. Stop the server
 10. Commit your code and open a pull request
+
+### Updating Testimonials
+
+To update and add testimonial images, follow these steps:
+1. Upload your testimonial image to Canva, crop it as needed, and download it as a `.png`.
+2. The image name should follow this format: `Platform-FirstName-Topic-Year-min.png` (e.g., `Linkedin-Daamiah-Techtonica-2025-min.png`).
+3. Use [ImageOptim](https://imageoptim.com/mac) to compress the image for better web performance.
+4. Save the optimized image in the `techtonica.org/static/img/testimonials` folder within the repository to maintain consistency and easy access.
+
+For detailed instructions, visit the [full guide on the Wiki](https://github.com/Techtonica/techtonica.org/wiki/How-to-Add-and-Optimize-Testimonial-Images).
 
 ### Updating Dependencies
 
