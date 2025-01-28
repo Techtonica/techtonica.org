@@ -158,6 +158,7 @@ And then copy and paste this code into your new file (note: For the actual value
    slack_webhook =  <slack webhook>
 ```
 
+<<<<<<< HEAD
 ### Pre-Commit Hooks Guide
 
 To manually run, test, and upgrade pre-commit hooks locally, follow these steps:
@@ -194,24 +195,72 @@ pre-commit install
 ```
 
 ### Optional: Installing Prettier Plug-in Locally
+=======
+### Managing Prettier Commit Behavior
+>>>>>>> bb30fca (adding context for Prettier commit behavior and solutions)
 
-#### Problem:
+When using Prettier in your project, you may encounter unexpected behavior with the **Prettier pre-commit hook**. This guide provides context on what’s happening, why, and how to address it effectively.
 
-`git commit` triggers Prettier pre-commit hook, leading to unstaged changes (if applicable) as seen here, for example:
+---
 
-![Prettier Unstaged Changes](static/img/Prettier-hook-unstaged-changes.png)
+### **Context**
 
-#### Solution:
+The Prettier pre-commit hook automatically formats code when you attempt to commit changes. However, in some cases, this hook may lead to **unstaged changes** after formatting your files. This can occur if the local code is not already formatted according to the Prettier configuration. This behavior might feel confusing or disruptive to users unfamiliar with the tool.
 
-Add Prettier plug-in to local IDE and adjust settings to format on-save.
+---
 
-![Prettier Plug-in In VS Code](static/img/Prettier-Plug-In.png)
+### **What to Expect**
 
-N.B. If you would rather not install the Prettier plug-in, be sure to commit the Prettier unstaged changes before pushing to remote.
+1. **Scenario:**  
+   During `git commit`, the Prettier pre-commit hook runs and identifies formatting issues.
 
-#### Result:
+   - If applicable, Prettier will fix these issues but may leave **unstaged changes** in your working directory.
 
-Prettier pre-commit hook should not need to format your code and thus should not create new unstaged changes.
+2. **Outcome:**  
+   You will need to stage these changes again (`git add`) before committing and pushing your changes to the remote repository.
+
+---
+
+### **Why This Happens**
+
+The Prettier pre-commit hook is designed to ensure consistent code formatting across the repository. When code is committed without being properly formatted, Prettier intervenes by reformatting the code. If these changes are not staged, they remain as unstaged changes in your working directory.
+
+---
+
+### **Solution: Installing Prettier Plug-in Locally**
+
+To avoid this behavior and streamline your workflow, you can install a Prettier plug-in in your local IDE. The plug-in will format your code **on-save**, ensuring it adheres to the Prettier configuration before you attempt to commit.
+
+#### **Steps:**
+
+1. Install the Prettier plug-in in your IDE (e.g., VS Code).  
+   ![Prettier Plug-in in VS Code](static/img/Prettier-Plug-In.png)
+
+2. Enable the "Format on Save" setting:
+
+   - Go to **Settings** > **Text Editor** > **Formatting** > Enable **Format on Save**.
+
+3. Ensure your file is saved before running `git commit`.
+
+---
+
+### **Optional: If You Don’t Want to Use the Plug-in**
+
+If you would rather not install the Prettier plug-in, you can still manage the behavior manually:
+
+1. After committing, check for **unstaged changes** caused by Prettier.
+2. Use `git add` to stage the changes and then commit again.
+
+---
+
+### **Expected Result**
+
+With the Prettier plug-in installed and enabled:
+
+- Your code will automatically be formatted before saving, ensuring the pre-commit hook finds no issues.
+- The pre-commit hook will not create new **unstaged changes**, making your workflow smoother.
+
+If you opt to manage this manually, be aware of the additional step of staging unstaged changes before pushing to remote.
 
 ### Running Locally
 
