@@ -910,6 +910,7 @@
           </div>
         </div>
         <!-- End of About Us Dropdown -->
+        <!-- Volunteer Dropdown -->
         <div class="nav-link dropdown toggle">
           <a
             href="#"
@@ -930,15 +931,16 @@
             >
           </div>
         </div>
-        <!-- Sponsor Dropdown -->
+        <!-- End of Volunteer Dropdown -->
+        <!-- Partner Dropdown -->
         <div class="nav-link dropdown">
           <a
             href="#"
             class="nav-link dropdown-toggle"
-            onclick="toggleDropdown(event, 'sponsorDropdown')"
-            >Sponsor</a
+            onclick="toggleDropdown(event, 'partnerDropdown')"
+            >Partner</a
           >
-          <div class="dropdown-menu" id="sponsorDropdown">
+          <div class="dropdown-menu" id="partnerDropdown">
             <a
               href="{{ url_for('render_consulting_page') }}"
               class="nav-link dropdown-item"
@@ -952,11 +954,11 @@
             <a
               href="{{ url_for('render_sponsor_page') }}"
               class="nav-link dropdown-item"
-              >Partner</a
+              >Sponsor</a
             >
           </div>
         </div>
-        <!-- End of Sponsor Dropdown -->
+        <!-- End of Partner Dropdown -->
         <!--         <a href="{{ url_for('render_home_page') }}#supporters" class="supporters nav-link">Supporters</a> -->
         <a href="{{ url_for('render_ft_program_page') }}" class="nav-link"
           >Apply</a
