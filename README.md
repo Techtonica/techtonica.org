@@ -3,25 +3,32 @@
 This repo is for [the Techtonica website](http://techtonica.org), which is
 currently hosted on DreamHost.
 
-- [Who](#who)
-- [What](#what)
-- [How](#how)
-- [Getting Started](#getting-started)
-  - [Set Up Virtual Environment](#set-up-virtual-environment)
-  - [Install pip Version 23](#install-pip-version-23)
-  - [Install and Upgrade pip-tools](#install-and-upgrade-pip-tools)
-  - [Install Pre-Commit Hooks](#install-pre-commit-hooks)
-  - [Install Requirements](#install-requirements)
-  - [Create Config.ini File](#create-configini-file)
-  - [Running Locally](#running-locally)
-  - [Using Docker to Run Locally](#using-docker-to-run-locally)
-  - [CSS / SCSS](#css--scss)
-  - [Square Testing](#square-testing)
-  - [Updating Demographics Chart](#updating-the-demographics-chart-for-the-apply-section)
-  - [Updating Dependencies](#updating-dependencies)
-- [Deployment to DreamHost](#deployment-to-dreamhost)
-  - [Initial Setup](#initial-setup)
-  - [Updating the Site](#updating-the-site)
+- [Techtonica](#techtonica)
+  - [Who](#who)
+  - [What](#what)
+  - [How](#how)
+  - [Getting Started](#getting-started)
+    - [Set Up Virtual Environment](#set-up-virtual-environment)
+    - [Install pip Version 23](#install-pip-version-23)
+    - [Install and Upgrade pip-tools](#install-and-upgrade-pip-tools)
+    - [Install Pre-Commit Hooks](#install-pre-commit-hooks)
+    - [Install Requirements](#install-requirements)
+    - [Create Config.ini File](#create-configini-file)
+    - [Running Locally](#running-locally)
+    - [Using Docker to Run Locally](#using-docker-to-run-locally)
+      - [First Time Using Docker?](#first-time-using-docker)
+      - [For Docker Pros](#for-docker-pros)
+    - [CSS / SCSS](#css--scss)
+    - [Alt-Text Guidelines](#alt-text-guidelines)
+    - [Square Testing](#square-testing)
+      - [Setup](#setup)
+      - [Running Locally](#running-locally-1)
+    - [Updating the Demographics Chart for the Apply Section](#updating-the-demographics-chart-for-the-apply-section)
+    - [Updating Dependencies](#updating-dependencies)
+  - [Deployment to DreamHost](#deployment-to-dreamhost)
+    - [Initial Setup](#initial-setup)
+    - [Deploy Feature Branch](#deploy-feature-branch)
+    - [Updating the Site](#updating-the-site)
 
 ## Who
 
@@ -184,6 +191,18 @@ Windows: `choco install sass`
 sass static/sass/style.scss static/css/style.css
 sass --watch static/sass/style.scss static/css/style.css
 ```
+
+### Alt-Text Guidelines
+
+To ensure accessibility for all users, alt-text on our site should follow these best practices:
+
+- Avoid line breaks, as they disrupt screen readers and negatively impact user experience.
+- Keep alt-text under 125 characters to ensure full readability.
+- Refrain from using emojis, as their descriptions can vary across platforms and may confuse screen reader users.
+- Similarly, avoid special characters unless essential, as they can be misinterpreted or skipped by assistive technologies.
+- Alt-text should be descriptive, concise, and context-aware, avoiding redundancy with nearby text.
+
+For more detailed guidelines and examples, refer to the [Alt-Text Wiki](https://github.com/Techtonica/techtonica.org/wiki/Alt%E2%80%90Text-Guidelines).
 
 ### Square Testing
 
