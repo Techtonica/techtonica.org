@@ -59,16 +59,75 @@ users = [
     },
 ]
 
-applications = [
-    {"user_id": 0, "submitted": True, "workshop": True},
-    {"user_id": 1, "submitted": False, "workshop": False},
-    {"user_id": 2, "submitted": True, "workshop": False},
-    {"user_id": 3, "submitted": True, "workshop": False},
-    {"user_id": 3, "submitted": False, "workshop": False},
+application_status = [
+    {
+        "user_id": 0,
+        "submitted": True,
+        "screening": True,
+        "workshop": True,
+        "pair_programming": True,
+        "take_home_code": True,
+        "staff_interview": True,
+        "board_interview": True,
+        "reference_submitted": True,
+        "financial": True,
+        "pending": True,
+        "approved": False,
+        "prescreen_rejected": False,
+        "rejected": False,
+    },
+    {
+        "user_id": 1,
+        "submitted": False,
+        "screening": False,
+        "workshop": False,
+        "pair_programming": False,
+        "take_home_code": False,
+        "staff_interview": False,
+        "board_interview": False,
+        "reference_submitted": False,
+        "financial": False,
+        "pending": True,
+        "approved": False,
+        "prescreen_rejected": False,
+        "rejected": False,
+    },
+    {
+        "user_id": 2,
+        "submitted": True,
+        "screening": True,
+        "workshop": True,
+        "pair_programming": False,
+        "take_home_code": False,
+        "staff_interview": False,
+        "board_interview": False,
+        "reference_submitted": True,
+        "financial": True,
+        "pending": True,
+        "approved": False,
+        "prescreen_rejected": False,
+        "rejected": False,
+    },
+    {
+        "user_id": 3,
+        "submitted": True,
+        "screening": True,
+        "workshop": True,
+        "pair_programming": False,
+        "take_home_code": False,
+        "staff_interview": True,
+        "board_interview": False,
+        "reference_submitted": True,
+        "financial": True,
+        "pending": True,
+        "approved": False,
+        "prescreen_rejected": False,
+        "rejected": False,
+    },
 ]
 
 user_df = pd.DataFrame(users)
-app_df = pd.DataFrame(applications)
+app_df = pd.DataFrame(application_status)
 
 
 def user(id):
