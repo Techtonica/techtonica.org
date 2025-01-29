@@ -11,15 +11,6 @@ repos:
       - id: detect-private-key
       - id: mixed-line-ending
         exclude_types: ["xml"]
-  - repo: local
-    hooks:
-      - id: seed-isort-config
-        name: seed-isort-config
-        entry: bin/seed-isort-config.sh
-        language: script
-        types: [python]
-        pass_filenames: false
-        stages: [manual]
   - repo: https://github.com/pre-commit/mirrors-isort
     rev: v5.7.0
     hooks:
@@ -28,7 +19,7 @@ repos:
     rev: 20.8b1
     hooks:
       - id: black
-  - repo: https://gitlab.com/pycqa/flake8
+  - repo: https://github.com/pycqa/flake8
     rev: 3.8.4
     hooks:
       - id: flake8
@@ -38,5 +29,5 @@ repos:
     hooks:
       - id: prettier
 default_language_version:
-  python: python3.6
+  python: python3.8.10
 minimum_pre_commit_version: "1.21"
