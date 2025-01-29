@@ -1,43 +1,59 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap {%
 endblock title %} {% block content %}
-<div>
-  <h2>Admin Dashboard</h2>
+
+<nav class="admin-nav-bar">
   <button>Log Out</button>
-</div>
-<div>
-  <div>
-    <h4>Total Applications</h4>
-    <p>icon</p>
-    <p>1,234</p>
-    <p>+20.1% from last month</p>
-  </div>
-  <div>
-    <h4>Pending Review</h4>
-    <p>icon</p>
-    <p>45</p>
-    <p>12 require immediate attention</p>
-  </div>
-  <div>
-    <h4>Accepted</h4>
-    <p>icon</p>
-    <p>189</p>
-    <p>15.3% acceptance rate</p>
-  </div>
-  <div>
-    <h4>Rejected</h4>
-    <p>icon</p>
-    <p>1,000</p>
-    <p>84.7% rejection rate</p>
-  </div>
-</div>
-<div>
-  <h3>Application Status Overview</h3>
-  <p>Current status of all applications</p>
-  <p>stat graphics go here</p>
-</div>
-<div>
-  <h3>Recent Applications</h3>
-  <p>Latest applications submitted to the system</p>
-  <p>Table graphic goes here</p>
+  <h2>Admin Dashboard</h2>
+</nav>
+<div class="admin-container">
+  <section class="admin-section quick-stats">
+    <div class="admin-box">
+      <div class="quick-stats-header">
+        <h4>Total Applications</h4>
+        <p>icon</p>
+      </div>
+      <p>1,234</p>
+      <p>+20.1% from last month</p>
+    </div>
+    <div class="admin-box">
+      <div class="quick-stats-header">
+        <h4>Pending Review</h4>
+        <p>icon</p>
+      </div>
+      <p>45</p>
+      <p>12 require immediate attention</p>
+    </div>
+    <div class="admin-box">
+      <div class="quick-stats-header">
+        <h4>Accepted</h4>
+        <p>icon</p>
+      </div>
+
+      <p>189</p>
+      <p>15.3% acceptance rate</p>
+    </div>
+    <div class="admin-box">
+      <div class="quick-stats-header">
+        <h4>Rejected</h4>
+        <p>icon</p>
+      </div>
+      <p>1,000</p>
+      <p>84.7% rejection rate</p>
+    </div>
+  </section>
+  <section class="admin-section">
+    <div class="admin-box">
+      <h3>Application Status Overview</h3>
+      <p>Current status of all applications</p>
+      <p>stat graphics go here</p>
+    </div>
+  </section>
+  <section class="admin-section">
+    <div class="admin-box">
+      <h3>Recent Applications</h3>
+      <p>Latest applications submitted to the system</p>
+      <p>Table graphic goes here</p>
+    </div>
+  </section>
 </div>
 {%endblock%}
