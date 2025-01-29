@@ -36,8 +36,8 @@ def render_home_page():
     """
     Renders the home page from jinja2 template
     """
-    sponsor_app_open_date = os.environ["SPONSOR_APP_OPEN_DATE"]
-    sponsor_app_extend = os.environ["SPONSOR_APP_EXTENDED"]
+    sponsor_app_open_date = config.get("applications", "sponsor_open_date")
+    sponsor_app_extend = config.get("applications", "sponsor_extend")
     times = get_time(sponsor_app_open_date, sponsor_app_extend)
     try:
         events = get_events()
@@ -186,8 +186,8 @@ def render_ft_program_page():
     """
     Renders the full-time program page from jinja2 template
     """
-    ft_app_open_date = os.environ["FT_APP_OPEN_DATE"]
-    ft_app_extend = os.environ["FT_APP_EXTENDED"]
+    ft_app_open_date = config.get("applications", "ft_open_date")
+    ft_app_extend = config.get("applications", "ft_extend")
     times = get_time(ft_app_open_date, ft_app_extend)
     return render_template("full-time-program.html", times=times)
 
