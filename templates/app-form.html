@@ -247,6 +247,106 @@ Techtonica Application {% endblock title %} {% block content %}
     </fieldset>
     <fieldset>
       <legend>Applicant & Household Financial Information</legend>
+      <label for="bank-account-status"
+        >Do you have a U.S. bank account, or will you by the time the program
+        starts? </label
+      ><br />
+      <input
+        type="radio"
+        id="bank-account-status"
+        name="bank-account-status"
+        value="Yes"
+        required
+      />
+      <label for="bank-account-status-yes">Yes</label><br />
+      <input
+        type="radio"
+        id="bank-account-status"
+        name="bank-account-status"
+        value="No"
+        required
+      />
+      <label for="bank-account-status-no">No</label><br />
+      <label for="annual-income">What is your annual household income? </label
+      ><br />
+      <input
+        type="text"
+        id="annual-income"
+        name="annual-income"
+        required
+      /><br />
+      <label for="income-verification-docs"
+        >Please upload household income verification documents. (Last tax
+        return, 3 months of W-2 or unemployment pay stubs, or proof of
+        government financial assistance, etc. Feel free to block out sensitive
+        information like your social security number, and we will delete these
+        files after the application process.) </label
+      ><br />
+      <input
+        type="file"
+        id="income-verification-docs"
+        name="income-verification-docs"
+        multiple
+        required
+      /><br />
+      <label for="annual-living-wage"
+        >What is the annual household living wage amount specified for your
+        location and situation on the MIT Living Wage Calculator? (See the
+        "Required annual income before taxes" row of the second "Typical
+        Expenses" table on
+        <a href="https://livingwage.mit.edu/">https://livingwage.mit.edu/</a
+        >) </label
+      ><br />
+      <input
+        type="text"
+        id="annual-living-wage"
+        name="annual-living-wage"
+        required
+      /><br />
+      <label for="living-wage-url"
+        >Please share the URL to the results page for your county on the MIT
+        Living Wage Calculator website (for San Francisco, it looks like this:
+        <a href="https://livingwage.mit.edu/counties/06075"
+          >https://livingwage.mit.edu/counties/06075</a
+        >) </label
+      ><br />
+      <input
+        type="url"
+        id="living-wage-url"
+        name="living-wage-url"
+        required
+      /><br />
+      <label for="household-net-worth"
+        >What is your household's complete net worth (total of your financial
+        assets), including equity but not debt? </label
+      ><br />
+      <input
+        type="text"
+        id="household-net-worth"
+        name="household-net-worth"
+        required
+      /><br />
+      <label for="net-worth-docs"
+        >Please upload net worth verification documents. (Last 3 statements from
+        savings and investment accounts, copies of a home ownership document
+        such as a deed, etc.) </label
+      ><br />
+      <input
+        type="file"
+        id="net-worth-docs"
+        name="net-worth-docs"
+        multiple
+        required
+      /><br />
+      <label for="average-monthly-cost"
+        >What are your average monthly costs? </label
+      ><br />
+      <input
+        type="text"
+        id="average-monthly-cost"
+        name="average-monthly-cost"
+        required
+      /><br />
     </fieldset>
     <fieldset>
       <legend>Additional Applicant Information</legend>
