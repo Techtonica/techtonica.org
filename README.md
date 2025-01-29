@@ -130,6 +130,7 @@ And then copy and paste this code into your new file (note: For the actual value
 ```
 
 <<<<<<< HEAD
+
 ### Pre-Commit Hooks Guide
 
 To manually run, test, and upgrade pre-commit hooks locally, follow these steps:
@@ -166,9 +167,12 @@ pre-commit install
 ```
 
 ### Optional: Installing Prettier Plug-in Locally
+
 =======
+
 ### Managing Prettier Commit Behavior
->>>>>>> bb30fca (adding context for Prettier commit behavior and solutions)
+
+> > > > > > > bb30fca (adding context for Prettier commit behavior and solutions)
 
 When using Prettier in your project, you may encounter unexpected behavior with the **Prettier pre-commit hook**. This guide provides context on what’s happening, why, and how to address it effectively.
 
