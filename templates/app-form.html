@@ -547,6 +547,819 @@ Techtonica Application {% endblock title %} {% block content %}
     </fieldset>
     <fieldset>
       <legend>Applicant Long-Text Answers</legend>
+
+      <label for="did-not-complete-other-program"
+        >If you have signed up for another coding course or program and not
+        completed it, why not? </label
+      ><br />
+      <textarea
+        name="did-not-complete-other-program"
+        id="did-not-complete-other-program"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="coding-experience"
+        >Have you attended a full-time coding bootcamp, completed a C.S. degree
+        (bachelor's or above), or worked as a software engineer in the last six
+        years? </label
+      ><br />
+      <input
+        type="radio"
+        name="coding-experience"
+        id="coding-experience"
+        value="Yes"
+        required
+      />
+      <label for="coding-experience-yes">Yes</label>
+      <input
+        type="radio"
+        name="coding-experience"
+        id="coding-experience"
+        value="No"
+        required
+      />
+      <label for="coding-experience-no">No</label><br />
+
+      <label for="post-high-school-education"
+        >Please tell us about any post-high school educational experiences. </label
+      ><br />
+      <textarea
+        name="post-high-school-education"
+        id="post-high-school-education"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="graduated-college"
+        >Did you graduate from college, and if so, which one and with what
+        degree? </label
+      ><br />
+      <textarea
+        name="graduated-college"
+        id="graduated-college"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="programming-story"
+        >What’s your programming story? How did you become interested in
+        learning how to code? What self-studying or formal education have you
+        had related to programming? How have you been preparing for a career as
+        a software engineer? Please carefully craft at least one thoughtful
+        paragraph. </label
+      ><br />
+      <textarea
+        name="programming-story"
+        id="programming-story"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="previous-applicant"
+        >If you've applied for Techtonica before, please share what has changed
+        and what additional experience you've gained since you applied. </label
+      ><br />
+      <textarea
+        name="previous-applicant"
+        id="previous-applicant"
+        cols="100"
+        rows="3"
+      ></textarea
+      ><br />
+
+      <label for="HTML-CSS-JS-experience"
+        >What experience with HTML, CSS, and/or JavaScript have you had? </label
+      ><br />
+      <textarea
+        name="HTML-CSS-JS-experience"
+        id="HTML-CSS-JS-experience"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="other-languages-experience"
+        >If you've had experience with other programming languages, please
+        describe it here. </label
+      ><br />
+      <textarea
+        name="other-languages-experience"
+        id="other-languages-experience"
+        cols="100"
+        rows="3"
+      ></textarea
+      ><br />
+
+      <p>
+        Please mark how much you agree with each statement when thinking about
+        you personally.
+      </p>
+      <br />
+      <label for="comfortable-presenting"
+        >I am comfortable presenting a project or short talk to a group. </label
+      ><br />
+      <input
+        type="radio"
+        name="comfortable-presenting"
+        id="comfortable-presenting"
+        value="1-Disagree"
+        required
+      />
+      <label for="comfortable-presenting-1-disagree">1 - Disagree</label>
+      <input
+        type="radio"
+        name="comfortable-presenting"
+        id="comfortable-presenting"
+        value="2-somewhat-disagree"
+        required
+      />
+      <label for="comfortable-presenting-2-somewhat-disagree"
+        >2 - Somewhat Disagree</label
+      >
+      <input
+        type="radio"
+        name="comfortable-presenting"
+        id="comfortable-presenting"
+        value="3-Somewhat Agree"
+        required
+      />
+      <label for="comfortable-presenting-3-somewhat-agree"
+        >3 - Somewhat Agree</label
+      >
+      <input
+        type="radio"
+        name="comfortable-presenting"
+        id="comfortable-presenting"
+        value="4-Agree"
+        required
+      />
+      <label for="comfortable-presenting-4-agree">4 - Agree</label><br />
+
+      <label for="comfortable-collaborating"
+        >I am comfortable collaborating with others on a team. </label
+      ><br />
+      <input
+        type="radio"
+        name="comfortable-collaborating"
+        id="comfortable-collaborating"
+        value="1-Disagree"
+        required
+      />
+      <label for="comfortable-collaborating-1-Disagree">1 - Disagree</label>
+      <input
+        type="radio"
+        name="comfortable-collaborating"
+        id="comfortable-collaborating"
+        value="2-somewhat-disagree"
+        required
+      />
+      <label for="comfortable-collaborating-2-somewhat-disagree"
+        >2 - Somewhat Disagree</label
+      >
+      <input
+        type="radio"
+        name="comfortable-collaborating"
+        id="comfortable-collaborating"
+        value="3-Somewhat Agree"
+        required
+      />
+      <label for="comfortable-collaborating-3-somewhat-agree"
+        >3 - Somewhat Agree</label
+      >
+      <input
+        type="radio"
+        name="comfortable-collaborating"
+        id="comfortable-collaborating"
+        value="4-Agree"
+        required
+      />
+      <label for="comfortable-collaborating-4-agree">4 - Agree</label><br />
+
+      <label for="comfortable-asking-help"
+        >I am comfortable asking others for help when I'm stuck. </label
+      ><br />
+      <input
+        type="radio"
+        name="comfortable-asking-help"
+        id="comfortable-asking-help"
+        value="1-Disagree"
+        required
+      />
+      <label for="comfortable-asking-help-1-Disagree">1 - Disagree</label>
+      <input
+        type="radio"
+        name="comfortable-asking-help"
+        id="comfortable-asking-help"
+        value="2-somewhat-disagree"
+        required
+      />
+      <label for="comfortable-asking-help-2-somewhat-disagree"
+        >2 - Somewhat Disagree</label
+      >
+      <input
+        type="radio"
+        name="comfortable-asking-help"
+        id="comfortable-asking-help"
+        value="3-Somewhat Agree"
+        required
+      />
+      <label for="comfortable-asking-help-3-somewhat-agree"
+        >3 - Somewhat Agree</label
+      >
+      <input
+        type="radio"
+        name="comfortable-asking-help"
+        id="comfortable-asking-help"
+        value="4-Agree"
+        required
+      />
+      <label for="comfortable-asking-help-4-agree">4 - Agree</label><br />
+
+      <label for="does-not-hide-struggles"
+        >I do not hide that I'm struggling from friends, colleagues, or
+        managers. </label
+      ><br />
+      <input
+        type="radio"
+        name="does-not-hide-struggles"
+        id="does-not-hide-struggles"
+        value="1-Disagree"
+        required
+      />
+      <label for="does-not-hide-struggles-1-Disagree">1 - Disagree</label>
+      <input
+        type="radio"
+        name="does-not-hide-struggles"
+        id="does-not-hide-struggles"
+        value="2-somewhat-disagree"
+        required
+      />
+      <label for="does-not-hide-struggles-2-somewhat-disagree"
+        >2 - Somewhat Disagree</label
+      >
+      <input
+        type="radio"
+        name="does-not-hide-struggles"
+        id="does-not-hide-struggles"
+        value="3-Somewhat Agree"
+        required
+      />
+      <label for="does-not-hide-struggles-3-somewhat-agree"
+        >3 - Somewhat Agree</label
+      >
+      <input
+        type="radio"
+        name="does-not-hide-struggles"
+        id="does-not-hide-struggles"
+        value="4-Agree"
+        required
+      />
+      <label for="does-not-hide-struggles-4-agree">4 - Agree</label><br />
+
+      <label for="care-about-dei"
+        >I care greatly about diversity, equity, and inclusion. </label
+      ><br />
+      <input
+        type="radio"
+        name="care-about-dei"
+        id="care-about-dei"
+        value="1-Disagree"
+        required
+      />
+      <label for="care-about-dei-1-Disagree">1 - Disagree</label>
+      <input
+        type="radio"
+        name="care-about-dei"
+        id="care-about-dei"
+        value="2-somewhat-disagree"
+        required
+      />
+      <label for="care-about-dei-2-somewhat-disagree"
+        >2 - Somewhat Disagree</label
+      >
+      <input
+        type="radio"
+        name="care-about-dei"
+        id="care-about-dei"
+        value="3-Somewhat Agree"
+        required
+      />
+      <label for="care-about-dei-3-somewhat-agree">3 - Somewhat Agree</label>
+      <input
+        type="radio"
+        name="care-about-dei"
+        id="care-about-dei"
+        value="4-Agree"
+        required
+      />
+      <label for="care-about-dei-4-agree">4 - Agree</label><br />
+
+      <label for="learn-quickly">I learn brand-new concepts quickly. </label
+      ><br />
+      <input
+        type="radio"
+        name="learn-quickly"
+        id="learn-quickly"
+        value="1-Disagree"
+        required
+      />
+      <label for="learn-quickly-1-Disagree">1 - Disagree</label>
+      <input
+        type="radio"
+        name="learn-quickly"
+        id="learn-quickly"
+        value="2-somewhat-disagree"
+        required
+      />
+      <label for="learn-quickly-2-somewhat-disagree"
+        >2 - Somewhat Disagree</label
+      >
+      <input
+        type="radio"
+        name="learn-quickly"
+        id="learn-quickly"
+        value="3-Somewhat Agree"
+        required
+      />
+      <label for="learn-quickly-3-somewhat-agree">3 - Somewhat Agree</label>
+      <input
+        type="radio"
+        name="learn-quickly"
+        id="learn-quickly"
+        value="4-Agree"
+        required
+      />
+      <label for="learn-quickly-4-agree">4 - Agree</label><br />
+
+      <label for="help-others"
+        >When working with others, I'm the person who likes to help everyone get
+        up to speed.</label
+      ><br />
+      <input
+        type="radio"
+        name="help-others"
+        id="help-others"
+        value="1-Disagree"
+        required
+      />
+      <label for="help-others-1-Disagree">1 - Disagree</label>
+      <input
+        type="radio"
+        name="help-others"
+        id="help-others"
+        value="2-somewhat-disagree"
+        required
+      />
+      <label for="help-others-2-somewhat-disagree">2 - Somewhat Disagree</label>
+      <input
+        type="radio"
+        name="help-others"
+        id="help-others"
+        value="3-Somewhat Agree"
+        required
+      />
+      <label for="help-others-3-somewhat-agree">3 - Somewhat Agree</label>
+      <input
+        type="radio"
+        name="help-others"
+        id="help-others"
+        value="4-Agree"
+        required
+      />
+      <label for="help-others-4-agree">4 - Agree</label><br />
+
+      <label for="interested-in-mentoring"
+        >I would be interested in mentoring future participants after I graduate
+        from Techtonica. </label
+      ><br />
+      <input
+        type="radio"
+        name="interested-in-mentoring"
+        id="interested-in-mentoring"
+        value="1-Disagree"
+        required
+      />
+      <label for="interested-in-mentoring-1-Disagree">1 - Disagree</label>
+      <input
+        type="radio"
+        name="interested-in-mentoring"
+        id="interested-in-mentoring"
+        value="2-somewhat-disagree"
+        required
+      />
+      <label for="interested-in-mentoring-2-somewhat-disagree"
+        >2 - Somewhat Disagree</label
+      >
+      <input
+        type="radio"
+        name="interested-in-mentoring"
+        id="interested-in-mentoring"
+        value="3-Somewhat Agree"
+        required
+      />
+      <label for="interested-in-mentoring-3-somewhat-agree"
+        >3 - Somewhat Agree</label
+      >
+      <input
+        type="radio"
+        name="interested-in-mentoring"
+        id="interested-in-mentoring"
+        value="4-Agree"
+        required
+      />
+      <label for="interested-in-mentoring-4-agree">4 - Agree</label><br />
+
+      <label for="involved-post-graduation"
+        >I would be actively involved with Techtonica's graduates group after
+        completion of the program. </label
+      ><br />
+      <input
+        type="radio"
+        name="involved-post-graduation"
+        id="involved-post-graduation"
+        value="1-Disagree"
+        required
+      />
+      <label for="involved-post-graduation-1-Disagree">1 - Disagree</label>
+      <input
+        type="radio"
+        name="involved-post-graduation"
+        id="involved-post-graduation"
+        value="2-somewhat-disagree"
+        required
+      />
+      <label for="involved-post-graduation-2-somewhat-disagree"
+        >2 - Somewhat Disagree</label
+      >
+      <input
+        type="radio"
+        name="involved-post-graduation"
+        id="involved-post-graduation"
+        value="3-Somewhat Agree"
+        required
+      />
+      <label for="involved-post-graduation-3-somewhat-agree"
+        >3 - Somewhat Agree</label
+      >
+      <input
+        type="radio"
+        name="involved-post-graduation"
+        id="involved-post-graduation"
+        value="4-Agree"
+        required
+      />
+      <label for="involved-post-graduation-4-agree">4 - Agree</label><br />
+
+      <label for="diversity-inclusion"
+        >We value diversity, inclusion, equity, and belonging. What does that
+        mean for you? What and how have you learned about this topic recently?
+        Please carefully craft at least one thoughtful paragraph. </label
+      ><br />
+      <textarea
+        name="diversity-inclusion"
+        id="diversity-inclusion"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="recent-activities"
+        >What have you been up to over the last few years? Please carefully
+        craft at least one thoughtful paragraph. </label
+      ><br />
+      <textarea
+        name="recent-activities"
+        id="recent-activities"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="tech-industry-interest"
+        >Why is it that you want to work in the tech industry? Please carefully
+        craft at least one thoughtful paragraph. </label
+      ><br />
+      <textarea
+        name="tech-industry-interest"
+        id="tech-industry-interest"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="tech-barriers"
+        >What has prevented you from making it into tech before now? </label
+      ><br />
+      <textarea
+        name="tech-barriers"
+        id="tech-barriers"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="career-transition"
+        >Why are you ready for this career transition now? </label
+      ><br />
+      <textarea
+        name="career-transition"
+        id="career-transition"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="five-year-plan"
+        >What’s your five year professional plan? How will being in Techtonica's
+        full-time program help you achieve these goals? Please carefully craft
+        at least one thoughtful paragraph.</label
+      ><br />
+      <textarea
+        name="five-year-plan"
+        id="five-year-plan"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="software-engineer-qualities"
+        >What about you would make you a good software engineer? Please
+        carefully craft at least one thoughtful paragraph.</label
+      ><br />
+      <textarea
+        name="software-engineer-qualities"
+        id="software-engineer-qualities"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="unique-experiences"
+        >What unique points of view, experiences, and background will you bring
+        to Techtonica's sponsor companies? Please carefully craft at least one
+        thoughtful paragraph. </label
+      ><br />
+      <textarea
+        name="unique-experiences"
+        id="unique-experiences"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="five-tech-companies"
+        >List five tech companies you'd be interested in working for after
+        Techtonica and why. </label
+      ><br />
+      <textarea
+        name="five-tech-companies"
+        id="five-tech-companies"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="self-taught"
+        >Tell us about something difficult you've learned on your own that is
+        not related to computers or coding. Why did you want to learn that
+        thing? What did you do to learn it? What level are you at now? Please
+        carefully craft at least one thoughtful paragraph. </label
+      ><br />
+      <textarea
+        name="self-taught"
+        id="self-taught"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="pair-partner-situation"
+        >Would you do in the following situation? You have been assigned a
+        project by your supervisor and have also been assigned a pair partner.
+        The two of you are supposed to collaborate on the project and submit
+        your work together. Your pair partner keeps working ahead on their own
+        at lunch and in the evenings, doesn't take your suggestions, and makes
+        you feel inferior. </label
+      ><br />
+      <textarea
+        name="pair-partner-situation"
+        id="pair-partner-situation"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="robot-sandwich"
+        >List all the steps one-by-one that you would use to tell a robot how to
+        make a sandwich (if all the ingredients are ready and available). </label
+      ><br />
+      <textarea
+        name="robot-sandwich"
+        id="robot-sandwich"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="readiness"
+        >Is there any reason you might not be ready for Techtonica, and if so,
+        what is it? Why shouldn't we accept you to Techtonica right now?</label
+      ><br />
+      <textarea
+        name="readiness"
+        id="readiness"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="commitment-barriers"
+        >Do you have any barriers to committing to Techtonica and actively
+        participating in the program (child pickup, care for a loved one,
+        funding, length of commute, domestic or drug abuse issues not taken care
+        of, being unable to attend every day, being unable to use a computer for
+        long periods of time, etc.) or is there any reason you wouldn't commit
+        to Techtonica? If yes, what are the barriers? </label
+      ><br />
+      <textarea
+        name="commitment-barriers"
+        id="commitment-barriers"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="how-did-you-find-out"
+        >How did you find out about Techtonica?</label
+      ><br />
+      <textarea
+        name="how-did-you-find-out"
+        id="how-did-you-find-out"
+        cols="100"
+        rows="3"
+        required
+      ></textarea
+      ><br />
+
+      <label for="applicant-linkedin-url"
+        >Full LinkedIn URL (make sure you have a recognizable picture of your
+        face on your profile!) </label
+      ><br />
+      <input
+        type="url"
+        name="applicant-linkedin-url"
+        id="applicant-linkedin-url"
+        required
+      /><br />
+
+      <label for="applicant-other-social-medias"
+        >Other full URLs to you online (blog, Twitter, GitHub, Instagram, etc.) </label
+      ><br />
+      <input
+        type="url"
+        name="applicant-other-social-medias"
+        id="applicant-other-social-medias"
+      /><br />
+
+      <p>
+        Reference #1 - Please share the full name, email address, and
+        relationship (former manager, former coworker, etc.) of someone who has
+        worked closely with you and can speak to your capabilities in a work
+        setting.
+      </p>
+      <br />
+      <label for="reference-1-fname">First Name: </label><br />
+      <input
+        type="text"
+        name="reference-1-fname"
+        id="reference-1-fname"
+        required
+      /><br />
+      <label for="reference-1-lname">Last Name: </label><br />
+      <input
+        type="text"
+        name="reference-1-lname"
+        id="reference-1-lname"
+        required
+      /><br />
+      <label for="reference-1-email">Email: </label><br />
+      <input
+        type="email"
+        name="reference-1-email"
+        id="reference-1-email"
+        required
+      /><br />
+      <label for="reference-1-relationship">Relationship: </label><br />
+      <input
+        type="text"
+        name="reference-1-relationship"
+        id="reference-1-relationship"
+        required
+      /><br />
+
+      <p>
+        Reference #2 - Please share the full name, email address, and
+        relationship (former manager, former coworker, etc.) of someone who has
+        worked closely with you and can speak to your capabilities in a work
+        setting.
+      </p>
+      <br />
+      <label for="reference-2-fname">First Name: </label><br />
+      <input
+        type="text"
+        name="reference-2-fname"
+        id="reference-2-fname"
+        required
+      /><br />
+      <label for="reference-2-lname">Last Name: </label><br />
+      <input
+        type="text"
+        name="reference-2-lname"
+        id="reference-2-lname"
+        required
+      /><br />
+      <label for="reference-2-email">Email: </label><br />
+      <input
+        type="email"
+        name="reference-2-email"
+        id="reference-2-email"
+        required
+      /><br />
+      <label for="reference-2-relationship">Relationship: </label><br />
+      <input
+        type="text"
+        name="reference-2-relationship"
+        id="reference-2-relationship"
+        required
+      /><br />
+
+      <p>
+        Please share your emergency contact's name and contact info (phone and
+        email).
+      </p>
+      <br />
+      <label for="emergency-contact-fname">First Name: </label><br />
+      <input
+        type="text"
+        name="emergency-contact-fname"
+        id="emergency-contact-fname"
+        required
+      /><br />
+      <label for="emergency-contact-lname">Last Name: </label><br />
+      <input
+        type="text"
+        name="emergency-contact-lname"
+        id="emergency-contact-lname"
+        required
+      /><br />
+      <label for="emergency-contact-email">Email: </label><br />
+      <input
+        type="email"
+        name="emergency-contact-email"
+        id="emergency-contact-email"
+        required
+      /><br />
+      <label for="emergency-contact-relationship">Relationship: </label><br />
+      <input
+        type="text"
+        name="emergency-contact-relationship"
+        id="emergency-contact-relationship"
+        required
+      /><br />
+
+      <label for="anything-else-to-share"
+        >Anything else you want to share with us? </label
+      ><br />
+      <textarea
+        name="anything-else-to-share"
+        id="anything-else-to-share"
+        cols="100"
+        rows="3"
+      ></textarea>
     </fieldset>
     <fieldset>
       <legend>Administrative Questions</legend>
