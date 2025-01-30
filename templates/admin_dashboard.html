@@ -45,7 +45,7 @@ endblock title %} {% block content %}
     <div class="admin-box">
       <div class="status-overview-info">
         <h3>Application Status Overview</h3>
-        <p><i>Current status of all applications</i></p>
+        <p class="admin-subtitle">Current status of all applications</p>
       </div>
       <label class="progress-bar-label" for="submitted"
         ><p>Submitted:</p>
@@ -71,9 +71,51 @@ endblock title %} {% block content %}
   </section>
   <section class="admin-section">
     <div class="admin-box">
-      <h3>Recent Applications</h3>
-      <p>Latest applications submitted to the system</p>
-      <p>Table graphic goes here</p>
+      <div class="recent-applicant-info">
+        <h3>Recent Applications</h3>
+        <p class="admin-subtitle">
+          Latest applications submitted to the system
+        </p>
+      </div>
+      <div class="recent-applicants-container">
+        <table class="recent-applicants">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Submitted</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            <td>Alice Johnson</td>
+            <td>alice@example.com</td>
+            <td>In Review</td>
+            <td>2023-07-01</td>
+            <td><button>Review</button></td>
+          </tr>
+          <tr>
+            <td>Bob Smith</td>
+            <td>bob@example.com</td>
+            <td>Submitted</td>
+            <td>2023-07-02</td>
+            <td><button>Review</button></td>
+          </tr>
+          <tr>
+            <td>Charlie Brown</td>
+            <td>charlie@example.com</td>
+            <td>Accepted</td>
+            <td>2023-06-30</td>
+            <td><button>Review</button></td>
+          </tr>
+          <tr>
+            <td>Diana Prince</td>
+            <td>diana@example.com</td>
+            <td>Rejected</td>
+            <td>2023-06-29</td>
+            <td><button>Review</button></td>
+          </tr>
+        </table>
+      </div>
     </div>
   </section>
 </div>
