@@ -24,6 +24,7 @@ currently hosted on DreamHost.
       - [Setup](#setup)
       - [Running Locally](#running-locally-1)
     - [Updating the Demographics Chart for the Apply Section](#updating-the-demographics-chart-for-the-apply-section)
+    - [Updating Testimonials](#updating-testimonials)
     - [Updating Dependencies](#updating-dependencies)
   - [Deployment to DreamHost](#deployment-to-dreamhost)
     - [Initial Setup](#initial-setup)
@@ -306,6 +307,16 @@ At the moment, we do not have styling in place that will enable us to have a cod
 
 9. Stop the server
 10. Commit your code and open a pull request
+
+### Updating Testimonials
+
+To update and add testimonial images, follow these steps:
+1. Upload your testimonial image to Canva, crop it as needed, and download it as a `.png`.
+2. The image name should follow this format: `Platform-FirstName-Topic-Year-min.png` (e.g., `Linkedin-Daamiah-Techtonica-2025-min.png`).
+3. Use [ImageOptim](https://imageoptim.com/mac) to compress the image for better web performance.
+4. Save the optimized image in the `techtonica.org/static/img/testimonials` folder within the repository to maintain consistency and easy access.
+
+For detailed instructions, visit the [full guide on the Wiki](https://github.com/Techtonica/techtonica.org/wiki/How-to-Add-and-Optimize-Testimonial-Images).
 
 ### Updating Dependencies
 
