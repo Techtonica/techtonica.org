@@ -350,6 +350,200 @@ Techtonica Application {% endblock title %} {% block content %}
     </fieldset>
     <fieldset>
       <legend>Additional Applicant Information</legend>
+      <label for="times-applied"
+        >How many times have you applied? (3 is the max allowed) </label
+      ><br />
+      <input
+        type="radio"
+        id="times-applied"
+        name="times-applied"
+        value="0"
+        required
+      />
+      <label for="times-applied-0">0 — This is my first time applying</label
+      ><br />
+      <input
+        type="radio"
+        id="times-applied"
+        name="times-applied"
+        value="1"
+        required
+      />
+      <label for="times-applied-1">1 — I've applied once before</label><br />
+      <input
+        type="radio"
+        id="times-applied"
+        name="times-applied"
+        value="2"
+        required
+      />
+      <label for="times-applied-2"
+        >2 — I've applied twice before and this will be my third and last
+        try</label
+      ><br />
+      <label for="digitally-literate"
+        >Are you digitally literate, meaning you are very familiar and good with
+        computers and the internet, can type 40+ WPM, and you know how to use a
+        mouse/trackpad, browsers, and email? </label
+      ><br />
+      <input
+        type="radio"
+        id="digitally-literate"
+        name="digitally-literate"
+        value="Yes"
+        required
+      />
+      <label for="digitally-literate-yes">Yes</label><br />
+      <input
+        type="radio"
+        id="digitally-literate"
+        name="digitally-literate"
+        value="No"
+        required
+      />
+      <label for="digitally-literate-no">No</label><br />
+      <label for="typing-test-screenshot"
+        >Please upload a screenshot of your results of a one-minute typing test
+        at
+        <a href="https://www.typingtest.com/">https://www.typingtest.com/</a>
+        (you might want to sign up for an account and practice a couple of times
+        first). </label
+      ><br />
+      <input
+        type="file"
+        id="typing-test-screenshot"
+        name="typing-test-screenshot"
+        required
+      /><br />
+      <label for="wpm-score">How many WPM did you type? </label><br />
+      <input type="text" id="wpm-score" name="wpm-score" required /><br />
+      <label for="typing-accuracy-percentage"
+        >What was your typing accuracy percentage? </label
+      ><br />
+      <input type="text" name="wpm-score" id="wpm-score" required /><br />
+      <label for="FCC-screenshot"
+        >Please upload a screenshot of your completed pre-req 113 Basic
+        JavaScript lessons at
+        <a href="https://www.freecodecamp.org/learn/"
+          >https://www.freecodecamp.org/learn</a
+        >. The screenshot should include ALL the lessons you have completed in a
+        single screenshot—you can use the Blipshot Chrome extension to create an
+        image of the whole window. </label
+      ><br />
+      <input
+        type="file"
+        id="FCC-screenshot"
+        name="FCC-screenshot"
+        required
+      /><br />
+      <label for="able-to-participate"
+        >Are you willing to participate actively in the program Monday to Friday
+        during the full-time hours of the program (typically 8 a.m. to 5 p.m.
+        Pacific Time)? </label
+      ><br />
+      <input
+        type="radio"
+        id="able-to-participate"
+        name="able-to-participate"
+        value="Yes"
+        required
+      />
+      <label for="able-to-participate-yes">Yes</label><br />
+      <input
+        type="radio"
+        id="able-to-participate"
+        name="able-to-participate"
+        value="No"
+        required
+      />
+      <label for="able-to-participate-no">No</label><br />
+      <label for="stable-housing"
+        >Do you have housing that will be stable for the six months of training
+        and the following six months? </label
+      ><br />
+      <input
+        type="radio"
+        id="stable-housing"
+        name="stable-housing"
+        value="Yes"
+        required
+      />
+      <label for="stable-housing-yes">Yes</label><br />
+      <input
+        type="radio"
+        id="stable-housing"
+        name="stable-housing"
+        value="No"
+        required
+      />
+      <label for="stable-housing-no">No</label><br />
+      <label for="currently-employed">Are you currently employed? </label><br />
+      <input
+        type="radio"
+        id="currently-employed"
+        name="currently-employed"
+        value="Yes, full-time or more than full-time"
+        required
+      />
+      <label for="currently-employed-yes-full-time-or-more"
+        >Yes, full-time or more than full-time</label
+      ><br />
+      <input
+        type="radio"
+        id="currently-employed"
+        name="currently-employed"
+        value="Yes, part-time"
+        required
+      />
+      <label for="currently-employed-yes-part-time">Yes, part-time</label><br />
+      <input
+        type="radio"
+        id="currently-employed"
+        name="currently-employed"
+        value="No"
+        required
+      />
+      <label for="currently-employed-no">No</label><br />
+      <label for="willing-to-live-in-US"
+        >Are you willing to live in the U.S. if required by the placement
+        company? </label
+      ><br />
+      <input
+        type="radio"
+        id="willing-to-live-in-US"
+        name="willing-to-live-in-US"
+        value="Yes"
+        required
+      />
+      <label for="willing-to-live-in-US-yes">Yes</label><br />
+      <input
+        type="radio"
+        id="willing-to-live-in-US"
+        name="willing-to-live-in-US"
+        value="No"
+        required
+      />
+      <label for="willing-to-live-in-US-no">No</label><br />
+      <label for="willing-to-quit-job"
+        >Are you willing to quit your job(s) to focus on your career transition
+        into tech? </label
+      ><br />
+      <input
+        type="radio"
+        id="willing-to-quit-job"
+        name="willing-to-quit-job"
+        value="Yes"
+        required
+      />
+      <label for="willing-to-quit-job-yes">Yes</label><br />
+      <input
+        type="radio"
+        id="willing-to-quit-job"
+        name="willing-to-quit-job"
+        value="No"
+        required
+      />
+      <label for="willing-to-quit-jobs-no">No</label><br />
     </fieldset>
     <fieldset>
       <legend>Applicant Long-Text Answers</legend>
