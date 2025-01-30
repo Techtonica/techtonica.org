@@ -1837,7 +1837,7 @@ Techtonica Application {% endblock title %} {% block content %}
 <style>
   /* .application-form is .payment-form in job-form.html */
   .application-form {
-    padding: 50px 0px 50px 0px;
+    padding: 40px 0px 40px 0px;
     width: 100%;
     max-width: 1000px;
     margin: 40px auto;
@@ -1884,6 +1884,7 @@ Techtonica Application {% endblock title %} {% block content %}
     font-size: 1.5em;
     text-shadow: 1px 1px 1px #666;
   }
+
   #app-form button:hover {
     background-color: #16c1f3;
     color: white;
@@ -1940,12 +1941,23 @@ Techtonica Application {% endblock title %} {% block content %}
 
   #info-wrapper > fieldset > input[type="text"],
   #info-wrapper > fieldset > input[type="email"],
-  #info-wrapper > fieldset > textarea #info-wrapper > fieldset > select {
+  #info-wrapper > fieldset > input[type="tel"],
+  #info-wrapper > fieldset > input[type="date"],
+  #info-wrapper > fieldset > textarea,
+  #info-wrapper > fieldset > select {
     width: 50%;
     max-width: 90%;
     margin: auto auto 1em auto;
     padding: 0.25em;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+  }
+
+  #info-wrapper > fieldset > input[type="file"] {
+    width: 50%;
+    max-width: 90%;
+    margin: auto auto 1em auto;
+    padding: 0.25em;
     border-radius: 6px;
   }
 
@@ -1956,11 +1968,13 @@ Techtonica Application {% endblock title %} {% block content %}
   input[type="radio"] {
     width: 50px;
   }
+
   select,
   textarea {
     width: 200px;
     text-overflow: ellipsis;
   }
+
   #radio-wrapper {
     width: 100%;
     margin-bottom: 1em;
@@ -1968,7 +1982,7 @@ Techtonica Application {% endblock title %} {% block content %}
   }
 
   #application-page {
-    padding: 1.5em;
+    padding: 1em;
   }
 
   #application-page > h1,
