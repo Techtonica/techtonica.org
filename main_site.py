@@ -241,6 +241,7 @@ def get_events():
         return []
 
 
+# returns string & extension variable to display time bound page components
 def get_time(app_open_date_string, is_extended_string):
     is_extended = is_extended_string.lower() == "true"
     app_open_date = datetime.datetime.strptime(
