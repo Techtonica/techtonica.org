@@ -184,7 +184,8 @@ def render_mentor_page():
 @app.route("/full-time-program/")
 def render_ft_program_page():
     """
-    Renders the full-time program page from jinja2 template
+    Generates time-bound text and application extension variable
+    Renders the full-time program page from jinja2 template with relevant times
     """
     ft_app_open_date = config.get("applications", "ft_open_date")
     ft_app_extend = config.get("applications", "ft_extend")
