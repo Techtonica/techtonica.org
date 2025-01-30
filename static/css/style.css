@@ -1120,13 +1120,18 @@ input[type='radio'] {
   flex-direction: column;
 }
 
-.status-overview-info {
+.status-overview-info,
+.recent-applicant-info {
   margin-bottom: 2em;
 }
 
-label {
+.admin-box > label {
   display: flex;
   justify-content: space-between;
+}
+
+.admin-subtitle {
+  color: gray;
 }
 
 progress {
@@ -1168,6 +1173,29 @@ progress::before {
 progress::-webkit-progress-value {
   background-color: black;
   border-radius: 20px;
+}
+
+.recent-applicants-container {
+  overflow-x: auto;
+}
+
+.recent-applicants {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recent-applicants td {
+  border-width: 2px 0 0 0;
+  border-color: rgb(228, 228, 228);
+  border-style: solid;
+  border-collapse: collapse;
+  padding: 2em 2em;
+}
+
+.recent-applicants th {
+  text-align: left;
+  color: gray;
+  padding: 2em 2em;
 }
 
 @media (max-width: 900px) {
