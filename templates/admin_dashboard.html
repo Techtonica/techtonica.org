@@ -43,9 +43,30 @@ endblock title %} {% block content %}
   </section>
   <section class="admin-section">
     <div class="admin-box">
-      <h3>Application Status Overview</h3>
-      <p>Current status of all applications</p>
-      <p>stat graphics go here</p>
+      <div class="status-overview-info">
+        <h3>Application Status Overview</h3>
+        <p><i>Current status of all applications</i></p>
+      </div>
+      <label class="progress-bar-label" for="submitted"
+        ><p>Submitted:</p>
+        <p>60%</p></label
+      >
+      <progress id="submitted" max="100" value="60"></progress>
+      <label class="progress-bar-label" for="review"
+        ><p>In Review:</p>
+        <p>25%</p></label
+      >
+      <progress id="review" max="100" value="25"></progress>
+      <label class="progress-bar-label" for="accepted"
+        ><p>Accepted:</p>
+        <p>10%</p></label
+      >
+      <progress id="accepted" max="100" value="10"></progress>
+      <label class="progress-bar-label" for="rejected"
+        ><p>Rejected:</p>
+        <p>5%</p></label
+      >
+      <progress id="rejected" max="100" value="5"></progress>
     </div>
   </section>
   <section class="admin-section">
