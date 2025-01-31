@@ -1166,7 +1166,7 @@ progress::before {
 }
 
 #rejected::-webkit-progress-bar {
-  background-color: rgb(255, 155, 173);
+  background-color: rgb(252, 202, 211);
   border-radius: 20px;
 }
 
@@ -1196,6 +1196,34 @@ progress::-webkit-progress-value {
   text-align: left;
   color: gray;
   padding: 2em 2em;
+}
+
+.status {
+  padding: 0.5em;
+  border-radius: 50px;
+  text-align: center;
+  font-weight: bold;
+  width: fit-content;
+}
+
+#review-text {
+  color: rgb(138, 64, 0);
+  background-color: rgb(252, 237, 140);
+}
+
+#submitted-text {
+  color: rgb(0, 58, 108);
+  background-color: rgb(155, 225, 255);
+}
+
+#accepted-text {
+  color: rgb(0, 98, 24);
+  background-color: rgb(155, 255, 180);
+}
+
+#rejected-text {
+  color: rgb(138, 0, 25);
+  background-color: rgb(252, 202, 211);
 }
 
 @media (max-width: 900px) {
