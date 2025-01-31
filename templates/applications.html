@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap {%
+endblock title %} {% block content %}
+<nav class="admin-nav-bar">
+  <button>Log Out</button>
+  <h2>Admin Dashboard</h2>
+</nav>
+<section class="admin-section">
+  <div class="admin-box">
+    <div class="recent-applicant-info">
+      <h3>Recent Applications</h3>
+      <p class="admin-subtitle">Latest applications submitted to the system</p>
+    </div>
+    <div class="recent-applicants-container">
+      <table class="recent-applicants">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Status</th>
+          <th>Submitted</th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <td>Alice Johnson</td>
+          <td>alice@example.com</td>
+          <td><p id="review-text" class="status">In Review</p></td>
+          <td>2023-07-01</td>
+          <td><button>Review</button></td>
+        </tr>
+        <tr>
+          <td>Bob Smith</td>
+          <td>bob@example.com</td>
+          <td><p id="submitted-text" class="status">Submitted</p></td>
+          <td>2023-07-02</td>
+          <td><button>Review</button></td>
+        </tr>
+        <tr>
+          <td>Charlie Brown</td>
+          <td>charlie@example.com</td>
+          <td><p id="accepted-text" class="status">Accepted</p></td>
+          <td>2023-06-30</td>
+          <td><button>Review</button></td>
+        </tr>
+        <tr>
+          <td>Diana Prince</td>
+          <td>diana@example.com</td>
+          <td><p id="rejected-text" class="status">Rejected</p></td>
+          <td>2023-06-29</td>
+          <td><button>Review</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+{%endblock%}
