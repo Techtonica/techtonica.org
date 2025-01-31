@@ -177,8 +177,10 @@ Techtonica Application {% endblock title %} {% block content %}
               type="tel"
               name="phone-number"
               id="phone-number"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              placeholder="415-555-1234"
+              pattern="^\+?1?[-.\s]?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$"
+              placeholder="ex. 415-555-1234 or 1-415-555-1234"
+              title="Please enter a valid phone number in the format: 415-555-1234 or 1-415-555-1234."
+              minlength="10"
             /><br />
             <div id="radio-wrapper">
               <label for="veteran-status">Are you a U.S. veteran? </label><br />
@@ -312,7 +314,14 @@ Techtonica Application {% endblock title %} {% block content %}
               >What is the full mailing address of where you live? (Don't forget
               unit number, if applicable, and city, state, and zip code.)</label
             ><br />
-            <input type="text" name="address" id="address" required /><br />
+            <input
+              type="text"
+              name="address"
+              id="address"
+              required
+              pattern="^\d+\s[A-z]+\s[A-z]+(?:\s[A-z]+)*,\s[A-z]+\s[A-z]+,\s[A-Z]{2}\s\d{5}(?:-\d{4})?$"
+              title="Please enter a valid U.S. mailing address."
+            /><br />
             <div id="radio-wrapper">
               <label for="US-employment-status"
                 >Can you currently legally be employed in the U.S.? </label
@@ -2231,7 +2240,7 @@ Techtonica Application {% endblock title %} {% block content %}
   #info-wrapper > fieldset > input[type="url"],
   #info-wrapper > fieldset > textarea,
   #info-wrapper > fieldset > select {
-    width: 50%;
+    width: 90%;
     max-width: 90%;
     margin: auto auto 1em auto;
     padding: 0.25em;
