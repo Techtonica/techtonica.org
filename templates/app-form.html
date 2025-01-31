@@ -123,8 +123,16 @@ Techtonica Application {% endblock title %} {% block content %}
                 Cis Woman (your gender identity matches the female sex you were
                 assigned at birth)
               </option>
-              <option value="other">Other</option></select
-            ><br />
+              <option value="Other">Other</option>
+            </select>
+            <input
+              type="text"
+              id="custom-gender"
+              name="custom-gender"
+              placeholder="Please enter your gender identity"
+              style="display: none"
+              disabled
+            /><br />
             <label for="pronouns">What are your pronouns? </label><br />
             <select name="pronouns" id="pronouns" required>
               <br />
@@ -135,8 +143,16 @@ Techtonica Application {% endblock title %} {% block content %}
               <option value="She/Her">She/Her</option>
               <option value="They/Them">They/Them</option>
               <option value="Ze/Zir">Ze/Zir</option>
-              <option value="Other">Other</option></select
-            ><br />
+              <option value="Other">Other</option>
+            </select>
+            <input
+              type="text"
+              id="custom-pronouns"
+              name="custom-pronouns"
+              placeholder="Please enter your preferred pronouns"
+              style="display: none"
+              disabled
+            /><br />
             <label for="birth-date">What is your birth date? </label><br />
             <input
               type="date"
@@ -285,8 +301,16 @@ Techtonica Application {% endblock title %} {% block content %}
                 Indonesian, Malaysian, Mien, Singaporean, Thai, and Vietnamese)
               </option>
               <option value="White">White</option>
-              <option value="Other">Other</option></select
-            ><br />
+              <option value="Other">Other</option>
+            </select>
+            <input
+              type="text"
+              id="custom-race-ethnicity"
+              name="custom-race-ethnicity"
+              placeholder="Please enter your racial/ethnic group"
+              style="display: none"
+              disabled
+            /><br />
             <label for="address"
               >What is the full mailing address of where you live? (Don't forget
               unit number, if applicable, and city, state, and zip code.)</label
@@ -2281,5 +2305,64 @@ Techtonica Application {% endblock title %} {% block content %}
     visibility: visible;
     opacity: 1;
   }
+
+  #custom-gender {
+    display: none;
+  }
 </style>
+<script>
+  document
+    .getElementById("gender-identity")
+    .addEventListener("change", function () {
+      const customGenderInput = document.getElementById("custom-gender");
+
+      if (this.value === "Other") {
+        customGenderInput.style.display = "block";
+        customGenderInput.removeAttribute("disabled");
+        this.removeAttribute("name");
+        customGenderInput.setAttribute("name", "gender-identity");
+      } else {
+        customGenderInput.style.display = "none";
+        customGenderInput.setAttribute("disabled", "true");
+        customGenderInput.removeAttribute("name");
+        this.setAttribute("name", "gender-identity");
+      }
+    });
+
+  document.getElementById("pronouns").addEventListener("change", function () {
+    const customPronounsInput = document.getElementById("custom-pronouns");
+
+    if (this.value === "Other") {
+      customPronounsInput.style.display = "block";
+      customPronounsInput.removeAttribute("disabled");
+      this.removeAttribute("name");
+      customPronounsInput.setAttribute("name", "pronouns");
+    } else {
+      customPronounsInput.style.display = "none";
+      customPronounsInput.setAttribute("disabled", "true");
+      customPronounsInput.removeAttribute("name");
+      this.setAttribute("name", "pronouns");
+    }
+  });
+
+  document
+    .getElementById("race-ethnicity")
+    .addEventListener("change", function () {
+      const customRaceEthnicityInput = document.getElementById(
+        "custom-race-ethnicity"
+      );
+
+      if (this.value === "Other") {
+        customRaceEthnicityInput.style.display = "block";
+        customRaceEthnicityInput.removeAttribute("disabled");
+        this.removeAttribute("name");
+        customRaceEthnicityInput.setAttribute("name", "custom-race-ethnicity");
+      } else {
+        customRaceEthnicityInput.style.display = "none";
+        customRaceEthnicityInput.setAttribute("disabled", "true");
+        customRaceEthnicityInput.removeAttribute("name");
+        this.setAttribute("name", "custom-race-ethnicity");
+      }
+    });
+</script>
 {% endblock content %}
