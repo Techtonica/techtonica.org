@@ -130,7 +130,6 @@ Techtonica Application {% endblock title %} {% block content %}
               id="custom-gender"
               name="custom-gender"
               placeholder="Please enter your gender identity"
-              style="display: none"
               disabled
             /><br />
             <label for="pronouns">What are your pronouns? </label><br />
@@ -150,7 +149,6 @@ Techtonica Application {% endblock title %} {% block content %}
               id="custom-pronouns"
               name="custom-pronouns"
               placeholder="Please enter your preferred pronouns"
-              style="display: none"
               disabled
             /><br />
             <label for="birth-date">What is your birth date? </label><br />
@@ -308,7 +306,6 @@ Techtonica Application {% endblock title %} {% block content %}
               id="custom-race-ethnicity"
               name="custom-race-ethnicity"
               placeholder="Please enter your racial/ethnic group"
-              style="display: none"
               disabled
             /><br />
             <label for="address"
@@ -2230,6 +2227,8 @@ Techtonica Application {% endblock title %} {% block content %}
   #info-wrapper > fieldset > input[type="email"],
   #info-wrapper > fieldset > input[type="tel"],
   #info-wrapper > fieldset > input[type="date"],
+  #info-wrapper > fieldset > input[type="number"],
+  #info-wrapper > fieldset > input[type="url"],
   #info-wrapper > fieldset > textarea,
   #info-wrapper > fieldset > select {
     width: 50%;
@@ -2311,7 +2310,9 @@ Techtonica Application {% endblock title %} {% block content %}
     opacity: 1;
   }
 
-  #custom-gender {
+  #custom-gender,
+  #custom-pronouns,
+  #custom-race-ethnicity {
     display: none;
   }
 </style>
