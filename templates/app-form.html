@@ -403,9 +403,11 @@ Techtonica Application {% endblock title %} {% block content %}
               </svg> </span
             ><br />
             <input
-              type="text"
+              type="number"
               id="annual-income"
               name="annual-income"
+              min="0"
+              oninput="greaterThanZero(this)"
               required
             /><br />
             <label for="income-verification-docs"
@@ -432,9 +434,11 @@ Techtonica Application {% endblock title %} {% block content %}
               >) </label
             ><br />
             <input
-              type="text"
+              type="number"
               id="annual-living-wage"
               name="annual-living-wage"
+              min="25000"
+              oninput="greaterThan25000(this)"
               required
             /><br />
             <label for="living-wage-url"
@@ -527,9 +531,10 @@ Techtonica Application {% endblock title %} {% block content %}
               </svg> </span
             ><br />
             <input
-              type="text"
+              type="number"
               id="average-monthly-cost"
               name="average-monthly-cost"
+              oninput="inputIsWholeNumber(this)"
               required
             /><br />
           </fieldset>
@@ -2364,5 +2369,31 @@ Techtonica Application {% endblock title %} {% block content %}
         this.setAttribute("name", "custom-race-ethnicity");
       }
     });
+
+  function greaterThanZero(input) {
+    if (input.value <= 0) {
+      input.setCustomValidity("Please enter a number greater than 0.");
+    } else {
+      input.setCustomValidity("");
+    }
+  }
+
+  function greaterThan25000(input) {
+    if (input.value <= 25000) {
+      input.setCustomValidity(
+        "Please enter a number greater than or equal to 25000."
+      );
+    } else {
+      input.setCustomValidity("");
+    }
+  }
+
+  function inputIsWholeNumber(input) {
+    if (!Number.isInteger(Number(input.value))) {
+      input.setCustomValidity("Please enter a whole number.");
+    } else {
+      input.setCustomValidity("");
+    }
+  }
 </script>
 {% endblock content %}
