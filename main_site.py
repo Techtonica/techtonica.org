@@ -226,6 +226,14 @@ def render_admin_dashboard_page():
     return render_template("admin_dashboard.html")
 
 
+@app.route("/admin/applications")
+def render_admin_applications_page():
+    """
+    Renders the admin view of applications from jinja2 template
+    """
+    return render_template("applications.html")
+
+
 def get_events():
     try:
         group_id = eventbrite.get_user()["id"]
@@ -359,13 +367,14 @@ def send_posting():
     x = requests.post(
         SLACK_WEBHOOK,
         json={
-            "text": f"A new job has been posted to Techtonica! Read the details below to see if you're a good fit!  \n\n JOB DETAILS \n Job Title: {data['jobTitle']} \n Company: {data['company']} \n Type: {data['type']} \n Education Requirement: {data['educationReq']} \n Location: {data['location']} \n Referral offered: {data['referral']} \n Salary Range: {data['salaryRange']} \n Description: {data['description']} \n Application Link: {data['applicationLink']} \n \n CONTACT INFO \n Name: {data['firstName']} {data['lastName']}  \n Email: {data['email']}  \n "   # noqa: E501
+            "text": f"A new job has been posted to Techtonica! Read the details below to see if you're a good fit!  \n\n JOB DETAILS \n Job Title: {data['jobTitle']} \n Company: {data['company']} \n Type: {data['type']} \n Education Requirement: {data['educationReq']} \n Location: {data['location']} \n Referral offered: {data['referral']} \n Salary Range: {data['salaryRange']} \n Description: {data['description']} \n Application Link: {data['applicationLink']} \n \n CONTACT INFO \n Name: {data['firstName']} {data['lastName']}  \n Email: {data['email']}  \n "  # noqa: E501
         },
     )
 
     print(f"Message sent: {x.text}")
-    return jsonify({"message": "Data received successfully",
-                    "received_data": data})
+    return jsonify(
+        {"message": "Data received successfully", "received_data": data}
+    )  # noqa: E501
 
 
 if __name__ == "__main__":
