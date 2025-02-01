@@ -14,6 +14,8 @@ currently hosted on DreamHost.
     - [Install Pre-Commit Hooks](#install-pre-commit-hooks)
     - [Install Requirements](#install-requirements)
     - [Create Config.ini File](#create-configini-file)
+    - [Pre-Commit Hooks Guide](#pre-commit-hooks-guide)
+    - [Optional: Installing Prettier Plug-in Locally](#optional-installing-prettier-plug-in-locally)
     - [Running Locally](#running-locally)
     - [Using Docker to Run Locally](#using-docker-to-run-locally)
       - [First Time Using Docker?](#first-time-using-docker)
@@ -170,6 +172,61 @@ After upgrading, ensure you reinstall the hooks by running
 pre-commit install
 ```
 
+### Optional: Installing Prettier Plug-in Locally
+
+### Managing Prettier Commit Behavior
+
+When using Prettier in your project, you may encounter unexpected behavior with the **Prettier pre-commit hook**. This guide provides context on what’s happening, why, and how to address it effectively.
+
+#### Context
+
+The Prettier pre-commit hook automatically formats code when you attempt to commit changes. However, in some cases, this hook may lead to **unstaged changes** after formatting your files. This can occur if the local code is not already formatted according to the Prettier configuration. This behavior might feel confusing or disruptive to users unfamiliar with the tool.
+
+#### What to Expect
+
+1. **Scenario:**  
+   During `git commit`, the Prettier pre-commit hook runs and identifies formatting issues.
+
+   - If applicable, Prettier will fix these issues but may leave **unstaged changes** in your working directory.
+
+2. **Outcome:**  
+   You will need to stage these changes again (`git add`) before committing and pushing your changes to the remote repository.
+
+#### Why This Happens
+
+The Prettier pre-commit hook is designed to ensure consistent code formatting across the repository. When code is committed without being properly formatted, Prettier intervenes by reformatting the code. If these changes are not staged, they remain as unstaged changes in your working directory.
+
+#### Solution: Installing Prettier Plug-in Locally
+
+To avoid this behavior and streamline your workflow, you can install a Prettier plug-in in your local IDE. The plug-in will format your code **on-save**, ensuring it adheres to the Prettier configuration before you attempt to commit.
+
+#### Steps:
+
+1. Install the Prettier plug-in in your IDE (e.g., VS Code).  
+   ![Prettier Plug-in in VS Code](static/img/Prettier-Plug-In.png)
+
+2. Enable the "Format on Save" setting:
+
+   - Go to **Settings** > **Text Editor** > **Formatting** > Enable **Format on Save**.
+
+3. Ensure your file is saved before running `git commit`.
+
+#### Optional: If You Don’t Want to Use the Plug-in
+
+If you would rather not install the Prettier plug-in, you can still manage the behavior manually:
+
+1. After committing, check for **unstaged changes** caused by Prettier.
+2. Use `git add` to stage the changes and then commit again.
+
+#### Expected Result
+
+With the Prettier plug-in installed and enabled:
+
+- Your code will automatically be formatted before saving, ensuring the pre-commit hook finds no issues.
+- The pre-commit hook will not create new **unstaged changes**, making your workflow smoother.
+
+If you opt to manage this manually, be aware of the additional step of staging unstaged changes before pushing to remote.
+
 ### Running Locally
 
 Each time you want to work on your code, you will need to activate your virtual environment and run the server locally. You do not need to do any of the setup instructions again (besides installing requirements, if those have changed).
@@ -311,6 +368,7 @@ At the moment, we do not have styling in place that will enable us to have a cod
 ### Updating Testimonials
 
 To update and add testimonial images, follow these steps:
+
 1. Upload your testimonial image to Canva, crop it as needed, and download it as a `.png`.
 2. The image name should follow this format: `Platform-FirstName-Topic-Year-min.png` (e.g., `Linkedin-Daamiah-Techtonica-2025-min.png`).
 3. Use [ImageOptim](https://imageoptim.com/mac) to compress the image for better web performance.
