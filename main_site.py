@@ -2,20 +2,20 @@
 This is the main Python file that sets up rendering and templating
 for Techtonica.org
 """
-import os
-import sys
 
 import configparser
+import os
+import sys
+from uuid import uuid4
+
 import pendulum
 import requests
-import json
 from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
-from flask import Flask, redirect, render_template, url_for, request, jsonify
+from flask import Flask, jsonify, redirect, render_template, request, url_for
 from flask_sslify import SSLify
 from pydantic import BaseModel
 from square.client import Client
-from uuid import uuid4
 
 load_dotenv(find_dotenv(usecwd=True))
 
@@ -35,11 +35,8 @@ def render_home_page():
     """
     Renders the home page from jinja2 template
     """
-    try:
-        events = get_events()
-        return render_template("home.html", events=events)
-    except BaseException:
-        return render_template("home.html")
+    events = get_events()
+    return render_template("home.html", events=events)
 
 
 @app.route("/team/")
@@ -89,12 +86,14 @@ def render_sponsor_page():
     """
     return render_template("sponsor.html")
 
+
 @app.route("/consulting/")
 def render_consulting_page():
     """
     Renders the consulting page from jinja2 template
     """
     return render_template("consulting.html")
+
 
 @app.route("/faqs/")
 def render_faqs_page():
@@ -127,12 +126,13 @@ def render_openings_page():
 #     """
 #     return render_template("tapm.html")
 
-# @app.route("/openings/ta/")
-# def render_ta_page():
-#     """
-#     Renders the TA page from jinja2 template
-#     """
-#     return render_template("ta.html")
+
+@app.route("/openings/ta/")
+def render_ta_page():
+    """
+    Renders the TA page from jinja2 template
+    """
+    return render_template("ta.html")
 
 
 # @app.route("/openings/partnershipsmanager/")
@@ -142,12 +142,14 @@ def render_openings_page():
 #     """
 #     return render_template("partnershipsmanager.html")
 
+
 @app.route("/openings/sponsorshipslead/")
 def render_sponsorshipslead_page():
     """
     Renders the Sponsorships Lead JD from jinja2 template
     """
     return render_template("sponsorshipslead.html")
+
 
 # @app.route("/openings/curriculumdev/")
 # def render_curriculumdev_page():
@@ -188,6 +190,7 @@ def render_donate_page():
     """
     return render_template("donate.html")
 
+
 @app.route("/volunteer/")
 def render_volunteer_page():
     """
@@ -203,12 +206,14 @@ def render_news_page():
     """
     return render_template("news.html")
 
+
 @app.route("/testimonials/")
 def render_testimonials_page():
     """
     Renders the news page from jinja2 template
     """
     return render_template("testimonials.html")
+
 
 def get_events():
     try:
@@ -224,6 +229,35 @@ def get_events():
         # Gracefully handle failures getting events from Eventbrite
         print("Not returning Eventbrite Events:", sys.exc_info()[1])
         return []
+
+
+def get_time():
+<<<<<<< HEAD
+    # hardcoding dummy data to test rendering of full time program page
+    app_open = False
+    app_open_date = "application open date"
+    app_close_date = "application close date"
+=======
+    # change this variable to set application open date
+    # eventually to become env variable
+    app_open_date = datetime.datetime(2025, 1, 20, 12)
+    # change this variable to true if applications are extended
+    # eventually to become env variable
+    is_extended = False
+    today = datetime.datetime.today()
+
+    if is_extended:
+        app_close_date = app_open_date + datetime.timedelta(days=42)
+    else:
+        app_close_date = app_open_date + datetime.timedelta(days=28)
+    app_open = app_open_date <= today <= app_close_date
+
+>>>>>>> c80a333 (Created helper function get_time() to generate global variables for use in dynamically updating time related sections of site pages.)
+    return {
+        "app_open": app_open,
+        "app_open_date": app_open_date,
+        "app_close_date": app_close_date,
+    }
 
 
 class Event(object):
@@ -245,7 +279,7 @@ class Event(object):
             ]
 
 
-# ONLINE PAYMENT HANDLING ********************************************************
+# ONLINE PAYMENT HANDLING *****************************************************
 
 # Config setting
 config = configparser.ConfigParser()
@@ -259,7 +293,7 @@ CONFIG_TYPE = config.get("default", "environment")
 if CONFIG_TYPE == "production":
     PAYMENT_FORM_URL = "https://web.squarecdn.com/v1/square.js"
 else:
-    PAYMENT_FORM_URL= "https://sandbox.web.squarecdn.com/v1/square.js"
+    PAYMENT_FORM_URL = "https://sandbox.web.squarecdn.com/v1/square.js"
 # PAYMENT_FORM_URL = (
 #     "https://web.squarecdn.com/v1/square.js"
 #     if CONFIG_TYPE == "production"
@@ -275,43 +309,49 @@ client = Client(
     user_agent_detail="techtonica_payment",
 )
 
+
 class Payment(BaseModel):
     token: str
     idempotencyKey: str
 
-#old route - redirects to avoid breaking old links
+
+# old route - redirects to avoid breaking old links
 @app.route("/payment-form")
 def render_payment_form():
     """
     Redirects to current job-form route
     """
-    return redirect(url_for('render_job_form'))
+    return redirect(url_for("render_job_form"))
+
 
 @app.route("/share-a-job")
 def render_job_form():
     """
     Renders the job-form page from jinja2 template
     """
-    return render_template("job-form.html",
+    return render_template(
+        "job-form.html",
         APPLICATION_ID=APPLICATION_ID,
         PAYMENT_FORM_URL=PAYMENT_FORM_URL,
         LOCATION_ID=LOCATION_ID,
         ACCOUNT_CURRENCY="USD",
         ACCOUNT_COUNTRY="ACCOUNT_COUNTRY",
-        idempotencyKey=str( uuid4() ))
+        idempotencyKey=str(uuid4()),
+    )
+
 
 # Square payment api route
-@app.route("/process-payment", methods = ['POST'])
+@app.route("/process-payment", methods=["POST"])
 def create_payment():
     # Charge the customer's card
-    account_currency = "USD" # TODO: Are you hard-coding this to USD?
+    account_currency = "USD"  # TODO: Are you hard-coding this to USD?
     data = request.json
     print(data)
 
     create_payment_response = client.payments.create_payment(
         body={
-            "source_id": data.get('token'),
-            "idempotency_key": data.get('idempotencyKey'),
+            "source_id": data.get("token"),
+            "idempotency_key": data.get("idempotencyKey"),
             "amount_money": {
                 "amount": 10000,  # $100.00 charge
                 "currency": account_currency,
@@ -321,23 +361,30 @@ def create_payment():
 
     print("Payment created", create_payment_response)
     if create_payment_response.is_success():
-        print('success')
+        print("success")
         return create_payment_response.body
     elif create_payment_response.is_error():
-        print('error')
-        return {'errors': create_payment_response.errors}
+        print("error")
+        return {"errors": create_payment_response.errors}
+
 
 # Slack webhook route
-@app.route('/send-posting', methods=['POST'])
+@app.route("/send-posting", methods=["POST"])
 def send_posting():
     data = request.json
     print(f"Received data: {data}")
 
-    x = requests.post(SLACK_WEBHOOK,
-        json = {'text': f"A new job has been posted to Techtonica! Read the details below to see if you're a good fit!  \n\n JOB DETAILS \n Job Title: {data['jobTitle']} \n Company: {data['company']} \n Type: {data['type']} \n Education Requirement: {data['educationReq']} \n Location: {data['location']} \n Referral offered: {data['referral']} \n Salary Range: {data['salaryRange']} \n Description: {data['description']} \n Application Link: {data['applicationLink']} \n \n CONTACT INFO \n Name: {data['firstName']} {data['lastName']}  \n Email: {data['email']}  \n "})
+    x = requests.post(
+        SLACK_WEBHOOK,
+        json={
+            "text": f"A new job has been posted to Techtonica! Read the details below to see if you're a good fit!  \n\n JOB DETAILS \n Job Title: {data['jobTitle']} \n Company: {data['company']} \n Type: {data['type']} \n Education Requirement: {data['educationReq']} \n Location: {data['location']} \n Referral offered: {data['referral']} \n Salary Range: {data['salaryRange']} \n Description: {data['description']} \n Application Link: {data['applicationLink']} \n \n CONTACT INFO \n Name: {data['firstName']} {data['lastName']}  \n Email: {data['email']}  \n "  # noqa: E501
+        },
+    )
 
     print(f"Message sent: {x.text}")
-    return jsonify({'message': 'Data received successfully', 'received_data': data})
+    return jsonify(
+        {"message": "Data received successfully", "received_data": data}
+    )  # noqa: E501
 
 
 if __name__ == "__main__":
