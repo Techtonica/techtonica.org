@@ -36,9 +36,7 @@ def render_home_page():
     """
     Renders the home page from jinja2 template
     """
-    sponsor_app_open_date = config.get("applications", "sponsor_open_date")
-    sponsor_app_extend = config.get("applications", "sponsor_extend")
-    times = get_time(sponsor_app_open_date, sponsor_app_extend)
+    times = get_time()
     try:
         events = get_events()
         return render_template("home.html", events=events, times=times)
@@ -187,9 +185,7 @@ def render_ft_program_page():
     Generates time-bound text and application extension variable
     Renders the full-time program page from jinja2 template with relevant times
     """
-    ft_app_open_date = config.get("applications", "ft_open_date")
-    ft_app_extend = config.get("applications", "ft_extend")
-    times = get_time(ft_app_open_date, ft_app_extend)
+    times = get_time()
     return render_template("full-time-program.html", times=times)
 
 
@@ -242,8 +238,9 @@ def get_events():
 
 
 # returns string & extension variable to display time bound page components
-def get_time(app_open_date_string, is_extended_string):
-    is_extended = is_extended_string.lower() == "true"
+def get_time():
+    app_open_date_string = os.environ["APP_OPEN_DATE"]
+    is_extended = os.environ["APP_EXTENDED"].lower() == "true"
     app_open_date = datetime.datetime.strptime(
         app_open_date_string, "%m/%d/%y %H:%M:%S"
     )
