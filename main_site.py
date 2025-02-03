@@ -234,7 +234,7 @@ def render_admin_applications_page():
     return render_template("applications.html")
 
 
-@app.route("admin/applications/view")
+@app.route("/admin/applications/view")
 def render_admin_application_view():
     """
     Renders the admin view of an individual application from jinja2 template
