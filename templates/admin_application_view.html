@@ -4,46 +4,77 @@ endblock title %} {% block content %}
   <button>Log Out</button>
   <h2>Admin Dashboard</h2>
 </nav>
-<div>
-  <table class="recent-applicants">
-    <caption>
-      Applicant Information
-    </caption>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
-      <th>Reference #1</th>
-      <th>Reference #2</th>
-    </tr>
-  </table>
-  <table class="recent-applicants">
-    <caption>
-      Application Eligibility
-    </caption>
-    <tr>
-      <th>WPM</th>
-      <th>Freecodecamp</th>
-      <th># of References</th>
-      <th>Income Eligible</th>
-      <th>Gender</th>
-      <th>Computer Literate</th>
-      <th>Stable Housing</th>
-      <th>No Recent Bootcamp</th>
-    </tr>
-  </table>
-  <table class="recent-applicants">
-    <caption>
-      Application Status
-    </caption>
-    <tr>
-      <th>Screening/th></th>
-      <th>Workshop</th>
-      <th>Pair Programming</th>
-      <th>Take Home Code Challenge</th>
-      <th>Staff Interview</th>
-      <th>Board Interview</th>
-    </tr>
-  </table>
+<div class="admin-container">
+  <div class="admin-box recent-applicants-container">
+    <table class="recent-applicants">
+      <caption>
+        <h3>Applicant Information</h3>
+      </caption>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Reference #1</th>
+        <th>Reference #2</th>
+      </tr>
+      <tr>
+        <td>Suzanne</td>
+        <td>Collins</td>
+        <td>suzanne@example.com</td>
+        <td>Reference Name, (123) 456 - 789</td>
+        <td>Reference Name, (123) 456 - 789</td>
+      </tr>
+    </table>
+  </div>
+  <div class="admin-box recent-applicants-container">
+    <table class="recent-applicants">
+      <caption>
+        <h3>Application Eligibility</h3>
+      </caption>
+      <tr>
+        <th>WPM</th>
+        <th>Freecodecamp</th>
+        <th># of References</th>
+        <th>Income Eligible</th>
+        <th>Gender</th>
+        <th>Computer Literate</th>
+        <th>Stable Housing</th>
+        <th>No Recent Bootcamp</th>
+      </tr>
+      <tr>
+        <td>45</td>
+        <td>True</td>
+        <td>1</td>
+        <td>False</td>
+        <td>Woman</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+      </tr>
+    </table>
+  </div>
+  <div class="admin-box recent-applicants-container">
+    <table class="recent-applicants">
+      <caption>
+        <h3>Application Status</h3>
+      </caption>
+      <tr>
+        <th>Screening</th>
+        <th>Workshop</th>
+        <th>Pair Programming</th>
+        <th>Take Home Code Challenge</th>
+        <th>Staff Interview</th>
+        <th>Board Interview</th>
+      </tr>
+      <tr>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+        <td>True</td>
+      </tr>
+    </table>
+  </div>
 </div>
 {%endblock%}
