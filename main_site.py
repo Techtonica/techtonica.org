@@ -234,6 +234,14 @@ def render_admin_applications_page():
     return render_template("applications.html")
 
 
+@app.route("admin/applications/view")
+def render_admin_application_view():
+    """
+    Renders the admin view of an individual application from jinja2 template
+    """
+    return render_template("admin_application_view.html")
+
+
 def get_events():
     try:
         group_id = eventbrite.get_user()["id"]
