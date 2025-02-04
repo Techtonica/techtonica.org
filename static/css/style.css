@@ -384,7 +384,7 @@ button {
   width: 4.5rem;
 }
 
-icon-text {
+.icon-text {
   font-size: 0.7rem; /* Smaller text size */
   text-align: center;
   line-height: 1.2;
