@@ -215,18 +215,25 @@ rebuild the Docker image in order for those changes to take effect._
 
 ### CSS / SCSS
 
-Styling changes should be made to the Sass (.scss) files and then compiled to
+The Techtonica website uses Sass to manage it's CSS.
+
+Styling changes should **only** be made to the Sass (.scss) files and then compiled to
 CSS using one of the following commands:
 
 👷‍♀️ Install Sass using one of the following
 
 Mac: `brew install sass/sass/sass`
+
 Windows: `choco install sass`
+
+To compile your Sass files to CSS and to keep track of changes in real-time.
 
 ```sh
 sass static/sass/style.scss static/css/style.css
 sass --watch static/sass/style.scss static/css/style.css
 ```
+
+By running the --watch command, any modifications made to the CSS files are instantly reflected, saving you time and ensuring your styles are always up-to-date.
 
 ### Alt-Text Guidelines
 
@@ -311,6 +318,7 @@ At the moment, we do not have styling in place that will enable us to have a cod
 ### Updating Testimonials
 
 To update and add testimonial images, follow these steps:
+
 1. Upload your testimonial image to Canva, crop it as needed, and download it as a `.png`.
 2. The image name should follow this format: `Platform-FirstName-Topic-Year-min.png` (e.g., `Linkedin-Daamiah-Techtonica-2025-min.png`).
 3. Use [ImageOptim](https://imageoptim.com/mac) to compress the image for better web performance.
