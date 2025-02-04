@@ -10,7 +10,7 @@ repos:
       - id: check-case-conflict
       - id: detect-private-key
       - id: mixed-line-ending
-        exclude_types: ['xml']
+        exclude_types: ["xml"]
   - repo: https://github.com/pre-commit/mirrors-isort
     rev: v5.7.0
     hooks:
@@ -23,11 +23,11 @@ repos:
     rev: 3.8.4
     hooks:
       - id: flake8
-        additional_dependencies: ['flake8-bugbear']
+        additional_dependencies: ["flake8-bugbear"]
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v2.2.1
     hooks:
       - id: prettier
 default_language_version:
   python: python3.8.10
-minimum_pre_commit_version: '1.21'
+minimum_pre_commit_version: "1.21"

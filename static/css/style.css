@@ -158,6 +158,7 @@ button {
 
 .dropdown-toggle::after {
   content: " ▾";
+  padding-left: 10px;
 }
 
 .dropdown-menu {
@@ -269,8 +270,7 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/2022-H1-Launch-Celebration.png) #0093b5 no-repeat top
-    fixed;
+  background: url(../img/2024-H2-Launch-Celebration-min.png) #0093b5 no-repeat top fixed;
   background-size: cover;
 }
 
