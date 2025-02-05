@@ -5,7 +5,6 @@ Techtonica Application {% endblock title %} {% block content %}
   <div class="column">
     <form action="#" method="POST" class="application-form" id="app-form">
       <div class="wrapper">
-        <h3>Application Form</h3>
         <div class="info-wrapper" id="info-wrapper">
           <fieldset>
             <legend>General Applicant Demographics</legend>
@@ -382,13 +381,13 @@ Techtonica Application {% endblock title %} {% block content %}
 <style>
   /* .application-form is .payment-form in job-form.html */
   .application-form {
-    width: 100%;
-    max-width: 150 rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 3rem;
+    width: 100%;
+    max-width: 150 rem;
   }
-
   /* #app-form is #fast-checkout in job-form.html */
   #app-form {
     color: black;
@@ -451,15 +450,16 @@ Techtonica Application {% endblock title %} {% block content %}
 
   #info-wrapper {
     background-color: #ffffff;
-    border-radius: 3rem;
+    border: 1px solid #000;
     padding: 2rem;
   }
 
   #info-wrapper > fieldset {
     box-sizing: border-box;
     border-radius: 6px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.547);
     background-color: rgb(255, 255, 255);
+    padding: 2rem;
   }
 
   legend,
@@ -570,6 +570,14 @@ Techtonica Application {% endblock title %} {% block content %}
   #custom-pronouns,
   #custom-race-ethnicity {
     display: none;
+  }
+
+  #app-form button {
+    background-color: #fc7625;
+    font-size: large;
+    width: auto;
+    text-shadow: none;
+    padding: 0.3rem;
   }
 </style>
 <script>

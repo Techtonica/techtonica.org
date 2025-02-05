@@ -384,7 +384,7 @@ Techtonica Application {% endblock title %} {% block content %}
       <button
         type="button"
         class="continue-to-app-btn"
-        onclick="window.location.href='/app-additional'"
+        onclick="window.location.href='/app-household'"
       >
         Previous
       </button>
@@ -405,4 +405,41 @@ Techtonica Application {% endblock title %} {% block content %}
     </div>
   </fieldset>
 </form>
+
+<style>
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    width: 75%;
+    max-width: 150rem;
+    padding: 2rem;
+  }
+  fieldset {
+    padding: 2rem;
+  }
+
+  #radio-wrapper label {
+    color: black;
+    margin-bottom: 2em;
+  }
+  #radio-wrapper input {
+    background-color: #16c1f3;
+  }
+
+  button {
+    background-color: #fc7625;
+    color: white;
+    font-size: large;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+  }
+
+  .form-button {
+    display: flex;
+    gap: 3rem;
+  }
+</style>
+
 {% endblock content %}

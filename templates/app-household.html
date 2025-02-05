@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
 Techtonica Application {% endblock title %} {% block content %}
-<form>
+<form class="household-net-worth">
   <fieldset>
     <legend>Applicant & Household Financial Information</legend>
     <div id="radio-wrapper">
@@ -200,5 +200,45 @@ Techtonica Application {% endblock title %} {% block content %}
     </div>
   </fieldset>
 </form>
+
+<style>
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    width: 75%;
+    max-width: 150rem;
+    padding: 2rem;
+  }
+  fieldset {
+    padding: 2rem;
+  }
+  fieldset > input[type="number"],
+  fieldset > input[type="url"],
+  fieldset > input[type="text"] {
+    border: 1px solid rgba(0, 0, 0, 0.348);
+    border-radius: 6px;
+  }
+
+  fieldset > input {
+    padding: 1em;
+    margin-bottom: 2em;
+    width: 35%;
+  }
+
+  button {
+    background-color: #fc7625;
+    color: white;
+    font-size: large;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+  }
+
+  .form-button {
+    display: flex;
+    gap: 3rem;
+  }
+</style>
 
 {% endblock content %}
