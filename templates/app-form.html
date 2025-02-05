@@ -1,0 +1,2409 @@
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
+Techtonica Application {% endblock title %} {% block content %}
+<div id="application-page" class="blue-background">
+  <h1>Techtonica Application</h1>
+  <div class="column">
+    <form action="#" method="POST" class="application-form" id="app-form">
+      <div class="wrapper">
+        <h3>Application Form</h3>
+        <div class="info-wrapper" id="info-wrapper">
+          <fieldset>
+            <legend>General Applicant Demographics</legend>
+            <label for="first-name">Full legal given or 'first' name: </label
+            ><br />
+            <input
+              type="text"
+              id="first-name"
+              name="first-name"
+              required
+            /><br />
+            <label for="preferred-name"
+              >Preferred given or "first" name (if not the same as your legal
+              "first" or given name): <span>(Optional)</span></label
+            ><br />
+            <input
+              type="text"
+              id="preferred-name"
+              name="preferred-name"
+            /><br />
+            <label for="last-name"
+              >Full legal last/family name or surname: </label
+            ><br />
+            <input type="text" id="last-name" name="last-name" required /><br />
+            <label for="name-pronunciation"
+              >How to pronounce your full name: <span>(Optional)</span></label
+            >
+            <span
+              class="info-icon"
+              data-tooltip="You can make a recording on name-coach.com, generate your link and share in the text field if preferred."
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                width="16"
+                height="16"
+              >
+                <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                />
+              </svg> </span
+            ><br />
+            <input
+              type="text"
+              id="name-pronunciation"
+              name="name-pronunciation"
+            /><br />
+            <label for="email">Email: </label>
+            <span
+              class="info-icon"
+              data-tooltip="Please use the same business-minded Gmail with your name (like janedoe@gmail.com, jdoe@gmail.com) that you used in the shorter form. This is the email we will contact you with for the duration of the application process and program."
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                width="16"
+                height="16"
+              >
+                <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                />
+              </svg> </span
+            ><br />
+            <input type="email" id="email" name="email" required /><br />
+            <label for="gender-identity"
+              >With which gender identity do you most align? </label
+            ><br />
+            <select name="gender-identity" id="gender-identity" required>
+              <br />
+              <option value="none" selected disabled hidden>
+                Select an Option
+              </option>
+              <option
+                value="Agender, genderblank, genderfree, genderless, gendervoid, non-gendered, or null gender"
+              >
+                Agender, genderblank, genderfree, genderless, gendervoid,
+                non-gendered, or null gender
+              </option>
+              <option value="Genderfluid">Genderfluid</option>
+              <option
+                value="Cis Man (your gender identity matches the male sex you were assigned at birth)"
+              >
+                Cis Man (your gender identity matches the male sex you were
+                assigned at birth)
+              </option>
+              <option
+                value="Non-binary/Genderqueer (you don't identify as a man or woman), Femme"
+              >
+                Non-binary/Genderqueer (you don't identify as a man or woman),
+                Femme
+              </option>
+              <option
+                value="Non-binary/Genderqueer (you don't identify as a man or woman), Not Femme"
+              >
+                Non-binary/Genderqueer (you don't identify as a man or woman),
+                Not Femme
+              </option>
+              <option
+                value="Trans Man (your gender identity doesn't match the female sex you were assigned at birth)"
+              >
+                Trans Man (your gender identity doesn't match the female sex you
+                were assigned at birth)
+              </option>
+              <option
+                value="Trans Woman (your gender identity doesn't match the male sex you were assigned at birth)"
+              >
+                Trans Woman (your gender identity doesn't match the male sex you
+                were assigned at birth)
+              </option>
+              <option
+                value="Cis Woman (your gender identity matches the female sex you were assigned at birth)"
+              >
+                Cis Woman (your gender identity matches the female sex you were
+                assigned at birth)
+              </option>
+              <option value="Other">Other</option>
+            </select>
+            <input
+              type="text"
+              id="custom-gender"
+              name="custom-gender"
+              placeholder="Please enter your gender identity"
+              disabled
+            /><br />
+            <label for="pronouns">What are your pronouns? </label><br />
+            <select name="pronouns" id="pronouns" required>
+              <br />
+              <option value="none" selected disabled hidden>
+                Select an Option
+              </option>
+              <option value="He/Him">He/Him</option>
+              <option value="She/Her">She/Her</option>
+              <option value="They/Them">They/Them</option>
+              <option value="Ze/Zir">Ze/Zir</option>
+              <option value="Other">Other</option>
+            </select>
+            <input
+              type="text"
+              id="custom-pronouns"
+              name="custom-pronouns"
+              placeholder="Please enter your preferred pronouns"
+              disabled
+            /><br />
+            <label for="birth-date">What is your birth date? </label><br />
+            <input
+              type="date"
+              id="birth-date"
+              name="birth-date"
+              required
+            /><br />
+            <label for="age-group">Select your age group </label><br />
+            <select name="age-group" id="age-group" required>
+              <br />
+              <option value="none" selected disabled hidden>
+                Select an Option
+              </option>
+              <option value="18-24">18-24</option>
+              <option value="25-34">25-34</option>
+              <option value="35-44">35-44</option>
+              <option value="45-54">45-54</option>
+              <option value="55-64">55-64</option>
+              <option value="65+">65+</option></select
+            ><br />
+            <label for="phone-number">Cell phone number with area code </label
+            ><br />
+            <input
+              type="tel"
+              name="phone-number"
+              id="phone-number"
+              pattern="^\+?1?[-.\s]?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$"
+              placeholder="ex. 415-555-1234 or 1-415-555-1234"
+              title="Please enter a valid phone number in the format: 415-555-1234 or 1-415-555-1234."
+              minlength="10"
+            /><br />
+            <div id="radio-wrapper">
+              <label for="veteran-status">Are you a U.S. veteran? </label><br />
+              <input
+                type="radio"
+                id="veteran-status-yes"
+                name="veteran-status"
+                value="Yes"
+                required
+              />
+              <label for="veteran-status-yes">Yes</label>
+              <input
+                type="radio"
+                id="veteran-status-no"
+                name="veteran-status"
+                value="No"
+                required
+              />
+              <label for="veteran-status-no">No</label><br />
+            </div>
+            <div id="radio-wrapper">
+              <label for="disabled-status">Do you have a disability? </label>
+              <span
+                class="info-icon"
+                data-tooltip="You are considered to have a disability if you have a physical or mental impairment or medical condition that substantially limits a major life activity, or if you have a history or record of such an impairment or medical condition. Disabilities include, but are not limited to: Blindness, Deafness, Cancer, Diabetes, Epilepsy, Autism, Cerebral Palsy, HIV/AIDS, Schizophrenia, Muscular Dystrophy, Bipolar Disorder, Major Depression, Multiple Sclerosis (MS), missing limbs or partially missing limbs, Post-Traumatic Stress Disorder (PTSD), Obsessive Compulsive Disorder, impairments requiring the use of a wheelchair, intellectual disability."
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  width="16"
+                  height="16"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                  />
+                </svg> </span
+              ><br />
+              <input
+                type="radio"
+                id="disabled-status-yes"
+                name="disabled-status"
+                value="Yes"
+                required
+              />
+              <label for="disabled-status-yes">Yes</label>
+              <input
+                type="radio"
+                id="disabled-status-no"
+                name="disabled-status"
+                value="No"
+                required
+              />
+              <label for="disabled-status-no">No</label><br />
+            </div>
+            <div id="radio-wrapper">
+              <label for="parental-status"
+                >Are you a parent or legal guardian of a minor? </label
+              ><br />
+              <input
+                type="radio"
+                id="parental-status-yes"
+                name="parental-status"
+                value="Yes"
+                required
+              />
+              <label for="parental-status-yes">Yes</label>
+              <input
+                type="radio"
+                id="parental-status-no"
+                name="parental-status"
+                value="No"
+                required
+              />
+              <label for="parental-status-no">No</label><br />
+            </div>
+            <label for="race-ethnicity"
+              >With which racial/ethnic groups do you most identify? </label
+            ><br />
+            <select name="race-ethnicity" id="race-ethnicity" required>
+              <br />
+              <option value="none" selected disabled hidden>
+                Select an Option
+              </option>
+              <option value="African-American/Black/African">
+                African-American/Black/African
+              </option>
+              <option
+                value="Central Asian (including Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan)"
+              >
+                Central Asian (including Kazakhstan, Kyrgyzstan, Tajikistan,
+                Turkmenistan, Uzbekistan)
+              </option>
+              <option
+                value="East Asian (including Chinese, Japanese, Korean, Mongolian, Tibetan, and Taiwanese)"
+              >
+                East Asian (including Chinese, Japanese, Korean, Mongolian,
+                Tibetan, and Taiwanese)
+              </option>
+              <option value="Hispanic/Latinx">Hispanic/Latinx</option>
+              <option value="Middle Eastern">Middle Eastern</option>
+              <option
+                value="Native American/Alaskan Native/First Nations/Indigenous"
+              >
+                Native American/Alaskan Native/First Nations/Indigenous
+              </option>
+              <option value="Pacific Islander">Pacific Islander</option>
+              <option
+                value="South Asian (including Bangladeshi, Bhutanese, Indian, Nepali, Pakistani, Afghanistan, and Sri Lankan)"
+              >
+                South Asian (including Bangladeshi, Bhutanese, Indian, Nepali,
+                Pakistani, Afghanistan, and Sri Lankan)
+              </option>
+              <option
+                value="Southeast Asian (including Burmese, Cambodian, Filipino, Hmong, Indonesian, Malaysian, Mien, Singaporean, Thai, and Vietnamese)"
+              >
+                Southeast Asian (including Burmese, Cambodian, Filipino, Hmong,
+                Indonesian, Malaysian, Mien, Singaporean, Thai, and Vietnamese)
+              </option>
+              <option value="White">White</option>
+              <option value="Other">Other</option>
+            </select>
+            <input
+              type="text"
+              id="custom-race-ethnicity"
+              name="custom-race-ethnicity"
+              placeholder="Please enter your racial/ethnic group"
+              disabled
+            /><br />
+            <label for="address"
+              >What is the full mailing address of where you live? (Don't forget
+              unit number, if applicable, and city, state, and zip code.)</label
+            ><br />
+            <input
+              type="text"
+              name="address"
+              id="address"
+              required
+              pattern="^\d+\s[A-z]+\s[A-z]+(?:\s[A-z]+)*,\s[A-z]+\s[A-z]+,\s[A-Z]{2}\s\d{5}(?:-\d{4})?$"
+              title="Please enter a valid U.S. mailing address."
+            /><br />
+            <div id="radio-wrapper">
+              <label for="US-employment-status"
+                >Can you currently legally be employed in the U.S.? </label
+              ><br />
+              <input
+                type="radio"
+                id="US-employment-status-yes"
+                name="US-employment-status"
+                value="Yes"
+                required
+              />
+              <label for="US-employment-status-yes">Yes</label>
+              <input
+                type="radio"
+                id="US-employment-status-no"
+                name="US-employment-status"
+                value="No"
+                required
+              />
+              <label for="US-employment-status-no">No</label><br />
+            </div>
+            <div id="radio-wrapper">
+              <label for="high-school-graduate-ged"
+                >Have you graduated from high school/received your GED? </label
+              ><br />
+              <input
+                type="radio"
+                id="high-school-graduate-ged-yes"
+                name="high-school-graduate-ged"
+                value="Yes"
+                required
+              />
+              <label for="high-school-graduate-ged-yes">Yes</label>
+              <input
+                type="radio"
+                id="high-school-graduate-ged-no"
+                name="high-school-graduate-ged"
+                value="No"
+                required
+              />
+              <label for="high-school-graduate-ged-no">No</label><br />
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Applicant & Household Financial Information</legend>
+            <div id="radio-wrapper">
+              <label for="US-bank-account"
+                >Do you have a U.S. bank account, or will you by the time the
+                program starts? </label
+              ><br />
+              <input
+                type="radio"
+                id="US-bank-account-yes"
+                name="US-bank-account"
+                value="Yes"
+                required
+              />
+              <label for="US-bank-account-yes">Yes</label>
+              <input
+                type="radio"
+                id="US-bank-account-no"
+                name="US-bank-account"
+                value="No"
+                required
+              />
+              <label for="US-bank-account-no">No</label><br />
+            </div>
+            <label for="annual-income"
+              >What is your annual household income?
+            </label>
+            <span
+              class="info-icon"
+              data-tooltip="In this format: 40000. If you have any special circumstances that make you question your eligibility for Techtonica’s program, please feel free to contact us (info@techtonica.org) and we will be happy to discuss with you."
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                width="16"
+                height="16"
+              >
+                <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                />
+              </svg> </span
+            ><br />
+            <input
+              type="number"
+              id="annual-income"
+              name="annual-income"
+              min="0"
+              oninput="greaterThanZero(this)"
+              required
+            /><br />
+            <label for="income-verification-docs"
+              >Please upload household income verification documents. (Last tax
+              return, 3 months of W-2 or unemployment pay stubs, or proof of
+              government financial assistance, etc. Feel free to block out
+              sensitive information like your social security number, and we
+              will delete these files after the application process.) </label
+            ><br />
+            <input
+              type="file"
+              id="income-verification-docs"
+              name="income-verification-docs"
+              multiple
+              required
+            /><br />
+            <label for="annual-living-wage"
+              >What is the annual household living wage amount specified for
+              your location and situation on the MIT Living Wage Calculator?
+              (See the "Required annual income before taxes" row of the second
+              "Typical Expenses" table on
+              <a href="https://livingwage.mit.edu/"
+                >https://livingwage.mit.edu/</a
+              >) </label
+            ><br />
+            <input
+              type="number"
+              id="annual-living-wage"
+              name="annual-living-wage"
+              min="25000"
+              oninput="greaterThan25000(this)"
+              required
+            /><br />
+            <label for="living-wage-url"
+              >Please share the URL to the results page for your county on the
+              MIT Living Wage Calculator website (for San Francisco, it looks
+              like this:
+              <a href="https://livingwage.mit.edu/counties/06075"
+                >https://livingwage.mit.edu/counties/06075</a
+              >) </label
+            ><br />
+            <input
+              type="url"
+              id="living-wage-url"
+              name="living-wage-url"
+              required
+            /><br />
+            <label for="household-net-worth"
+              >What is your household's complete net worth (total of your
+              financial assets), including equity but not debt?
+            </label>
+            <span
+              class="info-icon"
+              data-tooltip="In this format: 1500. This info helps us calculate overall stipend needs. 
+            Please give a summation and verification for your total wealth or financial assets as an individual (or shared household, if that applies, including cash, stocks, bonds, mutual funds, and bank deposits); excluding financial liabilities. If you believe you have none of these whatsoever, then report the value as such and submit documentation in the next question to that end (such as a termination letter, public benefits verification, etc).
+            If you need to provide an explanation for your answers, please do so in the 'Anything else you want to share with us?' question which is second-to-last in this form."
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                width="16"
+                height="16"
+              >
+                <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                />
+              </svg> </span
+            ><br />
+            <input
+              type="text"
+              id="household-net-worth"
+              name="household-net-worth"
+              required
+            /><br />
+            <label for="net-worth-docs"
+              >Please upload net worth verification documents. (Last 3
+              statements from savings and investment accounts, copies of a home
+              ownership document such as a deed, etc.)
+            </label>
+            <span
+              class="info-icon"
+              data-tooltip="This info helps us calculate overall stipend needs."
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                width="16"
+                height="16"
+              >
+                <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                />
+              </svg> </span
+            ><br />
+            <input
+              type="file"
+              id="net-worth-docs"
+              name="net-worth-docs"
+              multiple
+              required
+            /><br />
+            <label for="average-monthly-cost"
+              >What are your average monthly costs?
+            </label>
+            <span
+              class="info-icon"
+              data-tooltip="This includes things like: groceries, phone & internet, medical expenses, childcare, rent, insurance, utilities, loan payments, etc. Please only put a total whole number in this field (i.e. 1200, not 1200.09)."
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                width="16"
+                height="16"
+              >
+                <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                />
+              </svg> </span
+            ><br />
+            <input
+              type="number"
+              id="average-monthly-cost"
+              name="average-monthly-cost"
+              oninput="inputIsWholeNumber(this)"
+              required
+            /><br />
+          </fieldset>
+          <fieldset>
+            <legend>Additional Applicant Information</legend>
+            <div id="radio-wrapper">
+              <label for="times-applied"
+                >How many times have you applied? (3 is the max allowed)
+              </label>
+              <span
+                class="info-icon"
+                data-tooltip="If you have already applied three times in the past, you are not eligible to apply again and should stop filling out this form."
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  width="16"
+                  height="16"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                  />
+                </svg> </span
+              ><br />
+              <input
+                type="radio"
+                id="times-applied-0"
+                name="times-applied"
+                value="0"
+                required
+              />
+              <label for="times-applied-0"
+                >0 — This is my first time applying</label
+              ><br />
+              <input
+                type="radio"
+                id="times-applied-1"
+                name="times-applied"
+                value="1"
+                required
+              />
+              <label for="times-applied-1">1 — I've applied once before</label
+              ><br />
+              <input
+                type="radio"
+                id="times-applied-2"
+                name="times-applied"
+                value="2"
+                required
+              />
+              <label for="times-applied-2"
+                >2 — I've applied twice before and this will be my third and
+                last try</label
+              ><br />
+            </div>
+            <div id="radio-wrapper">
+              <label for="digitally-literate"
+                >Are you digitally literate, meaning you are very familiar and
+                good with computers and the internet, can type 40+ WPM, and you
+                know how to use a mouse/trackpad, browsers, and email? </label
+              ><br />
+              <input
+                type="radio"
+                id="digitally-literate-yes"
+                name="digitally-literate"
+                value="Yes"
+                required
+              />
+              <label for="digitally-literate-yes">Yes</label>
+              <input
+                type="radio"
+                id="digitally-literate-no"
+                name="digitally-literate"
+                value="No"
+                required
+              />
+              <label for="digitally-literate-no">No</label><br />
+            </div>
+            <label for="typing-test-screenshot"
+              >Please upload a screenshot of your results of a one-minute typing
+              test at
+              <a href="https://www.typingtest.com/"
+                >https://www.typingtest.com/</a
+              >
+              (you might want to sign up for an account and practice a couple of
+              times first). </label
+            ><br />
+            <input
+              type="file"
+              id="typing-test-screenshot"
+              name="typing-test-screenshot"
+              required
+            /><br />
+            <label for="wpm-score">How many WPM did you type? </label><br />
+            <input type="text" id="wpm-score" name="wpm-score" required /><br />
+            <label for="typing-accuracy-percentage"
+              >What was your typing accuracy percentage? </label
+            ><br />
+            <input
+              type="text"
+              name="typing-accuracy-percentage"
+              id="typing-accuracy-percentage"
+              required
+            /><br />
+            <label for="FCC-screenshot"
+              >Please upload a screenshot of your completed pre-req 113 Basic
+              JavaScript lessons at
+              <a href="https://www.freecodecamp.org/learn/"
+                >https://www.freecodecamp.org/learn</a
+              >. The screenshot should include ALL the lessons you have
+              completed in a single screenshot—you can use the Blipshot Chrome
+              extension to create an image of the whole window. </label
+            ><br />
+            <input
+              type="file"
+              id="FCC-screenshot"
+              name="FCC-screenshot"
+              required
+            /><br />
+            <div id="radio-wrapper">
+              <label for="able-to-participate"
+                >Are you willing to participate actively in the program Monday
+                to Friday during the full-time hours of the program (typically 8
+                a.m. to 5 p.m. Pacific Time)? </label
+              ><br />
+              <input
+                type="radio"
+                id="able-to-participate-yes"
+                name="able-to-participate"
+                value="Yes"
+                required
+              />
+              <label for="able-to-participate-yes">Yes</label>
+              <input
+                type="radio"
+                id="able-to-participate-no"
+                name="able-to-participate"
+                value="No"
+                required
+              />
+              <label for="able-to-participate-no">No</label><br />
+            </div>
+            <div id="radio-wrapper">
+              <label for="stable-housing"
+                >Do you have housing that will be stable for the six months of
+                training and the following six months? </label
+              ><br />
+              <input
+                type="radio"
+                id="stable-housing-yes"
+                name="stable-housing"
+                value="Yes"
+                required
+              />
+              <label for="stable-housing-yes">Yes</label>
+              <input
+                type="radio"
+                id="stable-housing-no"
+                name="stable-housing"
+                value="No"
+                required
+              />
+              <label for="stable-housing-no">No</label><br />
+            </div>
+            <div id="radio-wrapper">
+              <label for="currently-employed"
+                >Are you currently employed? </label
+              ><br />
+              <input
+                type="radio"
+                id="currently-employed-yes-full-time-or-more"
+                name="currently-employed"
+                value="Yes, full-time or more than full-time"
+                required
+              />
+              <label for="currently-employed-yes-full-time-or-more"
+                >Yes, full-time or more than full-time</label
+              ><br />
+              <input
+                type="radio"
+                id="currently-employed-yes-part-time"
+                name="currently-employed"
+                value="Yes, part-time"
+                required
+              />
+              <label for="currently-employed-yes-part-time"
+                >Yes, part-time</label
+              ><br />
+              <input
+                type="radio"
+                id="currently-employed-no"
+                name="currently-employed"
+                value="No"
+                required
+              />
+              <label for="currently-employed-no">No</label><br />
+            </div>
+            <div id="radio-wrapper">
+              <label for="willing-to-live-in-US"
+                >Are you willing to live in the U.S. if required by the
+                placement company? </label
+              ><br />
+              <input
+                type="radio"
+                id="willing-to-live-in-US-yes"
+                name="willing-to-live-in-US"
+                value="Yes"
+                required
+              />
+              <label for="willing-to-live-in-US-yes">Yes</label>
+              <input
+                type="radio"
+                id="willing-to-live-in-US-no"
+                name="willing-to-live-in-US"
+                value="No"
+                required
+              />
+              <label for="willing-to-live-in-US-no">No</label><br />
+            </div>
+            <div id="radio-wrapper">
+              <label for="willing-to-quit-job"
+                >Are you willing to quit your job(s) to focus on your career
+                transition into tech?
+              </label>
+              <span
+                class="info-icon"
+                data-tooltip="We advise AGAINST working part-time during this intensive program."
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  width="16"
+                  height="16"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                  />
+                </svg> </span
+              ><br />
+              <input
+                type="radio"
+                id="willing-to-quit-job-yes"
+                name="willing-to-quit-job"
+                value="Yes"
+                required
+              />
+              <label for="willing-to-quit-job-yes">Yes</label>
+              <input
+                type="radio"
+                id="willing-to-quit-job-no"
+                name="willing-to-quit-job"
+                value="No"
+                required
+              />
+              <label for="willing-to-quit-job-no">No</label><br />
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Applicant Long-Text Answers</legend>
+
+            <label for="did-not-complete-other-program"
+              >If you have signed up for another coding course or program and
+              not completed it, why not? </label
+            ><br />
+            <textarea
+              name="did-not-complete-other-program"
+              id="did-not-complete-other-program"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <div id="radio-wrapper">
+              <label for="coding-experience"
+                >Have you attended a full-time coding bootcamp, completed a C.S.
+                degree (bachelor's or above), or worked as a software engineer
+                in the last six years? </label
+              ><br />
+              <input
+                type="radio"
+                name="coding-experience"
+                id="coding-experience-yes"
+                value="Yes"
+                required
+              />
+              <label for="coding-experience-yes">Yes</label>
+              <input
+                type="radio"
+                name="coding-experience"
+                id="coding-experience-no"
+                value="No"
+                required
+              />
+              <label for="coding-experience-no">No</label><br />
+            </div>
+
+            <label for="post-high-school-education"
+              >Please tell us about any post-high school educational
+              experiences. </label
+            ><br />
+            <textarea
+              name="post-high-school-education"
+              id="post-high-school-education"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="graduated-college"
+              >Did you graduate from college, and if so, which one and with what
+              degree? </label
+            ><br />
+            <textarea
+              name="graduated-college"
+              id="graduated-college"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="programming-story"
+              >What’s your programming story? How did you become interested in
+              learning how to code? What self-studying or formal education have
+              you had related to programming? How have you been preparing for a
+              career as a software engineer? Please carefully craft at least one
+              thoughtful paragraph. </label
+            ><br />
+            <textarea
+              name="programming-story"
+              id="programming-story"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="previous-applicant"
+              >If you've applied for Techtonica before, please share what has
+              changed and what additional experience you've gained since you
+              applied. <span>(Optional)</span> </label
+            ><br />
+            <textarea
+              name="previous-applicant"
+              id="previous-applicant"
+              cols="100"
+              rows="3"
+            ></textarea
+            ><br />
+
+            <label for="HTML-CSS-JS-experience"
+              >What experience with HTML, CSS, and/or JavaScript have you had? </label
+            ><br />
+            <textarea
+              name="HTML-CSS-JS-experience"
+              id="HTML-CSS-JS-experience"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="other-languages-experience"
+              >If you've had experience with other programming languages, please
+              describe it here. <span>(Optional)</span> </label
+            ><br />
+            <textarea
+              name="other-languages-experience"
+              id="other-languages-experience"
+              cols="100"
+              rows="3"
+            ></textarea
+            ><br />
+
+            <p>
+              Please mark how much you agree with each statement when thinking
+              about you personally.
+            </p>
+            <br />
+            <div id="radio-wrapper">
+              <label for="comfortable-presenting"
+                >I am comfortable presenting a project or short talk to a group. </label
+              ><br />
+              <input
+                type="radio"
+                name="comfortable-presenting"
+                id="comfortable-presenting-1-disagree"
+                value="1-disagree"
+                required
+              />
+              <label for="comfortable-presenting-1-disagree"
+                >1 - Disagree</label
+              >
+              <input
+                type="radio"
+                name="comfortable-presenting"
+                id="comfortable-presenting-2-somewhat-disagree"
+                value="2-somewhat-disagree"
+                required
+              />
+              <label for="comfortable-presenting-2-somewhat-disagree"
+                >2 - Somewhat Disagree</label
+              >
+              <input
+                type="radio"
+                name="comfortable-presenting"
+                id="comfortable-presenting-3-somewhat agree"
+                value="3-somewhat-agree"
+                required
+              />
+              <label for="comfortable-presenting-3-somewhat-agree"
+                >3 - Somewhat Agree</label
+              >
+              <input
+                type="radio"
+                name="comfortable-presenting"
+                id="comfortable-presenting-4-agree"
+                value="4-agree"
+                required
+              />
+              <label for="comfortable-presenting-4-agree">4 - Agree</label
+              ><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="comfortable-collaborating"
+                >I am comfortable collaborating with others on a team. </label
+              ><br />
+              <input
+                type="radio"
+                name="comfortable-collaborating"
+                id="comfortable-collaborating-1-disagree"
+                value="1-disagree"
+                required
+              />
+              <label for="comfortable-collaborating-1-disagree"
+                >1 - Disagree</label
+              >
+              <input
+                type="radio"
+                name="comfortable-collaborating"
+                id="comfortable-collaborating-2-somewhat-disagree"
+                value="2-somewhat-disagree"
+                required
+              />
+              <label for="comfortable-collaborating-2-somewhat-disagree"
+                >2 - Somewhat Disagree</label
+              >
+              <input
+                type="radio"
+                name="comfortable-collaborating"
+                id="comfortable-collaborating-3-somewhat-agree"
+                value="3-somewhat-agree"
+                required
+              />
+              <label for="comfortable-collaborating-3-somewhat-agree"
+                >3 - Somewhat Agree</label
+              >
+              <input
+                type="radio"
+                name="comfortable-collaborating"
+                id="comfortable-collaborating-4-agree"
+                value="4-agree"
+                required
+              />
+              <label for="comfortable-collaborating-4-agree">4 - Agree</label
+              ><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="comfortable-asking-help"
+                >I am comfortable asking others for help when I'm stuck. </label
+              ><br />
+              <input
+                type="radio"
+                name="comfortable-asking-help"
+                id="comfortable-asking-help-1-disagree"
+                value="1-disagree"
+                required
+              />
+              <label for="comfortable-asking-help-1-disagree"
+                >1 - Disagree</label
+              >
+              <input
+                type="radio"
+                name="comfortable-asking-help"
+                id="comfortable-asking-help-2-somewhat-disagree"
+                value="2-somewhat-disagree"
+                required
+              />
+              <label for="comfortable-asking-help-2-somewhat-disagree"
+                >2 - Somewhat Disagree</label
+              >
+              <input
+                type="radio"
+                name="comfortable-asking-help"
+                id="comfortable-asking-help-3-somewhat-agree"
+                value="3-somewhat-agree"
+                required
+              />
+              <label for="comfortable-asking-help-3-somewhat-agree"
+                >3 - Somewhat Agree</label
+              >
+              <input
+                type="radio"
+                name="comfortable-asking-help"
+                id="comfortable-asking-help-4-agree"
+                value="4-agree"
+                required
+              />
+              <label for="comfortable-asking-help-4-agree">4 - Agree</label
+              ><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="does-not-hide-struggles"
+                >I do not hide that I'm struggling from friends, colleagues, or
+                managers. </label
+              ><br />
+              <input
+                type="radio"
+                name="does-not-hide-struggles"
+                id="does-not-hide-struggles-1-disagree"
+                value="1-disagree"
+                required
+              />
+              <label for="does-not-hide-struggles-1-disagree"
+                >1 - Disagree</label
+              >
+              <input
+                type="radio"
+                name="does-not-hide-struggles"
+                id="does-not-hide-struggles-2-somewhat-disagre"
+                value="2-somewhat-disagree"
+                required
+              />
+              <label for="does-not-hide-struggles-2-somewhat-disagree"
+                >2 - Somewhat Disagree</label
+              >
+              <input
+                type="radio"
+                name="does-not-hide-struggles"
+                id="does-not-hide-struggles-3-somewhat-agree"
+                value="3-somewhat-agree"
+                required
+              />
+              <label for="does-not-hide-struggles-3-somewhat-agree"
+                >3 - Somewhat Agree</label
+              >
+              <input
+                type="radio"
+                name="does-not-hide-struggles"
+                id="does-not-hide-struggles-4-agree"
+                value="4-agree"
+                required
+              />
+              <label for="does-not-hide-struggles-4-agree">4 - Agree</label
+              ><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="care-about-dei"
+                >I care greatly about diversity, equity, and inclusion. </label
+              ><br />
+              <input
+                type="radio"
+                name="care-about-dei"
+                id="care-about-dei-1-disagree"
+                value="1-disagree"
+                required
+              />
+              <label for="care-about-dei-1-disagree">1 - Disagree</label>
+              <input
+                type="radio"
+                name="care-about-dei"
+                id="care-about-dei-2-somewhat-disagree"
+                value="2-somewhat-disagree"
+                required
+              />
+              <label for="care-about-dei-2-somewhat-disagree"
+                >2 - Somewhat Disagree</label
+              >
+              <input
+                type="radio"
+                name="care-about-dei"
+                id="care-about-dei-3-somewhat-agree"
+                value="3-somewhat-agree"
+                required
+              />
+              <label for="care-about-dei-3-somewhat-agree"
+                >3 - Somewhat Agree</label
+              >
+              <input
+                type="radio"
+                name="care-about-dei"
+                id="care-about-dei-4-agree"
+                value="4-agree"
+                required
+              />
+              <label for="care-about-dei-4-agree">4 - Agree</label><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="learn-quickly"
+                >I learn brand-new concepts quickly. </label
+              ><br />
+              <input
+                type="radio"
+                name="learn-quickly"
+                id="learn-quickly-1-disagree"
+                value="1-disagree"
+                required
+              />
+              <label for="learn-quickly-1-disagree">1 - Disagree</label>
+              <input
+                type="radio"
+                name="learn-quickly"
+                id="learn-quickly-2-somewhat-disagree"
+                value="2-somewhat-disagree"
+                required
+              />
+              <label for="learn-quickly-2-somewhat-disagree"
+                >2 - Somewhat Disagree</label
+              >
+              <input
+                type="radio"
+                name="learn-quickly"
+                id="learn-quickly-3-somewhat-agree"
+                value="3-somewhat-agree"
+                required
+              />
+              <label for="learn-quickly-3-somewhat-agree"
+                >3 - Somewhat Agree</label
+              >
+              <input
+                type="radio"
+                name="learn-quickly"
+                id="learn-quickly-4-agree"
+                value="4-agree"
+                required
+              />
+              <label for="learn-quickly-4-agree">4 - Agree</label><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="help-others"
+                >When working with others, I'm the person who likes to help
+                everyone get up to speed.</label
+              ><br />
+              <input
+                type="radio"
+                name="help-others"
+                id="help-others-1-disagree"
+                value="1-disagree"
+                required
+              />
+              <label for="help-others-1-disagree">1 - Disagree</label>
+              <input
+                type="radio"
+                name="help-others"
+                id="help-others-2-somewhat-disagree"
+                value="2-somewhat-disagree"
+                required
+              />
+              <label for="help-others-2-somewhat-disagree"
+                >2 - Somewhat Disagree</label
+              >
+              <input
+                type="radio"
+                name="help-others"
+                id="help-others-3-somewhat-agrees"
+                value="3-somewhat-agree"
+                required
+              />
+              <label for="help-others-3-somewhat-agree"
+                >3 - Somewhat Agree</label
+              >
+              <input
+                type="radio"
+                name="help-others"
+                id="help-others-4-agree"
+                value="4-agree"
+                required
+              />
+              <label for="help-others-4-agree">4 - Agree</label><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="interested-in-mentoring"
+                >I would be interested in mentoring future participants after I
+                graduate from Techtonica. </label
+              ><br />
+              <input
+                type="radio"
+                name="interested-in-mentoring"
+                id="interested-in-mentoring-1-disagree"
+                value="1-disagree"
+                required
+              />
+              <label for="interested-in-mentoring-1-disagree"
+                >1 - Disagree</label
+              >
+              <input
+                type="radio"
+                name="interested-in-mentoring"
+                id="interested-in-mentoring-2-somewhat-disagree"
+                value="2-somewhat-disagree"
+                required
+              />
+              <label for="interested-in-mentoring-2-somewhat-disagree"
+                >2 - Somewhat Disagree</label
+              >
+              <input
+                type="radio"
+                name="interested-in-mentoring"
+                id="interested-in-mentoring-3-somewhat-agree"
+                value="3-somewhat-agree"
+                required
+              />
+              <label for="interested-in-mentoring-3-somewhat-agree"
+                >3 - Somewhat Agree</label
+              >
+              <input
+                type="radio"
+                name="interested-in-mentoring"
+                id="interested-in-mentoring-4-agree"
+                value="4-agree"
+                required
+              />
+              <label for="interested-in-mentoring-4-agree">4 - Agree</label
+              ><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="involved-post-graduation"
+                >I would be actively involved with Techtonica's graduates group
+                after completion of the program. </label
+              ><br />
+              <input
+                type="radio"
+                name="involved-post-graduation"
+                id="involved-post-graduation-1-disagree"
+                value="1-disagree"
+                required
+              />
+              <label for="involved-post-graduation-1-disagree"
+                >1 - Disagree</label
+              >
+              <input
+                type="radio"
+                name="involved-post-graduation"
+                id="involved-post-graduation-2-somewhat-disagree"
+                value="2-somewhat-disagree"
+                required
+              />
+              <label for="involved-post-graduation-2-somewhat-disagree"
+                >2 - Somewhat Disagree</label
+              >
+              <input
+                type="radio"
+                name="involved-post-graduation"
+                id="involved-post-graduation-3-somewhat-agree"
+                value="3-somewhat-agree"
+                required
+              />
+              <label for="involved-post-graduation-3-somewhat-agree"
+                >3 - Somewhat Agree</label
+              >
+              <input
+                type="radio"
+                name="involved-post-graduation"
+                id="involved-post-graduation-4-agree"
+                value="4-agree"
+                required
+              />
+              <label for="involved-post-graduation-4-agree">4 - Agree</label
+              ><br />
+            </div>
+
+            <label for="diversity-inclusion"
+              >We value diversity, inclusion, equity, and belonging. What does
+              that mean for you? What and how have you learned about this topic
+              recently? Please carefully craft at least one thoughtful
+              paragraph. </label
+            ><br />
+            <textarea
+              name="diversity-inclusion"
+              id="diversity-inclusion"
+              cols="10"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="recent-activities"
+              >What have you been up to over the last few years? Please
+              carefully craft at least one thoughtful paragraph. </label
+            ><br />
+            <textarea
+              name="recent-activities"
+              id="recent-activities"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="tech-industry-interest"
+              >Why is it that you want to work in the tech industry? Please
+              carefully craft at least one thoughtful paragraph. </label
+            ><br />
+            <textarea
+              name="tech-industry-interest"
+              id="tech-industry-interest"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="tech-barriers"
+              >What has prevented you from making it into tech before now? </label
+            ><br />
+            <textarea
+              name="tech-barriers"
+              id="tech-barriers"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="career-transition"
+              >Why are you ready for this career transition now? </label
+            ><br />
+            <textarea
+              name="career-transition"
+              id="career-transition"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="five-year-plan"
+              >What’s your five year professional plan? How will being in
+              Techtonica's full-time program help you achieve these goals?
+              Please carefully craft at least one thoughtful paragraph.</label
+            ><br />
+            <textarea
+              name="five-year-plan"
+              id="five-year-plan"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="software-engineer-qualities"
+              >What about you would make you a good software engineer? Please
+              carefully craft at least one thoughtful paragraph.</label
+            ><br />
+            <textarea
+              name="software-engineer-qualities"
+              id="software-engineer-qualities"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="unique-experiences"
+              >What unique points of view, experiences, and background will you
+              bring to Techtonica's sponsor companies? Please carefully craft at
+              least one thoughtful paragraph. </label
+            ><br />
+            <textarea
+              name="unique-experiences"
+              id="unique-experiences"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="five-tech-companies"
+              >List five tech companies you'd be interested in working for after
+              Techtonica and why. </label
+            ><br />
+            <textarea
+              name="five-tech-companies"
+              id="five-tech-companies"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="self-taught"
+              >Tell us about something difficult you've learned on your own that
+              is not related to computers or coding. Why did you want to learn
+              that thing? What did you do to learn it? What level are you at
+              now? Please carefully craft at least one thoughtful paragraph. </label
+            ><br />
+            <textarea
+              name="self-taught"
+              id="self-taught"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="pair-partner-situation"
+              >Would you do in the following situation? You have been assigned a
+              project by your supervisor and have also been assigned a pair
+              partner. The two of you are supposed to collaborate on the project
+              and submit your work together. Your pair partner keeps working
+              ahead on their own at lunch and in the evenings, doesn't take your
+              suggestions, and makes you feel inferior. </label
+            ><br />
+            <textarea
+              name="pair-partner-situation"
+              id="pair-partner-situation"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="robot-sandwich"
+              >List all the steps one-by-one that you would use to tell a robot
+              how to make a sandwich (if all the ingredients are ready and
+              available).
+            </label>
+            <span
+              class="info-icon"
+              data-tooltip="This is to help us assess your logical thinking; please be specific and thorough."
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                width="16"
+                height="16"
+              >
+                <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                />
+              </svg> </span
+            ><br />
+            <textarea
+              name="robot-sandwich"
+              id="robot-sandwich"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="readiness"
+              >Is there any reason you might not be ready for Techtonica, and if
+              so, what is it? Why shouldn't we accept you to Techtonica right
+              now?</label
+            ><br />
+            <textarea
+              name="readiness"
+              id="readiness"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="commitment-barriers"
+              >Do you have any barriers to committing to Techtonica and actively
+              participating in the program (child pickup, care for a loved one,
+              funding, length of commute, domestic or drug abuse issues not
+              taken care of, being unable to attend every day, being unable to
+              use a computer for long periods of time, etc.) or is there any
+              reason you wouldn't commit to Techtonica? If yes, what are the
+              barriers? </label
+            ><br />
+            <textarea
+              name="commitment-barriers"
+              id="commitment-barriers"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="how-did-you-find-out"
+              >How did you find out about Techtonica?</label
+            >
+            <span
+              class="info-icon"
+              data-tooltip="The more specific you can be, the better—was it a flyer, and if so, where? Did a friend tell you, and if so, how did they find out? Was it a Facebook group, and if so, which one? Etc."
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                width="16"
+                height="16"
+              >
+                <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                />
+              </svg> </span
+            ><br />
+            <textarea
+              name="how-did-you-find-out"
+              id="how-did-you-find-out"
+              cols="100"
+              rows="3"
+              required
+            ></textarea
+            ><br />
+
+            <label for="applicant-linkedin-url"
+              >Full LinkedIn URL (make sure you have a recognizable picture of
+              your face on your profile!) </label
+            ><br />
+            <input
+              type="url"
+              name="applicant-linkedin-url"
+              id="applicant-linkedin-url"
+              required
+            /><br />
+
+            <label for="applicant-other-social-medias"
+              >Other full URLs to you online (blog, Twitter, GitHub, Instagram,
+              etc.) <span>(Optional)</span>
+            </label>
+            <span
+              class="info-icon"
+              data-tooltip="For example, 'https://twitter.com/TechtonicaOrg'"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                width="16"
+                height="16"
+              >
+                <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                />
+              </svg> </span
+            ><br />
+            <input
+              type="url"
+              name="applicant-other-social-medias"
+              id="applicant-other-social-medias"
+            /><br />
+
+            <p>
+              Reference #1 - Please share the full name, email address, and
+              relationship (former manager, former coworker, etc.) of someone
+              who has worked closely with you and can speak to your capabilities
+              in a work setting.
+              <span
+                class="info-icon"
+                data-tooltip="This may not be a relative, significant other, or friend. It must be someone who can speak to your work quality in an unbiased manner."
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  width="16"
+                  height="16"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                  />
+                </svg>
+              </span>
+            </p>
+            <br />
+            <label for="reference-1-fname">First Name: </label><br />
+            <input
+              type="text"
+              name="reference-1-fname"
+              id="reference-1-fname"
+              required
+            /><br />
+            <label for="reference-1-lname">Last Name: </label><br />
+            <input
+              type="text"
+              name="reference-1-lname"
+              id="reference-1-lname"
+              required
+            /><br />
+            <label for="reference-1-email">Email: </label><br />
+            <input
+              type="email"
+              name="reference-1-email"
+              id="reference-1-email"
+              required
+            /><br />
+            <label for="reference-1-relationship">Relationship: </label><br />
+            <input
+              type="text"
+              name="reference-1-relationship"
+              id="reference-1-relationship"
+              required
+            /><br />
+
+            <p>
+              Reference #2 - Please share the full name, email address, and
+              relationship (former manager, former coworker, etc.) of someone
+              who has worked closely with you and can speak to your capabilities
+              in a work setting.
+              <span
+                class="info-icon"
+                data-tooltip="This may not be a relative, significant other, or friend. It must be someone who can speak to your work quality in an unbiased manner."
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  width="16"
+                  height="16"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                  />
+                </svg>
+              </span>
+            </p>
+            <br />
+            <label for="reference-2-fname">First Name: </label><br />
+            <input
+              type="text"
+              name="reference-2-fname"
+              id="reference-2-fname"
+              required
+            /><br />
+            <label for="reference-2-lname">Last Name: </label><br />
+            <input
+              type="text"
+              name="reference-2-lname"
+              id="reference-2-lname"
+              required
+            /><br />
+            <label for="reference-2-email">Email: </label><br />
+            <input
+              type="email"
+              name="reference-2-email"
+              id="reference-2-email"
+              required
+            /><br />
+            <label for="reference-2-relationship">Relationship: </label><br />
+            <input
+              type="text"
+              name="reference-2-relationship"
+              id="reference-2-relationship"
+              required
+            /><br />
+
+            <p>
+              Please share your emergency contact's name and contact info (phone
+              and email).
+            </p>
+            <br />
+            <label for="emergency-contact-fname">First Name: </label><br />
+            <input
+              type="text"
+              name="emergency-contact-fname"
+              id="emergency-contact-fname"
+              required
+            /><br />
+            <label for="emergency-contact-lname">Last Name: </label><br />
+            <input
+              type="text"
+              name="emergency-contact-lname"
+              id="emergency-contact-lname"
+              required
+            /><br />
+            <label for="emergency-contact-email">Email: </label><br />
+            <input
+              type="email"
+              name="emergency-contact-email"
+              id="emergency-contact-email"
+              required
+            /><br />
+            <label for="emergency-contact-relationship">Relationship: </label
+            ><br />
+            <input
+              type="text"
+              name="emergency-contact-relationship"
+              id="emergency-contact-relationship"
+              required
+            /><br />
+
+            <label for="anything-else-to-share"
+              >Anything else you want to share with us?
+              <span>(Optional)</span> </label
+            ><br />
+            <textarea
+              name="anything-else-to-share"
+              id="anything-else-to-share"
+              cols="100"
+              rows="3"
+            ></textarea>
+          </fieldset>
+
+          <fieldset>
+            <legend>Administrative Questions</legend>
+
+            <div id="radio-wrapper">
+              <label for="has-macbook"
+                >Do you have a <strong>MacBook</strong> (not another laptop) to
+                use during the program that works well so it won't be a problem
+                during our intensive program?
+              </label>
+              <span
+                class="info-icon"
+                data-tooltip="This is to let us know if we will need to help you secure a MacBook during the program."
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  width="16"
+                  height="16"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                  />
+                </svg> </span
+              ><br />
+              <input
+                type="radio"
+                id="has-macbook-yes"
+                name="has-macbook"
+                value="Yes"
+                required
+              />
+              <label for="has-macbook-yes">Yes</label>
+              <input
+                type="radio"
+                id="has-macbook-no"
+                name="has-macbook"
+                value="No"
+                required
+              />
+              <label for="has-macbook-no">No</label><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="media-release"
+                >Do you agree to the following media release? Photographs,
+                pictures, writing, assignments, recordings, likenesses, slides,
+                movies, video, or other media coverage of my activities created
+                or performed by me may be made in connection with my
+                participation in Techtonica’s programs without compensation from
+                Techtonica/Social Good Fund, activity-specific staff, its
+                auxiliary organizations and partners, and the officers,
+                directors, employees, and agents of each of them. I also consent
+                for the company to take, use, reuse, publish and republish any
+                and all media coverage depicting the same (including
+                compilations or other derivative works) both during and after
+                involvement with the organization for any legal purpose and
+                release Techtonica/Social Good Fund from all liability in
+                connection with such activities. </label
+              ><br />
+              <input
+                type="radio"
+                id="media-release-yes"
+                name="media-release"
+                value="Yes"
+                required
+              />
+              <label for="media-release-yes">Yes</label>
+              <input
+                type="radio"
+                id="media-release-no"
+                name="media-release"
+                value="No"
+                required
+              />
+              <label for="media-release-no">No</label><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="sharing-personal-journey"
+                >Do you agree to share your personal story/journey into tech as
+                requested at Techtonica events and in Techtonica media? </label
+              ><br />
+              <input
+                type="radio"
+                id="sharing-personal-journey-yes"
+                name="sharing-personal-journey"
+                value="Yes"
+                required
+              />
+              <label for="sharing-personal-journey-yes">Yes</label>
+              <input
+                type="radio"
+                id="sharing-personal-journey-no"
+                name="sharing-personal-journey"
+                value="No"
+                required
+              />
+              <label for="sharing-personal-journey-no">No</label><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="commit-to-conduct"
+                >Do you commit to abiding by Techtonica's Code of Conduct
+                <a href="https://techtonica.org/conduct/"
+                  >(https://techtonica.org/conduct/)</a
+                >, Program Handbook, and Participant Agreement? </label
+              ><br />
+              <input
+                type="radio"
+                id="commit-to-conduct-yes"
+                name="commit-to-conduct"
+                value="Yes"
+                required
+              />
+              <label for="commit-to-conduct-yes">Yes</label>
+              <input
+                type="radio"
+                id="commit-to-conduct-no"
+                name="commit-to-conduct"
+                value="No"
+                required
+              />
+              <label for="commit-to-conduct-no">No</label><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="commit-to-work-with-others"
+                >Do you commit to working with the people assigned to work with
+                you, whether volunteer, staff, fellow participants, or someone
+                else? </label
+              ><br />
+              <input
+                type="radio"
+                id="commit-to-work-with-others-yes"
+                name="commit-to-work-with-others"
+                value="Yes"
+                required
+              />
+              <label for="commit-to-work-with-others-yes">Yes</label>
+              <input
+                type="radio"
+                id="commit-to-work-with-others-no"
+                name="commit-to-work-with-others"
+                value="No"
+                required
+              />
+              <label for="commit-to-work-with-others-no">No</label><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="commit-to-program-schedule"
+                >Do you commit to always being present at, on time to, and
+                prepared for the program, which is conducted from 8 AM - 5 PM
+                Pacific Time Monday through Friday, as well as other
+                Techtonica-required events that may happen outside these hours? </label
+              ><br />
+              <input
+                type="radio"
+                id="commit-to-program-schedule-yes"
+                name="commit-to-program-schedule"
+                value="Yes"
+                required
+              />
+              <label for="commit-to-program-schedule-yes">Yes</label>
+              <input
+                type="radio"
+                id="commit-to-program-schedule-no"
+                name="commit-to-program-schedule"
+                value="No"
+                required
+              />
+              <label for="commit-to-program-schedule-no">No</label><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="commit-to-placement"
+                >Do you commit to working with whichever company we might place
+                you with? </label
+              ><br />
+              <input
+                type="radio"
+                id="commit-to-placement-yes"
+                name="commit-to-placement"
+                value="Yes"
+                required
+              />
+              <label for="commit-to-placement-yes">Yes</label>
+              <input
+                type="radio"
+                id="commit-to-placement-no"
+                name="commit-to-placement"
+                value="No"
+                required
+              />
+              <label for="commit-to-placement-no">No</label><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="willing-to-relocate"
+                >Would you be willing to move to a new city to be placed in a
+                job?
+              </label>
+              <span
+                class="info-icon"
+                data-tooltip="While this is not currently a requirement, it may be a requirement again in the near future, and it increases your chances of securing a job."
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  width="16"
+                  height="16"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                  />
+                </svg> </span
+              ><br />
+              <input
+                type="radio"
+                id="willing-to-relocate-yes"
+                name="willing-to-relocate"
+                value="Yes"
+                required
+              />
+              <label for="willing-to-relocate-yes">Yes</label>
+              <input
+                type="radio"
+                id="willing-to-relocate-no"
+                name="willing-to-relocate"
+                value="No"
+                required
+              />
+              <label for="willing-to-relocate-no">No</label><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="aware-no-guaranteed-placement"
+                >Are you fully aware that placements are not guaranteed by
+                Techtonica and you may need to start a job search after
+                graduation? </label
+              ><br />
+              <input
+                type="radio"
+                id="aware-no-guaranteed-placement-yes"
+                name="aware-no-guaranteed-placement"
+                value="Yes"
+                required
+              />
+              <label for="aware-no-guaranteed-placement-yes"
+                >Yes, I'm aware</label
+              >
+              <input
+                type="radio"
+                id="aware-no-guaranteed-placement-no"
+                name="aware-no-guaranteed-placement"
+                value="No"
+                required
+              />
+              <label for="aware-no-guaranteed-placement-no">No</label><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="aware-of-tuition-cost"
+                >Are you aware that Techtonica’s tuition costs $18,000 and that
+                tuition and stipend scholarships are available? </label
+              ><br />
+              <input
+                type="radio"
+                name="aware-of-tuition-cost"
+                id="aware-of-tuition-cost-yes"
+                value="Yes"
+                required
+              />
+              <label for="aware-of-tuition-cost-yes">Yes</label>
+              <input
+                type="radio"
+                id="aware-of-tuition-cost-no"
+                name="aware-of-tuition-cost"
+                value="No"
+                required
+              />
+              <label for="aware-of-tuition-cost-no">No</label><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="interested-in-scholarships"
+                >Did you want to apply for tuition and stipend scholarships? </label
+              ><br />
+              <input
+                type="radio"
+                name="interested-in-scholarships"
+                id="interested-in-scholarships-yes"
+                value="Yes"
+                required
+              />
+              <label for="interested-in-scholarships-yes">Yes</label>
+              <input
+                type="radio"
+                id="interested-in-scholarships-no"
+                name="interested-in-scholarships"
+                value="No"
+                required
+              />
+              <label for="interested-in-scholarships-no">No</label><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="promote-techtonica"
+                >Could you please spread the word about Techtonica to friends,
+                family, and people in your area? </label
+              ><br />
+              <input
+                type="radio"
+                name="promote-techtonica"
+                id="promote-techtonica-yes"
+                value="Yes"
+                required
+              />
+              <label for="promote-techtonica-yes">Yes</label>
+              <input
+                type="radio"
+                id="promote-techtonica-no"
+                name="promote-techtonica"
+                value="No"
+                required
+              />
+              <label for="promote-techtonica-no">No</label><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="commit-to-two-JS-study-groups"
+                >For the next step in the application process, you'll need to
+                join TWO of our digital literacy testing and JavaScript events
+                on different days (if we decide to move forward with your
+                application, we'll send you details based on availability and
+                times selected). Please confirm you will make it to two of the
+                provided dates or forfeit your application. </label
+              ><br />
+              <input
+                type="checkbox"
+                name="commit-to-two-JS-study-groups"
+                id="commit-to-two-JS-study-groups-yes"
+                value="Yes"
+                required
+              />
+              <label for="commit-to-two-JS-study-groups-yes"
+                >Yes, I confirm</label
+              ><br />
+            </div>
+
+            <div id="radio-wrapper">
+              <label for="completed-form-truthfully"
+                >Do you confirm you've filled out this form truthfully? </label
+              ><br />
+              <input
+                type="checkbox"
+                name="completed-form-truthfully"
+                id="completed-form-truthfully-yes"
+                value="Yes"
+                required
+              />
+              <label for="commit-to-two-JS-study-groups-yes"
+                >Yes, I confirm</label
+              >
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit" class="btn-submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+<style>
+  /* .application-form is .payment-form in job-form.html */
+  .application-form {
+    padding: 40px 0px 40px 0px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+  }
+
+  .application-form {
+    align-items: center;
+  }
+  /* #app-form is #fast-checkout in job-form.html */
+  #app-form {
+    background: #fafafa;
+    color: black;
+  }
+
+  #app-form h3 {
+    color: #0093b5;
+  }
+
+  #app-form input {
+    border-radius: 6px;
+    position: relative;
+  }
+
+  #app-form .wrapper {
+    position: relative;
+  }
+
+  #app-form button {
+    width: 100%;
+  }
+
+  #app-form button {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    color: white;
+    display: inline-block;
+    background-color: #fc7625;
+    text-align: center;
+    font-size: 1.5em;
+    text-shadow: 1px 1px 1px #666;
+  }
+
+  #app-form button:hover {
+    background-color: #16c1f3;
+    color: white;
+    transition: 0.3s;
+  }
+
+  #app-form .border {
+    color: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.1);
+    height: 1px;
+    width: 100%;
+    margin: 30px 0;
+    font-size: 12px;
+    line-height: 20px;
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  #app-form .border span {
+    position: absolute;
+    top: -10px;
+    background: #fafafa;
+    padding: 0 10px;
+    left: calc(50% - 1em - 5px);
+  }
+
+  #info-wrapper {
+    margin-bottom: 2em;
+  }
+
+  #info-wrapper > fieldset {
+    box-sizing: border-box;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  legend,
+  p {
+    color: rgba(0, 115, 149, 0.8);
+  }
+
+  .blue-background a {
+    text-shadow: none;
+    color: rgba(0, 115, 149, 0.8);
+  }
+
+  #info-wrapper > fieldset > label {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    color: rgba(0, 115, 149, 0.8);
+  }
+
+  #info-wrapper > fieldset > input[type="text"],
+  #info-wrapper > fieldset > input[type="email"],
+  #info-wrapper > fieldset > input[type="tel"],
+  #info-wrapper > fieldset > input[type="date"],
+  #info-wrapper > fieldset > input[type="number"],
+  #info-wrapper > fieldset > input[type="url"],
+  #info-wrapper > fieldset > textarea,
+  #info-wrapper > fieldset > select {
+    width: 90%;
+    max-width: 90%;
+    margin: auto auto 1em auto;
+    padding: 0.25em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+  }
+
+  #info-wrapper > fieldset > input[type="file"] {
+    width: 50%;
+    max-width: 90%;
+    margin: auto auto 1em auto;
+    padding: 0.25em;
+    border-radius: 6px;
+  }
+
+  #info-wrapper > fieldset > textarea {
+    min-height: 6em;
+  }
+
+  input[type="radio"] {
+    width: 50px;
+  }
+
+  select,
+  textarea {
+    width: 200px;
+    text-overflow: ellipsis;
+  }
+
+  #radio-wrapper {
+    width: 100%;
+    margin-bottom: 1em;
+    color: rgba(0, 115, 149, 0.8);
+  }
+
+  #application-page {
+    padding: 1em;
+  }
+
+  #application-page > h1,
+  #application-page > p {
+    max-width: 65%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .info-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 5px;
+  }
+
+  .info-icon::after {
+    content: attr(data-tooltip);
+    visibility: hidden;
+    width: 220px;
+    background-color: #666;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 125%;
+    margin-left: 10px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    /* white-space: pre-wrap; */
+  }
+
+  .info-icon:hover::after {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #custom-gender,
+  #custom-pronouns,
+  #custom-race-ethnicity {
+    display: none;
+  }
+</style>
+<script>
+  document
+    .getElementById("gender-identity")
+    .addEventListener("change", function () {
+      const customGenderInput = document.getElementById("custom-gender");
+
+      if (this.value === "Other") {
+        customGenderInput.style.display = "block";
+        customGenderInput.removeAttribute("disabled");
+        this.removeAttribute("name");
+        customGenderInput.setAttribute("name", "gender-identity");
+      } else {
+        customGenderInput.style.display = "none";
+        customGenderInput.setAttribute("disabled", "true");
+        customGenderInput.removeAttribute("name");
+        this.setAttribute("name", "gender-identity");
+      }
+    });
+
+  document.getElementById("pronouns").addEventListener("change", function () {
+    const customPronounsInput = document.getElementById("custom-pronouns");
+
+    if (this.value === "Other") {
+      customPronounsInput.style.display = "block";
+      customPronounsInput.removeAttribute("disabled");
+      this.removeAttribute("name");
+      customPronounsInput.setAttribute("name", "pronouns");
+    } else {
+      customPronounsInput.style.display = "none";
+      customPronounsInput.setAttribute("disabled", "true");
+      customPronounsInput.removeAttribute("name");
+      this.setAttribute("name", "pronouns");
+    }
+  });
+
+  document
+    .getElementById("race-ethnicity")
+    .addEventListener("change", function () {
+      const customRaceEthnicityInput = document.getElementById(
+        "custom-race-ethnicity"
+      );
+
+      if (this.value === "Other") {
+        customRaceEthnicityInput.style.display = "block";
+        customRaceEthnicityInput.removeAttribute("disabled");
+        this.removeAttribute("name");
+        customRaceEthnicityInput.setAttribute("name", "custom-race-ethnicity");
+      } else {
+        customRaceEthnicityInput.style.display = "none";
+        customRaceEthnicityInput.setAttribute("disabled", "true");
+        customRaceEthnicityInput.removeAttribute("name");
+        this.setAttribute("name", "custom-race-ethnicity");
+      }
+    });
+
+  function greaterThanZero(input) {
+    if (input.value <= 0) {
+      input.setCustomValidity("Please enter a number greater than 0.");
+    } else {
+      input.setCustomValidity("");
+    }
+  }
+
+  function greaterThan25000(input) {
+    if (input.value <= 25000) {
+      input.setCustomValidity(
+        "Please enter a number greater than or equal to 25000."
+      );
+    } else {
+      input.setCustomValidity("");
+    }
+  }
+
+  function inputIsWholeNumber(input) {
+    if (!Number.isInteger(Number(input.value))) {
+      input.setCustomValidity("Please enter a whole number.");
+    } else {
+      input.setCustomValidity("");
+    }
+  }
+</script>
+{% endblock content %}

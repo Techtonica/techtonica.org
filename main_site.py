@@ -210,6 +210,14 @@ def render_testimonials_page():
     """
     return render_template("testimonials.html")
 
+@app.route('/app-form-details')
+def app_form_details():
+    return render_template('app-form-details.html')
+
+@app.route('/app-form')
+def app_form():
+    return render_template('app-form.html')
+
 def get_events():
     try:
         group_id = eventbrite.get_user()["id"]
