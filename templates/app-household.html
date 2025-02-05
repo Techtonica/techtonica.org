@@ -1,0 +1,204 @@
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
+Techtonica Application {% endblock title %} {% block content %}
+<form>
+  <fieldset>
+    <legend>Applicant & Household Financial Information</legend>
+    <div id="radio-wrapper">
+      <label for="US-bank-account"
+        >Do you have a U.S. bank account, or will you by the time the program
+        starts? </label
+      ><br />
+      <input
+        type="radio"
+        id="US-bank-account-yes"
+        name="US-bank-account"
+        value="Yes"
+        required
+      />
+      <label for="US-bank-account-yes">Yes</label>
+      <input
+        type="radio"
+        id="US-bank-account-no"
+        name="US-bank-account"
+        value="No"
+        required
+      />
+      <label for="US-bank-account-no">No</label><br />
+    </div>
+    <label for="annual-income">What is your annual household income? </label>
+    <span
+      class="info-icon"
+      data-tooltip="In this format: 40000. If you have any special circumstances that make you question your eligibility for Techtonica’s program, please feel free to contact us (info@techtonica.org) and we will be happy to discuss with you."
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+        width="16"
+        height="16"
+      >
+        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+        <path
+          d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+        />
+      </svg> </span
+    ><br />
+    <input
+      type="number"
+      id="annual-income"
+      name="annual-income"
+      min="0"
+      oninput="greaterThanZero(this)"
+      required
+    /><br />
+    <label for="income-verification-docs"
+      >Please upload household income verification documents. (Last tax return,
+      3 months of W-2 or unemployment pay stubs, or proof of government
+      financial assistance, etc. Feel free to block out sensitive information
+      like your social security number, and we will delete these files after the
+      application process.) </label
+    ><br />
+    <input
+      type="file"
+      id="income-verification-docs"
+      name="income-verification-docs"
+      multiple
+      required
+    /><br />
+    <label for="annual-living-wage"
+      >What is the annual household living wage amount specified for your
+      location and situation on the MIT Living Wage Calculator? (See the
+      "Required annual income before taxes" row of the second "Typical Expenses"
+      table on
+      <a href="https://livingwage.mit.edu/">https://livingwage.mit.edu/</a
+      >) </label
+    ><br />
+    <input
+      type="number"
+      id="annual-living-wage"
+      name="annual-living-wage"
+      min="25000"
+      oninput="greaterThan25000(this)"
+      required
+    /><br />
+    <label for="living-wage-url"
+      >Please share the URL to the results page for your county on the MIT
+      Living Wage Calculator website (for San Francisco, it looks like this:
+      <a href="https://livingwage.mit.edu/counties/06075"
+        >https://livingwage.mit.edu/counties/06075</a
+      >) </label
+    ><br />
+    <input
+      type="url"
+      id="living-wage-url"
+      name="living-wage-url"
+      required
+    /><br />
+    <label for="household-net-worth"
+      >What is your household's complete net worth (total of your financial
+      assets), including equity but not debt?
+    </label>
+    <span
+      class="info-icon"
+      data-tooltip="In this format: 1500. This info helps us calculate overall stipend needs.
+            Please give a summation and verification for your total wealth or financial assets as an individual (or shared household, if that applies, including cash, stocks, bonds, mutual funds, and bank deposits); excluding financial liabilities. If you believe you have none of these whatsoever, then report the value as such and submit documentation in the next question to that end (such as a termination letter, public benefits verification, etc).
+            If you need to provide an explanation for your answers, please do so in the 'Anything else you want to share with us?' question which is second-to-last in this form."
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+        width="16"
+        height="16"
+      >
+        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+        <path
+          d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+        />
+      </svg> </span
+    ><br />
+    <input
+      type="text"
+      id="household-net-worth"
+      name="household-net-worth"
+      required
+    /><br />
+    <label for="net-worth-docs"
+      >Please upload net worth verification documents. (Last 3 statements from
+      savings and investment accounts, copies of a home ownership document such
+      as a deed, etc.)
+    </label>
+    <span
+      class="info-icon"
+      data-tooltip="This info helps us calculate overall stipend needs."
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+        width="16"
+        height="16"
+      >
+        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+        <path
+          d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+        />
+      </svg> </span
+    ><br />
+    <input
+      type="file"
+      id="net-worth-docs"
+      name="net-worth-docs"
+      multiple
+      required
+    /><br />
+    <label for="average-monthly-cost"
+      >What are your average monthly costs?
+    </label>
+    <span
+      class="info-icon"
+      data-tooltip="This includes things like: groceries, phone & internet, medical expenses, childcare, rent, insurance, utilities, loan payments, etc. Please only put a total whole number in this field (i.e. 1200, not 1200.09)."
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+        width="16"
+        height="16"
+      >
+        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+        <path
+          d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+        />
+      </svg> </span
+    ><br />
+    <input
+      type="number"
+      id="average-monthly-cost"
+      name="average-monthly-cost"
+      oninput="inputIsWholeNumber(this)"
+      required
+    /><br />
+    <div class="form-button">
+      <button
+        type="button"
+        class="continue-to-app-btn"
+        onclick="window.location.href='/app-form'"
+      >
+        Previous
+      </button>
+      <button
+        type="button"
+        class="continue-to-app-btn"
+        onclick="window.location.href='/app-questionnaire'"
+      >
+        Next
+      </button>
+      <button
+        type="button"
+        class="continue-to-app-btn"
+        onclick="window.location.href='/'"
+      >
+        Save
+      </button>
+    </div>
+  </fieldset>
+</form>
+
+{% endblock content %}
