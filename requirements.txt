@@ -109,7 +109,7 @@ python-http-client==3.3.7
     # via sendgrid
 requests==2.32.3
     # via
-    #   -r requirements.in
+    #   via -r requirements.in
     #   apimatic-core
     #   apimatic-requests-client-adapter
     #   cachecontrol
@@ -153,7 +153,12 @@ zipp==3.20.2
     # via
     #   importlib-metadata
     #   importlib-resources
-
+Flask-SQLAlchemy==2.5.1
+    # via -r requirements.in
+Flask-Migrate==3.1.0
+    # via -r requirements.in
+# mysqlclient==2.1.0
+    # via -r requirements.in
 # The following packages are considered to be unsafe in a requirements file:
 # pip
 # setuptools
