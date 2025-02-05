@@ -754,6 +754,8 @@ FAQs {% endblock title %} {% block content %}
       const content = wrapper.querySelector(".faq-content");
       const toggleIcon = header.querySelector(".toggle-icon");
 
+      toggleIcon.style.cursor = "pointer";
+
       let isExpanded = false;
 
       toggleIcon.addEventListener("click", () => {
