@@ -756,19 +756,24 @@ FAQs {% endblock title %} {% block content %}
 
       toggleIcon.style.cursor = "pointer";
 
+      content.style.display = "none";
+      toggleIcon.querySelector(".toggle-icon-plus").style.display =
+        "inline-block";
+      toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
+
       let isExpanded = false;
 
       toggleIcon.addEventListener("click", () => {
         if (!isExpanded) {
+          content.style.display = "block";
+          toggleIcon.querySelector(".toggle-icon-plus").style.display = "none";
+          toggleIcon.querySelector(".toggle-icon-minus").style.display =
+            "inline-block";
+        } else {
           content.style.display = "none";
           toggleIcon.querySelector(".toggle-icon-plus").style.display =
             "inline-block";
           toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
-        } else {
-          content.style.display = "";
-          toggleIcon.querySelector(".toggle-icon-plus").style.display = "none";
-          toggleIcon.querySelector(".toggle-icon-minus").style.display =
-            "inline-block";
         }
 
         isExpanded = !isExpanded;
