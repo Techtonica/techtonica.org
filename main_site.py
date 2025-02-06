@@ -264,7 +264,8 @@ def get_time():
         app_close_date = app_open_date + datetime.timedelta(days=28)
         date_string = app_close_date.strftime("%B %-d")
         text = "Apply by {date} (12pm PT)!".format(date=date_string)
-        app_open = app_open_date <= today <= app_close_date
+
+    app_open = app_open_date <= today <= app_close_date
 
     return {
         "app_open": app_open,
