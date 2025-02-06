@@ -29,6 +29,13 @@ except BaseException:
 app = Flask(__name__)
 sslify = SSLify(app)
 
+# Gracefully handle running locally without app open date infortmation
+try:
+    app_open_date_string = os.environ["APP_OPEN_DATE"]
+    is_extended = os.environ["APP_EXTENDED"].lower() == "true"
+except BaseException:
+    print("Not able to retrieve application date information.")
+
 
 # MAIN HANDLERS
 @app.route("/")
@@ -239,8 +246,6 @@ def get_events():
 
 # returns string & extension variable to display time bound page components
 def get_time():
-    app_open_date_string = os.environ["APP_OPEN_DATE"]
-    is_extended = os.environ["APP_EXTENDED"].lower() == "true"
     app_open_date = datetime.datetime.strptime(
         app_open_date_string, "%m/%d/%y %H:%M:%S"
     )
@@ -253,7 +258,7 @@ def get_time():
         app_close_date = app_open_date + datetime.timedelta(days=28)
         date_string = app_close_date.strftime("%B %-d")
         text = "Apply by {date} (12pm PT)!".format(date=date_string)
-    app_open = app_open_date <= today <= app_close_date
+        app_open = app_open_date <= today <= app_close_date
 
     return {
         "app_open": app_open,
