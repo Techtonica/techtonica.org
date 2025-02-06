@@ -36,6 +36,14 @@ try:
 except BaseException:
     print("Not able to retrieve application date information.")
 
+# Gracefully handle running locally with app_open_date formatted incorrectly
+try:
+    app_open_date = datetime.datetime.strptime(
+        app_open_date_string, "%m/%d/%y %H:%M:%S"
+    )
+except BaseException:
+    print("Application open date is incorrectly formatted.")
+
 
 # MAIN HANDLERS
 @app.route("/")
@@ -246,9 +254,6 @@ def get_events():
 
 # returns string & extension variable to display time bound page components
 def get_time():
-    app_open_date = datetime.datetime.strptime(
-        app_open_date_string, "%m/%d/%y %H:%M:%S"
-    )
     today = datetime.datetime.today()
     if is_extended:
         app_close_date = app_open_date + datetime.timedelta(days=42)
