@@ -1,375 +1,465 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
 Techtonica Application {% endblock title %} {% block content %}
-<fieldset>
-  <legend>Administrative Questions</legend>
 
-  <div id="radio-wrapper">
-    <label for="has-macbook"
-      >Do you have a <strong>MacBook</strong> (not another laptop) to use during
-      the program that works well so it won't be a problem during our intensive
-      program?
-    </label>
-    <span
-      class="info-icon"
-      data-tooltip="This is to let us know if we will need to help you secure a MacBook during the program."
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 512 512"
-        width="16"
-        height="16"
+<form>
+  <fieldset>
+    <legend>Administrative Questions</legend>
+
+    <div id="radio-wrapper">
+      <label for="has-macbook"
+        >Do you have a <strong>MacBook</strong> (not another laptop) to use
+        during the program that works well so it won't be a problem during our
+        intensive program?
+      </label>
+      <span
+        class="info-icon"
+        data-tooltip="This is to let us know if we will need to help you secure a MacBook during the program."
       >
-        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-        <path
-          d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
-        />
-      </svg> </span
-    ><br />
-    <input
-      type="radio"
-      id="has-macbook-yes"
-      name="has-macbook"
-      value="Yes"
-      required
-    />
-    <label for="has-macbook-yes">Yes</label>
-    <input
-      type="radio"
-      id="has-macbook-no"
-      name="has-macbook"
-      value="No"
-      required
-    />
-    <label for="has-macbook-no">No</label><br />
-  </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          width="16"
+          height="16"
+        >
+          <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path
+            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+          />
+        </svg> </span
+      ><br />
+      <input
+        type="radio"
+        id="has-macbook-yes"
+        name="has-macbook"
+        value="Yes"
+        required
+      />
+      <label for="has-macbook-yes">Yes</label>
+      <input
+        type="radio"
+        id="has-macbook-no"
+        name="has-macbook"
+        value="No"
+        required
+      />
+      <label for="has-macbook-no">No</label><br />
+    </div>
 
-  <div id="radio-wrapper">
-    <label for="media-release"
-      >Do you agree to the following media release? Photographs, pictures,
-      writing, assignments, recordings, likenesses, slides, movies, video, or
-      other media coverage of my activities created or performed by me may be
-      made in connection with my participation in Techtonica’s programs without
-      compensation from Techtonica/Social Good Fund, activity-specific staff,
-      its auxiliary organizations and partners, and the officers, directors,
-      employees, and agents of each of them. I also consent for the company to
-      take, use, reuse, publish and republish any and all media coverage
-      depicting the same (including compilations or other derivative works) both
-      during and after involvement with the organization for any legal purpose
-      and release Techtonica/Social Good Fund from all liability in connection
-      with such activities. </label
-    ><br />
-    <input
-      type="radio"
-      id="media-release-yes"
-      name="media-release"
-      value="Yes"
-      required
-    />
-    <label for="media-release-yes">Yes</label>
-    <input
-      type="radio"
-      id="media-release-no"
-      name="media-release"
-      value="No"
-      required
-    />
-    <label for="media-release-no">No</label><br />
-  </div>
+    <div id="radio-wrapper">
+      <label for="media-release"
+        >Do you agree to the following media release? Photographs, pictures,
+        writing, assignments, recordings, likenesses, slides, movies, video, or
+        other media coverage of my activities created or performed by me may be
+        made in connection with my participation in Techtonica’s programs
+        without compensation from Techtonica/Social Good Fund, activity-specific
+        staff, its auxiliary organizations and partners, and the officers,
+        directors, employees, and agents of each of them. I also consent for the
+        company to take, use, reuse, publish and republish any and all media
+        coverage depicting the same (including compilations or other derivative
+        works) both during and after involvement with the organization for any
+        legal purpose and release Techtonica/Social Good Fund from all liability
+        in connection with such activities. </label
+      ><br />
+      <input
+        type="radio"
+        id="media-release-yes"
+        name="media-release"
+        value="Yes"
+        required
+      />
+      <label for="media-release-yes">Yes</label>
+      <input
+        type="radio"
+        id="media-release-no"
+        name="media-release"
+        value="No"
+        required
+      />
+      <label for="media-release-no">No</label><br />
+    </div>
 
-  <div id="radio-wrapper">
-    <label for="sharing-personal-journey"
-      >Do you agree to share your personal story/journey into tech as requested
-      at Techtonica events and in Techtonica media? </label
-    ><br />
-    <input
-      type="radio"
-      id="sharing-personal-journey-yes"
-      name="sharing-personal-journey"
-      value="Yes"
-      required
-    />
-    <label for="sharing-personal-journey-yes">Yes</label>
-    <input
-      type="radio"
-      id="sharing-personal-journey-no"
-      name="sharing-personal-journey"
-      value="No"
-      required
-    />
-    <label for="sharing-personal-journey-no">No</label><br />
-  </div>
+    <div id="radio-wrapper">
+      <label for="sharing-personal-journey"
+        >Do you agree to share your personal story/journey into tech as
+        requested at Techtonica events and in Techtonica media? </label
+      ><br />
+      <input
+        type="radio"
+        id="sharing-personal-journey-yes"
+        name="sharing-personal-journey"
+        value="Yes"
+        required
+      />
+      <label for="sharing-personal-journey-yes">Yes</label>
+      <input
+        type="radio"
+        id="sharing-personal-journey-no"
+        name="sharing-personal-journey"
+        value="No"
+        required
+      />
+      <label for="sharing-personal-journey-no">No</label><br />
+    </div>
 
-  <div id="radio-wrapper">
-    <label for="commit-to-conduct"
-      >Do you commit to abiding by Techtonica's Code of Conduct
-      <a href="https://techtonica.org/conduct/"
-        >(https://techtonica.org/conduct/)</a
-      >, Program Handbook, and Participant Agreement? </label
-    ><br />
-    <input
-      type="radio"
-      id="commit-to-conduct-yes"
-      name="commit-to-conduct"
-      value="Yes"
-      required
-    />
-    <label for="commit-to-conduct-yes">Yes</label>
-    <input
-      type="radio"
-      id="commit-to-conduct-no"
-      name="commit-to-conduct"
-      value="No"
-      required
-    />
-    <label for="commit-to-conduct-no">No</label><br />
-  </div>
+    <div id="radio-wrapper">
+      <label for="commit-to-conduct"
+        >Do you commit to abiding by Techtonica's Code of Conduct
+        <a href="https://techtonica.org/conduct/"
+          >(https://techtonica.org/conduct/)</a
+        >, Program Handbook, and Participant Agreement? </label
+      ><br />
+      <input
+        type="radio"
+        id="commit-to-conduct-yes"
+        name="commit-to-conduct"
+        value="Yes"
+        required
+      />
+      <label for="commit-to-conduct-yes">Yes</label>
+      <input
+        type="radio"
+        id="commit-to-conduct-no"
+        name="commit-to-conduct"
+        value="No"
+        required
+      />
+      <label for="commit-to-conduct-no">No</label><br />
+    </div>
 
-  <div id="radio-wrapper">
-    <label for="commit-to-work-with-others"
-      >Do you commit to working with the people assigned to work with you,
-      whether volunteer, staff, fellow participants, or someone else? </label
-    ><br />
-    <input
-      type="radio"
-      id="commit-to-work-with-others-yes"
-      name="commit-to-work-with-others"
-      value="Yes"
-      required
-    />
-    <label for="commit-to-work-with-others-yes">Yes</label>
-    <input
-      type="radio"
-      id="commit-to-work-with-others-no"
-      name="commit-to-work-with-others"
-      value="No"
-      required
-    />
-    <label for="commit-to-work-with-others-no">No</label><br />
-  </div>
+    <div id="radio-wrapper">
+      <label for="commit-to-work-with-others"
+        >Do you commit to working with the people assigned to work with you,
+        whether volunteer, staff, fellow participants, or someone else? </label
+      ><br />
+      <input
+        type="radio"
+        id="commit-to-work-with-others-yes"
+        name="commit-to-work-with-others"
+        value="Yes"
+        required
+      />
+      <label for="commit-to-work-with-others-yes">Yes</label>
+      <input
+        type="radio"
+        id="commit-to-work-with-others-no"
+        name="commit-to-work-with-others"
+        value="No"
+        required
+      />
+      <label for="commit-to-work-with-others-no">No</label><br />
+    </div>
 
-  <div id="radio-wrapper">
-    <label for="commit-to-program-schedule"
-      >Do you commit to always being present at, on time to, and prepared for
-      the program, which is conducted from 8 AM - 5 PM Pacific Time Monday
-      through Friday, as well as other Techtonica-required events that may
-      happen outside these hours? </label
-    ><br />
-    <input
-      type="radio"
-      id="commit-to-program-schedule-yes"
-      name="commit-to-program-schedule"
-      value="Yes"
-      required
-    />
-    <label for="commit-to-program-schedule-yes">Yes</label>
-    <input
-      type="radio"
-      id="commit-to-program-schedule-no"
-      name="commit-to-program-schedule"
-      value="No"
-      required
-    />
-    <label for="commit-to-program-schedule-no">No</label><br />
-  </div>
+    <div id="radio-wrapper">
+      <label for="commit-to-program-schedule"
+        >Do you commit to always being present at, on time to, and prepared for
+        the program, which is conducted from 8 AM - 5 PM Pacific Time Monday
+        through Friday, as well as other Techtonica-required events that may
+        happen outside these hours? </label
+      ><br />
+      <input
+        type="radio"
+        id="commit-to-program-schedule-yes"
+        name="commit-to-program-schedule"
+        value="Yes"
+        required
+      />
+      <label for="commit-to-program-schedule-yes">Yes</label>
+      <input
+        type="radio"
+        id="commit-to-program-schedule-no"
+        name="commit-to-program-schedule"
+        value="No"
+        required
+      />
+      <label for="commit-to-program-schedule-no">No</label><br />
+    </div>
 
-  <div id="radio-wrapper">
-    <label for="commit-to-placement"
-      >Do you commit to working with whichever company we might place you with? </label
-    ><br />
-    <input
-      type="radio"
-      id="commit-to-placement-yes"
-      name="commit-to-placement"
-      value="Yes"
-      required
-    />
-    <label for="commit-to-placement-yes">Yes</label>
-    <input
-      type="radio"
-      id="commit-to-placement-no"
-      name="commit-to-placement"
-      value="No"
-      required
-    />
-    <label for="commit-to-placement-no">No</label><br />
-  </div>
+    <div id="radio-wrapper">
+      <label for="commit-to-placement"
+        >Do you commit to working with whichever company we might place you
+        with? </label
+      ><br />
+      <input
+        type="radio"
+        id="commit-to-placement-yes"
+        name="commit-to-placement"
+        value="Yes"
+        required
+      />
+      <label for="commit-to-placement-yes">Yes</label>
+      <input
+        type="radio"
+        id="commit-to-placement-no"
+        name="commit-to-placement"
+        value="No"
+        required
+      />
+      <label for="commit-to-placement-no">No</label><br />
+    </div>
 
-  <div id="radio-wrapper">
-    <label for="willing-to-relocate"
-      >Would you be willing to move to a new city to be placed in a job?
-    </label>
-    <span
-      class="info-icon"
-      data-tooltip="While this is not currently a requirement, it may be a requirement again in the near future, and it increases your chances of securing a job."
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 512 512"
-        width="16"
-        height="16"
+    <div id="radio-wrapper">
+      <label for="willing-to-relocate"
+        >Would you be willing to move to a new city to be placed in a job?
+      </label>
+      <span
+        class="info-icon"
+        data-tooltip="While this is not currently a requirement, it may be a requirement again in the near future, and it increases your chances of securing a job."
       >
-        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-        <path
-          d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
-        />
-      </svg> </span
-    ><br />
-    <input
-      type="radio"
-      id="willing-to-relocate-yes"
-      name="willing-to-relocate"
-      value="Yes"
-      required
-    />
-    <label for="willing-to-relocate-yes">Yes</label>
-    <input
-      type="radio"
-      id="willing-to-relocate-no"
-      name="willing-to-relocate"
-      value="No"
-      required
-    />
-    <label for="willing-to-relocate-no">No</label><br />
-  </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          width="16"
+          height="16"
+        >
+          <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path
+            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+          />
+        </svg> </span
+      ><br />
+      <input
+        type="radio"
+        id="willing-to-relocate-yes"
+        name="willing-to-relocate"
+        value="Yes"
+        required
+      />
+      <label for="willing-to-relocate-yes">Yes</label>
+      <input
+        type="radio"
+        id="willing-to-relocate-no"
+        name="willing-to-relocate"
+        value="No"
+        required
+      />
+      <label for="willing-to-relocate-no">No</label><br />
+    </div>
 
-  <div id="radio-wrapper">
-    <label for="aware-no-guaranteed-placement"
-      >Are you fully aware that placements are not guaranteed by Techtonica and
-      you may need to start a job search after graduation? </label
-    ><br />
-    <input
-      type="radio"
-      id="aware-no-guaranteed-placement-yes"
-      name="aware-no-guaranteed-placement"
-      value="Yes"
-      required
-    />
-    <label for="aware-no-guaranteed-placement-yes">Yes, I'm aware</label>
-    <input
-      type="radio"
-      id="aware-no-guaranteed-placement-no"
-      name="aware-no-guaranteed-placement"
-      value="No"
-      required
-    />
-    <label for="aware-no-guaranteed-placement-no">No</label><br />
-  </div>
+    <div id="radio-wrapper">
+      <label for="aware-no-guaranteed-placement"
+        >Are you fully aware that placements are not guaranteed by Techtonica
+        and you may need to start a job search after graduation? </label
+      ><br />
+      <input
+        type="radio"
+        id="aware-no-guaranteed-placement-yes"
+        name="aware-no-guaranteed-placement"
+        value="Yes"
+        required
+      />
+      <label for="aware-no-guaranteed-placement-yes">Yes, I'm aware</label>
+      <input
+        type="radio"
+        id="aware-no-guaranteed-placement-no"
+        name="aware-no-guaranteed-placement"
+        value="No"
+        required
+      />
+      <label for="aware-no-guaranteed-placement-no">No</label><br />
+    </div>
 
-  <div id="radio-wrapper">
-    <label for="aware-of-tuition-cost"
-      >Are you aware that Techtonica’s tuition costs $18,000 and that tuition
-      and stipend scholarships are available? </label
-    ><br />
-    <input
-      type="radio"
-      name="aware-of-tuition-cost"
-      id="aware-of-tuition-cost-yes"
-      value="Yes"
-      required
-    />
-    <label for="aware-of-tuition-cost-yes">Yes</label>
-    <input
-      type="radio"
-      id="aware-of-tuition-cost-no"
-      name="aware-of-tuition-cost"
-      value="No"
-      required
-    />
-    <label for="aware-of-tuition-cost-no">No</label><br />
-  </div>
+    <div id="radio-wrapper">
+      <label for="aware-of-tuition-cost"
+        >Are you aware that Techtonica’s tuition costs $18,000 and that tuition
+        and stipend scholarships are available? </label
+      ><br />
+      <input
+        type="radio"
+        name="aware-of-tuition-cost"
+        id="aware-of-tuition-cost-yes"
+        value="Yes"
+        required
+      />
+      <label for="aware-of-tuition-cost-yes">Yes</label>
+      <input
+        type="radio"
+        id="aware-of-tuition-cost-no"
+        name="aware-of-tuition-cost"
+        value="No"
+        required
+      />
+      <label for="aware-of-tuition-cost-no">No</label><br />
+    </div>
 
-  <div id="radio-wrapper">
-    <label for="interested-in-scholarships"
-      >Did you want to apply for tuition and stipend scholarships? </label
-    ><br />
-    <input
-      type="radio"
-      name="interested-in-scholarships"
-      id="interested-in-scholarships-yes"
-      value="Yes"
-      required
-    />
-    <label for="interested-in-scholarships-yes">Yes</label>
-    <input
-      type="radio"
-      id="interested-in-scholarships-no"
-      name="interested-in-scholarships"
-      value="No"
-      required
-    />
-    <label for="interested-in-scholarships-no">No</label><br />
-  </div>
+    <div id="radio-wrapper">
+      <label for="interested-in-scholarships"
+        >Did you want to apply for tuition and stipend scholarships? </label
+      ><br />
+      <input
+        type="radio"
+        name="interested-in-scholarships"
+        id="interested-in-scholarships-yes"
+        value="Yes"
+        required
+      />
+      <label for="interested-in-scholarships-yes">Yes</label>
+      <input
+        type="radio"
+        id="interested-in-scholarships-no"
+        name="interested-in-scholarships"
+        value="No"
+        required
+      />
+      <label for="interested-in-scholarships-no">No</label><br />
+    </div>
 
-  <div id="radio-wrapper">
-    <label for="promote-techtonica"
-      >Could you please spread the word about Techtonica to friends, family, and
-      people in your area? </label
-    ><br />
-    <input
-      type="radio"
-      name="promote-techtonica"
-      id="promote-techtonica-yes"
-      value="Yes"
-      required
-    />
-    <label for="promote-techtonica-yes">Yes</label>
-    <input
-      type="radio"
-      id="promote-techtonica-no"
-      name="promote-techtonica"
-      value="No"
-      required
-    />
-    <label for="promote-techtonica-no">No</label><br />
-  </div>
+    <div id="radio-wrapper">
+      <label for="promote-techtonica"
+        >Could you please spread the word about Techtonica to friends, family,
+        and people in your area? </label
+      ><br />
+      <input
+        type="radio"
+        name="promote-techtonica"
+        id="promote-techtonica-yes"
+        value="Yes"
+        required
+      />
+      <label for="promote-techtonica-yes">Yes</label>
+      <input
+        type="radio"
+        id="promote-techtonica-no"
+        name="promote-techtonica"
+        value="No"
+        required
+      />
+      <label for="promote-techtonica-no">No</label><br />
+    </div>
 
-  <div id="radio-wrapper">
-    <label for="commit-to-two-JS-study-groups"
-      >For the next step in the application process, you'll need to join TWO of
-      our digital literacy testing and JavaScript events on different days (if
-      we decide to move forward with your application, we'll send you details
-      based on availability and times selected). Please confirm you will make it
-      to two of the provided dates or forfeit your application. </label
-    ><br />
-    <input
-      type="checkbox"
-      name="commit-to-two-JS-study-groups"
-      id="commit-to-two-JS-study-groups-yes"
-      value="Yes"
-      required
-    />
-    <label for="commit-to-two-JS-study-groups-yes">Yes, I confirm</label><br />
-  </div>
+    <div id="radio-wrapper">
+      <label for="commit-to-two-JS-study-groups"
+        >For the next step in the application process, you'll need to join TWO
+        of our digital literacy testing and JavaScript events on different days
+        (if we decide to move forward with your application, we'll send you
+        details based on availability and times selected). Please confirm you
+        will make it to two of the provided dates or forfeit your application. </label
+      ><br />
+      <input
+        type="checkbox"
+        name="commit-to-two-JS-study-groups"
+        id="commit-to-two-JS-study-groups-yes"
+        value="Yes"
+        required
+      />
+      <label for="commit-to-two-JS-study-groups-yes">Yes, I confirm</label
+      ><br />
+    </div>
 
-  <div id="radio-wrapper">
-    <label for="completed-form-truthfully"
-      >Do you confirm you've filled out this form truthfully? </label
-    ><br />
-    <input
-      type="checkbox"
-      name="completed-form-truthfully"
-      id="completed-form-truthfully-yes"
-      value="Yes"
-      required
-    />
-    <label for="commit-to-two-JS-study-groups-yes">Yes, I confirm</label>
-  </div>
+    <div id="radio-wrapper">
+      <label for="completed-form-truthfully"
+        >Do you confirm you've filled out this form truthfully? </label
+      ><br />
+      <input
+        type="checkbox"
+        name="completed-form-truthfully"
+        id="completed-form-truthfully-yes"
+        value="Yes"
+        required
+      />
+      <label for="commit-to-two-JS-study-groups-yes">Yes, I confirm</label>
+    </div>
 
-  <div class="form-button">
-    <button
-      type="button"
-      class="continue-to-app-btn"
-      onclick="window.location.href='/app-long-text'"
-    >
-      Previous
-    </button>
-    <button
-      type="button"
-      class="continue-to-app-btn"
-      onclick="window.location.href='/'"
-    >
-      Submit
-    </button>
-  </div>
-</fieldset>
+    <div class="form-button">
+      <button
+        type="button"
+        class="continue-to-app-btn"
+        onclick="window.location.href='/app-reference'"
+      >
+        Previous
+      </button>
+      <button
+        type="button"
+        class="continue-to-app-btn"
+        onclick="window.location.href='/app-additional'"
+      >
+        Next
+      </button>
+      <button
+        type="button"
+        class="continue-to-app-btn"
+        onclick="window.location.href='/'"
+      >
+        Save
+      </button>
+    </div>
+  </fieldset>
+</form>
+
+<style>
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    width: 75%;
+    max-width: 150rem;
+    padding: 2rem;
+  }
+  fieldset {
+    padding: 2rem;
+  }
+
+  fieldset > input[type="text"] {
+    padding: 1em;
+    width: 45%;
+    border: 1px solid rgba(0, 0, 0, 0.348);
+  }
+
+  fieldset label {
+    color: black;
+  }
+
+  fieldset > input {
+    padding: 1em;
+    border-radius: 6px;
+    margin-bottom: 2em;
+  }
+
+  button {
+    background-color: #fc7625;
+    color: white;
+    font-size: large;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+  }
+
+  .form-button {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .info-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 0.5rem;
+  }
+
+  .info-icon::after {
+    white-space: pre-wrap;
+    font-size: 0.85rem;
+    content: attr(data-tooltip);
+    visibility: hidden;
+    width: 220px;
+    background-color: #666;
+    color: #fff;
+    z-index: 1;
+    justify-content: space-evenly;
+    text-align: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    position: absolute;
+    margin-left: 10px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    /* white-space: pre-wrap; */
+  }
+
+  .info-icon:hover::after {
+    visibility: visible;
+    opacity: 1;
+  }
+</style>
 {% endblock content %}

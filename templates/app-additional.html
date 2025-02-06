@@ -1,267 +1,340 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
 Techtonica Application {% endblock title %} {% block content %}
-<fieldset>
-  <legend>Additional Applicant Information</legend>
-  <div id="radio-wrapper">
-    <label for="times-applied"
-      >How many times have you applied? (3 is the max allowed)
-    </label>
-    <span
-      class="info-icon"
-      data-tooltip="If you have already applied three times in the past, you are not eligible to apply again and should stop filling out this form."
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 512 512"
-        width="16"
-        height="16"
+<form>
+  <fieldset>
+    <legend>Additional Applicant Information</legend>
+    <div id="radio-wrapper">
+      <label for="times-applied"
+        >How many times have you applied? (3 is the max allowed)
+      </label>
+      <span
+        class="info-icon"
+        data-tooltip="If you have already applied three times in the past, you are not eligible to apply again and should stop filling out this form."
       >
-        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-        <path
-          d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
-        />
-      </svg> </span
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          width="16"
+          height="16"
+        >
+          <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path
+            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+          />
+        </svg> </span
+      ><br />
+      <input
+        type="radio"
+        id="times-applied-0"
+        name="times-applied"
+        value="0"
+        required
+      />
+      <label for="times-applied-0">0 — This is my first time applying</label
+      ><br />
+      <input
+        type="radio"
+        id="times-applied-1"
+        name="times-applied"
+        value="1"
+        required
+      />
+      <label for="times-applied-1">1 — I've applied once before</label><br />
+      <input
+        type="radio"
+        id="times-applied-2"
+        name="times-applied"
+        value="2"
+        required
+      />
+      <label for="times-applied-2"
+        >2 — I've applied twice before and this will be my third and last
+        try</label
+      ><br />
+    </div>
+    <div id="radio-wrapper">
+      <label for="digitally-literate"
+        >Are you digitally literate, meaning you are very familiar and good with
+        computers and the internet, can type 40+ WPM, and you know how to use a
+        mouse/trackpad, browsers, and email? </label
+      ><br />
+      <input
+        type="radio"
+        id="digitally-literate-yes"
+        name="digitally-literate"
+        value="Yes"
+        required
+      />
+      <label for="digitally-literate-yes">Yes</label>
+      <input
+        type="radio"
+        id="digitally-literate-no"
+        name="digitally-literate"
+        value="No"
+        required
+      />
+      <label for="digitally-literate-no">No</label><br />
+    </div>
+    <label for="typing-test-screenshot"
+      >Please upload a screenshot of your results of a one-minute typing test at
+      <a href="https://www.typingtest.com/">https://www.typingtest.com/</a>
+      (you might want to sign up for an account and practice a couple of times
+      first). </label
     ><br />
     <input
-      type="radio"
-      id="times-applied-0"
-      name="times-applied"
-      value="0"
+      type="file"
+      id="typing-test-screenshot"
+      name="typing-test-screenshot"
       required
-    />
-    <label for="times-applied-0">0 — This is my first time applying</label
+    /><br />
+    <label for="wpm-score">How many WPM did you type? </label><br />
+    <input type="text" id="wpm-score" name="wpm-score" required /><br />
+    <label for="typing-accuracy-percentage"
+      >What was your typing accuracy percentage? </label
     ><br />
     <input
-      type="radio"
-      id="times-applied-1"
-      name="times-applied"
-      value="1"
+      type="text"
+      name="typing-accuracy-percentage"
+      id="typing-accuracy-percentage"
       required
-    />
-    <label for="times-applied-1">1 — I've applied once before</label><br />
-    <input
-      type="radio"
-      id="times-applied-2"
-      name="times-applied"
-      value="2"
-      required
-    />
-    <label for="times-applied-2"
-      >2 — I've applied twice before and this will be my third and last
-      try</label
-    ><br />
-  </div>
-  <div id="radio-wrapper">
-    <label for="digitally-literate"
-      >Are you digitally literate, meaning you are very familiar and good with
-      computers and the internet, can type 40+ WPM, and you know how to use a
-      mouse/trackpad, browsers, and email? </label
+    /><br />
+    <label for="FCC-screenshot"
+      >Please upload a screenshot of your completed pre-req 113 Basic JavaScript
+      lessons at
+      <a href="https://www.freecodecamp.org/learn/"
+        >https://www.freecodecamp.org/learn</a
+      >. The screenshot should include ALL the lessons you have completed in a
+      single screenshot—you can use the Blipshot Chrome extension to create an
+      image of the whole window. </label
     ><br />
     <input
-      type="radio"
-      id="digitally-literate-yes"
-      name="digitally-literate"
-      value="Yes"
+      type="file"
+      id="FCC-screenshot"
+      name="FCC-screenshot"
       required
-    />
-    <label for="digitally-literate-yes">Yes</label>
-    <input
-      type="radio"
-      id="digitally-literate-no"
-      name="digitally-literate"
-      value="No"
-      required
-    />
-    <label for="digitally-literate-no">No</label><br />
-  </div>
-  <label for="typing-test-screenshot"
-    >Please upload a screenshot of your results of a one-minute typing test at
-    <a href="https://www.typingtest.com/">https://www.typingtest.com/</a>
-    (you might want to sign up for an account and practice a couple of times
-    first). </label
-  ><br />
-  <input
-    type="file"
-    id="typing-test-screenshot"
-    name="typing-test-screenshot"
-    required
-  /><br />
-  <label for="wpm-score">How many WPM did you type? </label><br />
-  <input type="text" id="wpm-score" name="wpm-score" required /><br />
-  <label for="typing-accuracy-percentage"
-    >What was your typing accuracy percentage? </label
-  ><br />
-  <input
-    type="text"
-    name="typing-accuracy-percentage"
-    id="typing-accuracy-percentage"
-    required
-  /><br />
-  <label for="FCC-screenshot"
-    >Please upload a screenshot of your completed pre-req 113 Basic JavaScript
-    lessons at
-    <a href="https://www.freecodecamp.org/learn/"
-      >https://www.freecodecamp.org/learn</a
-    >. The screenshot should include ALL the lessons you have completed in a
-    single screenshot—you can use the Blipshot Chrome extension to create an
-    image of the whole window. </label
-  ><br />
-  <input type="file" id="FCC-screenshot" name="FCC-screenshot" required /><br />
-  <div id="radio-wrapper">
-    <label for="able-to-participate"
-      >Are you willing to participate actively in the program Monday to Friday
-      during the full-time hours of the program (typically 8 a.m. to 5 p.m.
-      Pacific Time)? </label
-    ><br />
-    <input
-      type="radio"
-      id="able-to-participate-yes"
-      name="able-to-participate"
-      value="Yes"
-      required
-    />
-    <label for="able-to-participate-yes">Yes</label>
-    <input
-      type="radio"
-      id="able-to-participate-no"
-      name="able-to-participate"
-      value="No"
-      required
-    />
-    <label for="able-to-participate-no">No</label><br />
-  </div>
-  <div id="radio-wrapper">
-    <label for="stable-housing"
-      >Do you have housing that will be stable for the six months of training
-      and the following six months? </label
-    ><br />
-    <input
-      type="radio"
-      id="stable-housing-yes"
-      name="stable-housing"
-      value="Yes"
-      required
-    />
-    <label for="stable-housing-yes">Yes</label>
-    <input
-      type="radio"
-      id="stable-housing-no"
-      name="stable-housing"
-      value="No"
-      required
-    />
-    <label for="stable-housing-no">No</label><br />
-  </div>
-  <div id="radio-wrapper">
-    <label for="currently-employed">Are you currently employed? </label><br />
-    <input
-      type="radio"
-      id="currently-employed-yes-full-time-or-more"
-      name="currently-employed"
-      value="Yes, full-time or more than full-time"
-      required
-    />
-    <label for="currently-employed-yes-full-time-or-more"
-      >Yes, full-time or more than full-time</label
-    ><br />
-    <input
-      type="radio"
-      id="currently-employed-yes-part-time"
-      name="currently-employed"
-      value="Yes, part-time"
-      required
-    />
-    <label for="currently-employed-yes-part-time">Yes, part-time</label><br />
-    <input
-      type="radio"
-      id="currently-employed-no"
-      name="currently-employed"
-      value="No"
-      required
-    />
-    <label for="currently-employed-no">No</label><br />
-  </div>
-  <div id="radio-wrapper">
-    <label for="willing-to-live-in-US"
-      >Are you willing to live in the U.S. if required by the placement company? </label
-    ><br />
-    <input
-      type="radio"
-      id="willing-to-live-in-US-yes"
-      name="willing-to-live-in-US"
-      value="Yes"
-      required
-    />
-    <label for="willing-to-live-in-US-yes">Yes</label>
-    <input
-      type="radio"
-      id="willing-to-live-in-US-no"
-      name="willing-to-live-in-US"
-      value="No"
-      required
-    />
-    <label for="willing-to-live-in-US-no">No</label><br />
-  </div>
-  <div id="radio-wrapper">
-    <label for="willing-to-quit-job"
-      >Are you willing to quit your job(s) to focus on your career transition
-      into tech?
-    </label>
-    <span
-      class="info-icon"
-      data-tooltip="We advise AGAINST working part-time during this intensive program."
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 512 512"
-        width="16"
-        height="16"
+    /><br />
+    <div id="radio-wrapper">
+      <label for="able-to-participate"
+        >Are you willing to participate actively in the program Monday to Friday
+        during the full-time hours of the program (typically 8 a.m. to 5 p.m.
+        Pacific Time)? </label
+      ><br />
+      <input
+        type="radio"
+        id="able-to-participate-yes"
+        name="able-to-participate"
+        value="Yes"
+        required
+      />
+      <label for="able-to-participate-yes">Yes</label>
+      <input
+        type="radio"
+        id="able-to-participate-no"
+        name="able-to-participate"
+        value="No"
+        required
+      />
+      <label for="able-to-participate-no">No</label><br />
+    </div>
+    <div id="radio-wrapper">
+      <label for="stable-housing"
+        >Do you have housing that will be stable for the six months of training
+        and the following six months? </label
+      ><br />
+      <input
+        type="radio"
+        id="stable-housing-yes"
+        name="stable-housing"
+        value="Yes"
+        required
+      />
+      <label for="stable-housing-yes">Yes</label>
+      <input
+        type="radio"
+        id="stable-housing-no"
+        name="stable-housing"
+        value="No"
+        required
+      />
+      <label for="stable-housing-no">No</label><br />
+    </div>
+    <div id="radio-wrapper">
+      <label for="currently-employed">Are you currently employed? </label><br />
+      <input
+        type="radio"
+        id="currently-employed-yes-full-time-or-more"
+        name="currently-employed"
+        value="Yes, full-time or more than full-time"
+        required
+      />
+      <label for="currently-employed-yes-full-time-or-more"
+        >Yes, full-time or more than full-time</label
+      ><br />
+      <input
+        type="radio"
+        id="currently-employed-yes-part-time"
+        name="currently-employed"
+        value="Yes, part-time"
+        required
+      />
+      <label for="currently-employed-yes-part-time">Yes, part-time</label><br />
+      <input
+        type="radio"
+        id="currently-employed-no"
+        name="currently-employed"
+        value="No"
+        required
+      />
+      <label for="currently-employed-no">No</label><br />
+    </div>
+    <div id="radio-wrapper">
+      <label for="willing-to-live-in-US"
+        >Are you willing to live in the U.S. if required by the placement
+        company? </label
+      ><br />
+      <input
+        type="radio"
+        id="willing-to-live-in-US-yes"
+        name="willing-to-live-in-US"
+        value="Yes"
+        required
+      />
+      <label for="willing-to-live-in-US-yes">Yes</label>
+      <input
+        type="radio"
+        id="willing-to-live-in-US-no"
+        name="willing-to-live-in-US"
+        value="No"
+        required
+      />
+      <label for="willing-to-live-in-US-no">No</label><br />
+    </div>
+    <div id="radio-wrapper">
+      <label for="willing-to-quit-job"
+        >Are you willing to quit your job(s) to focus on your career transition
+        into tech?
+      </label>
+      <span
+        class="info-icon"
+        data-tooltip="We advise AGAINST working part-time during this intensive program."
       >
-        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-        <path
-          d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
-        />
-      </svg> </span
-    ><br />
-    <input
-      type="radio"
-      id="willing-to-quit-job-yes"
-      name="willing-to-quit-job"
-      value="Yes"
-      required
-    />
-    <label for="willing-to-quit-job-yes">Yes</label>
-    <input
-      type="radio"
-      id="willing-to-quit-job-no"
-      name="willing-to-quit-job"
-      value="No"
-      required
-    />
-    <label for="willing-to-quit-job-no">No</label><br />
-  </div>
-  <div class="form-button">
-    <button
-      type="button"
-      class="continue-to-app-btn"
-      onclick="window.location.href='/app-household'"
-    >
-      Previous
-    </button>
-    <button
-      type="button"
-      class="continue-to-app-btn"
-      onclick="window.location.href='/app-questionnaire'"
-    >
-      Next
-    </button>
-    <button
-      type="button"
-      class="continue-to-app-btn"
-      onclick="window.location.href='/'"
-    >
-      Save
-    </button>
-  </div>
-</fieldset>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          width="16"
+          height="16"
+        >
+          <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path
+            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+          />
+        </svg> </span
+      ><br />
+      <input
+        type="radio"
+        id="willing-to-quit-job-yes"
+        name="willing-to-quit-job"
+        value="Yes"
+        required
+      />
+      <label for="willing-to-quit-job-yes">Yes</label>
+      <input
+        type="radio"
+        id="willing-to-quit-job-no"
+        name="willing-to-quit-job"
+        value="No"
+        required
+      />
+      <label for="willing-to-quit-job-no">No</label><br />
+    </div>
+    <div class="form-button">
+      <button
+        type="button"
+        class="continue-to-app-btn"
+        onclick="window.location.href='/app-form-admin'"
+      >
+        Previous
+      </button>
+      <button type="button" class="btn-submit">Submit</button>
+    </div>
+  </fieldset>
+</form>
+
+<style>
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    width: 75%;
+    max-width: 150rem;
+    padding: 2rem;
+  }
+  fieldset {
+    padding: 2rem;
+  }
+
+  fieldset > input[type="text"] {
+    padding: 1em;
+    width: 45%;
+    border: 1px solid rgba(0, 0, 0, 0.348);
+  }
+
+  fieldset label {
+    color: black;
+  }
+
+  fieldset > input {
+    padding: 1em;
+    border-radius: 6px;
+    margin-bottom: 2em;
+  }
+
+  button {
+    background-color: #fc7625;
+    color: white;
+    font-size: large;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+  }
+
+  .form-button {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .info-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 0.5rem;
+  }
+
+  .info-icon::after {
+    white-space: pre-wrap;
+    font-size: 0.85rem;
+    content: attr(data-tooltip);
+    visibility: hidden;
+    width: 220px;
+    background-color: #666;
+    color: #fff;
+    z-index: 1;
+    justify-content: space-evenly;
+    text-align: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    position: absolute;
+    margin-left: 10px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    /* white-space: pre-wrap; */
+  }
+
+  .info-icon:hover::after {
+    visibility: visible;
+    opacity: 1;
+  }
+</style>
 {% endblock content %}

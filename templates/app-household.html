@@ -25,10 +25,10 @@ Techtonica Application {% endblock title %} {% block content %}
       />
       <label for="US-bank-account-no">No</label><br />
     </div>
-    <label for="annual-income">What is your annual household income? </label>
+    <label for="annual-income">What is your annual household income?</label>
     <span
       class="info-icon"
-      data-tooltip="In this format: 40000. If you have any special circumstances that make you question your eligibility for Techtonica’s program, please feel free to contact us (info@techtonica.org) and we will be happy to discuss with you."
+      data-tooltip="Only put a total whole number in this field (i.e. 1200, not 1200.09). If you have any special circumstances that make you question your eligibility for Techtonica’s program, please feel free to contact us (info@techtonica.org) and we will be happy to discuss with you."
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -96,29 +96,40 @@ Techtonica Application {% endblock title %} {% block content %}
     <label for="household-net-worth"
       >What is your household's complete net worth (total of your financial
       assets), including equity but not debt?
-    </label>
-    <span
-      class="info-icon"
-      data-tooltip="In this format: 1500. This info helps us calculate overall stipend needs.
-            Please give a summation and verification for your total wealth or financial assets as an individual (or shared household, if that applies, including cash, stocks, bonds, mutual funds, and bank deposits); excluding financial liabilities. If you believe you have none of these whatsoever, then report the value as such and submit documentation in the next question to that end (such as a termination letter, public benefits verification, etc).
-            If you need to provide an explanation for your answers, please do so in the 'Anything else you want to share with us?' question which is second-to-last in this form."
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 512 512"
-        width="16"
-        height="16"
+      <span
+        class="info-icon"
+        data-tooltip="Only put a total whole number in this field (i.e. 1200, not 1200.09).
+      If you need to provide an explanation for your answers, please do so in the 'Anything else
+      you want to share with us?' question which is second-to-last in this form."
       >
-        <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-        <path
-          d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
-        />
-      </svg> </span
-    ><br />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          width="16"
+          height="16"
+        >
+          <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path
+            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+          />
+        </svg> </span
+      ><br />
+      <i>
+        Please give a summation and verification for your total wealth or
+        financial assets as an individual (or shared household, if that applies,
+        including cash, stocks, bonds, mutual funds, and bank deposits);
+        excluding financial liabilities. If you believe you have none of these
+        whatsoever, then report the value as such and submit documentation in
+        the next question to that end (such as a termination letter, public
+        benefits verification, etc).
+      </i>
+    </label>
+
     <input
       type="text"
       id="household-net-worth"
       name="household-net-worth"
+      oninput="inputIsWholeNumber(this)"
       required
     /><br />
     <label for="net-worth-docs"
@@ -154,7 +165,7 @@ Techtonica Application {% endblock title %} {% block content %}
     </label>
     <span
       class="info-icon"
-      data-tooltip="This includes things like: groceries, phone & internet, medical expenses, childcare, rent, insurance, utilities, loan payments, etc. Please only put a total whole number in this field (i.e. 1200, not 1200.09)."
+      data-tooltip="Only put a total whole number in this field (i.e. 1200, not 1200.09). This includes things like: groceries, phone & internet, medical expenses, childcare, rent, insurance, utilities, loan payments, etc."
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -214,24 +225,30 @@ Techtonica Application {% endblock title %} {% block content %}
   fieldset {
     padding: 2rem;
   }
-  fieldset > input[type="number"],
-  fieldset > input[type="url"],
+
   fieldset > input[type="text"] {
-    border: 1px solid rgba(0, 0, 0, 0.348);
-    border-radius: 6px;
+    padding: 1em;
+    width: 85%;
   }
 
   fieldset > input {
+    border: 1px solid rgba(0, 0, 0, 0.348);
     padding: 1em;
+    border-radius: 6px;
     margin-bottom: 2em;
     width: 35%;
+  }
+  fieldset > label i {
+    color: #0093b5;
+    font-weight: bold;
+    font-size: medium;
   }
 
   button {
     background-color: #fc7625;
     color: white;
     font-size: large;
-    padding: 0.3rem;
+    padding: 1rem;
     border-radius: 0.5rem;
   }
 
@@ -239,6 +256,70 @@ Techtonica Application {% endblock title %} {% block content %}
     display: flex;
     gap: 3rem;
   }
+
+  .info-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 0.5rem;
+  }
+
+  .info-icon::after {
+    white-space: pre-wrap;
+    font-size: 0.85rem;
+    content: attr(data-tooltip);
+    visibility: hidden;
+    width: 220px;
+    background-color: #666;
+    color: #fff;
+    z-index: 1;
+    justify-content: space-evenly;
+    text-align: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    position: absolute;
+    margin-left: 10px;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    /* white-space: pre-wrap; */
+  }
+
+  .info-icon:hover::after {
+    visibility: visible;
+    opacity: 1;
+  }
 </style>
+
+<script>
+  function greaterThanZero(input) {
+    if (input.value <= 0) {
+      input.setCustomValidity("Please enter a number greater than 0.");
+    } else {
+      input.setCustomValidity("");
+    }
+    input.reportValidity();
+  }
+
+  function greaterThan25000(input) {
+    if (input.value <= 25000) {
+      input.setCustomValidity(
+        "Please enter a number greater than or equal to 25000."
+      );
+    } else {
+      input.setCustomValidity("");
+    }
+    input.reportValidity();
+  }
+
+  function inputIsWholeNumber(input) {
+    if (!Number.isInteger(Number(input.value))) {
+      input.setCustomValidity("Please enter a whole number.");
+    } else {
+      input.setCustomValidity("");
+    }
+    input.reportValidity();
+  }
+</script>
 
 {% endblock content %}

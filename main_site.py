@@ -2,20 +2,21 @@
 This is the main Python file that sets up rendering and templating
 for Techtonica.org
 """
+import configparser
+import json
 import os
 import sys
+from uuid import uuid4
 
-import configparser
 import pendulum
 import requests
-import json
 from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
-from flask import Flask, redirect, render_template, url_for, request, jsonify
+from flask import Flask, jsonify, redirect, render_template, request, url_for
 from flask_sslify import SSLify
 from pydantic import BaseModel
 from square.client import Client
-from uuid import uuid4
+
 from application_process import application_bp
 from course_management import course_bp
 
@@ -96,12 +97,14 @@ def render_sponsor_page():
     """
     return render_template("sponsor.html")
 
+
 @app.route("/consulting/")
 def render_consulting_page():
     """
     Renders the consulting page from jinja2 template
     """
     return render_template("consulting.html")
+
 
 @app.route("/faqs/")
 def render_faqs_page():
@@ -195,12 +198,14 @@ def render_donate_page():
     """
     return render_template("donate.html")
 
+
 @app.route("/volunteer/")
 def render_volunteer_page():
     """
     Renders the volunteer page from jinja2 template
     """
     return render_template("volunteer.html")
+
 
 @app.route("/news/")
 def render_news_page():
@@ -209,6 +214,7 @@ def render_news_page():
     """
     return render_template("news.html")
 
+
 @app.route("/testimonials/")
 def render_testimonials_page():
     """
@@ -216,6 +222,50 @@ def render_testimonials_page():
     """
     return render_template("testimonials.html")
 
+<<<<<<< HEAD
+=======
+
+@app.route('/app-form-details')
+def app_form_details():
+    return render_template('app-form-details.html')
+
+
+@app.route('/app-form')
+def app_form():
+    return render_template('app-form.html')
+
+
+@app.route('/app-additional')
+def app_additional():
+    return render_template('app-additional.html')
+
+
+@app.route('/app-household')
+def app_household():
+    return render_template('app-household.html')
+
+
+@app.route('/app-long-text')
+def app_long_text():
+    return render_template('app-long-text.html')
+
+
+@app.route('/app-questionnaire')
+def app_questionnaire():
+    return render_template('app-questionnaire.html')
+
+
+@app.route('/app-reference')
+def app_reference():
+    return render_template('app-reference.html')
+
+
+@app.route('/app-form-admin')
+def app_form_admin():
+    return render_template('app-form-admin.html')
+
+
+>>>>>>> df81210 (add additional application routes and enhance questionnaire and household templates with)
 def get_events():
     try:
         group_id = eventbrite.get_user()["id"]
@@ -265,7 +315,7 @@ CONFIG_TYPE = config.get("default", "environment")
 if CONFIG_TYPE == "production":
     PAYMENT_FORM_URL = "https://web.squarecdn.com/v1/square.js"
 else:
-    PAYMENT_FORM_URL= "https://sandbox.web.squarecdn.com/v1/square.js"
+    PAYMENT_FORM_URL = "https://sandbox.web.squarecdn.com/v1/square.js"
 # PAYMENT_FORM_URL = (
 #     "https://web.squarecdn.com/v1/square.js"
 #     if CONFIG_TYPE == "production"
@@ -281,11 +331,14 @@ client = Client(
     user_agent_detail="techtonica_payment",
 )
 
+
 class Payment(BaseModel):
     token: str
     idempotencyKey: str
 
-#old route - redirects to avoid breaking old links
+# old route - redirects to avoid breaking old links
+
+
 @app.route("/payment-form")
 def render_payment_form():
     """
@@ -293,24 +346,27 @@ def render_payment_form():
     """
     return redirect(url_for('render_job_form'))
 
+
 @app.route("/share-a-job")
 def render_job_form():
     """
     Renders the job-form page from jinja2 template
     """
     return render_template("job-form.html",
-        APPLICATION_ID=APPLICATION_ID,
-        PAYMENT_FORM_URL=PAYMENT_FORM_URL,
-        LOCATION_ID=LOCATION_ID,
-        ACCOUNT_CURRENCY="USD",
-        ACCOUNT_COUNTRY="ACCOUNT_COUNTRY",
-        idempotencyKey=str( uuid4() ))
+                           APPLICATION_ID=APPLICATION_ID,
+                           PAYMENT_FORM_URL=PAYMENT_FORM_URL,
+                           LOCATION_ID=LOCATION_ID,
+                           ACCOUNT_CURRENCY="USD",
+                           ACCOUNT_COUNTRY="ACCOUNT_COUNTRY",
+                           idempotencyKey=str(uuid4()))
 
 # Square payment api route
-@app.route("/process-payment", methods = ['POST'])
+
+
+@app.route("/process-payment", methods=['POST'])
 def create_payment():
     # Charge the customer's card
-    account_currency = "USD" # TODO: Are you hard-coding this to USD?
+    account_currency = "USD"  # TODO: Are you hard-coding this to USD?
     data = request.json
     print(data)
 
@@ -334,13 +390,15 @@ def create_payment():
         return {'errors': create_payment_response.errors}
 
 # Slack webhook route
+
+
 @app.route('/send-posting', methods=['POST'])
 def send_posting():
     data = request.json
     print(f"Received data: {data}")
 
     x = requests.post(SLACK_WEBHOOK,
-        json = {'text': f"A new job has been posted to Techtonica! Read the details below to see if you're a good fit!  \n\n JOB DETAILS \n Job Title: {data['jobTitle']} \n Company: {data['company']} \n Type: {data['type']} \n Education Requirement: {data['educationReq']} \n Location: {data['location']} \n Referral offered: {data['referral']} \n Salary Range: {data['salaryRange']} \n Description: {data['description']} \n Application Link: {data['applicationLink']} \n \n CONTACT INFO \n Name: {data['firstName']} {data['lastName']}  \n Email: {data['email']}  \n "})
+                      json={'text': f"A new job has been posted to Techtonica! Read the details below to see if you're a good fit!  \n\n JOB DETAILS \n Job Title: {data['jobTitle']} \n Company: {data['company']} \n Type: {data['type']} \n Education Requirement: {data['educationReq']} \n Location: {data['location']} \n Referral offered: {data['referral']} \n Salary Range: {data['salaryRange']} \n Description: {data['description']} \n Application Link: {data['applicationLink']} \n \n CONTACT INFO \n Name: {data['firstName']} {data['lastName']}  \n Email: {data['email']}  \n "})
 
     print(f"Message sent: {x.text}")
     return jsonify({'message': 'Data received successfully', 'received_data': data})

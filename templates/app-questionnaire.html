@@ -2,6 +2,7 @@
 Techtonica Application {% endblock title %} {% block content %}
 <form>
   <fieldset>
+    <legend>Questionnaire</legend>
     <p>
       Please mark how much you agree with each statement when thinking about you
       personally.
@@ -412,7 +413,6 @@ Techtonica Application {% endblock title %} {% block content %}
     justify-content: center;
     align-items: center;
     margin: 2rem auto;
-    width: 75%;
     max-width: 150rem;
     padding: 2rem;
   }
@@ -420,19 +420,19 @@ Techtonica Application {% endblock title %} {% block content %}
     padding: 2rem;
   }
 
-  #radio-wrapper label {
+  fieldset label {
     color: black;
-    margin-bottom: 2em;
   }
-  #radio-wrapper input {
-    background-color: #16c1f3;
+
+  #radio-wrapper > input {
+    margin-bottom: 2rem;
   }
 
   button {
     background-color: #fc7625;
     color: white;
     font-size: large;
-    padding: 0.3rem;
+    padding: 1rem;
     border-radius: 0.5rem;
   }
 

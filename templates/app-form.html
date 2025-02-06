@@ -56,7 +56,7 @@ Techtonica Application {% endblock title %} {% block content %}
             <label for="email">Email: </label>
             <span
               class="info-icon"
-              data-tooltip="Please use the same business-minded Gmail with your name (like janedoe@gmail.com, jdoe@gmail.com) that you used in the shorter form. This is the email we will contact you with for the duration of the application process and program."
+              data-tooltip="Please use the same business-minded Gmail with your name (e.g. janedoe@gmail.com) that you used in the shorter form. This is the email we will contact you with for the duration of the application process and program."
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -201,10 +201,15 @@ Techtonica Application {% endblock title %} {% block content %}
               <label for="veteran-status-no">No</label><br />
             </div>
             <div id="radio-wrapper">
-              <label for="disabled-status">Do you have a disability? </label>
+              <label for="disabled-status">
+                Do you have a disability? (You can find some examples here:
+                <a href="https://askjan.org/a-to-z.cfm" target="_blank"
+                  >https://askjan.org/a-to-z.cfm</a
+                >)
+              </label>
               <span
                 class="info-icon"
-                data-tooltip="You are considered to have a disability if you have a physical or mental impairment or medical condition that substantially limits a major life activity, or if you have a history or record of such an impairment or medical condition. Disabilities include, but are not limited to: Blindness, Deafness, Cancer, Diabetes, Epilepsy, Autism, Cerebral Palsy, HIV/AIDS, Schizophrenia, Muscular Dystrophy, Bipolar Disorder, Major Depression, Multiple Sclerosis (MS), missing limbs or partially missing limbs, Post-Traumatic Stress Disorder (PTSD), Obsessive Compulsive Disorder, impairments requiring the use of a wheelchair, intellectual disability."
+                data-tooltip="You are considered to have a disability if you have a physical or mental impairment or medical condition that substantially limits a major life activity."
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -493,6 +498,7 @@ Techtonica Application {% endblock title %} {% block content %}
     margin-bottom: 2em;
     border: 1px solid rgba(0, 0, 0, 0.348);
     border-radius: 6px;
+    width: 35%;
   }
 
   #info-wrapper > fieldset > input[type="file"] {
@@ -533,27 +539,27 @@ Techtonica Application {% endblock title %} {% block content %}
     margin: auto;
     text-align: center;
   }
-
   .info-icon {
     position: relative;
     display: inline-block;
     cursor: pointer;
-    padding-left: 5px;
+    padding-left: 0.5rem;
   }
 
   .info-icon::after {
+    white-space: pre-wrap;
+    font-size: 0.85rem;
     content: attr(data-tooltip);
     visibility: hidden;
     width: 220px;
     background-color: #666;
     color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
     z-index: 1;
-    top: 50%;
-    left: 125%;
+    justify-content: space-evenly;
+    text-align: center;
+    border-radius: 1rem;
+    padding: 1rem;
+    position: absolute;
     margin-left: 10px;
     transform: translateY(-50%);
     opacity: 0;
@@ -577,88 +583,8 @@ Techtonica Application {% endblock title %} {% block content %}
     font-size: large;
     width: auto;
     text-shadow: none;
-    padding: 0.3rem;
+    padding: 1rem;
   }
 </style>
-<script>
-  document
-    .getElementById("gender-identity")
-    .addEventListener("change", function () {
-      const customGenderInput = document.getElementById("custom-gender");
 
-      if (this.value === "Other") {
-        customGenderInput.style.display = "block";
-        customGenderInput.removeAttribute("disabled");
-        this.removeAttribute("name");
-        customGenderInput.setAttribute("name", "gender-identity");
-      } else {
-        customGenderInput.style.display = "none";
-        customGenderInput.setAttribute("disabled", "true");
-        customGenderInput.removeAttribute("name");
-        this.setAttribute("name", "gender-identity");
-      }
-    });
-
-  document.getElementById("pronouns").addEventListener("change", function () {
-    const customPronounsInput = document.getElementById("custom-pronouns");
-
-    if (this.value === "Other") {
-      customPronounsInput.style.display = "block";
-      customPronounsInput.removeAttribute("disabled");
-      this.removeAttribute("name");
-      customPronounsInput.setAttribute("name", "pronouns");
-    } else {
-      customPronounsInput.style.display = "none";
-      customPronounsInput.setAttribute("disabled", "true");
-      customPronounsInput.removeAttribute("name");
-      this.setAttribute("name", "pronouns");
-    }
-  });
-
-  document
-    .getElementById("race-ethnicity")
-    .addEventListener("change", function () {
-      const customRaceEthnicityInput = document.getElementById(
-        "custom-race-ethnicity"
-      );
-
-      if (this.value === "Other") {
-        customRaceEthnicityInput.style.display = "block";
-        customRaceEthnicityInput.removeAttribute("disabled");
-        this.removeAttribute("name");
-        customRaceEthnicityInput.setAttribute("name", "custom-race-ethnicity");
-      } else {
-        customRaceEthnicityInput.style.display = "none";
-        customRaceEthnicityInput.setAttribute("disabled", "true");
-        customRaceEthnicityInput.removeAttribute("name");
-        this.setAttribute("name", "custom-race-ethnicity");
-      }
-    });
-
-  function greaterThanZero(input) {
-    if (input.value <= 0) {
-      input.setCustomValidity("Please enter a number greater than 0.");
-    } else {
-      input.setCustomValidity("");
-    }
-  }
-
-  function greaterThan25000(input) {
-    if (input.value <= 25000) {
-      input.setCustomValidity(
-        "Please enter a number greater than or equal to 25000."
-      );
-    } else {
-      input.setCustomValidity("");
-    }
-  }
-
-  function inputIsWholeNumber(input) {
-    if (!Number.isInteger(Number(input.value))) {
-      input.setCustomValidity("Please enter a whole number.");
-    } else {
-      input.setCustomValidity("");
-    }
-  }
-</script>
 {% endblock content %}
