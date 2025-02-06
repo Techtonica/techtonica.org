@@ -222,8 +222,6 @@ def render_testimonials_page():
     """
     return render_template("testimonials.html")
 
-<<<<<<< HEAD
-=======
 
 @app.route('/app-form-details')
 def app_form_details():
@@ -265,7 +263,6 @@ def app_form_admin():
     return render_template('app-form-admin.html')
 
 
->>>>>>> df81210 (add additional application routes and enhance questionnaire and household templates with)
 def get_events():
     try:
         group_id = eventbrite.get_user()["id"]
