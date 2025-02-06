@@ -1,7 +1,8 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
 Techtonica Application {% endblock title %} {% block content %}
-<div id="application-page" class="blue-background">
+<div class="application-page">
   <h1>Techtonica Application</h1>
+<<<<<<< HEAD
   <div class="column">
     <form action="#" method="POST" class="application-form" id="app-form">
       <div class="wrapper">
@@ -382,106 +383,439 @@ Techtonica Application {% endblock title %} {% block content %}
       </div>
     </form>
   </div>
+=======
+  <form action="#" method="POST" class="application-form" id="app-form">
+    <div class="info-wrapper" id="info-wrapper">
+      <fieldset>
+        <legend>General Applicant Demographics</legend>
+        <label for="first-name">Full legal given or 'first' name: </label><br />
+        <input type="text" id="first-name" name="first-name" required /><br />
+        <label for="preferred-name"
+          >Preferred given or "first" name (if not the same as your legal
+          "first" or given name): <span>(Optional)</span></label
+        ><br />
+        <input type="text" id="preferred-name" name="preferred-name" /><br />
+        <label for="last-name">Full legal last/family name or surname: </label
+        ><br />
+        <input type="text" id="last-name" name="last-name" required /><br />
+        <label for="name-pronunciation"
+          >How to pronounce your full name: <span>(Optional)</span></label
+        >
+        <span
+          class="info-icon"
+          data-tooltip="You can make a recording on name-coach.com, generate your link and share in the text field if preferred."
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            width="16"
+            height="16"
+          >
+            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+            />
+          </svg> </span
+        ><br />
+        <input
+          type="text"
+          id="name-pronunciation"
+          name="name-pronunciation"
+        /><br />
+        <label for="email">Email: </label>
+        <span
+          class="info-icon"
+          data-tooltip="Please use the same business-minded Gmail with your name (e.g. janedoe@gmail.com) that you used in the shorter form. This is the email we will contact you with for the duration of the application process and program."
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            width="16"
+            height="16"
+          >
+            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+            />
+          </svg> </span
+        ><br />
+        <input type="email" id="email" name="email" required /><br />
+        <label for="gender-identity"
+          >With which gender identity do you most align? </label
+        ><br />
+        <select
+          name="gender-identity"
+          id="gender-identity"
+          aria-label="Gender Identity selection"
+          required
+        >
+          <br />
+          <option value="none" selected disabled hidden>
+            Select an Option
+          </option>
+          <option
+            value="Agender, genderblank, genderfree, genderless, gendervoid, non-gendered, or null gender"
+          >
+            Agender, genderblank, genderfree, genderless, gendervoid,
+            non-gendered, or null gender
+          </option>
+          <option value="Genderfluid">Genderfluid</option>
+          <option
+            value="Cis Man (your gender identity matches the male sex you were assigned at birth)"
+          >
+            Cis Man (your gender identity matches the male sex you were assigned
+            at birth)
+          </option>
+          <option
+            value="Non-binary/Genderqueer (you don't identify as a man or woman), Femme"
+          >
+            Non-binary/Genderqueer (you don't identify as a man or woman), Femme
+          </option>
+          <option
+            value="Non-binary/Genderqueer (you don't identify as a man or woman), Not Femme"
+          >
+            Non-binary/Genderqueer (you don't identify as a man or woman), Not
+            Femme
+          </option>
+          <option
+            value="Trans Man (your gender identity doesn't match the female sex you were assigned at birth)"
+          >
+            Trans Man (your gender identity doesn't match the female sex you
+            were assigned at birth)
+          </option>
+          <option
+            value="Trans Woman (your gender identity doesn't match the male sex you were assigned at birth)"
+          >
+            Trans Woman (your gender identity doesn't match the male sex you
+            were assigned at birth)
+          </option>
+          <option
+            value="Cis Woman (your gender identity matches the female sex you were assigned at birth)"
+          >
+            Cis Woman (your gender identity matches the female sex you were
+            assigned at birth)
+          </option>
+          <option value="Other">Other</option>
+        </select>
+        <input
+          type="text"
+          id="custom-gender"
+          name="custom-gender"
+          placeholder="Please enter your gender identity"
+          aria-label="custom gender input"
+          disabled
+        /><br />
+        <label for="pronouns">What are your pronouns? </label><br />
+        <select
+          name="pronouns"
+          id="pronouns"
+          aria-label="Pronouns selection"
+          required
+        >
+          <br />
+          <option value="none" selected disabled hidden>
+            Select an Option
+          </option>
+          <option value="He/Him">He/Him</option>
+          <option value="She/Her">She/Her</option>
+          <option value="They/Them">They/Them</option>
+          <option value="Ze/Zir">Ze/Zir</option>
+          <option value="Other">Other</option>
+        </select>
+        <input
+          type="text"
+          id="custom-pronouns"
+          name="custom-pronouns"
+          placeholder="Please enter your preferred pronouns"
+          aria-label="custom pronouns selection"
+          disabled
+        /><br />
+        <label for="birth-date">What is your birth date? </label><br />
+        <input type="date" id="birth-date" name="birth-date" required /><br />
+        <label for="age-group">Select your age group </label><br />
+        <select name="age-group" id="age-group" required>
+          <br />
+          <option value="none" selected disabled hidden>
+            Select an Option
+          </option>
+          <option value="18-24">18-24</option>
+          <option value="25-34">25-34</option>
+          <option value="35-44">35-44</option>
+          <option value="45-54">45-54</option>
+          <option value="55-64">55-64</option>
+          <option value="65+">65+</option></select
+        ><br />
+        <label for="phone-number">Cell phone number with area code </label
+        ><br />
+        <input
+          type="tel"
+          name="phone-number"
+          id="phone-number"
+          pattern="^\+?1?[-.\s]?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$"
+          placeholder="ex. 415-555-1234 or 1-415-555-1234"
+          title="Please enter a valid phone number in the format: 415-555-1234 or 1-415-555-1234."
+          minlength="10"
+        /><br />
+        <div id="radio-wrapper">
+          <label for="veteran-status">Are you a U.S. veteran? </label><br />
+          <input
+            type="radio"
+            id="veteran-status-yes"
+            name="veteran-status"
+            value="Yes"
+            required
+          />
+          <label for="veteran-status-yes">Yes</label>
+          <input
+            type="radio"
+            id="veteran-status-no"
+            name="veteran-status"
+            value="No"
+            required
+          />
+          <label for="veteran-status-no">No</label><br />
+        </div>
+        <div id="radio-wrapper">
+          <label for="disabled-status">
+            Do you have a disability? (You can find some examples here:
+            <a href="https://askjan.org/a-to-z.cfm" target="_blank"
+              >https://askjan.org/a-to-z.cfm</a
+            >)
+          </label>
+          <span
+            class="info-icon"
+            data-tooltip="You are considered to have a disability if you have a physical or mental impairment or medical condition that substantially limits a major life activity."
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              width="16"
+              height="16"
+            >
+              <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+              <path
+                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+              />
+            </svg> </span
+          ><br />
+          <input
+            type="radio"
+            id="disabled-status-yes"
+            name="disabled-status"
+            value="Yes"
+            required
+          />
+          <label for="disabled-status-yes">Yes</label>
+          <input
+            type="radio"
+            id="disabled-status-no"
+            name="disabled-status"
+            value="No"
+            required
+          />
+          <label for="disabled-status-no">No</label><br />
+        </div>
+        <div id="radio-wrapper">
+          <label for="parental-status"
+            >Are you a parent or legal guardian of a minor? </label
+          ><br />
+          <input
+            type="radio"
+            id="parental-status-yes"
+            name="parental-status"
+            value="Yes"
+            required
+          />
+          <label for="parental-status-yes">Yes</label>
+          <input
+            type="radio"
+            id="parental-status-no"
+            name="parental-status"
+            value="No"
+            required
+          />
+          <label for="parental-status-no">No</label><br />
+        </div>
+        <label for="race-ethnicity"
+          >With which racial/ethnic groups do you most identify? </label
+        ><br />
+        <select
+          name="race-ethnicity"
+          id="race-ethnicity"
+          aria-label="Racial Ethnicity Selection"
+          required
+        >
+          <br />
+          <option value="none" selected disabled hidden>
+            Select an Option
+          </option>
+          <option value="African-American/Black/African">
+            African-American/Black/African
+          </option>
+          <option
+            value="Central Asian (including Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan)"
+          >
+            Central Asian (including Kazakhstan, Kyrgyzstan, Tajikistan,
+            Turkmenistan, Uzbekistan)
+          </option>
+          <option
+            value="East Asian (including Chinese, Japanese, Korean, Mongolian, Tibetan, and Taiwanese)"
+          >
+            East Asian (including Chinese, Japanese, Korean, Mongolian, Tibetan,
+            and Taiwanese)
+          </option>
+          <option value="Hispanic/Latinx">Hispanic/Latinx</option>
+          <option value="Middle Eastern">Middle Eastern</option>
+          <option
+            value="Native American/Alaskan Native/First Nations/Indigenous"
+          >
+            Native American/Alaskan Native/First Nations/Indigenous
+          </option>
+          <option value="Pacific Islander">Pacific Islander</option>
+          <option
+            value="South Asian (including Bangladeshi, Bhutanese, Indian, Nepali, Pakistani, Afghanistan, and Sri Lankan)"
+          >
+            South Asian (including Bangladeshi, Bhutanese, Indian, Nepali,
+            Pakistani, Afghanistan, and Sri Lankan)
+          </option>
+          <option
+            value="Southeast Asian (including Burmese, Cambodian, Filipino, Hmong, Indonesian, Malaysian, Mien, Singaporean, Thai, and Vietnamese)"
+          >
+            Southeast Asian (including Burmese, Cambodian, Filipino, Hmong,
+            Indonesian, Malaysian, Mien, Singaporean, Thai, and Vietnamese)
+          </option>
+          <option value="White">White</option>
+          <option value="Other">Other</option>
+        </select>
+        <input
+          type="text"
+          id="custom-race-ethnicity"
+          name="custom-race-ethnicity"
+          aria-label="race-ethnicity input"
+          placeholder="Please enter your racial/ethnic group"
+          disabled
+        /><br />
+        <label for="address"
+          >What is the full mailing address of where you live? (Don't forget
+          unit number, if applicable, and city, state, and zip code.)</label
+        ><br />
+        <input
+          type="text"
+          name="address"
+          id="address"
+          required
+          pattern="^\d+\s[A-z]+\s[A-z]+(?:\s[A-z]+)*,\s[A-z]+\s[A-z]+,\s[A-Z]{2}\s\d{5}(?:-\d{4})?$"
+          title="Please enter a valid U.S. mailing address."
+        /><br />
+        <div id="radio-wrapper">
+          <label for="US-employment-status"
+            >Can you currently legally be employed in the U.S.? </label
+          ><br />
+          <input
+            type="radio"
+            id="US-employment-status-yes"
+            name="US-employment-status"
+            value="Yes"
+            required
+          />
+          <label for="US-employment-status-yes">Yes</label>
+          <input
+            type="radio"
+            id="US-employment-status-no"
+            name="US-employment-status"
+            value="No"
+            required
+          />
+          <label for="US-employment-status-no">No</label><br />
+        </div>
+        <div id="radio-wrapper">
+          <label for="high-school-graduate-ged"
+            >Have you graduated from high school/received your GED? </label
+          ><br />
+          <input
+            type="radio"
+            id="high-school-graduate-ged-yes"
+            name="high-school-graduate-ged"
+            value="Yes"
+            required
+          />
+          <label for="high-school-graduate-ged-yes">Yes</label>
+          <input
+            type="radio"
+            id="high-school-graduate-ged-no"
+            name="high-school-graduate-ged"
+            value="No"
+            required
+          />
+          <label for="high-school-graduate-ged-no">No</label><br />
+        </div>
+        <button
+          type="button"
+          class="continue-to-app-btn"
+          onclick="window.location.href='/app-household'"
+        >
+          Continue
+        </button>
+      </fieldset>
+    </div>
+  </form>
+>>>>>>> 5294f84 (add additional application routes and enhance questionnaire and household templates with improved tooltips and validation)
 </div>
 <style>
   /* .application-form is .payment-form in job-form.html */
-  .application-form {
+  form {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
-    width: 100%;
-    max-width: 150 rem;
-  }
-  /* #app-form is #fast-checkout in job-form.html */
-  #app-form {
-    color: black;
-  }
-
-  #app-form h3 {
-    color: #0093b5;
+    margin: 2rem auto;
+    width: 45%;
+    max-width: 150rem;
+    padding: 2rem;
+    background-color: white;
+    border: 1px solid rgb(0, 0, 0);
   }
 
-  #app-form input {
-    border-radius: 6px;
-    position: relative;
+  .application-page {
+    justify-content: center;
+    background-color: #0093b5;
+    padding: 2rem;
   }
-
-  #app-form .wrapper {
-    position: relative;
+  .application-page > h1,
+  .application-page > p {
+    max-width: 65%;
+    margin: auto;
+    text-align: center;
   }
 
   #app-form button {
+    background-color: #fc7625;
+    font-size: large;
     width: 100%;
-  }
-
-  #app-form button {
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -o-border-radius: 8px;
+    text-shadow: none;
+    padding: 1rem;
     border-radius: 8px;
     color: white;
     display: inline-block;
-    background-color: #fc7625;
     text-align: center;
-    font-size: 1.5em;
-    text-shadow: 1px 1px 1px #666;
+    transition: 0.3s;
   }
 
   #app-form button:hover {
     background-color: #16c1f3;
     color: white;
-    transition: 0.3s;
   }
 
-  #app-form .border {
-    color: rgba(0, 0, 0, 0.676);
-    background: rgba(0, 0, 0, 0.1);
-    height: 1px;
-    width: 100%;
-    font-size: 12px;
-    line-height: 20px;
-    text-transform: uppercase;
-    position: relative;
-  }
-
-  /* #app-form .border span {
-        position: absolute;
-        top: -10px;
-        background: #fafafa;
-        padding: 0 10px;
-        left: calc(50% - 1em - 5px);
-    } */
-
-  #info-wrapper {
-    background-color: #ffffff;
-    border: 1px solid #000;
-    padding: 2rem;
-  }
-
-  #info-wrapper > fieldset {
-    box-sizing: border-box;
-    border-radius: 6px;
-    border: 1px solid rgba(0, 0, 0, 0.547);
-    background-color: rgb(255, 255, 255);
-    padding: 2rem;
-  }
-
-  legend,
-  p {
+  legend {
     color: rgba(0, 115, 149, 0.8);
-    font-weight: bold;
     font-size: larger;
   }
 
-  .blue-background a {
-    text-shadow: none;
-    color: rgba(0, 115, 149, 0.8);
+  #info-wrapper > fieldset {
+    border: 1px solid rgba(0, 0, 0, 0.559);
   }
 
   #info-wrapper > fieldset > label {
-    margin-top: 1em;
-    color: rgba(0, 0, 0, 0.8);
+    color: rgb(0, 0, 0);
     font-size: large;
   }
 
@@ -493,52 +827,18 @@ Techtonica Application {% endblock title %} {% block content %}
   #info-wrapper > fieldset > input[type="url"],
   #info-wrapper > fieldset > textarea,
   #info-wrapper > fieldset > select {
-    /* padding: 0.25em; */
     padding: 1em;
     margin-bottom: 2em;
-    border: 1px solid rgba(0, 0, 0, 0.348);
+    border: 1px solid rgba(0, 0, 0, 0.559);
     border-radius: 6px;
     width: 35%;
   }
 
-  #info-wrapper > fieldset > input[type="file"] {
-    width: 50%;
-    max-width: 90%;
-    margin: auto auto 1em auto;
-    /* padding: 0.25em; */
-    border-radius: 6px;
-  }
-
-  #info-wrapper > fieldset > textarea {
-    min-height: 6em;
-  }
-
-  input[type="radio"] {
-    width: 50px;
-  }
-
-  select,
-  textarea {
-    width: 200px;
-    text-overflow: ellipsis;
-  }
-
   #radio-wrapper {
     width: 100%;
-    /* margin-bottom: 1em; */
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(0, 0, 0, 0.851);
   }
 
-  #application-page {
-    justify-content: center;
-  }
-
-  #application-page > h1,
-  #application-page > p {
-    max-width: 65%;
-    margin: auto;
-    text-align: center;
-  }
   .info-icon {
     position: relative;
     display: inline-block;
@@ -564,7 +864,6 @@ Techtonica Application {% endblock title %} {% block content %}
     transform: translateY(-50%);
     opacity: 0;
     transition: opacity 0.3s;
-    /* white-space: pre-wrap; */
   }
 
   .info-icon:hover::after {
@@ -586,5 +885,61 @@ Techtonica Application {% endblock title %} {% block content %}
     padding: 1rem;
   }
 </style>
+
+<script>
+  document
+    .getElementById("gender-identity")
+    .addEventListener("change", function () {
+      const customGenderInput = document.getElementById("custom-gender");
+
+      if (this.value === "Other") {
+        customGenderInput.style.display = "block";
+        customGenderInput.removeAttribute("disabled");
+        this.removeAttribute("name");
+        customGenderInput.setAttribute("name", "gender-identity");
+      } else {
+        customGenderInput.style.display = "none";
+        customGenderInput.setAttribute("disabled", "true");
+        customGenderInput.removeAttribute("name");
+        this.setAttribute("name", "gender-identity");
+      }
+    });
+
+  document.getElementById("pronouns").addEventListener("change", function () {
+    const customPronounsInput = document.getElementById("custom-pronouns");
+
+    if (this.value === "Other") {
+      customPronounsInput.style.display = "block";
+      customPronounsInput.removeAttribute("disabled");
+      this.removeAttribute("name");
+      customPronounsInput.setAttribute("name", "pronouns");
+    } else {
+      customPronounsInput.style.display = "none";
+      customPronounsInput.setAttribute("disabled", "true");
+      customPronounsInput.removeAttribute("name");
+      this.setAttribute("name", "pronouns");
+    }
+  });
+
+  document
+    .getElementById("race-ethnicity")
+    .addEventListener("change", function () {
+      const customRaceEthnicityInput = document.getElementById(
+        "custom-race-ethnicity"
+      );
+
+      if (this.value === "Other") {
+        customRaceEthnicityInput.style.display = "block";
+        customRaceEthnicityInput.removeAttribute("disabled");
+        this.removeAttribute("name");
+        customRaceEthnicityInput.setAttribute("name", "custom-race-ethnicity");
+      } else {
+        customRaceEthnicityInput.style.display = "none";
+        customRaceEthnicityInput.setAttribute("disabled", "true");
+        customRaceEthnicityInput.removeAttribute("name");
+        this.setAttribute("name", "custom-race-ethnicity");
+      }
+    });
+</script>
 
 {% endblock content %}

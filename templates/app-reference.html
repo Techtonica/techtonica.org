@@ -1,178 +1,184 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
 Techtonica Application {% endblock title %} {% block content %}
 
-<form>
-  <fieldset>
-    <legend>Applicant References</legend>
-    <p>
-      Reference #1 - Please share the full name, email address, and relationship
-      (former manager, former coworker, etc.) of someone who has worked closely
-      with you and can speak to your capabilities in a work setting.
-      <span
-        class="info-icon"
-        data-tooltip="This may not be a relative, significant other, or friend. It must be someone who can speak to your work quality in an unbiased manner."
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 512"
-          width="16"
-          height="16"
+<div class="application-page">
+  <h1>Techtonica Application</h1>
+  <form action="#" method="POST" class="application-form" id="app-form">
+    <fieldset>
+      <legend>Applicant References</legend>
+      <p>
+        Reference #1 - Please share the full name, email address, and
+        relationship (former manager, former coworker, etc.) of someone who has
+        worked closely with you and can speak to your capabilities in a work
+        setting.
+        <span
+          class="info-icon"
+          data-tooltip="This may not be a relative, significant other, or friend. It must be someone who can speak to your work quality in an unbiased manner."
         >
-          <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-          <path
-            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
-          />
-        </svg>
-      </span>
-    </p>
-    <br />
-    <label for="reference-1-fname">First Name: </label><br />
-    <input
-      type="text"
-      name="reference-1-fname"
-      id="reference-1-fname"
-      required
-    /><br />
-    <label for="reference-1-lname">Last Name: </label><br />
-    <input
-      type="text"
-      name="reference-1-lname"
-      id="reference-1-lname"
-      required
-    /><br />
-    <label for="reference-1-email">Email: </label><br />
-    <input
-      type="email"
-      name="reference-1-email"
-      id="reference-1-email"
-      required
-    /><br />
-    <label for="reference-1-relationship">Relationship: </label><br />
-    <input
-      type="text"
-      name="reference-1-relationship"
-      id="reference-1-relationship"
-      required
-    /><br />
-    <p>
-      Reference #2 - Please share the full name, email address, and relationship
-      (former manager, former coworker, etc.) of someone who has worked closely
-      with you and can speak to your capabilities in a work setting.
-      <span
-        class="info-icon"
-        data-tooltip="This may not be a relative, significant other, or friend. It must be someone who can speak to your work quality in an unbiased manner."
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 512"
-          width="16"
-          height="16"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            width="16"
+            height="16"
+          >
+            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+            />
+          </svg>
+        </span>
+      </p>
+      <br />
+      <label for="reference-1-fname">First Name: </label><br />
+      <input
+        type="text"
+        name="reference-1-fname"
+        id="reference-1-fname"
+        required
+      /><br />
+      <label for="reference-1-lname">Last Name: </label><br />
+      <input
+        type="text"
+        name="reference-1-lname"
+        id="reference-1-lname"
+        required
+      /><br />
+      <label for="reference-1-email">Email: </label><br />
+      <input
+        type="email"
+        name="reference-1-email"
+        id="reference-1-email"
+        required
+      /><br />
+      <label for="reference-1-relationship">Relationship: </label><br />
+      <input
+        type="text"
+        name="reference-1-relationship"
+        id="reference-1-relationship"
+        required
+      /><br />
+      <p>
+        Reference #2 - Please share the full name, email address, and
+        relationship (former manager, former coworker, etc.) of someone who has
+        worked closely with you and can speak to your capabilities in a work
+        setting.
+        <span
+          class="info-icon"
+          data-tooltip="This may not be a relative, significant other, or friend. It must be someone who can speak to your work quality in an unbiased manner."
         >
-          <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-          <path
-            d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
-          />
-        </svg>
-      </span>
-    </p>
-    <br />
-    <label for="reference-2-fname">First Name: </label><br />
-    <input
-      type="text"
-      name="reference-2-fname"
-      id="reference-2-fname"
-      required
-    /><br />
-    <label for="reference-2-lname">Last Name: </label><br />
-    <input
-      type="text"
-      name="reference-2-lname"
-      id="reference-2-lname"
-      required
-    /><br />
-    <label for="reference-2-email">Email: </label><br />
-    <input
-      type="email"
-      name="reference-2-email"
-      id="reference-2-email"
-      required
-    /><br />
-    <label for="reference-2-relationship">Relationship: </label><br />
-    <input
-      type="text"
-      name="reference-2-relationship"
-      id="reference-2-relationship"
-      required
-    /><br />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            width="16"
+            height="16"
+          >
+            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+            />
+          </svg>
+        </span>
+      </p>
+      <br />
+      <label for="reference-2-fname">First Name: </label><br />
+      <input
+        type="text"
+        name="reference-2-fname"
+        id="reference-2-fname"
+        required
+      /><br />
+      <label for="reference-2-lname">Last Name: </label><br />
+      <input
+        type="text"
+        name="reference-2-lname"
+        id="reference-2-lname"
+        required
+      /><br />
+      <label for="reference-2-email">Email: </label><br />
+      <input
+        type="email"
+        name="reference-2-email"
+        id="reference-2-email"
+        required
+      /><br />
+      <label for="reference-2-relationship">Relationship: </label><br />
+      <input
+        type="text"
+        name="reference-2-relationship"
+        id="reference-2-relationship"
+        required
+      /><br />
 
-    <p>
-      Please share your emergency contact's name and contact info (phone and
-      email).
-    </p>
-    <br />
-    <label for="emergency-contact-fname">First Name: </label><br />
-    <input
-      type="text"
-      name="emergency-contact-fname"
-      id="emergency-contact-fname"
-      required
-    /><br />
-    <label for="emergency-contact-lname">Last Name: </label><br />
-    <input
-      type="text"
-      name="emergency-contact-lname"
-      id="emergency-contact-lname"
-      required
-    /><br />
-    <label for="emergency-contact-email">Email: </label><br />
-    <input
-      type="email"
-      name="emergency-contact-email"
-      id="emergency-contact-email"
-      required
-    /><br />
-    <label for="emergency-contact-relationship">Relationship: </label><br />
-    <input
-      type="text"
-      name="emergency-contact-relationship"
-      id="emergency-contact-relationship"
-      required
-    /><br />
+      <p>
+        Please share your emergency contact's name and contact info (phone and
+        email).
+      </p>
+      <br />
+      <label for="emergency-contact-fname">First Name: </label><br />
+      <input
+        type="text"
+        name="emergency-contact-fname"
+        id="emergency-contact-fname"
+        required
+      /><br />
+      <label for="emergency-contact-lname">Last Name: </label><br />
+      <input
+        type="text"
+        name="emergency-contact-lname"
+        id="emergency-contact-lname"
+        required
+      /><br />
+      <label for="emergency-contact-email">Email: </label><br />
+      <input
+        type="email"
+        name="emergency-contact-email"
+        id="emergency-contact-email"
+        required
+      /><br />
+      <label for="emergency-contact-relationship">Relationship: </label><br />
+      <input
+        type="text"
+        name="emergency-contact-relationship"
+        id="emergency-contact-relationship"
+        required
+      /><br />
 
-    <label for="anything-else-to-share"
-      >Anything else you want to share with us? <span>(Optional)</span> </label
-    ><br />
-    <textarea
-      name="anything-else-to-share"
-      id="anything-else-to-share"
-      cols="100"
-      rows="3"
-    ></textarea>
-    <div class="form-button">
-      <button
-        type="button"
-        class="continue-to-app-btn"
-        onclick="window.location.href='/app-long-text'"
-      >
-        Previous
-      </button>
-      <button
-        type="button"
-        class="continue-to-app-btn"
-        onclick="window.location.href='/app-form-admin'"
-      >
-        Next
-      </button>
-      <button
-        type="button"
-        class="continue-to-app-btn"
-        onclick="window.location.href='/'"
-      >
-        Save
-      </button>
-    </div>
-  </fieldset>
-</form>
+      <label for="anything-else-to-share"
+        >Anything else you want to share with us?
+        <span>(Optional)</span> </label
+      ><br />
+      <textarea
+        name="anything-else-to-share"
+        id="anything-else-to-share"
+        cols="100"
+        rows="3"
+      ></textarea>
+      <div class="form-button">
+        <button
+          type="button"
+          class="continue-to-app-btn"
+          onclick="window.location.href='/app-long-text'"
+        >
+          Previous
+        </button>
+        <button
+          type="button"
+          class="continue-to-app-btn"
+          onclick="window.location.href='/app-form-admin'"
+        >
+          Next
+        </button>
+        <button
+          type="button"
+          class="continue-to-app-btn"
+          onclick="window.location.href='/'"
+        >
+          Save
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</div>
 
 <style>
   form {
@@ -182,11 +188,26 @@ Techtonica Application {% endblock title %} {% block content %}
     margin: 2rem auto;
     width: 75%;
     max-width: 150rem;
+    padding: 3rem;
+    background-color: white;
+    border: 1px solid rgb(0, 0, 0);
+  }
+
+  .application-page {
+    justify-content: center;
+    background-color: #0093b5;
     padding: 2rem;
+  }
+  .application-page > h1,
+  .application-page > p {
+    max-width: 65%;
+    margin: auto;
+    text-align: center;
   }
 
   fieldset {
     padding: 2rem;
+    border-radius: 0.5rem;
   }
 
   fieldset p {
@@ -219,6 +240,10 @@ Techtonica Application {% endblock title %} {% block content %}
     font-size: large;
     padding: 1rem;
     border-radius: 0.5rem;
+  }
+
+  button:hover {
+    background-color: #0093b5;
   }
 
   .form-button {
