@@ -252,8 +252,9 @@ def get_events():
         return []
 
 
-# returns string & extension variable to display time bound page components
 def get_time():
+    """Returns a dictionary containing app_open (a boolean for current state of
+    applications) and text (for application timeline-related button content)"""
     today = datetime.datetime.today()
     if is_extended:
         app_close_date = app_open_date + datetime.timedelta(days=42)
