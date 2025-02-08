@@ -28,6 +28,7 @@ currently hosted on DreamHost.
     - [Updating the Demographics Chart for the Apply Section](#updating-the-demographics-chart-for-the-apply-section)
     - [Updating Testimonials](#updating-testimonials)
     - [Updating Dependencies](#updating-dependencies)
+    - [Connecting to the Database](#connecting-to-the-database)
   - [Deployment to DreamHost](#deployment-to-dreamhost)
     - [Initial Setup](#initial-setup)
     - [Deploy Feature Branch](#deploy-feature-branch)
