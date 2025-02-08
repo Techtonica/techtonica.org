@@ -389,6 +389,25 @@ dependencies. _If there are dependencies only needed for local development, thes
    pip install -r <file_name.txt>
    ```
 
+### Connecting to the Database
+
+There are 3 MySQL databases for this repo, one for each environment: **prod, testing & staging.**
+
+The credentials for these are stored in .env (each environment has its own .env). When developing locally, use the "testing" credentials.
+
+To connect these locally, you can use a GUI tool such as [Sequel Pro](https://sequelpro.com/) or [MySQL Workbench](https://www.mysql.com/products/workbench/).
+
+Enter the credentials into the connection window with the following:
+
+- **Name:** Anything, but should indicate which environment it points to
+- **Host:** mysql.techtonica.org
+- **Username:** Username from credentials
+- **Password:** Password from credentials
+- **Database:** Database name from credentials
+- **Port:** 3306
+
+![This is a sample screenshot of a Sequel Pro connection.](static/img/database_connection.png)
+
 ## Deployment to DreamHost
 
 ### Initial Setup
