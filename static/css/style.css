@@ -169,19 +169,16 @@ button {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
-
 .dropdown-menu .dropdown-item {
-  color: rgba(0, 147, 181, 1);
+  color: rgb(0, 147, 181);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
-
 .dropdown-menu .dropdown-item:hover {
   background-color: #f1f1f1;
 }
-
-.nav-link .dropdown-menu.show {
+.dropdown-menu.show {
   display: block;
 }
 
@@ -247,7 +244,6 @@ button {
     height: 1800px;
   }
 }
-
 .main-header__header {
   font-size: calc(28px + 24 * (100vw - 320px) / 960);
 }
@@ -270,7 +266,8 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/2024-H2-Launch-Celebration-min.png) #0093b5 no-repeat top fixed;
+  background: url(../img/2024-H2-Launch-Celebration-min.png) #0093b5 no-repeat
+    top fixed;
   background-size: cover;
 }
 
@@ -291,22 +288,23 @@ button {
 #sponsor-hero {
   width: 100%;
 }
+
 #consulting-hero {
   width: 100%;
   padding-top: 5%;
 }
+
 .full-width-img {
   width: 100%;
   max-width: 2440px;
   height: auto;
 }
-
 @media screen and (min-width: 2881px) {
   .full-width-img {
-    width: 2880px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
+    width: 2880px !important;
+    height: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
@@ -352,7 +350,8 @@ button {
   /* Ensure each teams image is square */
   object-fit: cover;
   width: 200px;
-  height: 200px;
+  max-height: 200px;
+  max-width: 200px;
 }
 
 .margin-25 {
@@ -722,17 +721,14 @@ table.mentor td:first-of-type {
   .social-link {
     width: 50px; /* Slightly smaller width for mobile */
   }
-
   .social-media,
   .hiring {
     width: 2.5rem;
     height: 2.5rem;
   }
-
   .hiring {
     width: 3.75rem;
   }
-
   .icon-text {
     font-size: 0.6rem; /* Even smaller text for mobile */
   }
