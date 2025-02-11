@@ -33,7 +33,6 @@ sslify = SSLify(app)
 try:
     app_open_date_string = os.environ["APP_OPEN_DATE"]
     is_extended = os.environ["APP_EXTENDED"].lower() == "true"
-    print("hi this ran")
     # Gracefully handle running locally w app_open_date formatted incorrectly
     try:
         app_open_date = datetime.datetime.strptime(
