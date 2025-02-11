@@ -8,12 +8,21 @@
       content="SBEOwaB6Oumg3YDk1clhzVE3EeBmdzfsVTOve_iQIeg"
     />
     <meta
-      description="Techtonica helps women and non-binary adults overcome barriers into the tech industry and partner 
+      description="Techtonica helps women and non-binary adults overcome barriers into the tech industry and partner
       companies fulfill their diverse technical talent needs."
     />
-    <!-- // This code block only needs to be installed once to activate all integrations site wide // Begin Flipcause Integration Code //-->
-    -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".info-icon").forEach((span) => {
+          span.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16">
+              <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
+            </svg>
+          `;
+        });
+      });
+    </script>
     <style>
       #fc-direct-embed-loader-out {
         position: fixed;
@@ -722,15 +731,15 @@
     </title>
     <meta
       name="description"
-      content="We partner with tech companies to offer tech training, laptops, living and childcare stipend scholarships, and job placement to women and 
+      content="We partner with tech companies to offer tech training, laptops, living and childcare stipend scholarships, and job placement to women and
       non-binary adults with low incomes."
     />
     <meta
       name="keywords"
-      content="Techtonica, coding school for women, coding academy, learn how to code, programming courses, software engineering training with need-based, 
-      sliding-scale, subsidized tuition and stipend scholarships, coding, women's empowerment, education for women, LGBT, LGBTQIA+, non-binary adults, genderqueer 
-      adults, #BridgeTheTechGap, adult education, vocational training, workforce development, tech jobs, San Francisco, sf, Silicon Valley, Bay Area, 
-      remote learning, virtual, join tech, software engineering, learn to code, tech education, software developer school, web development, Michelle 
+      content="Techtonica, coding school for women, coding academy, learn how to code, programming courses, software engineering training with need-based,
+      sliding-scale, subsidized tuition and stipend scholarships, coding, women's empowerment, education for women, LGBT, LGBTQIA+, non-binary adults, genderqueer
+      adults, #BridgeTheTechGap, adult education, vocational training, workforce development, tech jobs, San Francisco, sf, Silicon Valley, Bay Area,
+      remote learning, virtual, join tech, software engineering, learn to code, tech education, software developer school, web development, Michelle
       Glauser, become a software engineer"
     />
     <meta property="og:title" content="Techtonica: Bridging the Tech Gap" />
@@ -905,7 +914,6 @@
             <a
               href="{{ url_for('render_testimonials_page') }}"
               class="nav-link dropdown-item"
-
               >Testimonials</a
             >
           </div>
@@ -1131,7 +1139,7 @@
     <script scr="./js/piechart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-    
+
     <!-- Start of HubSpot Embed Code -->
     <script
       type="text/javascript"
