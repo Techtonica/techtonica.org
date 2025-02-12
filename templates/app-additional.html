@@ -3,7 +3,7 @@ Techtonica Application {% endblock title %} {% block content %}
 
 <div class="application-page">
   <h1>Techtonica Application</h1>
-  <form action="#" method="POST" class="application-form" id="app-form-7">
+  <form action="#" method="POST" class="application-form" id="app-form">
     <fieldset>
       <legend>Additional Applicant Information</legend>
       <div id="radio-wrapper">
@@ -241,7 +241,7 @@ Techtonica Application {% endblock title %} {% block content %}
         >
           Previous
         </button>
-        <button type="button" class="btn-submit" onclick="clearLocal()">Submit</button>
+        <button type="button" class="btn-submit">Submit</button>
       </div>
     </fieldset>
   </form>
@@ -343,11 +343,4 @@ Techtonica Application {% endblock title %} {% block content %}
     opacity: 1;
   }
 </style>
-
-<script>
-  function clearLocal() {
-    localStorage.clear();
-  }
-</script>
-
 {% endblock content %}

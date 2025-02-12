@@ -2,7 +2,7 @@
 Techtonica Application {% endblock title %} {% block content %}
 <div class="application-page">
   <h1>Techtonica Application</h1>
-  <form action="#" method="POST" class="application-form" id="app-form-1">
+  <form action="#" method="POST" class="application-form" id="app-form">
     <div class="info-wrapper" id="info-wrapper">
       <fieldset>
         <legend>General Applicant Demographics</legend>
@@ -374,7 +374,7 @@ Techtonica Application {% endblock title %} {% block content %}
     text-align: center;
   }
 
-  #app-form-1 button {
+  #app-form button {
     background-color: #fc7625;
     font-size: large;
     width: 100%;
@@ -387,7 +387,7 @@ Techtonica Application {% endblock title %} {% block content %}
     transition: 0.3s;
   }
 
-  #app-form-1 button:hover {
+  #app-form button:hover {
     background-color: #16c1f3;
     color: white;
   }
@@ -464,6 +464,13 @@ Techtonica Application {% endblock title %} {% block content %}
     display: none;
   }
 
+  #app-form button {
+    background-color: #fc7625;
+    font-size: large;
+    width: auto;
+    text-shadow: none;
+    padding: 1rem;
+  }
 </style>
 
 <script>
