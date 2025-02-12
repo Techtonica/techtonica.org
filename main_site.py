@@ -390,15 +390,11 @@ def render_payment_form():
     """
     return redirect(url_for("render_job_form"))
 
-
-
 @app.route("/share-a-job")
 def render_job_form():
     """
     Renders the job-form page from jinja2 template
     """
-
-@app.route("/process-payment", methods=['POST'])
     return render_template(
         "job-form.html",
         APPLICATION_ID=APPLICATION_ID,
@@ -441,7 +437,6 @@ def create_payment():
 
 # Slack webhook route
 @app.route("/send-posting", methods=["POST"])
-
 def send_posting():
     data = request.json
     print(f"Received data: {data}")

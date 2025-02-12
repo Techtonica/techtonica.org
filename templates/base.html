@@ -13,17 +13,6 @@
     />
     <!-- // This code block only needs to be installed once to activate all integrations site wide // Begin Flipcause Integration Code //-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".info-icon").forEach((span) => {
-          span.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16">
-              <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
-            </svg>
-          `;
-        });
-      });
-    </script>
     <style>
       #fc-direct-embed-loader-out {
         position: fixed;
@@ -782,6 +771,45 @@
       href="{{ url_for('static', filename='img/three-participants-at-laptops-min.jpg') }}"
       as="image"
     />
+    <script>
+      <!-- This script adds an SVG icon to all elements with the class "info-icon" when the DOM content is fully loaded -->
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".info-icon").forEach((span) => {
+          span.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16">
+              <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
+            </svg>
+          `;
+        });
+
+        document.querySelectorAll(".application-form").forEach((form) => {
+          const formId = form.getAttribute("id");
+
+          form.querySelectorAll("input, textarea, select").forEach((input, index) => {
+            const savedInput = localStorage.getItem(`${formId}_key${index}`);
+            if (savedInput !== null) {
+              if (input.type === "radio" || input.type === "checkbox") {
+                input.checked = savedInput === "true";
+              }
+              else {
+                input.value = savedInput;
+              }
+            }
+            console.log(`Restored value for ${input.name || input.id}:`, input.value);
+
+            // Save input values to localStorage on input change
+            input.addEventListener("input", function () {
+              if (input.type === "radio" || input.type === "checkbox") {
+                localStorage.setItem(`${formId}_key${index}`, input.checked);
+              } else {
+                localStorage.setItem(`${formId}_key${index}`, input.value);
+              }
+            });
+          });
+        });
+      });
+
+    </script>
     <script>
       (function (i, s, o, g, r, a, m) {
         i["GoogleAnalyticsObject"] = r;
