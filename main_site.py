@@ -191,8 +191,11 @@ def render_board_page():
 def render_mentor_page():
     """
     Renders the mentor page from jinja2 template
+    & utilizes 'render_mentor_page' function
     """
-    return render_template("mentor.html")
+    times = get_time()
+    mentor_timeline = get_mentor_timeline()
+    return render_template("board.html", times=times, mentor=mentor_timeline)
 
 
 @app.route("/full-time-program/")
@@ -265,7 +268,7 @@ def get_time():
             app_close_date = app_open_date + datetime.timedelta(days=42)
             date_string = app_close_date.strftime("%B %-d")
             text = """Extended!
-              Apply by {date} (12pm PT)!""".format(
+            Apply by {date} (12pm PT)!""".format(
                 date=date_string
             )
         else:
