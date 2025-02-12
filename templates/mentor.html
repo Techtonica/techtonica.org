@@ -153,31 +153,37 @@ Mentoring {% endblock title %} {% block content %}
     <h3>{ mentor.start_month }} {{ mentor.year }} Cohort Timeline</h3>
     <table class="mentor" cellpadding="0" cellspacing="0">
       <tr>
-        <td>October 1st - TBD</td>
+        <td>{{ mentor.app_open_date }} {{ mentor.app_close_date }}</td>
         <td>Mentor applications and open interviews</td>
       </tr>
       <tr>
-        <td>TBD</td>
+        <td>{{ mentor.app_close_date }}</td>
         <td>Mentor acceptance letter</td>
       </tr>
       <tr>
-        <td>December 12th</td>
+        <td>{{ mentor.onboarding_day }}</td>
         <td>Mentor and participant matches at onboarding day</td>
       </tr>
       <tr>
-        <td>December 13th - January 12th</td>
+        <td>{{ mentor.pre_work_start }} {{ mentor.start_day }}</td>
         <td>Support participants doing pre-work</td>
       </tr>
       <tr>
-        <td>January 14th</td>
+        <td>{{ mentor.start_day }}</td>
         <td>First day H1 2025 cohort</td>
       </tr>
       <tr>
-        <td>January 2025 - June 2025</td>
+        <td>
+          {{ mentor.training_start_month}} {{mentor.year}} - {{
+          mentor.training_end_month}} {{mentor.year}}
+        </td>
         <td>Support during Techtonica training</td>
       </tr>
       <tr>
-        <td>June 2025 - December 2025</td>
+        <td>
+          {{ mentor.job_search_start_month }} {{ mentor.year }} - {{
+          mentor.job_search_end_month }} {{ mentor.year }}
+        </td>
         <td>Support during placement or job search</td>
       </tr>
     </table>
