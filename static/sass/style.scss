@@ -516,7 +516,6 @@ table.mentor {
     font-size: 2em;
     display: flex;
     width: 1rem;
-    // padding-left: 10px;
   }
 
   .nav-link--mobile {
@@ -528,8 +527,6 @@ table.mentor {
   }
 
   .nav-link--mobile a {
-    // display: block;
-    // width: 100%;
     display: flex;
     justify-content: space-between;
     width: auto;
@@ -551,10 +548,6 @@ table.mentor {
   .nav-link--mobile:last-child {
     border-bottom: none;
   }
-
-  // TESTING
-
-  // END OF TEST
 
   .main-header {
     display: block;
