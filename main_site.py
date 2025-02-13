@@ -193,9 +193,9 @@ def render_mentor_page():
     Renders the mentor page from jinja2 template
     & utilizes 'render_mentor_page' function
     """
-    times = get_time()
+    # times = get_time()
     mentor_timeline = get_mentor_timeline()
-    return render_template("board.html", times=times, mentor=mentor_timeline)
+    return render_template("mentor.html", mentor=mentor_timeline)
 
 
 @app.route("/full-time-program/")

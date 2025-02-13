@@ -150,10 +150,10 @@ Mentoring {% endblock title %} {% block content %}
         </td>
       </tr>
     </table>
-    <h3>{ mentor.start_month }} {{ mentor.year }} Cohort Timeline</h3>
+    <h3>{{ mentor.start_month }} {{ mentor.year }} Cohort Timeline</h3>
     <table class="mentor" cellpadding="0" cellspacing="0">
       <tr>
-        <td>{{ mentor.app_open_date }} {{ mentor.app_close_date }}</td>
+        <td>{{ mentor.app_open_date }} - {{ mentor.app_close_date }}</td>
         <td>Mentor applications and open interviews</td>
       </tr>
       <tr>
@@ -165,7 +165,7 @@ Mentoring {% endblock title %} {% block content %}
         <td>Mentor and participant matches at onboarding day</td>
       </tr>
       <tr>
-        <td>{{ mentor.pre_work_start }} {{ mentor.start_day }}</td>
+        <td>{{ mentor.pre_work_start }} - {{ mentor.start_day }}</td>
         <td>Support participants doing pre-work</td>
       </tr>
       <tr>
