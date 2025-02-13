@@ -20,6 +20,7 @@ from square.client import Client
 
 load_dotenv(find_dotenv(usecwd=True))
 
+
 # Gracefully handle running locally without eventbrite token
 try:
     eventbrite = Eventbrite(os.environ["EVENTBRITE_OAUTH_TOKEN"])
@@ -33,6 +34,8 @@ sslify = SSLify(app)
 try:
     app_open_date_string = os.environ["APP_OPEN_DATE"]
     is_extended = os.environ["APP_EXTENDED"].lower() == "true"
+    print("APP_OPEN_DATE:", os.getenv("APP_OPEN_DATE"))
+
     # Gracefully handle running locally w app_open_date formatted incorrectly
     try:
         app_open_date = datetime.datetime.strptime(
