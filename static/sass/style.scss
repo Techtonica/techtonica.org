@@ -513,6 +513,9 @@ table.mentor {
 
   .dropdown-toggle::after {
     content: " ▾";
+    font-size: 2em;
+    display: flex;
+    width: 1rem;
     // padding-left: 10px;
   }
 
@@ -521,11 +524,16 @@ table.mentor {
     width: 100%;
     text-align: left;
     padding: 1rem;
+    padding-left: 3%;
   }
 
   .nav-link--mobile a {
-    display: block;
-    width: 100%;
+    // display: block;
+    // width: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    padding-right: 4%;
   }
 
   .nav-bar-inner {
