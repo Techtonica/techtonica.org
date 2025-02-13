@@ -491,20 +491,62 @@ table.mentor {
     display: none;
   }
 
-  .nav-link--mobile {
-    display: inline-block;
+  .nav-link.dropdown {
+    position: relative;
+    padding: 0;
+  }
+
+  .dropdown-menu {
+    position: static;
     width: 100%;
-    padding: 0.5rem 0;
-    border-top: 1px solid $light-gray;
-    background-color: $white;
-    text-align: center;
-    min-height: 1.4em;
-    z-index: 1;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .dropdown-menu .dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    padding-left: 3.5rem;
+  }
+
+  .dropdown-toggle::after {
+    content: " ▾";
+    // padding-left: 10px;
+  }
+
+  .nav-link--mobile {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+  }
+
+  .nav-link--mobile a {
+    display: block;
+    width: 100%;
+  }
+
+  .nav-bar-inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .nav-bar-inner > .nav-link--mobile {
+    border-bottom: 1px solid $light-gray;
   }
 
   .nav-link--mobile:last-child {
-    border-bottom: 1px solid $light-gray;
+    border-bottom: none;
   }
+
+  // TESTING
+
+  // END OF TEST
 
   .main-header {
     display: block;
