@@ -34,7 +34,6 @@ sslify = SSLify(app)
 try:
     app_open_date_string = os.environ["APP_OPEN_DATE"]
     is_extended = os.environ["APP_EXTENDED"].lower() == "true"
-    print("APP_OPEN_DATE:", os.getenv("APP_OPEN_DATE"))
 
     # Gracefully handle running locally w app_open_date formatted incorrectly
     try:
@@ -196,7 +195,6 @@ def render_mentor_page():
     Renders the mentor page from jinja2 template
     & utilizes 'render_mentor_page' function
     """
-    # times = get_time()
     mentor_timeline = get_mentor_timeline()
     return render_template("mentor.html", mentor=mentor_timeline)
 
@@ -296,7 +294,7 @@ def get_mentor_timeline():
         # Utilizing app open date variable from line 38
         # Defining key dates
         app_close_date = app_open_date + datetime.timedelta(weeks=4)
-        onboarding_day = app_close_date + datetime.timedelta(weeks=1)
+        onboarding_day = app_close_date + datetime.timedelta(weeks=6)
         pre_work_start = onboarding_day + datetime.timedelta(days=1)
         start_day = pre_work_start + datetime.timedelta(weeks=4, days=3)
 
