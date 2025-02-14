@@ -150,6 +150,7 @@ Mentoring {% endblock title %} {% block content %}
         </td>
       </tr>
     </table>
+    {% if app_open_date %}
     <h3>{{ mentor.start_month }} {{ mentor.year }} Cohort Timeline</h3>
     <table class="mentor" cellpadding="0" cellspacing="0">
       <tr>
@@ -187,6 +188,7 @@ Mentoring {% endblock title %} {% block content %}
         <td>Support during placement or job search</td>
       </tr>
     </table>
+    {% endif %}
   </div>
 </div>
 <div class="column row row__center blue-background">
