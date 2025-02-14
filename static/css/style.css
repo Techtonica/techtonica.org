@@ -637,7 +637,7 @@ table.mentor td:first-of-type {
   }
   .nav-bar-inner {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     width: 100%;
     display: flex;
     align-items: flex-start;
