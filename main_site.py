@@ -390,15 +390,11 @@ def render_payment_form():
     """
     return redirect(url_for("render_job_form"))
 
-
-
 @app.route("/share-a-job")
 def render_job_form():
     """
     Renders the job-form page from jinja2 template
     """
-
-@app.route("/process-payment", methods=['POST'])
     return render_template(
         "job-form.html",
         APPLICATION_ID=APPLICATION_ID,
@@ -408,7 +404,6 @@ def render_job_form():
         ACCOUNT_COUNTRY="ACCOUNT_COUNTRY",
         idempotencyKey=str(uuid4()),
     )
-
 
 # Square payment api route
 @app.route("/process-payment", methods=["POST"])
