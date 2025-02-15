@@ -41,16 +41,15 @@ function cookieExists(cname) {
   }
 }
 
-const timeWrapper = document.querySelector('.timeline-wrapper')
-const timelines = document.querySelectorAll('.timeline li .data');
+const timeWrapper = document.querySelector(".timeline-wrapper");
+const timelines = document.querySelectorAll(".timeline li .data");
 for (const time of timelines) {
-  time.onclick = () => time.classList.toggle('show');
+  time.onclick = () => time.classList.toggle("show");
 }
-const links = document.getElementsByClassName('links-inside');
+const links = document.getElementsByClassName("links-inside");
 for (const link of links) {
-  link.addEventListener('click', (event) => event.stopPropagation());
+  link.addEventListener("click", (event) => event.stopPropagation());
 }
-
 
 $(document).ready(function () {
   // check cookie to see if the user has visited if not popup newsletter registration.
@@ -60,3 +59,28 @@ $(document).ready(function () {
   }
 });
 
+let activeDropdown = null;
+
+function toggleDropdown(event, dropdownId) {
+  event.preventDefault();
+  event.stopPropagation();
+  let dropdown = document.getElementById(dropdownId);
+
+  if (activeDropdown === dropdown) {
+    dropdown.classList.remove("show");
+    activeDropdown = null;
+  } else {
+    if (activeDropdown) {
+      activeDropdown.classList.remove("show");
+    }
+    dropdown.classList.add("show");
+    activeDropdown = dropdown;
+  }
+}
+
+document.addEventListener("click", function () {
+  if (activeDropdown) {
+    activeDropdown.classList.remove("show");
+    activeDropdown = null;
+  }
+});
