@@ -2,8 +2,8 @@ Flask
 Flask-SSLify
 Jinja2
 eventbrite
-pendulum
-pip-tools==7.4.1
+pendulum==3.0.0a1
+pip-tools
 python-dotenv
 requests
 sendgrid

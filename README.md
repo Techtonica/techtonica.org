@@ -50,9 +50,9 @@ There should be a good understanding of how the program works with vetting, trai
 
 ## Getting Started
 
-You need Python version 3.8.10 and pip version 23 in order to properly update dependencies and replicate the production server environment locally.
+You need Python version 3.12.8 and Pip version 24 in order to properly update dependencies and replicate the production server environment locally.
 
-Using Python 3.8.10 and pip 23 helps ensure compatibility and consistency between your local development environment and the server environment. This minimizes potential issues during deployment by keeping dependencies in sync with the versions expected by the servers and eliminates discrepancies caused by different versions, ensuring that code runs the same way on every developer's machine.
+Using Python 3.12.8 and pip 24 helps ensure compatibility and consistency between your local development environment and the server environment. This minimizes potential issues during deployment by keeping dependencies in sync with the versions expected by the servers and eliminates discrepancies caused by different versions, ensuring that code runs the same way on every developer's machine.
 
 ### Set Up Virtual Environment
 
@@ -60,30 +60,26 @@ It is recommended you use a virtual environment to keep dependencies
 required by different projects separate. [Learn more about Python virtual
 environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 
-Set up virtual environment with Python 3.8.10 and Pip 23 using [pyenv](https://github.com/pyenv/pyenv) and [venv](https://docs.python.org/3/library/venv.html):
+Set up virtual environment with Python 3.13.1 and Pip 24 using [pyenv](https://github.com/pyenv/pyenv) and [venv](https://docs.python.org/3/library/venv.html):
 
 ```
 # Install pyenv using brew
 brew install pyenv
-# Use pyenv to install version python 3.8.10
-pyenv install 3.8.10
-# Set your python version to 3.8.10
-pyenv local 3.8.10
+# Use pyenv to install version python 3.13.1
+pyenv install 3.13.1
+# Set your python version to 3.13.1
+pyenv local 3.13.1
 # Create a virtual environment using venv
 python -m venv venv
 # Activate your new virtual environment
 source venv/bin/activate
+# Verify pip version
+pip --version
+# If it is not the latest version 24.3.1, upgrade pip
+pip install --upgrade pip
 ```
 
-**Note: if you are running into an error with running `python -m venv venv` you may need to instead use the full path to the python executable when creating your virual environment. An example is `/Users/yourPCName/.pyenv/versions/3.8.10/bin/python -m venv venv`**
-
-### Install pip Version 23
-
-Ensure you are running pip23 to match the version on the servers:
-
-```
-pip install --upgrade pip==23.0
-```
+**Note: if you are running into an error with running `python -m venv venv` you may need to instead use the full path to the python executable when creating your virual environment. An example is `/Users/yourPCName/.pyenv/versions/3.13.1/bin/python -m venv venv`**
 
 ### Install and Upgrade pip-tools
 
