@@ -156,6 +156,32 @@ button {
   color: #16c1f3;
 }
 
+.dropdown-toggle::after {
+  content: " ▾";
+  padding-left: 10px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown-menu .dropdown-item {
+  color: rgb(0, 147, 181);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-menu .dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+.dropdown-menu.show {
+  display: block;
+}
+
 .img-link {
   -webkit-flex: 10;
   -moz-flex: 10;
@@ -171,7 +197,8 @@ button {
 }
 
 .mc-closeModal {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .main-content {
@@ -191,7 +218,8 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 75vh;
-  background: url(../img/three-participants-at-laptops-min.jpg) #0093b5 no-repeat top right fixed;
+  background: url(../img/three-participants-at-laptops-min.jpg) #0093b5
+    no-repeat top right fixed;
   background-size: cover;
 }
 
@@ -216,7 +244,6 @@ button {
     height: 1800px;
   }
 }
-
 .main-header__header {
   font-size: calc(28px + 24 * (100vw - 320px) / 960);
 }
@@ -239,7 +266,8 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/2022-H1-Launch-Celebration.png) #0093b5 no-repeat top fixed;
+  background: url(../img/2024-H2-Launch-Celebration-min.png) #0093b5 no-repeat
+    top fixed;
   background-size: cover;
 }
 
@@ -260,23 +288,24 @@ button {
 #sponsor-hero {
   width: 100%;
 }
+
 #consulting-hero {
   width: 100%;
   padding-top: 5%;
 }
+
 .full-width-img {
   width: 100%;
   max-width: 2440px;
   height: auto;
 }
-
-  @media screen and (min-width: 2881px) {
-    .full-width-img {
-      width: 2880px;
-      height: auto;
-      margin-left: auto;
-      margin-right: auto;
-  }    
+@media screen and (min-width: 2881px) {
+  .full-width-img {
+    width: 2880px !important;
+    height: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }
 
 .forty-percent-width {
@@ -321,7 +350,8 @@ button {
   /* Ensure each teams image is square */
   object-fit: cover;
   width: 200px;
-  height: 200px;
+  max-height: 200px;
+  max-width: 200px;
 }
 
 .margin-25 {
@@ -343,7 +373,8 @@ button {
   top: 150px;
 }
 
-.social-media, .hiring {
+.social-media,
+.hiring {
   width: 3rem;
   height: 3rem;
   margin-bottom: 0.25rem;
@@ -568,23 +599,60 @@ table.mentor td:first-of-type {
   .nav-link {
     display: none;
   }
-  .nav-link--mobile {
-    display: inline-block;
+  .nav-link.dropdown {
+    position: relative;
+    padding: 0;
+  }
+  .dropdown-menu {
+    position: static;
     width: 100%;
-    padding: 0.5rem 0;
-    border-top: 1px solid #ccc;
-    background-color: white;
-    text-align: center;
-    min-height: 1.4em;
-    z-index: 1;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .dropdown-menu .dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    padding-left: 3.5rem;
+  }
+  .dropdown-toggle::after {
+    content: " ▾";
+    font-size: 2em;
+    display: flex;
+    width: 1rem;
+  }
+  .nav-link--mobile {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    padding-left: 3%;
+  }
+  .nav-link--mobile a {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    padding-right: 4%;
+  }
+  .nav-bar-inner {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+  }
+  .nav-bar-inner > .nav-link--mobile {
+    border-bottom: 1px solid #ccc;
   }
   .nav-link--mobile:last-child {
-    border-bottom: 1px solid #ccc;
+    border-bottom: none;
   }
   .main-header {
     display: block;
     position: relative;
-    background: url(../img/three-participants-at-laptops-min.jpg) #0093b5 no-repeat top center;
+    background: url(../img/three-participants-at-laptops-min.jpg) #0093b5
+      no-repeat top center;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
@@ -634,7 +702,8 @@ table.mentor td:first-of-type {
     position: relative;
     /*create the upper and lower lines as pseudo-elements of the middle line*/
   }
-  .lines:before, .lines:after {
+  .lines:before,
+  .lines:after {
     display: inline-block;
     width: 3rem;
     height: 0.4285714286rem;
@@ -666,7 +735,8 @@ table.mentor td:first-of-type {
     background: transparent;
     /*overlay the lines by setting both their top values to 0*/
   }
-  .lines-button.x.close .lines:before, .lines-button.x.close .lines:after {
+  .lines-button.x.close .lines:before,
+  .lines-button.x.close .lines:after {
     transform-origin: 50% 50%;
     top: 0;
     width: 2.5em;
@@ -687,16 +757,14 @@ table.mentor td:first-of-type {
   .social-link {
     width: 50px; /* Slightly smaller width for mobile */
   }
-
-  .social-media, .hiring {
+  .social-media,
+  .hiring {
     width: 2.5rem;
     height: 2.5rem;
   }
-
   .hiring {
     width: 3.75rem;
   }
-
   .icon-text {
     font-size: 0.6rem; /* Even smaller text for mobile */
   }
@@ -940,7 +1008,8 @@ p.press-release-bold {
   color: #bf0020;
 }
 
-#ach-message:empty:before, #message:empty:before {
+#ach-message:empty:before,
+#message:empty:before {
   content: "​";
 }
 
@@ -994,8 +1063,8 @@ legend {
   color: rgba(0, 115, 149, 0.8);
 }
 
-#info-wrapper > fieldset > input[type=text],
-#info-wrapper > fieldset > input[type=email],
+#info-wrapper > fieldset > input[type="text"],
+#info-wrapper > fieldset > input[type="email"],
 #info-wrapper > fieldset > textarea {
   min-width: 90%;
   margin: auto auto 1em auto;
@@ -1008,7 +1077,7 @@ legend {
   min-height: 6em;
 }
 
-input[type=radio] {
+input[type="radio"] {
   width: 50px;
 }
 
@@ -1029,7 +1098,7 @@ input[type=radio] {
   text-align: center;
 }
 
-#consulting-list{
+#consulting-list {
   list-style-position: inside;
   border-style: solid;
   border-color: #05556d;
@@ -1037,13 +1106,13 @@ input[type=radio] {
   padding: 3% 5% 3% 5%;
 }
 
-#consulting-bullet-items{
+#consulting-bullet-items {
   border-style: solid;
   border-color: #05556d;
   border-radius: 5px;
   padding: 1%;
-  margin:1%;
-  list-style-type:none;
+  margin: 1%;
+  list-style-type: none;
 }
 
 @media (max-width: 900px) {
