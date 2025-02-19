@@ -110,32 +110,26 @@ pre-commit install -f --install-hooks
 pip install -r dev.txt
 ```
 
-### Create Config.ini File
+### Create .env File
 
 ```
-touch config.ini
+touch .env
 ```
 
 And then copy and paste this code into your new file (note: For the actual values, please see [Updating Techtonica's Website](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit?tab=t.0)):
 
 ```sh
-   [default]
-   # Acceptable values are sandbox or production
-   environment = sandbox
-   dev_password = dev_password
-
-   [production]
-   square_application_id = production_application_id
-   square_access_token = production_access_token
-   square_location_id = production_location_id
-
-   [sandbox]
-   square_application_id = <sandbox app id>
-   square_access_token = <sandbox access token>
-   square_location_id = <sandbox location id>
-
-   [slack]
-   slack_webhook =  <slack webhook>
+ENVIRONMENT="local"
+SQUARE_APPLICATION_ID="id"
+SQUARE_ACCESS_TOKEN="token"
+SQUARE_LOCATION_ID="location"
+SLACK_WEBHOOK="webhook"
+APP_OPEN_DATE="date"
+APP_EXTENDED="boolean"
+DB_USERNAME="username"
+DB_PASSWORD="password"
+DB_HOST="host"
+DB_NAME="name"
 ```
 
 ### Pre-Commit Hooks Guide
@@ -311,7 +305,7 @@ There are features on the site that use Square for payments and will periodicall
 
 #### Setup
 
-1. Secrets required for the Square payment API and Slack webhook are stored in a config.ini file in the root directory of our repository.
+1. Secrets required for the Square payment API, Slack webhook, and full time program application timeline are stored in a .env file in the root directory of our repository.
 2. This file is listed in our .gitignore file and will not be included when pushing or pulling updates.
 3. You will need to manually add it into your local repository to test these features locally, and will also need to manually add it into whatever Dreamhost server (testing, staging, or production) that you are using as well, if it’s not already there.
 4. BE CAREFUL ABOUT environment VALUE! If it’s set to production it will actually charge the cards you test with, so be sure to set it to sandbox when testing locally or on staging or testing.
@@ -432,27 +426,21 @@ The below instructions are for setting up a new server in DreamHost.
    pip install -U pip setuptools pip-tools
    ```
 
-1. Create a `config.ini` file in the root directory of the repo in whichever Dreamhost server if there isn't one already present, and populate it with the necessary keys.
+1. Create a `.env` file in the root directory of the repo in whichever Dreamhost server if there isn't one already present, and populate it with the necessary keys.
 
-   ```sh
-   [default]
-   # Acceptable values are sandbox or production
-   environment = sandbox
-   dev_password = dev_password
-
-   [production]
-   square_application_id = production_application_id
-   square_access_token = production_access_token
-   square_location_id = production_location_id
-
-   [sandbox]
-   square_application_id = <sandbox app id>
-   square_access_token = <sandbox access token>
-   square_location_id = <sandbox location id>
-
-   [slack]
-   slack_webhook =  <slack webhook>
-   ```
+```sh
+ENVIRONMENT="local"
+SQUARE_APPLICATION_ID="id"
+SQUARE_ACCESS_TOKEN="token"
+SQUARE_LOCATION_ID="location"
+SLACK_WEBHOOK="webhook"
+APP_OPEN_DATE="date"
+APP_EXTENDED="boolean"
+DB_USERNAME="username"
+DB_PASSWORD="password"
+DB_HOST="host"
+DB_NAME="name"
+```
 
 ### Deploy Feature Branch
 
