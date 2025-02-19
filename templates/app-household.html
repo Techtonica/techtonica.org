@@ -281,6 +281,85 @@ Techtonica Application {% endblock title %} {% block content %}
     visibility: visible;
     opacity: 1;
   }
+
+  @media only screen and (min-width: 320px) and (max-width: 488px) {
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    form {
+      width: 65%;
+    }
+    .application-page > h1 {
+      font-size: 1.5em;
+      max-width: fit-content;
+    }
+    .info-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+    }
+    fieldset {
+      min-width: 80%;
+      word-wrap: break-word;
+      padding: 1.5rem;
+    }
+    fieldset > input[type="text"],
+    fieldset > input[type="file"],
+    fieldset > input[type="number"],
+    fieldset > input[type="url"] {
+      width: 80%;
+    }
+    button.continue-to-app-btn,
+    button.previous-btn,
+    button.save-btn {
+      margin: 10px 0;
+    }
+    .form-button {
+      display: block;
+    }
+  }
+
+  @media only screen and (min-width: 489px) and (max-width: 599px) {
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    .application-page > h1 {
+      font-size: 1.75em;
+      max-width: fit-content;
+    }
+    fieldset {
+      min-width: 80%;
+      word-wrap: break-word;
+      padding: 1.5rem;
+    }
+    fieldset > input[type="text"],
+    fieldset > input[type="file"],
+    fieldset > input[type="number"],
+    fieldset > input[type="url"] {
+      width: 80%;
+    }
+    .form-button {
+      gap: 1rem;
+    }
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 910px) {
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    fieldset > input[type="text"],
+    fieldset > input[type="file"],
+    fieldset > input[type="number"],
+    fieldset > input[type="url"] {
+      width: 80%;
+    }
+  }
 </style>
 
 <script>
