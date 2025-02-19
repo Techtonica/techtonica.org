@@ -471,6 +471,38 @@ Techtonica Application {% endblock title %} {% block content %}
     text-shadow: none;
     padding: 1rem;
   }
+
+  @media only screen and (min-width: 320px) and (max-width: 599px) {
+    form {
+      width: 80%;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    .application-page > h1 {
+      font-size: 1.75em;
+      max-width: fit-content;
+    }
+    #info-wrapper > fieldset > input[type="text"],
+    #info-wrapper > fieldset > input[type="email"],
+    #info-wrapper > fieldset > input[type="tel"],
+    #info-wrapper > fieldset > input[type="date"],
+    #info-wrapper > fieldset > input[type="number"],
+    #info-wrapper > fieldset > input[type="url"],
+    #info-wrapper > fieldset > textarea,
+    #info-wrapper > fieldset > select {
+      width: 80%;
+    }
+    #radio-wrapper,
+    #info-wrapper > fieldset > label {
+      font-size: 0.75em;
+    }
+    legend {
+      font-size: 15px;
+    }
+  }
 </style>
 
 <script>
