@@ -503,6 +503,30 @@ Techtonica Application {% endblock title %} {% block content %}
       font-size: 18px;
     }
   }
+  @media only screen and (min-width: 600px) and (max-width: 910px) {
+    form {
+      width: 80%;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    .application-page > h1 {
+      font-size: 2em;
+      max-width: fit-content;
+    }
+    #info-wrapper > fieldset > input[type="text"],
+    #info-wrapper > fieldset > input[type="email"],
+    #info-wrapper > fieldset > input[type="tel"],
+    #info-wrapper > fieldset > input[type="date"],
+    #info-wrapper > fieldset > input[type="number"],
+    #info-wrapper > fieldset > input[type="url"],
+    #info-wrapper > fieldset > textarea,
+    #info-wrapper > fieldset > select {
+      width: 80%;
+    }
+  }
 </style>
 
 <script>
