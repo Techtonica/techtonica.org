@@ -1,3 +1,6 @@
+"""for rendering dates, related to application timeline
+, dynamically throughout this website"""
+
 import os
 from datetime import datetime, timedelta
 
@@ -21,6 +24,7 @@ DATE_STRING = APP_CLOSE_DATE.strftime("%B %-d")
 
 APP_OPEN = False
 
+TEXT = ""
 if APP_OPEN_DATE is None:
     APP_OPEN = True
 elif APP_OPEN_DATE <= TODAY <= APP_CLOSE_DATE and APP_EXTENDED:
@@ -81,6 +85,7 @@ DATES = {
     "TRAINING_END_MONTH": TRAINING_END.strftime("%B"),
     "JOB_SEARCH_START_MONTH": TRAINING_END.strftime("%B"),
     "JOB_SEARCH_END_MONTH": JOB_SEARCH_END.strftime("%B"),
+    "TEXT": TEXT,
 }
 
 for key, value in DATES.items():
