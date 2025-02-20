@@ -1135,11 +1135,12 @@ input[type=radio] {
     margin: 0px;
     width: 100%;
   }
-  .twenty-percent-width {
-    width: 30%;
+  .sponsor-mobile-size {
+    width: 33%;
   }
-  .fifteen-percent-width {
-    width: 30%;
+  .sponsor-container {
+    padding: 0 !important;
+    margin: 0 !important;
   }
 }
 
