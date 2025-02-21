@@ -545,11 +545,20 @@ table.mentor td:first-of-type {
 }
 @media only screen and (max-width: 910px) {
   .row {
-    padding: 1em 1em;
-    width: 100%;
-    margin: auto;
+    padding: 1em;
+    margin: 0 auto;
     overflow-x: hidden;
     box-sizing: border-box;
+    justify-content: center;
+  }
+  .row__center {
+    text-align: center; /* Center-aligns text within the container */
+  }
+  .justify {
+    text-align: center;
+  }
+  .hidden-bullets li {
+    text-align: center !important;
   }
   .column-med {
     -webkit-flex: 0 0 40%;
@@ -565,6 +574,11 @@ table.mentor td:first-of-type {
     -moz-flex: 0 0 100%;
     -o-flex: 0 0 100%;
     flex: 0 0 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .column li {
+    text-align: left; /* Ensures text inside list items is left-aligned */
   }
   h1 {
     font-size: 2em;
@@ -659,6 +673,11 @@ table.mentor td:first-of-type {
     background-size: contain;
   }
   .main-header__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     position: absolute;
     bottom: 0;
     max-width: 100%;
