@@ -1,5 +1,5 @@
-"""for rendering dates, related to application timeline
-, dynamically throughout this website"""
+# This file generate the application timeline
+# to dynamically renders relevant dates and information
 
 import os
 from datetime import datetime, timedelta
@@ -8,85 +8,103 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-APP_OPEN_DATE = datetime.strptime(os.getenv("APP_OPEN_DATE"), "%x %X")
-APP_EXTENDED = os.getenv("APP_EXTENDED", "false").lower() == "true"
+
+def generate_application_timeline():
+
+    # Get application open date from .env
+    app_open_date_str = os.getenv("APP_OPEN_DATE")
+    app_extended = os.getenv("APP_EXTENDED", "false").lower() == "true"
+
+    # Error handling: Ensure APP_OPEN_DATE is set
+    if not app_open_date_str:
+        print("Warning: APP_OPEN_DATE is not set.")
+        app_open_datetime = None
+    else:
+        try:
+            app_open_datetime = datetime.strptime(app_open_date_str, "%x %X")
+        except ValueError:
+            print("Error: Unexpected APP_OPEN_DATE format!")
+            app_open_datetime = None
+
+    # Determine application close date
+    if app_open_datetime:
+        app_close_datetime = app_open_datetime + timedelta(
+            weeks=6 if app_extended else 4
+        )
+    else:
+        app_close_datetime = None
+
+    # Today's date
+    today = datetime.today()
+
+    # Application status logic
+    app_open = False
+    text = "Apply Now!"
+
+    if app_open_datetime is None:
+        app_open = True  # Default to true if APP_OPEN_DATE is missing
+        text = "Apply Now!"
+    elif app_open_datetime <= today <= app_close_datetime:
+        app_open = True
+        if app_extended:
+            text = f"Extended!\nApply by {app_close_datetime.strftime('%B %-d')} (12pm PT)!"
+        else:
+            text = "Apply Now!"
+
+    # Generate event dates if APP_OPEN_DATE is valid
+    if app_open_datetime:
+        info_session = app_open_datetime + timedelta(weeks=3)
+        application_workshop = app_close_datetime + timedelta(weeks=1)
+        pair_programming_with_staff = application_workshop + timedelta(weeks=1)
+        take_home_code_challenge = pair_programming_with_staff + timedelta(weeks=1)
+        interview_financial_convos = take_home_code_challenge + timedelta(weeks=1)
+        notification_day = interview_financial_convos + timedelta(weeks=1)
+        onboarding_day = notification_day + timedelta(weeks=1)
+        pre_work_start = onboarding_day + timedelta(days=1)
+        cohort_start_day = pre_work_start + timedelta(weeks=4.5)
+
+        start_month = cohort_start_day.strftime("%B")
+        cohort_half = "H1" if start_month == "January" else "H2"
+
+        training_end = cohort_start_day + timedelta(weeks=24)
+        job_search_end = cohort_start_day + timedelta(weeks=48)
+
+    else:
+        # If no APP_OPEN_DATE, keep all dates as None
+        info_session = application_workshop = pair_programming_with_staff = None
+        take_home_code_challenge = interview_financial_convos = notification_day = None
+        onboarding_day = pre_work_start = cohort_start_day = None
+        start_month = cohort_half = None
+        training_end = job_search_end = None
+
+    return {
+        "APP_OPEN_DATE": app_open_datetime,
+        "APP_EXTENDED": app_extended,
+        "APP_CLOSE_DATE": app_close_datetime,
+        "INFO_SESSION": info_session,
+        "APPLICATION_WORKSHOP": application_workshop,
+        "PAIR_PROGRAMMING_WITH_STAFF": pair_programming_with_staff,
+        "TAKE_HOME_CODE_CHALLENGE": take_home_code_challenge,
+        "INTERVIEW_FINANCIAL_CONVOS": interview_financial_convos,
+        "NOTIFICATION_DAY": notification_day,
+        "ONBOARDING_DAY": onboarding_day,
+        "PRE_WORK_START": pre_work_start,
+        "COHORT_START_DAY": cohort_start_day,
+        "START_MONTH": start_month,
+        "COHORT_HALF": cohort_half,
+        "TRAINING_END": training_end,
+        "JOB_SEARCH_END": job_search_end,
+        "TRAINING_END_MONTH": training_end.strftime("%B") if training_end else None,
+        "JOB_SEARCH_START_MONTH": training_end.strftime("%B") if training_end else None,
+        "JOB_SEARCH_END_MONTH": (
+            job_search_end.strftime("%B") if job_search_end else None
+        ),
+        "TEXT": text,
+        "APP_OPEN": app_open,
+    }
 
 
-if APP_EXTENDED:
-    APP_CLOSE_DATE = APP_OPEN_DATE + timedelta(weeks=6)
-else:
-    APP_CLOSE_DATE = APP_OPEN_DATE + timedelta(weeks=4)
+timeline = generate_application_timeline()
 
-TODAY = datetime.today()
-print("Today's date is: ", TODAY)
-
-DATE_STRING = APP_CLOSE_DATE.strftime("%B %-d")
-
-APP_OPEN = False
-
-TEXT = ""
-if APP_OPEN_DATE is None:
-    APP_OPEN = True
-elif APP_OPEN_DATE <= TODAY <= APP_CLOSE_DATE and APP_EXTENDED:
-    APP_OPEN = True
-    TEXT = """Extended!
-            Apply by {date} (12pm PT)!""".format(
-        date=DATE_STRING
-    )
-    print(TEXT)
-elif APP_OPEN_DATE <= TODAY <= APP_CLOSE_DATE:
-    APP_OPEN = True
-    TEXT = "Apply Now!"
-    print(TEXT)
-else:
-    APP_OPEN = False
-
-print("APP_OPEN value:", APP_OPEN)
-
-if APP_OPEN:
-    print("Applications are currently open!")
-else:
-    print("Applications are currently closed.")
-
-
-INFO_SESSION = APP_OPEN_DATE + timedelta(weeks=3)
-APPLICATION_WORKSHOP = APP_CLOSE_DATE + timedelta(weeks=1)
-PAIR_PROGRAMMING_WITH_STAFF = APPLICATION_WORKSHOP + timedelta(weeks=1)
-TAKE_HOME_CODE_CHALLENGE = PAIR_PROGRAMMING_WITH_STAFF + timedelta(weeks=1)
-INTERVIEW_FINANCIAL_CONVOS = TAKE_HOME_CODE_CHALLENGE + timedelta(weeks=1)
-NOTIFICATION_DAY = INTERVIEW_FINANCIAL_CONVOS + timedelta(weeks=1)
-ONBOARDING_DAY = NOTIFICATION_DAY + timedelta(weeks=1)
-PRE_WORK_START = ONBOARDING_DAY + timedelta(days=1)
-COHORT_START_DAY = PRE_WORK_START + timedelta(weeks=4.5)
-
-START_MONTH = COHORT_START_DAY.strftime("%B")
-COHORT_HALF = "H1" if START_MONTH == "January" else "H2"
-
-TRAINING_END = COHORT_START_DAY + timedelta(weeks=24)
-JOB_SEARCH_END = COHORT_START_DAY + timedelta(weeks=48)
-
-DATES = {
-    "APP_OPEN_DATE": APP_OPEN_DATE,
-    "APP_EXTENDED": APP_EXTENDED,
-    "APP_CLOSE_DATE": APP_CLOSE_DATE,
-    "INFO_SESSION": INFO_SESSION,
-    "APPLICATION_WORKSHOP": APPLICATION_WORKSHOP,
-    "PAIR_PROGRAMMING_WITH_STAFF": PAIR_PROGRAMMING_WITH_STAFF,
-    "TAKE_HOME_CODE_CHALLENGE": TAKE_HOME_CODE_CHALLENGE,
-    "INTERVIEW_FINANCIAL_CONVOS": INTERVIEW_FINANCIAL_CONVOS,
-    "NOTIFICATION_DAY": NOTIFICATION_DAY,
-    "ONBOARDING_DAY": ONBOARDING_DAY,
-    "PRE_WORK_START": PRE_WORK_START,
-    "COHORT_START_DAY": COHORT_START_DAY,
-    "START_MONTH": START_MONTH,
-    "COHORT_HALF": COHORT_HALF,
-    "TRAINING_END": TRAINING_END,
-    "JOB_SEARCH_END": JOB_SEARCH_END,
-    "TRAINING_END_MONTH": TRAINING_END.strftime("%B"),
-    "JOB_SEARCH_START_MONTH": TRAINING_END.strftime("%B"),
-    "JOB_SEARCH_END_MONTH": JOB_SEARCH_END.strftime("%B"),
-    "TEXT": TEXT,
-}
-
-for key, value in DATES.items():
-    print(f"{key}:{value}")
+for key, value in timeline.items():
+    print(f"{key}: {value}")
