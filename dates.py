@@ -1,8 +1,8 @@
-# This file generate the application timeline
-# to dynamically renders relevant dates and information
+""" This file generates the application timeline
+to dynamically render relevant dates and information """
 
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 from dotenv import load_dotenv
 
@@ -10,7 +10,6 @@ load_dotenv()
 
 
 def generate_application_timeline():
-
     # Get application open date from .env
     app_open_date_str = os.getenv("APP_OPEN_DATE")
     app_extended = os.getenv("APP_EXTENDED", "false").lower() == "true"
@@ -21,9 +20,14 @@ def generate_application_timeline():
         app_open_datetime = None
     else:
         try:
-            app_open_datetime = datetime.strptime(app_open_date_str, "%x %X")
+            app_open_datetime = datetime.strptime(
+                app_open_date_str, "%m/%d/%y %H:%M:%S"
+            )
+            app_open_datetime = app_open_datetime.replace(tzinfo=timezone.utc)
         except ValueError:
-            print("Error: Unexpected APP_OPEN_DATE format!")
+            print(
+                f"""Error: Unexpected APP_OPEN_DATE format!" f"({app_open_date_str})"""
+            )
             app_open_datetime = None
 
     # Determine application close date
@@ -31,25 +35,34 @@ def generate_application_timeline():
         app_close_datetime = app_open_datetime + timedelta(
             weeks=6 if app_extended else 4
         )
+        app_close_datetime = app_close_datetime.replace(tzinfo=timezone.utc)
     else:
         app_close_datetime = None
 
     # Today's date
-    today = datetime.today()
+    today = datetime.now(timezone.utc)
 
     # Application status logic
-    app_open = False
+    app_open = "false"
     text = "Apply Now!"
 
-    if app_open_datetime is None:
+    if app_open_datetime is None or app_close_datetime is None:
         app_open = True  # Default to true if APP_OPEN_DATE is missing
         text = "Apply Now!"
     elif app_open_datetime <= today <= app_close_datetime:
         app_open = True
         if app_extended:
-            text = f"Extended!\nApply by {app_close_datetime.strftime('%B %-d')} (12pm PT)!"
+            text = (
+                "Extended!\nApply by "
+                f"{app_close_datetime.strftime('%B')} "
+                f"{app_close_datetime.day} (12pm PT)!"
+            )
         else:
-            text = "Apply Now!"
+            text = (
+                "Apply by "
+                f"{app_close_datetime.strftime('%B')} "
+                f"{app_close_datetime.day} (12pm PT)!"
+            )
 
     # Generate event dates if APP_OPEN_DATE is valid
     if app_open_datetime:
@@ -68,14 +81,21 @@ def generate_application_timeline():
 
         training_end = cohort_start_day + timedelta(weeks=24)
         job_search_end = cohort_start_day + timedelta(weeks=48)
-
     else:
         # If no APP_OPEN_DATE, keep all dates as None
-        info_session = application_workshop = pair_programming_with_staff = None
-        take_home_code_challenge = interview_financial_convos = notification_day = None
-        onboarding_day = pre_work_start = cohort_start_day = None
-        start_month = cohort_half = None
-        training_end = job_search_end = None
+        info_session = None
+        application_workshop = None
+        pair_programming_with_staff = None
+        take_home_code_challenge = None
+        interview_financial_convos = None
+        notification_day = None
+        onboarding_day = None
+        pre_work_start = None
+        cohort_start_day = None
+        start_month = None
+        cohort_half = None
+        training_end = None
+        job_search_end = None
 
     return {
         "APP_OPEN_DATE": app_open_datetime,
@@ -94,8 +114,10 @@ def generate_application_timeline():
         "COHORT_HALF": cohort_half,
         "TRAINING_END": training_end,
         "JOB_SEARCH_END": job_search_end,
-        "TRAINING_END_MONTH": training_end.strftime("%B") if training_end else None,
-        "JOB_SEARCH_START_MONTH": training_end.strftime("%B") if training_end else None,
+        "TRAINING_END_MONTH": (training_end.strftime("%B") if training_end else None),
+        "JOB_SEARCH_START_MONTH": (
+            training_end.strftime("%B") if training_end else None
+        ),
         "JOB_SEARCH_END_MONTH": (
             job_search_end.strftime("%B") if job_search_end else None
         ),
