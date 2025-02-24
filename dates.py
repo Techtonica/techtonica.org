@@ -126,4 +126,4 @@ def generate_application_timeline():
     }
 
 
-timeline = generate_application_timeline()
+# timeline = generate_application_timeline()
