@@ -127,6 +127,3 @@ def generate_application_timeline():
 
 
 timeline = generate_application_timeline()
-
-for key, value in timeline.items():
-    print(f"{key}: {value}")
