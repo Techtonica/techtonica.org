@@ -17,8 +17,7 @@ from flask_sslify import SSLify
 from pydantic import BaseModel
 from square.client import Client
 
-from application_process import application_bp
-from course_management import course_bp
+from dates import generate_application_timeline
 
 load_dotenv(find_dotenv(usecwd=True))
 
@@ -61,12 +60,12 @@ def render_home_page():
     """
     Renders the home page from jinja2 template
     """
-    times = get_time()
+    timeline = generate_application_timeline()
     try:
         events = get_events()
-        return render_template("home.html", events=events, times=times)
+        return render_template("home.html", events=events, timeline=timeline)
     except BaseException:
-        return render_template("home.html", times=times)
+        return render_template("home.html", timeline=timeline)
 
 
 @app.route("/team/")
@@ -202,8 +201,8 @@ def render_mentor_page():
     Renders the mentor page from jinja2 template
     & utilizes 'render_mentor_page' function
     """
-    mentor_timeline = get_mentor_timeline()
-    return render_template("mentor.html", mentor=mentor_timeline)
+    timeline = generate_application_timeline()
+    return render_template("mentor.html", timeline=timeline)
 
 
 @app.route("/full-time-program/")
@@ -212,8 +211,8 @@ def render_ft_program_page():
     Generates time-bound text and application extension variable
     Renders the full-time program page from jinja2 template with relevant times
     """
-    times = get_time()
-    return render_template("full-time-program.html", times=times)
+    timeline = generate_application_timeline()
+    return render_template("full-time-program.html", timeline=timeline)
 
 
 @app.route("/donate/")
@@ -304,69 +303,69 @@ def get_events():
         return []
 
 
-def get_time():
-    """Returns a dictionary containing app_open (a boolean for current state of
-    applications) and text (for application timeline-related button content)"""
-    if app_open_date is None:
-        app_open = True
-        text = "Apply Now!"
-    else:
-        today = datetime.datetime.today()
-        if is_extended:
-            app_close_date = app_open_date + datetime.timedelta(days=42)
-            date_string = app_close_date.strftime("%B %-d")
-            text = """Extended!
-            Apply by {date} (12pm PT)!""".format(
-                date=date_string
-            )
-        else:
-            app_close_date = app_open_date + datetime.timedelta(days=28)
-            date_string = app_close_date.strftime("%B %-d")
-            text = "Apply by {date} (12pm PT)!".format(date=date_string)
+# def get_time():
+#     """Returns a dictionary containing app_open (a boolean for current state of
+#     applications) and text (for application timeline-related button content)"""
+#     if app_open_date is None:
+#         app_open = True
+#         text = "Apply Now!"
+#     else:
+#         today = datetime.datetime.today()
+#         if is_extended:
+#             app_close_date = app_open_date + datetime.timedelta(days=42)
+#             date_string = app_close_date.strftime("%B %-d")
+#             text = """Extended!
+#             Apply by {date} (12pm PT)!""".format(
+#                 date=date_string
+#             )
+#         else:
+#             app_close_date = app_open_date + datetime.timedelta(days=28)
+#             date_string = app_close_date.strftime("%B %-d")
+#             text = "Apply by {date} (12pm PT)!".format(date=date_string)
 
-        app_open = app_open_date <= today <= app_close_date
+#         app_open = app_open_date <= today <= app_close_date
 
-    return {
-        "app_open": app_open,
-        "text": text,
-    }
+#     return {
+#         "app_open": app_open,
+#         "text": text,
+#     }
 
 
-def get_mentor_timeline():
-    """Returns dynamically calculated mentor timeline dates."""
-    if app_open_date is None:
-        print("Warning: app_open_date is None. Mentor timeline not generated.")
+# def get_mentor_timeline():
+#     """Returns dynamically calculated mentor timeline dates."""
+#     if app_open_date is None:
+#         print("Warning: app_open_date is None. Mentor timeline not generated.")
 
-    else:
-        # Utilizing app open date variable from line 38
-        # Defining key dates
-        app_close_date = app_open_date + datetime.timedelta(weeks=4)
-        onboarding_day = app_close_date + datetime.timedelta(weeks=6)
-        pre_work_start = onboarding_day + datetime.timedelta(days=1)
-        start_day = pre_work_start + datetime.timedelta(weeks=4, days=3)
+#     else:
+#         # Utilizing app open date variable from line 38
+#         # Defining key dates
+#         app_close_date = app_open_date + datetime.timedelta(weeks=4)
+#         onboarding_day = app_close_date + datetime.timedelta(weeks=6)
+#         pre_work_start = onboarding_day + datetime.timedelta(days=1)
+#         start_day = pre_work_start + datetime.timedelta(weeks=4, days=3)
 
-        # Defining Cohort Type (January H1 or July H2)
-        start_month = start_day.strftime("%B")  # extracting month
-        cohort_half = "H1" if start_month == "January" else "H2"
+#         # Defining Cohort Type (January H1 or July H2)
+#         start_month = start_day.strftime("%B")  # extracting month
+#         cohort_half = "H1" if start_month == "January" else "H2"
 
-        # Defining training and job search periods
-        training_end = start_day + datetime.timedelta(weeks=24)
-        job_search_end = start_day + datetime.timedelta(weeks=48)
+#         # Defining training and job search periods
+#         training_end = start_day + datetime.timedelta(weeks=24)
+#         job_search_end = start_day + datetime.timedelta(weeks=48)
 
-        return {
-            "app_open_date": app_open_date.strftime("%B %d, %Y"),
-            "app_close_date": app_close_date.strftime("%B %d, %Y"),
-            "onboarding_day": onboarding_day.strftime("%B %d, %Y"),
-            "pre_work_start": pre_work_start.strftime("%B %d, %Y"),
-            "start_day": start_day.strftime("%B %d, %Y"),
-            "start_month": start_month,  # January or July
-            "year": start_day.year,
-            "cohort_half": cohort_half,  # H1 or H2
-            "training_start_month": start_month,
-            "training_end_month": training_end.strftime("%B"),
-            "job_search_start_month": training_end.strftime("%B"),
-            "job_search_end_month": job_search_end.strftime("%B"),
-        }
+#         return {
+#             "app_open_date": app_open_date.strftime("%B %d, %Y"),
+#             "app_close_date": app_close_date.strftime("%B %d, %Y"),
+#             "onboarding_day": onboarding_day.strftime("%B %d, %Y"),
+#             "pre_work_start": pre_work_start.strftime("%B %d, %Y"),
+#             "start_day": start_day.strftime("%B %d, %Y"),
+#             "start_month": start_month,  # January or July
+#             "year": start_day.year,
+#             "cohort_half": cohort_half,  # H1 or H2
+#             "training_start_month": start_month,
+#             "training_end_month": training_end.strftime("%B"),
+#             "job_search_start_month": training_end.strftime("%B"),
+#             "job_search_end_month": job_search_end.strftime("%B"),
+#         }
 
 
 class Event(object):
