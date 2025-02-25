@@ -451,7 +451,6 @@ table.mentor {
   .column {
     @include prefix(flex, 0 0 100%, webkit moz o);
     box-sizing: border-box;
-    // text-align: center;
   }
 
   h1 {
