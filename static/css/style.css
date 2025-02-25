@@ -548,17 +548,6 @@ table.mentor td:first-of-type {
     padding: 1em;
     margin: 0 auto;
     overflow-x: hidden;
-    box-sizing: border-box;
-    justify-content: center;
-  }
-  .row__center {
-    text-align: center; /* Center-aligns text within the container */
-  }
-  .justify {
-    text-align: center;
-  }
-  .hidden-bullets li {
-    text-align: center !important;
   }
   .column-med {
     -webkit-flex: 0 0 40%;
@@ -575,10 +564,6 @@ table.mentor td:first-of-type {
     -o-flex: 0 0 100%;
     flex: 0 0 100%;
     box-sizing: border-box;
-    text-align: center;
-  }
-  .column li {
-    text-align: left; /* Ensures text inside list items is left-aligned */
   }
   h1 {
     font-size: 2em;
@@ -673,11 +658,6 @@ table.mentor td:first-of-type {
     background-size: contain;
   }
   .main-header__text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     position: absolute;
     bottom: 0;
     max-width: 100%;
@@ -803,6 +783,11 @@ table.mentor td:first-of-type {
     width: 100%;
     height: 100%;
     border: 0;
+  }
+}
+@media (max-width: 411px) {
+  .large-white-text {
+    font-size: 1.5em !important;
   }
 }
 /* iphone 4 and 4s media query */
