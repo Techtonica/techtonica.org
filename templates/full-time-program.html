@@ -12,14 +12,14 @@ endblock title %} {% block content %}
         January.
       </p>
       <h2>
-        {% if times.app_open %}
+        {% if timeline.APP_OPEN %}
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
           class="sponsor"
           id="orange-button"
           target="_blank"
           rel="noopener noreferrer"
-          >{{times.text}}</a
+          >{{timeline.TEXT}}</a
         >
         {% else %}
         <a
@@ -631,7 +631,7 @@ endblock title %} {% block content %}
       </div>
     </div>
     <h2>
-      {% if times.app_open %}
+      {% if timeline.APP_OPEN %}
       <!-- FT cohort application button that leads to short form when apps are open-->
       <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
@@ -639,7 +639,7 @@ endblock title %} {% block content %}
         id="orange-button"
         target="_blank"
         rel="noopener noreferrer"
-        >{{times.text}}</a
+        >{{timeline.TEXT}}</a
       >
       {% else %}
       <!-- event sign up button appears when apps are closed -->
