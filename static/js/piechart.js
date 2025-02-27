@@ -6,7 +6,7 @@ let labels = [
   "Southeast Asian",
   "White",
   "Central & South Asian",
-  "Pacific Islander & Indigenous/First Nations & Middle Eastern"
+  "Pacific Islander & Indigenous/First Nations & Middle Eastern",
 ];
 let colorHex = [
   "rgb(75, 192, 192)",
@@ -15,18 +15,20 @@ let colorHex = [
   "rgb(255, 99, 132)",
   "rgb(255, 163, 140)",
   "rgb(255, 159, 64)",
-  "rgb(255, 205, 86)"
+  "rgb(255, 205, 86)",
 ];
 
 let myChart = new Chart(ctx, {
   type: "pie",
   data: {
     labels: labels,
-    datasets: [{
-      label: "Techtonica Demographics",
-      backgroundColor: colorHex,
-      data: [22, 24, 19, 12, 14, 7, 2],
-    }],
+    datasets: [
+      {
+        label: "Techtonica Demographics",
+        backgroundColor: colorHex,
+        data: [22, 24, 19, 12, 14, 7, 2],
+      },
+    ],
   },
   options: {
     responsive: true,
@@ -70,8 +72,8 @@ function resizeChart() {
   let width = Math.min(2880, window.innerWidth);
   let height = Math.min(1800, window.innerHeight);
 
-  canvas.style.width = width + 'px';
-  canvas.style.height = height + 'px';
+  canvas.style.width = width + "px";
+  canvas.style.height = height + "px";
 
   // Update chart size
   myChart.resize();
@@ -81,4 +83,4 @@ function resizeChart() {
 resizeChart();
 
 // Resize on window resize
-window.addEventListener('resize', resizeChart);
+window.addEventListener("resize", resizeChart);
