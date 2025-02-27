@@ -128,22 +128,23 @@ touch .env
 And then copy and paste this code into your new file (note: For the actual values, please reach out to a member of Techtonica staff):
 
 ```sh
-# Your environment, either "local", "prod", "staging", or "testing"
-ENVIRONMENT="local"
-# Square credentials for the job posting feature
-SQUARE_APPLICATION_ID="id"
-SQUARE_ACCESS_TOKEN="token"
-SQUARE_LOCATION_ID="location"
-SLACK_WEBHOOK="webhook"
-PAYMENT_FORM_URL="url"
-# Application open date in format "MM/DD/YYYY HH:MM:SS" in UTC
-APP_OPEN_DATE="date"
-APP_EXTENDED="boolean"
-# Database credentials - more extensive explanation in the database section
-DB_USERNAME="username"
-DB_PASSWORD="password"
-DB_HOST="host"
-DB_NAME="name"
+[default]
+# Acceptable values are sandbox or production
+environment = sandbox
+dev_password = dev_password
+
+[production]
+square_application_id = production_application_id
+square_access_token = production_access_token
+square_location_id = production_location_id
+
+[sandbox]
+square_application_id = <sandbox app id>
+square_access_token = <sandbox access token>
+square_location_id = <sandbox location id>
+
+[slack]
+slack_webhook =  <slack webhook>
 ```
 
 ### Pre-Commit Hooks Guide
