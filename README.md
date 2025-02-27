@@ -128,23 +128,23 @@ touch config.ini
 And then copy and paste this code into your new file (note: For the actual values, please see [Updating Techtonica's Website](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit?tab=t.0)):
 
 ```sh
-   [default]
-   # Acceptable values are sandbox or production
-   environment = sandbox
-   dev_password = dev_password
+[default]
+# Acceptable values are sandbox or production
+environment = sandbox
+dev_password = dev_password
 
-   [production]
-   square_application_id = production_application_id
-   square_access_token = production_access_token
-   square_location_id = production_location_id
+[production]
+square_application_id = production_application_id
+square_access_token = production_access_token
+square_location_id = production_location_id
 
-   [sandbox]
-   square_application_id = <sandbox app id>
-   square_access_token = <sandbox access token>
-   square_location_id = <sandbox location id>
+[sandbox]
+square_application_id = <sandbox app id>
+square_access_token = <sandbox access token>
+square_location_id = <sandbox location id>
 
-   [slack]
-   slack_webhook =  <slack webhook>
+[slack]
+slack_webhook =  <slack webhook>
 ```
 
 ### Pre-Commit Hooks Guide
