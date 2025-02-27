@@ -437,8 +437,6 @@ button {
 }
 
 .sponsor {
-  line-height: 36px;
-  padding: 25px;
   margin: 0;
 }
 
@@ -971,19 +969,7 @@ p.press-release-bold {
 }
 
 #fast-checkout button {
-  width: 100%;
-}
-
-#fast-checkout button {
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -o-border-radius: 8px;
-  border-radius: 8px;
-  color: white;
-  display: inline-block;
-  background-color: #fc7625;
-  text-align: center;
-  font-size: 1.5em;
+  line-height: 36px;
 }
 #fast-checkout button:hover {
   background-color: #16c1f3;

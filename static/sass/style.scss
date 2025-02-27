@@ -321,8 +321,8 @@
 }
 
 .sponsor {
-  line-height: 36px;
-  padding: 25px;
+  // line-height: 36px;
+  // padding: 25px;
   margin: 0;
 }
 
@@ -902,16 +902,13 @@ p.press-release-bold {
 }
 
 #fast-checkout button {
-  width: 100%;
-}
-
-#fast-checkout button {
-  @include prefix(border-radius, 8px, webkit moz o);
-  color: $white;
-  display: inline-block;
-  background-color: $focal-orange;
-  text-align: center;
-  font-size: 1.5em;
+  // @include prefix(border-radius, 8px, webkit moz o);
+  // color: $white;
+  // display: inline-block;
+  // background-color: $focal-orange;
+  // text-align: center;
+  // font-size: 1.5em;
+  line-height: 36px;
 
   &:hover {
     background-color: $light-blue;
