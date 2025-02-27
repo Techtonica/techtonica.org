@@ -357,9 +357,14 @@ APPLICATION_ID = os.environ["SQUARE_APPLICATION_ID"]
 LOCATION_ID = os.environ["SQUARE_LOCATION_ID"]
 ACCESS_TOKEN = os.environ["SQUARE_ACCESS_TOKEN"]
 
+if CONFIG_TYPE == "prod":
+    SQUARE_ENVIRONMENT = "production"
+else:
+    SQUARE_ENVIRONMENT = "sandbox"
+
 client = Client(
     access_token=ACCESS_TOKEN,
-    environment=os.environ["ENVIRONMENT"],
+    environment=SQUARE_ENVIRONMENT,
     user_agent_detail="techtonica_payment",
 )
 
