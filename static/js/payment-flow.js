@@ -1,7 +1,10 @@
 async function SquarePaymentFlow() {
 
   // Create card payment object and attach to page
-  CardPay(document.getElementById('card-container'), document.getElementById('card-button'));
+  CardPay(
+    document.getElementById('card-container'),
+    document.getElementById('card-button')
+  );
 
 }
 
@@ -93,5 +96,15 @@ window.sendSlackNotification = async function() {
     console.error('Error:', error);
   }
 }
+
+// code of conduct checkbox functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const termsCheckbox = document.getElementById("code-of-conduct-checkbox")
+  const cardButton = document.getElementById("card-button")
+
+  termsCheckbox.addEventListener("change", function () {
+    cardButton.disabled = !this.checked
+  })
+})
 
 SquarePaymentFlow();
