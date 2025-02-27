@@ -402,10 +402,10 @@ To connect these locally, you can use a GUI tool such as [Sequel Pro](https://se
 Enter the credentials into the connection window with the following:
 
 - **Name:** Anything, but should indicate which environment it points to
-- **Host:** mysql.techtonica.org
-- **Username:** Username from credentials
-- **Password:** Password from credentials
-- **Database:** Database name from credentials
+- **Host:** DB_HOST from .env
+- **Username:** DB_USERNAME from .env
+- **Password:** DB_PASSWORD from .env
+- **Database:** DB_NAME from .env
 - **Port:** 3306
 
 ![This is a sample screenshot of a Sequel Pro connection.](static/img/database_connection.png)
