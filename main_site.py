@@ -400,15 +400,7 @@ SLACK_WEBHOOK = os.environ["SLACK_WEBHOOK"]
 
 # Square credentials
 CONFIG_TYPE = os.environ["ENVIRONMENT"]
-if CONFIG_TYPE == "production":
-    PAYMENT_FORM_URL = "https://web.squarecdn.com/v1/square.js"
-else:
-    PAYMENT_FORM_URL = "https://sandbox.web.squarecdn.com/v1/square.js"
-# PAYMENT_FORM_URL = (
-#     "https://web.squarecdn.com/v1/square.js"
-#     if CONFIG_TYPE == "production"
-#     else "https://sandbox.web.squarecdn.com/v1/square.js"
-# )
+PAYMENT_FORM_URL = os.environ["PAYMENT_FORM_URL"]
 APPLICATION_ID = os.environ["SQUARE_APPLICATION_ID"]
 LOCATION_ID = os.environ["SQUARE_LOCATION_ID"]
 ACCESS_TOKEN = os.environ["SQUARE_ACCESS_TOKEN"]
