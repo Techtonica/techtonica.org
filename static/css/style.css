@@ -1147,7 +1147,6 @@ input[type="radio"] {
 }
 @media (max-width: 600px) {
   .payment-form {
-    margin: 0px;
     padding: 30px;
     box-sizing: border-box;
   }
