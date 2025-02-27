@@ -104,10 +104,12 @@ This project uses various pre-commit hooks to ensure code quality and formatting
 consistency.
 
 1. [`Install pre-commit`](https://pre-commit.com/#install) globally.
-1. Install the project pre-commit hooks:
 
-```
+```bash
 pip install pre-commit
+```
+2. Install the project pre-commit hooks:
+```bash
 pre-commit install -f --install-hooks
 ```
 
