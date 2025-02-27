@@ -1065,6 +1065,14 @@ input[type="radio"] {
   list-style-type: none;
 }
 
+.checkbox-container {
+  margin: 25px;
+}
+
+#code-of-conduct-checkbox-link{
+  color: #0093b5;
+}
+
 @media (max-width: 900px) {
   .wrapper {
     max-width: 75%;
