@@ -560,11 +560,9 @@ table.mentor td:first-of-type {
 }
 @media only screen and (max-width: 910px) {
   .row {
-    padding: 1em 1em;
-    width: 100%;
-    margin: auto;
+    padding: 1em;
+    margin: 0 auto;
     overflow-x: hidden;
-    box-sizing: border-box;
   }
   .column-med {
     -webkit-flex: 0 0 40%;
@@ -580,6 +578,7 @@ table.mentor td:first-of-type {
     -moz-flex: 0 0 100%;
     -o-flex: 0 0 100%;
     flex: 0 0 100%;
+    box-sizing: border-box;
   }
   h1 {
     font-size: 2em;
@@ -782,6 +781,28 @@ table.mentor td:first-of-type {
   }
   .icon-text {
     font-size: 0.6rem; /* Even smaller text for mobile */
+  }
+}
+@media (max-width: 560px) {
+  .videowrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+  .videowrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+@media (max-width: 411px) {
+  .large-white-text {
+    font-size: 1.5em !important;
   }
 }
 /* iphone 4 and 4s media query */
