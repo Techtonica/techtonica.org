@@ -70,7 +70,6 @@ button {
 .blue-background a {
   color: white;
   text-decoration: underline;
-  text-shadow: 1px 1px 1px #666;
 }
 .blue-background a:hover {
   color: #16c1f3;
@@ -226,7 +225,6 @@ button {
 .main-header__text {
   max-width: 50%;
   padding: 0 1.5em;
-  text-shadow: 1px 1px 1px #666;
   background-color: rgba(0, 147, 181, 0.8);
   border-top-left-radius: 25px;
   border-top: 5px solid rgba(0, 115, 149, 0.8);
