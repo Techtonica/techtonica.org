@@ -197,8 +197,7 @@ button {
 }
 
 .mc-closeModal {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-    1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .main-content {
@@ -218,8 +217,7 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 75vh;
-  background: url(../img/three-participants-at-laptops-min.jpg) #0093b5
-    no-repeat top right fixed;
+  background: url(../img/three-participants-at-laptops-min.jpg) #0093b5 no-repeat top right fixed;
   background-size: cover;
 }
 
@@ -266,8 +264,7 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/2024-H2-Launch-Celebration-min.png) #0093b5 no-repeat
-    top fixed;
+  background: url(../img/2024-H2-Launch-Celebration-min.png) #0093b5 no-repeat top fixed;
   background-size: cover;
 }
 
@@ -287,6 +284,16 @@ button {
 
 #sponsor-hero {
   width: 100%;
+}
+
+.sponsor-logo {
+  width: 20%;
+  margin: 25px;
+}
+
+.sponsor-img {
+  width: 10%;
+  margin: 25px;
 }
 
 #consulting-hero {
@@ -365,6 +372,11 @@ button {
 .max-size-5-percent {
   max-height: 5%;
   max-width: 5%;
+}
+
+.max-size-15-percent {
+  max-height: 15%;
+  max-width: 15%;
 }
 
 .fixed-img {
@@ -545,11 +557,9 @@ table.mentor td:first-of-type {
 }
 @media only screen and (max-width: 910px) {
   .row {
-    padding: 1em 1em;
-    width: 100%;
-    margin: auto;
+    padding: 1em;
+    margin: 0 auto;
     overflow-x: hidden;
-    box-sizing: border-box;
   }
   .column-med {
     -webkit-flex: 0 0 40%;
@@ -565,6 +575,7 @@ table.mentor td:first-of-type {
     -moz-flex: 0 0 100%;
     -o-flex: 0 0 100%;
     flex: 0 0 100%;
+    box-sizing: border-box;
   }
   h1 {
     font-size: 2em;
@@ -651,8 +662,7 @@ table.mentor td:first-of-type {
   .main-header {
     display: block;
     position: relative;
-    background: url(../img/three-participants-at-laptops-min.jpg) #0093b5
-      no-repeat top center;
+    background: url(../img/three-participants-at-laptops-min.jpg) #0093b5 no-repeat top center;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
@@ -702,8 +712,7 @@ table.mentor td:first-of-type {
     position: relative;
     /*create the upper and lower lines as pseudo-elements of the middle line*/
   }
-  .lines:before,
-  .lines:after {
+  .lines:before, .lines:after {
     display: inline-block;
     width: 3rem;
     height: 0.4285714286rem;
@@ -735,8 +744,7 @@ table.mentor td:first-of-type {
     background: transparent;
     /*overlay the lines by setting both their top values to 0*/
   }
-  .lines-button.x.close .lines:before,
-  .lines-button.x.close .lines:after {
+  .lines-button.x.close .lines:before, .lines-button.x.close .lines:after {
     transform-origin: 50% 50%;
     top: 0;
     width: 2.5em;
@@ -767,6 +775,28 @@ table.mentor td:first-of-type {
   }
   .icon-text {
     font-size: 0.6rem; /* Even smaller text for mobile */
+  }
+}
+@media (max-width: 560px) {
+  .videowrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+  .videowrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+@media (max-width: 411px) {
+  .large-white-text {
+    font-size: 1.5em !important;
   }
 }
 /* iphone 4 and 4s media query */
@@ -1063,8 +1093,8 @@ legend {
   color: rgba(0, 115, 149, 0.8);
 }
 
-#info-wrapper > fieldset > input[type="text"],
-#info-wrapper > fieldset > input[type="email"],
+#info-wrapper > fieldset > input[type=text],
+#info-wrapper > fieldset > input[type=email],
 #info-wrapper > fieldset > textarea {
   min-width: 90%;
   margin: auto auto 1em auto;
@@ -1077,7 +1107,7 @@ legend {
   min-height: 6em;
 }
 
-input[type="radio"] {
+input[type=radio] {
   width: 50px;
 }
 
@@ -1140,6 +1170,14 @@ input[type="radio"] {
   #info-wrapper > fieldset {
     margin: 0px;
     width: 100%;
+  }
+  .sponsor-logo {
+    width: 38%;
+    margin: 15px;
+  }
+  .sponsor-img {
+    width: 33%;
+    margin: 20px;
   }
 }
 
