@@ -968,6 +968,7 @@ p.press-release-bold {
 
 #fast-checkout button {
   line-height: 36px;
+  font-size: 20px;
 }
 #fast-checkout button:hover {
   background-color: #16c1f3;
