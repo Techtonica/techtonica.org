@@ -1,0 +1,33 @@
+name: Bug or Problem Report
+description: Use this template for problems found in the curriculum.
+# title: "[CURRICULUM]: "
+# labels: ["curriculum", "needs-triage", "current-cohort-participant", "Program Staff", "EASY", "wishlist"]
+
+body:
+  - type: markdown
+    attributes:
+      value: "👉🏾 First time contributing to this repo? START HERE 👈🏾\n\nTo be added as a contributor and be assigned the related issue, please kindly read through the [README](https://github.com/Techtonica/techtonica.org?tab=readme-ov-file#techtonica) to address any Q&A.\n\n---\n\n_Thanks for reporting an issue with the Techtonica's website! Please fill in the following information to help us resolve the problem as soon as we can._"
+  - type: textarea
+    id: page-location
+    attributes:
+      label: Page where problem found?
+      description: Be specific about where you located the problem and include other useful information such as browser or display size
+      placeholder: Enter URL, such as "The [Homepage L121](https://github.com/Techtonica/techtonica.org/blob/develop/templates/home.html#L121)"
+    validations:
+      required: true
+  - type: textarea
+    id: problem-type
+    attributes:
+      label: Type of problem
+      description: Common examples include Typo or syntax error, Confusing or incomplete explanation, or Broken link.
+      placeholder: Describe the problem type. Include as much detail as possible for recreation of the issue. What does this issue affect?
+    validations:
+      required: true
+  - type: textarea
+    id: suggested-solution
+    attributes:
+      label: Suggested Solution
+      description: Optional. If you'd like to suggest a specific solution, please add it here.
+      placeholder: Your suggested solution here
+    validations:
+      required: false

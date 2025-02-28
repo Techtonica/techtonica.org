@@ -125,8 +125,7 @@
 
 .main-header__text {
   max-width: 50%;
-  padding: 0 1.5em;
-  text-shadow: 1px 1px 1px #666;
+  padding: 1.5em;
   background-color: #0093b5cc;
   border-top-left-radius: 25px;
   border-top: 5px solid #007395cc;
@@ -177,6 +176,16 @@
 
 #sponsor-hero {
   width: 100%;
+}
+
+.sponsor-logo {
+  width: 20%;
+  margin: 25px;
+}
+
+.sponsor-img {
+  width: 10%;
+  margin: 25px;
 }
 
 #consulting-hero {
@@ -256,6 +265,11 @@
   max-width: 5%;
 }
 
+.max-size-15-percent {
+  max-height: 15%;
+  max-width: 15%;
+}
+
 .fixed-img {
   width: 30%;
   position: fixed;
@@ -321,13 +335,12 @@
 }
 
 .sponsor {
-  line-height: 36px;
-  padding: 25px;
   margin: 0;
 }
 
 #orange-button {
-  text-decoration: none;
+  padding-block: 24px;
+  padding-inline: 16px;
 
   &:hover {
     color: $white;
@@ -435,11 +448,9 @@ table.mentor {
 
 @media only screen and (max-width: 910px) {
   .row {
-    padding: 1em 1em;
-    width: 100%;
-    margin: auto;
+    padding: 1em;
+    margin: 0 auto;
     overflow-x: hidden;
-    box-sizing: border-box;
   }
 
   .column-med {
@@ -452,6 +463,7 @@ table.mentor {
 
   .column {
     @include prefix(flex, 0 0 100%, webkit moz o);
+    box-sizing: border-box;
   }
 
   h1 {
@@ -562,7 +574,7 @@ table.mentor {
     bottom: 0;
     max-width: 100%;
     width: auto;
-    padding: 0 1em;
+    padding: 1em;
   }
 
   .main-content {
@@ -680,6 +692,33 @@ table.mentor {
   }
   .icon-text {
     font-size: 0.6rem; /* Even smaller text for mobile */
+  }
+}
+
+// For responsive embedded video size on mobile view
+@media (max-width: 560px) {
+  .videowrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; // 16:9 aspect ratio
+    height: 0;
+    overflow: hidden;
+  }
+
+  // Responsive iframe
+  .videowrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; // Remove default border
+  }
+}
+
+@media (max-width: 411px) {
+  .large-white-text {
+    font-size: 1.5em !important;
   }
 }
 
@@ -876,17 +915,8 @@ p.press-release-bold {
 }
 
 #fast-checkout button {
-  width: 100%;
-}
-
-#fast-checkout button {
-  @include prefix(border-radius, 8px, webkit moz o);
-  color: $white;
-  display: inline-block;
-  background-color: $focal-orange;
-  text-align: center;
-  font-size: 1.5em;
-  text-shadow: 1px 1px 1px #666;
+  line-height: 36px;
+  font-size: 20px;
 
   &:hover {
     background-color: $light-blue;
@@ -1052,7 +1082,6 @@ input[type="radio"] {
 
 @media (max-width: 600px) {
   .payment-form {
-    margin: 0px;
     padding: 30px;
     box-sizing: border-box;
   }
@@ -1069,5 +1098,15 @@ input[type="radio"] {
   #info-wrapper > fieldset {
     margin: 0px;
     width: 100%;
+  }
+
+  .sponsor-logo {
+    width: 38%;
+    margin: 15px;
+  }
+
+  .sponsor-img {
+    width: 33%;
+    margin: 20px;
   }
 }
