@@ -13,6 +13,7 @@ def generate_application_timeline():
     # Get application open date from .env
     app_open_date_str = os.getenv("APP_OPEN_DATE")
     app_extended = os.getenv("APP_EXTENDED", "false").lower() == "true"
+    # onboarding_day = os.getenv("ONBOARDING_DAY") #pending
 
     # Error handling: Ensure APP_OPEN_DATE is set
     if not app_open_date_str:
@@ -25,13 +26,16 @@ def generate_application_timeline():
             )
             app_open_datetime = app_open_datetime.replace(tzinfo=timezone.utc)
         except ValueError:
-            print(f"Error: Unexpected APP_OPEN_DATE format!" f"({app_open_date_str})")
+            print(
+                f"Error: Unexpected APP_OPEN_DATE format!"
+                f"({app_open_date_str})"  # noqa: E501
+            )
             app_open_datetime = None
 
     # Determine application close date
     if app_open_datetime:
         app_close_datetime = app_open_datetime + timedelta(
-            weeks=6 if app_extended else 4
+            days=25 + (10 if app_extended else 0)
         )
         app_close_datetime = app_close_datetime.replace(tzinfo=timezone.utc)
     else:
@@ -67,8 +71,12 @@ def generate_application_timeline():
         info_session = app_open_datetime + timedelta(weeks=3)
         application_workshop = app_close_datetime + timedelta(weeks=1)
         pair_programming_with_staff = application_workshop + timedelta(weeks=1)
-        take_home_code_challenge = pair_programming_with_staff + timedelta(weeks=1)
-        interview_financial_convos = take_home_code_challenge + timedelta(weeks=1)
+        take_home_code_challenge = pair_programming_with_staff + timedelta(
+            weeks=1
+        )  # noqa: E501
+        interview_financial_convos = take_home_code_challenge + timedelta(
+            weeks=1
+        )  # noqa: E501
         notification_day = interview_financial_convos + timedelta(weeks=1)
         onboarding_day = notification_day + timedelta(weeks=1)
         pre_work_start = onboarding_day + timedelta(days=1)
@@ -105,8 +113,12 @@ def generate_application_timeline():
         "PAIR_PROGRAMMING_WITH_STAFF": pair_programming_with_staff.strftime(
             "%B %d, %Y"
         ),
-        "TAKE_HOME_CODE_CHALLENGE": take_home_code_challenge.strftime("%B %d, %Y"),
-        "INTERVIEW_FINANCIAL_CONVOS": interview_financial_convos.strftime("%B %d, %Y"),
+        "TAKE_HOME_CODE_CHALLENGE": take_home_code_challenge.strftime(
+            "%B %d, %Y"
+        ),  # noqa: E501
+        "INTERVIEW_FINANCIAL_CONVOS": interview_financial_convos.strftime(
+            "%B %d, %Y"
+        ),  # noqa: E501
         "NOTIFICATION_DAY": notification_day.strftime("%B %d, %Y"),
         "ONBOARDING_DAY": onboarding_day.strftime("%B %d, %Y"),
         "PRE_WORK_START": pre_work_start.strftime("%B %d, %Y"),
@@ -130,4 +142,10 @@ def generate_application_timeline():
     }
 
 
+# below will be removed
+# left here for testing during pr review
 # timeline = generate_application_timeline()
+
+
+# for key, value in timeline.items():
+#     print(f"{key}: {value}")
