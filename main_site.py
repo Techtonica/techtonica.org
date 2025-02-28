@@ -241,6 +241,14 @@ def render_testimonials_page():
     return render_template("testimonials.html")
 
 
+@app.route("/admin/dashboard")
+def render_admin_dashboard_page():
+    """
+    Renders the admin dashboard page from jinja2 template
+    """
+    return render_template("admin_dashboard.html")
+
+
 def get_events():
     try:
         group_id = eventbrite.get_user()["id"]
