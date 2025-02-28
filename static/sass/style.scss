@@ -179,6 +179,16 @@
   width: 100%;
 }
 
+.sponsor-logo {
+  width: 20%;
+  margin: 25px;
+}
+
+.sponsor-img {
+  width: 10%;
+  margin: 25px;
+}
+
 #consulting-hero {
   width: 100%;
   padding-top: 5%;
@@ -254,6 +264,11 @@
 .max-size-5-percent {
   max-height: 5%;
   max-width: 5%;
+}
+
+.max-size-15-percent {
+  max-height: 15%;
+  max-width: 15%;
 }
 
 .fixed-img {
@@ -1103,5 +1118,15 @@ input[type="radio"] {
   #info-wrapper > fieldset {
     margin: 0px;
     width: 100%;
+  }
+
+  .sponsor-logo {
+    width: 38%;
+    margin: 15px;
+  }
+
+  .sponsor-img {
+    width: 33%;
+    margin: 20px;
   }
 }
