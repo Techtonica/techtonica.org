@@ -1,133 +1,167 @@
-<meta property="og:image"
-  content="{{ url_for('static', filename='img/Partnerships-Manager-with-Participants-min.png') }}"/>
-<link rel="preload" href="{{ url_for('static', 
-  filename='img/Partnerships-Manager-with-Participants-min.png') }}" as="image"/>
-{% extends "base.html" %} 
-{% block title %} Techtonica: Bridging the Tech Gap — Careers {% endblock title %} 
-{% block content %}
-  <div class="row row__center about-us">
-    <div class="column hidden-med">
-      <img
-        src="{{ url_for('static', filename='img/Partnerships-Manager-with-Participants-min.png') }}"
-        alt="Four people smile in a Zoom video call."
-        class="fixed-img"
-        style="width: 38%"
-      />
-    </div>
-    <div class="column">
-      <h1 class="blue-h1"><a href="{{ url_for('render_openings_page') }}" title="Openings"
-        >Openings</a></h1>
-      <p class="justify">
-        Techtonica is a fiscally-sponsored nonprofit that offers U.S. women and non-binary adults seeking 
-        economic empowerment, software engineering training with need-based, sliding-scale, subsidized 
-        tuition and stipend scholarships, then places them in positions at sponsoring companies 
-        that are ready to support more diverse teams or supports them during the job search. 
-      </p>
-
-      <h3>Make an Impact as Our Partnerships Manager!</h3>
-
-      <p class="justify">
-        We are seeking a committed individual to build and manage partnerships. 
-        The Partnerships Manager's work is what makes Techtonica's programs 
-        possible, and it involves every step of the sales cycle and 
-        beyond, but for a good cause, in a more personal way, and with the benefit of
-        Techtonica's well-connected community of participants, graduates, volunteers,
-        donors, partner organizations, and corporate sponsors. 
-      </p>
-      <p class="justify">
-        This position is full-time and remote in the U.S.,
-        with mostly Pacific Time business hours. Unfortunately we are unable to offer 
-        visa sponsorship. With at least 8 placements to find in the next 3-4 months, 
-        we hope to find someone to join the team as soon as possible and long-term to 
-        grow and improve the organization with us. 
-      </p>
-
-      <p class="justify">
-        We are especially seeking someone who is passionate about social justice 
-        and can relate to the people we serve on multiple levels: ~85% of our full-time 
-        participants identify as BIPOC, and all of them are women or non-binary adults 
-        with low incomes. 
-      </p>
-
-      <p class="justify">
-        <a href="{{ url_for('render_team_page') }}">The Techtonica team</a> you would join 
-        is made up of just a few proactive people who are passionate about the cause, 
-        and supportive of one another and community members. We care deeply about helping 
-        our participants succeed and are always making improvements to our services. 
-      </p>
-
-      <p class="justify">Responsibilities:</p>
-      <ul>
-        <li>
-          Work from home up to 40 hours per week
-        </li>
-        <li>
-          Efficiently and independently identify, close, manage, and build support from new and 
-          existing partners, including placements for program participants, donations,
-          sponsorships, mentoring, speakers, and more
-        </li>
-        <li>
-          Manage and track partner communication and tasks in an organized, documented
-          way
-        </li>
-        <li>Collaborate and openly communicate with other team and community members</li>
-        <li>Improve Techtonica's marketing efforts and partnership processes</li>
-        <li>Maintain the social media calendar and content</li>
-        <li>Identify and apply for grants</li>
-        <li>Occasionally represent Techtonica at events</li>
-      </ul>
-
-      <p class="justify">What else we're looking for:</p>
-      <ul>
-        <li>
-          Proven experience in building strong relationships and caring
-          for community with diversity and inclusion in mind
-        </li>
-        <li>Friendliness, confidence, and an energetic, decisive, make-it-happen personality</li>
-        <li>Comfort repeatedly reaching out to people you don't yet know and making asks</li>
-        <li>
-          Skillful negotiating, opportunity-spotting, adaptability, efficient communication, 
-          collaboration, giving and receiving feedback, and organizing (experience in B2B sales is a plus)
-        </li>
-        <li>Ability to personally relate to Techtonica's target demographic on multiple levels</li>
-        <li>
-          Efficient management and prioritization of multiple tasks and contacts simultaneously
-        </li>
-        <li>Dedication to social justice and Techtonica's mission</li>
-        <li>
-          Ability to formulate and take responsibility for deliverables and deliver
-        </li>
-        <li>Proficiency in spoken and written English</li>
-        <li>Attention to detail and deadlines</li>
-        <li>Competence with or ability to quickly learn to use software and platforms, 
-          including macOS, LinkedIn, pipeline tools and CRMs, social media, Dropbox, 
-          Slack, and Google Workspace tools</li>
-        <li>Ideas for how to make processes more efficient and proactively make those changes</li>
-      </ul>
-      <p class="justify">The Partnerships Manager will receive:</p>
-      <ul>
-        <li>A Techtonica MacBook to use for work</li>
-        <li>
-          $28-$35 per hour (or $58,240-$72,800 per year full-time), depending on experience and location
-        </li>
-        <li>Performance-based bonuses up to 30%</li>
-        <li>Benefits: sick leave, 14 days of PTO, 100% health insurance that starts the first day of the 
-          month after joining</li>
-      </ul>
-      <p class="justify">
-        If this role sounds like a fantastic fit for you, please email info AT techtonica DOT org:
-        1. a link to your LinkedIn profile, 2. a sentence about why Techtonica's mission excites you,
-        3. how many dollars of deals you've closed or funds you've raised in what amount of time,
-        4. a cold outreach email you would send to try to schedule a call with a potential sponsor, and
-        5. two past coworkers' or managers' names and email addresses for references.
-        If we feel you could be a good fit as well, we'll respond. Applications that don't follow 
-        these instructions will not receive responses.
-      </p>
-      <p class="justify"> 
-        Selected applicants will interview with staff and board members via video call and pitch Techtonica.
-      </p>
-
-      {% include 'contactbutton.html' %}
-    </div>
+<meta
+  property="og:image"
+  content="{{ url_for('static', filename='img/Partnerships-Manager-with-Participants-min.png') }}"
+/>
+<link
+  rel="preload"
+  href="{{ url_for('static', 
+  filename='img/Partnerships-Manager-with-Participants-min.png') }}"
+  as="image"
+/>
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
+Careers {% endblock title %} {% block content %}
+<div class="row row__center about-us">
+  <div class="column hidden-med">
+    <img
+      src="{{ url_for('static', filename='img/Partnerships-Manager-with-Participants-min.png') }}"
+      alt="Four people smile in a Zoom video call."
+      class="fixed-img"
+      style="width: 38%"
+    />
   </div>
+  <div class="column">
+    <h1 class="blue-h1">
+      <a href="{{ url_for('render_openings_page') }}" title="Openings"
+        >Openings</a
+      >
+    </h1>
+    <p class="justify">
+      Techtonica is a fiscally-sponsored nonprofit that offers U.S. women and
+      non-binary adults seeking economic empowerment, software engineering
+      training with need-based, sliding-scale, subsidized tuition and stipend
+      scholarships, then places them in positions at sponsoring companies that
+      are ready to support more diverse teams or supports them during the job
+      search.
+    </p>
+
+    <h3>Make an Impact as Our Partnerships Manager!</h3>
+
+    <p class="justify">
+      We are seeking a committed individual to build and manage partnerships.
+      The Partnerships Manager's work is what makes Techtonica's programs
+      possible, and it involves every step of the sales cycle and beyond, but
+      for a good cause, in a more personal way, and with the benefit of
+      Techtonica's well-connected community of participants, graduates,
+      volunteers, donors, partner organizations, and corporate sponsors.
+    </p>
+    <p class="justify">
+      This position is full-time and remote in the U.S., with mostly Pacific
+      Time business hours. Unfortunately we are unable to offer visa
+      sponsorship. With at least 8 placements to find in the next 3-4 months, we
+      hope to find someone to join the team as soon as possible and long-term to
+      grow and improve the organization with us.
+    </p>
+
+    <p class="justify">
+      We are especially seeking someone who is passionate about social justice
+      and can relate to the people we serve on multiple levels: ~85% of our
+      full-time participants identify as BIPOC, and all of them are women or
+      non-binary adults with low incomes.
+    </p>
+
+    <p class="justify">
+      <a href="{{ url_for('render_team_page') }}">The Techtonica team</a> you
+      would join is made up of just a few proactive people who are passionate
+      about the cause, and supportive of one another and community members. We
+      care deeply about helping our participants succeed and are always making
+      improvements to our services.
+    </p>
+
+    <p class="justify">Responsibilities:</p>
+    <ul>
+      <li>Work from home up to 40 hours per week</li>
+      <li>
+        Efficiently and independently identify, close, manage, and build support
+        from new and existing partners, including placements for program
+        participants, donations, sponsorships, mentoring, speakers, and more
+      </li>
+      <li>
+        Manage and track partner communication and tasks in an organized,
+        documented way
+      </li>
+      <li>
+        Collaborate and openly communicate with other team and community members
+      </li>
+      <li>Improve Techtonica's marketing efforts and partnership processes</li>
+      <li>Maintain the social media calendar and content</li>
+      <li>Identify and apply for grants</li>
+      <li>Occasionally represent Techtonica at events</li>
+    </ul>
+
+    <p class="justify">What else we're looking for:</p>
+    <ul>
+      <li>
+        Proven experience in building strong relationships and caring for
+        community with diversity and inclusion in mind
+      </li>
+      <li>
+        Friendliness, confidence, and an energetic, decisive, make-it-happen
+        personality
+      </li>
+      <li>
+        Comfort repeatedly reaching out to people you don't yet know and making
+        asks
+      </li>
+      <li>
+        Skillful negotiating, opportunity-spotting, adaptability, efficient
+        communication, collaboration, giving and receiving feedback, and
+        organizing (experience in B2B sales is a plus)
+      </li>
+      <li>
+        Ability to personally relate to Techtonica's target demographic on
+        multiple levels
+      </li>
+      <li>
+        Efficient management and prioritization of multiple tasks and contacts
+        simultaneously
+      </li>
+      <li>Dedication to social justice and Techtonica's mission</li>
+      <li>
+        Ability to formulate and take responsibility for deliverables and
+        deliver
+      </li>
+      <li>Proficiency in spoken and written English</li>
+      <li>Attention to detail and deadlines</li>
+      <li>
+        Competence with or ability to quickly learn to use software and
+        platforms, including macOS, LinkedIn, pipeline tools and CRMs, social
+        media, Dropbox, Slack, and Google Workspace tools
+      </li>
+      <li>
+        Ideas for how to make processes more efficient and proactively make
+        those changes
+      </li>
+    </ul>
+    <p class="justify">The Partnerships Manager will receive:</p>
+    <ul>
+      <li>A Techtonica MacBook to use for work</li>
+      <li>
+        $28-$35 per hour (or $58,240-$72,800 per year full-time), depending on
+        experience and location
+      </li>
+      <li>Performance-based bonuses up to 30%</li>
+      <li>
+        Benefits: sick leave, 14 days of PTO, 100% health insurance that starts
+        the first day of the month after joining
+      </li>
+    </ul>
+    <p class="justify">
+      If this role sounds like a fantastic fit for you, please email info AT
+      techtonica DOT org: 1. a link to your LinkedIn profile, 2. a sentence
+      about why Techtonica's mission excites you, 3. how many dollars of deals
+      you've closed or funds you've raised in what amount of time, 4. a cold
+      outreach email you would send to try to schedule a call with a potential
+      sponsor, and 5. two past coworkers' or managers' names and email addresses
+      for references. If we feel you could be a good fit as well, we'll respond.
+      Applications that don't follow these instructions will not receive
+      responses.
+    </p>
+    <p class="justify">
+      Selected applicants will interview with staff and board members via video
+      call and pitch Techtonica.
+    </p>
+
+    {% include 'contactbutton.html' %}
+  </div>
+</div>
 {% endblock content %}

@@ -69,8 +69,6 @@ button {
 }
 .blue-background a {
   color: white;
-  text-decoration: underline;
-  text-shadow: 1px 1px 1px #666;
 }
 .blue-background a:hover {
   color: #16c1f3;
@@ -223,8 +221,7 @@ button {
 
 .main-header__text {
   max-width: 50%;
-  padding: 0 1.5em;
-  text-shadow: 1px 1px 1px #666;
+  padding: 1.5em;
   background-color: rgba(0, 147, 181, 0.8);
   border-top-left-radius: 25px;
   border-top: 5px solid rgba(0, 115, 149, 0.8);
@@ -449,13 +446,12 @@ button {
 }
 
 .sponsor {
-  line-height: 36px;
-  padding: 25px;
   margin: 0;
 }
 
 #orange-button {
-  text-decoration: none;
+  padding-block: 24px;
+  padding-inline: 16px;
 }
 #orange-button:hover {
   color: white;
@@ -673,7 +669,7 @@ table.mentor td:first-of-type {
     bottom: 0;
     max-width: 100%;
     width: auto;
-    padding: 0 1em;
+    padding: 1em;
   }
   .main-content {
     margin-top: 5rem;
@@ -980,20 +976,8 @@ p.press-release-bold {
 }
 
 #fast-checkout button {
-  width: 100%;
-}
-
-#fast-checkout button {
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -o-border-radius: 8px;
-  border-radius: 8px;
-  color: white;
-  display: inline-block;
-  background-color: #fc7625;
-  text-align: center;
-  font-size: 1.5em;
-  text-shadow: 1px 1px 1px #666;
+  line-height: 36px;
+  font-size: 20px;
 }
 #fast-checkout button:hover {
   background-color: #16c1f3;
@@ -1156,7 +1140,6 @@ input[type=radio] {
 }
 @media (max-width: 600px) {
   .payment-form {
-    margin: 0px;
     padding: 30px;
     box-sizing: border-box;
   }

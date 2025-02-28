@@ -125,8 +125,7 @@
 
 .main-header__text {
   max-width: 50%;
-  padding: 0 1.5em;
-  text-shadow: 1px 1px 1px #666;
+  padding: 1.5em;
   background-color: #0093b5cc;
   border-top-left-radius: 25px;
   border-top: 5px solid #007395cc;
@@ -336,13 +335,12 @@
 }
 
 .sponsor {
-  line-height: 36px;
-  padding: 25px;
   margin: 0;
 }
 
 #orange-button {
-  text-decoration: none;
+  padding-block: 24px;
+  padding-inline: 16px;
 
   &:hover {
     color: $white;
@@ -576,7 +574,7 @@ table.mentor {
     bottom: 0;
     max-width: 100%;
     width: auto;
-    padding: 0 1em;
+    padding: 1em;
   }
 
   .main-content {
@@ -917,17 +915,8 @@ p.press-release-bold {
 }
 
 #fast-checkout button {
-  width: 100%;
-}
-
-#fast-checkout button {
-  @include prefix(border-radius, 8px, webkit moz o);
-  color: $white;
-  display: inline-block;
-  background-color: $focal-orange;
-  text-align: center;
-  font-size: 1.5em;
-  text-shadow: 1px 1px 1px #666;
+  line-height: 36px;
+  font-size: 20px;
 
   &:hover {
     background-color: $light-blue;
@@ -1093,7 +1082,6 @@ input[type="radio"] {
 
 @media (max-width: 600px) {
   .payment-form {
-    margin: 0px;
     padding: 30px;
     box-sizing: border-box;
   }
