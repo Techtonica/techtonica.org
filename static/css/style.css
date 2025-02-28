@@ -223,7 +223,7 @@ button {
 
 .main-header__text {
   max-width: 50%;
-  padding: 0 1.5em;
+  padding: 1.5em;
   background-color: rgba(0, 147, 181, 0.8);
   border-top-left-radius: 25px;
   border-top: 5px solid rgba(0, 115, 149, 0.8);
@@ -658,7 +658,7 @@ table.mentor td:first-of-type {
     bottom: 0;
     max-width: 100%;
     width: auto;
-    padding: 0 1em;
+    padding: 1em;
   }
   .main-content {
     margin-top: 5rem;
