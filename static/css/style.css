@@ -69,7 +69,6 @@ button {
 }
 .blue-background a {
   color: white;
-  text-decoration: underline;
 }
 .blue-background a:hover {
   color: #16c1f3;
@@ -438,9 +437,6 @@ button {
   margin: 0;
 }
 
-#orange-button {
-  text-decoration: none;
-}
 #orange-button:hover {
   color: white;
 }
