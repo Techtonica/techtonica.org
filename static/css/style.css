@@ -437,6 +437,10 @@ button {
   margin: 0;
 }
 
+#orange-button {
+  padding-block: 24px;
+  padding-inline: 16px;
+}
 #orange-button:hover {
   color: white;
 }

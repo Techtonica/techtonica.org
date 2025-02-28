@@ -328,6 +328,9 @@
 
 #orange-button {
   // text-decoration: none;
+  // line-height: 36px;
+  padding-block: 24px;
+  padding-inline: 16px;
 
   &:hover {
     color: $white;
