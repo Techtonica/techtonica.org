@@ -11,27 +11,26 @@ endblock title %} {% block content %}
         adults seeking economic empowerment. The 2025 H1 Cohort kicks off in
         January.
       </p>
-      <h2>
-        {% if times.app_open %}
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
-          class="sponsor"
-          id="orange-button"
-          target="_blank"
-          rel="noopener noreferrer"
-          >{{times.text}}</a
-        >
-        {% else %}
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfUdyIAfcU5KSqtYH5J5iPRgu-yycHdebnUKygQLEv-m7oVMw/viewform"
-          class="sponsor"
-          id="orange-button"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Fill out our interest form to be notified about our next cohort!
-        </a>
-        {% endif %}
-      </h2>
+
+      {% if times.app_open %}
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
+        class="sponsor"
+        id="orange-button"
+        target="_blank"
+        rel="noopener noreferrer"
+        >{{times.text}}</a
+      >
+      {% else %}
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfUdyIAfcU5KSqtYH5J5iPRgu-yycHdebnUKygQLEv-m7oVMw/viewform"
+        class="sponsor"
+        id="orange-button"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Fill out our interest form to be notified about our next cohort!
+      </a>
+      {% endif %}
     </div>
   </div>
   <div class="column">
