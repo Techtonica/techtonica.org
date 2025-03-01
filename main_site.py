@@ -348,26 +348,23 @@ config = configparser.ConfigParser()
 config.read("config.ini")
 
 # Slack credentials
-SLACK_WEBHOOK = config.get("slack", "slack_webhook")
+SLACK_WEBHOOK = os.environ["SLACK_WEBHOOK"]
 
 # Square credentials
-CONFIG_TYPE = config.get("default", "environment")
-if CONFIG_TYPE == "production":
-    PAYMENT_FORM_URL = "https://web.squarecdn.com/v1/square.js"
+CONFIG_TYPE = os.environ["ENVIRONMENT"]
+PAYMENT_FORM_URL = os.environ["PAYMENT_FORM_URL"]
+APPLICATION_ID = os.environ["SQUARE_APPLICATION_ID"]
+LOCATION_ID = os.environ["SQUARE_LOCATION_ID"]
+ACCESS_TOKEN = os.environ["SQUARE_ACCESS_TOKEN"]
+
+if CONFIG_TYPE == "prod":
+    SQUARE_ENVIRONMENT = "production"
 else:
-    PAYMENT_FORM_URL = "https://sandbox.web.squarecdn.com/v1/square.js"
-# PAYMENT_FORM_URL = (
-#     "https://web.squarecdn.com/v1/square.js"
-#     if CONFIG_TYPE == "production"
-#     else "https://sandbox.web.squarecdn.com/v1/square.js"
-# )
-APPLICATION_ID = config.get(CONFIG_TYPE, "square_application_id")
-LOCATION_ID = config.get(CONFIG_TYPE, "square_location_id")
-ACCESS_TOKEN = config.get(CONFIG_TYPE, "square_access_token")
+    SQUARE_ENVIRONMENT = "sandbox"
 
 client = Client(
     access_token=ACCESS_TOKEN,
-    environment=config.get("default", "environment"),
+    environment=SQUARE_ENVIRONMENT,
     user_agent_detail="techtonica_payment",
 )
 
