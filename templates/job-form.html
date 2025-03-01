@@ -93,6 +93,20 @@ Post A Job {% endblock title %} {% block content %}
         </div> -->
         <h3>Payment Info</h3>
         <div id="card-container"></div>
+        <div class="checkbox-container">
+          <input type="checkbox" id="code-of-conduct-checkbox">
+          <label for="code-of-conduct-checkbox">
+            You agree to 
+            <a id="code-of-conduct-checkbox-link" href="{{ url_for('render_conduct_page') }}"
+              title="Code of Conduct"
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+              Techtonica's Code of Conduct
+            </a>
+            by submitting this form.
+          </label>
+        </div>
         <button id="card-button" type="button" class="sponsor">
           <h2>
             Pay with Card
