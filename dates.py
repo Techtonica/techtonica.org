@@ -1,4 +1,4 @@
-""" This file generates the application timeline
+""" This file generates the application timeline variables
 to dynamically render relevant dates and information """
 
 import os
@@ -13,6 +13,7 @@ def generate_application_timeline():
     # Get application open date from .env
     app_open_date_str = os.getenv("APP_OPEN_DATE")
     app_extended = os.getenv("APP_EXTENDED", "false").lower() == "true"
+    # onboarding_day = os.getenv("ONBOARDING_DAY") #pending
 
     # Error handling: Ensure APP_OPEN_DATE is set
     if not app_open_date_str:
@@ -26,14 +27,15 @@ def generate_application_timeline():
             app_open_datetime = app_open_datetime.replace(tzinfo=timezone.utc)
         except ValueError:
             print(
-                f"""Error: Unexpected APP_OPEN_DATE format!" f"({app_open_date_str})"""
+                f"Error: Unexpected APP_OPEN_DATE format!"
+                f"({app_open_date_str})"  # noqa: E501
             )
             app_open_datetime = None
 
     # Determine application close date
     if app_open_datetime:
         app_close_datetime = app_open_datetime + timedelta(
-            weeks=6 if app_extended else 4
+            days=25 + (10 if app_extended else 0)
         )
         app_close_datetime = app_close_datetime.replace(tzinfo=timezone.utc)
     else:
@@ -69,13 +71,18 @@ def generate_application_timeline():
         info_session = app_open_datetime + timedelta(weeks=3)
         application_workshop = app_close_datetime + timedelta(weeks=1)
         pair_programming_with_staff = application_workshop + timedelta(weeks=1)
-        take_home_code_challenge = pair_programming_with_staff + timedelta(weeks=1)
-        interview_financial_convos = take_home_code_challenge + timedelta(weeks=1)
+        take_home_code_challenge = pair_programming_with_staff + timedelta(
+            weeks=1
+        )  # noqa: E501
+        interview_financial_convos = take_home_code_challenge + timedelta(
+            weeks=1
+        )  # noqa: E501
         notification_day = interview_financial_convos + timedelta(weeks=1)
         onboarding_day = notification_day + timedelta(weeks=1)
         pre_work_start = onboarding_day + timedelta(days=1)
         cohort_start_day = pre_work_start + timedelta(weeks=4.5)
 
+        start_year = cohort_start_day.strftime("%Y")
         start_month = cohort_start_day.strftime("%B")
         cohort_half = "H1" if start_month == "January" else "H2"
 
@@ -98,32 +105,47 @@ def generate_application_timeline():
         job_search_end = None
 
     return {
-        "APP_OPEN_DATE": app_open_datetime,
+        "APP_OPEN_DATE": app_open_datetime.strftime("%B %d, %Y"),
         "APP_EXTENDED": app_extended,
-        "APP_CLOSE_DATE": app_close_datetime,
-        "INFO_SESSION": info_session,
-        "APPLICATION_WORKSHOP": application_workshop,
-        "PAIR_PROGRAMMING_WITH_STAFF": pair_programming_with_staff,
-        "TAKE_HOME_CODE_CHALLENGE": take_home_code_challenge,
-        "INTERVIEW_FINANCIAL_CONVOS": interview_financial_convos,
-        "NOTIFICATION_DAY": notification_day,
-        "ONBOARDING_DAY": onboarding_day,
-        "PRE_WORK_START": pre_work_start,
-        "COHORT_START_DAY": cohort_start_day,
-        "START_MONTH": start_month,
-        "COHORT_HALF": cohort_half,
-        "TRAINING_END": training_end,
-        "JOB_SEARCH_END": job_search_end,
-        "TRAINING_END_MONTH": (training_end.strftime("%B") if training_end else None),
-        "JOB_SEARCH_START_MONTH": (
-            training_end.strftime("%B") if training_end else None
+        "APP_CLOSE_DATE": app_close_datetime.strftime("%B %d, %Y"),
+        "INFO_SESSION": info_session.strftime("%B %d, %Y"),
+        "APPLICATION_WORKSHOP": application_workshop.strftime("%B %d, %Y"),
+        "PAIR_PROGRAMMING_WITH_STAFF": pair_programming_with_staff.strftime(
+            "%B %d, %Y"
         ),
-        "JOB_SEARCH_END_MONTH": (
-            job_search_end.strftime("%B") if job_search_end else None
+        "TAKE_HOME_CODE_CHALLENGE": take_home_code_challenge.strftime(
+            "%B %d, %Y"
+        ),  # noqa: E501
+        "INTERVIEW_FINANCIAL_CONVOS": interview_financial_convos.strftime(
+            "%B %d, %Y"
+        ),  # noqa: E501
+        "NOTIFICATION_DAY": notification_day.strftime("%B %d, %Y"),
+        "ONBOARDING_DAY": onboarding_day.strftime("%B %d, %Y"),
+        "PRE_WORK_START": pre_work_start.strftime("%B %d, %Y"),
+        "COHORT_START_DAY": cohort_start_day.strftime("%B %d, %Y"),
+        "START_MONTH": start_month,
+        "START_YEAR": start_year,
+        "COHORT_HALF": cohort_half,
+        "TRAINING_END": training_end.strftime("%B %d, %Y"),
+        "JOB_SEARCH_END": job_search_end.strftime("%B %d, %Y"),
+        "TRAINING_END_MONTH_YEAR": (
+            training_end.strftime("%B %Y") if training_end else None
+        ),
+        "JOB_SEARCH_START_MONTH_YEAR": (
+            training_end.strftime("%B %Y") if training_end else None
+        ),
+        "JOB_SEARCH_END_MONTH_YEAR": (
+            job_search_end.strftime("%B %Y") if job_search_end else None
         ),
         "TEXT": text,
         "APP_OPEN": app_open,
     }
 
 
+# below will be removed
+# left here for testing during pr review
 # timeline = generate_application_timeline()
+
+
+# for key, value in timeline.items():
+#     print(f"{key}: {value}")
