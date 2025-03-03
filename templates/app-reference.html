@@ -299,7 +299,6 @@ Techtonica Application {% endblock title %} {% block content %}
     button.continue-to-app-btn,
     button.save-btn {
       font-size: smaller;
-      margin: 0.5rem;
     }
   }
 
@@ -324,14 +323,16 @@ Techtonica Application {% endblock title %} {% block content %}
     fieldset > p {
       font-size: smaller;
     }
-    .form-button {
-      display: block;
-    }
-    button.previous-btn,
     button.continue-to-app-btn,
+    button.previous-btn,
     button.save-btn {
       font-size: smaller;
-      margin: 0.5rem;
+    }
+    .form-button {
+      display: grid;
+      gap: 0.5em;
+      width: 50%;
+      margin: auto;
     }
   }
 </style>
