@@ -1082,10 +1082,8 @@ input[type="radio"] {
 
 .checkbox-container {
   margin: 25px;
-}
-
-#code-of-conduct-checkbox-link{
-  color: #0093b5;
+  padding-bottom: 30px;
+  display: flex;
 }
 
 @media (max-width: 900px) {
