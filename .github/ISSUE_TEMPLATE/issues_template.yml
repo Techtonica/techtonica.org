@@ -10,7 +10,7 @@ body:
   - type: textarea
     id: page-location
     attributes:
-      label: Page where problem found?
+      label: Page where problem found?      
       description: Be specific about where you located the problem and include other useful information such as browser or display size
       placeholder: Enter URL, such as "The [Homepage L121](https://github.com/Techtonica/techtonica.org/blob/develop/templates/home.html#L121)"
     validations:
