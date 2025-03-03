@@ -1151,6 +1151,10 @@ input[type=radio] {
   display: flex;
 }
 
+label[for=code-of-conduct-checkbox] ~ a {
+  color: rgba(0, 115, 149, 0.8);
+}
+
 @media (max-width: 900px) {
   .wrapper {
     max-width: 75%;

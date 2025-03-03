@@ -1086,6 +1086,11 @@ input[type="radio"] {
   display: flex;
 }
 
+label[for="code-of-conduct-checkbox"] ~ a {
+  color: #007395cc;
+  text-decoration: none;
+}
+
 @media (max-width: 900px) {
   .wrapper {
     max-width: 75%;
