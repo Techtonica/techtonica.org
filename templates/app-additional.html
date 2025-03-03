@@ -344,5 +344,52 @@ Techtonica Application {% endblock title %} {% block content %}
     visibility: visible;
     opacity: 1;
   }
+
+  @media only screen and (min-width: 320px) and (max-width: 599px) {
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    form {
+      width: 65%;
+    }
+    .application-page > h1 {
+      font-size: 1.75em;
+      max-width: fit-content;
+    }
+    fieldset {
+      min-width: 95%;
+      padding: 1em;
+      word-wrap: break-word;
+    }
+    fieldset > label,
+    #radio-wrapper > label {
+      font-size: smaller;
+    }
+    #radio-wrapper > input[type="radio"] {
+      margin: 0;
+    }
+    fieldset > input[type="text"],
+    fieldset > input[type="file"] {
+      width: 80%;
+    }
+    .form-button {
+      display: block;
+    }
+    button.previous-btn,
+    button.submit-btn {
+      font-size: smaller;
+      margin: 0.5rem;
+    }
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 910px) {
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+  }
 </style>
 {% endblock content %}
