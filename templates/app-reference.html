@@ -263,5 +263,69 @@ Techtonica Application {% endblock title %} {% block content %}
     visibility: visible;
     opacity: 1;
   }
+
+  @media only screen and (min-width: 320px) and (max-width: 430px) {
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    .application-page > h1 {
+      font-size: 1.5em;
+      max-width: fit-content;
+    }
+    form {
+      width: 65%;
+    }
+    fieldset {
+      min-width: 90%;
+      padding: 1em;
+    }
+    fieldset > label,
+    fieldset > p {
+      font-size: smaller;
+    }
+    .form-button {
+      display: block;
+    }
+    button.previous-btn,
+    button.continue-to-app-btn,
+    button.save-btn {
+      font-size: smaller;
+      margin: 0.5rem;
+    }
+  }
+
+  @media only screen and (min-width: 431px) and (max-width: 599px) {
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    .application-page > h1 {
+      font-size: 1.5em;
+      max-width: fit-content;
+    }
+    form {
+      width: 70%;
+    }
+    fieldset {
+      min-width: 90%;
+      padding: 1em;
+    }
+    fieldset > label,
+    fieldset > p {
+      font-size: smaller;
+    }
+    .form-button {
+      display: block;
+    }
+    button.previous-btn,
+    button.continue-to-app-btn,
+    button.save-btn {
+      font-size: smaller;
+      margin: 0.5rem;
+    }
+  }
 </style>
 {% endblock content %}
