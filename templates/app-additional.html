@@ -293,19 +293,22 @@ Techtonica Application {% endblock title %} {% block content %}
     margin-bottom: 2em;
   }
 
-  button.previous-btn,
   button.continue-to-app-btn,
+  button.previous-btn,
   button.submit-btn {
     background-color: #fc7625;
     color: white;
     font-size: large;
     padding: 1rem;
     border-radius: 0.5rem;
-    border: none;
   }
 
-  button:hover {
-    background-color: #0093b5;
+  button.continue-to-app-btn:hover,
+  button.previous-btn:hover,
+  button.submit-btn:hover {
+    background-color: #16c1f3;
+    color: white;
+    transition: 0.3s;
   }
 
   .form-button {

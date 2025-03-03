@@ -374,22 +374,18 @@ Techtonica Application {% endblock title %} {% block content %}
     text-align: center;
   }
 
-  #app-form button {
+  button.continue-to-app-btn {
     background-color: #fc7625;
-    font-size: large;
-    width: 100%;
-    text-shadow: none;
-    padding: 1rem;
-    border-radius: 8px;
     color: white;
-    display: inline-block;
-    text-align: center;
-    transition: 0.3s;
+    font-size: large;
+    padding: 1rem;
+    border-radius: 0.5rem;
   }
 
-  #app-form button:hover {
+  button.continue-to-app-btn:hover {
     background-color: #16c1f3;
     color: white;
+    transition: 0.3s;
   }
 
   legend {
@@ -462,14 +458,6 @@ Techtonica Application {% endblock title %} {% block content %}
   #custom-pronouns,
   #custom-race-ethnicity {
     display: none;
-  }
-
-  #app-form button {
-    background-color: #fc7625;
-    font-size: large;
-    width: auto;
-    text-shadow: none;
-    padding: 1rem;
   }
 
   @media only screen and (min-width: 320px) and (max-width: 599px) {

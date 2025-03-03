@@ -240,8 +240,12 @@ Techtonica Application {% endblock title %} {% block content %}
     border-radius: 0.5rem;
   }
 
-  button:hover {
-    background-color: #0093b5;
+  button.continue-to-app-btn:hover,
+  button.previous-btn:hover,
+  button.save-btn:hover {
+    background-color: #16c1f3;
+    color: white;
+    transition: 0.3s;
   }
 
   .form-button {
