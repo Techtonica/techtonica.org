@@ -496,6 +496,13 @@ Techtonica Application {% endblock title %} {% block content %}
       font-size: smaller;
       margin: 0.5rem;
     }
+    @media only screen and (min-width: 600px) and (max-width: 910px) {
+      html,
+      body {
+        overflow-x: hidden;
+        width: 100%;
+      }
+    }
   }
 </style>
 {% endblock content %}
