@@ -1151,8 +1151,13 @@ input[type=radio] {
   display: flex;
 }
 
+.code-of-conduct-checkbox {
+  margin-right: 15px;
+}
+
 label[for=code-of-conduct-checkbox] ~ a {
   color: rgba(0, 115, 149, 0.8);
+  text-decoration: none;
 }
 
 @media (max-width: 900px) {

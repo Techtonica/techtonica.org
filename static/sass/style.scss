@@ -1086,6 +1086,11 @@ input[type="radio"] {
   display: flex;
 }
 
+.code-of-conduct-checkbox{
+  margin-right: 15px;
+}
+
+
 label[for="code-of-conduct-checkbox"] ~ a {
   color: #007395cc;
   text-decoration: none;
