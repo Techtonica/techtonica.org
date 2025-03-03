@@ -290,15 +290,13 @@ Techtonica Application {% endblock title %} {% block content %}
     }
     form {
       width: 65%;
+      display: flex;
+      justify-content: center;
+      padding: 3rem;
     }
     .application-page > h1 {
       font-size: 1.5em;
       max-width: fit-content;
-    }
-    .info-wrapper {
-      display: flex;
-      justify-content: center;
-      padding: 1rem;
     }
     fieldset {
       min-width: 80%;
@@ -318,6 +316,15 @@ Techtonica Application {% endblock title %} {% block content %}
     }
     .form-button {
       display: block;
+    }
+    #radio-wrapper > label,
+    fieldset > label {
+      font-size: smaller;
+    }
+    button.continue-to-app-btn,
+    button.previous-btn,
+    button.save-btn {
+      font-size: smaller;
     }
   }
 
