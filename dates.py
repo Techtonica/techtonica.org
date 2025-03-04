@@ -2,132 +2,198 @@
 to dynamically render relevant dates and information """
 
 import os
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 
+import pytz
 from dotenv import load_dotenv
 
 load_dotenv()
 
+# confirms timezone is set to pacific standard time (PST)
+pst = pytz.timezone("America/Los_Angeles")
+
+
+# checks for dates in dot env file
+def parse_env_date(env_var, calculated_date):
+    env_value = os.getenv(env_var, "").strip()
+    if not env_value:
+        return calculated_date
+
+    # handles several date formats
+    formats = ["%m/%d/%y %H:%M:%S", "%m/%d/%y", "%m/%d/%Y"]
+    for fmt in formats:
+        try:
+            return pst.localize(datetime.strptime(env_value, fmt))
+        except ValueError:
+            continue
+
+    print(f"Warning: Invalid {env_var} format ({env_value}).")
+    return calculated_date
+
 
 def generate_application_timeline():
-    # Get application open date from .env
+    # determine if hard code dates are set in dot env
+    hardcoded = os.getenv("HARD_CODED_DATES", "false").lower()
+    use_hardcoded = hardcoded == "true"
+
     app_open_date_str = os.getenv("APP_OPEN_DATE")
     app_extended = os.getenv("APP_EXTENDED", "false").lower() == "true"
-    # onboarding_day = os.getenv("ONBOARDING_DAY") #pending
 
-    # Error handling: Ensure APP_OPEN_DATE is set
-    if not app_open_date_str:
-        print("Warning: APP_OPEN_DATE is not set.")
-        app_open_datetime = None
-    else:
+    if app_open_date_str:
         try:
-            app_open_datetime = datetime.strptime(
-                app_open_date_str, "%m/%d/%y %H:%M:%S"
+            app_open_datetime = pst.localize(
+                datetime.strptime(app_open_date_str, "%m/%d/%y %H:%M:%S")
             )
-            app_open_datetime = app_open_datetime.replace(tzinfo=timezone.utc)
         except ValueError:
             print(
-                f"Error: Unexpected APP_OPEN_DATE format!"
-                f"({app_open_date_str})"  # noqa: E501
-            )
+                f"Error: Invalid APP_OPEN_DATE format ({app_open_date_str})!"
+            )  # noqa: E501
             app_open_datetime = None
+    else:
+        print("Warning: APP_OPEN_DATE is not set.")
+        app_open_datetime = None
 
-    # Determine application close date
     if app_open_datetime:
         app_close_datetime = app_open_datetime + timedelta(
             days=25 + (10 if app_extended else 0)
         )
-        app_close_datetime = app_close_datetime.replace(tzinfo=timezone.utc)
     else:
         app_close_datetime = None
 
-    # Today's date
-    today = datetime.now(timezone.utc)
+    today = datetime.now(pst)
+    app_open = app_open_datetime and (
+        app_open_datetime <= today <= app_close_datetime
+    )  # noqa: E501
 
-    # Application status logic
-    app_open = "false"
-    text = "Apply Now!"
-
-    if app_open_datetime is None or app_close_datetime is None:
-        app_open = True  # Default to true if APP_OPEN_DATE is missing
-        text = "Apply Now!"
-    elif app_open_datetime <= today <= app_close_datetime:
-        app_open = True
-        if app_extended:
-            text = (
-                "Extended!\nApply by "
-                f"{app_close_datetime.strftime('%B')} "
-                f"{app_close_datetime.day} (12pm PT)!"
-            )
-        else:
-            text = (
-                "Apply by "
-                f"{app_close_datetime.strftime('%B')} "
-                f"{app_close_datetime.day} (12pm PT)!"
-            )
-
-    # Generate event dates if APP_OPEN_DATE is valid
-    if app_open_datetime:
-        info_session = app_open_datetime + timedelta(weeks=3)
-        application_workshop = app_close_datetime + timedelta(weeks=1)
-        pair_programming_with_staff = application_workshop + timedelta(weeks=1)
-        take_home_code_challenge = pair_programming_with_staff + timedelta(
-            weeks=1
-        )  # noqa: E501
-        interview_financial_convos = take_home_code_challenge + timedelta(
-            weeks=1
-        )  # noqa: E501
-        notification_day = interview_financial_convos + timedelta(weeks=1)
-        onboarding_day = notification_day + timedelta(weeks=1)
-        pre_work_start = onboarding_day + timedelta(days=1)
-        cohort_start_day = pre_work_start + timedelta(weeks=4.5)
-
-        start_year = cohort_start_day.strftime("%Y")
-        start_month = cohort_start_day.strftime("%B")
-        cohort_half = "H1" if start_month == "January" else "H2"
-
-        training_end = cohort_start_day + timedelta(weeks=24)
-        job_search_end = cohort_start_day + timedelta(weeks=48)
+    if use_hardcoded:
+        info_session = parse_env_date(
+            "INFO_SESSION", app_open_datetime + timedelta(weeks=3)
+        )
+        application_workshop = parse_env_date(
+            "APPLICATION_WORKSHOP", app_close_datetime + timedelta(weeks=1)
+        )
+        pair_programming = parse_env_date(
+            "PAIR_PROGRAMMING_WITH_STAFF",
+            application_workshop + timedelta(weeks=1),  # noqa: E501
+        )
+        take_home = parse_env_date(
+            "TAKE_HOME_CODE_CHALLENGE", pair_programming + timedelta(weeks=1)
+        )
+        interview = parse_env_date(
+            "INTERVIEW_FINANCIAL_CONVOS", take_home + timedelta(weeks=1)
+        )
+        notification_day = parse_env_date(
+            "NOTIFICATION_DAY", interview + timedelta(weeks=1)
+        )
+        onboarding_day = parse_env_date(
+            "ONBOARDING_DAY", notification_day + timedelta(weeks=1)
+        )
+        pre_work_start = parse_env_date(
+            "PRE_WORK_START", onboarding_day + timedelta(days=1)
+        )
+        cohort_start_day = parse_env_date(
+            "COHORT_START_DAY", pre_work_start + timedelta(weeks=4.5)
+        )
     else:
-        # If no APP_OPEN_DATE, keep all dates as None
-        info_session = None
-        application_workshop = None
-        pair_programming_with_staff = None
-        take_home_code_challenge = None
-        interview_financial_convos = None
-        notification_day = None
-        onboarding_day = None
-        pre_work_start = None
-        cohort_start_day = None
-        start_month = None
-        cohort_half = None
-        training_end = None
-        job_search_end = None
+        info_session = (
+            app_open_datetime + timedelta(weeks=3)
+            if app_open_datetime
+            else None  # noqa: E501
+        )
+        application_workshop = (
+            app_close_datetime + timedelta(weeks=1)
+            if app_close_datetime
+            else None  # noqa: E501
+        )
+        pair_programming = (
+            application_workshop + timedelta(weeks=1)
+            if application_workshop
+            else None  # noqa: E501
+        )
+        take_home = (
+            pair_programming + timedelta(weeks=1) if pair_programming else None
+        )  # noqa: E501
+        interview = take_home + timedelta(weeks=1) if take_home else None
+        notification_day = (
+            interview + timedelta(weeks=1) if interview else None
+        )  # noqa: E501
+        onboarding_day = (
+            notification_day + timedelta(weeks=1) if notification_day else None
+        )
+        pre_work_start = (
+            onboarding_day + timedelta(days=1) if onboarding_day else None
+        )  # noqa: E501
+        cohort_start_day = (
+            pre_work_start + timedelta(weeks=4.5) if pre_work_start else None
+        )
+
+    start_year = cohort_start_day.strftime("%Y") if cohort_start_day else None
+    start_month = cohort_start_day.strftime("%B") if cohort_start_day else None
+    cohort_half = (
+        "H1" if start_month == "January" else "H2" if start_month else None
+    )  # noqa: E501
+
+    training_end = (
+        cohort_start_day + timedelta(weeks=24) if cohort_start_day else None
+    )  # noqa: E501
+    job_search_end = (
+        cohort_start_day + timedelta(weeks=48) if cohort_start_day else None
+    )
 
     return {
-        "APP_OPEN_DATE": app_open_datetime.strftime("%B %d, %Y"),
-        "APP_EXTENDED": app_extended,
-        "APP_CLOSE_DATE": app_close_datetime.strftime("%B %d, %Y"),
-        "INFO_SESSION": info_session.strftime("%B %d, %Y"),
-        "APPLICATION_WORKSHOP": application_workshop.strftime("%B %d, %Y"),
-        "PAIR_PROGRAMMING_WITH_STAFF": pair_programming_with_staff.strftime(
-            "%B %d, %Y"
+        "APP_OPEN_DATE": (
+            app_open_datetime.strftime("%B %d, %Y")
+            if app_open_datetime
+            else None  # noqa: E501
         ),
-        "TAKE_HOME_CODE_CHALLENGE": take_home_code_challenge.strftime(
-            "%B %d, %Y"
+        "APP_EXTENDED": app_extended,
+        "HARD_CODED_DATES": hardcoded,
+        "APP_CLOSE_DATE": (
+            app_close_datetime.strftime("%B %d, %Y")
+            if app_close_datetime
+            else None  # noqa: E501
+        ),
+        "INFO_SESSION": (
+            info_session.strftime("%B %d, %Y") if info_session else None
         ),  # noqa: E501
-        "INTERVIEW_FINANCIAL_CONVOS": interview_financial_convos.strftime(
-            "%B %d, %Y"
-        ),  # noqa: E501
-        "NOTIFICATION_DAY": notification_day.strftime("%B %d, %Y"),
-        "ONBOARDING_DAY": onboarding_day.strftime("%B %d, %Y"),
-        "PRE_WORK_START": pre_work_start.strftime("%B %d, %Y"),
-        "COHORT_START_DAY": cohort_start_day.strftime("%B %d, %Y"),
+        "APPLICATION_WORKSHOP": (
+            application_workshop.strftime("%B %d, %Y")
+            if application_workshop
+            else None  # noqa: E501
+        ),
+        "PAIR_PROGRAMMING_WITH_STAFF": (
+            pair_programming.strftime("%B %d, %Y")
+            if pair_programming
+            else None  # noqa: E501
+        ),
+        "TAKE_HOME_CODE_CHALLENGE": (
+            take_home.strftime("%B %d, %Y") if take_home else None
+        ),
+        "INTERVIEW_FINANCIAL_CONVOS": (
+            interview.strftime("%B %d, %Y") if interview else None
+        ),
+        "NOTIFICATION_DAY": (
+            notification_day.strftime("%B %d, %Y")
+            if notification_day
+            else None  # noqa: E501
+        ),
+        "ONBOARDING_DAY": (
+            onboarding_day.strftime("%B %d, %Y") if onboarding_day else None
+        ),
+        "PRE_WORK_START": (
+            pre_work_start.strftime("%B %d, %Y") if pre_work_start else None
+        ),
+        "COHORT_START_DAY": (
+            cohort_start_day.strftime("%B %d, %Y")
+            if cohort_start_day
+            else None  # noqa: E501
+        ),
         "START_MONTH": start_month,
         "START_YEAR": start_year,
         "COHORT_HALF": cohort_half,
-        "TRAINING_END": training_end.strftime("%B %d, %Y"),
-        "JOB_SEARCH_END": job_search_end.strftime("%B %d, %Y"),
+        "TRAINING_END": (
+            training_end.strftime("%B %d, %Y") if training_end else None
+        ),  # noqa: E501
         "TRAINING_END_MONTH_YEAR": (
             training_end.strftime("%B %Y") if training_end else None
         ),
@@ -137,8 +203,12 @@ def generate_application_timeline():
         "JOB_SEARCH_END_MONTH_YEAR": (
             job_search_end.strftime("%B %Y") if job_search_end else None
         ),
-        "TEXT": text,
         "APP_OPEN": app_open,
+        "TEXT": (
+            "Apply Now!"
+            if not app_open
+            else f"Apply by {app_close_datetime.strftime('%B %d')} (12pm PT)!"
+        ),
     }
 
 
