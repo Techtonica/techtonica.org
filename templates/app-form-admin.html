@@ -501,13 +501,19 @@ Techtonica Application {% endblock title %} {% block content %}
     button.save-btn {
       font-size: smaller;
     }
+  }
 
-    @media only screen and (min-width: 600px) and (max-width: 910px) {
-      html,
-      body {
-        overflow-x: hidden;
-        width: 100%;
-      }
+  @media only screen and (min-width: 600px) and (max-width: 910px) {
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    .form-button {
+      display: flex;
+      margin: auto;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 </style>
