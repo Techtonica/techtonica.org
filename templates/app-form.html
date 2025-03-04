@@ -7,7 +7,13 @@ Techtonica Application {% endblock title %} {% block content %}
       <fieldset>
         <legend>General Applicant Demographics</legend>
         <label for="first-name">Full legal given or 'first' name: </label><br />
-        <input type="text" id="first-name" name="first-name" required /><br />
+        <input
+          type="text"
+          id="first-name"
+          name="first-name"
+          required
+          autocomplete="given-name"
+        /><br />
         <label for="preferred-name"
           >Preferred given or "first" name (if not the same as your legal
           "first" or given name): <span>(Optional)</span></label
@@ -15,7 +21,13 @@ Techtonica Application {% endblock title %} {% block content %}
         <input type="text" id="preferred-name" name="preferred-name" /><br />
         <label for="last-name">Full legal last/family name or surname: </label
         ><br />
-        <input type="text" id="last-name" name="last-name" required /><br />
+        <input
+          type="text"
+          id="last-name"
+          name="last-name"
+          required
+          autocomplete="family-name"
+        /><br />
         <label for="name-pronunciation"
           >How to pronounce your full name: <span>(Optional)</span></label
         >
@@ -37,7 +49,13 @@ Techtonica Application {% endblock title %} {% block content %}
         >
         </span
         ><br />
-        <input type="email" id="email" name="email" required /><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          autocomplete="email"
+        /><br />
         <label for="gender-identity"
           >With which gender identity do you most align? </label
         ><br />
@@ -129,7 +147,7 @@ Techtonica Application {% endblock title %} {% block content %}
           disabled
         /><br />
         <label for="birth-date">What is your birth date? </label><br />
-        <input type="date" id="birth-date" name="birth-date" required /><br />
+        <input type="date" id="birth-date" name="birth-date" /><br />
         <label for="age-group">Select your age group </label><br />
         <select name="age-group" id="age-group" required>
           <br />
@@ -150,9 +168,11 @@ Techtonica Application {% endblock title %} {% block content %}
           name="phone-number"
           id="phone-number"
           pattern="^\+?1?[-.\s]?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$"
-          placeholder="ex. 415-555-1234 or 1-415-555-1234"
+          placeholder="example: 415-555-1234 or 1-415-555-1234"
           title="Please enter a valid phone number in the format: 415-555-1234 or 1-415-555-1234."
           minlength="10"
+          required
+          autocomplete="tel"
         /><br />
         <div id="radio-wrapper">
           <label for="veteran-status">Are you a U.S. veteran? </label><br />
