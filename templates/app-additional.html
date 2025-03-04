@@ -377,7 +377,7 @@ Techtonica Application {% endblock title %} {% block content %}
     fieldset > input[type="file"] {
       width: 80%;
     }
-    fieldset > input {
+    fieldset > input[type="file"] {
       border: 1px solid rgba(0, 0, 0, 0.348);
       padding: 1em;
       border-radius: 6px;
@@ -402,6 +402,18 @@ Techtonica Application {% endblock title %} {% block content %}
     body {
       overflow-x: hidden;
       width: 100%;
+    }
+    fieldset > input[type="file"] {
+      border: 1px solid rgba(0, 0, 0, 0.348);
+      padding: 1em;
+      border-radius: 6px;
+      margin-bottom: 2em;
+      width: 80%;
+      color: black;
+    }
+    fieldset > input[type="text"],
+    fieldset > input[type="file"] {
+      width: 80%;
     }
   }
 </style>
