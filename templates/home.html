@@ -10,14 +10,14 @@ endblock title %} {% block content %}
         talent needs.
       </p>
       <h2>
-        {% if times.app_open %}
+        {% if timeline.APP_OPEN %}
         <a
           href="{{ url_for('render_ft_program_page') }}"
           class="sponsor"
           id="orange-button"
           target="_blank"
           rel="noopener noreferrer"
-          >{{times.text}}</a
+          >{{timeline.TEXT}}</a
         >
         {% else %}
         <a
