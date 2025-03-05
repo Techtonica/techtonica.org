@@ -1092,6 +1092,9 @@ input[type="radio"] {
 }
 
 @media (max-width: 600px) {
+  #myChart {
+    height: 500px !important ;
+  }
   .payment-form {
     margin: 0px;
     padding: 30px;
