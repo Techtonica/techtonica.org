@@ -1,11 +1,15 @@
 """ This file generates the application timeline variables
 to dynamically render relevant dates and information """
 
+import logging
 import os
 from datetime import datetime, timedelta
 
 import pytz
 from dotenv import load_dotenv
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 load_dotenv()
 
@@ -80,6 +84,8 @@ def generate_application_timeline():
     )  # noqa: E501
 
     if use_hardcoded:
+        logger.info("Using hardcoded dates.")
+
         info_session = parse_env_date(
             "INFO_SESSION", app_open_datetime + timedelta(weeks=3)
         )
@@ -109,6 +115,8 @@ def generate_application_timeline():
             "COHORT_START_DAY", pre_work_start + timedelta(weeks=4.5)
         )
     else:
+        logger.info("Using calculated dates.")
+
         info_session = (
             app_open_datetime + timedelta(weeks=3)
             if app_open_datetime

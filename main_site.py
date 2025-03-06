@@ -4,7 +4,6 @@ for Techtonica.org
 """
 
 import configparser
-import datetime
 import os
 import sys
 from uuid import uuid4
@@ -22,7 +21,6 @@ from dates import generate_application_timeline
 
 load_dotenv(find_dotenv(usecwd=True))
 
-
 # Gracefully handle running locally without eventbrite token
 try:
     eventbrite = Eventbrite(os.environ["EVENTBRITE_OAUTH_TOKEN"])
@@ -31,23 +29,6 @@ except BaseException:
 
 app = Flask(__name__)
 sslify = SSLify(app)
-
-# Gracefully handle running locally without app open date infortmation
-try:
-    app_open_date_string = os.environ["APP_OPEN_DATE"]
-    is_extended = os.environ["APP_EXTENDED"].lower() == "true"
-
-    # Gracefully handle running locally w app_open_date formatted incorrectly
-    try:
-        app_open_date = datetime.datetime.strptime(
-            app_open_date_string, "%m/%d/%y %H:%M:%S"
-        )
-    except BaseException:
-        print("Application open date is incorrectly formatted.")
-        app_open_date = None
-except BaseException:
-    print("Not able to retrieve application date information.")
-    app_open_date = None
 
 
 # MAIN HANDLERS
@@ -257,71 +238,6 @@ def get_events():
         # Gracefully handle failures getting events from Eventbrite
         print("Not returning Eventbrite Events:", sys.exc_info()[1])
         return []
-
-
-# def get_time():
-#     """Returns a dictionary containing app_open (a boolean for current state of
-#     applications) and text (for application timeline-related button content)"""
-#     if app_open_date is None:
-#         app_open = True
-#         text = "Apply Now!"
-#     else:
-#         today = datetime.datetime.today()
-#         if is_extended:
-#             app_close_date = app_open_date + datetime.timedelta(days=42)
-#             date_string = app_close_date.strftime("%B %-d")
-#             text = """Extended!
-#             Apply by {date} (12pm PT)!""".format(
-#                 date=date_string
-#             )
-#         else:
-#             app_close_date = app_open_date + datetime.timedelta(days=28)
-#             date_string = app_close_date.strftime("%B %-d")
-#             text = "Apply by {date} (12pm PT)!".format(date=date_string)
-
-#         app_open = app_open_date <= today <= app_close_date
-
-#     return {
-#         "app_open": app_open,
-#         "text": text,
-#     }
-
-
-# def get_mentor_timeline():
-#     """Returns dynamically calculated mentor timeline dates."""
-#     if app_open_date is None:
-#         print("Warning: app_open_date is None. Mentor timeline not generated.")
-
-#     else:
-#         # Utilizing app open date variable from line 38
-#         # Defining key dates
-#         app_close_date = app_open_date + datetime.timedelta(weeks=4)
-#         onboarding_day = app_close_date + datetime.timedelta(weeks=6)
-#         pre_work_start = onboarding_day + datetime.timedelta(days=1)
-#         start_day = pre_work_start + datetime.timedelta(weeks=4, days=3)
-
-#         # Defining Cohort Type (January H1 or July H2)
-#         start_month = start_day.strftime("%B")  # extracting month
-#         cohort_half = "H1" if start_month == "January" else "H2"
-
-#         # Defining training and job search periods
-#         training_end = start_day + datetime.timedelta(weeks=24)
-#         job_search_end = start_day + datetime.timedelta(weeks=48)
-
-#         return {
-#             "app_open_date": app_open_date.strftime("%B %d, %Y"),
-#             "app_close_date": app_close_date.strftime("%B %d, %Y"),
-#             "onboarding_day": onboarding_day.strftime("%B %d, %Y"),
-#             "pre_work_start": pre_work_start.strftime("%B %d, %Y"),
-#             "start_day": start_day.strftime("%B %d, %Y"),
-#             "start_month": start_month,  # January or July
-#             "year": start_day.year,
-#             "cohort_half": cohort_half,  # H1 or H2
-#             "training_start_month": start_month,
-#             "training_end_month": training_end.strftime("%B"),
-#             "job_search_start_month": training_end.strftime("%B"),
-#             "job_search_end_month": job_search_end.strftime("%B"),
-#         }
 
 
 class Event(object):
