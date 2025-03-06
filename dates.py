@@ -20,7 +20,12 @@ def parse_env_date(env_var, calculated_date):
         return calculated_date
 
     # handles several date formats
-    formats = ["%m/%d/%y %H:%M:%S", "%m/%d/%y", "%m/%d/%Y"]
+    formats = [
+        "%m/%d/%Y %H:%M:%S",
+        "%m/%d/%y %H:%M:%S",
+        "%m/%d/%y",
+        "%m/%d/%Y",
+    ]  # noqa: E501
     for fmt in formats:
         try:
             return pst.localize(datetime.strptime(env_value, fmt))
@@ -29,6 +34,15 @@ def parse_env_date(env_var, calculated_date):
 
     print(f"Warning: Invalid {env_var} format ({env_value}).")
     return calculated_date
+
+
+# functions to format dates, if available
+def format_date(date):
+    return date.strftime("%B %d, %Y") if date else None
+
+
+def format_month_year(date):
+    return date.strftime("%B %Y") if date else None
 
 
 def generate_application_timeline():
@@ -141,68 +155,26 @@ def generate_application_timeline():
     )
 
     return {
-        "APP_OPEN_DATE": (
-            app_open_datetime.strftime("%B %d, %Y")
-            if app_open_datetime
-            else None  # noqa: E501
-        ),
+        "APP_OPEN_DATE": format_date(app_open_datetime),
         "APP_EXTENDED": app_extended,
         "HARD_CODED_DATES": hardcoded,
-        "APP_CLOSE_DATE": (
-            app_close_datetime.strftime("%B %d, %Y")
-            if app_close_datetime
-            else None  # noqa: E501
-        ),
-        "INFO_SESSION": (
-            info_session.strftime("%B %d, %Y") if info_session else None
-        ),  # noqa: E501
-        "APPLICATION_WORKSHOP": (
-            application_workshop.strftime("%B %d, %Y")
-            if application_workshop
-            else None  # noqa: E501
-        ),
-        "PAIR_PROGRAMMING_WITH_STAFF": (
-            pair_programming.strftime("%B %d, %Y")
-            if pair_programming
-            else None  # noqa: E501
-        ),
-        "TAKE_HOME_CODE_CHALLENGE": (
-            take_home.strftime("%B %d, %Y") if take_home else None
-        ),
-        "INTERVIEW_FINANCIAL_CONVOS": (
-            interview.strftime("%B %d, %Y") if interview else None
-        ),
-        "NOTIFICATION_DAY": (
-            notification_day.strftime("%B %d, %Y")
-            if notification_day
-            else None  # noqa: E501
-        ),
-        "ONBOARDING_DAY": (
-            onboarding_day.strftime("%B %d, %Y") if onboarding_day else None
-        ),
-        "PRE_WORK_START": (
-            pre_work_start.strftime("%B %d, %Y") if pre_work_start else None
-        ),
-        "COHORT_START_DAY": (
-            cohort_start_day.strftime("%B %d, %Y")
-            if cohort_start_day
-            else None  # noqa: E501
-        ),
+        "APP_CLOSE_DATE": format_date(app_close_datetime),
+        "INFO_SESSION": format_date(info_session),
+        "APPLICATION_WORKSHOP": format_date(application_workshop),
+        "PAIR_PROGRAMMING_WITH_STAFF": format_date(pair_programming),
+        "TAKE_HOME_CODE_CHALLENGE": format_date(take_home),
+        "INTERVIEW_FINANCIAL_CONVOS": format_date(interview),
+        "NOTIFICATION_DAY": format_date(notification_day),
+        "ONBOARDING_DAY": format_date(onboarding_day),
+        "PRE_WORK_START": format_date(pre_work_start),
+        "COHORT_START_DAY": format_date(cohort_start_day),
         "START_MONTH": start_month,
         "START_YEAR": start_year,
         "COHORT_HALF": cohort_half,
-        "TRAINING_END": (
-            training_end.strftime("%B %d, %Y") if training_end else None
-        ),  # noqa: E501
-        "TRAINING_END_MONTH_YEAR": (
-            training_end.strftime("%B %Y") if training_end else None
-        ),
-        "JOB_SEARCH_START_MONTH_YEAR": (
-            training_end.strftime("%B %Y") if training_end else None
-        ),
-        "JOB_SEARCH_END_MONTH_YEAR": (
-            job_search_end.strftime("%B %Y") if job_search_end else None
-        ),
+        "TRAINING_END": format_date(training_end),
+        "TRAINING_END_MONTH_YEAR": format_month_year(training_end),
+        "JOB_SEARCH_START_MONTH_YEAR": format_month_year(training_end),
+        "JOB_SEARCH_END_MONTH_YEAR": format_month_year(job_search_end),
         "APP_OPEN": app_open,
         "TEXT": (
             "Apply Now!"
@@ -214,8 +186,8 @@ def generate_application_timeline():
 
 # below will be removed
 # left here for testing during pr review
-# timeline = generate_application_timeline()
+timeline = generate_application_timeline()
 
 
-# for key, value in timeline.items():
-#     print(f"{key}: {value}")
+for key, value in timeline.items():
+    print(f"{key}: {value}")
