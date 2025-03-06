@@ -18,6 +18,9 @@ Please include a summary of the changes and the related issues.
 ## New Environment Variables or Requirements
 Any newly introduced dependencies or system requirements, as well as new or changed environment variables, should be described here. Do not include API keys or other sensitive environment variable values.
 
+# Changes Made
+Detail what changes this pull request has and to which areas of the codebase.
+
 ## How to test
 Please describe the steps on how to test this PR.
 
