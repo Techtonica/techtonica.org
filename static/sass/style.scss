@@ -1080,6 +1080,21 @@ input[type="radio"] {
   list-style-type: none;
 }
 
+.checkbox-container {
+  margin: 25px;
+  padding-bottom: 30px;
+  display: flex;
+}
+
+input#code-of-conduct-checkbox{
+  margin-right: 15px;
+}
+
+label[for="code-of-conduct-checkbox"] ~ a {
+  color: #007395cc;
+  text-decoration: none;
+}
+
 @media (max-width: 900px) {
   .wrapper {
     max-width: 75%;
