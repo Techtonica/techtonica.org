@@ -296,19 +296,24 @@ Techtonica Application {% endblock title %} {% block content %}
       width: 100%;
     }
     form {
-      width: 85%;
-      display: flex;
-      justify-content: center;
-      padding: 2rem;
+      width: inherit;
+      margin-bottom: 2rem;
+    }
+    .application-page {
+      padding: 2rem 0;
     }
     .application-page > h1 {
       font-size: 1.5em;
       max-width: fit-content;
     }
+    legend {
+      font-size: 18px;
+    }
     fieldset {
       min-width: 95%;
       word-wrap: break-word;
       padding: 1.5rem;
+      margin: 0;
     }
     fieldset > input[type="text"],
     fieldset > input[type="file"],
