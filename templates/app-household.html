@@ -286,7 +286,7 @@ Techtonica Application {% endblock title %} {% block content %}
     opacity: 1;
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 488px) {
+  @media only screen and (min-width: 320px) and (max-width: 599px) {
     .column {
       padding: 0;
     }
@@ -338,35 +338,6 @@ Techtonica Application {% endblock title %} {% block content %}
     button.previous-btn,
     button.save-btn {
       font-size: smaller;
-    }
-  }
-
-  @media only screen and (min-width: 489px) and (max-width: 599px) {
-    .column {
-      padding: 0;
-    }
-    html,
-    body {
-      overflow-x: hidden;
-      width: 100%;
-    }
-    .application-page > h1 {
-      font-size: 1.75em;
-      max-width: fit-content;
-    }
-    fieldset {
-      min-width: 95%;
-      word-wrap: break-word;
-      padding: 1rem;
-    }
-    fieldset > input[type="text"],
-    fieldset > input[type="file"],
-    fieldset > input[type="number"],
-    fieldset > input[type="url"] {
-      width: 80%;
-    }
-    .form-button {
-      gap: 1rem;
     }
   }
 
