@@ -416,7 +416,8 @@ Techtonica Application {% endblock title %} {% block content %}
     margin-bottom: 2em;
     border: 1px solid rgba(0, 0, 0, 0.559);
     border-radius: 6px;
-    width: 35%;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   #radio-wrapper {
@@ -495,7 +496,7 @@ Techtonica Application {% endblock title %} {% block content %}
       padding: 1.5rem;
       margin: 0;
     }
-    #info-wrapper > fieldset > input[type="text"],
+    /* #info-wrapper > fieldset > input[type="text"],
     #info-wrapper > fieldset > input[type="email"],
     #info-wrapper > fieldset > input[type="tel"],
     #info-wrapper > fieldset > input[type="date"],
@@ -503,8 +504,8 @@ Techtonica Application {% endblock title %} {% block content %}
     #info-wrapper > fieldset > input[type="url"],
     #info-wrapper > fieldset > textarea,
     #info-wrapper > fieldset > select {
-      width: 80%;
-    }
+      box-sizing: border-box;
+    } */
     #radio-wrapper > input[type="radio"] {
       margin: 0;
     }
