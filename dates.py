@@ -21,6 +21,9 @@ pst = pytz.timezone("America/Los_Angeles")
 def parse_env_date(env_var, calculated_date):
     env_value = os.getenv(env_var, "").strip()
     if not env_value:
+        logger.info(
+            f"{env_var} not found in .env, using calculated date: {calculated_date}"  # noqa: E501
+        )
         return calculated_date
 
     # handles several date formats
@@ -29,14 +32,18 @@ def parse_env_date(env_var, calculated_date):
         "%m/%d/%y %H:%M:%S",
         "%m/%d/%y",
         "%m/%d/%Y",
-    ]  # noqa: E501
+    ]
     for fmt in formats:
         try:
-            return pst.localize(datetime.strptime(env_value, fmt))
+            parsed_date = pst.localize(datetime.strptime(env_value, fmt))
+            logger.info(f"{env_var} found in .env: {parsed_date}")
+            return parsed_date
         except ValueError:
             continue
 
-    print(f"Warning: Invalid {env_var} format ({env_value}).")
+    logger.warning(
+        f"Invalid {env_var} format in .env ({env_value}), using calculated date: {calculated_date}"  # noqa: E501
+    )
     return calculated_date
 
 
@@ -50,10 +57,6 @@ def format_month_year(date):
 
 
 def generate_application_timeline():
-    # determine if hard code dates are set in dot env
-    hardcoded = os.getenv("HARD_CODED_DATES", "false").lower()
-    use_hardcoded = hardcoded == "true"
-
     app_open_date_str = os.getenv("APP_OPEN_DATE")
     app_extended = os.getenv("APP_EXTENDED", "false").lower() == "true"
 
@@ -66,9 +69,9 @@ def generate_application_timeline():
             print(
                 f"Error: Invalid APP_OPEN_DATE format ({app_open_date_str})!"
             )  # noqa: E501
+
             app_open_datetime = None
     else:
-        print("Warning: APP_OPEN_DATE is not set.")
         app_open_datetime = None
 
     if app_open_datetime:
@@ -83,71 +86,34 @@ def generate_application_timeline():
         app_open_datetime <= today <= app_close_datetime
     )  # noqa: E501
 
-    if use_hardcoded:
-        logger.info("Using hardcoded dates.")
-
-        info_session = parse_env_date(
-            "INFO_SESSION", app_open_datetime + timedelta(weeks=3)
-        )
-        application_workshop = parse_env_date(
-            "APPLICATION_WORKSHOP", app_close_datetime + timedelta(weeks=1)
-        )
-        pair_programming = parse_env_date(
-            "PAIR_PROGRAMMING_WITH_STAFF",
-            application_workshop + timedelta(weeks=1),  # noqa: E501
-        )
-        take_home = parse_env_date(
-            "TAKE_HOME_CODE_CHALLENGE", pair_programming + timedelta(weeks=1)
-        )
-        interview = parse_env_date(
-            "INTERVIEW_FINANCIAL_CONVOS", take_home + timedelta(weeks=1)
-        )
-        notification_day = parse_env_date(
-            "NOTIFICATION_DAY", interview + timedelta(weeks=1)
-        )
-        onboarding_day = parse_env_date(
-            "ONBOARDING_DAY", notification_day + timedelta(weeks=1)
-        )
-        pre_work_start = parse_env_date(
-            "PRE_WORK_START", onboarding_day + timedelta(days=1)
-        )
-        cohort_start_day = parse_env_date(
-            "COHORT_START_DAY", pre_work_start + timedelta(weeks=4.5)
-        )
-    else:
-        logger.info("Using calculated dates.")
-
-        info_session = (
-            app_open_datetime + timedelta(weeks=3)
-            if app_open_datetime
-            else None  # noqa: E501
-        )
-        application_workshop = (
-            app_close_datetime + timedelta(weeks=1)
-            if app_close_datetime
-            else None  # noqa: E501
-        )
-        pair_programming = (
-            application_workshop + timedelta(weeks=1)
-            if application_workshop
-            else None  # noqa: E501
-        )
-        take_home = (
-            pair_programming + timedelta(weeks=1) if pair_programming else None
-        )  # noqa: E501
-        interview = take_home + timedelta(weeks=1) if take_home else None
-        notification_day = (
-            interview + timedelta(weeks=1) if interview else None
-        )  # noqa: E501
-        onboarding_day = (
-            notification_day + timedelta(weeks=1) if notification_day else None
-        )
-        pre_work_start = (
-            onboarding_day + timedelta(days=1) if onboarding_day else None
-        )  # noqa: E501
-        cohort_start_day = (
-            pre_work_start + timedelta(weeks=4.5) if pre_work_start else None
-        )
+    info_session = parse_env_date(
+        "INFO_SESSION", app_open_datetime + timedelta(weeks=3)
+    )
+    application_workshop = parse_env_date(
+        "APPLICATION_WORKSHOP", app_close_datetime + timedelta(weeks=1)
+    )
+    pair_programming = parse_env_date(
+        "PAIR_PROGRAMMING_WITH_STAFF",
+        application_workshop + timedelta(weeks=1),  # noqa: E501
+    )
+    take_home = parse_env_date(
+        "TAKE_HOME_CODE_CHALLENGE", pair_programming + timedelta(weeks=1)
+    )
+    interview = parse_env_date(
+        "INTERVIEW_FINANCIAL_CONVOS", take_home + timedelta(weeks=1)
+    )
+    notification_day = parse_env_date(
+        "NOTIFICATION_DAY", interview + timedelta(weeks=1)
+    )
+    onboarding_day = parse_env_date(
+        "ONBOARDING_DAY", notification_day + timedelta(weeks=1)
+    )
+    pre_work_start = parse_env_date(
+        "PRE_WORK_START", onboarding_day + timedelta(days=1)
+    )
+    cohort_start_day = parse_env_date(
+        "COHORT_START_DAY", pre_work_start + timedelta(weeks=4.5)
+    )
 
     start_year = cohort_start_day.strftime("%Y") if cohort_start_day else None
     start_month = cohort_start_day.strftime("%B") if cohort_start_day else None
@@ -165,7 +131,6 @@ def generate_application_timeline():
     return {
         "APP_OPEN_DATE": format_date(app_open_datetime),
         "APP_EXTENDED": app_extended,
-        "HARD_CODED_DATES": hardcoded,
         "APP_CLOSE_DATE": format_date(app_close_datetime),
         "INFO_SESSION": format_date(info_session),
         "APPLICATION_WORKSHOP": format_date(application_workshop),
