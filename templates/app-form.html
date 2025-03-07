@@ -520,17 +520,24 @@ Techtonica Application {% endblock title %} {% block content %}
     .column {
       padding: 0;
     }
-    .application-page > form {
-      width: 80%;
-    }
     html,
     body {
       overflow-x: hidden;
       width: 100%;
     }
+    .application-page {
+      padding: 2rem 0;
+    }
+    .application-page > form {
+      width: initial;
+      margin-bottom: 2rem;
+    }
     .application-page > h1 {
       font-size: 2em;
       max-width: fit-content;
+    }
+    legend {
+      font-size: 24px;
     }
     fieldset > input[type="text"],
     fieldset > input[type="email"],
