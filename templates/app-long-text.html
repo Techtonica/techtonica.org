@@ -527,6 +527,21 @@ Techtonica Application {% endblock title %} {% block content %}
     #radio-wrapper > label {
       font-size: smaller;
     }
+    fieldset > input[type="text"],
+    fieldset > input[type="email"],
+    fieldset > input[type="tel"],
+    fieldset > input[type="date"],
+    fieldset > input[type="number"],
+    fieldset > input[type="url"],
+    fieldset > textarea,
+    fieldset > select {
+      padding: 1em;
+      margin-bottom: 2em;
+      border: 1px solid rgba(0, 0, 0, 0.559);
+      border-radius: 6px;
+      width: 100%;
+      box-sizing: border-box;
+    }
     .form-button {
       display: grid;
       gap: 0.5em;
