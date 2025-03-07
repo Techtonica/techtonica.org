@@ -223,7 +223,7 @@ Techtonica Application {% endblock title %} {% block content %}
     width: 80%;
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 574px) {
+  @media only screen and (min-width: 320px) and (max-width: 599px) {
     .column {
       padding: 0;
     }
@@ -231,6 +231,9 @@ Techtonica Application {% endblock title %} {% block content %}
     body {
       overflow-x: hidden;
       width: 100%;
+    }
+    .application-page {
+      padding: 2rem 0;
     }
     .application-page > h1 {
       font-size: 1.5em;
@@ -242,12 +245,18 @@ Techtonica Application {% endblock title %} {% block content %}
     fieldset > label {
       font-size: smaller;
     }
+    legend {
+      font-size: 18px;
+    }
     form {
-      width: 70%;
+      width: inherit;
+      margin-bottom: 2rem;
     }
     fieldset {
-      min-width: 90%;
-      padding: 1em;
+      min-width: 95%;
+      word-wrap: break-word;
+      padding: 1.5rem;
+      margin: 0;
     }
     fieldset > select {
       width: 80%;
@@ -265,7 +274,7 @@ Techtonica Application {% endblock title %} {% block content %}
     }
   }
 
-  @media only screen and (min-width: 575px) and (max-width: 910px) {
+  @media only screen and (min-width: 600px) and (max-width: 910px) {
     .column {
       padding: 0;
     }
