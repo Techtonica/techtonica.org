@@ -194,36 +194,36 @@ Techtonica Application {% endblock title %} {% block content %}
     background-color: #0093b5;
     padding: 2rem;
   }
-  .application-page > h1,
-  .application-page > p {
+
+  .application-page > h1 {
     max-width: 65%;
     margin: auto;
     text-align: center;
+  }
+
+  .application-form > fieldset > input[type="text"],
+  .application-form > fieldset > input[type="file"],
+  .application-form > fieldset > input[type="number"],
+  .application-form > fieldset > input[type="url"],
+  .application-form > fieldset > textarea {
+    padding: 1em;
+    margin-bottom: 2em;
+    border: 1px solid rgba(0, 0, 0, 0.559);
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   #radio-wrapper {
     color: black;
   }
 
-  fieldset {
+  .application-form > fieldset {
     padding: 2rem;
     background-color: #fff;
     border-radius: 0.5rem;
   }
 
-  fieldset > input[type="text"] {
-    padding: 1em;
-    width: 85%;
-  }
-
-  fieldset > input {
-    border: 1px solid rgba(0, 0, 0, 0.348);
-    padding: 1em;
-    border-radius: 6px;
-    margin-bottom: 2em;
-    width: 35%;
-    color: black;
-  }
   fieldset > label i {
     color: #0093b5;
     font-weight: bold;
@@ -295,7 +295,7 @@ Techtonica Application {% endblock title %} {% block content %}
       overflow-x: hidden;
       width: 100%;
     }
-    form {
+    .application-page > form {
       width: inherit;
       margin-bottom: 2rem;
       padding: 1.5rem;
@@ -310,17 +310,11 @@ Techtonica Application {% endblock title %} {% block content %}
     legend {
       font-size: 18px;
     }
-    fieldset {
+    .application-form > fieldset {
       min-width: 95%;
       word-wrap: break-word;
       padding: 1.5rem;
       margin: 0;
-    }
-    fieldset > input[type="text"],
-    fieldset > input[type="file"],
-    fieldset > input[type="number"],
-    fieldset > input[type="url"] {
-      width: 90%;
     }
     #radio-wrapper > input[type="radio"] {
       margin: 0;
@@ -332,7 +326,7 @@ Techtonica Application {% endblock title %} {% block content %}
       margin: auto;
     }
     #radio-wrapper > label,
-    fieldset > label {
+    .application-form > fieldset > label {
       font-size: smaller;
     }
     button.continue-to-app-btn,
@@ -350,12 +344,6 @@ Techtonica Application {% endblock title %} {% block content %}
     body {
       overflow-x: hidden;
       width: 100%;
-    }
-    fieldset > input[type="text"],
-    fieldset > input[type="file"],
-    fieldset > input[type="number"],
-    fieldset > input[type="url"] {
-      width: 80%;
     }
     .form-button {
       display: flex;
