@@ -179,6 +179,15 @@ Techtonica Application {% endblock title %} {% block content %}
     text-align: center;
   }
 
+  .application-form > fieldset > select {
+    padding: 1em;
+    margin-bottom: 2em;
+    border: 1px solid rgba(0, 0, 0, 0.559);
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   fieldset {
     padding: 2rem;
     border-radius: 0.5rem;
@@ -186,10 +195,6 @@ Techtonica Application {% endblock title %} {% block content %}
 
   fieldset label {
     color: black;
-  }
-
-  fieldset > input {
-    margin-bottom: 2rem;
   }
 
   button.continue-to-app-btn,
@@ -251,16 +256,13 @@ Techtonica Application {% endblock title %} {% block content %}
     form {
       width: inherit;
       margin-bottom: 2rem;
-      padding: 2rem;
+      padding: 1.5rem;
     }
     fieldset {
       min-width: 95%;
       word-wrap: break-word;
       padding: 1.5rem;
       margin: 0;
-    }
-    fieldset > select {
-      width: 80%;
     }
     button.continue-to-app-btn,
     button.previous-btn,
