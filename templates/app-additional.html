@@ -272,8 +272,9 @@ Techtonica Application {% endblock title %} {% block content %}
     text-align: center;
   }
 
-  fieldset {
+  .application-form > fieldset {
     padding: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.559);
     border-radius: 0.5rem;
   }
 
@@ -292,12 +293,6 @@ Techtonica Application {% endblock title %} {% block content %}
 
   fieldset label {
     color: black;
-  }
-
-  fieldset > input {
-    padding: 1em;
-    border-radius: 6px;
-    margin-bottom: 2em;
   }
 
   button.continue-to-app-btn,
@@ -320,7 +315,9 @@ Techtonica Application {% endblock title %} {% block content %}
 
   .form-button {
     display: flex;
-    gap: 3rem;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .info-icon {
@@ -364,29 +361,36 @@ Techtonica Application {% endblock title %} {% block content %}
       overflow-x: hidden;
       width: 100%;
     }
-    form {
-      width: 65%;
+    .application-page > form {
+      width: inherit;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+    }
+    .application-page {
+      padding: 2rem 0;
     }
     .application-page > h1 {
-      font-size: 1.75em;
+      font-size: 1.5em;
       max-width: fit-content;
     }
-    fieldset {
-      min-width: 95%;
-      padding: 1em;
-      word-wrap: break-word;
+    legend {
+      font-size: 18px;
     }
-    fieldset > label,
-    #radio-wrapper > label {
+    .application-form > fieldset {
+      min-width: 95%;
+      word-wrap: break-word;
+      padding: 1.5rem;
+      margin: 0;
+    }
+    #radio-wrapper > label,
+    .application-form > fieldset > label {
       font-size: smaller;
     }
     #radio-wrapper > input[type="radio"] {
       margin: 0;
     }
     .form-button {
-      display: grid;
       gap: 0.5em;
-      width: 50%;
       margin: auto;
     }
     button.previous-btn,
