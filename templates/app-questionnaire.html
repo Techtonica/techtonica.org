@@ -188,12 +188,13 @@ Techtonica Application {% endblock title %} {% block content %}
     box-sizing: border-box;
   }
 
-  fieldset {
+  .application-form > fieldset {
     padding: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.559);
     border-radius: 0.5rem;
   }
 
-  fieldset label {
+  .application-form > fieldset > label {
     color: black;
   }
 
@@ -220,14 +221,6 @@ Techtonica Application {% endblock title %} {% block content %}
     margin: auto;
     align-items: center;
     justify-content: space-between;
-  }
-
-  fieldset > select {
-    padding: 1em;
-    margin: 2em auto;
-    border: 1px solid rgba(0, 0, 0, 0.559);
-    border-radius: 6px;
-    width: 80%;
   }
 
   @media only screen and (min-width: 320px) and (max-width: 599px) {
@@ -281,22 +274,24 @@ Techtonica Application {% endblock title %} {% block content %}
     .column {
       padding: 0;
     }
-    .application-page > form {
-      width: 80%;
-    }
     html,
     body {
       overflow-x: hidden;
       width: 100%;
     }
-    .application-form > fieldset {
-      padding: 2em;
+    .application-page {
+      padding: 2rem 0;
     }
-    .form-button {
-      display: flex;
-      margin: auto;
-      align-items: center;
-      justify-content: space-between;
+    .application-page > form {
+      width: initial;
+      margin-bottom: 2rem;
+    }
+    .application-page > h1 {
+      font-size: 2em;
+      max-width: fit-content;
+    }
+    legend {
+      font-size: 24px;
     }
   }
 </style>
