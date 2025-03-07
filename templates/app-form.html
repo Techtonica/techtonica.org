@@ -101,20 +101,46 @@ Techtonica Application {% endblock title %} {% block content %}
         disabled
       /><br />
       <label for="pronouns">What are your pronouns? </label><br />
-      <select
+      <input
+        type="checkbox"
         name="pronouns"
-        id="pronouns"
-        aria-label="Pronouns selection"
+        id="pronouns-she-her"
+        value="She/Her"
         required
-      >
-        <br />
-        <option value="none" selected disabled hidden>Select an Option</option>
-        <option value="He/Him">He/Him</option>
-        <option value="She/Her">She/Her</option>
-        <option value="They/Them">They/Them</option>
-        <option value="Ze/Zir">Ze/Zir</option>
-        <option value="Other">Other</option>
-      </select>
+      />
+      <label for="pronouns">She/Her</label><br />
+      <input
+        type="checkbox"
+        name="pronouns"
+        id="pronouns-he-him"
+        value="He/Him"
+        required
+      />
+      <label for="pronouns">He/Him</label><br />
+      <input
+        type="checkbox"
+        name="pronouns"
+        id="pronouns-they-them"
+        value="They/Them"
+        required
+      />
+      <label for="pronouns">They/Them</label><br />
+      <input
+        type="checkbox"
+        name="pronouns"
+        id="pronouns-ze-zir"
+        value="Ze/Zir"
+        required
+      />
+      <label for="pronouns">Ze/Zir</label><br />
+      <input
+        type="checkbox"
+        name="pronouns"
+        id="pronouns-other"
+        value="Other"
+        required
+      />
+      <label for="pronouns">Other</label><br />
       <input
         type="text"
         id="custom-pronouns"
@@ -538,20 +564,22 @@ Techtonica Application {% endblock title %} {% block content %}
       }
     });
 
-  document.getElementById("pronouns").addEventListener("change", function () {
-    const customPronounsInput = document.getElementById("custom-pronouns");
-
-    if (this.value === "Other") {
-      customPronounsInput.style.display = "block";
-      customPronounsInput.removeAttribute("disabled");
-      this.removeAttribute("name");
-      customPronounsInput.setAttribute("name", "pronouns");
-    } else {
-      customPronounsInput.style.display = "none";
-      customPronounsInput.setAttribute("disabled", "true");
-      customPronounsInput.removeAttribute("name");
-      this.setAttribute("name", "pronouns");
-    }
+  const pronounsCheckboxes = document.querySelectorAll(
+    "input[name='pronouns']"
+  );
+  const customPronounsInput = document.getElementById("custom-pronouns");
+  pronounsCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", () => {
+      if (document.getElementById("pronouns-other").checked) {
+        customPronounsInput.style.display = "block";
+        customPronounsInput.removeAttribute("disabled");
+        customPronounsInput.setAttribute("name", "pronouns");
+      } else {
+        customPronounsInput.style.display = "none";
+        customPronounsInput.setAttribute("disabled", "true");
+        customPronounsInput.removeAttribute("name");
+      }
+    });
   });
 
   document
