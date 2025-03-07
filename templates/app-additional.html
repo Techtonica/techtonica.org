@@ -277,10 +277,17 @@ Techtonica Application {% endblock title %} {% block content %}
     border-radius: 0.5rem;
   }
 
-  fieldset > input[type="text"] {
+  .application-form > fieldset > input[type="text"],
+  .application-form > fieldset > input[type="file"],
+  .application-form > fieldset > input[type="number"],
+  .application-form > fieldset > input[type="url"],
+  .application-form > fieldset > textarea {
     padding: 1em;
-    width: 45%;
-    border: 1px solid rgba(0, 0, 0, 0.348);
+    margin-bottom: 2em;
+    border: 1px solid rgba(0, 0, 0, 0.559);
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   fieldset label {
@@ -376,18 +383,6 @@ Techtonica Application {% endblock title %} {% block content %}
     #radio-wrapper > input[type="radio"] {
       margin: 0;
     }
-    fieldset > input[type="text"],
-    fieldset > input[type="file"] {
-      width: 80%;
-    }
-    fieldset > input[type="file"] {
-      border: 1px solid rgba(0, 0, 0, 0.348);
-      padding: 1em;
-      border-radius: 6px;
-      margin-bottom: 2em;
-      width: 35%;
-      color: black;
-    }
     .form-button {
       display: grid;
       gap: 0.5em;
@@ -408,18 +403,6 @@ Techtonica Application {% endblock title %} {% block content %}
     body {
       overflow-x: hidden;
       width: 100%;
-    }
-    fieldset > input[type="file"] {
-      border: 1px solid rgba(0, 0, 0, 0.348);
-      padding: 1em;
-      border-radius: 6px;
-      margin-bottom: 2em;
-      width: 80%;
-      color: black;
-    }
-    fieldset > input[type="text"],
-    fieldset > input[type="file"] {
-      width: 80%;
     }
     .form-button {
       display: flex;
