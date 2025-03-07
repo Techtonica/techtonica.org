@@ -25,6 +25,14 @@
   padding: 0 1rem;
 }
 
+.chart-container {
+  @include prefix(display, flex, webkit moz);
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: rgba(0, 147, 181, 1);
+  color: white;
+  padding: 3rem;
+}
 .nav-bar {
   @include prefix(display, inline-flex, webkit moz);
   flex-flow: row-reverse wrap;
@@ -1092,9 +1100,14 @@ input[type="radio"] {
 }
 
 @media (max-width: 600px) {
-  #myChart {
-    height: 500px !important ;
+  .chart-container {
+    padding: 2rem 0;
   }
+
+  #myChart {
+    padding: 0;
+  }
+
   .payment-form {
     margin: 0px;
     padding: 30px;
