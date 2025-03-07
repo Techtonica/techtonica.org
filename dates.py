@@ -87,32 +87,48 @@ def generate_application_timeline():
     )  # noqa: E501
 
     info_session = parse_env_date(
-        "INFO_SESSION", app_open_datetime + timedelta(weeks=3)
+        "INFO_SESSION",
+        app_open_datetime + timedelta(weeks=3) if app_open_datetime else None,
     )
     application_workshop = parse_env_date(
-        "APPLICATION_WORKSHOP", app_close_datetime + timedelta(weeks=1)
+        "APPLICATION_WORKSHOP",
+        (
+            app_close_datetime + timedelta(weeks=1)
+            if app_close_datetime
+            else None  # noqa: E501
+        ),
     )
     pair_programming = parse_env_date(
         "PAIR_PROGRAMMING_WITH_STAFF",
-        application_workshop + timedelta(weeks=1),  # noqa: E501
+        (
+            application_workshop + timedelta(weeks=1)
+            if application_workshop
+            else None  # noqa: E501
+        ),
     )
     take_home = parse_env_date(
-        "TAKE_HOME_CODE_CHALLENGE", pair_programming + timedelta(weeks=1)
+        "TAKE_HOME_CODE_CHALLENGE",
+        pair_programming + timedelta(weeks=1) if pair_programming else None,
     )
     interview = parse_env_date(
-        "INTERVIEW_FINANCIAL_CONVOS", take_home + timedelta(weeks=1)
+        "INTERVIEW_FINANCIAL_CONVOS",
+        take_home + timedelta(weeks=1) if take_home else None,
     )
     notification_day = parse_env_date(
-        "NOTIFICATION_DAY", interview + timedelta(weeks=1)
+        "NOTIFICATION_DAY",
+        interview + timedelta(weeks=1) if interview else None,  # noqa: E501
     )
     onboarding_day = parse_env_date(
-        "ONBOARDING_DAY", notification_day + timedelta(weeks=1)
+        "ONBOARDING_DAY",
+        notification_day + timedelta(weeks=1) if notification_day else None,
     )
     pre_work_start = parse_env_date(
-        "PRE_WORK_START", onboarding_day + timedelta(days=1)
+        "PRE_WORK_START",
+        onboarding_day + timedelta(days=1) if onboarding_day else None,  # noqa: E501
     )
     cohort_start_day = parse_env_date(
-        "COHORT_START_DAY", pre_work_start + timedelta(weeks=4.5)
+        "COHORT_START_DAY",
+        pre_work_start + timedelta(weeks=4.5) if pre_work_start else None,
     )
 
     start_year = cohort_start_day.strftime("%Y") if cohort_start_day else None
