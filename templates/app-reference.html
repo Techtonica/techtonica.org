@@ -272,7 +272,7 @@ Techtonica Application {% endblock title %} {% block content %}
     opacity: 1;
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 430px) {
+  @media only screen and (min-width: 320px) and (max-width: 599px) {
     .column {
       padding: 0;
     }
@@ -281,25 +281,33 @@ Techtonica Application {% endblock title %} {% block content %}
       overflow-x: hidden;
       width: 100%;
     }
+    .application-page {
+      padding: 2rem 0;
+    }
     .application-page > h1 {
       font-size: 1.5em;
       max-width: fit-content;
     }
-    form {
-      width: 65%;
+    .application-page > form {
+      width: inherit;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
     }
-    fieldset {
-      min-width: 90%;
-      padding: 1em;
+    legend {
+      font-size: 18px;
     }
-    fieldset > label,
-    fieldset > p {
+    .application-form > fieldset {
+      min-width: 95%;
+      word-wrap: break-word;
+      padding: 1.5rem;
+      margin: 0;
+    }
+    .application-form > fieldset > label,
+    .application-form > fieldset > p {
       font-size: smaller;
     }
     .form-button {
-      display: grid;
       gap: 0.5em;
-      width: 50%;
       margin: auto;
     }
     button.previous-btn,
@@ -309,7 +317,7 @@ Techtonica Application {% endblock title %} {% block content %}
     }
   }
 
-  @media only screen and (min-width: 431px) and (max-width: 599px) {
+  @media only screen and (min-width: 600px) and (max-width: 910px) {
     .column {
       padding: 0;
     }
@@ -317,37 +325,6 @@ Techtonica Application {% endblock title %} {% block content %}
     body {
       overflow-x: hidden;
       width: 100%;
-    }
-    .application-page > h1 {
-      font-size: 1.5em;
-      max-width: fit-content;
-    }
-    form {
-      width: 70%;
-    }
-    fieldset {
-      min-width: 90%;
-      padding: 1em;
-    }
-    fieldset > label,
-    fieldset > p {
-      font-size: smaller;
-    }
-    button.continue-to-app-btn,
-    button.previous-btn,
-    button.save-btn {
-      font-size: smaller;
-    }
-    .form-button {
-      display: grid;
-      gap: 0.5em;
-      width: 50%;
-      margin: auto;
-    }
-  }
-  @media only screen and (min-width: 600px) and (max-width: 910px) {
-    .column {
-      padding: 0;
     }
     .form-button {
       display: flex;
