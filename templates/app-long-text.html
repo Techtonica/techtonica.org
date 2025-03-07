@@ -503,15 +503,25 @@ Techtonica Application {% endblock title %} {% block content %}
       width: 100%;
     }
     form {
-      width: 70%;
+      width: inherit;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+    }
+    .application-page {
+      padding: 2rem 0;
     }
     .application-page > h1 {
       font-size: 1.5em;
       max-width: fit-content;
     }
+    legend {
+      font-size: 18px;
+    }
     fieldset {
       min-width: 90%;
-      padding: 1em;
+      word-wrap: break-word;
+      padding: 1.5rem;
+      margin: 0;
     }
     fieldset > label,
     #radio-wrapper > label {
