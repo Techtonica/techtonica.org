@@ -2,7 +2,7 @@
 Techtonica Application {% endblock title %} {% block content %}
 <div class="application-page">
   <h1>Techtonica Application</h1>
-  <form action="#" method="POST" class="application-form" id="app-form">
+  <form action="#" method="POST" class="application-form" id="app-form-1">
     <fieldset>
       <legend>General Applicant Demographics</legend>
       <label for="first-name">Full legal given or 'first' name: </label><br />
@@ -353,7 +353,7 @@ Techtonica Application {% endblock title %} {% block content %}
       </div>
       <button
         type="button"
-        class="continue-to-app-btn"
+        class="app-form-1"
         onclick="window.location.href='/app-household'"
       >
         Continue
@@ -387,7 +387,7 @@ Techtonica Application {% endblock title %} {% block content %}
     text-align: center;
   }
 
-  button.continue-to-app-btn {
+  #app-form-1 button {
     background-color: #fc7625;
     color: white;
     font-size: large;
@@ -397,7 +397,7 @@ Techtonica Application {% endblock title %} {% block content %}
     display: block;
   }
 
-  button.continue-to-app-btn:hover {
+  #app-form-1 button:hover {
     background-color: #16c1f3;
     color: white;
     transition: 0.3s;

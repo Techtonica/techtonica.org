@@ -13,17 +13,6 @@
     />
     <!-- // This code block only needs to be installed once to activate all integrations site wide // Begin Flipcause Integration Code //-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".info-icon").forEach((span) => {
-          span.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16">
-              <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
-            </svg>
-          `;
-        });
-      });
-    </script>
     <style>
       #fc-direct-embed-loader-out {
         position: fixed;
@@ -578,9 +567,9 @@
     </style>
     <script>
       function open_window(cause_id, domain_link) {
-        var protocol = String(document.location.protocol);
+        var protocol = String(document.location.protocol)
 
-        var new_url;
+        var new_url
 
         if (
           /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -588,113 +577,109 @@
           )
         ) {
           //new_url="https://www."+ domain_link +"/widget/"+cause_id
-          new_url = "https://www.flipcause.com/widget/" + cause_id;
+          new_url = 'https://www.flipcause.com/widget/' + cause_id
 
-          window.open(new_url);
+          window.open(new_url)
         } else {
-          document.getElementById("fc-lightbox-loader").style.display = "block";
+          document.getElementById('fc-lightbox-loader').style.display = 'block'
 
-          document.getElementById("fc-fade").style.display = "block";
+          document.getElementById('fc-fade').style.display = 'block'
 
-          document.getElementById("fc-fade").style.webkitAnimation =
-            "backfadesin .5s";
+          document.getElementById('fc-fade').style.webkitAnimation =
+            'backfadesin .5s'
 
-          document.getElementById("fc-fade").style.animation =
-            "backfadesin .5s";
+          document.getElementById('fc-fade').style.animation = 'backfadesin .5s'
 
-          document.getElementById("fc-fade").style.mozAnimation =
-            "backfadesin .5s";
+          document.getElementById('fc-fade').style.mozAnimation =
+            'backfadesin .5s'
 
-          document.getElementById("fc-light").style.display = "block";
+          document.getElementById('fc-light').style.display = 'block'
 
-          document.getElementById("fc-light").style.webkitAnimation =
-            "fadesin 0s";
+          document.getElementById('fc-light').style.webkitAnimation =
+            'fadesin 0s'
 
-          document.getElementById("fc-light").style.animation = "fadesin 0s";
+          document.getElementById('fc-light').style.animation = 'fadesin 0s'
 
-          document.getElementById("fc-light").style.mozAnimation = "fadesin 0s";
+          document.getElementById('fc-light').style.mozAnimation = 'fadesin 0s'
 
-          document.getElementById("fc-main").style.display = "block";
+          document.getElementById('fc-main').style.display = 'block'
 
-          document.getElementById("fc-main").style.webkitAnimation =
-            "fadesin 2.2s";
+          document.getElementById('fc-main').style.webkitAnimation =
+            'fadesin 2.2s'
 
-          document.getElementById("fc-main").style.animation = "fadesin 2.2s";
+          document.getElementById('fc-main').style.animation = 'fadesin 2.2s'
 
-          document.getElementById("fc-main").style.mozAnimation =
-            "fadesin 2.2s";
+          document.getElementById('fc-main').style.mozAnimation = 'fadesin 2.2s'
 
-          document.getElementById("fc-close").style.display = "block";
+          document.getElementById('fc-close').style.display = 'block'
 
-          document.getElementById("fc-close").style.webkitAnimation =
-            "fadesin 2.2s";
+          document.getElementById('fc-close').style.webkitAnimation =
+            'fadesin 2.2s'
 
-          document.getElementById("fc-close").style.animation = "fadesin 2.2s";
+          document.getElementById('fc-close').style.animation = 'fadesin 2.2s'
 
-          document.getElementById("fc-close").style.mozAnimation =
-            "fadesin 2.2s";
+          document.getElementById('fc-close').style.mozAnimation =
+            'fadesin 2.2s'
 
-          document.getElementById("fc-myFrame").style.display = "block";
+          document.getElementById('fc-myFrame').style.display = 'block'
 
-          document.getElementById("fc-myFrame").style.webkitAnimation =
-            "fadesin 2.2s";
+          document.getElementById('fc-myFrame').style.webkitAnimation =
+            'fadesin 2.2s'
 
-          document.getElementById("fc-myFrame").style.animation =
-            "fadesin 2.2s";
+          document.getElementById('fc-myFrame').style.animation = 'fadesin 2.2s'
 
-          document.getElementById("fc-myFrame").style.mozAnimation =
-            "fadesin 2.2s";
+          document.getElementById('fc-myFrame').style.mozAnimation =
+            'fadesin 2.2s'
 
           //document.getElementById("fc-myFrame").src="https://www."+ domain_link +"/widget/"+cause_id;
 
-          document.getElementById("fc-myFrame").src =
-            "https://www.flipcause.com/widget/" + cause_id;
+          document.getElementById('fc-myFrame').src =
+            'https://www.flipcause.com/widget/' + cause_id
         }
       }
 
       function close_window() {
-        document.getElementById("fc-lightbox-loader").style.display = "none";
+        document.getElementById('fc-lightbox-loader').style.display = 'none'
 
-        document.getElementById("fc-fade").style.display = "none";
+        document.getElementById('fc-fade').style.display = 'none'
 
-        document.getElementById("fc-light").style.display = "none";
+        document.getElementById('fc-light').style.display = 'none'
 
-        document.getElementById("fc-main").style.display = "none";
+        document.getElementById('fc-main').style.display = 'none'
 
-        document.getElementById("fc-close").style.display = "none";
+        document.getElementById('fc-close').style.display = 'none'
 
-        document.getElementById("fc-myFrame").style.display = "none";
+        document.getElementById('fc-myFrame').style.display = 'none'
       }
 
       function embed_frame(cause_id, domain_link) {
-        document.getElementById("fc-embed-loader").style.display = "block";
+        document.getElementById('fc-embed-loader').style.display = 'block'
 
-        document.getElementById("fc-embed-main-box").style.display = "block";
+        document.getElementById('fc-embed-main-box').style.display = 'block'
 
-        document.getElementById("fc-embed-main-box").style.webkitAnimation =
-          "fadesin 2s";
+        document.getElementById('fc-embed-main-box').style.webkitAnimation =
+          'fadesin 2s'
 
-        document.getElementById("fc-embed-main-box").style.animation =
-          "fadesin 2s";
+        document.getElementById('fc-embed-main-box').style.animation =
+          'fadesin 2s'
 
-        document.getElementById("fc-embed-main-box").style.mozAnimation =
-          "fadesin 2s";
+        document.getElementById('fc-embed-main-box').style.mozAnimation =
+          'fadesin 2s'
 
-        document.getElementById("fc-embed-frame").style.display = "block";
+        document.getElementById('fc-embed-frame').style.display = 'block'
 
-        document.getElementById("fc-embed-frame").style.webkitAnimation =
-          "fadesin 2s";
+        document.getElementById('fc-embed-frame').style.webkitAnimation =
+          'fadesin 2s'
 
-        document.getElementById("fc-embed-frame").style.animation =
-          "fadesin 2s";
+        document.getElementById('fc-embed-frame').style.animation = 'fadesin 2s'
 
-        document.getElementById("fc-embed-frame").style.mozAnimation =
-          "fadesin 2s";
+        document.getElementById('fc-embed-frame').style.mozAnimation =
+          'fadesin 2s'
 
         //document.getElementById("fc-embed-frame").src="https://www."+ domain_link +"/widget/"+cause_id;
 
-        document.getElementById("fc-embed-frame").src =
-          "https://www.flipcause.com/widget/" + cause_id;
+        document.getElementById('fc-embed-frame').src =
+          'https://www.flipcause.com/widget/' + cause_id
       }
     </script>
 
@@ -765,13 +750,13 @@
       src="https://www.googletagmanager.com/gtag/js?id=UA-74406248-2"
     ></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || []
       function gtag() {
-        dataLayer.push(arguments);
+        dataLayer.push(arguments)
       }
-      gtag("js", new Date());
+      gtag('js', new Date())
 
-      gtag("config", "UA-74406248-2");
+      gtag('config', 'UA-74406248-2')
     </script>
     <link
       rel="stylesheet"
@@ -783,70 +768,113 @@
       as="image"
     />
     <script>
-      (function (i, s, o, g, r, a, m) {
-        i["GoogleAnalyticsObject"] = r;
-        (i[r] =
+      ;(function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r
+        ;(i[r] =
           i[r] ||
           function () {
-            (i[r].q = i[r].q || []).push(arguments);
+            ;(i[r].q = i[r].q || []).push(arguments)
           }),
-          (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
+          (i[r].l = 1 * new Date())
+        ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
+        a.async = 1
+        a.src = g
+        m.parentNode.insertBefore(a, m)
       })(
         window,
         document,
-        "script",
-        "https://www.google-analytics.com/analytics.js",
-        "ga"
-      );
-      ga("create", "UA-74406248-1", "auto");
-      ga("create", "UA-94034379-1", "auto", "adHawks");
-      ga("send", "pageview");
-      ga("adHawks.send", "pageview");
+        'script',
+        'https://www.google-analytics.com/analytics.js',
+        'ga'
+      )
+      ga('create', 'UA-74406248-1', 'auto')
+      ga('create', 'UA-94034379-1', 'auto', 'adHawks')
+      ga('send', 'pageview')
+      ga('adHawks.send', 'pageview')
     </script>
     <script>
-      _linkedin_data_partner_id = "42871";
+      _linkedin_data_partner_id = '42871'
     </script>
     <script>
-      (function () {
-        var s = document.getElementsByTagName("script")[0];
-        var b = document.createElement("script");
-        b.type = "text/javascript";
-        b.async = true;
-        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-        s.parentNode.insertBefore(b, s);
-      })();
+      ;(function () {
+        var s = document.getElementsByTagName('script')[0]
+        var b = document.createElement('script')
+        b.type = 'text/javascript'
+        b.async = true
+        b.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js'
+        s.parentNode.insertBefore(b, s)
+      })()
+    </script>
+
+    <script>
+      <!-- This script adds an SVG icon to all elements with the class "info-icon" when the DOM content is fully loaded -->
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".info-icon").forEach((span) => {
+          span.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="16" height="16">
+              <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
+            </svg>
+          `;
+        });
+
+        document.querySelectorAll(".application-form").forEach((form) => {
+          const formId = form.getAttribute("id");
+
+          form
+            .querySelectorAll("input, textarea, select")
+            .forEach((input, index) => {
+              const savedInput = localStorage.getItem(`${formId}_key${index}`);
+              if (savedInput !== null) {
+                if (input.type === "radio" || input.type === "checkbox") {
+                  input.checked = savedInput === "true";
+                } else {
+                  input.value = savedInput;
+                }
+              }
+              console.log(
+                `Restored value for ${input.name || input.id}:`,
+                input.value
+              );
+
+              // Save input values to localStorage on input change
+              input.addEventListener("input", function () {
+                if (input.type === "radio" || input.type === "checkbox") {
+                  localStorage.setItem(`${formId}_key${index}`, input.checked);
+                } else {
+                  localStorage.setItem(`${formId}_key${index}`, input.value);
+                }
+              });
+            });
+        });
+      });
     </script>
     <!-- Facebook Pixel Code -->
     <script>
       !(function (f, b, e, v, n, t, s) {
-        if (f.fbq) return;
+        if (f.fbq) return
         n = f.fbq = function () {
           n.callMethod
             ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
+            : n.queue.push(arguments)
+        }
+        if (!f._fbq) f._fbq = n
+        n.push = n
+        n.loaded = !0
+        n.version = '2.0'
+        n.queue = []
+        t = b.createElement(e)
+        t.async = !0
+        t.src = v
+        s = b.getElementsByTagName(e)[0]
+        s.parentNode.insertBefore(t, s)
       })(
         window,
         document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js"
-      );
-      fbq("init", "1585683128395225");
-      fbq("track", "PageView");
+        'script',
+        'https://connect.facebook.net/en_US/fbevents.js'
+      )
+      fbq('init', '1585683128395225')
+      fbq('track', 'PageView')
     </script>
     <noscript>
       <img
@@ -863,13 +891,13 @@
     src="https://www.googletagmanager.com/gtag/js?id=G-ZGW3GJMQXR"
   ></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || []
     function gtag() {
-      dataLayer.push(arguments);
+      dataLayer.push(arguments)
     }
-    gtag("js", new Date());
+    gtag('js', new Date())
 
-    gtag("config", "G-ZGW3GJMQXR");
+    gtag('config', 'G-ZGW3GJMQXR')
   </script>
   <body>
     <!-- BEGIN HEADER -->
