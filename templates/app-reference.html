@@ -125,12 +125,14 @@ Techtonica Application {% endblock title %} {% block content %}
         >Anything else you want to share with us?
         <span>(Optional)</span> </label
       ><br />
-      <textarea
+      <input
+        type="textarea"
         name="anything-else-to-share"
         id="anything-else-to-share"
         cols="100"
         rows="3"
-      ></textarea>
+      />
+      <br />
       <div class="form-button">
         <button
           type="button"
@@ -185,6 +187,7 @@ Techtonica Application {% endblock title %} {% block content %}
 
   fieldset {
     padding: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.559);
     border-radius: 0.5rem;
   }
 
@@ -192,16 +195,15 @@ Techtonica Application {% endblock title %} {% block content %}
     margin-bottom: 0.5rem;
   }
 
-  fieldset label,
-  textarea {
-    margin-bottom: 2rem;
-    width: 80%;
-  }
-
-  fieldset input[type="text"],
-  input[type="email"] {
-    margin-bottom: 2rem;
-    width: 85%;
+  .application-form > fieldset > input[type="text"],
+  .application-form > fieldset > input[type="email"],
+  .application-form > fieldset > input[type="textarea"] {
+    box-sizing: border-box;
+    padding: 1em;
+    margin-bottom: 2em;
+    border: 1px solid rgba(0, 0, 0, 0.559);
+    border-radius: 6px;
+    width: 100%;
   }
 
   #radio-wrapper label {
@@ -232,7 +234,9 @@ Techtonica Application {% endblock title %} {% block content %}
 
   .form-button {
     display: flex;
-    gap: 3rem;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .info-icon {
