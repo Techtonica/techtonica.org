@@ -155,12 +155,3 @@ def generate_application_timeline():
             else f"Apply by {app_close_datetime.strftime('%B %d')} (12pm PT)!"
         ),
     }
-
-
-# below will be removed
-# left here for testing during pr review
-timeline = generate_application_timeline()
-
-
-for key, value in timeline.items():
-    print(f"{key}: {value}")
