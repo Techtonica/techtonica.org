@@ -38,8 +38,53 @@ Techtonica Application {% endblock title %} {% block content %}
       ><br />
       <input type="email" id="email" name="email" required /><br />
       <label for="gender-identity"
-        >With which gender identity do you most align? </label
-      ><br />
+        >With which gender identity do you most align?
+      </label>
+      <div class="learn-more-wrapper">
+        <span class="learn-more-title"> Learn More </span>
+        <span class="toggle-icon">
+          <span class="toggle-icon-plus">+</span>
+          <span class="toggle-icon-minus">-</span>
+        </span>
+        <div class="learn-more-content">
+          <ul>
+            <li>
+              <strong>Agender or genderless: </strong>People who do not identify
+              with any gender or feel an absence of gender. They may use terms
+              like genderblank, genderfree, genderless, gendervoid,
+              non-gendered, or null gender.
+            </li>
+            <li>
+              <strong>Genderfluid: </strong>People whose gender identity is not
+              fixed and may change over time, fluctuating between different
+              gender expressions or identities.
+            </li>
+            <li>
+              <strong>Cis Man or Cis Woman: </strong>A person whose gender
+              identity aligns with the male or female sex they were assigned at
+              birth.
+            </li>
+            <li>
+              <strong>Non-binary or Genderqueer: </strong>People who do not
+              identify exclusively as a man or a woman. They may feel like both,
+              somewhere in between, or outside these categories entirely.
+            </li>
+            <li>
+              <strong>Trans Man or Trans Woman: </strong>People whose gender
+              identity differs from the sex they are assigned at birth. e.g., a
+              transgender man is someone who was assigned female at birth but
+              whose gender identity is male, while a transgender woman is
+              someone who is assigned male at birth but whose gender identity is
+              female.
+            </li>
+            <li>
+              <strong>Other: </strong>A person whose gender identity does not
+              fit within the listed categories or who prefers a different term.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <br />
       <select
         name="gender-identity"
         id="gender-identity"
@@ -48,48 +93,13 @@ Techtonica Application {% endblock title %} {% block content %}
       >
         <br />
         <option value="none" selected disabled hidden>Select an Option</option>
-        <option
-          value="Agender, genderblank, genderfree, genderless, gendervoid, non-gendered, or null gender"
-        >
-          Agender, genderblank, genderfree, genderless, gendervoid,
-          non-gendered, or null gender
-        </option>
+        <option value="Agender/Genderless">Agender/Genderless</option>
         <option value="Genderfluid">Genderfluid</option>
-        <option
-          value="Cis Man (your gender identity matches the male sex you were assigned at birth)"
-        >
-          Cis Man (your gender identity matches the male sex you were assigned
-          at birth)
-        </option>
-        <option
-          value="Non-binary/Genderqueer (you don't identify as a man or woman), Femme"
-        >
-          Non-binary/Genderqueer (you don't identify as a man or woman), Femme
-        </option>
-        <option
-          value="Non-binary/Genderqueer (you don't identify as a man or woman), Not Femme"
-        >
-          Non-binary/Genderqueer (you don't identify as a man or woman), Not
-          Femme
-        </option>
-        <option
-          value="Trans Man (your gender identity doesn't match the female sex you were assigned at birth)"
-        >
-          Trans Man (your gender identity doesn't match the female sex you were
-          assigned at birth)
-        </option>
-        <option
-          value="Trans Woman (your gender identity doesn't match the male sex you were assigned at birth)"
-        >
-          Trans Woman (your gender identity doesn't match the male sex you were
-          assigned at birth)
-        </option>
-        <option
-          value="Cis Woman (your gender identity matches the female sex you were assigned at birth)"
-        >
-          Cis Woman (your gender identity matches the female sex you were
-          assigned at birth)
-        </option>
+        <option value="Cis Man">Cis Man</option>
+        <option value="Non-binary/Genderqueer">Non-binary/Genderqueer</option>
+        <option value="Trans Man">Trans Man</option>
+        <option value="Trans Woman">Trans Woman</option>
+        <option value="Cis Woman">Cis Woman</option>
         <option value="Other">Other</option>
       </select>
       <input
