@@ -243,8 +243,73 @@ Techtonica Application {% endblock title %} {% block content %}
         <label for="parental-status-no">No</label><br />
       </div>
       <label for="race-ethnicity"
-        >With which racial/ethnic groups do you most identify? </label
-      ><br />
+        >With which racial/ethnic groups do you most identify?
+      </label>
+      <div class="learn-more-wrapper">
+        <span class="learn-more-title"> Learn More </span>
+        <span class="toggle-icon">
+          <span class="toggle-icon-plus">+</span>
+          <span class="toggle-icon-minus">-</span>
+        </span>
+        <div class="learn-more-content">
+          <ul>
+            <li>
+              <strong>African-American, Black, or African:</strong> A person
+              having origins in Africa, including those across the African
+              diaspora, such as communities in the Americas, the Caribbean, and
+              other regions.
+            </li>
+            <li>
+              <strong>Central Asian:</strong> A person having origins in any of
+              the Central Asian countries, including Kazakhstan, Kyrgyzstan,
+              Tajikistan, Turkmenistan, Uzbekistan.
+            </li>
+            <li>
+              <strong>East Asian:</strong> A person having origins in any of the
+              East Asian countries, including China, Japan, Korea, Mongolia,
+              Tibet, and Taiwan.
+            </li>
+            <li>
+              <strong>Hispanic or Latinx:</strong> A person of having origins in
+              Cuba, Mexico, Puerto Rico, the Dominican Republic, or South or
+              Central America.
+            </li>
+            <li>
+              <strong>Middle Eastern or North African (MENA):</strong> A person
+              having origins in the Middle East or North Africa.
+            </li>
+            <li>
+              <strong
+                >Native American, Alaskan Native, First Nations or
+                Indigenous:</strong
+              >
+              A person having origins in any of the Indigenous peoples of North
+              and South America (including Central America).
+            </li>
+            <li>
+              <strong>Pacific Islander:</strong> A person having origins in any
+              of the Pacific Islands, including Polynesia, Micronesia, and
+              Melanesia.
+            </li>
+            <li>
+              <strong>South Asian:</strong> A person having origins in any of
+              the South Asian countries, including Bangladesh, Bhutan, India,
+              Nepal, Pakistan, Afghanistan, and Sri Lanka.
+            </li>
+            <li>
+              <strong>Southeast Asian:</strong> A person having origins in any
+              of the Southeast Asian countries, including Cambodia, Indonesia,
+              Laos, Malaysia, Myanmar, the Philippines, Singapore, Thailand, and
+              Vietnam.
+            </li>
+            <li><strong>White:</strong> A person having origins in Europe.</li>
+            <li>
+              <strong>Another race/ethnicity:</strong> A person who identifies
+              with a racial/ethnic group not listed above.
+            </li>
+          </ul>
+        </div>
+      </div>
       <select
         name="race-ethnicity"
         id="race-ethnicity"
@@ -256,36 +321,18 @@ Techtonica Application {% endblock title %} {% block content %}
         <option value="African-American/Black/African">
           African-American/Black/African
         </option>
-        <option
-          value="Central Asian (including Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan)"
-        >
-          Central Asian (including Kazakhstan, Kyrgyzstan, Tajikistan,
-          Turkmenistan, Uzbekistan)
-        </option>
-        <option
-          value="East Asian (including Chinese, Japanese, Korean, Mongolian, Tibetan, and Taiwanese)"
-        >
-          East Asian (including Chinese, Japanese, Korean, Mongolian, Tibetan,
-          and Taiwanese)
-        </option>
+        <option value="Central Asian">Central Asian</option>
+        <option value="East Asian">East Asian</option>
         <option value="Hispanic/Latinx">Hispanic/Latinx</option>
-        <option value="Middle Eastern">Middle Eastern</option>
+        <option value="Middle Eastern or North African">
+          Middle Eastern or North African
+        </option>
         <option value="Native American/Alaskan Native/First Nations/Indigenous">
           Native American/Alaskan Native/First Nations/Indigenous
         </option>
         <option value="Pacific Islander">Pacific Islander</option>
-        <option
-          value="South Asian (including Bangladeshi, Bhutanese, Indian, Nepali, Pakistani, Afghanistan, and Sri Lankan)"
-        >
-          South Asian (including Bangladeshi, Bhutanese, Indian, Nepali,
-          Pakistani, Afghanistan, and Sri Lankan)
-        </option>
-        <option
-          value="Southeast Asian (including Burmese, Cambodian, Filipino, Hmong, Indonesian, Malaysian, Mien, Singaporean, Thai, and Vietnamese)"
-        >
-          Southeast Asian (including Burmese, Cambodian, Filipino, Hmong,
-          Indonesian, Malaysian, Mien, Singaporean, Thai, and Vietnamese)
-        </option>
+        <option value="South Asian">South Asian</option>
+        <option value="Southeast Asian">Southeast Asian</option>
         <option value="White">White</option>
         <option value="Other">Other</option>
       </select>
@@ -385,6 +432,21 @@ Techtonica Application {% endblock title %} {% block content %}
     max-width: 65%;
     margin: auto;
     text-align: center;
+  }
+
+  .application-form .learn-more-wrapper .learn-more-title,
+  .application-form .learn-more-wrapper .toggle-icon {
+    color: #0093b5;
+    font-size: 18px;
+  }
+
+  .application-form .learn-more-wrapper .learn-more-content {
+    font-size: 18px;
+  }
+
+  .application-form .learn-more-wrapper {
+    display: inline-block;
+    padding-left: 5px;
   }
 
   #app-form-1 button {
@@ -525,6 +587,15 @@ Techtonica Application {% endblock title %} {% block content %}
     .application-form > fieldset > label {
       font-size: smaller;
     }
+    .application-form .learn-more-wrapper .learn-more-title,
+    .application-form .learn-more-wrapper .toggle-icon {
+      color: #0093b5;
+      font-size: smaller;
+    }
+
+    .application-form .learn-more-wrapper .learn-more-content {
+      font-size: smaller;
+    }
   }
   @media only screen and (min-width: 600px) and (max-width: 910px) {
     .column {
@@ -608,6 +679,41 @@ Techtonica Application {% endblock title %} {% block content %}
         this.setAttribute("name", "custom-race-ethnicity");
       }
     });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const learnMoreWrappers = document.querySelectorAll(".learn-more-wrapper");
+
+    learnMoreWrappers.forEach((wrapper) => {
+      const title = wrapper.querySelector(".learn-more-title");
+      const content = wrapper.querySelector(".learn-more-content");
+      const toggleIcon = wrapper.querySelector(".toggle-icon");
+
+      toggleIcon.style.cursor = "pointer";
+
+      toggleIcon.querySelector(".toggle-icon-plus").style.display =
+        "inline-block";
+      toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
+      content.style.display = "none";
+
+      let isExpanded = false;
+
+      toggleIcon.addEventListener("click", () => {
+        if (!isExpanded) {
+          content.style.display = "block";
+          toggleIcon.querySelector(".toggle-icon-plus").style.display = "none";
+          toggleIcon.querySelector(".toggle-icon-minus").style.display =
+            "inline-block";
+        } else {
+          content.style.display = "none";
+          toggleIcon.querySelector(".toggle-icon-plus").style.display =
+            "inline-block";
+          toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
+        }
+
+        isExpanded = !isExpanded;
+      });
+    });
+  });
 </script>
 
 {% endblock content %}
