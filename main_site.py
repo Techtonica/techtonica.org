@@ -3,7 +3,6 @@ This is the main Python file that sets up rendering and templating
 for Techtonica.org
 """
 
-import configparser
 import datetime
 import os
 import sys
@@ -391,19 +390,43 @@ class Event(object):
 
 # ONLINE PAYMENT HANDLING *****************************************************
 
-# Config setting
-config = configparser.ConfigParser()
-config.read("config.ini")
+missing_credentials = []
 
 # Slack credentials
-SLACK_WEBHOOK = os.environ["SLACK_WEBHOOK"]
+try:
+    SLACK_WEBHOOK = os.environ["SLACK_WEBHOOK"]
+except BaseException:
+    missing_credentials.append("SLACK_WEBHOOK")
 
 # Square credentials
-CONFIG_TYPE = os.environ["ENVIRONMENT"]
-PAYMENT_FORM_URL = os.environ["PAYMENT_FORM_URL"]
-APPLICATION_ID = os.environ["SQUARE_APPLICATION_ID"]
-LOCATION_ID = os.environ["SQUARE_LOCATION_ID"]
-ACCESS_TOKEN = os.environ["SQUARE_ACCESS_TOKEN"]
+try:
+    CONFIG_TYPE = os.environ["ENVIRONMENT"]
+except BaseException:
+    missing_credentials.append("ENVIRONMENT")
+try:
+    PAYMENT_FORM_URL = os.environ["PAYMENT_FORM_URL"]
+except BaseException:
+    missing_credentials.append("PAYMENT_FORM_URL")
+try:
+    APPLICATION_ID = os.environ["SQUARE_APPLICATION_ID"]
+except BaseException:
+    missing_credentials.append("SQUARE_APPLICATION_ID")
+try:
+    LOCATION_ID = os.environ["SQUARE_LOCATION_ID"]
+except BaseException:
+    missing_credentials.append("SQUARE_LOCATION_ID")
+try:
+    ACCESS_TOKEN = os.environ["SQUARE_ACCESS_TOKEN"]
+except BaseException:
+    missing_credentials.append("SQUARE_ACCESS_TOKEN")
+
+if len(missing_credentials) > 0:
+    missing_credentials_string = " ".join(missing_credentials)
+    raise BaseException(
+        "The following credential(s) are missing: {credentials}".format(
+            credentials=missing_credentials_string
+        )
+    )
 
 if CONFIG_TYPE == "prod":
     SQUARE_ENVIRONMENT = "production"
