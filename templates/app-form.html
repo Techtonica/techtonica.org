@@ -18,24 +18,43 @@ Techtonica Application {% endblock title %} {% block content %}
       <label for="name-pronunciation"
         >How to pronounce your full name: <span>(Optional)</span></label
       >
-      <span
-        class="info-icon"
-        data-tooltip="You can make a recording on name-coach.com, generate your link and share in the text field if preferred."
-      >
-      </span
-      ><br />
+      <div class="learn-more-wrapper">
+        <span class="learn-more-title"> Learn More </span>
+        <span class="toggle-icon">
+          <span class="toggle-icon-plus">+</span>
+          <span class="toggle-icon-minus">-</span>
+        </span>
+        <div class="learn-more-content">
+          <span
+            >You can make a recording on
+            <a href="www.name-coach.com">name-coach.com</a>, generate your link
+            and share in the text field if preferred.</span
+          >
+        </div>
+      </div>
+      <br />
       <input
         type="text"
         id="name-pronunciation"
         name="name-pronunciation"
       /><br />
       <label for="email">Email: </label>
-      <span
-        class="info-icon"
-        data-tooltip="Please use the same business-minded Gmail with your name (e.g. janedoe@gmail.com) that you used in the shorter form. This is the email we will contact you with for the duration of the application process and program."
-      >
-      </span
-      ><br />
+      <div class="learn-more-wrapper">
+        <span class="learn-more-title"> Learn More </span>
+        <span class="toggle-icon">
+          <span class="toggle-icon-plus">+</span>
+          <span class="toggle-icon-minus">-</span>
+        </span>
+        <div class="learn-more-content">
+          <span
+            >Please use the same business-minded Gmail with your name (e.g.
+            janedoe@gmail.com) that you used in the shorter form. This is the
+            email we will contact you with for the duration of the application
+            process and program.</span
+          >
+        </div>
+      </div>
+      <br />
       <input type="email" id="email" name="email" required /><br />
       <label for="gender-identity"
         >With which gender identity do you most align?
@@ -208,12 +227,21 @@ Techtonica Application {% endblock title %} {% block content %}
             >https://askjan.org/a-to-z.cfm</a
           >)
         </label>
-        <span
-          class="info-icon"
-          data-tooltip="You are considered to have a disability if you have a physical or mental impairment or medical condition that substantially limits a major life activity."
-        >
-        </span
-        ><br />
+        <div class="learn-more-wrapper">
+          <span class="learn-more-title">Learn More</span>
+          <span class="toggle-icon">
+            <span class="toggle-icon-plus">+</span>
+            <span class="toggle-icon-minus">-</span>
+          </span>
+          <div class="learn-more-content">
+            <span
+              >You are considered to have a disability if you have a physical or
+              mental impairment or medical condition that substantially limits a
+              major life activity.</span
+            >
+          </div>
+        </div>
+        <br />
         <input
           type="radio"
           id="disabled-status-yes"
@@ -452,6 +480,7 @@ Techtonica Application {% endblock title %} {% block content %}
 
   .application-form .learn-more-wrapper .learn-more-content {
     font-size: 18px;
+    color: black;
   }
 
   .application-form .learn-more-wrapper {
@@ -520,38 +549,6 @@ Techtonica Application {% endblock title %} {% block content %}
   #radio-wrapper {
     width: 100%;
     color: rgba(0, 0, 0, 0.851);
-  }
-
-  .info-icon {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    padding-left: 0.5rem;
-  }
-
-  .info-icon::after {
-    white-space: pre-wrap;
-    font-size: 0.85rem;
-    content: attr(data-tooltip);
-    visibility: hidden;
-    width: 220px;
-    background-color: #666;
-    color: #fff;
-    z-index: 1;
-    justify-content: space-evenly;
-    text-align: center;
-    border-radius: 1rem;
-    padding: 1rem;
-    position: absolute;
-    margin-left: 10px;
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .info-icon:hover::after {
-    visibility: visible;
-    opacity: 1;
   }
 
   #custom-gender,
