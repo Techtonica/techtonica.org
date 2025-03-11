@@ -374,22 +374,22 @@ except BaseException:
 
 if len(missing_credentials) > 0:
     missing_credentials_string = " ".join(missing_credentials)
-    raise BaseException(
+    print(
         "The following credential(s) are missing: {credentials}".format(
             credentials=missing_credentials_string
         )
     )
-
-if CONFIG_TYPE == "prod":
-    SQUARE_ENVIRONMENT = "production"
 else:
-    SQUARE_ENVIRONMENT = "sandbox"
+    if CONFIG_TYPE == "prod":
+        SQUARE_ENVIRONMENT = "production"
+    else:
+        SQUARE_ENVIRONMENT = "sandbox"
 
-client = Client(
-    access_token=ACCESS_TOKEN,
-    environment=SQUARE_ENVIRONMENT,
-    user_agent_detail="techtonica_payment",
-)
+    client = Client(
+        access_token=ACCESS_TOKEN,
+        environment=SQUARE_ENVIRONMENT,
+        user_agent_detail="techtonica_payment",
+    )
 
 
 class Payment(BaseModel):
@@ -411,15 +411,19 @@ def render_job_form():
     """
     Renders the job-form page from jinja2 template
     """
-    return render_template(
-        "job-form.html",
-        APPLICATION_ID=APPLICATION_ID,
-        PAYMENT_FORM_URL=PAYMENT_FORM_URL,
-        LOCATION_ID=LOCATION_ID,
-        ACCOUNT_CURRENCY="USD",
-        ACCOUNT_COUNTRY="ACCOUNT_COUNTRY",
-        idempotencyKey=str(uuid4()),
-    )
+    if len(missing_credentials) > 0:
+        return render_template("job-form.html", credentials=False)
+    else:
+        return render_template(
+            "job-form.html",
+            APPLICATION_ID=APPLICATION_ID,
+            PAYMENT_FORM_URL=PAYMENT_FORM_URL,
+            LOCATION_ID=LOCATION_ID,
+            ACCOUNT_CURRENCY="USD",
+            ACCOUNT_COUNTRY="ACCOUNT_COUNTRY",
+            idempotencyKey=str(uuid4()),
+            credentials=True,
+        )
 
 
 # Square payment api route
