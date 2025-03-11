@@ -10,12 +10,21 @@ Techtonica Application {% endblock title %} {% block content %}
         <label for="times-applied"
           >How many times have you applied? (3 is the max allowed)
         </label>
-        <span
-          class="info-icon"
-          data-tooltip="If you have already applied three times in the past, you are not eligible to apply again and should stop filling out this form."
-        >
-        </span
-        ><br />
+        <div class="learn-more-wrapper">
+          <span class="learn-more-title">Learn More</span>
+          <span class="toggle-icon">
+            <span class="toggle-icon-plus">+</span>
+            <span class="toggle-icon-minus">-</span>
+          </span>
+          <div class="learn-more-content">
+            <span
+              >If you have already applied three times in the past, you are not
+              eligible to apply again and should stop filling out this
+              form.</span
+            >
+          </div>
+        </div>
+        <br />
         <input
           type="radio"
           id="times-applied-0"
@@ -71,7 +80,9 @@ Techtonica Application {% endblock title %} {% block content %}
       <label for="typing-test-screenshot"
         >Please upload a screenshot of your results of a one-minute typing test
         at
-        <a href="https://www.typingtest.com/">https://www.typingtest.com/</a>
+        <a href="https://www.typingtest.com/" target="_blank"
+          >https://www.typingtest.com/</a
+        >
         (you might want to sign up for an account and practice a couple of times
         first). </label
       ><br />
@@ -95,7 +106,7 @@ Techtonica Application {% endblock title %} {% block content %}
       <label for="FCC-screenshot"
         >Please upload a screenshot of your completed pre-req 113 Basic
         JavaScript lessons at
-        <a href="https://www.freecodecamp.org/learn/"
+        <a href="https://www.freecodecamp.org/learn/" target="_blank"
           >https://www.freecodecamp.org/learn</a
         >. The screenshot should include ALL the lessons you have completed in a
         single screenshot—you can use the Blipshot Chrome extension to create an
@@ -210,12 +221,20 @@ Techtonica Application {% endblock title %} {% block content %}
           >Are you willing to quit your job(s) to focus on your career
           transition into tech?
         </label>
-        <span
-          class="info-icon"
-          data-tooltip="We advise AGAINST working part-time during this intensive program."
-        >
-        </span
-        ><br />
+        <div class="learn-more-wrapper">
+          <span class="learn-more-title">Learn More</span>
+          <span class="toggle-icon">
+            <span class="toggle-icon-plus">+</span>
+            <span class="toggle-icon-minus">-</span>
+          </span>
+          <div class="learn-more-content">
+            <span
+              >We advise AGAINST working part-time during this intensive
+              program.</span
+            >
+          </div>
+        </div>
+        <br />
         <input
           type="radio"
           id="willing-to-quit-job-yes"
@@ -241,7 +260,7 @@ Techtonica Application {% endblock title %} {% block content %}
         >
           Previous
         </button>
-        <button type="button" class="btn-submit" onclick="clearLocal()">
+        <button type="button" class="submit-btn" onclick="clearLocal()">
           Submit
         </button>
       </div>
@@ -267,6 +286,23 @@ Techtonica Application {% endblock title %} {% block content %}
     background-color: #0093b5;
     padding: 2rem;
   }
+
+  .application-form .learn-more-wrapper .learn-more-title,
+  .application-form .learn-more-wrapper .toggle-icon {
+    color: #0093b5;
+    font-size: 18px;
+  }
+
+  .application-form .learn-more-wrapper .learn-more-content {
+    font-size: 18px;
+    color: black;
+  }
+
+  .application-form .learn-more-wrapper {
+    display: inline-block;
+    padding-left: 5px;
+  }
+
   .application-page > h1,
   .application-page > p {
     max-width: 65%;
@@ -274,75 +310,132 @@ Techtonica Application {% endblock title %} {% block content %}
     text-align: center;
   }
 
-  fieldset {
+  .application-form > fieldset {
     padding: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.559);
     border-radius: 0.5rem;
   }
 
-  fieldset > input[type="text"] {
+  .application-form > fieldset > input[type="text"],
+  .application-form > fieldset > input[type="file"],
+  .application-form > fieldset > input[type="number"],
+  .application-form > fieldset > input[type="url"],
+  .application-form > fieldset > textarea {
     padding: 1em;
-    width: 45%;
-    border: 1px solid rgba(0, 0, 0, 0.348);
+    margin-bottom: 2em;
+    border: 1px solid rgba(0, 0, 0, 0.559);
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   fieldset label {
     color: black;
   }
 
-  fieldset > input {
-    padding: 1em;
-    border-radius: 6px;
-    margin-bottom: 2em;
-  }
-
-  button {
+  button.continue-to-app-btn,
+  button.previous-btn,
+  button.submit-btn {
     background-color: #fc7625;
     color: white;
     font-size: large;
     padding: 1rem;
     border-radius: 0.5rem;
-    border: none;
   }
 
-  button:hover {
-    background-color: #0093b5;
+  button.continue-to-app-btn:hover,
+  button.previous-btn:hover,
+  button.submit-btn:hover {
+    background-color: #16c1f3;
+    color: white;
+    transition: 0.3s;
   }
 
   .form-button {
     display: flex;
-    gap: 3rem;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  .info-icon {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    padding-left: 0.5rem;
+  @media only screen and (min-width: 320px) and (max-width: 599px) {
+    .column {
+      padding: 0;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    .application-page > form {
+      width: inherit;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+    }
+    .application-page {
+      padding: 2rem 0;
+    }
+    .application-form .learn-more-wrapper .learn-more-title,
+    .application-form .learn-more-wrapper .toggle-icon {
+      color: #0093b5;
+      font-size: smaller;
+    }
+    .application-form .learn-more-wrapper .learn-more-content {
+      font-size: smaller;
+    }
+    .application-page > h1 {
+      font-size: 1.5em;
+      max-width: fit-content;
+    }
+    legend {
+      font-size: 18px;
+    }
+    .application-form > fieldset {
+      min-width: 95%;
+      word-wrap: break-word;
+      padding: 1.5rem;
+      margin: 0;
+    }
+    #radio-wrapper > label,
+    .application-form > fieldset > label {
+      font-size: smaller;
+    }
+    #radio-wrapper > input[type="radio"] {
+      margin: 0;
+    }
+    .form-button {
+      gap: 0.5em;
+      margin: auto;
+    }
+    button.previous-btn,
+    button.submit-btn {
+      font-size: smaller;
+    }
   }
 
-  .info-icon::after {
-    white-space: pre-wrap;
-    font-size: 0.85rem;
-    content: attr(data-tooltip);
-    visibility: hidden;
-    width: 220px;
-    background-color: #666;
-    color: #fff;
-    z-index: 1;
-    justify-content: space-evenly;
-    text-align: center;
-    border-radius: 1rem;
-    padding: 1rem;
-    position: absolute;
-    margin-left: 10px;
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-
-  .info-icon:hover::after {
-    visibility: visible;
-    opacity: 1;
+  @media only screen and (min-width: 600px) and (max-width: 910px) {
+    .column {
+      padding: 0;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    .application-page {
+      padding: 2rem 0;
+    }
+    .application-page > form {
+      width: initial;
+      margin-bottom: 2rem;
+    }
+    .application-page > h1 {
+      font-size: 2em;
+      max-width: fit-content;
+    }
+    legend {
+      font-size: 24px;
+    }
   }
 </style>
 
@@ -350,5 +443,40 @@ Techtonica Application {% endblock title %} {% block content %}
   function clearLocal() {
     localStorage.clear();
   }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const learnMoreWrappers = document.querySelectorAll(".learn-more-wrapper");
+
+    learnMoreWrappers.forEach((wrapper) => {
+      const title = wrapper.querySelector(".learn-more-title");
+      const content = wrapper.querySelector(".learn-more-content");
+      const toggleIcon = wrapper.querySelector(".toggle-icon");
+
+      toggleIcon.style.cursor = "pointer";
+
+      toggleIcon.querySelector(".toggle-icon-plus").style.display =
+        "inline-block";
+      toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
+      content.style.display = "none";
+
+      let isExpanded = false;
+
+      title.addEventListener("click", () => {
+        if (!isExpanded) {
+          content.style.display = "block";
+          toggleIcon.querySelector(".toggle-icon-plus").style.display = "none";
+          toggleIcon.querySelector(".toggle-icon-minus").style.display =
+            "inline-block";
+        } else {
+          content.style.display = "none";
+          toggleIcon.querySelector(".toggle-icon-plus").style.display =
+            "inline-block";
+          toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
+        }
+
+        isExpanded = !isExpanded;
+      });
+    });
+  });
 </script>
 {% endblock content %}

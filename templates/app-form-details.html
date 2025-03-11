@@ -200,29 +200,59 @@ Techtonica Application Details {% endblock title %} {% block content %}
     </div>
     <style>
       .continue-to-app-btn {
-        width: 50%;
+        width: 75%;
       }
 
-      .continue-to-app-btn {
-        -webkit-border-radius: 8px;
-        -moz-border-radius: 8px;
-        -o-border-radius: 8px;
-        border-radius: 8px;
+      button.continue-to-app-btn {
+        background-color: #fc7625;
         color: white;
+        font-size: large;
+        padding: 1rem;
+        border-radius: 0.5rem;
         display: block;
         margin-left: auto;
         margin-right: auto;
-        padding: 10px;
-        background-color: #fc7625;
-        text-align: center;
-        font-size: 1.5em;
-        text-shadow: 1px 1px 1px #666;
       }
 
-      .continue-to-app-btn:hover {
+      button.continue-to-app-btn:hover {
         background-color: #16c1f3;
         color: white;
         transition: 0.3s;
+      }
+
+      @media only screen and (min-width: 320px) and (max-width: 599px) {
+        .column {
+          padding: 0 1rem;
+          width: 100%;
+          margin: auto;
+          overflow-x: hidden;
+          box-sizing: border-box;
+        }
+        .row {
+          padding: 2em;
+        }
+        .justify {
+          text-align: left;
+        }
+        .large-white-text {
+          font-size: 1.5em;
+        }
+        .continue-to-app-btn {
+          font-size: 0.75em;
+        }
+      }
+
+      @media only screen and (min-width: 600px) and (max-width: 910px) {
+        .column {
+          padding: 0 1rem;
+          width: 100%;
+          margin: auto;
+          overflow-x: hidden;
+          box-sizing: border-box;
+        }
+        .row {
+          padding: 2em;
+        }
       }
     </style>
     {% endblock content %}

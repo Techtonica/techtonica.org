@@ -276,12 +276,20 @@ Techtonica Application {% endblock title %} {% block content %}
         List all the steps one-by-one that you would use to tell a robot how to
         make a sandwich (if all the ingredients are ready and available).
       </label>
-      <span
-        class="info-icon"
-        data-tooltip="This is to help us assess your logical thinking; please be specific and thorough."
-      >
-      </span
-      ><br />
+      <div class="learn-more-wrapper">
+        <span class="learn-more-title">Learn More</span>
+        <span class="toggle-icon">
+          <span class="toggle-icon-plus">+</span>
+          <span class="toggle-icon-minus">-</span>
+        </span>
+        <div class="learn-more-content">
+          <span
+            >This is to help us assess your logical thinking; please be specific
+            and thorough.</span
+          >
+        </div>
+      </div>
+      <br />
       <textarea
         name="robot-sandwich"
         id="robot-sandwich"
@@ -318,12 +326,21 @@ Techtonica Application {% endblock title %} {% block content %}
       <label for="how-did-you-find-out">
         How did you find out about Techtonica?
       </label>
-      <span
-        class="info-icon"
-        data-tooltip="The more specific you can be, the better—was it a flyer, and if so, where? Did a friend tell you, and if so, how did they find out? Was it a Facebook group, and if so, which one? Etc."
-      >
-      </span
-      ><br />
+      <div class="learn-more-wrapper">
+        <span class="learn-more-title">Learn More</span>
+        <span class="toggle-icon">
+          <span class="toggle-icon-plus">+</span>
+          <span class="toggle-icon-minus">-</span>
+        </span>
+        <div class="learn-more-content">
+          <span
+            >The more specific you can be, the better—was it a flyer, and if so,
+            where? Did a friend tell you, and if so, how did they find out? Was
+            it a Facebook group, and if so, which one? Etc.</span
+          >
+        </div>
+      </div>
+      <br />
       <textarea
         name="how-did-you-find-out"
         id="how-did-you-find-out"
@@ -348,12 +365,17 @@ Techtonica Application {% endblock title %} {% block content %}
         Other full URLs to you online (blog, Twitter, GitHub, Instagram, etc.)
         <span>(Optional)</span>
       </label>
-      <span
-        class="info-icon"
-        data-tooltip="For example, https://twitter.com/TechtonicaOrg"
-      >
-      </span
-      ><br />
+      <div class="learn-more-wrapper">
+        <span class="learn-more-title">Learn More</span>
+        <span class="toggle-icon">
+          <span class="toggle-icon-plus">+</span>
+          <span class="toggle-icon-minus">-</span>
+        </span>
+        <div class="learn-more-content">
+          <span>For example, https://twitter.com/TechtonicaOrg</span>
+        </div>
+      </div>
+      <br />
       <input
         type="url"
         name="applicant-other-social-medias"
@@ -405,6 +427,23 @@ Techtonica Application {% endblock title %} {% block content %}
     background-color: #0093b5;
     padding: 2rem;
   }
+
+  .application-form .learn-more-wrapper .learn-more-title,
+  .application-form .learn-more-wrapper .toggle-icon {
+    color: #0093b5;
+    font-size: 18px;
+  }
+
+  .application-form .learn-more-wrapper .learn-more-content {
+    font-size: 18px;
+    color: black;
+  }
+
+  .application-form .learn-more-wrapper {
+    display: inline-block;
+    padding-left: 5px;
+  }
+
   .application-page > h1,
   .application-page > p {
     max-width: 65%;
@@ -412,22 +451,22 @@ Techtonica Application {% endblock title %} {% block content %}
     text-align: center;
   }
 
-  fieldset {
+  .application-form > fieldset {
+    border: 1px solid rgba(0, 0, 0, 0.559);
+    border-radius: 0.5rem;
     padding: 2rem;
-    border-radius: 0.5rem;
   }
 
-  fieldset textarea {
-    border-radius: 0.5rem;
-    margin-bottom: 2rem;
-    align-items: center;
-    width: 95%;
-  }
-
-  fieldset input {
-    padding: 0.5rem;
-    margin-bottom: 2rem;
-    width: 60%;
+  fieldset > input[type="text"],
+  fieldset > input[type="url"],
+  fieldset > input[type="radio"],
+  fieldset > textarea {
+    padding: 1em;
+    margin-bottom: 2em;
+    border: 1px solid rgba(0, 0, 0, 0.559);
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
   }
   #radio-wrapper label {
     color: black;
@@ -437,7 +476,9 @@ Techtonica Application {% endblock title %} {% block content %}
     background-color: #16c1f3;
   }
 
-  button {
+  button.continue-to-app-btn,
+  button.previous-btn,
+  button.save-btn {
     background-color: #fc7625;
     color: white;
     font-size: large;
@@ -445,46 +486,133 @@ Techtonica Application {% endblock title %} {% block content %}
     border-radius: 0.5rem;
   }
 
-  button:hover {
-    background-color: #0093b5;
+  button.continue-to-app-btn:hover,
+  button.previous-btn:hover,
+  button.save-btn:hover {
+    background-color: #16c1f3;
+    color: white;
+    transition: 0.3s;
   }
 
   .form-button {
     display: flex;
-    gap: 3rem;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  .info-icon {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    padding-left: 0.5rem;
+  @media only screen and (min-width: 320px) and (max-width: 599px) {
+    .column {
+      padding: 0;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    .application-page > form {
+      width: inherit;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+    }
+    .application-page {
+      padding: 2rem 0;
+    }
+    .application-form .learn-more-wrapper .learn-more-title,
+    .application-form .learn-more-wrapper .toggle-icon {
+      color: #0093b5;
+      font-size: smaller;
+    }
+    .application-form .learn-more-wrapper .learn-more-content {
+      font-size: smaller;
+    }
+    .application-page > h1 {
+      font-size: 1.5em;
+      max-width: fit-content;
+    }
+    .application-form > fieldset > legend {
+      font-size: 18px;
+    }
+    .application-form > fieldset {
+      min-width: 95%;
+      word-wrap: break-word;
+      padding: 1.5rem;
+      margin: 0;
+    }
+    .application-form > fieldset > label,
+    #radio-wrapper > label {
+      font-size: smaller;
+    }
+    .form-button {
+      gap: 0.5em;
+      margin: auto;
+    }
+    button.continue-to-app-btn,
+    button.previous-btn,
+    button.save-btn {
+      font-size: smaller;
+    }
   }
 
-  .info-icon::after {
-    white-space: pre-wrap;
-    font-size: 0.85rem;
-    content: attr(data-tooltip);
-    visibility: hidden;
-    width: 220px;
-    background-color: #666;
-    color: #fff;
-    z-index: 1;
-    justify-content: space-evenly;
-    text-align: center;
-    border-radius: 1rem;
-    padding: 1rem;
-    position: absolute;
-    margin-left: 10px;
-    transform: translateY(-50%);
-    opacity: 0;
-    transition: opacity 0.3s;
-    /* white-space: pre-wrap; */
-  }
-
-  .info-icon:hover::after {
-    visibility: visible;
-    opacity: 1;
+  @media only screen and (min-width: 575px) and (max-width: 910px) {
+    .column {
+      padding: 0;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    .application-page {
+      padding: 2rem 0;
+    }
+    .application-page > form {
+      width: initial;
+      margin-bottom: 2rem;
+    }
+    .application-page > h1 {
+      font-size: 2em;
+      max-width: fit-content;
+    }
+    legend {
+      font-size: 24px;
+    }
   }
 </style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const learnMoreWrappers = document.querySelectorAll(".learn-more-wrapper");
+
+    learnMoreWrappers.forEach((wrapper) => {
+      const title = wrapper.querySelector(".learn-more-title");
+      const content = wrapper.querySelector(".learn-more-content");
+      const toggleIcon = wrapper.querySelector(".toggle-icon");
+
+      toggleIcon.style.cursor = "pointer";
+
+      toggleIcon.querySelector(".toggle-icon-plus").style.display =
+        "inline-block";
+      toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
+      content.style.display = "none";
+
+      let isExpanded = false;
+
+      title.addEventListener("click", () => {
+        if (!isExpanded) {
+          content.style.display = "block";
+          toggleIcon.querySelector(".toggle-icon-plus").style.display = "none";
+          toggleIcon.querySelector(".toggle-icon-minus").style.display =
+            "inline-block";
+        } else {
+          content.style.display = "none";
+          toggleIcon.querySelector(".toggle-icon-plus").style.display =
+            "inline-block";
+          toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
+        }
+
+        isExpanded = !isExpanded;
+      });
+    });
+  });
+</script>
 {% endblock content %}

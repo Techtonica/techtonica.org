@@ -52,8 +52,8 @@ except BaseException:
 
 
 # MVP
-app.register_blueprint(application_bp, url_prefix='/application')
-app.register_blueprint(course_bp, url_prefix='/course')
+app.register_blueprint(application_bp, url_prefix="/application")
+app.register_blueprint(course_bp, url_prefix="/course")
 
 
 # MAIN HANDLERS
@@ -248,44 +248,46 @@ def render_testimonials_page():
     """
     return render_template("testimonials.html")
 
-@app.route('/app-form-details')
+
+@app.route("/app-form-details")
 def app_form_details():
-    return render_template('app-form-details.html')
+    return render_template("app-form-details.html")
 
 
-@app.route('/app-form')
+@app.route("/app-form")
 def app_form():
-    return render_template('app-form.html')
+    return render_template("app-form.html")
 
 
-@app.route('/app-additional')
+@app.route("/app-additional")
 def app_additional():
-    return render_template('app-additional.html')
+    return render_template("app-additional.html")
 
 
-@app.route('/app-household')
+@app.route("/app-household")
 def app_household():
-    return render_template('app-household.html')
+    return render_template("app-household.html")
 
 
-@app.route('/app-long-text')
+@app.route("/app-long-text")
 def app_long_text():
-    return render_template('app-long-text.html')
+    return render_template("app-long-text.html")
 
 
-@app.route('/app-questionnaire')
+@app.route("/app-questionnaire")
 def app_questionnaire():
-    return render_template('app-questionnaire.html')
+    return render_template("app-questionnaire.html")
 
 
-@app.route('/app-reference')
+@app.route("/app-reference")
 def app_reference():
-    return render_template('app-reference.html')
+    return render_template("app-reference.html")
 
 
-@app.route('/app-form-admin')
+@app.route("/app-form-admin")
 def app_form_admin():
-    return render_template('app-form-admin.html')
+    return render_template("app-form-admin.html")
+
 
 def get_events():
     try:
@@ -422,7 +424,9 @@ class Payment(BaseModel):
     token: str
     idempotencyKey: str
 
+
 # old route - redirects to avoid breaking old links
+
 
 @app.route("/payment-form")
 def render_payment_form():
@@ -448,7 +452,6 @@ def render_job_form():
 
 # Square payment api route
 @app.route("/process-payment", methods=["POST"])
-
 def create_payment():
     # Charge the customer's card
     account_currency = "USD"  # TODO: Are you hard-coding this to USD?
@@ -477,7 +480,6 @@ def create_payment():
 
 # Slack webhook route
 @app.route("/send-posting", methods=["POST"])
-
 def send_posting():
     data = request.json
     print(f"Received data: {data}")
