@@ -131,6 +131,17 @@ Techtonica Application {% endblock title %} {% block content %}
         id="emergency-contact-email"
         required
       /><br />
+      <label for="emergency-contact-phone">Phone Number: </label><br />
+      <input
+        type="tel"
+        name="emergency-contact-phone"
+        id="emergency-contact-phone"
+        pattern="^\+?1?[-.\s]?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$"
+        placeholder="ex. 415-555-1234 or 1-415-555-1234"
+        title="Please enter a valid phone number in the format: 415-555-1234 or 1-415-555-1234."
+        minlength="10"
+        required
+      /><br />
       <label for="emergency-contact-relationship">Relationship: </label><br />
       <input
         type="text"
@@ -232,6 +243,7 @@ Techtonica Application {% endblock title %} {% block content %}
 
   .application-form > fieldset > input[type="text"],
   .application-form > fieldset > input[type="email"],
+  .application-form > fieldset > input[type="tel"],
   .application-form > fieldset > input[type="textarea"] {
     box-sizing: border-box;
     padding: 1em;
