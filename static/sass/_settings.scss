@@ -81,6 +81,8 @@ button {
   color: $white;
   a {
     color: white;
+    text-decoration: underline;
+    text-shadow: $thin-dark-text-shadow;
   }
   a:hover {
     color: $light-blue;
@@ -96,6 +98,10 @@ button {
   text-align: center;
 }
 
-.justify {
+.centered p {
+  text-align: center;
+}
+
+p {
   text-align: justify;
 }

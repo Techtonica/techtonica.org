@@ -62,16 +62,24 @@ environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 
 Set up virtual environment with Python 3.8.10 and Pip 23 using [pyenv](https://github.com/pyenv/pyenv) and [venv](https://docs.python.org/3/library/venv.html):
 
-```
-# Install pyenv using brew
+- Install pyenv using brew
+```bash
 brew install pyenv
-# Use pyenv to install version python 3.8.10
+```
+- Use pyenv to install version python 3.8.10
+```bash
 pyenv install 3.8.10
-# Set your python version to 3.8.10
+```
+- Set your python version to 3.8.10
+```bash
 pyenv local 3.8.10
-# Create a virtual environment using venv
+```
+- Create a virtual environment using venv
+```bash
 python -m venv venv
-# Activate your new virtual environment
+```
+- Activate your new virtual environment
+```bash
 source venv/bin/activate
 ```
 
@@ -97,10 +105,12 @@ This project uses various pre-commit hooks to ensure code quality and formatting
 consistency.
 
 1. [`Install pre-commit`](https://pre-commit.com/#install) globally.
-1. Install the project pre-commit hooks:
 
-```
+```bash
 pip install pre-commit
+```
+2. Install the project pre-commit hooks:
+```bash
 pre-commit install -f --install-hooks
 ```
 
@@ -110,32 +120,32 @@ pre-commit install -f --install-hooks
 pip install -r dev.txt
 ```
 
-### Create Config.ini File
+### Create .env File
 
 ```
-touch config.ini
+touch .env
 ```
 
-And then copy and paste this code into your new file (note: For the actual values, please see [Updating Techtonica's Website](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit?tab=t.0)):
+And then copy and paste this code into your new file (note: For the actual values, please reach out to a member of Techtonica staff):
 
 ```sh
-   [default]
-   # Acceptable values are sandbox or production
-   environment = sandbox
-   dev_password = dev_password
+[default]
+# Acceptable values are sandbox or production
+environment = sandbox
+dev_password = dev_password
 
-   [production]
-   square_application_id = production_application_id
-   square_access_token = production_access_token
-   square_location_id = production_location_id
+[production]
+square_application_id = production_application_id
+square_access_token = production_access_token
+square_location_id = production_location_id
 
-   [sandbox]
-   square_application_id = <sandbox app id>
-   square_access_token = <sandbox access token>
-   square_location_id = <sandbox location id>
+[sandbox]
+square_application_id = <sandbox app id>
+square_access_token = <sandbox access token>
+square_location_id = <sandbox location id>
 
-   [slack]
-   slack_webhook =  <slack webhook>
+[slack]
+slack_webhook =  <slack webhook>
 ```
 
 ### Pre-Commit Hooks Guide
@@ -311,11 +321,11 @@ There are features on the site that use Square for payments and will periodicall
 
 #### Setup
 
-1. Secrets required for the Square payment API and Slack webhook are stored in a config.ini file in the root directory of our repository.
+1. Secrets required for the Square payment API, Slack webhook, and full time program application timeline are stored in a .env file in the root directory of our repository.
 2. This file is listed in our .gitignore file and will not be included when pushing or pulling updates.
 3. You will need to manually add it into your local repository to test these features locally, and will also need to manually add it into whatever Dreamhost server (testing, staging, or production) that you are using as well, if it’s not already there.
 4. BE CAREFUL ABOUT environment VALUE! If it’s set to production it will actually charge the cards you test with, so be sure to set it to sandbox when testing locally or on staging or testing.
-5. Please see the [Updating Techtonica's Website](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit?tab=t.0) doc to get the keys and secrets.
+5. Please contact a member of Techtonica staff to get the keys and secrets.
 
 #### Running Locally
 
@@ -408,10 +418,10 @@ To connect these locally, you can use a GUI tool such as [Sequel Pro](https://se
 Enter the credentials into the connection window with the following:
 
 - **Name:** Anything, but should indicate which environment it points to
-- **Host:** mysql.techtonica.org
-- **Username:** Username from credentials
-- **Password:** Password from credentials
-- **Database:** Database name from credentials
+- **Host:** DB_HOST from .env
+- **Username:** DB_USERNAME from .env
+- **Password:** DB_PASSWORD from .env
+- **Database:** DB_NAME from .env
 - **Port:** 3306
 
 ![This is a sample screenshot of a Sequel Pro connection.](static/img/database_connection.png)
@@ -432,27 +442,22 @@ The below instructions are for setting up a new server in DreamHost.
    pip install -U pip setuptools pip-tools
    ```
 
-1. Create a `config.ini` file in the root directory of the repo in whichever Dreamhost server if there isn't one already present, and populate it with the necessary keys.
+1. Create a `.env` file in the root directory of the repo in whichever Dreamhost server if there isn't one already present, and populate it with the necessary keys.
 
-   ```sh
-   [default]
-   # Acceptable values are sandbox or production
-   environment = sandbox
-   dev_password = dev_password
-
-   [production]
-   square_application_id = production_application_id
-   square_access_token = production_access_token
-   square_location_id = production_location_id
-
-   [sandbox]
-   square_application_id = <sandbox app id>
-   square_access_token = <sandbox access token>
-   square_location_id = <sandbox location id>
-
-   [slack]
-   slack_webhook =  <slack webhook>
-   ```
+```sh
+ENVIRONMENT="local"
+SQUARE_APPLICATION_ID="id"
+SQUARE_ACCESS_TOKEN="token"
+SQUARE_LOCATION_ID="location"
+SLACK_WEBHOOK="webhook"
+PAYMENT_FORM_URL="url"
+APP_OPEN_DATE="date"
+APP_EXTENDED="boolean"
+DB_USERNAME="username"
+DB_PASSWORD="password"
+DB_HOST="host"
+DB_NAME="name"
+```
 
 ### Deploy Feature Branch
 

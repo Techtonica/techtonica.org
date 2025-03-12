@@ -1,5 +1,8 @@
 Flask
 Flask-SSLify
+Flask-SQLAlchemy # mvp
+Flask-Migrate # mvp
+# mysqlclient # mvp
 Jinja2
 eventbrite
 pendulum
@@ -13,3 +16,4 @@ pydantic
 a2wsgi
 configparser
 gunicorn
+pytz

@@ -1,0 +1,402 @@
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
+Techtonica Application {% endblock title %} {% block content %}
+
+<div class="application-page">
+  <h1>Techtonica Application</h1>
+  <form action="#" method="POST" class="application-form" id="app-form-5">
+    <fieldset>
+      <legend>Applicant References</legend>
+      <label>
+        Reference #1 - Please share the full name, email address, and
+        relationship (former manager, former coworker, etc.) of someone who has
+        worked closely with you and can speak to your capabilities in a work
+        setting.
+      </label>
+      <div class="learn-more-wrapper">
+        <span class="learn-more-title">Learn More</span>
+        <span class="toggle-icon">
+          <span class="toggle-icon-plus">+</span>
+          <span class="toggle-icon-minus">-</span>
+        </span>
+        <div class="learn-more-content">
+          <span
+            >This may not be a relative, significant other, or friend. It must
+            be someone who can speak to your work quality in an unbiased
+            manner.</span
+          >
+        </div>
+      </div>
+      <br />
+      <label for="reference-1-fname">First Name: </label><br />
+      <input
+        type="text"
+        name="reference-1-fname"
+        id="reference-1-fname"
+        required
+      /><br />
+      <label for="reference-1-lname">Last Name: </label><br />
+      <input
+        type="text"
+        name="reference-1-lname"
+        id="reference-1-lname"
+        required
+      /><br />
+      <label for="reference-1-email">Email: </label><br />
+      <input
+        type="email"
+        name="reference-1-email"
+        id="reference-1-email"
+        required
+      /><br />
+      <label for="reference-1-relationship">Relationship: </label><br />
+      <input
+        type="text"
+        name="reference-1-relationship"
+        id="reference-1-relationship"
+        required
+      /><br />
+      <label>
+        Reference #2 - Please share the full name, email address, and
+        relationship (former manager, former coworker, etc.) of someone who has
+        worked closely with you and can speak to your capabilities in a work
+        setting.
+      </label>
+      <div class="learn-more-wrapper">
+        <span class="learn-more-title">Learn More</span>
+        <span class="toggle-icon">
+          <span class="toggle-icon-plus">+</span>
+          <span class="toggle-icon-minus">-</span>
+        </span>
+        <div class="learn-more-content">
+          <span
+            >This may not be a relative, significant other, or friend. It must
+            be someone who can speak to your work quality in an unbiased
+            manner.</span
+          >
+        </div>
+      </div>
+      <br />
+      <label for="reference-2-fname">First Name: </label><br />
+      <input
+        type="text"
+        name="reference-2-fname"
+        id="reference-2-fname"
+        required
+      /><br />
+      <label for="reference-2-lname">Last Name: </label><br />
+      <input
+        type="text"
+        name="reference-2-lname"
+        id="reference-2-lname"
+        required
+      /><br />
+      <label for="reference-2-email">Email: </label><br />
+      <input
+        type="email"
+        name="reference-2-email"
+        id="reference-2-email"
+        required
+      /><br />
+      <label for="reference-2-relationship">Relationship: </label><br />
+      <input
+        type="text"
+        name="reference-2-relationship"
+        id="reference-2-relationship"
+        required
+      /><br />
+
+      <label>
+        Please share your emergency contact's name and contact info (phone and
+        email).
+      </label>
+      <br />
+      <label for="emergency-contact-fname">First Name: </label><br />
+      <input
+        type="text"
+        name="emergency-contact-fname"
+        id="emergency-contact-fname"
+        required
+      /><br />
+      <label for="emergency-contact-lname">Last Name: </label><br />
+      <input
+        type="text"
+        name="emergency-contact-lname"
+        id="emergency-contact-lname"
+        required
+      /><br />
+      <label for="emergency-contact-email">Email: </label><br />
+      <input
+        type="email"
+        name="emergency-contact-email"
+        id="emergency-contact-email"
+        required
+      /><br />
+      <label for="emergency-contact-phone">Phone Number: </label><br />
+      <input
+        type="tel"
+        name="emergency-contact-phone"
+        id="emergency-contact-phone"
+        pattern="^\+?1?[-.\s]?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$"
+        placeholder="ex. 415-555-1234 or 1-415-555-1234"
+        title="Please enter a valid phone number in the format: 415-555-1234 or 1-415-555-1234."
+        minlength="10"
+        required
+      /><br />
+      <label for="emergency-contact-relationship">Relationship: </label><br />
+      <input
+        type="text"
+        name="emergency-contact-relationship"
+        id="emergency-contact-relationship"
+        required
+      /><br />
+
+      <label for="anything-else-to-share"
+        >Anything else you want to share with us?
+        <span>(Optional)</span> </label
+      ><br />
+      <input
+        type="textarea"
+        name="anything-else-to-share"
+        id="anything-else-to-share"
+        cols="100"
+        rows="3"
+      />
+      <br />
+      <div class="form-button">
+        <button
+          type="button"
+          class="previous-btn"
+          onclick="window.location.href='/app-long-text'"
+        >
+          Previous
+        </button>
+        <button
+          type="button"
+          class="continue-to-app-btn"
+          onclick="window.location.href='/app-form-admin'"
+        >
+          Next
+        </button>
+        <button
+          type="button"
+          class="save-btn"
+          onclick="window.location.href='/'"
+        >
+          Save
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+<style>
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    width: 75%;
+    max-width: 150rem;
+    padding: 3rem;
+    background-color: white;
+    border: 1px solid rgb(0, 0, 0);
+  }
+
+  .application-page {
+    justify-content: center;
+    background-color: #0093b5;
+    padding: 2rem;
+  }
+
+  .application-form .learn-more-wrapper .learn-more-title,
+  .application-form .learn-more-wrapper .toggle-icon {
+    color: #0093b5;
+    font-size: 18px;
+  }
+
+  .application-form .learn-more-wrapper .learn-more-content {
+    font-size: 18px;
+    color: black;
+  }
+
+  .application-form .learn-more-wrapper {
+    display: inline-block;
+    padding-left: 5px;
+  }
+
+  .application-page > h1,
+  .application-page > label {
+    max-width: 65%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .application-form > fieldset {
+    padding: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.559);
+    border-radius: 0.5rem;
+  }
+
+  .application-form > fieldset > label {
+    margin-bottom: 0.5rem;
+  }
+
+  .application-form > fieldset > input[type="text"],
+  .application-form > fieldset > input[type="email"],
+  .application-form > fieldset > input[type="tel"],
+  .application-form > fieldset > input[type="textarea"] {
+    box-sizing: border-box;
+    padding: 1em;
+    margin-bottom: 2em;
+    border: 1px solid rgba(0, 0, 0, 0.559);
+    border-radius: 6px;
+    width: 100%;
+  }
+
+  #radio-wrapper label {
+    color: black;
+    margin-bottom: 2em;
+  }
+  #radio-wrapper input {
+    background-color: #16c1f3;
+  }
+
+  button.continue-to-app-btn,
+  button.previous-btn,
+  button.save-btn {
+    background-color: #fc7625;
+    color: white;
+    font-size: large;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  button.continue-to-app-btn:hover,
+  button.previous-btn:hover,
+  button.save-btn:hover {
+    background-color: #16c1f3;
+    color: white;
+    transition: 0.3s;
+  }
+
+  .form-button {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 599px) {
+    .column {
+      padding: 0;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    .application-page {
+      padding: 2rem 0;
+    }
+    .application-form .learn-more-wrapper .learn-more-title,
+    .application-form .learn-more-wrapper .toggle-icon {
+      color: #0093b5;
+      font-size: smaller;
+    }
+    .application-form .learn-more-wrapper .learn-more-content {
+      font-size: smaller;
+    }
+    .application-page > h1 {
+      font-size: 1.5em;
+      max-width: fit-content;
+    }
+    .application-page > form {
+      width: inherit;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+    }
+    legend {
+      font-size: 18px;
+    }
+    .application-form > fieldset {
+      min-width: 95%;
+      word-wrap: break-word;
+      padding: 1.5rem;
+      margin: 0;
+    }
+    .application-form > fieldset > label {
+      font-size: smaller;
+    }
+    .form-button {
+      gap: 0.5em;
+      margin: auto;
+    }
+    button.previous-btn,
+    button.continue-to-app-btn,
+    button.save-btn {
+      font-size: smaller;
+    }
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 910px) {
+    .column {
+      padding: 0;
+    }
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    .application-page {
+      padding: 2rem 0;
+    }
+    .application-page > form {
+      width: initial;
+      margin-bottom: 2rem;
+    }
+    .application-page > h1 {
+      font-size: 2em;
+      max-width: fit-content;
+    }
+    legend {
+      font-size: 24px;
+    }
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const learnMoreWrappers = document.querySelectorAll(".learn-more-wrapper");
+
+    learnMoreWrappers.forEach((wrapper) => {
+      const title = wrapper.querySelector(".learn-more-title");
+      const content = wrapper.querySelector(".learn-more-content");
+      const toggleIcon = wrapper.querySelector(".toggle-icon");
+
+      toggleIcon.style.cursor = "pointer";
+
+      toggleIcon.querySelector(".toggle-icon-plus").style.display =
+        "inline-block";
+      toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
+      content.style.display = "none";
+
+      let isExpanded = false;
+
+      title.addEventListener("click", () => {
+        if (!isExpanded) {
+          content.style.display = "block";
+          toggleIcon.querySelector(".toggle-icon-plus").style.display = "none";
+          toggleIcon.querySelector(".toggle-icon-minus").style.display =
+            "inline-block";
+        } else {
+          content.style.display = "none";
+          toggleIcon.querySelector(".toggle-icon-plus").style.display =
+            "inline-block";
+          toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
+        }
+
+        isExpanded = !isExpanded;
+      });
+    });
+  });
+</script>
+{% endblock content %}
