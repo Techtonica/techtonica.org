@@ -8,18 +8,18 @@ endblock title %} {% block content %}
         Hands on software engineering training with need-based, sliding-scale,
         subsidized tuition and stipend scholarships, followed by six months of
         remote job placement or job search support for women and non-binary
-        adults seeking economic empowerment. The 2025 H1 Cohort kicks off in
-        January.
+        adults seeking economic empowerment. The 2025 H2 Cohort kicks off in
+        July.
       </p>
       <h2>
-        {% if times.app_open %}
+        {% if timeline.APP_OPEN_DATE %}
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
           class="sponsor"
           id="orange-button"
           target="_blank"
           rel="noopener noreferrer"
-          >{{times.text}}</a
+          >{{timeline.TEXT}}</a
         >
         {% else %}
         <a
@@ -48,6 +48,9 @@ endblock title %} {% block content %}
         (Real-World Experience for Graduates of Full-Time Program)
       </li>
     </ol>
+  </div>
+  <div class="chart-container">
+    <canvas id="myChart"></canvas>
   </div>
   <div class="column">
     <h1 class="blue-h1">The Full-Time Program</h1>
@@ -80,11 +83,8 @@ endblock title %} {% block content %}
       has historically been between 5:1 and 9:1. We appreciate an average of 98
       hours of volunteer support per participant.
     </p>
-    <div class="blue-background">
-      <canvas id="myChart"></canvas>
-    </div>
   </div>
-  <br />
+
   <div class="row row__center blue-background why-why" id="why">
     <h1 class="main-header__header">
       Needs-Based, Sliding Scale Tuition & Stipend Scholarships
@@ -95,7 +95,7 @@ endblock title %} {% block content %}
       a result, Techtonica is adopting a tuition-based model with need-based,
       sliding-scale, subsidized tuition and stipend scholarships to enable the
       program to serve more participants, in addition to continuing to seek
-      sponsorships. Our H1 cohort in 2025 will begin in January. It is possible
+      sponsorships. Our H2 cohort in 2025 will begin in July. It is possible
       that we will secure some placements for this cohort, but it is not
       guaranteed.
     </p>
@@ -237,7 +237,9 @@ endblock title %} {% block content %}
         >our testimonials page</a
       >, and our info session.
     </p>
-    <div class="videowrapper">
+
+    <!-- Commenting out past info session video below, to be replaced with 2025 H2 Application Info Session -->
+    <!-- <div class="videowrapper">
       <iframe
         width="560"
         height="315"
@@ -248,12 +250,9 @@ endblock title %} {% block content %}
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
       ></iframe>
-    </div>
-    <!-- Commenting out past info session video, to be replaced with 2025 H1 Application Info Session -->
+    </div> -->
+
     <br />
-    <!-- <div class="videowrapper ">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VkuhwMT4b7A?si=piEC6i6ypgTzIrZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div> -->
 
     <div class="column">
       <img
@@ -329,7 +328,8 @@ endblock title %} {% block content %}
           full-time training and the following six months
         </li>
         <li>
-          are willing to live in the U.S. if required by placement company
+          are willing to live in the U.S. and relocate to an in-person location
+          of placement, if required by placement company
         </li>
         <li>have a U.S. bank account</li>
         <li>
@@ -440,10 +440,9 @@ endblock title %} {% block content %}
       interested folks go out, and forms close again around October. For the
       July to December ("H2") cohort, the application forms open, emails to
       interested folks go out, and forms close again around March. For the 2025
-      H1 cohort, applications open in September and close in October. The
-      application process continues for about four to five weeks after
-      applications close, with candidates eliminated at each step of the
-      process.
+      H2 cohort, applications open in March and close in April. The application
+      process continues for about four to five weeks after applications close,
+      with candidates eliminated at each step of the process.
     </p>
     <div class="row">
       <div class="column column-med centered">
@@ -631,7 +630,7 @@ endblock title %} {% block content %}
       </div>
     </div>
     <h2>
-      {% if times.app_open %}
+      {% if timeline.APP_OPEN_DATE %}
       <!-- FT cohort application button that leads to short form when apps are open-->
       <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
@@ -639,7 +638,7 @@ endblock title %} {% block content %}
         id="orange-button"
         target="_blank"
         rel="noopener noreferrer"
-        >{{times.text}}</a
+        >{{timeline.TEXT}}</a
       >
       {% else %}
       <!-- event sign up button appears when apps are closed -->

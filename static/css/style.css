@@ -121,6 +121,17 @@ p {
   padding: 0 1rem;
 }
 
+.chart-container {
+  -webkit-display: flex;
+  -moz-display: flex;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: rgb(0, 147, 181);
+  color: white;
+  padding: 3rem;
+}
+
 .nav-bar {
   -webkit-display: inline-flex;
   -moz-display: inline-flex;
@@ -1168,6 +1179,12 @@ input[type="radio"] {
   }
 }
 @media (max-width: 600px) {
+  .chart-container {
+    padding: 2rem 0;
+  }
+  #myChart {
+    padding: 0;
+  }
   .payment-form {
     margin: 0px;
     padding: 30px;
