@@ -37,7 +37,9 @@ engine = get_db_connection()
 if engine:
     print("Successfully connected to the database!")
 else:
-    print("Failed to connect to the database.")
+    print(
+        "Failed to connect to the database, but continuing with other operations."  # noqa: E501
+    )
 
 
 # MAIN HANDLERS
