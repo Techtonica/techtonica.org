@@ -85,7 +85,11 @@ button {
   text-align: center;
 }
 
-.justify {
+.centered p {
+  text-align: center;
+}
+
+p {
   text-align: justify;
 }
 
@@ -567,6 +571,9 @@ table.mentor td:first-of-type {
   }
   h1 {
     font-size: 3.5em;
+  }
+  p {
+    text-align: left;
   }
 }
 @media only screen and (max-width: 910px) {
