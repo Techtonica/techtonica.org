@@ -1,9 +1,12 @@
+import logging
 import os
 
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 
 load_dotenv()
+
+logging.basicConfig(level=logging.INFO)
 
 
 def get_db_connection():
@@ -14,18 +17,17 @@ def get_db_connection():
 
     if not all([user, password, host, db]):
         # Handle missing environment variables
-        print(user, host)
-        print(
-            "WARNING: Missing database credentials. Using fallback configuration."  # noqa: E501
-        )
+        logging.warning("Missing database credentials.")
         return None
 
     try:
-        engine = create_engine(
-            f"mysql+mysqldb://{user}:{password}@{host}/{db}"
-        )  # noqa: E501
-        print("Database connection successful!")
-        return engine
+        engine = create_engine
+        (f"mysql+mysqlconnector://{user}:{password}@{host}/{db}")
+        # Test the connection
+        with engine.connect():
+            logging.info("Database connection successful!")
+            return engine
+
     except Exception as e:
-        print(f"Database connection failed: {e}")
+        logging.warning(f"Database connection failed: {e}")
         return None
