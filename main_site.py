@@ -18,6 +18,7 @@ from pydantic import BaseModel
 from square.client import Client
 
 from dates import generate_application_timeline
+from db_connection import get_db_connection
 
 load_dotenv(find_dotenv(usecwd=True))
 
@@ -29,6 +30,14 @@ except BaseException:
 
 app = Flask(__name__)
 sslify = SSLify(app)
+
+# Connect to Database
+engine = get_db_connection()
+
+if engine:
+    print("Successfully connected to the database!")
+else:
+    print("Failed to connect to the database.")
 
 
 # MAIN HANDLERS
