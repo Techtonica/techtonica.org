@@ -81,6 +81,8 @@ markupsafe==2.1.5
     #   werkzeug
 msgpack==1.1.0
     # via cachecontrol
+mysql-connector-python==9.0.0
+    # via -r requirements.in
 mysqlclient==2.2.7
     # via -r requirements.in
 packaging==24.2

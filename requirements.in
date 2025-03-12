@@ -16,3 +16,4 @@ gunicorn
 pytz
 sqlalchemy
 mysqlclient
+mysql-connector-python
