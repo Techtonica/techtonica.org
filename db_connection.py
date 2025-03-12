@@ -2,7 +2,7 @@ import logging
 import os
 
 from dotenv import load_dotenv
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 
 load_dotenv()
 
@@ -21,13 +21,34 @@ def get_db_connection():
         return None
 
     try:
-        engine = create_engine
-        (f"mysql+mysqlconnector://{user}:{password}@{host}/{db}")
+
+        engine = create_engine(
+            f"mysql+mysqlconnector://{user}:{password}@{host}/{db}"
+        )  # noqa: E501
+
         # Test the connection
-        with engine.connect():
+        with engine.connect() as connection:
             logging.info("Database connection successful!")
+
+            # Fetch table names as a check
+            tables = get_table_names(connection)
+            if tables:
+                logging.info(f"Tables in the database: {tables}")
+            else:
+                logging.warning("No tables found in the database.")
+
             return engine
 
     except Exception as e:
         logging.warning(f"Database connection failed: {e}")
+        return None
+
+
+def get_table_names(connection):
+    try:
+        result = connection.execute(text("SHOW TABLES"))
+        tables = result.fetchall()
+        return [table[0] for table in tables]
+    except Exception as e:
+        logging.error(f"Failed to fetch table names: {e}")
         return None
