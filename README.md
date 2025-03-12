@@ -62,16 +62,33 @@ environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 
 Set up virtual environment with Python 3.8.10 and Pip 23 using [pyenv](https://github.com/pyenv/pyenv) and [venv](https://docs.python.org/3/library/venv.html):
 
-```
-# Install pyenv using brew
+- Install pyenv using brew
+
+```bash
 brew install pyenv
-# Use pyenv to install version python 3.8.10
+```
+
+- Use pyenv to install version python 3.8.10
+
+```bash
 pyenv install 3.8.10
-# Set your python version to 3.8.10
+```
+
+- Set your python version to 3.8.10
+
+```bash
 pyenv local 3.8.10
-# Create a virtual environment using venv
+```
+
+- Create a virtual environment using venv
+
+```bash
 python -m venv venv
-# Activate your new virtual environment
+```
+
+- Activate your new virtual environment
+
+```bash
 source venv/bin/activate
 ```
 
@@ -97,10 +114,14 @@ This project uses various pre-commit hooks to ensure code quality and formatting
 consistency.
 
 1. [`Install pre-commit`](https://pre-commit.com/#install) globally.
-1. Install the project pre-commit hooks:
 
-```
+```bash
 pip install pre-commit
+```
+
+2. Install the project pre-commit hooks:
+
+```bash
 pre-commit install -f --install-hooks
 ```
 

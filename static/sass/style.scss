@@ -25,6 +25,14 @@
   padding: 0 1rem;
 }
 
+.chart-container {
+  @include prefix(display, flex, webkit moz);
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: rgba(0, 147, 181, 1);
+  color: white;
+  padding: 3rem;
+}
 .nav-bar {
   @include prefix(display, inline-flex, webkit moz);
   flex-flow: row-reverse wrap;
@@ -179,6 +187,16 @@
   width: 100%;
 }
 
+.sponsor-logo {
+  width: 20%;
+  margin: 25px;
+}
+
+.sponsor-img {
+  width: 10%;
+  margin: 25px;
+}
+
 #consulting-hero {
   width: 100%;
   padding-top: 5%;
@@ -254,6 +272,11 @@
 .max-size-5-percent {
   max-height: 5%;
   max-width: 5%;
+}
+
+.max-size-15-percent {
+  max-height: 15%;
+  max-width: 15%;
 }
 
 .fixed-img {
@@ -430,6 +453,10 @@ table.mentor {
 
   h1 {
     font-size: 3.5em;
+  }
+
+  p {
+    text-align: left;
   }
 }
 
@@ -1077,6 +1104,14 @@ input[type="radio"] {
 }
 
 @media (max-width: 600px) {
+  .chart-container {
+    padding: 2rem 0;
+  }
+
+  #myChart {
+    padding: 0;
+  }
+
   .payment-form {
     margin: 0px;
     padding: 30px;
@@ -1095,5 +1130,15 @@ input[type="radio"] {
   #info-wrapper > fieldset {
     margin: 0px;
     width: 100%;
+  }
+
+  .sponsor-logo {
+    width: 38%;
+    margin: 15px;
+  }
+
+  .sponsor-img {
+    width: 33%;
+    margin: 20px;
   }
 }

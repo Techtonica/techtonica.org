@@ -85,7 +85,11 @@ button {
   text-align: center;
 }
 
-.justify {
+.centered p {
+  text-align: center;
+}
+
+p {
   text-align: justify;
 }
 
@@ -115,6 +119,17 @@ button {
   -moz-flex: 1;
   flex: 1;
   padding: 0 1rem;
+}
+
+.chart-container {
+  -webkit-display: flex;
+  -moz-display: flex;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: rgb(0, 147, 181);
+  color: white;
+  padding: 3rem;
 }
 
 .nav-bar {
@@ -289,6 +304,16 @@ button {
   width: 100%;
 }
 
+.sponsor-logo {
+  width: 20%;
+  margin: 25px;
+}
+
+.sponsor-img {
+  width: 10%;
+  margin: 25px;
+}
+
 #consulting-hero {
   width: 100%;
   padding-top: 5%;
@@ -365,6 +390,11 @@ button {
 .max-size-5-percent {
   max-height: 5%;
   max-width: 5%;
+}
+
+.max-size-15-percent {
+  max-height: 15%;
+  max-width: 15%;
 }
 
 .fixed-img {
@@ -541,6 +571,9 @@ table.mentor td:first-of-type {
   }
   h1 {
     font-size: 3.5em;
+  }
+  p {
+    text-align: left;
   }
 }
 @media only screen and (max-width: 910px) {
@@ -1146,6 +1179,12 @@ input[type="radio"] {
   }
 }
 @media (max-width: 600px) {
+  .chart-container {
+    padding: 2rem 0;
+  }
+  #myChart {
+    padding: 0;
+  }
   .payment-form {
     margin: 0px;
     padding: 30px;
@@ -1161,6 +1200,14 @@ input[type="radio"] {
   #info-wrapper > fieldset {
     margin: 0px;
     width: 100%;
+  }
+  .sponsor-logo {
+    width: 38%;
+    margin: 15px;
+  }
+  .sponsor-img {
+    width: 33%;
+    margin: 20px;
   }
 }
 
