@@ -27,17 +27,8 @@ def get_db_connection():
         )  # noqa: E501
 
         # Test the connection
-        with engine.connect() as connection:
-            logging.info("Database connection successful!")
-
-            # Fetch table names as a check
-            tables = get_table_names(connection)
-            if tables:
-                logging.info(f"Tables in the database: {tables}")
-            else:
-                logging.warning("No tables found in the database.")
-
-            return engine
+        engine.connect()
+        logging.info(f"Database connection to {db} successful!")
 
     except Exception as e:
         logging.warning(f"Database connection failed: {e}")
