@@ -22,7 +22,8 @@ def parse_env_date(env_var, calculated_date):
     env_value = os.getenv(env_var, "").strip()
     if not env_value:
         logger.info(
-            f"{env_var} not found in .env, using calculated date: {calculated_date}"  # noqa: E501
+            f"{env_var} not found in .env, "
+            f"using calculated date: {calculated_date}"
         )
         return calculated_date
 
@@ -42,7 +43,8 @@ def parse_env_date(env_var, calculated_date):
             continue
 
     logger.warning(
-        f"Invalid {env_var} format in .env ({env_value}), using calculated date: {calculated_date}"  # noqa: E501
+        f"Invalid {env_var} format in .env ({env_value}), "
+        f"using calculated date: {calculated_date}"
     )
     return calculated_date
 
@@ -68,7 +70,7 @@ def generate_application_timeline():
         except ValueError:
             print(
                 f"Error: Invalid APP_OPEN_DATE format ({app_open_date_str})!"
-            )  # noqa: E501
+            )
 
             app_open_datetime = None
     else:
@@ -84,7 +86,7 @@ def generate_application_timeline():
     today = datetime.now(pst)
     app_open = app_open_datetime and (
         app_open_datetime <= today <= app_close_datetime
-    )  # noqa: E501
+    )
 
     info_session = parse_env_date(
         "INFO_SESSION",
@@ -95,7 +97,7 @@ def generate_application_timeline():
         (
             app_close_datetime + timedelta(weeks=1)
             if app_close_datetime
-            else None  # noqa: E501
+            else None
         ),
     )
     pair_programming = parse_env_date(
@@ -103,7 +105,7 @@ def generate_application_timeline():
         (
             application_workshop + timedelta(weeks=1)
             if application_workshop
-            else None  # noqa: E501
+            else None
         ),
     )
     take_home = parse_env_date(
@@ -116,7 +118,7 @@ def generate_application_timeline():
     )
     notification_day = parse_env_date(
         "NOTIFICATION_DAY",
-        interview + timedelta(weeks=1) if interview else None,  # noqa: E501
+        interview + timedelta(weeks=1) if interview else None,
     )
     onboarding_day = parse_env_date(
         "ONBOARDING_DAY",
@@ -124,7 +126,7 @@ def generate_application_timeline():
     )
     pre_work_start = parse_env_date(
         "PRE_WORK_START",
-        onboarding_day + timedelta(days=1) if onboarding_day else None,  # noqa: E501
+        onboarding_day + timedelta(days=1) if onboarding_day else None,
     )
     cohort_start_day = parse_env_date(
         "COHORT_START_DAY",
@@ -135,11 +137,11 @@ def generate_application_timeline():
     start_month = cohort_start_day.strftime("%B") if cohort_start_day else None
     cohort_half = (
         "H1" if start_month == "January" else "H2" if start_month else None
-    )  # noqa: E501
+    )
 
     training_end = (
         cohort_start_day + timedelta(weeks=24) if cohort_start_day else None
-    )  # noqa: E501
+    )
     job_search_end = (
         cohort_start_day + timedelta(weeks=48) if cohort_start_day else None
     )
