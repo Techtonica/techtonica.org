@@ -291,6 +291,7 @@ Techtonica Application {% endblock title %} {% block content %}
   .application-form .learn-more-wrapper .toggle-icon {
     color: #0093b5;
     font-size: 18px;
+    cursor: pointer;
   }
 
   .application-form .learn-more-wrapper .learn-more-content {
@@ -314,6 +315,11 @@ Techtonica Application {% endblock title %} {% block content %}
     padding: 2rem;
     border: 1px solid rgba(0, 0, 0, 0.559);
     border-radius: 0.5rem;
+  }
+
+  .application-form > fieldset > input[type="file"],
+  .application-form > fieldset > #radio-wrapper > input[type="radio"] {
+    cursor: pointer;
   }
 
   .application-form > fieldset > input[type="text"],
@@ -341,6 +347,7 @@ Techtonica Application {% endblock title %} {% block content %}
     font-size: large;
     padding: 1rem;
     border-radius: 0.5rem;
+    cursor: pointer;
   }
 
   button.continue-to-app-btn:hover,

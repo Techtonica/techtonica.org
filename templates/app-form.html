@@ -7,30 +7,26 @@ Techtonica Application {% endblock title %} {% block content %}
       <legend>General Applicant Demographics</legend>
       <label for="first-name">Full legal given or 'first' name: </label><br />
       <input
-          type="text"
-          id="first-name"
-          name="first-name"
-          required
-          autocomplete="given-name"
-        /><br />
+        type="text"
+        id="first-name"
+        name="first-name"
+        required
+        autocomplete="given-name"
+      /><br />
       <label for="preferred-name"
         >Preferred given or "first" name (if not the same as your legal "first"
         or given name): <span>(Optional)</span></label
       ><br />
-      <input
-          type="text"
-          id="preferred-name"
-          name="preferred-name"
-        /><br />
+      <input type="text" id="preferred-name" name="preferred-name" /><br />
       <label for="last-name">Full legal last/family name or surname: </label
       ><br />
       <input
-          type="text"
-          id="last-name"
-          name="last-name"
-          required
-          autocomplete="family-name"
-        /><br />
+        type="text"
+        id="last-name"
+        name="last-name"
+        required
+        autocomplete="family-name"
+      /><br />
       <label for="name-pronunciation"
         >How to pronounce your full name: <span>(Optional)</span></label
       >
@@ -72,12 +68,12 @@ Techtonica Application {% endblock title %} {% block content %}
       </div>
       <br />
       <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          autocomplete="email"
-        /><br />
+        type="email"
+        id="email"
+        name="email"
+        required
+        autocomplete="email"
+      /><br />
       <label for="gender-identity"
         >With which gender identity do you most align?
       </label>
@@ -222,8 +218,8 @@ Techtonica Application {% endblock title %} {% block content %}
         placeholder="ex. 415-555-1234 or 1-415-555-1234"
         title="Please enter a valid phone number in the format: 415-555-1234 or 1-415-555-1234."
         minlength="10"
-          required
-          autocomplete="tel"
+        required
+        autocomplete="tel"
       /><br />
       <div id="radio-wrapper">
         <label for="veteran-status">Are you a U.S. veteran? </label><br />
@@ -500,6 +496,7 @@ Techtonica Application {% endblock title %} {% block content %}
   .application-form .learn-more-wrapper .toggle-icon {
     color: #0093b5;
     font-size: 18px;
+    cursor: pointer;
   }
 
   .application-form .learn-more-wrapper .learn-more-content {
@@ -520,6 +517,7 @@ Techtonica Application {% endblock title %} {% block content %}
     border-radius: 0.5rem;
     margin: auto;
     display: block;
+    cursor: pointer;
   }
 
   #app-form-1 button:hover {
@@ -558,6 +556,12 @@ Techtonica Application {% endblock title %} {% block content %}
     border-radius: 6px;
     width: 100%;
     box-sizing: border-box;
+  }
+
+  .application-form > fieldset > select,
+  .application-form > fieldset > input[type="checkbox"],
+  .application-form > fieldset > #radio-wrapper > input[type="radio"] {
+    cursor: pointer;
   }
 
   .application-form > fieldset > select {
