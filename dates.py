@@ -1,129 +1,173 @@
-""" This file generates the application timeline
+""" This file generates the application timeline variables
 to dynamically render relevant dates and information """
 
+import logging
 import os
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 
+import pytz
 from dotenv import load_dotenv
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 load_dotenv()
 
+# confirms timezone is set to pacific standard time (PST)
+pst = pytz.timezone("America/Los_Angeles")
+
+
+# checks for dates in dot env file
+def parse_env_date(env_var, calculated_date):
+    env_value = os.getenv(env_var, "").strip()
+    if not env_value:
+        logger.info(
+            f"{env_var} not found in .env, using calculated date: {calculated_date}"  # noqa: E501
+        )
+        return calculated_date
+
+    # handles several date formats
+    formats = [
+        "%m/%d/%Y %H:%M:%S",
+        "%m/%d/%y %H:%M:%S",
+        "%m/%d/%y",
+        "%m/%d/%Y",
+    ]
+    for fmt in formats:
+        try:
+            parsed_date = pst.localize(datetime.strptime(env_value, fmt))
+            logger.info(f"{env_var} found in .env: {parsed_date}")
+            return parsed_date
+        except ValueError:
+            continue
+
+    logger.warning(
+        f"Invalid {env_var} format in .env ({env_value}), using calculated date: {calculated_date}"  # noqa: E501
+    )
+    return calculated_date
+
+
+# functions to format dates, if available
+def format_date(date):
+    return date.strftime("%B %d, %Y") if date else None
+
+
+def format_month_year(date):
+    return date.strftime("%B %Y") if date else None
+
 
 def generate_application_timeline():
-    # Get application open date from .env
     app_open_date_str = os.getenv("APP_OPEN_DATE")
     app_extended = os.getenv("APP_EXTENDED", "false").lower() == "true"
 
-    # Error handling: Ensure APP_OPEN_DATE is set
-    if not app_open_date_str:
-        print("Warning: APP_OPEN_DATE is not set.")
-        app_open_datetime = None
-    else:
+    if app_open_date_str:
         try:
-            app_open_datetime = datetime.strptime(
-                app_open_date_str, "%m/%d/%y %H:%M:%S"
+            app_open_datetime = pst.localize(
+                datetime.strptime(app_open_date_str, "%m/%d/%y %H:%M:%S")
             )
-            app_open_datetime = app_open_datetime.replace(tzinfo=timezone.utc)
         except ValueError:
             print(
-                f"""Error: Unexpected APP_OPEN_DATE format!" f"({app_open_date_str})"""
-            )
-            app_open_datetime = None
+                f"Error: Invalid APP_OPEN_DATE format ({app_open_date_str})!"
+            )  # noqa: E501
 
-    # Determine application close date
+            app_open_datetime = None
+    else:
+        app_open_datetime = None
+
     if app_open_datetime:
         app_close_datetime = app_open_datetime + timedelta(
-            weeks=6 if app_extended else 4
+            days=25 + (10 if app_extended else 0)
         )
-        app_close_datetime = app_close_datetime.replace(tzinfo=timezone.utc)
     else:
         app_close_datetime = None
 
-    # Today's date
-    today = datetime.now(timezone.utc)
+    today = datetime.now(pst)
+    app_open = app_open_datetime and (
+        app_open_datetime <= today <= app_close_datetime
+    )  # noqa: E501
 
-    # Application status logic
-    app_open = "false"
-    text = "Apply Now!"
+    info_session = parse_env_date(
+        "INFO_SESSION",
+        app_open_datetime + timedelta(weeks=3) if app_open_datetime else None,
+    )
+    application_workshop = parse_env_date(
+        "APPLICATION_WORKSHOP",
+        (
+            app_close_datetime + timedelta(weeks=1)
+            if app_close_datetime
+            else None  # noqa: E501
+        ),
+    )
+    pair_programming = parse_env_date(
+        "PAIR_PROGRAMMING_WITH_STAFF",
+        (
+            application_workshop + timedelta(weeks=1)
+            if application_workshop
+            else None  # noqa: E501
+        ),
+    )
+    take_home = parse_env_date(
+        "TAKE_HOME_CODE_CHALLENGE",
+        pair_programming + timedelta(weeks=1) if pair_programming else None,
+    )
+    interview = parse_env_date(
+        "INTERVIEW_FINANCIAL_CONVOS",
+        take_home + timedelta(weeks=1) if take_home else None,
+    )
+    notification_day = parse_env_date(
+        "NOTIFICATION_DAY",
+        interview + timedelta(weeks=1) if interview else None,  # noqa: E501
+    )
+    onboarding_day = parse_env_date(
+        "ONBOARDING_DAY",
+        notification_day + timedelta(weeks=1) if notification_day else None,
+    )
+    pre_work_start = parse_env_date(
+        "PRE_WORK_START",
+        onboarding_day + timedelta(days=1) if onboarding_day else None,  # noqa: E501
+    )
+    cohort_start_day = parse_env_date(
+        "COHORT_START_DAY",
+        pre_work_start + timedelta(weeks=4.5) if pre_work_start else None,
+    )
 
-    if app_open_datetime is None or app_close_datetime is None:
-        app_open = True  # Default to true if APP_OPEN_DATE is missing
-        text = "Apply Now!"
-    elif app_open_datetime <= today <= app_close_datetime:
-        app_open = True
-        if app_extended:
-            text = (
-                "Extended!\nApply by "
-                f"{app_close_datetime.strftime('%B')} "
-                f"{app_close_datetime.day} (12pm PT)!"
-            )
-        else:
-            text = (
-                "Apply by "
-                f"{app_close_datetime.strftime('%B')} "
-                f"{app_close_datetime.day} (12pm PT)!"
-            )
+    start_year = cohort_start_day.strftime("%Y") if cohort_start_day else None
+    start_month = cohort_start_day.strftime("%B") if cohort_start_day else None
+    cohort_half = (
+        "H1" if start_month == "January" else "H2" if start_month else None
+    )  # noqa: E501
 
-    # Generate event dates if APP_OPEN_DATE is valid
-    if app_open_datetime:
-        info_session = app_open_datetime + timedelta(weeks=3)
-        application_workshop = app_close_datetime + timedelta(weeks=1)
-        pair_programming_with_staff = application_workshop + timedelta(weeks=1)
-        take_home_code_challenge = pair_programming_with_staff + timedelta(weeks=1)
-        interview_financial_convos = take_home_code_challenge + timedelta(weeks=1)
-        notification_day = interview_financial_convos + timedelta(weeks=1)
-        onboarding_day = notification_day + timedelta(weeks=1)
-        pre_work_start = onboarding_day + timedelta(days=1)
-        cohort_start_day = pre_work_start + timedelta(weeks=4.5)
-
-        start_month = cohort_start_day.strftime("%B")
-        cohort_half = "H1" if start_month == "January" else "H2"
-
-        training_end = cohort_start_day + timedelta(weeks=24)
-        job_search_end = cohort_start_day + timedelta(weeks=48)
-    else:
-        # If no APP_OPEN_DATE, keep all dates as None
-        info_session = None
-        application_workshop = None
-        pair_programming_with_staff = None
-        take_home_code_challenge = None
-        interview_financial_convos = None
-        notification_day = None
-        onboarding_day = None
-        pre_work_start = None
-        cohort_start_day = None
-        start_month = None
-        cohort_half = None
-        training_end = None
-        job_search_end = None
+    training_end = (
+        cohort_start_day + timedelta(weeks=24) if cohort_start_day else None
+    )  # noqa: E501
+    job_search_end = (
+        cohort_start_day + timedelta(weeks=48) if cohort_start_day else None
+    )
 
     return {
-        "APP_OPEN_DATE": app_open_datetime,
+        "APP_OPEN_DATE": format_date(app_open_datetime),
         "APP_EXTENDED": app_extended,
-        "APP_CLOSE_DATE": app_close_datetime,
-        "INFO_SESSION": info_session,
-        "APPLICATION_WORKSHOP": application_workshop,
-        "PAIR_PROGRAMMING_WITH_STAFF": pair_programming_with_staff,
-        "TAKE_HOME_CODE_CHALLENGE": take_home_code_challenge,
-        "INTERVIEW_FINANCIAL_CONVOS": interview_financial_convos,
-        "NOTIFICATION_DAY": notification_day,
-        "ONBOARDING_DAY": onboarding_day,
-        "PRE_WORK_START": pre_work_start,
-        "COHORT_START_DAY": cohort_start_day,
+        "APP_CLOSE_DATE": format_date(app_close_datetime),
+        "INFO_SESSION": format_date(info_session),
+        "APPLICATION_WORKSHOP": format_date(application_workshop),
+        "PAIR_PROGRAMMING_WITH_STAFF": format_date(pair_programming),
+        "TAKE_HOME_CODE_CHALLENGE": format_date(take_home),
+        "INTERVIEW_FINANCIAL_CONVOS": format_date(interview),
+        "NOTIFICATION_DAY": format_date(notification_day),
+        "ONBOARDING_DAY": format_date(onboarding_day),
+        "PRE_WORK_START": format_date(pre_work_start),
+        "COHORT_START_DAY": format_date(cohort_start_day),
         "START_MONTH": start_month,
+        "START_YEAR": start_year,
         "COHORT_HALF": cohort_half,
-        "TRAINING_END": training_end,
-        "JOB_SEARCH_END": job_search_end,
-        "TRAINING_END_MONTH": (training_end.strftime("%B") if training_end else None),
-        "JOB_SEARCH_START_MONTH": (
-            training_end.strftime("%B") if training_end else None
-        ),
-        "JOB_SEARCH_END_MONTH": (
-            job_search_end.strftime("%B") if job_search_end else None
-        ),
-        "TEXT": text,
+        "TRAINING_END": format_date(training_end),
+        "TRAINING_END_MONTH_YEAR": format_month_year(training_end),
+        "JOB_SEARCH_START_MONTH_YEAR": format_month_year(training_end),
+        "JOB_SEARCH_END_MONTH_YEAR": format_month_year(job_search_end),
         "APP_OPEN": app_open,
+        "TEXT": (
+            "Apply Now!"
+            if not app_open
+            else f"Apply by {app_close_datetime.strftime('%B %d')} (12pm PT)!"
+        ),
     }
-
-
-# timeline = generate_application_timeline()
