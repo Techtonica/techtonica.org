@@ -31,18 +31,18 @@ Techtonica Application {% endblock title %} {% block content %}
         >How to pronounce your full name: <span>(Optional)</span></label
       >
       <div class="learn-more-wrapper" aria-expanded="false">
-        <span class="learn-more-title"> Learn More </span>
-        <span class="toggle-icon">
-          <span class="toggle-icon-plus">+</span>
-          <span class="toggle-icon-minus">-</span>
-        </span>
-        <div class="learn-more-content">
-          <span
-            >You can make a recording on
-            <a href="www.name-coach.com">name-coach.com</a>, generate your link
-            and share in the text field if preferred.</span
-          >
-        </div>
+        <button class="learn-more-title" type="button">
+          Learn More
+          <span class="toggle-icon">
+            <span class="toggle-icon-plus">+</span>
+            <span class="toggle-icon-minus">-</span>
+          </span>
+        </button>
+        <p class="learn-more-content" tabindex="0">
+          You can make a recording on
+          <a href="www.name-coach.com">name-coach.com</a>, generate your link
+          and share in the text field if preferred.
+        </p>
       </div>
       <br />
       <input
@@ -52,21 +52,20 @@ Techtonica Application {% endblock title %} {% block content %}
       /><br />
       <label for="email">Email: </label>
       <div class="learn-more-wrapper" aria-expanded="false">
-        <span class="learn-more-title"> Learn More </span>
-        <span class="toggle-icon">
-          <span class="toggle-icon-plus">+</span>
-          <span class="toggle-icon-minus">-</span>
-        </span>
-        <div class="learn-more-content">
-          <span
-            >Please use the same business-minded Gmail with your name (e.g.
-            janedoe@gmail.com) that you used in the shorter form. This is the
-            email we will contact you with for the duration of the application
-            process and program.</span
-          >
-        </div>
+        <button class="learn-more-title" type="button">
+          Learn More
+          <span class="toggle-icon">
+            <span class="toggle-icon-plus">+</span>
+            <span class="toggle-icon-minus">-</span>
+          </span>
+        </button>
+        <p class="learn-more-content" tabindex="0">
+          Please use the same business-minded Gmail with your name (e.g.
+          janedoe@gmail.com) that you used in the shorter form. This is the
+          email we will contact you with for the duration of the application
+          process and program.
+        </p>
       </div>
-      <br />
       <input
         type="email"
         id="email"
@@ -78,12 +77,14 @@ Techtonica Application {% endblock title %} {% block content %}
         >With which gender identity do you most align?
       </label>
       <div class="learn-more-wrapper" aria-expanded="false">
-        <span class="learn-more-title"> Learn More </span>
-        <span class="toggle-icon">
-          <span class="toggle-icon-plus">+</span>
-          <span class="toggle-icon-minus">-</span>
-        </span>
-        <div class="learn-more-content">
+        <button class="learn-more-title" type="button">
+          Learn More
+          <span class="toggle-icon">
+            <span class="toggle-icon-plus">+</span>
+            <span class="toggle-icon-minus">-</span>
+          </span>
+        </button>
+        <div class="learn-more-content" tabindex="0">
           <ul>
             <li>
               <strong>Agender or genderless: </strong>People who do not identify
@@ -248,18 +249,18 @@ Techtonica Application {% endblock title %} {% block content %}
           >)
         </label>
         <div class="learn-more-wrapper" aria-expanded="false">
-          <span class="learn-more-title">Learn More</span>
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-          <div class="learn-more-content">
-            <span
-              >You are considered to have a disability if you have a physical or
-              mental impairment or medical condition that substantially limits a
-              major life activity.</span
-            >
-          </div>
+          <button class="learn-more-title" type="button">
+            Learn More
+            <span class="toggle-icon">
+              <span class="toggle-icon-plus">+</span>
+              <span class="toggle-icon-minus">-</span>
+            </span>
+          </button>
+          <p class="learn-more-content" tabindex="0">
+            You are considered to have a disability if you have a physical or
+            mental impairment or medical condition that substantially limits a
+            major life activity.
+          </p>
         </div>
         <br />
         <input
@@ -304,12 +305,14 @@ Techtonica Application {% endblock title %} {% block content %}
         >With which racial/ethnic groups do you most identify?
       </label>
       <div class="learn-more-wrapper" aria-expanded="false">
-        <span class="learn-more-title"> Learn More </span>
-        <span class="toggle-icon">
-          <span class="toggle-icon-plus">+</span>
-          <span class="toggle-icon-minus">-</span>
-        </span>
-        <div class="learn-more-content">
+        <button class="learn-more-title" type="button">
+          Learn More
+          <span class="toggle-icon">
+            <span class="toggle-icon-plus">+</span>
+            <span class="toggle-icon-minus">-</span>
+          </span>
+        </button>
+        <div class="learn-more-content" tabindex="0">
           <ul>
             <li>
               <strong>African-American, Black, or African:</strong> A person
@@ -492,24 +495,30 @@ Techtonica Application {% endblock title %} {% block content %}
     text-align: center;
   }
 
-  .application-form .learn-more-wrapper .learn-more-title,
-  .application-form .learn-more-wrapper .toggle-icon {
-    color: #0093b5;
-    font-size: 18px;
-    cursor: pointer;
-  }
-
-  .application-form .learn-more-wrapper .learn-more-content {
-    font-size: 18px;
-    color: black;
-  }
-
   .application-form .learn-more-wrapper {
-    display: inline-block;
-    padding-left: 5px;
+    display: inline;
   }
 
-  #app-form-1 button {
+  .application-form .learn-more-content {
+    margin: 0.5em 0 0 0;
+    font-size: large;
+  }
+
+  .application-form .learn-more-wrapper button {
+    display: inline;
+    background-color: white;
+    color: #0093b5;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 0 0 0.5em;
+  }
+
+  .application-form .learn-more-wrapper button:hover {
+    background-color: white;
+    color: #16c1f3;
+  }
+
+  .application-form button {
     background-color: #fc7625;
     color: white;
     font-size: large;
@@ -520,7 +529,7 @@ Techtonica Application {% endblock title %} {% block content %}
     cursor: pointer;
   }
 
-  #app-form-1 button:hover {
+  .application-form button:hover {
     background-color: #16c1f3;
     color: white;
     transition: 0.3s;
@@ -725,8 +734,7 @@ Techtonica Application {% endblock title %} {% block content %}
 
       toggleIcon.style.cursor = "pointer";
 
-      toggleIcon.querySelector(".toggle-icon-plus").style.display =
-        "inline-block";
+      toggleIcon.querySelector(".toggle-icon-plus").style.display = "inline";
       toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
       content.style.display = "none";
 
@@ -737,12 +745,12 @@ Techtonica Application {% endblock title %} {% block content %}
           content.style.display = "block";
           toggleIcon.querySelector(".toggle-icon-plus").style.display = "none";
           toggleIcon.querySelector(".toggle-icon-minus").style.display =
-            "inline-block";
+            "inline";
           wrapper.setAttribute("aria-expanded", true);
         } else {
           content.style.display = "none";
           toggleIcon.querySelector(".toggle-icon-plus").style.display =
-            "inline-block";
+            "inline";
           toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
           wrapper.setAttribute("aria-expanded", false);
         }

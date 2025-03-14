@@ -277,17 +277,17 @@ Techtonica Application {% endblock title %} {% block content %}
         make a sandwich (if all the ingredients are ready and available).
       </label>
       <div class="learn-more-wrapper" aria-expanded="false">
-        <span class="learn-more-title">Learn More</span>
-        <span class="toggle-icon">
-          <span class="toggle-icon-plus">+</span>
-          <span class="toggle-icon-minus">-</span>
-        </span>
-        <div class="learn-more-content">
-          <span
-            >This is to help us assess your logical thinking; please be specific
-            and thorough.</span
-          >
-        </div>
+        <button class="learn-more-title" type="button">
+          Learn More
+          <span class="toggle-icon">
+            <span class="toggle-icon-plus">+</span>
+            <span class="toggle-icon-minus">-</span>
+          </span>
+        </button>
+        <p class="learn-more-content" tabindex="0">
+          This is to help us assess your logical thinking; please be specific
+          and thorough.
+        </p>
       </div>
       <br />
       <textarea
@@ -327,18 +327,18 @@ Techtonica Application {% endblock title %} {% block content %}
         How did you find out about Techtonica?
       </label>
       <div class="learn-more-wrapper" aria-expanded="false">
-        <span class="learn-more-title">Learn More</span>
-        <span class="toggle-icon">
-          <span class="toggle-icon-plus">+</span>
-          <span class="toggle-icon-minus">-</span>
-        </span>
-        <div class="learn-more-content">
-          <span
-            >The more specific you can be, the better—was it a flyer, and if so,
-            where? Did a friend tell you, and if so, how did they find out? Was
-            it a Facebook group, and if so, which one? Etc.</span
-          >
-        </div>
+        <button class="learn-more-title" type="button">
+          Learn More
+          <span class="toggle-icon">
+            <span class="toggle-icon-plus">+</span>
+            <span class="toggle-icon-minus">-</span>
+          </span>
+        </button>
+        <p class="learn-more-content" tabindex="0">
+          The more specific you can be, the better—was it a flyer, and if so,
+          where? Did a friend tell you, and if so, how did they find out? Was it
+          a Facebook group, and if so, which one? Etc.
+        </p>
       </div>
       <br />
       <textarea
@@ -366,14 +366,16 @@ Techtonica Application {% endblock title %} {% block content %}
         <span>(Optional)</span>
       </label>
       <div class="learn-more-wrapper" aria-expanded="false">
-        <span class="learn-more-title">Learn More</span>
-        <span class="toggle-icon">
-          <span class="toggle-icon-plus">+</span>
-          <span class="toggle-icon-minus">-</span>
-        </span>
-        <div class="learn-more-content">
-          <span>For example, https://twitter.com/TechtonicaOrg</span>
-        </div>
+        <button class="learn-more-title" type="button">
+          Learn More
+          <span class="toggle-icon">
+            <span class="toggle-icon-plus">+</span>
+            <span class="toggle-icon-minus">-</span>
+          </span>
+        </button>
+        <p class="learn-more-content" tabindex="0">
+          For example, https://twitter.com/TechtonicaOrg
+        </p>
       </div>
       <br />
       <input
@@ -428,21 +430,28 @@ Techtonica Application {% endblock title %} {% block content %}
     padding: 2rem;
   }
 
-  .application-form .learn-more-wrapper .learn-more-title,
-  .application-form .learn-more-wrapper .toggle-icon {
-    color: #0093b5;
-    font-size: 18px;
-    cursor: pointer;
-  }
-
-  .application-form .learn-more-wrapper .learn-more-content {
-    font-size: 18px;
-    color: black;
-  }
-
   .application-form .learn-more-wrapper {
-    display: inline-block;
-    padding-left: 5px;
+    display: inline;
+  }
+
+  .application-form .learn-more-content {
+    margin: 0.5em 0 0 0;
+    font-size: large;
+  }
+
+  .application-form .learn-more-wrapper button {
+    display: inline;
+    background-color: white;
+    color: #0093b5;
+    font-size: large;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 0 0 0.5em;
+  }
+
+  .application-form .learn-more-wrapper button:hover {
+    background-color: white;
+    color: #16c1f3;
   }
 
   .application-page > h1,
@@ -456,6 +465,10 @@ Techtonica Application {% endblock title %} {% block content %}
     border: 1px solid rgba(0, 0, 0, 0.559);
     border-radius: 0.5rem;
     padding: 2rem;
+  }
+
+  .application-form > fieldset > label {
+    font-size: large;
   }
 
   fieldset > input[type="text"],
@@ -598,8 +611,7 @@ Techtonica Application {% endblock title %} {% block content %}
 
       toggleIcon.style.cursor = "pointer";
 
-      toggleIcon.querySelector(".toggle-icon-plus").style.display =
-        "inline-block";
+      toggleIcon.querySelector(".toggle-icon-plus").style.display = "inline";
       toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
       content.style.display = "none";
 
@@ -610,12 +622,12 @@ Techtonica Application {% endblock title %} {% block content %}
           content.style.display = "block";
           toggleIcon.querySelector(".toggle-icon-plus").style.display = "none";
           toggleIcon.querySelector(".toggle-icon-minus").style.display =
-            "inline-block";
+            "inline";
           wrapper.setAttribute("aria-expanded", true);
         } else {
           content.style.display = "none";
           toggleIcon.querySelector(".toggle-icon-plus").style.display =
-            "inline-block";
+            "inline";
           toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
           wrapper.setAttribute("aria-expanded", false);
         }
