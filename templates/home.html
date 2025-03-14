@@ -4,10 +4,22 @@ endblock title %} {% block content %}
   <div class="main-header">
     <div class="main-header__text blue-background">
       <h1 class="main-header__header">#BridgeTheTechGap</h1>
-      <p>Techtonica helps women and non-binary adults overcome barriers into the tech industry and 
-        partner companies fulfill their diverse technical talent needs.
+      <p>
+        Techtonica helps women and non-binary adults overcome barriers into the
+        tech industry and partner companies fulfill their diverse technical
+        talent needs.
       </p>
       <h2>
+        {% if timeline.APP_OPEN_DATE %}
+        <a
+          href="{{ url_for('render_ft_program_page') }}"
+          class="sponsor"
+          id="orange-button"
+          target="_blank"
+          rel="noopener noreferrer"
+          >{{ timeline.TEXT }}</a
+        >
+        {% else %}
         <a
           href="{{ url_for('render_sponsor_page') }}"
           class="sponsor"
@@ -16,18 +28,20 @@ endblock title %} {% block content %}
           rel="noopener noreferrer"
           >Outsource your software work!</a
         >
+        {% endif %}
       </h2>
     </div>
   </div>
   <div class="row row__center what-we-do" id="whatwedo">
     <div class="column">
       <h1 class="blue-h1">Our Participants</h1>
-      <p class="justify">
+      <p>
         Our full-time program participants go through a rigorous, lengthy
         application process that includes multiple workshops, interviews, and a
-        code challenge. By the time each cohort graduates, they will have completed 
-        more than 1,000 hours of collaborative, project-based learning developed by industry
-        professionals. Most <a href="{{ url_for('render_sponsor_page') }}">partner companies</a> 
+        code challenge. By the time each cohort graduates, they will have
+        completed more than 1,000 hours of collaborative, project-based learning
+        developed by industry professionals. Most
+        <a href="{{ url_for('render_sponsor_page') }}">partner companies</a>
         that hire our graduates would like to employ them forever!
       </p>
     </div>
@@ -52,14 +66,15 @@ endblock title %} {% block content %}
     </div>
     <div class="column">
       <h1>Why</h1>
-      <p class="justify">
-        Techtonica started in the San Francisco Bay Area, where the tech industry, which needs to build more diverse technical teams, is causing displacement and increasing
-        income disparity.
+      <p>
+        Techtonica started in the San Francisco Bay Area, where the tech
+        industry, which needs to build more diverse technical teams, is causing
+        displacement and increasing income disparity.
       </p>
-      <p class="justify">
-        We asked, "What if we could help people most in danger of displacement to become economically empowered 
-        by asking tech companies that recognize the need for more diverse technical teams to sponsor and hire 
-        them?"
+      <p>
+        We asked, "What if we could help people most in danger of displacement
+        to become economically empowered by asking tech companies that recognize
+        the need for more diverse technical teams to sponsor and hire them?"
       </p>
     </div>
   </div>
@@ -73,13 +88,11 @@ endblock title %} {% block content %}
           aria-hidden="true"
         />
         <h3>Vetting</h3>
+        <p>Techtonica conducts free intro workshops.</p>
         <p>
-          Techtonica conducts free intro workshops.
-        </p>
-        <p>
-          We invite the most interested, resilient, independent, curious, open-minded,
-          communicative, collaborative, confident, respectful attendees to apply to our full-time
-          program.
+          We invite the most interested, resilient, independent, curious,
+          open-minded, communicative, collaborative, confident, respectful
+          attendees to apply to our full-time program.
         </p>
       </div>
       <div class="column column-med centered">
@@ -90,13 +103,14 @@ endblock title %} {% block content %}
         />
         <h3>Partner Companies</h3>
         <p>
-          Companies <a href="{{ url_for('render_sponsor_page') }}">
-          sponsor</a> the full-time program participants' pre-placement training
-          and provide mentors.
+          Companies
+          <a href="{{ url_for('render_sponsor_page') }}"> sponsor</a> the
+          full-time program participants' pre-placement training and provide
+          mentors.
         </p>
         <p>
-          They have a say in the curriculum and prepare to employ their top-rated 
-          interviewees at the end of the program.
+          They have a say in the curriculum and prepare to employ their
+          top-rated interviewees at the end of the program.
         </p>
       </div>
       <div class="column column-med centered">
@@ -139,13 +153,13 @@ endblock title %} {% block content %}
 
   <div class="row row__center our-supporters" id="supporters">
     <h1 class="blue-h1">Thank you for your support!</h1>
-    <div class="row">
+    <div class="row sponsor-container">
       <div class="column centered">
         <a href="http://sfpl.org/" target="_blank" rel="noopener noreferrer">
           <img
             src="{{ url_for('static', filename='img/sfpl-logo.jpg') }}"
             alt="San Francisco Public Library logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -156,7 +170,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/rackspace-startups-logo.png') }}"
             alt="Rackspace Startups logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -167,7 +181,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/st-anthonys.jpg') }}"
             alt="St. Anthony Foundation logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -178,7 +192,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/zendesk-logo-min.png') }}"
             alt="Zendesk logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -189,7 +203,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/python-software-foundation-logo.jpg') }}"
             alt="Python Software Foundation logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -200,7 +214,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/kapor-center-for-social-impact-logo.jpg') }}"
             alt="Kapor Center for Social Impact logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -211,7 +225,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/scienceexchange_logo.png') }}"
             alt="Science Exchange logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -222,7 +236,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/beezwax-logo.png')}}"
             alt="Beezwax logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -233,14 +247,14 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/bridge-at-main.jpg') }}"
             alt="The Bridge at Main: Learning resources, classes, and people who can help."
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a href="https://stripe.com/" target="_blank" rel="noopener noreferrer">
           <img
             src="{{ url_for('static', filename='img/stripe.png') }}"
             alt="Stripe logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -251,21 +265,21 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/pantheon-logo-min.jpg') }}"
             alt="Pantheon.io logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a href="https://redfin.com" target="_blank" rel="noopener noreferrer">
           <img
             src="{{ url_for('static', filename='img/redfin-logo.png') }}"
             alt="Redfin logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a href="https://exygy.com/" target="_blank" rel="noopener noreferrer">
           <img
             src="{{ url_for('static', filename='img/exygy-logo-min.jpg') }}"
             alt="Exygy logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -276,7 +290,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/clover-health-logo-min.png') }}"
             alt="Clover Health logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -287,7 +301,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/world-wide-women-min.png') }}"
             alt="WorldWideWomen logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -298,7 +312,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/moo-logo-min.png') }}"
             alt="Moo logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -309,7 +323,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/quantcast-logo-min.png') }}"
             alt="Quantcast logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -320,7 +334,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/ancestry-logo-min.png') }}"
             alt="Ancestry logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -331,14 +345,14 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/wikimedia-foundation-logo-min.png') }}"
             alt="Wikimedia Foundation logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
           <img
             src="{{ url_for('static', filename='img/github-logo-min.png') }}"
             alt="GitHub logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -349,7 +363,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/huge-logo-min.png') }}"
             alt="Huge logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -360,7 +374,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/mixpanel-logo-min.png') }}"
             alt="Mixpanel logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -371,7 +385,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/rally-health-logo-min.png') }}"
             alt="Rally Health logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -382,7 +396,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/TechHire-logo-min.png') }}"
             alt="TechHire logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -393,7 +407,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/onelogin-logo-min.png') }}"
             alt="OneLogin logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -404,7 +418,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/agari-logo-min.png') }}"
             alt="Agari logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -415,7 +429,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/kintone-logo-min.png') }}"
             alt="Kintone logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -426,7 +440,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Autonomic-logo-min.png') }}"
             alt="Autonomic logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -437,7 +451,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/mailchimp-logo-min.png') }}"
             alt="Mailchimp logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -448,7 +462,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/virtualpostmail-logo-min.png') }}"
             alt="VirtualPostMail logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -459,7 +473,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/miller-center-logo-min.png') }}"
             alt="Miller Center for Social Entrepreneurship logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -470,7 +484,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Redbubble-logo-min.png') }}"
             alt="Redbubble logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -481,7 +495,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Airbnb-logo-min.png') }}"
             alt="Airbnb logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -492,7 +506,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/SurveyMonkey-logo-min.png') }}"
             alt="SurveyMonkey logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -503,7 +517,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/AppDynamics-logo-min.jpg') }}"
             alt="AppDynamics logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -514,14 +528,14 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Indeed-logo-min.png') }}"
             alt="Indeed logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a href="https://scale.ai/" target="_blank" rel="noopener noreferrer">
           <img
             src="{{ url_for('static', filename='img/Scale-logo.png') }}"
             alt="Scale logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -532,14 +546,14 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Postman-logo.png') }}"
             alt="Postman logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a href="https://blend.com/" target="_blank" rel="noopener noreferrer">
           <img
             src="{{ url_for('static', filename='img/Blend-logo.png') }}"
             alt="Blend logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -550,21 +564,21 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Cisco-Meraki-logo.jpg') }}"
             alt="Cisco Meraki logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a href="https://branch.io/" target="_blank" rel="noopener noreferrer">
           <img
             src="{{ url_for('static', filename='img/Branch-logo.jpg') }}"
             alt="Branch logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a href="https://remix.com" target="_blank" rel="noopener noreferrer">
           <img
             src="{{ url_for('static', filename='img/Remix-logo-min.png') }}"
             alt="Remix logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -575,7 +589,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Tonal-logo-min.png') }}"
             alt="Tonal logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -586,7 +600,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Pure-Storage-logo-min.png') }}"
             alt="Pure Storage logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -597,7 +611,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Grove-Collaborative-logo-min.png') }}"
             alt="Grove Collaborative logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -608,7 +622,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Freenome-logo-min.png') }}"
             alt="Freenome logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -619,7 +633,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Qualcomm-logo-min.png') }}"
             alt="Qualcomm logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -630,7 +644,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/MyVestLogo_CMYK_Mint-Blue-(MAIN-LOGO-no-room).png') }}"
             alt="MyVestLogo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -641,7 +655,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/upstart-logo.jpg') }}"
             alt="Upstart"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -652,7 +666,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/paloalto-logo.png') }}"
             alt="Palo alto Networks"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -663,7 +677,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/marqeta-logo.png') }}"
             alt="marqueta"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -674,7 +688,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Stack-Overflow-logo.png') }}"
             alt="Stackoverflow"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -685,7 +699,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Fitbit_Logo_Black_RGB.jpg') }}"
             alt="Fitbit"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -696,14 +710,14 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/lattice_logo_full_color.png') }}"
             alt="Lattice"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a href="https://www.mlh.io/" target="_blank" rel="noopener noreferrer">
           <img
             src="{{ url_for('static', filename='img/MLH-logo.png') }}"
             alt="MHL"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -714,7 +728,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/SmugMug_logo_horizontal_(Light).png') }}"
             alt="SmugMug"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -725,7 +739,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Trevor-TCR-logo.png') }}"
             alt="Trevor TCR"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -736,7 +750,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Xignite-logo-blk-1000.png') }}"
             alt="Xignite"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
         <a
@@ -747,64 +761,136 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/SmartNews-logo-min.png') }}"
             alt="SmartNews logo"
-            class="twenty-percent-width margin-25"
+            class="sponsor-logo"
           />
         </a>
-        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
-          <img src="{{ url_for('static', filename='img/Twitter-logo-min.png') }}"
-            alt="Twitter logo" class="twenty-percent-width margin-25 max-size-5-percent"/>
+        <a
+          href="https://twitter.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Twitter-logo-min.png') }}"
+            alt="Twitter logo"
+            class="sponsor-logo max-size-5-percent"
+          />
         </a>
-        <a href="https://www.sie.com/" target="_blank" rel="noopener noreferrer">
-          <img src="{{ url_for('static', filename='img/Sony-Interactive-Entertainment-logo.png') }}"
-            alt="Sony Interactive Entertainment logo" class="twenty-percent-width margin-25"/>
+        <a
+          href="https://www.sie.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Sony-Interactive-Entertainment-logo.png') }}"
+            alt="Sony Interactive Entertainment logo"
+            class="sponsor-logo"
+          />
         </a>
-        <a href="https://adadevelopersacademy.org/" target="_blank" rel="noopener noreferrer">
-          <img src="{{ url_for('static', filename='img/Ada-Developers-Academy-logo-min.png') }}"
-            alt="Ada Developers Academy logo" class="twenty-percent-width margin-25"/>
+        <a
+          href="https://adadevelopersacademy.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Ada-Developers-Academy-logo-min.png') }}"
+            alt="Ada Developers Academy logo"
+            class="sponsor-logo"
+          />
         </a>
-        <a href="https://www.kkr.com/" target="_blank" rel="noopener noreferrer">
-          <img src="{{ url_for('static', filename='img/KKR-logo-min.png') }}"
-            alt="KKR logo" class="twenty-percent-width margin-25"/>
+        <a
+          href="https://www.kkr.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/KKR-logo-min.png') }}"
+            alt="KKR logo"
+            class="sponsor-logo"
+          />
         </a>
-        <a href="https://www.techsoup.org/" target="_blank" rel="noopener noreferrer">
-          <img src="{{ url_for('static', filename='img/TechSoup-logo-min.png') }}"
-            alt="TechSoup logo" class="twenty-percent-width margin-25"/>
+        <a
+          href="https://www.techsoup.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/TechSoup-logo-min.png') }}"
+            alt="TechSoup logo"
+            class="sponsor-logo"
+          />
         </a>
-         <a href="https://www.twilio.com/" target="_blank" rel="noopener noreferrer">
-          <img src="{{ url_for('static', filename='img/Twilio_Logo.png') }}"
-            alt="Twilio logo" class="twenty-percent-width margin-25"/>
+        <a
+          href="https://www.twilio.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Twilio_Logo.png') }}"
+            alt="Twilio logo"
+            class="sponsor-logo"
+          />
         </a>
         <a href="https://oneten.org/" target="_blank" rel="noopener noreferrer">
           <img
             src="{{ url_for('static', filename='img/OneTen-logo-min.png') }}"
             alt="OneTen logo"
-            class="twenty-percent-width margin-25"/>
+            class="sponsor-logo"
+          />
         </a>
-         <a href="https://www.bigcommerce.com/" target="_blank" rel="noopener noreferrer">
-          <img src="{{ url_for('static', filename='img/BigCommerce_Logo.png') }}"
-            alt="BigCommerce logo" class="twenty-percent-width margin-25"/>
+        <a
+          href="https://www.bigcommerce.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/BigCommerce_Logo.png') }}"
+            alt="BigCommerce logo"
+            class="sponsor-logo"
+          />
         </a>
-        <a href="https://www.sodahealth.com/" target="_blank" rel="noopener noreferrer">
-          <img src="{{ url_for('static', filename='img/Soda-Health-logo-min.png') }}"
-            alt="Soda Health logo" class="twenty-percent-width margin-25"/>
+        <a
+          href="https://www.sodahealth.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Soda-Health-logo-min.png') }}"
+            alt="Soda Health logo"
+            class="sponsor-logo"
+          />
         </a>
-        <a href="https://newrelic.com/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://newrelic.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img
             src="{{ url_for('static', filename='img/New-Relic-logo-min.png') }}"
             alt="New Relic logo"
-            class="twenty-percent-width margin-25"/>
+            class="sponsor-logo"
+          />
         </a>
         <a href="https://slack.com/" target="_blank" rel="noopener noreferrer">
-          <img src="{{ url_for('static', filename='img/Slack-From-Salesforce-Logo-min.png') }}"
-            alt="Slack logo" class="twenty-percent-width margin-25"/>
+          <img
+            src="{{ url_for('static', filename='img/Slack-From-Salesforce-Logo-min.png') }}"
+            alt="Slack logo"
+            class="sponsor-logo"
+          />
         </a>
-        <a href="https://honeycomb.io/" target="_blank" rel="noopener noreferrer">
-          <img src="{{ url_for('static', filename='img/Honeycomb-logo-min.png') }}"
-            alt="Honeycomb logo" class="twenty-percent-width margin-25"/>
+        <a
+          href="https://honeycomb.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="{{ url_for('static', filename='img/Honeycomb-logo-min.png') }}"
+            alt="Honeycomb logo"
+            class="sponsor-logo"
+          />
         </a>
       </div>
     </div>
-    <div class="row">
+    <div class="row sponsor-container">
       <div class="column centered">
         <a
           href="https://github.com/gsong"
@@ -814,7 +900,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/George-Song.png') }}"
             alt="George Song"
-            class="ten-percent-width margin-25"
+            class="sponsor-img"
           />
         </a>
         <a
@@ -825,7 +911,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Scott-Triglia.jpg') }}"
             alt="Scott Triglia"
-            class="ten-percent-width margin-25"
+            class="sponsor-img"
           />
         </a>
         <a
@@ -836,7 +922,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Vivien-Chan.jpg') }}"
             alt="Vivien Chan"
-            class="ten-percent-width margin-25"
+            class="sponsor-img"
           />
         </a>
         <a
@@ -847,7 +933,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Aaron-VonderHaar-min.jpg') }}"
             alt="Aaron VonderHaar"
-            class="ten-percent-width margin-25"
+            class="sponsor-img"
           />
         </a>
         <a
@@ -858,7 +944,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Arianna-Willett-min.jpg') }}"
             alt="Arianna Willett"
-            class="ten-percent-width margin-25"
+            class="sponsor-img"
           />
         </a>
         <a
@@ -869,7 +955,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Beth-Nakamura-min.jpg') }}"
             alt="Beth Nakamura"
-            class="ten-percent-width margin-25"
+            class="sponsor-img"
           />
         </a>
         <a
@@ -880,7 +966,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Sharon-Wong-min.jpg') }}"
             alt="Sharon Wong"
-            class="ten-percent-width margin-25"
+            class="sponsor-img"
           />
         </a>
         <a
@@ -891,7 +977,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Ross-Chapman-min.jpg') }}"
             alt="Ross Chapman"
-            class="ten-percent-width margin-25"
+            class="sponsor-img"
           />
         </a>
         <a
@@ -902,7 +988,7 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Nicole-Forsgren-min.jpg') }}"
             alt="Nicole Forsgren"
-            class="ten-percent-width margin-25"
+            class="sponsor-img"
           />
         </a>
         <a
@@ -913,18 +999,18 @@ endblock title %} {% block content %}
           <img
             src="{{ url_for('static', filename='img/Erica-Jeff-Lawson.png') }}"
             alt="Erica & Jeff Lawson"
-            class="ten-percent-width margin-25"
+            class="sponsor-img"
           />
         </a>
         <a
           href="https://www.linkedin.com/in/leah-alpert-640b17b0"
           target="_blank"
           rel="noopener noreferrer"
-          >
+        >
           <img
             src="{{ url_for('static', filename='img/Leah-Alpert-min.png') }}"
             alt="Leah Alpert"
-            class="ten-percent-width margin-25"
+            class="sponsor-img"
           />
         </a>
       </div>

@@ -22,7 +22,7 @@ About Us {% endblock title %} {% block content %}
           Software Training Engineering Manager (STEM)
         </a>
       </footer>
-      <p class="justify">
+      <p>
         Daaimah, a queer, black, disabled individual and primary caregiver,
         entered the tech industry facing numerous barriers. After completing the
         Techtonica program in 2019, she worked as a software engineer at
@@ -46,7 +46,7 @@ About Us {% endblock title %} {% block content %}
           Administrative Assistant
         </a>
       </footer>
-      <p class="justify">
+      <p>
         Joy has a background in project management and health. She is passionate
         about mental health and general well–being, and believes everyone
         deserves a chance to showcase their skills and talents. Having worked
@@ -75,7 +75,7 @@ About Us {% endblock title %} {% block content %}
           Technical Assistant (TA)
         </a>
       </footer>
-      <p class="justify">
+      <p>
         Kaylah Rose is a Software Engineer, Data Privacy Engineer, and advocate
         for cybersecurity. As a coding bootcamp graduate herself, she aims to
         give back to the software engineering community as Techtonica's TA and
@@ -87,34 +87,6 @@ About Us {% endblock title %} {% block content %}
         generations of tech leaders.
       </p>
     </div>
-    <div class="column centered">
-      <img
-        src="{{ url_for('static', filename='img/maggie-fero-min.jpeg') }}"
-        alt="Margaret Fero, a white nonbinary person with their hair up, smiles at the camera in high-contrast lipstick"
-        class="resize-200px"
-      />
-      <footer>
-        <a
-          href="https://www.linkedin.com/in/margaretfero/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Margaret Fero (they/them), <br />Sponsorships Lead</a
-        >
-      </footer>
-      <p class="justify">
-        Margaret Fero is an interdisciplinary hacker with professional
-        experience in education, technical writing, software development, and
-        information security. They are excited to apply their background to
-        share Techtonica's mission with companies and individuals who share our
-        desire to economically empower people whose perspectives may otherwise
-        not be represented in key conversations about technology. In their spare
-        time, Margaret enjoys basking in the many useful services of local
-        libraries.
-      </p>
-    </div>
-  </div>
-
-  <div class="row row__center blue-background staff-team">
     <div class="column centered">
       <img
         src="{{ url_for('static', filename='img/Michelle-Glauser-min.jpg') }}"
@@ -129,7 +101,7 @@ About Us {% endblock title %} {% block content %}
           >Michelle Glauser (she/her), <br />Founder and CEO</a
         >
       </footer>
-      <p class="justify">
+      <p>
         The need for more diversity, inclusion, and equity in tech and the
         empowerment experienced becoming a software engineer inspired Michelle
         to organize support groups, meetups like PyLadies SF (the world's
@@ -142,7 +114,7 @@ About Us {% endblock title %} {% block content %}
   </div>
 
   <!--section for board members-->
-  <div class="row row__center board-members" id="boardmembers">
+  <div class="column centered board-members" id="boardmembers">
     <h1 class="blue-h1">Board Members</h1>
     <div class="row">
       <div class="column centered">
@@ -203,37 +175,31 @@ About Us {% endblock title %} {% block content %}
     <div class="row">
       <div class="column centered">
         <img
-          src="{{ url_for('static', filename='img/Krys-Flores-min.png') }}"
-          alt="Krys Flores"
+          src="{{ url_for('static', filename='img/Ashley-Luhrs-min.jpg') }}"
+          alt="Ashley Luhrs"
           class="resize-200px"
         />
         <footer>
           <a
-            href="https://www.linkedin.com/in/krystalflores/"
+            href="https://www.linkedin.com/in/ashleyluhrs/"
             target="_blank"
             rel="noopener noreferrer"
-            >Krys Flores (she/her)</a
+            >Ashley Luhrs (she/her)</a
           >
         </footer>
         <p>
-          Krys is a Staff Software Engineer at Carta, an ownership and equity
-          management platform. She is committed to increasing the number of
-          female and Latinx computer programmers. Krys does this by giving
-          technical talks and volunteering. In her talks, she seeks to give a
-          face to those who are not usually represented amongst conference
-          speakers. She believes the more you see, the more there will be. Krys
-          is also a huge advocate of equal opportunities in the workforce,
-          especially equal pay. In 2019 she was featured in the #NothingLess
-          Micro Documentary by Hired. In 2018, she gave the talk “Applying
-          Sheryl Sandberg’s Lean In principles in technology” as part of the
-          Visionary Voices program. Learn more at her website:
-          <a
-            href="https://krysflores.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            www.krysflores.com
-          </a>
+          Ashley has worked in the tech industry for over 10 years at a number
+          of startups, including most recently at Stitch Fix. She has worked
+          across multiple engineering domains as a full-stack, backend, API, and
+          an iOS engineer and eventually as an engineering manager for iOS teams
+          and backend infrastructure teams. Her software engineering career
+          started with attending a coding bootcamp with a similar mission to
+          combat the gender gap in tech, so she knows the success and importance
+          of a program like Techtonica. She is passionate about making the tech
+          industry accessible and inclusive to underrepresented, diverse
+          populations. She currently lives in San Francisco with her husband and
+          two cats, and she enjoys travel, wine tasting in Sonoma, tennis, and
+          meeting her yearly ~100 book reading goal.
         </p>
       </div>
 
@@ -342,13 +308,13 @@ About Us {% endblock title %} {% block content %}
       />
     </div>
     <div class="column blue-background">
-      <p class="justify">
+      <p>
         The Techtonica Squad includes software engineers, community volunteers
         and leaders, non-profit and startup founders, teachers, curriculum
         development specialists, venture capitalists, and social impact
         strategists.
       </p>
-      <p class="justify">
+      <p>
         Apply for
         <a href="{{ url_for('render_openings_page') }}">open roles</a> or to be
         <a
@@ -361,7 +327,7 @@ About Us {% endblock title %} {% block content %}
         or <a href="{{ url_for('render_mentor_page') }}">mentor</a>. Through the
         following form you may also request a speaker.
       </p>
-      <p class="justify">
+      <p>
         We receive a lot of messages and cannot always get to all of them. We do
         not usually respond to questions that are answered on the website, so
         make sure you've looked through the website thoroughly before reaching

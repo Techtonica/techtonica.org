@@ -89,10 +89,19 @@ button {
   }
 }
 
+.white-background {
+  background-color: white;
+  color: $main-blue;
+}
+
 .centered {
   text-align: center;
 }
 
-.justify {
+.centered p {
+  text-align: center;
+}
+
+p {
   text-align: justify;
 }
