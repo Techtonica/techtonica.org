@@ -69,6 +69,8 @@ button {
 }
 .blue-background a {
   color: white;
+  text-decoration: underline;
+  text-shadow: 1px 1px 1px #666;
 }
 .blue-background a:hover {
   color: #16c1f3;
@@ -83,7 +85,11 @@ button {
   text-align: center;
 }
 
-.justify {
+.centered p {
+  text-align: center;
+}
+
+p {
   text-align: justify;
 }
 
@@ -113,6 +119,17 @@ button {
   -moz-flex: 1;
   flex: 1;
   padding: 0 1rem;
+}
+
+.chart-container {
+  -webkit-display: flex;
+  -moz-display: flex;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: rgb(0, 147, 181);
+  color: white;
+  padding: 3rem;
 }
 
 .nav-bar {
@@ -195,7 +212,8 @@ button {
 }
 
 .mc-closeModal {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .main-content {
@@ -215,13 +233,15 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 75vh;
-  background: url(../img/three-participants-at-laptops-min.jpg) #0093b5 no-repeat top right fixed;
+  background: url(../img/three-participants-at-laptops-min.jpg) #0093b5
+    no-repeat top right fixed;
   background-size: cover;
 }
 
 .main-header__text {
   max-width: 50%;
-  padding: 1.5em;
+  padding: 0 1.5em;
+  text-shadow: 1px 1px 1px #666;
   background-color: rgba(0, 147, 181, 0.8);
   border-top-left-radius: 25px;
   border-top: 5px solid rgba(0, 115, 149, 0.8);
@@ -261,7 +281,8 @@ button {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/2024-H2-Launch-Celebration-min.png) #0093b5 no-repeat top fixed;
+  background: url(../img/2024-H2-Launch-Celebration-min.png) #0093b5 no-repeat
+    top fixed;
   background-size: cover;
 }
 
@@ -446,12 +467,13 @@ button {
 }
 
 .sponsor {
+  line-height: 36px;
+  padding: 25px;
   margin: 0;
 }
 
 #orange-button {
-  padding-block: 24px;
-  padding-inline: 16px;
+  text-decoration: none;
 }
 #orange-button:hover {
   color: white;
@@ -549,6 +571,9 @@ table.mentor td:first-of-type {
   }
   h1 {
     font-size: 3.5em;
+  }
+  p {
+    text-align: left;
   }
 }
 @media only screen and (max-width: 910px) {
@@ -658,7 +683,8 @@ table.mentor td:first-of-type {
   .main-header {
     display: block;
     position: relative;
-    background: url(../img/three-participants-at-laptops-min.jpg) #0093b5 no-repeat top center;
+    background: url(../img/three-participants-at-laptops-min.jpg) #0093b5
+      no-repeat top center;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
@@ -669,7 +695,7 @@ table.mentor td:first-of-type {
     bottom: 0;
     max-width: 100%;
     width: auto;
-    padding: 1em;
+    padding: 0 1em;
   }
   .main-content {
     margin-top: 5rem;
@@ -708,7 +734,8 @@ table.mentor td:first-of-type {
     position: relative;
     /*create the upper and lower lines as pseudo-elements of the middle line*/
   }
-  .lines:before, .lines:after {
+  .lines:before,
+  .lines:after {
     display: inline-block;
     width: 3rem;
     height: 0.4285714286rem;
@@ -740,7 +767,8 @@ table.mentor td:first-of-type {
     background: transparent;
     /*overlay the lines by setting both their top values to 0*/
   }
-  .lines-button.x.close .lines:before, .lines-button.x.close .lines:after {
+  .lines-button.x.close .lines:before,
+  .lines-button.x.close .lines:after {
     transform-origin: 50% 50%;
     top: 0;
     width: 2.5em;
@@ -976,8 +1004,20 @@ p.press-release-bold {
 }
 
 #fast-checkout button {
-  line-height: 36px;
-  font-size: 20px;
+  width: 100%;
+}
+
+#fast-checkout button {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  color: white;
+  display: inline-block;
+  background-color: #fc7625;
+  text-align: center;
+  font-size: 1.5em;
+  text-shadow: 1px 1px 1px #666;
 }
 #fast-checkout button:hover {
   background-color: #16c1f3;
@@ -1077,8 +1117,8 @@ legend {
   color: rgba(0, 115, 149, 0.8);
 }
 
-#info-wrapper > fieldset > input[type=text],
-#info-wrapper > fieldset > input[type=email],
+#info-wrapper > fieldset > input[type="text"],
+#info-wrapper > fieldset > input[type="email"],
 #info-wrapper > fieldset > textarea {
   min-width: 90%;
   margin: auto auto 1em auto;
@@ -1091,7 +1131,7 @@ legend {
   min-height: 6em;
 }
 
-input[type=radio] {
+input[type="radio"] {
   width: 50px;
 }
 
@@ -1139,7 +1179,14 @@ input[type=radio] {
   }
 }
 @media (max-width: 600px) {
+  .chart-container {
+    padding: 2rem 0;
+  }
+  #myChart {
+    padding: 0;
+  }
   .payment-form {
+    margin: 0px;
     padding: 30px;
     box-sizing: border-box;
   }

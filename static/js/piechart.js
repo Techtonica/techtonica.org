@@ -33,6 +33,9 @@ let myChart = new Chart(ctx, {
   options: {
     responsive: true,
     maintainAspectRatio: false,
+    layout: {
+      padding: 20,
+    },
     legend: {
       display: true,
       position: "bottom",
@@ -69,8 +72,8 @@ let myChart = new Chart(ctx, {
 // Function to resize the chart
 function resizeChart() {
   let canvas = document.getElementById("myChart");
-  let width = Math.min(2880, window.innerWidth);
-  let height = Math.min(1800, window.innerHeight);
+  let width = Math.min(2880, window.innerWidth * 0.8);
+  let height = Math.min(1800, window.innerHeight * 0.6);
 
   canvas.style.width = width + "px";
   canvas.style.height = height + "px";

@@ -62,16 +62,24 @@ environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 
 Set up virtual environment with Python 3.8.10 and Pip 23 using [pyenv](https://github.com/pyenv/pyenv) and [venv](https://docs.python.org/3/library/venv.html):
 
-```
-# Install pyenv using brew
+- Install pyenv using brew
+```bash
 brew install pyenv
-# Use pyenv to install version python 3.8.10
+```
+- Use pyenv to install version python 3.8.10
+```bash
 pyenv install 3.8.10
-# Set your python version to 3.8.10
+```
+- Set your python version to 3.8.10
+```bash
 pyenv local 3.8.10
-# Create a virtual environment using venv
+```
+- Create a virtual environment using venv
+```bash
 python -m venv venv
-# Activate your new virtual environment
+```
+- Activate your new virtual environment
+```bash
 source venv/bin/activate
 ```
 
@@ -97,10 +105,12 @@ This project uses various pre-commit hooks to ensure code quality and formatting
 consistency.
 
 1. [`Install pre-commit`](https://pre-commit.com/#install) globally.
-1. Install the project pre-commit hooks:
 
-```
+```bash
 pip install pre-commit
+```
+2. Install the project pre-commit hooks:
+```bash
 pre-commit install -f --install-hooks
 ```
 
@@ -119,23 +129,23 @@ touch config.ini
 And then copy and paste this code into your new file (note: For the actual values, please see [Updating Techtonica's Website](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit?tab=t.0)):
 
 ```sh
-   [default]
-   # Acceptable values are sandbox or production
-   environment = sandbox
-   dev_password = dev_password
+[default]
+# Acceptable values are sandbox or production
+environment = sandbox
+dev_password = dev_password
 
-   [production]
-   square_application_id = production_application_id
-   square_access_token = production_access_token
-   square_location_id = production_location_id
+[production]
+square_application_id = production_application_id
+square_access_token = production_access_token
+square_location_id = production_location_id
 
-   [sandbox]
-   square_application_id = <sandbox app id>
-   square_access_token = <sandbox access token>
-   square_location_id = <sandbox location id>
+[sandbox]
+square_application_id = <sandbox app id>
+square_access_token = <sandbox access token>
+square_location_id = <sandbox location id>
 
-   [slack]
-   slack_webhook =  <slack webhook>
+[slack]
+slack_webhook =  <slack webhook>
 ```
 
 ### Pre-Commit Hooks Guide
