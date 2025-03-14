@@ -1119,6 +1119,7 @@ input[type=radio] {
 
 #payment-page {
   padding: 1.5em;
+  background-color: #0093b5;
 }
 
 #payment-page > h1,
