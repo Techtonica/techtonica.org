@@ -90,7 +90,7 @@ packaging==24.2
     #   build
     #   deprecation
     #   gunicorn
-pendulum==3.0.0
+pendulum==3.0.0a1
     # via -r requirements.in
 pip-tools==7.4.1
     # via -r requirements.in

@@ -2,7 +2,7 @@ Flask
 Flask-SSLify
 Jinja2
 eventbrite
-pendulum
+pendulum=3.0.0a1
 pip-tools
 python-dotenv
 requests
