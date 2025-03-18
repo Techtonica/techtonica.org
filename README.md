@@ -137,7 +137,7 @@ pip install -r dev.txt
 touch .env
 ```
 
-And then copy and paste this code into your new file (note: For the actual values, please reach out to a member of Techtonica staff):
+And then copy and paste this code into your new file. There is a sample in .env.example for you to use as well. (note: For the actual values, please reach out to a member of Techtonica staff):
 
 ```sh
 # Your environment, either "local", "prod", "staging", or "testing"
