@@ -230,7 +230,7 @@ Techtonica Application {% endblock title %} {% block content %}
           required
           autocomplete="tel"
         /><br />
-        <div id="radio-wrapper">
+        <div id="radio-wrapper" role>
           <label for="veteran-status">Are you a U.S. veteran? </label><br />
           <input
             type="radio"
@@ -431,8 +431,12 @@ Techtonica Application {% endblock title %} {% block content %}
           pattern="^\d+\s[A-z]+\s[A-z]+(?:\s[A-z]+)*,\s[A-z]+\s[A-z]+,\s[A-Z]{2}\s\d{5}(?:-\d{4})?$"
           title="Please enter a valid U.S. mailing address."
         /><br />
-        <div id="radio-wrapper">
-          <label for="US-employment-status"
+        <div
+          id="radio-wrapper"
+          role="radiogroup"
+          aria-labelledby="US-employment-status-label"
+        >
+          <label for="US-employment-status" id="US-employment-status-label"
             >Can you currently legally be employed in the U.S.? </label
           ><br />
           <input
@@ -452,8 +456,14 @@ Techtonica Application {% endblock title %} {% block content %}
           />
           <label for="US-employment-status-no">No</label><br />
         </div>
-        <div id="radio-wrapper">
-          <label for="high-school-graduate-ged"
+        <div
+          id="radio-wrapper"
+          role="radiogroup"
+          aria-labelledby="high-school-graduate-ged-label"
+        >
+          <label
+            for="high-school-graduate-ged"
+            id="high-school-graduate-ged-label"
             >Have you graduated from high school/received your GED? </label
           ><br />
           <input
