@@ -728,6 +728,20 @@ table.mentor {
     height: 100%;
     border: 0; // Remove default border
   }
+
+  table.mentor {
+    td {
+      display: block; // Make table cells stack vertically
+      width: 100%; // Let cells take the full width
+      padding: 0.5rem; // Adjust padding for smaller screens
+      box-sizing: border-box; // Ensure consistent border sizing
+
+      &:first-of-type {
+        border-right: none; // Remove unnecessary border
+        vertical-align: top; // Retain alignment
+      }
+    }
+  }
 }
 
 @media (max-width: 411px) {

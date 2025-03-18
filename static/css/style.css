@@ -817,6 +817,16 @@ table.mentor td:first-of-type {
     height: 100%;
     border: 0;
   }
+  table.mentor td {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+  table.mentor td:first-of-type {
+    border-right: none;
+    vertical-align: top;
+  }
 }
 @media (max-width: 411px) {
   .large-white-text {
