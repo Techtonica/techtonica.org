@@ -39,7 +39,12 @@ Techtonica Application {% endblock title %} {% block content %}
               <span class="toggle-icon-minus">-</span>
             </span>
           </button>
-          <p class="learn-more-content" tabindex="0">
+          <p
+            class="learn-more-content"
+            tabindex="0"
+            role="region"
+            aria-labelledby="name-pronunciation"
+          >
             You can make a recording on
             <a href="www.name-coach.com">name-coach.com</a>, generate your link
             and share in the text field if preferred.
@@ -60,7 +65,12 @@ Techtonica Application {% endblock title %} {% block content %}
               <span class="toggle-icon-minus">-</span>
             </span>
           </button>
-          <p class="learn-more-content" tabindex="0">
+          <p
+            class="learn-more-content"
+            tabindex="0"
+            role="region"
+            aria-labelledby="email"
+          >
             Please use the same business-minded Gmail with your name (e.g.
             janedoe@gmail.com) that you used in the shorter form. This is the
             email we will contact you with for the duration of the application
@@ -85,7 +95,12 @@ Techtonica Application {% endblock title %} {% block content %}
               <span class="toggle-icon-minus">-</span>
             </span>
           </button>
-          <div class="learn-more-content" tabindex="0">
+          <div
+            class="learn-more-content"
+            tabindex="0"
+            role="region"
+            aria-labelledby="gender-identity"
+          >
             <ul>
               <li>
                 <strong>Agender or genderless: </strong>People who do not
@@ -264,7 +279,12 @@ Techtonica Application {% endblock title %} {% block content %}
                 <span class="toggle-icon-minus">-</span>
               </span>
             </button>
-            <p class="learn-more-content" tabindex="0">
+            <p
+              class="learn-more-content"
+              tabindex="0"
+              role="region"
+              aria-labelledby="disabled-status"
+            >
               You are considered to have a disability if you have a physical or
               mental impairment or medical condition that substantially limits a
               major life activity.
@@ -320,7 +340,12 @@ Techtonica Application {% endblock title %} {% block content %}
               <span class="toggle-icon-minus">-</span>
             </span>
           </button>
-          <div class="learn-more-content" tabindex="0">
+          <div
+            class="learn-more-content"
+            tabindex="0"
+            role="region"
+            aria-labelledby="race-ethnicity"
+          >
             <ul>
               <li>
                 <strong>African-American, Black, or African:</strong> A person
@@ -431,12 +456,8 @@ Techtonica Application {% endblock title %} {% block content %}
           pattern="^\d+\s[A-z]+\s[A-z]+(?:\s[A-z]+)*,\s[A-z]+\s[A-z]+,\s[A-Z]{2}\s\d{5}(?:-\d{4})?$"
           title="Please enter a valid U.S. mailing address."
         /><br />
-        <div
-          id="radio-wrapper"
-          role="radiogroup"
-          aria-labelledby="US-employment-status-label"
-        >
-          <label for="US-employment-status" id="US-employment-status-label"
+        <div id="radio-wrapper" role="radiogroup">
+          <label for="US-employment-status"
             >Can you currently legally be employed in the U.S.? </label
           ><br />
           <input
@@ -456,14 +477,8 @@ Techtonica Application {% endblock title %} {% block content %}
           />
           <label for="US-employment-status-no">No</label><br />
         </div>
-        <div
-          id="radio-wrapper"
-          role="radiogroup"
-          aria-labelledby="high-school-graduate-ged-label"
-        >
-          <label
-            for="high-school-graduate-ged"
-            id="high-school-graduate-ged-label"
+        <div id="radio-wrapper" role="radiogroup">
+          <label for="high-school-graduate-ged"
             >Have you graduated from high school/received your GED? </label
           ><br />
           <input
