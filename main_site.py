@@ -269,29 +269,29 @@ missing_credentials = []
 # Slack credentials
 try:
     SLACK_WEBHOOK = os.environ["SLACK_WEBHOOK"]
-except BaseException:
+except KeyError:
     missing_credentials.append("SLACK_WEBHOOK")
 
 # Square credentials
 try:
     CONFIG_TYPE = os.environ["ENVIRONMENT"]
-except BaseException:
+except KeyError:
     missing_credentials.append("ENVIRONMENT")
 try:
     PAYMENT_FORM_URL = os.environ["PAYMENT_FORM_URL"]
-except BaseException:
+except KeyError:
     missing_credentials.append("PAYMENT_FORM_URL")
 try:
     APPLICATION_ID = os.environ["SQUARE_APPLICATION_ID"]
-except BaseException:
+except KeyError:
     missing_credentials.append("SQUARE_APPLICATION_ID")
 try:
     LOCATION_ID = os.environ["SQUARE_LOCATION_ID"]
-except BaseException:
+except KeyError:
     missing_credentials.append("SQUARE_LOCATION_ID")
 try:
     ACCESS_TOKEN = os.environ["SQUARE_ACCESS_TOKEN"]
-except BaseException:
+except KeyError:
     missing_credentials.append("SQUARE_ACCESS_TOKEN")
 
 if len(missing_credentials) > 0:
