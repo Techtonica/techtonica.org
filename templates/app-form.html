@@ -1,253 +1,36 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
 Techtonica Application {% endblock title %} {% block content %}
-<div class="application-page">
-  <h1>Techtonica Application</h1>
-  <form action="#" method="POST" class="application-form" id="app-form-1">
-    <fieldset>
-      <legend>General Applicant Demographics</legend>
-      <label for="first-name">Full legal given or 'first' name: </label><br />
-      <input
-        type="text"
-        id="first-name"
-        name="first-name"
-        required
-        autocomplete="given-name"
-      /><br />
-      <label for="preferred-name"
-        >Preferred given or "first" name (if not the same as your legal "first"
-        or given name): <span>(Optional)</span></label
-      ><br />
-      <input type="text" id="preferred-name" name="preferred-name" /><br />
-      <label for="last-name">Full legal last/family name or surname: </label
-      ><br />
-      <input
-        type="text"
-        id="last-name"
-        name="last-name"
-        required
-        autocomplete="family-name"
-      /><br />
-      <label for="name-pronunciation"
-        >How to pronounce your full name: <span>(Optional)</span></label
-      >
-      <div class="learn-more-wrapper" aria-expanded="false">
-        <button class="learn-more-title" type="button">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <p class="learn-more-content" tabindex="0">
-          You can make a recording on
-          <a href="www.name-coach.com">name-coach.com</a>, generate your link
-          and share in the text field if preferred.
-        </p>
-      </div>
-      <br />
-      <input
-        type="text"
-        id="name-pronunciation"
-        name="name-pronunciation"
-      /><br />
-      <label for="email">Email: </label>
-      <div class="learn-more-wrapper" aria-expanded="false">
-        <button class="learn-more-title" type="button">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <p class="learn-more-content" tabindex="0">
-          Please use the same business-minded Gmail with your name (e.g.
-          janedoe@gmail.com) that you used in the shorter form. This is the
-          email we will contact you with for the duration of the application
-          process and program.
-        </p>
-      </div>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        autocomplete="email"
-      /><br />
-      <label for="gender-identity"
-        >With which gender identity do you most align?
-      </label>
-      <div class="learn-more-wrapper" aria-expanded="false">
-        <button class="learn-more-title" type="button">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <div class="learn-more-content" tabindex="0">
-          <ul>
-            <li>
-              <strong>Agender or genderless: </strong>People who do not identify
-              with any gender or feel an absence of gender. They may use terms
-              like genderblank, genderfree, genderless, gendervoid,
-              non-gendered, or null gender.
-            </li>
-            <li>
-              <strong>Genderfluid: </strong>People whose gender identity is not
-              fixed and may change over time, fluctuating between different
-              gender expressions or identities.
-            </li>
-            <li>
-              <strong>Cis Man or Cis Woman: </strong>A person whose gender
-              identity aligns with the male or female sex they were assigned at
-              birth.
-            </li>
-            <li>
-              <strong>Non-binary or Genderqueer: </strong>People who do not
-              identify exclusively as a man or a woman. They may feel like both,
-              somewhere in between, or outside these categories entirely.
-            </li>
-            <li>
-              <strong>Trans Man or Trans Woman: </strong>People whose gender
-              identity differs from the sex they are assigned at birth. e.g., a
-              transgender man is someone who was assigned female at birth but
-              whose gender identity is male, while a transgender woman is
-              someone who is assigned male at birth but whose gender identity is
-              female.
-            </li>
-            <li>
-              <strong>Other: </strong>A person whose gender identity does not
-              fit within the listed categories or who prefers a different term.
-            </li>
-          </ul>
-        </div>
-      </div>
-      <br />
-      <select
-        name="gender-identity"
-        id="gender-identity"
-        aria-label="Gender Identity selection"
-        required
-      >
-        <br />
-        <option value="none" selected disabled hidden>Select an Option</option>
-        <option value="Agender/Genderless">Agender/Genderless</option>
-        <option value="Genderfluid">Genderfluid</option>
-        <option value="Cis Man">Cis Man</option>
-        <option value="Non-binary/Genderqueer">Non-binary/Genderqueer</option>
-        <option value="Trans Man">Trans Man</option>
-        <option value="Trans Woman">Trans Woman</option>
-        <option value="Cis Woman">Cis Woman</option>
-        <option value="Other">Other</option>
-      </select>
-      <input
-        type="text"
-        id="custom-gender"
-        name="custom-gender"
-        placeholder="Please enter your gender identity"
-        aria-label="custom gender input"
-        disabled
-      /><br />
-      <label for="pronouns">What are your pronouns? </label><br />
-      <input
-        type="checkbox"
-        name="pronouns"
-        id="pronouns-she-her"
-        value="She/Her"
-        required
-      />
-      <label for="pronouns">She/Her</label><br />
-      <input
-        type="checkbox"
-        name="pronouns"
-        id="pronouns-he-him"
-        value="He/Him"
-        required
-      />
-      <label for="pronouns">He/Him</label><br />
-      <input
-        type="checkbox"
-        name="pronouns"
-        id="pronouns-they-them"
-        value="They/Them"
-        required
-      />
-      <label for="pronouns">They/Them</label><br />
-      <input
-        type="checkbox"
-        name="pronouns"
-        id="pronouns-ze-zir"
-        value="Ze/Zir"
-        required
-      />
-      <label for="pronouns">Ze/Zir</label><br />
-      <input
-        type="checkbox"
-        name="pronouns"
-        id="pronouns-other"
-        value="Other"
-        required
-      />
-      <label for="pronouns">Other</label><br />
-      <input
-        type="text"
-        id="custom-pronouns"
-        name="custom-pronouns"
-        placeholder="Please enter your preferred pronouns"
-        aria-label="custom pronouns selection"
-        disabled
-      /><br />
-      <label for="birth-date">What is your birth date? </label><br />
-      <input type="date" id="birth-date" name="birth-date" /><br />
-      <label for="age-group">Select your age group </label><br />
-      <select name="age-group" id="age-group" required>
-        <br />
-        <option value="none" selected disabled hidden>Select an Option</option>
-        <option value="18-24">18-24</option>
-        <option value="25-34">25-34</option>
-        <option value="35-44">35-44</option>
-        <option value="45-54">45-54</option>
-        <option value="55-64">55-64</option>
-        <option value="65+">65+</option></select
-      ><br />
-      <label for="phone-number">Cell phone number with area code </label><br />
-      <input
-        type="tel"
-        name="phone-number"
-        id="phone-number"
-        pattern="^\+?1?[-.\s]?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$"
-        placeholder="ex. 415-555-1234 or 1-415-555-1234"
-        title="Please enter a valid phone number in the format: 415-555-1234 or 1-415-555-1234."
-        minlength="10"
-        required
-        autocomplete="tel"
-      /><br />
-      <div id="radio-wrapper">
-        <label for="veteran-status">Are you a U.S. veteran? </label><br />
+<main class="main-content">
+  <section class="application-page">
+    <h1>Techtonica Application</h1>
+    <form action="#" method="POST" class="application-form" id="app-form-1">
+      <fieldset>
+        <legend>General Applicant Demographics</legend>
+        <label for="first-name">Full legal given or 'first' name: </label><br />
         <input
-          type="radio"
-          id="veteran-status-yes"
-          name="veteran-status"
-          value="Yes"
+          type="text"
+          id="first-name"
+          name="first-name"
           required
-        />
-        <label for="veteran-status-yes">Yes</label>
+          autocomplete="given-name"
+        /><br />
+        <label for="preferred-name"
+          >Preferred given or "first" name (if not the same as your legal
+          "first" or given name): <span>(Optional)</span></label
+        ><br />
+        <input type="text" id="preferred-name" name="preferred-name" /><br />
+        <label for="last-name">Full legal last/family name or surname: </label
+        ><br />
         <input
-          type="radio"
-          id="veteran-status-no"
-          name="veteran-status"
-          value="No"
+          type="text"
+          id="last-name"
+          name="last-name"
           required
-        />
-        <label for="veteran-status-no">No</label><br />
-      </div>
-      <div id="radio-wrapper">
-        <label for="disabled-status">
-          Do you have a disability? (You can find some examples here:
-          <a href="https://askjan.org/a-to-z.cfm" target="_blank"
-            >https://askjan.org/a-to-z.cfm</a
-          >)
-        </label>
+          autocomplete="family-name"
+        /><br />
+        <label for="name-pronunciation"
+          >How to pronounce your full name: <span>(Optional)</span></label
+        >
         <div class="learn-more-wrapper" aria-expanded="false">
           <button class="learn-more-title" type="button">
             Learn More
@@ -257,218 +40,450 @@ Techtonica Application {% endblock title %} {% block content %}
             </span>
           </button>
           <p class="learn-more-content" tabindex="0">
-            You are considered to have a disability if you have a physical or
-            mental impairment or medical condition that substantially limits a
-            major life activity.
+            You can make a recording on
+            <a href="www.name-coach.com">name-coach.com</a>, generate your link
+            and share in the text field if preferred.
           </p>
         </div>
         <br />
         <input
-          type="radio"
-          id="disabled-status-yes"
-          name="disabled-status"
-          value="Yes"
-          required
-        />
-        <label for="disabled-status-yes">Yes</label>
-        <input
-          type="radio"
-          id="disabled-status-no"
-          name="disabled-status"
-          value="No"
-          required
-        />
-        <label for="disabled-status-no">No</label><br />
-      </div>
-      <div id="radio-wrapper">
-        <label for="parental-status"
-          >Are you a parent or legal guardian of a minor? </label
-        ><br />
-        <input
-          type="radio"
-          id="parental-status-yes"
-          name="parental-status"
-          value="Yes"
-          required
-        />
-        <label for="parental-status-yes">Yes</label>
-        <input
-          type="radio"
-          id="parental-status-no"
-          name="parental-status"
-          value="No"
-          required
-        />
-        <label for="parental-status-no">No</label><br />
-      </div>
-      <label for="race-ethnicity"
-        >With which racial/ethnic groups do you most identify?
-      </label>
-      <div class="learn-more-wrapper" aria-expanded="false">
-        <button class="learn-more-title" type="button">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <div class="learn-more-content" tabindex="0">
-          <ul>
-            <li>
-              <strong>African-American, Black, or African:</strong> A person
-              having origins in Africa, including those across the African
-              diaspora, such as communities in the Americas, the Caribbean, and
-              other regions.
-            </li>
-            <li>
-              <strong>Central Asian:</strong> A person having origins in any of
-              the Central Asian countries, including Kazakhstan, Kyrgyzstan,
-              Tajikistan, Turkmenistan, Uzbekistan.
-            </li>
-            <li>
-              <strong>East Asian:</strong> A person having origins in any of the
-              East Asian countries, including China, Japan, Korea, Mongolia,
-              Tibet, and Taiwan.
-            </li>
-            <li>
-              <strong>Hispanic or Latinx:</strong> A person of having origins in
-              Cuba, Mexico, Puerto Rico, the Dominican Republic, or South or
-              Central America.
-            </li>
-            <li>
-              <strong>Middle Eastern or North African (MENA):</strong> A person
-              having origins in the Middle East or North Africa.
-            </li>
-            <li>
-              <strong
-                >Native American, Alaskan Native, First Nations or
-                Indigenous:</strong
-              >
-              A person having origins in any of the Indigenous peoples of North
-              and South America (including Central America).
-            </li>
-            <li>
-              <strong>Pacific Islander:</strong> A person having origins in any
-              of the Pacific Islands, including Polynesia, Micronesia, and
-              Melanesia.
-            </li>
-            <li>
-              <strong>South Asian:</strong> A person having origins in any of
-              the South Asian countries, including Bangladesh, Bhutan, India,
-              Nepal, Pakistan, Afghanistan, and Sri Lanka.
-            </li>
-            <li>
-              <strong>Southeast Asian:</strong> A person having origins in any
-              of the Southeast Asian countries, including Cambodia, Indonesia,
-              Laos, Malaysia, Myanmar, the Philippines, Singapore, Thailand, and
-              Vietnam.
-            </li>
-            <li><strong>White:</strong> A person having origins in Europe.</li>
-            <li>
-              <strong>Another race/ethnicity:</strong> A person who identifies
-              with a racial/ethnic group not listed above.
-            </li>
-          </ul>
+          type="text"
+          id="name-pronunciation"
+          name="name-pronunciation"
+        /><br />
+        <label for="email">Email: </label>
+        <div class="learn-more-wrapper" aria-expanded="false">
+          <button class="learn-more-title" type="button">
+            Learn More
+            <span class="toggle-icon">
+              <span class="toggle-icon-plus">+</span>
+              <span class="toggle-icon-minus">-</span>
+            </span>
+          </button>
+          <p class="learn-more-content" tabindex="0">
+            Please use the same business-minded Gmail with your name (e.g.
+            janedoe@gmail.com) that you used in the shorter form. This is the
+            email we will contact you with for the duration of the application
+            process and program.
+          </p>
         </div>
-      </div>
-      <select
-        name="race-ethnicity"
-        id="race-ethnicity"
-        aria-label="Racial Ethnicity Selection"
-        required
-      >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          autocomplete="email"
+        /><br />
+        <label for="gender-identity"
+          >With which gender identity do you most align?
+        </label>
+        <div class="learn-more-wrapper" aria-expanded="false">
+          <button class="learn-more-title" type="button">
+            Learn More
+            <span class="toggle-icon">
+              <span class="toggle-icon-plus">+</span>
+              <span class="toggle-icon-minus">-</span>
+            </span>
+          </button>
+          <div class="learn-more-content" tabindex="0">
+            <ul>
+              <li>
+                <strong>Agender or genderless: </strong>People who do not
+                identify with any gender or feel an absence of gender. They may
+                use terms like genderblank, genderfree, genderless, gendervoid,
+                non-gendered, or null gender.
+              </li>
+              <li>
+                <strong>Genderfluid: </strong>People whose gender identity is
+                not fixed and may change over time, fluctuating between
+                different gender expressions or identities.
+              </li>
+              <li>
+                <strong>Cis Man or Cis Woman: </strong>A person whose gender
+                identity aligns with the male or female sex they were assigned
+                at birth.
+              </li>
+              <li>
+                <strong>Non-binary or Genderqueer: </strong>People who do not
+                identify exclusively as a man or a woman. They may feel like
+                both, somewhere in between, or outside these categories
+                entirely.
+              </li>
+              <li>
+                <strong>Trans Man or Trans Woman: </strong>People whose gender
+                identity differs from the sex they are assigned at birth. e.g.,
+                a transgender man is someone who was assigned female at birth
+                but whose gender identity is male, while a transgender woman is
+                someone who is assigned male at birth but whose gender identity
+                is female.
+              </li>
+              <li>
+                <strong>Other: </strong>A person whose gender identity does not
+                fit within the listed categories or who prefers a different
+                term.
+              </li>
+            </ul>
+          </div>
+        </div>
         <br />
-        <option value="none" selected disabled hidden>Select an Option</option>
-        <option value="African-American/Black/African">
-          African-American/Black/African
-        </option>
-        <option value="Central Asian">Central Asian</option>
-        <option value="East Asian">East Asian</option>
-        <option value="Hispanic/Latinx">Hispanic/Latinx</option>
-        <option value="Middle Eastern or North African">
-          Middle Eastern or North African
-        </option>
-        <option value="Native American/Alaskan Native/First Nations/Indigenous">
-          Native American/Alaskan Native/First Nations/Indigenous
-        </option>
-        <option value="Pacific Islander">Pacific Islander</option>
-        <option value="South Asian">South Asian</option>
-        <option value="Southeast Asian">Southeast Asian</option>
-        <option value="White">White</option>
-        <option value="Other">Other</option>
-      </select>
-      <input
-        type="text"
-        id="custom-race-ethnicity"
-        name="custom-race-ethnicity"
-        aria-label="race-ethnicity input"
-        placeholder="Please enter your racial/ethnic group"
-        disabled
-      /><br />
-      <label for="address"
-        >What is the full mailing address of where you live? (Don't forget unit
-        number, if applicable, and city, state, and zip code.)</label
-      ><br />
-      <input
-        type="text"
-        name="address"
-        id="address"
-        required
-        pattern="^\d+\s[A-z]+\s[A-z]+(?:\s[A-z]+)*,\s[A-z]+\s[A-z]+,\s[A-Z]{2}\s\d{5}(?:-\d{4})?$"
-        title="Please enter a valid U.S. mailing address."
-      /><br />
-      <div id="radio-wrapper">
-        <label for="US-employment-status"
-          >Can you currently legally be employed in the U.S.? </label
+        <select
+          name="gender-identity"
+          id="gender-identity"
+          aria-label="Gender Identity selection"
+          required
+        >
+          <br />
+          <option value="none" selected disabled hidden>
+            Select an Option
+          </option>
+          <option value="Agender/Genderless">Agender/Genderless</option>
+          <option value="Genderfluid">Genderfluid</option>
+          <option value="Cis Man">Cis Man</option>
+          <option value="Non-binary/Genderqueer">Non-binary/Genderqueer</option>
+          <option value="Trans Man">Trans Man</option>
+          <option value="Trans Woman">Trans Woman</option>
+          <option value="Cis Woman">Cis Woman</option>
+          <option value="Other">Other</option>
+        </select>
+        <input
+          type="text"
+          id="custom-gender"
+          name="custom-gender"
+          placeholder="Please enter your gender identity"
+          aria-label="custom gender input"
+          disabled
+        /><br />
+        <label for="pronouns">What are your pronouns? </label><br />
+        <input
+          type="checkbox"
+          name="pronouns"
+          id="pronouns-she-her"
+          value="She/Her"
+          required
+        />
+        <label for="pronouns">She/Her</label><br />
+        <input
+          type="checkbox"
+          name="pronouns"
+          id="pronouns-he-him"
+          value="He/Him"
+          required
+        />
+        <label for="pronouns">He/Him</label><br />
+        <input
+          type="checkbox"
+          name="pronouns"
+          id="pronouns-they-them"
+          value="They/Them"
+          required
+        />
+        <label for="pronouns">They/Them</label><br />
+        <input
+          type="checkbox"
+          name="pronouns"
+          id="pronouns-ze-zir"
+          value="Ze/Zir"
+          required
+        />
+        <label for="pronouns">Ze/Zir</label><br />
+        <input
+          type="checkbox"
+          name="pronouns"
+          id="pronouns-other"
+          value="Other"
+          required
+        />
+        <label for="pronouns">Other</label><br />
+        <input
+          type="text"
+          id="custom-pronouns"
+          name="custom-pronouns"
+          placeholder="Please enter your preferred pronouns"
+          aria-label="custom pronouns selection"
+          disabled
+        /><br />
+        <label for="birth-date">What is your birth date? </label><br />
+        <input type="date" id="birth-date" name="birth-date" /><br />
+        <label for="age-group">Select your age group </label><br />
+        <select name="age-group" id="age-group" required>
+          <br />
+          <option value="none" selected disabled hidden>
+            Select an Option
+          </option>
+          <option value="18-24">18-24</option>
+          <option value="25-34">25-34</option>
+          <option value="35-44">35-44</option>
+          <option value="45-54">45-54</option>
+          <option value="55-64">55-64</option>
+          <option value="65+">65+</option></select
+        ><br />
+        <label for="phone-number">Cell phone number with area code </label
         ><br />
         <input
-          type="radio"
-          id="US-employment-status-yes"
-          name="US-employment-status"
-          value="Yes"
+          type="tel"
+          name="phone-number"
+          id="phone-number"
+          pattern="^\+?1?[-.\s]?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$"
+          placeholder="ex. 415-555-1234 or 1-415-555-1234"
+          title="Please enter a valid phone number in the format: 415-555-1234 or 1-415-555-1234."
+          minlength="10"
           required
-        />
-        <label for="US-employment-status-yes">Yes</label>
+          autocomplete="tel"
+        /><br />
+        <div id="radio-wrapper">
+          <label for="veteran-status">Are you a U.S. veteran? </label><br />
+          <input
+            type="radio"
+            id="veteran-status-yes"
+            name="veteran-status"
+            value="Yes"
+            required
+          />
+          <label for="veteran-status-yes">Yes</label>
+          <input
+            type="radio"
+            id="veteran-status-no"
+            name="veteran-status"
+            value="No"
+            required
+          />
+          <label for="veteran-status-no">No</label><br />
+        </div>
+        <div id="radio-wrapper">
+          <label for="disabled-status">
+            Do you have a disability? (You can find some examples here:
+            <a href="https://askjan.org/a-to-z.cfm" target="_blank"
+              >https://askjan.org/a-to-z.cfm</a
+            >)
+          </label>
+          <div class="learn-more-wrapper" aria-expanded="false">
+            <button class="learn-more-title" type="button">
+              Learn More
+              <span class="toggle-icon">
+                <span class="toggle-icon-plus">+</span>
+                <span class="toggle-icon-minus">-</span>
+              </span>
+            </button>
+            <p class="learn-more-content" tabindex="0">
+              You are considered to have a disability if you have a physical or
+              mental impairment or medical condition that substantially limits a
+              major life activity.
+            </p>
+          </div>
+          <br />
+          <input
+            type="radio"
+            id="disabled-status-yes"
+            name="disabled-status"
+            value="Yes"
+            required
+          />
+          <label for="disabled-status-yes">Yes</label>
+          <input
+            type="radio"
+            id="disabled-status-no"
+            name="disabled-status"
+            value="No"
+            required
+          />
+          <label for="disabled-status-no">No</label><br />
+        </div>
+        <div id="radio-wrapper">
+          <label for="parental-status"
+            >Are you a parent or legal guardian of a minor? </label
+          ><br />
+          <input
+            type="radio"
+            id="parental-status-yes"
+            name="parental-status"
+            value="Yes"
+            required
+          />
+          <label for="parental-status-yes">Yes</label>
+          <input
+            type="radio"
+            id="parental-status-no"
+            name="parental-status"
+            value="No"
+            required
+          />
+          <label for="parental-status-no">No</label><br />
+        </div>
+        <label for="race-ethnicity"
+          >With which racial/ethnic groups do you most identify?
+        </label>
+        <div class="learn-more-wrapper" aria-expanded="false">
+          <button class="learn-more-title" type="button">
+            Learn More
+            <span class="toggle-icon">
+              <span class="toggle-icon-plus">+</span>
+              <span class="toggle-icon-minus">-</span>
+            </span>
+          </button>
+          <div class="learn-more-content" tabindex="0">
+            <ul>
+              <li>
+                <strong>African-American, Black, or African:</strong> A person
+                having origins in Africa, including those across the African
+                diaspora, such as communities in the Americas, the Caribbean,
+                and other regions.
+              </li>
+              <li>
+                <strong>Central Asian:</strong> A person having origins in any
+                of the Central Asian countries, including Kazakhstan,
+                Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan.
+              </li>
+              <li>
+                <strong>East Asian:</strong> A person having origins in any of
+                the East Asian countries, including China, Japan, Korea,
+                Mongolia, Tibet, and Taiwan.
+              </li>
+              <li>
+                <strong>Hispanic or Latinx:</strong> A person of having origins
+                in Cuba, Mexico, Puerto Rico, the Dominican Republic, or South
+                or Central America.
+              </li>
+              <li>
+                <strong>Middle Eastern or North African (MENA):</strong> A
+                person having origins in the Middle East or North Africa.
+              </li>
+              <li>
+                <strong
+                  >Native American, Alaskan Native, First Nations or
+                  Indigenous:</strong
+                >
+                A person having origins in any of the Indigenous peoples of
+                North and South America (including Central America).
+              </li>
+              <li>
+                <strong>Pacific Islander:</strong> A person having origins in
+                any of the Pacific Islands, including Polynesia, Micronesia, and
+                Melanesia.
+              </li>
+              <li>
+                <strong>South Asian:</strong> A person having origins in any of
+                the South Asian countries, including Bangladesh, Bhutan, India,
+                Nepal, Pakistan, Afghanistan, and Sri Lanka.
+              </li>
+              <li>
+                <strong>Southeast Asian:</strong> A person having origins in any
+                of the Southeast Asian countries, including Cambodia, Indonesia,
+                Laos, Malaysia, Myanmar, the Philippines, Singapore, Thailand,
+                and Vietnam.
+              </li>
+              <li>
+                <strong>White:</strong> A person having origins in Europe.
+              </li>
+              <li>
+                <strong>Another race/ethnicity:</strong> A person who identifies
+                with a racial/ethnic group not listed above.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <select
+          name="race-ethnicity"
+          id="race-ethnicity"
+          aria-label="Racial Ethnicity Selection"
+          required
+        >
+          <br />
+          <option value="none" selected disabled hidden>
+            Select an Option
+          </option>
+          <option value="African-American/Black/African">
+            African-American/Black/African
+          </option>
+          <option value="Central Asian">Central Asian</option>
+          <option value="East Asian">East Asian</option>
+          <option value="Hispanic/Latinx">Hispanic/Latinx</option>
+          <option value="Middle Eastern or North African">
+            Middle Eastern or North African
+          </option>
+          <option
+            value="Native American/Alaskan Native/First Nations/Indigenous"
+          >
+            Native American/Alaskan Native/First Nations/Indigenous
+          </option>
+          <option value="Pacific Islander">Pacific Islander</option>
+          <option value="South Asian">South Asian</option>
+          <option value="Southeast Asian">Southeast Asian</option>
+          <option value="White">White</option>
+          <option value="Other">Other</option>
+        </select>
         <input
-          type="radio"
-          id="US-employment-status-no"
-          name="US-employment-status"
-          value="No"
-          required
-        />
-        <label for="US-employment-status-no">No</label><br />
-      </div>
-      <div id="radio-wrapper">
-        <label for="high-school-graduate-ged"
-          >Have you graduated from high school/received your GED? </label
+          type="text"
+          id="custom-race-ethnicity"
+          name="custom-race-ethnicity"
+          aria-label="race-ethnicity input"
+          placeholder="Please enter your racial/ethnic group"
+          disabled
+        /><br />
+        <label for="address"
+          >What is the full mailing address of where you live? (Don't forget
+          unit number, if applicable, and city, state, and zip code.)</label
         ><br />
         <input
-          type="radio"
-          id="high-school-graduate-ged-yes"
-          name="high-school-graduate-ged"
-          value="Yes"
+          type="text"
+          name="address"
+          id="address"
           required
-        />
-        <label for="high-school-graduate-ged-yes">Yes</label>
-        <input
-          type="radio"
-          id="high-school-graduate-ged-no"
-          name="high-school-graduate-ged"
-          value="No"
-          required
-        />
-        <label for="high-school-graduate-ged-no">No</label><br />
-      </div>
-      <button
-        type="button"
-        class="app-form-1"
-        onclick="window.location.href='/app-household'"
-      >
-        Continue
-      </button>
-    </fieldset>
-  </form>
-</div>
+          pattern="^\d+\s[A-z]+\s[A-z]+(?:\s[A-z]+)*,\s[A-z]+\s[A-z]+,\s[A-Z]{2}\s\d{5}(?:-\d{4})?$"
+          title="Please enter a valid U.S. mailing address."
+        /><br />
+        <div id="radio-wrapper">
+          <label for="US-employment-status"
+            >Can you currently legally be employed in the U.S.? </label
+          ><br />
+          <input
+            type="radio"
+            id="US-employment-status-yes"
+            name="US-employment-status"
+            value="Yes"
+            required
+          />
+          <label for="US-employment-status-yes">Yes</label>
+          <input
+            type="radio"
+            id="US-employment-status-no"
+            name="US-employment-status"
+            value="No"
+            required
+          />
+          <label for="US-employment-status-no">No</label><br />
+        </div>
+        <div id="radio-wrapper">
+          <label for="high-school-graduate-ged"
+            >Have you graduated from high school/received your GED? </label
+          ><br />
+          <input
+            type="radio"
+            id="high-school-graduate-ged-yes"
+            name="high-school-graduate-ged"
+            value="Yes"
+            required
+          />
+          <label for="high-school-graduate-ged-yes">Yes</label>
+          <input
+            type="radio"
+            id="high-school-graduate-ged-no"
+            name="high-school-graduate-ged"
+            value="No"
+            required
+          />
+          <label for="high-school-graduate-ged-no">No</label><br />
+        </div>
+        <button
+          type="button"
+          class="app-form-1"
+          onclick="window.location.href='/app-household'"
+        >
+          Continue
+        </button>
+      </fieldset>
+    </form>
+  </section>
+</main>
 <style>
   /* .application-form is .payment-form in job-form.html */
   form {
