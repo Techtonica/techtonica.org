@@ -42,7 +42,6 @@ Techtonica Application {% endblock title %} {% block content %}
           <p
             class="learn-more-content"
             tabindex="0"
-            role="region"
             aria-labelledby="name-pronunciation"
           >
             You can make a recording on
@@ -65,12 +64,7 @@ Techtonica Application {% endblock title %} {% block content %}
               <span class="toggle-icon-minus">-</span>
             </span>
           </button>
-          <p
-            class="learn-more-content"
-            tabindex="0"
-            role="region"
-            aria-labelledby="email"
-          >
+          <p class="learn-more-content" tabindex="0" aria-labelledby="email">
             Please use the same business-minded Gmail with your name (e.g.
             janedoe@gmail.com) that you used in the shorter form. This is the
             email we will contact you with for the duration of the application
@@ -98,7 +92,6 @@ Techtonica Application {% endblock title %} {% block content %}
           <div
             class="learn-more-content"
             tabindex="0"
-            role="region"
             aria-labelledby="gender-identity"
           >
             <ul>
@@ -245,7 +238,7 @@ Techtonica Application {% endblock title %} {% block content %}
           required
           autocomplete="tel"
         /><br />
-        <div id="radio-wrapper" role>
+        <div id="radio-wrapper" role="radiogroup">
           <label for="veteran-status">Are you a U.S. veteran? </label><br />
           <input
             type="radio"
@@ -264,7 +257,7 @@ Techtonica Application {% endblock title %} {% block content %}
           />
           <label for="veteran-status-no">No</label><br />
         </div>
-        <div id="radio-wrapper">
+        <div id="radio-wrapper" role="radiogroup">
           <label for="disabled-status">
             Do you have a disability? (You can find some examples here:
             <a href="https://askjan.org/a-to-z.cfm" target="_blank"
@@ -282,7 +275,6 @@ Techtonica Application {% endblock title %} {% block content %}
             <p
               class="learn-more-content"
               tabindex="0"
-              role="region"
               aria-labelledby="disabled-status"
             >
               You are considered to have a disability if you have a physical or
@@ -308,7 +300,7 @@ Techtonica Application {% endblock title %} {% block content %}
           />
           <label for="disabled-status-no">No</label><br />
         </div>
-        <div id="radio-wrapper">
+        <div id="radio-wrapper" role="radiogroup">
           <label for="parental-status"
             >Are you a parent or legal guardian of a minor? </label
           ><br />
@@ -343,7 +335,6 @@ Techtonica Application {% endblock title %} {% block content %}
           <div
             class="learn-more-content"
             tabindex="0"
-            role="region"
             aria-labelledby="race-ethnicity"
           >
             <ul>
