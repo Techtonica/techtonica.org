@@ -1,160 +1,158 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
 Techtonica Application {% endblock title %} {% block content %}
-<main class="main-content">
-  <section class="application-page">
-    <h1>Techtonica Application</h1>
-    <form action="#" method="POST" class="application-form" id="app-form-3">
-      <fieldset>
-        <legend>Questionnaire</legend>
-        <p>
-          Please mark how much you agree with each statement when thinking about
-          you personally.
-        </p>
-        <br />
-        <label for="comfortable-presenting">
-          I am comfortable presenting a project or short talk to a group. </label
-        ><br />
-        <select
-          name="comfortable-presenting"
-          id="comfortable-presenting"
-          required
+<section class="application-page">
+  <h1>Techtonica Application</h1>
+  <form action="#" method="POST" class="application-form" id="app-form-3">
+    <fieldset>
+      <legend>Questionnaire</legend>
+      <p>
+        Please mark how much you agree with each statement when thinking about
+        you personally.
+      </p>
+      <br />
+      <label for="comfortable-presenting">
+        I am comfortable presenting a project or short talk to a group. </label
+      ><br />
+      <select
+        name="comfortable-presenting"
+        id="comfortable-presenting"
+        required
+      >
+        <option value="" disabled selected>Select an option</option>
+        <option value="1-disagree">1 - Disagree</option>
+        <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
+        <option value="3-somewhat-agree">3 - Somewhat Agree</option>
+        <option value="4-agree">4 - Agree</option></select
+      ><br />
+      <label for="comfortable-collaborating">
+        I am comfortable collaborating with others on a team. </label
+      ><br />
+      <select
+        name="comfortable-collaborating"
+        id="comfortable-collaborating"
+        required
+      >
+        <option value="" disabled selected>Select an option</option>
+        <option value="1-disagree">1 - Disagree</option>
+        <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
+        <option value="3-somewhat-agree">3 - Somewhat Agree</option>
+        <option value="4-agree">4 - Agree</option></select
+      ><br />
+      <label for="comfortable-asking-help">
+        I am comfortable asking others for help when I'm stuck. </label
+      ><br />
+      <select
+        name="comfortable-asking-help"
+        id="comfortable-asking-help"
+        required
+      >
+        <option value="" disabled selected>Select an option</option>
+        <option value="1-disagree">1 - Disagree</option>
+        <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
+        <option value="3-somewhat-agree">3 - Somewhat Agree</option>
+        <option value="4-agree">4 - Agree</option></select
+      ><br />
+      <label for="does-not-hide-struggles">
+        I do not hide that I'm struggling from friends, colleagues, or managers. </label
+      ><br />
+      <select
+        name="does-not-hide-struggles"
+        id="does-not-hide-struggles"
+        required
+      >
+        <option value="" disabled selected>Select an option</option>
+        <option value="1-disagree">1 - Disagree</option>
+        <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
+        <option value="3-somewhat-agree">3 - Somewhat Agree</option>
+        <option value="4-agree">4 - Agree</option></select
+      ><br />
+      <label for="care-about-dei"
+        >I care greatly about diversity, equity, and inclusion. </label
+      ><br />
+      <select name="care-about-dei" id="care-about-dei" required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="1-disagree">1 - Disagree</option>
+        <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
+        <option value="3-somewhat-agree">3 - Somewhat Agree</option>
+        <option value="4-agree">4 - Agree</option></select
+      ><br />
+      <label for="learn-quickly">I learn brand-new concepts quickly. </label
+      ><br />
+      <select name="learn-quickly" id="learn-quickly" required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="1-disagree">1 - Disagree</option>
+        <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
+        <option value="3-somewhat-agree">3 - Somewhat Agree</option>
+        <option value="4-agree">4 - Agree</option></select
+      ><br />
+      <label for="help-others">
+        When working with others, I'm the person who likes to help everyone get
+        up to speed. </label
+      ><br />
+      <select name="help-others" id="help-others" required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="1-disagree">1 - Disagree</option>
+        <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
+        <option value="3-somewhat-agree">3 - Somewhat Agree</option>
+        <option value="4-agree">4 - Agree</option></select
+      ><br />
+      <label for="interested-in-mentoring">
+        I would be interested in mentoring future participants after I graduate
+        from Techtonica. </label
+      ><br />
+      <select
+        name="interested-in-mentoring"
+        id="interested-in-mentoring"
+        required
+      >
+        <option value="" disabled selected>Select an option</option>
+        <option value="1-disagree">1 - Disagree</option>
+        <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
+        <option value="3-somewhat-agree">3 - Somewhat Agree</option>
+        <option value="4-agree">4 - Agree</option></select
+      ><br />
+      <label for="involved-post-graduation">
+        I would be actively involved with Techtonica's graduates group after
+        completion of the program. </label
+      ><br />
+      <select
+        name="involved-post-graduation"
+        id="involved-post-graduation"
+        required
+      >
+        <option value="" disabled selected>Select an option</option>
+        <option value="1-disagree">1 - Disagree</option>
+        <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
+        <option value="3-somewhat-agree">3 - Somewhat Agree</option>
+        <option value="4-agree">4 - Agree</option></select
+      ><br />
+      <div class="form-button">
+        <button
+          type="button"
+          class="previous-btn"
+          onclick="window.location.href='/app-household'"
         >
-          <option value="" disabled selected>Select an option</option>
-          <option value="1-disagree">1 - Disagree</option>
-          <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
-          <option value="3-somewhat-agree">3 - Somewhat Agree</option>
-          <option value="4-agree">4 - Agree</option></select
-        ><br />
-        <label for="comfortable-collaborating">
-          I am comfortable collaborating with others on a team. </label
-        ><br />
-        <select
-          name="comfortable-collaborating"
-          id="comfortable-collaborating"
-          required
+          Previous
+        </button>
+        <button
+          type="button"
+          class="continue-to-app-btn"
+          onclick="window.location.href='/app-long-text'"
         >
-          <option value="" disabled selected>Select an option</option>
-          <option value="1-disagree">1 - Disagree</option>
-          <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
-          <option value="3-somewhat-agree">3 - Somewhat Agree</option>
-          <option value="4-agree">4 - Agree</option></select
-        ><br />
-        <label for="comfortable-asking-help">
-          I am comfortable asking others for help when I'm stuck. </label
-        ><br />
-        <select
-          name="comfortable-asking-help"
-          id="comfortable-asking-help"
-          required
+          Next
+        </button>
+        <button
+          type="button"
+          class="save-btn"
+          onclick="window.location.href='/'"
         >
-          <option value="" disabled selected>Select an option</option>
-          <option value="1-disagree">1 - Disagree</option>
-          <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
-          <option value="3-somewhat-agree">3 - Somewhat Agree</option>
-          <option value="4-agree">4 - Agree</option></select
-        ><br />
-        <label for="does-not-hide-struggles">
-          I do not hide that I'm struggling from friends, colleagues, or
-          managers. </label
-        ><br />
-        <select
-          name="does-not-hide-struggles"
-          id="does-not-hide-struggles"
-          required
-        >
-          <option value="" disabled selected>Select an option</option>
-          <option value="1-disagree">1 - Disagree</option>
-          <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
-          <option value="3-somewhat-agree">3 - Somewhat Agree</option>
-          <option value="4-agree">4 - Agree</option></select
-        ><br />
-        <label for="care-about-dei"
-          >I care greatly about diversity, equity, and inclusion. </label
-        ><br />
-        <select name="care-about-dei" id="care-about-dei" required>
-          <option value="" disabled selected>Select an option</option>
-          <option value="1-disagree">1 - Disagree</option>
-          <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
-          <option value="3-somewhat-agree">3 - Somewhat Agree</option>
-          <option value="4-agree">4 - Agree</option></select
-        ><br />
-        <label for="learn-quickly">I learn brand-new concepts quickly. </label
-        ><br />
-        <select name="learn-quickly" id="learn-quickly" required>
-          <option value="" disabled selected>Select an option</option>
-          <option value="1-disagree">1 - Disagree</option>
-          <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
-          <option value="3-somewhat-agree">3 - Somewhat Agree</option>
-          <option value="4-agree">4 - Agree</option></select
-        ><br />
-        <label for="help-others">
-          When working with others, I'm the person who likes to help everyone
-          get up to speed. </label
-        ><br />
-        <select name="help-others" id="help-others" required>
-          <option value="" disabled selected>Select an option</option>
-          <option value="1-disagree">1 - Disagree</option>
-          <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
-          <option value="3-somewhat-agree">3 - Somewhat Agree</option>
-          <option value="4-agree">4 - Agree</option></select
-        ><br />
-        <label for="interested-in-mentoring">
-          I would be interested in mentoring future participants after I
-          graduate from Techtonica. </label
-        ><br />
-        <select
-          name="interested-in-mentoring"
-          id="interested-in-mentoring"
-          required
-        >
-          <option value="" disabled selected>Select an option</option>
-          <option value="1-disagree">1 - Disagree</option>
-          <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
-          <option value="3-somewhat-agree">3 - Somewhat Agree</option>
-          <option value="4-agree">4 - Agree</option></select
-        ><br />
-        <label for="involved-post-graduation">
-          I would be actively involved with Techtonica's graduates group after
-          completion of the program. </label
-        ><br />
-        <select
-          name="involved-post-graduation"
-          id="involved-post-graduation"
-          required
-        >
-          <option value="" disabled selected>Select an option</option>
-          <option value="1-disagree">1 - Disagree</option>
-          <option value="2-somewhat-disagree">2 - Somewhat Disagree</option>
-          <option value="3-somewhat-agree">3 - Somewhat Agree</option>
-          <option value="4-agree">4 - Agree</option></select
-        ><br />
-        <div class="form-button">
-          <button
-            type="button"
-            class="previous-btn"
-            onclick="window.location.href='/app-household'"
-          >
-            Previous
-          </button>
-          <button
-            type="button"
-            class="continue-to-app-btn"
-            onclick="window.location.href='/app-long-text'"
-          >
-            Next
-          </button>
-          <button
-            type="button"
-            class="save-btn"
-            onclick="window.location.href='/'"
-          >
-            Save
-          </button>
-        </div>
-      </fieldset>
-    </form>
-  </section>
-</main>
+          Save
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</section>
+
 <style>
   form {
     display: flex;
