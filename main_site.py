@@ -302,7 +302,7 @@ if len(missing_credentials) > 0:
         )
     )
 else:
-    if CONFIG_TYPE == "prod":
+    if CONFIG_TYPE.lower() == "prod":
         SQUARE_ENVIRONMENT = "production"
     else:
         SQUARE_ENVIRONMENT = "sandbox"
