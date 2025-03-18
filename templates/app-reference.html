@@ -1,192 +1,192 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
 Techtonica Application {% endblock title %} {% block content %}
+<main class="main-content">
+  <section class="application-page">
+    <h1>Techtonica Application</h1>
+    <form action="#" method="POST" class="application-form" id="app-form-5">
+      <fieldset>
+        <legend>Applicant References</legend>
+        <label>
+          Reference #1 - Please share the full name, email address, and
+          relationship (former manager, former coworker, etc.) of someone who
+          has worked closely with you and can speak to your capabilities in a
+          work setting.
+        </label>
+        <div class="learn-more-wrapper" aria-expanded="false">
+          <button class="learn-more-title" type="button">
+            Learn More
+            <span class="toggle-icon">
+              <span class="toggle-icon-plus">+</span>
+              <span class="toggle-icon-minus">-</span>
+            </span>
+          </button>
+          <p class="learn-more-content" tabindex="0">
+            This may not be a relative, significant other, or friend. It must be
+            someone who can speak to your work quality in an unbiased manner.
+          </p>
+        </div>
+        <br />
+        <label for="reference-1-fname">First Name: </label><br />
+        <input
+          type="text"
+          name="reference-1-fname"
+          id="reference-1-fname"
+          required
+        /><br />
+        <label for="reference-1-lname">Last Name: </label><br />
+        <input
+          type="text"
+          name="reference-1-lname"
+          id="reference-1-lname"
+          required
+        /><br />
+        <label for="reference-1-email">Email: </label><br />
+        <input
+          type="email"
+          name="reference-1-email"
+          id="reference-1-email"
+          required
+        /><br />
+        <label for="reference-1-relationship">Relationship: </label><br />
+        <input
+          type="text"
+          name="reference-1-relationship"
+          id="reference-1-relationship"
+          required
+        /><br />
+        <label>
+          Reference #2 - Please share the full name, email address, and
+          relationship (former manager, former coworker, etc.) of someone who
+          has worked closely with you and can speak to your capabilities in a
+          work setting.
+        </label>
+        <div class="learn-more-wrapper" aria-expanded="false">
+          <button class="learn-more-title" type="button">
+            Learn More
+            <span class="toggle-icon">
+              <span class="toggle-icon-plus">+</span>
+              <span class="toggle-icon-minus">-</span>
+            </span>
+          </button>
+          <p class="learn-more-content" tabindex="0">
+            This may not be a relative, significant other, or friend. It must be
+            someone who can speak to your work quality in an unbiased manner.
+          </p>
+        </div>
+        <br />
+        <label for="reference-2-fname">First Name: </label><br />
+        <input
+          type="text"
+          name="reference-2-fname"
+          id="reference-2-fname"
+          required
+        /><br />
+        <label for="reference-2-lname">Last Name: </label><br />
+        <input
+          type="text"
+          name="reference-2-lname"
+          id="reference-2-lname"
+          required
+        /><br />
+        <label for="reference-2-email">Email: </label><br />
+        <input
+          type="email"
+          name="reference-2-email"
+          id="reference-2-email"
+          required
+        /><br />
+        <label for="reference-2-relationship">Relationship: </label><br />
+        <input
+          type="text"
+          name="reference-2-relationship"
+          id="reference-2-relationship"
+          required
+        /><br />
 
-<div class="application-page">
-  <h1>Techtonica Application</h1>
-  <form action="#" method="POST" class="application-form" id="app-form-5">
-    <fieldset>
-      <legend>Applicant References</legend>
-      <label>
-        Reference #1 - Please share the full name, email address, and
-        relationship (former manager, former coworker, etc.) of someone who has
-        worked closely with you and can speak to your capabilities in a work
-        setting.
-      </label>
-      <div class="learn-more-wrapper" aria-expanded="false">
-        <button class="learn-more-title" type="button">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <p class="learn-more-content" tabindex="0">
-          This may not be a relative, significant other, or friend. It must be
-          someone who can speak to your work quality in an unbiased manner.
-        </p>
-      </div>
-      <br />
-      <label for="reference-1-fname">First Name: </label><br />
-      <input
-        type="text"
-        name="reference-1-fname"
-        id="reference-1-fname"
-        required
-      /><br />
-      <label for="reference-1-lname">Last Name: </label><br />
-      <input
-        type="text"
-        name="reference-1-lname"
-        id="reference-1-lname"
-        required
-      /><br />
-      <label for="reference-1-email">Email: </label><br />
-      <input
-        type="email"
-        name="reference-1-email"
-        id="reference-1-email"
-        required
-      /><br />
-      <label for="reference-1-relationship">Relationship: </label><br />
-      <input
-        type="text"
-        name="reference-1-relationship"
-        id="reference-1-relationship"
-        required
-      /><br />
-      <label>
-        Reference #2 - Please share the full name, email address, and
-        relationship (former manager, former coworker, etc.) of someone who has
-        worked closely with you and can speak to your capabilities in a work
-        setting.
-      </label>
-      <div class="learn-more-wrapper" aria-expanded="false">
-        <button class="learn-more-title" type="button">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <p class="learn-more-content" tabindex="0">
-          This may not be a relative, significant other, or friend. It must be
-          someone who can speak to your work quality in an unbiased manner.
-        </p>
-      </div>
-      <br />
-      <label for="reference-2-fname">First Name: </label><br />
-      <input
-        type="text"
-        name="reference-2-fname"
-        id="reference-2-fname"
-        required
-      /><br />
-      <label for="reference-2-lname">Last Name: </label><br />
-      <input
-        type="text"
-        name="reference-2-lname"
-        id="reference-2-lname"
-        required
-      /><br />
-      <label for="reference-2-email">Email: </label><br />
-      <input
-        type="email"
-        name="reference-2-email"
-        id="reference-2-email"
-        required
-      /><br />
-      <label for="reference-2-relationship">Relationship: </label><br />
-      <input
-        type="text"
-        name="reference-2-relationship"
-        id="reference-2-relationship"
-        required
-      /><br />
+        <label>
+          Please share your emergency contact's name and contact info (phone and
+          email).
+        </label>
+        <br />
+        <label for="emergency-contact-fname">First Name: </label><br />
+        <input
+          type="text"
+          name="emergency-contact-fname"
+          id="emergency-contact-fname"
+          required
+        /><br />
+        <label for="emergency-contact-lname">Last Name: </label><br />
+        <input
+          type="text"
+          name="emergency-contact-lname"
+          id="emergency-contact-lname"
+          required
+        /><br />
+        <label for="emergency-contact-email">Email: </label><br />
+        <input
+          type="email"
+          name="emergency-contact-email"
+          id="emergency-contact-email"
+          required
+        /><br />
+        <label for="emergency-contact-phone">Phone Number: </label><br />
+        <input
+          type="tel"
+          name="emergency-contact-phone"
+          id="emergency-contact-phone"
+          pattern="^\+?1?[-.\s]?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$"
+          placeholder="ex. 415-555-1234 or 1-415-555-1234"
+          title="Please enter a valid phone number in the format: 415-555-1234 or 1-415-555-1234."
+          minlength="10"
+          required
+        /><br />
+        <label for="emergency-contact-relationship">Relationship: </label><br />
+        <input
+          type="text"
+          name="emergency-contact-relationship"
+          id="emergency-contact-relationship"
+          required
+        /><br />
 
-      <label>
-        Please share your emergency contact's name and contact info (phone and
-        email).
-      </label>
-      <br />
-      <label for="emergency-contact-fname">First Name: </label><br />
-      <input
-        type="text"
-        name="emergency-contact-fname"
-        id="emergency-contact-fname"
-        required
-      /><br />
-      <label for="emergency-contact-lname">Last Name: </label><br />
-      <input
-        type="text"
-        name="emergency-contact-lname"
-        id="emergency-contact-lname"
-        required
-      /><br />
-      <label for="emergency-contact-email">Email: </label><br />
-      <input
-        type="email"
-        name="emergency-contact-email"
-        id="emergency-contact-email"
-        required
-      /><br />
-      <label for="emergency-contact-phone">Phone Number: </label><br />
-      <input
-        type="tel"
-        name="emergency-contact-phone"
-        id="emergency-contact-phone"
-        pattern="^\+?1?[-.\s]?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$"
-        placeholder="ex. 415-555-1234 or 1-415-555-1234"
-        title="Please enter a valid phone number in the format: 415-555-1234 or 1-415-555-1234."
-        minlength="10"
-        required
-      /><br />
-      <label for="emergency-contact-relationship">Relationship: </label><br />
-      <input
-        type="text"
-        name="emergency-contact-relationship"
-        id="emergency-contact-relationship"
-        required
-      /><br />
-
-      <label for="anything-else-to-share"
-        >Anything else you want to share with us?
-        <span>(Optional)</span> </label
-      ><br />
-      <input
-        type="textarea"
-        name="anything-else-to-share"
-        id="anything-else-to-share"
-        cols="100"
-        rows="3"
-      />
-      <br />
-      <div class="form-button">
-        <button
-          type="button"
-          class="previous-btn"
-          onclick="window.location.href='/app-long-text'"
-        >
-          Previous
-        </button>
-        <button
-          type="button"
-          class="continue-to-app-btn"
-          onclick="window.location.href='/app-form-admin'"
-        >
-          Next
-        </button>
-        <button
-          type="button"
-          class="save-btn"
-          onclick="window.location.href='/'"
-        >
-          Save
-        </button>
-      </div>
-    </fieldset>
-  </form>
-</div>
-
+        <label for="anything-else-to-share"
+          >Anything else you want to share with us?
+          <span>(Optional)</span> </label
+        ><br />
+        <input
+          type="textarea"
+          name="anything-else-to-share"
+          id="anything-else-to-share"
+          cols="100"
+          rows="3"
+        />
+        <br />
+        <div class="form-button">
+          <button
+            type="button"
+            class="previous-btn"
+            onclick="window.location.href='/app-long-text'"
+          >
+            Previous
+          </button>
+          <button
+            type="button"
+            class="continue-to-app-btn"
+            onclick="window.location.href='/app-form-admin'"
+          >
+            Next
+          </button>
+          <button
+            type="button"
+            class="save-btn"
+            onclick="window.location.href='/'"
+          >
+            Save
+          </button>
+        </div>
+      </fieldset>
+    </form>
+  </section>
+</main>
 <style>
   form {
     display: flex;
