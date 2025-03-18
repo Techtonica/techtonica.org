@@ -63,22 +63,31 @@ environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 Set up virtual environment with Python 3.8.10 and Pip 23 using [pyenv](https://github.com/pyenv/pyenv) and [venv](https://docs.python.org/3/library/venv.html):
 
 - Install pyenv using brew
+
 ```bash
 brew install pyenv
 ```
+
 - Use pyenv to install version python 3.8.10
+
 ```bash
 pyenv install 3.8.10
 ```
+
 - Set your python version to 3.8.10
+
 ```bash
 pyenv local 3.8.10
 ```
+
 - Create a virtual environment using venv
+
 ```bash
 python -m venv venv
 ```
+
 - Activate your new virtual environment
+
 ```bash
 source venv/bin/activate
 ```
@@ -109,7 +118,9 @@ consistency.
 ```bash
 pip install pre-commit
 ```
+
 2. Install the project pre-commit hooks:
+
 ```bash
 pre-commit install -f --install-hooks
 ```
@@ -283,25 +294,26 @@ rebuild the Docker image in order for those changes to take effect._
 
 ### CSS / SCSS
 
-The Techtonica website uses Sass to manage it's CSS.
+The Techtonica website uses Sass to manage its CSS.
 
 Styling changes should **only** be made to the Sass (.scss) files and then compiled to
 CSS using one of the following commands:
 
-👷‍♀️ Install Sass using one of the following
+Complie once:
 
-Mac: `brew install sass/sass/sass`
+`sass static/sass/style.scss static/css/style.css`
 
-Windows: `choco install sass`
+OR
 
-To compile your Sass files to CSS and to keep track of changes in real-time.
+Watch for changes using `--watch`:
 
 ```sh
-sass static/sass/style.scss static/css/style.css
-sass --watch static/sass/style.scss static/css/style.css
+sass --watch static/sass/style.scss:static/css/style.css
 ```
 
-By running the --watch command, any modifications made to the CSS files are instantly reflected, saving you time and ensuring your styles are always up-to-date.
+By running the `--watch` command, any modifications made to the CSS files are instantly reflected, saving you time and ensuring your styles are always up-to-date.
+
+For installation help and more details, see the [CSS/SCSS Styling Instructions Wiki](https://github.com/Techtonica/techtonica.org/wiki/CSS-SCSS-Styling-Instructions-Wiki)
 
 ### Alt-Text Guidelines
 
