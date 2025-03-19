@@ -299,7 +299,7 @@ The Techtonica website uses Sass to manage its CSS.
 Styling changes should **only** be made to the Sass (.scss) files and then compiled to
 CSS using one of the following commands:
 
-Complie once:
+Compile once:
 
 `sass static/sass/style.scss static/css/style.css`
 
