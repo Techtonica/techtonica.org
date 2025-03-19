@@ -146,6 +146,14 @@ pre-commit install -f --install-hooks
 pip install -r dev.txt
 ```
 
+If you get an error installing mysqlclient, deactivate your virtual environment and make sure mysql is installed on your computer by doing the following:
+
+```bash
+mysql --version
+# If command not found, do the following
+brew install mysql
+```
+
 ### Create Config.ini File
 
 ```
