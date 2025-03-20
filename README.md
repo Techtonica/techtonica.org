@@ -9,7 +9,6 @@ currently hosted on DreamHost.
   - [How](#how)
   - [Getting Started](#getting-started)
     - [Set Up Virtual Environment](#set-up-virtual-environment)
-    - [Install pip Version 23](#install-pip-version-23)
     - [Install and Upgrade pip-tools](#install-and-upgrade-pip-tools)
     - [Install Pre-Commit Hooks](#install-pre-commit-hooks)
     - [Install Requirements](#install-requirements)
@@ -50,9 +49,9 @@ There should be a good understanding of how the program works with vetting, trai
 
 ## Getting Started
 
-You need Python version 3.8.10 and pip version 23 in order to properly update dependencies and replicate the production server environment locally.
+You need Python version 3.13.2 and Pip version 25.0.1 in order to properly update dependencies and replicate the production server environment locally.
 
-Using Python 3.8.10 and pip 23 helps ensure compatibility and consistency between your local development environment and the server environment. This minimizes potential issues during deployment by keeping dependencies in sync with the versions expected by the servers and eliminates discrepancies caused by different versions, ensuring that code runs the same way on every developer's machine.
+Using Python 3.13.2 and pip 25.0.1 helps ensure compatibility and consistency between your local development environment and the server environment. This minimizes potential issues during deployment by keeping dependencies in sync with the versions expected by the servers and eliminates discrepancies caused by different versions, ensuring that code runs the same way on every developer's machine.
 
 ### Set Up Virtual Environment
 
@@ -60,38 +59,62 @@ It is recommended you use a virtual environment to keep dependencies
 required by different projects separate. [Learn more about Python virtual
 environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 
-Set up virtual environment with Python 3.8.10 and Pip 23 using [pyenv](https://github.com/pyenv/pyenv) and [venv](https://docs.python.org/3/library/venv.html):
+Set up virtual environment with Python 3.13.2 and Pip 25.0.1 using [pyenv](https://github.com/pyenv/pyenv) and [venv](https://docs.python.org/3/library/venv.html):
 
 - Install pyenv using brew
+
 ```bash
 brew install pyenv
 ```
-- Use pyenv to install version python 3.8.10
+
+- Use pyenv to install version python 3.13.2
+
 ```bash
-pyenv install 3.8.10
+pyenv install 3.13.2
 ```
-- Set your python version to 3.8.10
+
+- Set your python version to 3.13.2
+
 ```bash
-pyenv local 3.8.10
+pyenv local 3.13.2
 ```
+
+- Ensure correct version of python
+
+```bash
+python --version
+# If not 3.13.2, try
+eval "$(pyenv init -)"
+```
+
+- Upgrade global pip and virtualenv to ensure latest version
+
+```bash
+pip install --upgrade pip
+pip install --upgrade virtualenv
+```
+
 - Create a virtual environment using venv
+
 ```bash
 python -m venv venv
 ```
+
 - Activate your new virtual environment
+
 ```bash
 source venv/bin/activate
 ```
 
-**Note: if you are running into an error with running `python -m venv venv` you may need to instead use the full path to the python executable when creating your virual environment. An example is `/Users/yourPCName/.pyenv/versions/3.8.10/bin/python -m venv venv`**
+- Verify pip version and upgrade if needed
 
-### Install pip Version 23
-
-Ensure you are running pip23 to match the version on the servers:
-
+```bash
+pip --version
+# If it is not the latest version 25.0.1, upgrade pip
+pip install --upgrade pip
 ```
-pip install --upgrade pip==23.0
-```
+
+**Note: if you are running into an error with running `python -m venv venv` you may need to instead use the full path to the python executable when creating your virual environment. An example is `/Users/yourPCName/.pyenv/versions/3.13.2/bin/python -m venv venv`**
 
 ### Install and Upgrade pip-tools
 
@@ -105,11 +128,14 @@ This project uses various pre-commit hooks to ensure code quality and formatting
 consistency.
 
 1. [`Install pre-commit`](https://pre-commit.com/#install) globally.
+1. Install the project pre-commit hooks:
 
 ```bash
 pip install pre-commit
 ```
+
 2. Install the project pre-commit hooks:
+
 ```bash
 pre-commit install -f --install-hooks
 ```
@@ -118,6 +144,14 @@ pre-commit install -f --install-hooks
 
 ```
 pip install -r dev.txt
+```
+
+If you get an error installing mysqlclient, deactivate your virtual environment and make sure mysql is installed on your computer by doing the following:
+
+```bash
+mysql --version
+# If command not found, do the following
+brew install mysql
 ```
 
 ### Create Config.ini File
@@ -397,9 +431,9 @@ For detailed instructions, visit the [full guide on the Wiki](https://github.com
 ### Updating Dependencies
 
 This project uses [pip-tools](https://github.com/jazzband/pip-tools) to manage
-dependencies. _If there are dependencies only needed for local development, these go in dev.in/dev.txt. Otherwise they go in requirements.in/requirements.txt_. If you need to add or remove a Python library dependency:
+dependencies. _If there are dependencies only needed for local development, these go in dev.in/dev.txt. Otherwise, they go in requirements.in/requirements.txt_. If you need to add or remove a Python library dependency:
 
-1. Edit `requirements.in` or `dev.in` (referred to below as `file_name.in`)
+1. Edit `requirements.in` or `dev.in` (referred to below as `file_name.in`). If you update requirements.in, you must also re-compile dev.in after.
 1. Generate the .txt file
 
    ```sh

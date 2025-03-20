@@ -5,8 +5,7 @@ Flask-Migrate # mvp
 # mysqlclient # mvp
 Jinja2
 eventbrite
-pendulum
-pip-tools
+pendulum==3.0.0a1
 python-dotenv
 requests
 sendgrid
