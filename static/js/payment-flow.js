@@ -103,53 +103,66 @@ window.validateForm = async function() {
     conductCheckbox.parentElement.classList.remove('invalid');
   }
   
-  // Check for profanity in text fields
-  const textFieldsToCheck = [
-    { id: 'jobtitle', label: 'Job Title' },
-    { id: 'company', label: 'Company' },
-    { id: 'type', label: 'Type' },
-    { id: 'educationreq', label: 'Education Requirement' },
-    { id: 'location', label: 'Location' },
-    { id: 'salaryrange', label: 'Salary Range' },
-    { id: 'description', label: 'Description' },
-    { id: 'applicationlink', label: 'Application Link' }
-  ];
-  
-  // Show loading message while checking profanity
-  if (isValid) {
-    window.showError('Checking content for inappropriate language...');
+  // If basic validation fails, return early before checking profanity
+  if (!isValid) {
+    if (firstInvalidField) {
+      firstInvalidField.focus();
+      window.showError('Please fill in all required fields and accept the Code of Conduct.');
+    }
+    return false;
   }
   
-  // Check each field for profanity
-  for (const field of textFieldsToCheck) {
-    const element = document.getElementById(field.id);
-    const text = element.value.trim();
+  // Show loading message while checking profanity
+  window.showError('Checking content for inappropriate language...');
+  
+  // Get all text inputs and textareas in the form
+  const form = document.getElementById('fast-checkout');
+  const textInputs = form.querySelectorAll('input[type="text"], input[type="email"], textarea');
+  
+  // Create a mapping of field IDs to readable labels
+  const fieldLabels = {
+    'firstname': 'First Name',
+    'lastname': 'Last Name',
+    'email': 'Email',
+    'jobtitle': 'Job Title',
+    'company': 'Company',
+    'type': 'Type',
+    'educationreq': 'Education Requirement',
+    'location': 'Location',
+    'salaryrange': 'Salary Range',
+    'description': 'Description',
+    'applicationlink': 'Application Link'
+  };
+  
+  // Check each text field for profanity
+  for (const input of textInputs) {
+    const text = input.value.trim();
     
     if (text) {
       const profanityCheck = await window.checkProfanity(text);
       
       if (profanityCheck.containsProfanity) {
-        element.classList.add('invalid');
+        input.classList.add('invalid');
         isValid = false;
-        if (!firstInvalidField) firstInvalidField = element;
-        window.showError(`Inappropriate language detected in ${field.label}. Please revise your content.`);
+        if (!firstInvalidField) firstInvalidField = input;
+        
+        // Get a readable label for the field
+        const fieldLabel = fieldLabels[input.id] || input.id;
+        window.showError(`Inappropriate language detected in ${fieldLabel}. Please revise your content.`);
         break; // Stop checking after first profanity found
       }
     }
   }
   
-  // Scroll to first invalid field if validation fails
+  // If profanity was found, focus the first invalid field
   if (!isValid && firstInvalidField) {
     firstInvalidField.focus();
-    if (!window.paymentFlowMessageEl.innerText.includes('Inappropriate language')) {
-      window.showError('Please fill in all required fields and accept the Code of Conduct.');
-    }
-  } else if (isValid) {
-    // Clear the "checking content" message if everything is valid
-    window.paymentFlowMessageEl.innerText = '';
+    return false;
   }
   
-  return isValid;
+  // Clear the "checking content" message if everything is valid
+  window.paymentFlowMessageEl.innerText = '';
+  return true;
 }
 
 window.createPayment = async function(token) {
