@@ -10,4 +10,4 @@ env
 env*
 venv
 config.ini
-node_modules/
+node_modules

@@ -1,5 +1,5 @@
-""" This file generates the application timeline variables
-to dynamically render relevant dates and information """
+"""This file generates the application timeline variables
+to dynamically render relevant dates and information"""
 
 import logging
 import os
@@ -22,8 +22,7 @@ def parse_env_date(env_var, calculated_date):
     env_value = os.getenv(env_var, "").strip()
     if not env_value:
         logger.info(
-            f"{env_var} not found in .env, "
-            f"using calculated date: {calculated_date}"
+            f"{env_var} not found in .env, using calculated date: {calculated_date}"
         )
         return calculated_date
 
@@ -43,8 +42,7 @@ def parse_env_date(env_var, calculated_date):
             continue
 
     logger.warning(
-        f"Invalid {env_var} format in .env ({env_value}), "
-        f"using calculated date: {calculated_date}"
+        f"Invalid {env_var} format in .env ({env_value}), using calculated date: {calculated_date}"
     )
     return calculated_date
 
@@ -126,7 +124,7 @@ def generate_application_timeline():
     )
     pre_work_start = parse_env_date(
         "PRE_WORK_START",
-        onboarding_day + timedelta(days=1) if onboarding_day else None,
+        (onboarding_day + timedelta(days=1) if onboarding_day else None),
     )
     cohort_start_day = parse_env_date(
         "COHORT_START_DAY",
