@@ -10,7 +10,7 @@ Detail what changes this pull request has and to which areas of the codebase.
 
 - Issue Number: #
 
-###🍏 Type of Change
+### 🍏 Type of Change
 
 - Bug fix
 - New feature
