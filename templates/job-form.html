@@ -2,7 +2,7 @@
 Post A Job {% endblock title %} {% block content %}
 <!-- link to the Web SDK library -->
 <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
-<script type="text/javascript" src='{{ PAYMENT_FORM_URL }}'></script>
+<script type="text/javascript" src="{{ PAYMENT_FORM_URL }}"></script>
 <script type="application/javascript">
   window.applicationId = "{{ APPLICATION_ID }}";
   window.locationId = "{{ LOCATION_ID }}";
@@ -28,48 +28,56 @@ Post A Job {% endblock title %} {% block content %}
             <legend>Contact Information</legend>
 
             <label for="firstname">First Name</label>
-            <input type="text" id="firstname" name="firstname" required>
+            <input type="text" id="firstname" name="firstname" required />
 
             <label for="lastname">Last Name</label>
-            <input type="text" id="lastname" name="lastname" required>
+            <input type="text" id="lastname" name="lastname" required />
 
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required />
           </fieldset>
 
           <fieldset>
             <legend>Job Details</legend>
 
             <label for="jobtitle">Job Title</label>
-            <input type="text" id="jobtitle" name="jobtitle" required>
+            <input type="text" id="jobtitle" name="jobtitle" required />
 
             <label for="company">Company</label>
-            <input type="text" id="company" name="company" required>
+            <input type="text" id="company" name="company" required />
 
             <label for="type">Type <span>(optional)</span></label>
-            <input type="text" id="type" name="type">
+            <input type="text" id="type" name="type" />
 
-            <label for="educationreq">Education Requirement <span>(optional)</span></label>
-            <input type="text" id="educationreq" name="educationreq">
+            <label for="educationreq"
+              >Education Requirement <span>(optional)</span></label
+            >
+            <input type="text" id="educationreq" name="educationreq" />
 
             <label for="location">Location</label>
-            <input type="text" id="location" name="location" required>
+            <input type="text" id="location" name="location" required />
 
             <div id="radio-wrapper">
               <p>Can you make a referral/connection?</p>
               <label for="ref-yes">Yes</label>
-              <input type="radio" id="ref-yes" name="referral" value="yes">
+              <input type="radio" id="ref-yes" name="referral" value="yes" />
               <label for="ref-no">No</label>
-              <input type="radio" id="ref-no" name="referral" value="no">
+              <input type="radio" id="ref-no" name="referral" value="no" />
             </div>
 
-            <label for="salaryrange">Salary Range <span>(optional)</span></label>
-            <input type="text" id="salaryrange" name="salaryrange">
+            <label for="salaryrange"
+              >Salary Range <span>(optional)</span></label
+            >
+            <input type="text" id="salaryrange" name="salaryrange" />
 
             <label for="description">Description <span>(optional)</span></label>
-            <textarea id="description" name="description">Submit your job for $100 to be shared with our 100+ full-stack software engineer graduates.</textarea>
+            <textarea id="description" name="description">
+Submit your job for $100 to be shared with our 100+ full-stack software engineer graduates.</textarea
+            >
 
-            <label for="applicationlink">Link to Apply <span>(optional)</span></label>
+            <label for="applicationlink"
+              >Link to Apply <span>(optional)</span></label
+            >
             <textarea id="applicationlink" name="applicationlink"></textarea>
           </fieldset>
           <!-- TO-DO: File upload input for screenshots -->
@@ -106,11 +114,9 @@ Post A Job {% endblock title %} {% block content %}
           </label>
         </div>
         <button id="card-button" type="button" class="sponsor">
-          <h2>
-            Pay with Card
-          </h2>
+          <h2>Pay with Card</h2>
         </button>
-        <span id="payment-flow-message">
+        <span id="payment-flow-message"></span>
       </div>
     </form>
   </div>
