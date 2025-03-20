@@ -999,13 +999,17 @@ p.press-release-bold {
 }
 
 #payment-flow-message.error {
-  color: #bf0020;
-  font-size: 12px;
-  line-height: 14px;
+  color: #BF0020;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
 #payment-flow-message.success {
-  color: #3374ff;
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 .wrapper {
@@ -1157,4 +1161,34 @@ label[for="code-of-conduct-checkbox"] ~ a {
     width: 33%;
     margin: 20px;
   }
+}
+
+/* Invalid field styling */
+input.invalid,
+textarea.invalid {
+  border: 2px solid #BF0020 !important;
+  background-color: rgba(255, 200, 200, 0.1);
+}
+
+/* Invalid radio wrapper styling */
+#radio-wrapper.invalid {
+  padding: 10px;
+  background-color: rgba(255, 200, 200, 0.1);
+  border-radius: 4px;
+  border: 2px solid #BF0020;
+}
+
+/* Invalid checkbox container styling */
+.checkbox-container.invalid {
+  padding: 10px;
+  background-color: rgba(255, 200, 200, 0.1);
+  border-radius: 4px;
+  border: 2px solid #BF0020;
+}
+
+/* Disabled button styling */
+button:disabled,
+button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
