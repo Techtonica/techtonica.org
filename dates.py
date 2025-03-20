@@ -1,5 +1,5 @@
-""" This file generates the application timeline variables
-to dynamically render relevant dates and information """
+"""This file generates the application timeline variables
+to dynamically render relevant dates and information"""
 
 import logging
 import os
@@ -124,7 +124,9 @@ def generate_application_timeline():
     )
     pre_work_start = parse_env_date(
         "PRE_WORK_START",
-        onboarding_day + timedelta(days=1) if onboarding_day else None,  # noqa: E501
+        (
+            onboarding_day + timedelta(days=1) if onboarding_day else None
+        ),  # noqa: E501
     )
     cohort_start_day = parse_env_date(
         "COHORT_START_DAY",
