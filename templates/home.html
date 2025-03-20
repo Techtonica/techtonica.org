@@ -10,13 +10,13 @@ endblock title %} {% block content %}
         talent needs.
       </p>
       <h2>
-        {% if times.app_open %}
+        {% if timeline.APP_OPEN_DATE %}
         <a
           href="{{ url_for('render_ft_program_page') }}"
           class="orange-button"
           target="_blank"
           rel="noopener noreferrer"
-          >{{times.text}}</a
+          >{{ timeline.TEXT }}</a
         >
         {% else %}
         <a
@@ -33,7 +33,7 @@ endblock title %} {% block content %}
   <div class="row row__center what-we-do" id="whatwedo">
     <div class="column">
       <h1 class="blue-h1">Our Participants</h1>
-      <p class="justify">
+      <p>
         Our full-time program participants go through a rigorous, lengthy
         application process that includes multiple workshops, interviews, and a
         code challenge. By the time each cohort graduates, they will have
@@ -64,12 +64,12 @@ endblock title %} {% block content %}
     </div>
     <div class="column">
       <h1>Why</h1>
-      <p class="justify">
+      <p>
         Techtonica started in the San Francisco Bay Area, where the tech
         industry, which needs to build more diverse technical teams, is causing
         displacement and increasing income disparity.
       </p>
-      <p class="justify">
+      <p>
         We asked, "What if we could help people most in danger of displacement
         to become economically empowered by asking tech companies that recognize
         the need for more diverse technical teams to sponsor and hire them?"

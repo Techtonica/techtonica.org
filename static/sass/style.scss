@@ -25,6 +25,14 @@
   padding: 0 1rem;
 }
 
+.chart-container {
+  @include prefix(display, flex, webkit moz);
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: rgba(0, 147, 181, 1);
+  color: white;
+  padding: 3rem;
+}
 .nav-bar {
   @include prefix(display, inline-flex, webkit moz);
   flex-flow: row-reverse wrap;
@@ -125,7 +133,8 @@
 
 .main-header__text {
   max-width: 50%;
-  padding: 1.5em;
+  padding: 0 1.5em;
+  text-shadow: 1px 1px 1px #666;
   background-color: #0093b5cc;
   border-top-left-radius: 25px;
   border-top: 5px solid #007395cc;
@@ -433,6 +442,10 @@ table.mentor {
   h1 {
     font-size: 3.5em;
   }
+
+  p {
+    text-align: left;
+  }
 }
 
 @media only screen and (max-width: 910px) {
@@ -563,7 +576,7 @@ table.mentor {
     bottom: 0;
     max-width: 100%;
     width: auto;
-    padding: 1em;
+    padding: 0 1em;
   }
 
   .main-content {
@@ -904,8 +917,17 @@ p.press-release-bold {
 }
 
 #fast-checkout button {
-  line-height: 36px;
-  font-size: 20px;
+  width: 100%;
+}
+
+#fast-checkout button {
+  @include prefix(border-radius, 8px, webkit moz o);
+  color: $white;
+  display: inline-block;
+  background-color: $focal-orange;
+  text-align: center;
+  font-size: 1.5em;
+  text-shadow: 1px 1px 1px #666;
 
   &:hover {
     background-color: $light-blue;
@@ -1070,7 +1092,16 @@ input[type="radio"] {
 }
 
 @media (max-width: 600px) {
+  .chart-container {
+    padding: 2rem 0;
+  }
+
+  #myChart {
+    padding: 0;
+  }
+
   .payment-form {
+    margin: 0px;
     padding: 30px;
     box-sizing: border-box;
   }

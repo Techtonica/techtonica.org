@@ -8,18 +8,17 @@ endblock title %} {% block content %}
         Hands on software engineering training with need-based, sliding-scale,
         subsidized tuition and stipend scholarships, followed by six months of
         remote job placement or job search support for women and non-binary
-        adults seeking economic empowerment. The 2025 H1 Cohort kicks off in
-        January.
+        adults seeking economic empowerment.
       </p>
-
-      {% if times.app_open %}
+      {% if timeline.APP_OPEN_DATE %}
       <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
         class="orange-button"
         target="_blank"
         rel="noopener noreferrer"
-        >{{times.text}}</a
       >
+        {{timeline.TEXT}}
+      </a>
       {% else %}
       <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSfUdyIAfcU5KSqtYH5J5iPRgu-yycHdebnUKygQLEv-m7oVMw/viewform"
@@ -46,9 +45,12 @@ endblock title %} {% block content %}
       </li>
     </ol>
   </div>
+  <div class="chart-container">
+    <canvas id="myChart"></canvas>
+  </div>
   <div class="column">
     <h1 class="blue-h1">The Full-Time Program</h1>
-    <p class="justify">
+    <p>
       Techtonica’s full-time, virtual software engineering training program
       provides the opportunity seeking economic empowerment to learn technical
       skills in a safe, inclusive space and start their first jobs in tech. We
@@ -59,7 +61,7 @@ endblock title %} {% block content %}
       frustration (troubleshooting is something you'll face forever in tech!),
       and want to pay it forward.
     </p>
-    <p class="justify">
+    <p>
       We aim to empower those most underrepresented in tech and to help tech
       become more diverse and inclusive. To that end, we have been very
       intentional about creating a safe community, building a network, and
@@ -69,7 +71,7 @@ endblock title %} {% block content %}
       participants lose housing, have their laptop stolen, become pregnant, face
       abuse, and more, and if we don't know about it, we can't help.
     </p>
-    <p class="justify">
+    <p>
       88% of our graduates so far are BIPOC, 21% have a disability, 21% are
       parents, 10% identify outside the gender binary, and 1% are veterans. Our
       cohorts have had between 8 and 18 participants so far, and income increase
@@ -77,34 +79,29 @@ endblock title %} {% block content %}
       has historically been between 5:1 and 9:1. We appreciate an average of 98
       hours of volunteer support per participant.
     </p>
-    <div class="blue-background">
-      <canvas id="myChart"></canvas>
-    </div>
   </div>
-  <br />
+
   <div class="row row__center blue-background why-why" id="why">
     <h1 class="main-header__header">
       Needs-Based, Sliding Scale Tuition & Stipend Scholarships
     </h1>
-    <p class="justify">
+    <p>
       As many companies have changed their priorities over the last few years,
       Techtonica has had difficulty relying on a corporate sponsorship model. As
       a result, Techtonica is adopting a tuition-based model with need-based,
       sliding-scale, subsidized tuition and stipend scholarships to enable the
       program to serve more participants, in addition to continuing to seek
-      sponsorships. Our H1 cohort in 2025 will begin in January. It is possible
-      that we will secure some placements for this cohort, but it is not
-      guaranteed.
+      sponsorships. 
     </p>
-    <p class="justify">
-      Tuition for the 2025 H1 cohort is $18,000. The total cost has been
+    <p>
+      Tuition is $18,000. The total cost has been
       subsidized to lower the price to an amount that is less expensive than
       other programs at a cost of $1,000 per week (from Hackbright at
       $1,075/week to General Assembly at $2,183/week). Tuition paid upfront
       receives a 15% overall discount. For example, the full $18,000 cost of
       tuition when paid upfront with the 15% discount comes out to $15,300.
     </p>
-    <p class="justify">
+    <p>
       If you will not have $18,000 beyond 10 months of living costs, you are
       eligible to apply for a partial or full scholarship. If you will not be
       able to cover tuition or 10 months of living costs, you are eligible to
@@ -114,7 +111,7 @@ endblock title %} {% block content %}
       eligible for the needs-based, sliding-scale tuition and stipend
       scholarships with today’s model.
     </p>
-    <p class="justify">
+    <p>
       What bootcamps and Techtonica have in common is the fact that they are
       intensive training. However, bootcamps can be pretty passive classroom
       learning with students and they cost between $1,075 and $2,200 per week
@@ -152,18 +149,18 @@ endblock title %} {% block content %}
   </div>
   <div class="column">
     <h1 class="blue-h1">The Schedule</h1>
-    <p class="justify">
+    <p>
       The program usually runs Monday through Friday, 8:00 AM to 5:00 PM
       (Pacific Time) for six months (typically from January to June and July to
-      December). The January 2025 cohort's length is pending. The training is
-      followed by six months of remote job placement or job search and community
-      support. Participants who work the hardest and meet and exceed
+      December). The January 2026 cohort's length is anticipated to be 5 months.
+      The training is followed by six months of remote job placement or job search
+      and community support. Participants who work the hardest and meet and exceed
       expectations will be invited to continue. We do not recommend working
       during the program. We do not provide medical medical insurance, so we
       recommend you google programs in your area (like MediCal in California).
       We also can't help with visas, student or otherwise.
     </p>
-    <p class="justify">
+    <p>
       For participants with ADHD, we can provide accommodations
       <a
         target="_blank"
@@ -172,7 +169,7 @@ endblock title %} {% block content %}
       >
       We encourage open communication around what works best for you.
     </p>
-    <p class="justify">
+    <p>
       Note: Techtonica is not set up to provide wraparound or crisis services
       (try
       <a target="_blank" href="https://www.crisistextline.org/"
@@ -182,7 +179,7 @@ endblock title %} {% block content %}
       Threats of violence against yourself or others will result in us ceasing
       all contact with you and possibly initiating a welfare check.
     </p>
-    <p class="justify">
+    <p>
       Techtonica participants will learn to do full-stack web development using
       JavaScript. Upon successful completion of the program, some participants
       will be placed with available partner companies via a two-way interview
@@ -191,7 +188,7 @@ endblock title %} {% block content %}
       earn an OJT ("On-the-Job Training") certificate from the State of
       California's Division of Apprenticeship Standards.
     </p>
-    <p class="justify">
+    <p>
       The schedule includes knowledge checks to give you a reason to review what
       you've learned, to provide you with feedback on where you need to improve,
       and to prepare you for long-term success in the workplace. As we consider
@@ -211,7 +208,7 @@ endblock title %} {% block content %}
       be done. Because of the high expectations of our program and partners, not
       everyone completes the program.
     </p>
-    <p class="justify">
+    <p>
       Intensive programs, career transitions, and learning and working with
       technical concepts—these are all stressful, difficult things. If we accept
       you to our program, we believe in your ability to step up to the challenge
@@ -224,7 +221,7 @@ endblock title %} {% block content %}
       learn whatever’s needed to succeed? Do you contribute to a safe, inclusive
       environment?
     </p>
-    <p class="justify">
+    <p>
       Also, check out
       <a href="https://twitter.com/TechtonicaOrg/status/1558191593861029888"
         >this video</a
@@ -234,7 +231,9 @@ endblock title %} {% block content %}
         >our testimonials page</a
       >, and our info session.
     </p>
-    <div class="videowrapper">
+
+    <!-- Commenting out past info session video below, to be replaced with 2026 H1 Application Info Session -->
+    <!-- <div class="videowrapper">
       <iframe
         width="560"
         height="315"
@@ -245,12 +244,9 @@ endblock title %} {% block content %}
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
       ></iframe>
-    </div>
-    <!-- Commenting out past info session video, to be replaced with 2025 H1 Application Info Session -->
+    </div> -->
+
     <br />
-    <!-- <div class="videowrapper ">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VkuhwMT4b7A?si=piEC6i6ypgTzIrZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div> -->
 
     <div class="column">
       <img
@@ -295,7 +291,7 @@ endblock title %} {% block content %}
     </div>
     <div class="column">
       <h1>Eligibility</h1>
-      <p class="justify">
+      <p>
         You are eligible to apply for Techtonica’s full-time program if you:
       </p>
       <ul>
@@ -326,7 +322,8 @@ endblock title %} {% block content %}
           full-time training and the following six months
         </li>
         <li>
-          are willing to live in the U.S. if required by placement company
+          are willing to live in the U.S. and relocate to an in-person location
+          of placement, if required by placement company
         </li>
         <li>have a U.S. bank account</li>
         <li>
@@ -383,12 +380,12 @@ endblock title %} {% block content %}
           application process
         </li>
       </ul>
-      <p class="justify">
+      <p>
         Please note that since the program became fully remote/virtual in 2020,
         participants are not required to live in the San Francisco Bay Area to
         join the program.
       </p>
-      <p class="justify">
+      <p>
         If you don't get in the first time, you can apply two more times for a
         maximum of three times, and they do not have to be consecutive
         application rounds. If you have any special circumstances that make you
@@ -397,7 +394,7 @@ endblock title %} {% block content %}
         interested in Techtonica but cannot participate in the next cohort,
         please fill out our
       </p>
-      <p class="justify">You are probably not a good fit if you:</p>
+      <p>You are probably not a good fit if you:</p>
       <ul>
         <li>would rather be passively trained than learn through discovery</li>
         <li>prefer always being told exactly what to do</li>
@@ -432,15 +429,13 @@ endblock title %} {% block content %}
   </div>
   <div class="row row__baseline how-it-works" id="howitworks">
     <h1 class="blue-h1">Application Process</h1>
-    <p class="justify">
+    <p>
       For the January ("H1") cohort, the application forms open, emails to
       interested folks go out, and forms close again around October. For the
       July to December ("H2") cohort, the application forms open, emails to
-      interested folks go out, and forms close again around March. For the 2025
-      H1 cohort, applications open in September and close in October. The
-      application process continues for about four to five weeks after
-      applications close, with candidates eliminated at each step of the
-      process.
+      interested folks go out, and forms close again around March. The application
+      process continues for about four to five weeks after applications close,
+      with candidates eliminated at each step of the process.
     </p>
     <div class="row">
       <div class="column column-med centered">
@@ -516,7 +511,7 @@ endblock title %} {% block content %}
   <div class="row row__center blue-background howtohelp">
     <div class="column how-to-help" id="howtohelp">
       <h1>What We Look For</h1>
-      <p class="justify">
+      <p>
         This program is very competitive; we select and graduate participants
         who continuously prove that they are:
       </p>
@@ -627,16 +622,16 @@ endblock title %} {% block content %}
         </h3>
       </div>
     </div>
-
-    {% if times.app_open %}
+    {% if timeline.APP_OPEN_DATE %}
     <!-- FT cohort application button that leads to short form when apps are open-->
     <a
       href="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
       class="orange-button"
       target="_blank"
       rel="noopener noreferrer"
-      >{{times.text}}</a
-    >
+     >
+      {{timeline.TEXT}}
+    </a>
     {% else %}
     <!-- event sign up button appears when apps are closed -->
     <a
