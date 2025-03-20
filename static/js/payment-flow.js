@@ -22,8 +22,30 @@ window.showError = function(message) {
   window.paymentFlowMessageEl.innerText = message;
 }
 
+// Function to check text for profanity using PurgoMalum API
+window.checkProfanity = async function(text) {
+  if (!text || text.trim() === '') return { containsProfanity: false };
+  
+  try {
+    // Encode the text for URL
+    const encodedText = encodeURIComponent(text);
+    // Use PurgoMalum's containsprofanity endpoint
+    const response = await fetch(`https://www.purgomalum.com/service/containsprofanity?text=${encodedText}`);
+    const result = await response.text();
+    
+    return { 
+      containsProfanity: result.trim() === 'true',
+      text: text
+    };
+  } catch (error) {
+    console.error('Error checking profanity:', error);
+    // If the API fails, we'll let the text pass to not block users
+    return { containsProfanity: false };
+  }
+}
+
 // Validate form fields
-window.validateForm = function() {
+window.validateForm = async function() {
   const requiredFields = [
     'firstname', 'lastname', 'email', 'jobtitle', 
     'company', 'location'
@@ -70,7 +92,7 @@ window.validateForm = function() {
     document.getElementById('radio-wrapper').classList.remove('invalid');
   }
   
-  // Check if code of conduct checkbox is checked - this is critical
+  // Check if code of conduct checkbox is checked
   const conductCheckbox = document.getElementById('code-of-conduct-checkbox');
   if (!conductCheckbox.checked) {
     conductCheckbox.parentElement.classList.add('invalid');
@@ -81,20 +103,67 @@ window.validateForm = function() {
     conductCheckbox.parentElement.classList.remove('invalid');
   }
   
+  // Check for profanity in text fields
+  const textFieldsToCheck = [
+    { id: 'jobtitle', label: 'Job Title' },
+    { id: 'company', label: 'Company' },
+    { id: 'type', label: 'Type' },
+    { id: 'educationreq', label: 'Education Requirement' },
+    { id: 'location', label: 'Location' },
+    { id: 'salaryrange', label: 'Salary Range' },
+    { id: 'description', label: 'Description' },
+    { id: 'applicationlink', label: 'Application Link' }
+  ];
+  
+  // Show loading message while checking profanity
+  if (isValid) {
+    window.showError('Checking content for inappropriate language...');
+  }
+  
+  // Check each field for profanity
+  for (const field of textFieldsToCheck) {
+    const element = document.getElementById(field.id);
+    const text = element.value.trim();
+    
+    if (text) {
+      const profanityCheck = await window.checkProfanity(text);
+      
+      if (profanityCheck.containsProfanity) {
+        element.classList.add('invalid');
+        isValid = false;
+        if (!firstInvalidField) firstInvalidField = element;
+        window.showError(`Inappropriate language detected in ${field.label}. Please revise your content.`);
+        break; // Stop checking after first profanity found
+      }
+    }
+  }
+  
   // Scroll to first invalid field if validation fails
   if (!isValid && firstInvalidField) {
     firstInvalidField.focus();
-    window.showError('Please fill in all required fields and accept the Code of Conduct.');
+    if (!window.paymentFlowMessageEl.innerText.includes('Inappropriate language')) {
+      window.showError('Please fill in all required fields and accept the Code of Conduct.');
+    }
+  } else if (isValid) {
+    // Clear the "checking content" message if everything is valid
+    window.paymentFlowMessageEl.innerText = '';
   }
   
   return isValid;
 }
 
 window.createPayment = async function(token) {
+  // Show loading message
+  window.showError('Validating form...');
+  
   // Validate form before processing payment
-  if (!window.validateForm()) {
+  const isValid = await window.validateForm();
+  if (!isValid) {
     return;
   }
+  
+  // Show processing message
+  window.showError('Processing payment...');
   
   const dataJsonString = JSON.stringify({
     token,
@@ -167,12 +236,12 @@ window.sendSlackNotification = async function() {
   }
 }
 
-// Form and code of conduct checkbox functionality
+// Form and checkbox functionality
 document.addEventListener("DOMContentLoaded", () => {
   const termsCheckbox = document.getElementById("code-of-conduct-checkbox");
   const cardButton = document.getElementById("card-button");
   
-  // Set initial button state - ensure it's disabled if checkbox is not checked
+  // Set initial button state
   cardButton.disabled = !termsCheckbox.checked;
   
   // Add visual indicator for disabled state
@@ -215,9 +284,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
   // Prevent form submission if validation fails
-  document.getElementById('fast-checkout').addEventListener('submit', function(e) {
-    if (!window.validateForm()) {
-      e.preventDefault();
+  document.getElementById('fast-checkout').addEventListener('submit', async function(e) {
+    e.preventDefault(); // Always prevent default to handle validation
+    
+    // Show loading message
+    window.showError('Validating form...');
+    
+    const isValid = await window.validateForm();
+    if (isValid) {
+      // If valid, the form will be processed by the payment flow
+      window.showError('Form is valid. Please complete payment.');
     }
   });
 });

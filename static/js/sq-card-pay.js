@@ -25,10 +25,17 @@ async function CardPay(fieldEl, buttonEl) {
       return;
     }
     
-    // Then validate the rest of the form
-    if (!window.validateForm()) {
+    // Show loading message
+    window.showError('Validating form...');
+    
+    // Then validate the rest of the form including profanity check
+    const isValid = await window.validateForm();
+    if (!isValid) {
       return;
     }
+
+    // Show processing message
+    window.showError('Processing payment information...');
 
     try {
       const result = await card.tokenize();
