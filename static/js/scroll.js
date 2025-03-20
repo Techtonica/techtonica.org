@@ -6,7 +6,7 @@ $(document).ready(function () {
         scrollTop: aTag.offset().top - 75,
       },
       time,
-      "swing"
+      "swing",
     );
   }
 
