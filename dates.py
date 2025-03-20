@@ -22,7 +22,9 @@ def parse_env_date(env_var, calculated_date):
     env_value = os.getenv(env_var, "").strip()
     if not env_value:
         logger.info(
-            f"{env_var} not found in .env, using calculated date: {calculated_date}"
+            f"{
+                env_var} not found in .env, using calculated date: {
+                    calculated_date}"
         )
         return calculated_date
 
@@ -42,7 +44,8 @@ def parse_env_date(env_var, calculated_date):
             continue
 
     logger.warning(
-        f"Invalid {env_var} format in .env ({env_value}), using calculated date: {calculated_date}"
+        f"Invalid {env_var} format in .env ({env_value}),"
+        f"using calculated date: {calculated_date}"
     )
     return calculated_date
 
