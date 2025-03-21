@@ -320,12 +320,14 @@
 
 .contact-us,
 .donate,
-.sponsor {
+.orange-button {
   @include prefix(border-radius, 8px, webkit moz o);
   color: $white;
   display: inline-block;
   background-color: $focal-orange;
   text-align: center;
+  padding-block: 24px;
+  padding-inline: 16px;
 
   &:hover {
     background-color: $light-blue;
@@ -334,27 +336,13 @@
   }
 }
 
-.sponsor:hover .link-on-blue {
+.orange-button:hover .link-on-blue {
   color: $dark-blue;
 }
 
 .contact-us {
   margin: 0.5em 0;
   padding: 0.75em 1.5em;
-}
-
-.sponsor {
-  line-height: 36px;
-  padding: 25px;
-  margin: 0;
-}
-
-#orange-button {
-  text-decoration: none;
-
-  &:hover {
-    color: $white;
-  }
 }
 
 #quotes {

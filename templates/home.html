@@ -13,8 +13,7 @@ endblock title %} {% block content %}
         {% if timeline.APP_OPEN_DATE %}
         <a
           href="{{ url_for('render_ft_program_page') }}"
-          class="sponsor"
-          id="orange-button"
+          class="orange-button"
           target="_blank"
           rel="noopener noreferrer"
           >{{ timeline.TEXT }}</a
@@ -22,8 +21,7 @@ endblock title %} {% block content %}
         {% else %}
         <a
           href="{{ url_for('render_sponsor_page') }}"
-          class="sponsor"
-          id="orange-button"
+          class="orange-button"
           target="_blank"
           rel="noopener noreferrer"
           >Outsource your software work!</a

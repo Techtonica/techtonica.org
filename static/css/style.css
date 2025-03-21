@@ -439,7 +439,7 @@ p {
 
 .contact-us,
 .donate,
-.sponsor {
+.orange-button {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -o-border-radius: 8px;
@@ -448,35 +448,24 @@ p {
   display: inline-block;
   background-color: #fc7625;
   text-align: center;
+  padding-block: 24px;
+  padding-inline: 16px;
 }
 .contact-us:hover,
 .donate:hover,
-.sponsor:hover {
+.orange-button:hover {
   background-color: #16c1f3;
   color: white;
   transition: 0.3s;
 }
 
-.sponsor:hover .link-on-blue {
+.orange-button:hover .link-on-blue {
   color: #05556d;
 }
 
 .contact-us {
   margin: 0.5em 0;
   padding: 0.75em 1.5em;
-}
-
-.sponsor {
-  line-height: 36px;
-  padding: 25px;
-  margin: 0;
-}
-
-#orange-button {
-  text-decoration: none;
-}
-#orange-button:hover {
-  color: white;
 }
 
 #quotes {

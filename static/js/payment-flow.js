@@ -1,8 +1,10 @@
 async function SquarePaymentFlow() {
 
   // Create card payment object and attach to page
-  CardPay(document.getElementById('card-container'), document.getElementById('card-button'));
-
+  CardPay(
+    document.getElementById("card-container"),
+    document.getElementById("payment-button")
+  );
 }
 
 window.payments = Square.payments(window.applicationId, window.locationId);

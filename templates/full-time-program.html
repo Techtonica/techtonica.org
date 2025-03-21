@@ -8,30 +8,26 @@ endblock title %} {% block content %}
         Hands on software engineering training with need-based, sliding-scale,
         subsidized tuition and stipend scholarships, followed by six months of
         remote job placement or job search support for women and non-binary
-        adults seeking economic empowerment. The 2025 H2 Cohort kicks off in
-        July.
+        adults seeking economic empowerment.
       </p>
-      <h2>
-        {% if timeline.APP_OPEN_DATE %}
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
-          class="sponsor"
-          id="orange-button"
-          target="_blank"
-          rel="noopener noreferrer"
-          >{{timeline.TEXT}}</a
-        >
-        {% else %}
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSfUdyIAfcU5KSqtYH5J5iPRgu-yycHdebnUKygQLEv-m7oVMw/viewform"
-          class="sponsor"
-          id="orange-button"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Fill out our interest form to be notified about our next cohort!
-        </a>
-        {% endif %}
-      </h2>
+      {% if timeline.APP_OPEN_DATE %}
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
+        class="orange-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{timeline.TEXT}}
+      </a>
+      {% else %}
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfUdyIAfcU5KSqtYH5J5iPRgu-yycHdebnUKygQLEv-m7oVMw/viewform"
+        class="orange-button"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Fill out our interest form to be notified about our next cohort!
+      </a>
+      {% endif %}
     </div>
   </div>
   <div class="column">
@@ -95,12 +91,10 @@ endblock title %} {% block content %}
       a result, Techtonica is adopting a tuition-based model with need-based,
       sliding-scale, subsidized tuition and stipend scholarships to enable the
       program to serve more participants, in addition to continuing to seek
-      sponsorships. Our H2 cohort in 2025 will begin in July. It is possible
-      that we will secure some placements for this cohort, but it is not
-      guaranteed.
+      sponsorships. 
     </p>
     <p>
-      Tuition for the 2025 H1 cohort is $18,000. The total cost has been
+      Tuition is $18,000. The total cost has been
       subsidized to lower the price to an amount that is less expensive than
       other programs at a cost of $1,000 per week (from Hackbright at
       $1,075/week to General Assembly at $2,183/week). Tuition paid upfront
@@ -158,9 +152,9 @@ endblock title %} {% block content %}
     <p>
       The program usually runs Monday through Friday, 8:00 AM to 5:00 PM
       (Pacific Time) for six months (typically from January to June and July to
-      December). The January 2025 cohort's length is pending. The training is
-      followed by six months of remote job placement or job search and community
-      support. Participants who work the hardest and meet and exceed
+      December). The January 2026 cohort's length is anticipated to be 5 months.
+      The training is followed by six months of remote job placement or job search
+      and community support. Participants who work the hardest and meet and exceed
       expectations will be invited to continue. We do not recommend working
       during the program. We do not provide medical medical insurance, so we
       recommend you google programs in your area (like MediCal in California).
@@ -238,7 +232,7 @@ endblock title %} {% block content %}
       >, and our info session.
     </p>
 
-    <!-- Commenting out past info session video below, to be replaced with 2025 H2 Application Info Session -->
+    <!-- Commenting out past info session video below, to be replaced with 2026 H1 Application Info Session -->
     <!-- <div class="videowrapper">
       <iframe
         width="560"
@@ -439,8 +433,7 @@ endblock title %} {% block content %}
       For the January ("H1") cohort, the application forms open, emails to
       interested folks go out, and forms close again around October. For the
       July to December ("H2") cohort, the application forms open, emails to
-      interested folks go out, and forms close again around March. For the 2025
-      H2 cohort, applications open in March and close in April. The application
+      interested folks go out, and forms close again around March. The application
       process continues for about four to five weeks after applications close,
       with candidates eliminated at each step of the process.
     </p>
@@ -629,30 +622,27 @@ endblock title %} {% block content %}
         </h3>
       </div>
     </div>
-    <h2>
-      {% if timeline.APP_OPEN_DATE %}
-      <!-- FT cohort application button that leads to short form when apps are open-->
-      <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
-        class="sponsor"
-        id="orange-button"
-        target="_blank"
-        rel="noopener noreferrer"
-        >{{timeline.TEXT}}</a
-      >
-      {% else %}
-      <!-- event sign up button appears when apps are closed -->
-      <a
-        href="https://www.eventbrite.com/o/techtonica-11297022451"
-        class="sponsor"
-        id="orange-button"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Sign up to join our events
-      </a>
-      {% endif %}
-    </h2>
+    {% if timeline.APP_OPEN_DATE %}
+    <!-- FT cohort application button that leads to short form when apps are open-->
+    <a
+      href="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
+      class="orange-button"
+      target="_blank"
+      rel="noopener noreferrer"
+     >
+      {{timeline.TEXT}}
+    </a>
+    {% else %}
+    <!-- event sign up button appears when apps are closed -->
+    <a
+      href="https://www.eventbrite.com/o/techtonica-11297022451"
+      class="orange-button"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Sign up to join our events
+    </a>
+    {% endif %}
   </div>
 </div>
 <div class="row row__baseline blue-background">
