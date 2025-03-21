@@ -16,7 +16,7 @@ Mentoring {% endblock title %} {% block content %}
 </div>
 <div class="row row__center about-us">
   <div class="column">
-    <p class="justify">
+    <p>
       Techtonica is a rigorous, six-month training program followed by job
       placement for women and non-binary adults with low incomes. Our program
       participants will benefit from the experience, insight, and support of
@@ -64,9 +64,7 @@ Mentoring {% endblock title %} {% block content %}
     </ul>
 
     <h3>Eligibility</h3>
-    <p class="justify">
-      In order to best serve Techtonica mentees, mentors must be:
-    </p>
+    <p>In order to best serve Techtonica mentees, mentors must be:</p>
     <ul>
       <li>18 years or older</li>
       <li>Employed as a software engineer or in a closely-related field</li>
@@ -150,40 +148,44 @@ Mentoring {% endblock title %} {% block content %}
         </td>
       </tr>
     </table>
-    {% if mentor.app_open_date %}
-    <h3>{{ mentor.start_month }} {{ mentor.year }} Cohort Timeline</h3>
+    {% if timeline.APP_OPEN_DATE %}
+    <h3>
+      {{ timeline.START_MONTH }} {{ timeline.START_YEAR }} Cohort Timeline
+    </h3>
     <table class="mentor" cellpadding="0" cellspacing="0">
       <tr>
-        <td>{{ mentor.app_open_date }} - {{ mentor.app_close_date }}</td>
+        <td>{{ timeline.APP_OPEN_DATE }} - {{ timeline.ONBOARDING_DAY }}</td>
         <td>Mentor applications and open interviews</td>
       </tr>
       <tr>
-        <td>{{ mentor.app_close_date }}</td>
+        <td>{{ timeline.ONBOARDING_DAY }}</td>
         <td>Mentor acceptance letter</td>
       </tr>
       <tr>
-        <td>{{ mentor.onboarding_day }}</td>
+        <td>{{timeline.ONBOARDING_DAY }}</td>
         <td>Mentor and participant matches at onboarding day</td>
       </tr>
       <tr>
-        <td>{{ mentor.pre_work_start }} - {{ mentor.start_day }}</td>
+        <td>{{ timeline.PRE_WORK_START }} - {{ timeline.COHORT_START_DAY }}</td>
         <td>Support participants doing pre-work</td>
       </tr>
       <tr>
-        <td>{{ mentor.start_day }}</td>
-        <td>First day {{ mentor.cohort_half }} {{ mentor.year }} cohort</td>
+        <td>{{ timeline.COHORT_START_DAY }}</td>
+        <td>
+          First day {{ timeline.COHORT_HALF }} {{ timeline.START_YEAR}} cohort
+        </td>
       </tr>
       <tr>
         <td>
-          {{ mentor.training_start_month}} {{mentor.year}} - {{
-          mentor.training_end_month}} {{mentor.year}}
+          {{ timeline.START_MONTH}} {{timeline.START_YEAR}} - {{
+          timeline.TRAINING_END_MONTH_YEAR}}
         </td>
         <td>Support during Techtonica training</td>
       </tr>
       <tr>
         <td>
-          {{ mentor.job_search_start_month }} {{ mentor.year }} - {{
-          mentor.job_search_end_month }} {{ mentor.year }}
+          {{ timeline.JOB_SEARCH_START_MONTH_YEAR }} - {{
+          timeline.JOB_SEARCH_END_MONTH_YEAR }}
         </td>
         <td>Support during placement or job search</td>
       </tr>
@@ -193,9 +195,7 @@ Mentoring {% endblock title %} {% block content %}
 </div>
 <div class="column row row__center blue-background">
   <div class="column">
-    <p class="justify">
-      If this sounds like a commitment that you can make, please apply now!
-    </p>
+    <p>If this sounds like a commitment that you can make, please apply now!</p>
     <a
       href="https://docs.google.com/forms/d/e/1FAIpQLSf4Zap9U0k6iQvEBfPEFCYpWPfA0lLsd7nIVpICDZdc7A0ULQ/viewform"
       class="sponsor"
@@ -219,19 +219,19 @@ Mentoring {% endblock title %} {% block content %}
       Our mentors play a significant role in supporting our participants on
       their tech growth journey! Here are some testimonials:
     </h2>
-    <p class="justify">
+    <p>
       "I enjoy our weekly mentoring session, as it provides me a chance to
       summarize my wins, my confusion and talk about my burnout. Especially it
       provides me a chance to practice my presentation skills as I have to show
       my project to my mentor, talk about my designs and special tech knowledge
       I applied to it" -Techtonica participant
     </p>
-    <p class="justify">
+    <p>
       "I’m very grateful for the support I’m receiving- the encouragement makes
       me feel inspired to keep learning and helps me feel less scared to ask
       questions in the future" -Techtonica participant
     </p>
-    <p class="justify">
+    <p>
       "I also love the mentors: I had 2, and I felt so honored to be learning
       from them. They were both senior people in the field with a passion for
       teaching, and they gave me so much insight into the industry and helped me
