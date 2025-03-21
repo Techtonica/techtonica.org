@@ -28,8 +28,8 @@ Techtonica Application {% endblock title %} {% block content %}
         <label for="US-bank-account-no">No</label><br />
       </div>
       <label for="annual-income">What is your annual household income?</label>
-      <div class="learn-more-wrapper" aria-expanded="false">
-        <button class="learn-more-title" type="button">
+      <div class="learn-more-wrapper">
+        <button class="learn-more-title" type="button" aria-expanded="false">
           Learn More
           <span class="toggle-icon">
             <span class="toggle-icon-plus">+</span>
@@ -110,8 +110,8 @@ Techtonica Application {% endblock title %} {% block content %}
           letter, public benefits verification, etc).
         </i>
       </label>
-      <div class="learn-more-wrapper" aria-expanded="false">
-        <button class="learn-more-title" type="button">
+      <div class="learn-more-wrapper">
+        <button class="learn-more-title" type="button" aria-expanded="false">
           Learn More
           <span class="toggle-icon">
             <span class="toggle-icon-plus">+</span>
@@ -138,8 +138,8 @@ Techtonica Application {% endblock title %} {% block content %}
         savings and investment accounts, copies of a home ownership document
         such as a deed, etc.)
       </label>
-      <div class="learn-more-wrapper" aria-expanded="false">
-        <button class="learn-more-title" type="button">
+      <div class="learn-more-wrapper">
+        <button class="learn-more-title" type="button" aria-expanded="false">
           Learn More
           <span class="toggle-icon">
             <span class="toggle-icon-plus">+</span>
@@ -161,8 +161,8 @@ Techtonica Application {% endblock title %} {% block content %}
       <label for="average-monthly-cost"
         >What are your average monthly costs?
       </label>
-      <div class="learn-more-wrapper" aria-expanded="false">
-        <button class="learn-more-title" type="button">
+      <div class="learn-more-wrapper">
+        <button class="learn-more-title" type="button" aria-expanded="false">
           Learn More
           <span class="toggle-icon">
             <span class="toggle-icon-plus">+</span>
@@ -420,7 +420,7 @@ Techtonica Application {% endblock title %} {% block content %}
   function greaterThan25000(input) {
     if (input.value <= 25000) {
       input.setCustomValidity(
-        "Please enter a number greater than or equal to 25000."
+        "Please enter a number greater than or equal to 25000.",
       );
     } else {
       input.setCustomValidity("");
@@ -459,13 +459,13 @@ Techtonica Application {% endblock title %} {% block content %}
           toggleIcon.querySelector(".toggle-icon-plus").style.display = "none";
           toggleIcon.querySelector(".toggle-icon-minus").style.display =
             "inline";
-          wrapper.setAttribute("aria-expanded", true);
+          title.setAttribute("aria-expanded", true);
         } else {
           content.style.display = "none";
           toggleIcon.querySelector(".toggle-icon-plus").style.display =
             "inline";
           toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
-          wrapper.setAttribute("aria-expanded", false);
+          title.setAttribute("aria-expanded", false);
         }
 
         isExpanded = !isExpanded;

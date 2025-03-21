@@ -12,8 +12,8 @@ Techtonica Application {% endblock title %} {% block content %}
           during the program that works well so it won't be a problem during our
           intensive program?
         </label>
-        <div class="learn-more-wrapper" aria-expanded="false">
-          <button class="learn-more-title" type="button">
+        <div class="learn-more-wrapper">
+          <button class="learn-more-title" type="button" aria-expanded="false">
             Learn More
             <span class="toggle-icon">
               <span class="toggle-icon-plus">+</span>
@@ -200,8 +200,8 @@ Techtonica Application {% endblock title %} {% block content %}
         <label for="willing-to-relocate"
           >Would you be willing to move to a new city to be placed in a job?
         </label>
-        <div class="learn-more-wrapper" aria-expanded="false">
-          <button class="learn-more-title" type="button">
+        <div class="learn-more-wrapper">
+          <button class="learn-more-title" type="button" aria-expanded="false">
             Learn More
             <span class="toggle-icon">
               <span class="toggle-icon-plus">+</span>
@@ -598,13 +598,13 @@ Techtonica Application {% endblock title %} {% block content %}
           toggleIcon.querySelector(".toggle-icon-plus").style.display = "none";
           toggleIcon.querySelector(".toggle-icon-minus").style.display =
             "inline";
-          wrapper.setAttribute("aria-expanded", true);
+          title.setAttribute("aria-expanded", true);
         } else {
           content.style.display = "none";
           toggleIcon.querySelector(".toggle-icon-plus").style.display =
             "inline";
           toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
-          wrapper.setAttribute("aria-expanded", false);
+          title.setAttribute("aria-expanded", false);
         }
 
         isExpanded = !isExpanded;

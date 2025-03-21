@@ -30,8 +30,8 @@ Techtonica Application {% endblock title %} {% block content %}
       <label for="name-pronunciation"
         >How to pronounce your full name: <span>(Optional)</span></label
       >
-      <div class="learn-more-wrapper" aria-expanded="false">
-        <button class="learn-more-title" type="button">
+      <div class="learn-more-wrapper">
+        <button class="learn-more-title" type="button" aria-expanded="false">
           Learn More
           <span class="toggle-icon">
             <span class="toggle-icon-plus">+</span>
@@ -55,8 +55,8 @@ Techtonica Application {% endblock title %} {% block content %}
         name="name-pronunciation"
       /><br />
       <label for="email">Email: </label>
-      <div class="learn-more-wrapper" aria-expanded="false">
-        <button class="learn-more-title" type="button">
+      <div class="learn-more-wrapper">
+        <button class="learn-more-title" type="button" aria-expanded="false">
           Learn More
           <span class="toggle-icon">
             <span class="toggle-icon-plus">+</span>
@@ -80,8 +80,8 @@ Techtonica Application {% endblock title %} {% block content %}
       <label for="gender-identity"
         >With which gender identity do you most align?
       </label>
-      <div class="learn-more-wrapper" aria-expanded="false">
-        <button class="learn-more-title" type="button">
+      <div class="learn-more-wrapper">
+        <button class="learn-more-title" type="button" aria-expanded="false">
           Learn More
           <span class="toggle-icon">
             <span class="toggle-icon-plus">+</span>
@@ -316,8 +316,8 @@ Techtonica Application {% endblock title %} {% block content %}
       <label for="race-ethnicity"
         >With which racial/ethnic groups do you most identify?
       </label>
-      <div class="learn-more-wrapper" aria-expanded="false">
-        <button class="learn-more-title" type="button">
+      <div class="learn-more-wrapper">
+        <button class="learn-more-title" type="button" aria-expanded="false">
           Learn More
           <span class="toggle-icon">
             <span class="toggle-icon-plus">+</span>
@@ -704,7 +704,7 @@ Techtonica Application {% endblock title %} {% block content %}
     });
 
   const pronounsCheckboxes = document.querySelectorAll(
-    "input[name='pronouns']"
+    "input[name='pronouns']",
   );
   const customPronounsInput = document.getElementById("custom-pronouns");
   pronounsCheckboxes.forEach((checkbox) => {
@@ -725,7 +725,7 @@ Techtonica Application {% endblock title %} {% block content %}
     .getElementById("race-ethnicity")
     .addEventListener("change", function () {
       const customRaceEthnicityInput = document.getElementById(
-        "custom-race-ethnicity"
+        "custom-race-ethnicity",
       );
 
       if (this.value === "Other") {
@@ -763,13 +763,13 @@ Techtonica Application {% endblock title %} {% block content %}
           toggleIcon.querySelector(".toggle-icon-plus").style.display = "none";
           toggleIcon.querySelector(".toggle-icon-minus").style.display =
             "inline";
-          wrapper.setAttribute("aria-expanded", true);
+          title.setAttribute("aria-expanded", true);
         } else {
           content.style.display = "none";
           toggleIcon.querySelector(".toggle-icon-plus").style.display =
             "inline";
           toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
-          wrapper.setAttribute("aria-expanded", false);
+          title.setAttribute("aria-expanded", false);
         }
 
         isExpanded = !isExpanded;

@@ -275,8 +275,8 @@ Techtonica Application {% endblock title %} {% block content %}
         List all the steps one-by-one that you would use to tell a robot how to
         make a sandwich (if all the ingredients are ready and available).
       </label>
-      <div class="learn-more-wrapper" aria-expanded="false">
-        <button class="learn-more-title" type="button">
+      <div class="learn-more-wrapper">
+        <button class="learn-more-title" type="button" aria-expanded="false">
           Learn More
           <span class="toggle-icon">
             <span class="toggle-icon-plus">+</span>
@@ -325,8 +325,8 @@ Techtonica Application {% endblock title %} {% block content %}
       <label for="how-did-you-find-out">
         How did you find out about Techtonica?
       </label>
-      <div class="learn-more-wrapper" aria-expanded="false">
-        <button class="learn-more-title" type="button">
+      <div class="learn-more-wrapper">
+        <button class="learn-more-title" type="button" aria-expanded="false">
           Learn More
           <span class="toggle-icon">
             <span class="toggle-icon-plus">+</span>
@@ -364,8 +364,8 @@ Techtonica Application {% endblock title %} {% block content %}
         Other full URLs to you online (blog, Twitter, GitHub, Instagram, etc.)
         <span>(Optional)</span>
       </label>
-      <div class="learn-more-wrapper" aria-expanded="false">
-        <button class="learn-more-title" type="button">
+      <div class="learn-more-wrapper">
+        <button class="learn-more-title" type="button" aria-expanded="false">
           Learn More
           <span class="toggle-icon">
             <span class="toggle-icon-plus">+</span>
@@ -622,13 +622,13 @@ Techtonica Application {% endblock title %} {% block content %}
           toggleIcon.querySelector(".toggle-icon-plus").style.display = "none";
           toggleIcon.querySelector(".toggle-icon-minus").style.display =
             "inline";
-          wrapper.setAttribute("aria-expanded", true);
+          title.setAttribute("aria-expanded", true);
         } else {
           content.style.display = "none";
           toggleIcon.querySelector(".toggle-icon-plus").style.display =
             "inline";
           toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
-          wrapper.setAttribute("aria-expanded", false);
+          title.setAttribute("aria-expanded", false);
         }
 
         isExpanded = !isExpanded;
