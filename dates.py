@@ -67,7 +67,9 @@ def generate_application_timeline():
                 datetime.strptime(app_open_date_str, "%m/%d/%y %H:%M:%S")
             )
         except ValueError:
-            print(f"Error: Invalid APP_OPEN_DATE format ({app_open_date_str})!")
+            print(
+                f"Error: Invalid APP_OPEN_DATE format ({app_open_date_str})!"
+            )
 
             app_open_datetime = None
     else:
@@ -81,7 +83,9 @@ def generate_application_timeline():
         app_close_datetime = None
 
     today = datetime.now(pst)
-    app_open = app_open_datetime and (app_open_datetime <= today <= app_close_datetime)
+    app_open = app_open_datetime and (
+        app_open_datetime <= today <= app_close_datetime
+    )
 
     info_session = parse_env_date(
         "INFO_SESSION",
@@ -89,11 +93,19 @@ def generate_application_timeline():
     )
     application_workshop = parse_env_date(
         "APPLICATION_WORKSHOP",
-        (app_close_datetime + timedelta(weeks=1) if app_close_datetime else None),
+        (
+            app_close_datetime + timedelta(weeks=1)
+            if app_close_datetime
+            else None
+        ),
     )
     pair_programming = parse_env_date(
         "PAIR_PROGRAMMING_WITH_STAFF",
-        (application_workshop + timedelta(weeks=1) if application_workshop else None),
+        (
+            application_workshop + timedelta(weeks=1)
+            if application_workshop
+            else None
+        ),
     )
     take_home = parse_env_date(
         "TAKE_HOME_CODE_CHALLENGE",
@@ -122,9 +134,13 @@ def generate_application_timeline():
 
     start_year = cohort_start_day.strftime("%Y") if cohort_start_day else None
     start_month = cohort_start_day.strftime("%B") if cohort_start_day else None
-    cohort_half = "H1" if start_month == "January" else "H2" if start_month else None
+    cohort_half = (
+        "H1" if start_month == "January" else "H2" if start_month else None
+    )
 
-    training_end = cohort_start_day + timedelta(weeks=24) if cohort_start_day else None
+    training_end = (
+        cohort_start_day + timedelta(weeks=24) if cohort_start_day else None
+    )
     job_search_end = (
         cohort_start_day + timedelta(weeks=48) if cohort_start_day else None
     )
