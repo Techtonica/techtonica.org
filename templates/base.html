@@ -30,7 +30,8 @@
       .sr-only:focus,
       .sr-only:active {
         left: 50%;
-        transform: translateY(-150%) translateX(-50%);
+        top: 10px;
+        transform: translateX(-50%);
         opacity: 1;
         background-color: #fc7625;
         color: white;
@@ -978,7 +979,7 @@
               }
               console.log(
                 `Restored value for ${input.name || input.id}:`,
-                input.value
+                input.value,
               );
 
               // Save input values to localStorage on input change
@@ -1045,7 +1046,9 @@
     gtag("config", "G-ZGW3GJMQXR");
   </script>
   <body>
-    <a href="#main-content" class="sr-only">Skip to main content</a>
+    <a href="#main-content" class="sr-only" tabindex="0"
+      >Skip to main content</a
+    >
     <!-- BEGIN HEADER -->
     <nav class="nav-bar banner-visible">
       <div class="nav-bar-inner">
