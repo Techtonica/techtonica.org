@@ -25,8 +25,8 @@ load_dotenv(find_dotenv(usecwd=True))
 # Gracefully handle running locally without eventbrite token
 try:
     eventbrite = Eventbrite(os.environ["EVENTBRITE_OAUTH_TOKEN"])
-except BaseException:
-    print("Not able to authenticate to Eventbrite")
+except Exception:
+    print("Not able to authenticate to Eventbrite.")
 
 app = Flask(__name__)
 sslify = SSLify(app)
@@ -45,7 +45,7 @@ def render_home_page():
     try:
         events = get_events()
         return render_template("home.html", events=events, timeline=timeline)
-    except BaseException:
+    except Exception:
         return render_template("home.html", timeline=timeline)
 
 
