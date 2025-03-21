@@ -3,16 +3,18 @@ This is the main Python file that sets up rendering and templating
 for Techtonica.org
 """
 
-import configparser
 import os
 import sys
 from uuid import uuid4
-
+import hmac
+import hashlib
+import time
+import json
 import pendulum
 import requests
 from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
-from flask import Flask, jsonify, redirect, render_template, request, url_for
+from flask import Flask, abort, jsonify, redirect, render_template, request, url_for
 from flask_sslify import SSLify
 from pydantic import BaseModel
 from square.client import Client
@@ -265,34 +267,33 @@ class Event(object):
 
 # ONLINE PAYMENT HANDLING *****************************************************
 
-# Config setting
-config = configparser.ConfigParser()
-config.read("config.ini")
+# Load environment variables
+load_dotenv()
 
-# Slack credentials
-SLACK_WEBHOOK = config.get("slack", "slack_webhook")
+# Get environment configuration
+ENVIRONMENT = os.getenv("ENVIRONMENT", "sandbox")
+IS_PRODUCTION = ENVIRONMENT == "production"
 
 # Square credentials
-CONFIG_TYPE = config.get("default", "environment")
-if CONFIG_TYPE == "production":
-    PAYMENT_FORM_URL = "https://web.squarecdn.com/v1/square.js"
-else:
-    PAYMENT_FORM_URL = "https://sandbox.web.squarecdn.com/v1/square.js"
-# PAYMENT_FORM_URL = (
-#     "https://web.squarecdn.com/v1/square.js"
-#     if CONFIG_TYPE == "production"
-#     else "https://sandbox.web.squarecdn.com/v1/square.js"
-# )
-APPLICATION_ID = config.get(CONFIG_TYPE, "square_application_id")
-LOCATION_ID = config.get(CONFIG_TYPE, "square_location_id")
-ACCESS_TOKEN = config.get(CONFIG_TYPE, "square_access_token")
+PAYMENT_FORM_URL = "https://web.squarecdn.com/v1/square.js" if IS_PRODUCTION else "https://sandbox.web.squarecdn.com/v1/square.js"
+APPLICATION_ID = os.getenv("SQUARE_APPLICATION_ID")
+LOCATION_ID = os.getenv("SQUARE_LOCATION_ID")
+ACCESS_TOKEN = os.getenv("SQUARE_ACCESS_TOKEN")
 
+# Slack credentials
+SLACK_STAFF_WEBHOOK = os.getenv("SLACK_STAFF_WEBHOOK")
+SLACK_GRADUATES_WEBHOOK = os.getenv("SLACK_GRADUATES_WEBHOOK")
+SLACK_SIGNING_SECRET = os.getenv("SLACK_SIGNING_SECRET")
+
+# Initialize Square client
 client = Client(
     access_token=ACCESS_TOKEN,
-    environment=config.get("default", "environment"),
+    environment=ENVIRONMENT,
     user_agent_detail="techtonica_payment",
 )
 
+# Create a temporary storage for pending job postings
+pending_job_postings = {}
 
 class Payment(BaseModel):
     token: str
@@ -323,12 +324,35 @@ def render_job_form():
         idempotencyKey=str(uuid4()),
     )
 
+# old route - redirects to avoid breaking old links
+@app.route("/payment-form")
+def render_payment_form():
+    """
+    Redirects to current job-form route
+    """
+    return redirect(url_for("render_job_form"))
+
+
+@app.route("/share-a-job")
+def render_job_form():
+    """
+    Renders the job-form page from jinja2 template
+    """
+    return render_template(
+        "job-form.html",
+        APPLICATION_ID=APPLICATION_ID,
+        PAYMENT_FORM_URL=PAYMENT_FORM_URL,
+        LOCATION_ID=LOCATION_ID,
+        ACCOUNT_CURRENCY="USD",
+        ACCOUNT_COUNTRY="US",
+        idempotencyKey=str(uuid4()),
+    )
 
 # Square payment api route
 @app.route("/process-payment", methods=["POST"])
 def create_payment():
     # Charge the customer's card
-    account_currency = "USD"  # TODO: Are you hard-coding this to USD?
+    account_currency = "USD"
     data = request.json
     print(data)
 
@@ -357,31 +381,159 @@ def create_payment():
 def send_posting():
     data = request.json
     print(f"Received data: {data}")
-
-    x = requests.post(
-        SLACK_WEBHOOK,
-        json={
-            "text": f"A new job has been posted to Techtonica! "
-            f"Read the details below to see if you're a good fit!"
-            f"\n\n JOB DETAILS \n Job Title: {data['jobTitle']} "
-            f"\n Company: {data['company']} \n Type: {data['type']} "
-            f"\n Education Requirement: {data['educationReq']} "
-            f"\n Location: {data['location']} "
-            f"\n Referral offered: {data['referral']} "
-            f"\n Salary Range: {data['salaryRange']} "
-            f"\n Description: {data['description']} "
-            f"\n Application Link: {data['applicationLink']} "
-            f"\n \n CONTACT INFO "
-            f"\n Name: {data['firstName']} {data['lastName']} "
-            f"\n Email: {data['email']}  \n "
-        },
+    
+    # Generate a unique ID for this job posting
+    posting_id = str(uuid4())
+    
+    # Store the job posting data for later approval
+    pending_job_postings[posting_id] = data
+    
+    # Create the job posting message
+    job_details = (
+        f"*A new job posting requires approval:*\n\n"
+        f"*JOB DETAILS*\n"
+        f"*Job Title:* {data['jobTitle']}\n"
+        f"*Company:* {data['company']}\n"
+        f"*Type:* {data['type']}\n"
+        f"*Education Requirement:* {data['educationReq']}\n"
+        f"*Location:* {data['location']}\n"
+        f"*Referral offered:* {data['referral']}\n"
+        f"*Salary Range:* {data['salaryRange']}\n"
+        f"*Description:* {data['description']}\n"
+        f"*Application Link:* {data['applicationLink']}\n\n"
+        f"*CONTACT INFO*\n"
+        f"*Name:* {data['firstName']} {data['lastName']}\n"
+        f"*Email:* {data['email']}\n"
     )
+    
+    # Create interactive message with approval buttons for staff channel
+    staff_message = {
+        "text": "New job posting requires approval",
+        "blocks": [
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": job_details
+                }
+            },
+            {
+                "type": "actions",
+                "elements": [
+                    {
+                        "type": "button",
+                        "text": {
+                            "type": "plain_text",
+                            "text": "Approve",
+                            "emoji": True
+                        },
+                        "style": "primary",
+                        "value": posting_id,
+                        "action_id": "approve_job"
+                    },
+                    {
+                        "type": "button",
+                        "text": {
+                            "type": "plain_text",
+                            "text": "Reject",
+                            "emoji": True
+                        },
+                        "style": "danger",
+                        "value": posting_id,
+                        "action_id": "reject_job"
+                    }
+                ]
+            }
+        ]
+    }
+    
+    # Send to staff channel for approval
+    response = requests.post(SLACK_STAFF_WEBHOOK, json=staff_message)
+    
+    if response.status_code != 200:
+        print(f"Error sending to staff channel: {response.text}")
+        return jsonify({"error": "Failed to send job posting for approval"}), 500
+    
+    print(f"Job posting sent to staff for approval: {posting_id}")
+    return jsonify({"message": "Job posting sent for approval", "posting_id": posting_id})
 
-    print(f"Message sent: {x.text}")
-    return jsonify(
-        {"message": "Data received successfully", "received_data": data}
-    )
 
+# Handle Slack interactive messages (approval/rejection)
+@app.route("/slack/actions", methods=["POST"])
+def handle_slack_actions():
+    # Verify the request is from Slack
+    if not verify_slack_request(request):
+        abort(403)
+    
+    # Parse the payload
+    payload = json.loads(request.form.get("payload", "{}"))
+    action = payload.get("actions", [{}])[0]
+    action_id = action.get("action_id")
+    posting_id = action.get("value")
+    
+    # Get the job posting data
+    job_data = pending_job_postings.get(posting_id)
+    if not job_data:
+        return jsonify({"text": "Error: Job posting not found"})
+    
+    user = payload.get("user", {}).get("name", "A staff member")
+    
+    if action_id == "approve_job":
+        # Post to graduates channel
+        graduate_message = {
+            "text": f"A new job has been posted to Techtonica! Read the details below to see if you're a good fit!  \n\n JOB DETAILS \n Job Title: {job_data['jobTitle']} \n Company: {job_data['company']} \n Type: {job_data['type']} \n Education Requirement: {job_data['educationReq']} \n Location: {job_data['location']} \n Referral offered: {job_data['referral']} \n Salary Range: {job_data['salaryRange']} \n Description: {job_data['description']} \n Application Link: {job_data['applicationLink']} \n \n CONTACT INFO \n Name: {job_data['firstName']} {job_data['lastName']}  \n Email: {job_data['email']}  \n "
+        }
+        
+        response = requests.post(SLACK_GRADUATES_WEBHOOK, json=graduate_message)
+        
+        if response.status_code != 200:
+            return jsonify({"text": f"Error posting to graduates channel: {response.text}"})
+        
+        # Clean up the pending job posting
+        del pending_job_postings[posting_id]
+        
+        return jsonify({
+            "text": f"✅ Job posting approved by {user} and shared with graduates!"
+        })
+    
+    elif action_id == "reject_job":
+        # Clean up the pending job posting
+        del pending_job_postings[posting_id]
+        
+        return jsonify({
+            "text": f"❌ Job posting rejected by {user} and will not be shared."
+        })
+    
+    return jsonify({"text": "Unknown action"})
+
+
+# Function to verify Slack requests
+def verify_slack_request(request):
+    # Skip verification in development
+    if app.debug:
+        return True
+        
+    # Get the signature from the request headers
+    slack_signature = request.headers.get("X-Slack-Signature", "")
+    slack_request_timestamp = request.headers.get("X-Slack-Request-Timestamp", "")
+    
+    # Check if the timestamp is too old (prevent replay attacks)
+    if abs(time.time() - int(slack_request_timestamp)) > 60 * 5:
+        return False
+    
+    # Create the signature base string
+    req_body = request.get_data().decode()
+    base_string = f"v0:{slack_request_timestamp}:{req_body}"
+    
+    # Create the signature to compare
+    my_signature = "v0=" + hmac.new(
+        SLACK_SIGNING_SECRET.encode(),
+        base_string.encode(),
+        hashlib.sha256
+    ).hexdigest()
+    
+    # Compare signatures
+    return hmac.compare_digest(my_signature, slack_signature)
 
 if __name__ == "__main__":
     app.debug = False
