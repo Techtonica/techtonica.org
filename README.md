@@ -317,25 +317,26 @@ rebuild the Docker image in order for those changes to take effect._
 
 ### CSS / SCSS
 
-The Techtonica website uses Sass to manage it's CSS.
+The Techtonica website uses Sass to manage its CSS.
 
 Styling changes should **only** be made to the Sass (.scss) files and then compiled to
 CSS using one of the following commands:
 
-👷‍♀️ Install Sass using one of the following
+Compile once:
 
-Mac: `brew install sass/sass/sass`
+`sass static/sass/style.scss static/css/style.css`
 
-Windows: `choco install sass`
+OR
 
-To compile your Sass files to CSS and to keep track of changes in real-time.
+Watch for changes using `--watch`:
 
 ```sh
-sass static/sass/style.scss static/css/style.css
-sass --watch static/sass/style.scss static/css/style.css
+sass --watch static/sass/style.scss:static/css/style.css
 ```
 
-By running the --watch command, any modifications made to the CSS files are instantly reflected, saving you time and ensuring your styles are always up-to-date.
+By running the `--watch` command, any modifications made to the CSS files are instantly reflected, saving you time and ensuring your styles are always up-to-date.
+
+For installation help and more details, see the [CSS/SCSS Styling Instructions Wiki](https://github.com/Techtonica/techtonica.org/wiki/CSS-SCSS-Styling-Instructions-Wiki)
 
 ### Alt-Text Guidelines
 

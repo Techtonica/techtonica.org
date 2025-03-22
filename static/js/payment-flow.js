@@ -8,19 +8,19 @@ async function SquarePaymentFlow() {
 
 window.payments = Square.payments(window.applicationId, window.locationId);
 
-window.paymentFlowMessageEl = document.getElementById('payment-flow-message');
+window.paymentFlowMessageEl = document.getElementById("payment-flow-message");
 
-window.showSuccess = function(message) {
-  window.paymentFlowMessageEl.classList.add('success');
-  window.paymentFlowMessageEl.classList.remove('error');
+window.showSuccess = function (message) {
+  window.paymentFlowMessageEl.classList.add("success");
+  window.paymentFlowMessageEl.classList.remove("error");
   window.paymentFlowMessageEl.innerText = message;
-}
+};
 
-window.showError = function(message) {
-  window.paymentFlowMessageEl.classList.add('error');
-  window.paymentFlowMessageEl.classList.remove('success');
+window.showError = function (message) {
+  window.paymentFlowMessageEl.classList.add("error");
+  window.paymentFlowMessageEl.classList.remove("success");
   window.paymentFlowMessageEl.innerText = message;
-}
+};
 
 // Function to display success page after payment
 window.showSuccessPage = function(jobTitle, company) {
@@ -216,16 +216,16 @@ window.createPayment = async function(token) {
   
   const dataJsonString = JSON.stringify({
     token,
-    idempotencyKey: window.idempotencyKey
+    idempotencyKey: window.idempotencyKey,
   });
 
   try {
-    const response = await fetch('/process-payment', {
-      method: 'POST',
+    const response = await fetch("/process-payment", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: dataJsonString
+      body: dataJsonString,
     });
 
     const data = await response.json();
@@ -234,7 +234,7 @@ window.createPayment = async function(token) {
       if (data.errors[0].detail) {
         window.showError(data.errors[0].detail);
       } else {
-        window.showError('Payment Failed.');
+        window.showError("Payment Failed.");
       }
     } else {
       // Get job title and company for the success message
@@ -251,9 +251,9 @@ window.createPayment = async function(token) {
     console.error('Error:', error);
     window.showError('An error occurred while processing your payment.');
   }
-}
+};
 
-window.sendSlackNotification = async function() {
+window.sendSlackNotification = async function () {
   var referralValue = "no";
 
   document.getElementsByName("referral").forEach(radio => {
@@ -272,9 +272,9 @@ window.sendSlackNotification = async function() {
     educationReq: document.getElementById('educationreq').value,
     location: document.getElementById('location').value,
     referral: referralValue,
-    salaryRange: document.getElementById('salaryrange').value,
-    description: document.getElementById('description').value,
-    applicationLink: document.getElementById('applicationlink').value
+    salaryRange: document.getElementById("salaryrange").value,
+    description: document.getElementById("description").value,
+    applicationLink: document.getElementById("applicationlink").value,
   };
 
   var dataJsonString = JSON.stringify(notificationValues);
