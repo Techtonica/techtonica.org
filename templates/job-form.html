@@ -2,7 +2,7 @@
 Post A Job {% endblock title %} {% block content %}
 <!-- link to the Web SDK library -->
 <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
-<script type="text/javascript" src='{{ PAYMENT_FORM_URL }}'></script>
+<script type="text/javascript" src="{{ PAYMENT_FORM_URL }}"></script>
 <script type="application/javascript">
   window.applicationId = "{{ APPLICATION_ID }}";
   window.locationId = "{{ LOCATION_ID }}";
@@ -12,73 +12,80 @@ Post A Job {% endblock title %} {% block content %}
 </script>
 
 <div id="payment-page" class="blue-background">
-  <h1>
-      Post A Job
-  </h1>
+  <h1>Post A Job</h1>
   <p>
-      Have a job opening but your company isn’t ready to become a hiring partner? <br>
-      Submit the job for $100 and we’ll share with our graduates who have 0-5 years of experience.
+    Have a job opening but your company isn’t ready to become a hiring partner?
+    <br />
+    Submit the job for $100 and we’ll share with our graduates who have 0-5
+    years of experience.
   </p>
   {% if not credentials %}
-    <p><a href="mailto:info@techtonica.org">Contact us</a> to post your job!</p>
-  {% endif %}
-  {% if credentials %}
-    <div class="column">
-      <form class="payment-form" id="fast-checkout">
-        <div class="wrapper">
-          <h3>Job Listing Form</h3>
-          <div id="info-wrapper" class="info-wrapper">
-            <fieldset>
-              <legend>Contact Information</legend>
+  <p><a href="mailto:info@techtonica.org">Contact us</a> to post your job!</p>
+  {% endif %} {% if credentials %}
+  <div class="column">
+    <form class="payment-form" id="fast-checkout">
+      <div class="wrapper">
+        <h3>Job Listing Form</h3>
+        <div id="info-wrapper" class="info-wrapper">
+          <fieldset>
+            <legend>Contact Information</legend>
 
-              <label for="firstname">First Name</label>
-              <input type="text" id="firstname" name="firstname" required>
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" name="firstname" required />
 
-              <label for="lastname">Last Name</label>
-              <input type="text" id="lastname" name="lastname" required>
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" name="lastname" required />
 
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
-            </fieldset>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </fieldset>
 
-            <fieldset>
-              <legend>Job Details</legend>
+          <fieldset>
+            <legend>Job Details</legend>
 
-              <label for="jobtitle">Job Title</label>
-              <input type="text" id="jobtitle" name="jobtitle" required>
+            <label for="jobtitle">Job Title</label>
+            <input type="text" id="jobtitle" name="jobtitle" required />
 
-              <label for="company">Company</label>
-              <input type="text" id="company" name="company" required>
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" required />
 
-              <label for="type">Type <span>(optional)</span></label>
-              <input type="text" id="type" name="type">
+            <label for="type">Type <span>(optional)</span></label>
+            <input type="text" id="type" name="type" />
 
-              <label for="educationreq">Education Requirement <span>(optional)</span></label>
-              <input type="text" id="educationreq" name="educationreq">
+            <label for="educationreq"
+              >Education Requirement <span>(optional)</span></label
+            >
+            <input type="text" id="educationreq" name="educationreq" />
 
-              <label for="location">Location</label>
-              <input type="text" id="location" name="location" required>
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" required />
 
-              <div id="radio-wrapper">
-                <p>Can you make a referral/connection?</p>
-                <label for="ref-yes">Yes</label>
-                <input type="radio" id="ref-yes" name="referral" value="yes">
-                <label for="ref-no">No</label>
-                <input type="radio" id="ref-no" name="referral" value="no">
-              </div>
+            <div id="radio-wrapper">
+              <p>Can you make a referral/connection?</p>
+              <label for="ref-yes">Yes</label>
+              <input type="radio" id="ref-yes" name="referral" value="yes" />
+              <label for="ref-no">No</label>
+              <input type="radio" id="ref-no" name="referral" value="no" />
+            </div>
 
-              <label for="salaryrange">Salary Range <span>(optional)</span></label>
-              <input type="text" id="salaryrange" name="salaryrange">
+            <label for="salaryrange"
+              >Salary Range <span>(optional)</span></label
+            >
+            <input type="text" id="salaryrange" name="salaryrange" />
 
-              <label for="description">Description <span>(optional)</span></label>
-              <textarea id="description" name="description">Submit your job for $100 to be shared with our 100+ full-stack software engineer graduates.</textarea>
+            <label for="description">Description <span>(optional)</span></label>
+            <textarea id="description" name="description">
+Submit your job for $100 to be shared with our 100+ full-stack software engineer graduates.</textarea
+            >
 
-              <label for="applicationlink">Link to Apply <span>(optional)</span></label>
-              <textarea id="applicationlink" name="applicationlink"></textarea>
-            </fieldset>
-            <!-- TO-DO: File upload input for screenshots -->
-          </div>
-          <!-- <div id="ach-wrapper">
+            <label for="applicationlink"
+              >Link to Apply <span>(optional)</span></label
+            >
+            <textarea id="applicationlink" name="applicationlink"></textarea>
+          </fieldset>
+          <!-- TO-DO: File upload input for screenshots -->
+        </div>
+        <!-- <div id="ach-wrapper">
             <label for="ach-account-holder-name">Full Name</label>
             <input
             id="ach-account-holder-name"
@@ -95,17 +102,15 @@ Post A Job {% endblock title %} {% block content %}
               <span>OR</span>
             </div>
           </div> -->
-          <h3>Payment Info</h3>
-          <div id="card-container"></div>
-          <button id="card-button" type="button" class="sponsor">
-            <h2>
-            Pay with Card
-            </h2>
-          </button>
-          <span id="payment-flow-message">
-        </div>
-      </form>
-    </div>
+        <h3>Payment Info</h3>
+        <div id="card-container"></div>
+        <button id="card-button" type="button" class="sponsor">
+          <h2>Pay with Card</h2>
+        </button>
+        <span id="payment-flow-message"></span>
+      </div>
+    </form>
+  </div>
   {% endif %}
 </div>
 <script type="text/javascript" src="/static/js/sq-card-pay.js"></script>

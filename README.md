@@ -62,33 +62,16 @@ environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 
 Set up virtual environment with Python 3.8.10 and Pip 23 using [pyenv](https://github.com/pyenv/pyenv) and [venv](https://docs.python.org/3/library/venv.html):
 
-- Install pyenv using brew
-
-```bash
+```
+# Install pyenv using brew
 brew install pyenv
-```
-
-- Use pyenv to install version python 3.8.10
-
-```bash
+# Use pyenv to install version python 3.8.10
 pyenv install 3.8.10
-```
-
-- Set your python version to 3.8.10
-
-```bash
+# Set your python version to 3.8.10
 pyenv local 3.8.10
-```
-
-- Create a virtual environment using venv
-
-```bash
+# Create a virtual environment using venv
 python -m venv venv
-```
-
-- Activate your new virtual environment
-
-```bash
+# Activate your new virtual environment
 source venv/bin/activate
 ```
 
@@ -114,14 +97,10 @@ This project uses various pre-commit hooks to ensure code quality and formatting
 consistency.
 
 1. [`Install pre-commit`](https://pre-commit.com/#install) globally.
+1. Install the project pre-commit hooks:
 
-```bash
-pip install pre-commit
 ```
-
-2. Install the project pre-commit hooks:
-
-```bash
+pip install pre-commit
 pre-commit install -f --install-hooks
 ```
 
@@ -156,7 +135,6 @@ DB_USERNAME="username"
 DB_PASSWORD="password"
 DB_HOST="host"
 DB_NAME="name"
-```
 
 ### Pre-Commit Hooks Guide
 
@@ -165,32 +143,42 @@ To manually run, test, and upgrade pre-commit hooks locally, follow these steps:
 To run hooks on specific files, use the command:
 
 ```
+
 pre-commit run --files <file1> <file2>
+
 ```
 
 For example, if you want to test a single file, you can use
 
 ```
+
 pre-commit run --files main_site.py
+
 ```
 
 To run all hooks on every file in the repository, use the
 command
 
 ```
+
 pre-commit run --all-files
+
 ```
 
 If you need to upgrade your hooks to their latest versions, run
 
 ```
+
 pre-commit autoupdate
+
 ```
 
 After upgrading, ensure you reinstall the hooks by running
 
 ```
+
 pre-commit install
+
 ```
 
 ### Optional: Installing Prettier Plug-in Locally
@@ -205,12 +193,12 @@ The Prettier pre-commit hook automatically formats code when you attempt to comm
 
 #### What to Expect
 
-1. **Scenario:**  
+1. **Scenario:**
    During `git commit`, the Prettier pre-commit hook runs and identifies formatting issues.
 
    - If applicable, Prettier will fix these issues but may leave **unstaged changes** in your working directory.
 
-2. **Outcome:**  
+2. **Outcome:**
    You will need to stage these changes again (`git add`) before committing and pushing your changes to the remote repository.
 
 #### Why This Happens
@@ -223,7 +211,7 @@ To avoid this behavior and streamline your workflow, you can install a Prettier 
 
 #### Steps:
 
-1. Install the Prettier plug-in in your IDE (e.g., VS Code).  
+1. Install the Prettier plug-in in your IDE (e.g., VS Code).
    ![Prettier Plug-in in VS Code](static/img/Prettier-Plug-In.png)
 
 2. Enable the "Format on Save" setting:
@@ -257,20 +245,24 @@ Each time you want to work on your code, you will need to activate your virtual 
 Activate your virtual environment:
 
 ```
+
 source venv/bin/activate
+
 ```
 
 Install any requirements if they've changed:
 
 ```
+
 pip install -r dev.txt
-```
+
+````
 
 Start the application's server:
 
 ```sh
 FLASK_DEBUG=1 FLASK_APP=main_site.py flask run
-```
+````
 
 Browse to <http://localhost:5000>.
 

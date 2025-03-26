@@ -111,7 +111,10 @@
 }
 
 .mc-closeModal {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
     1px 1px 0 #000;
 }
 
@@ -727,6 +730,20 @@ table.mentor {
     width: 100%;
     height: 100%;
     border: 0; // Remove default border
+  }
+
+  table.mentor {
+    td {
+      display: block; // Make table cells stack vertically
+      width: 100%; // Let cells take the full width
+      padding: 0.5rem; // Adjust padding for smaller screens
+      box-sizing: border-box; // Ensure consistent border sizing
+
+      &:first-of-type {
+        border-right: none; // Remove unnecessary border
+        vertical-align: top; // Retain alignment
+      }
+    }
   }
 }
 

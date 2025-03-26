@@ -24,8 +24,8 @@ load_dotenv(find_dotenv(usecwd=True))
 # Gracefully handle running locally without eventbrite token
 try:
     eventbrite = Eventbrite(os.environ["EVENTBRITE_OAUTH_TOKEN"])
-except BaseException:
-    print("Not able to authenticate to Eventbrite")
+except Exception:
+    print("Not able to authenticate to Eventbrite.")
 
 app = Flask(__name__)
 sslify = SSLify(app)
@@ -44,7 +44,7 @@ def render_home_page():
     try:
         events = get_events()
         return render_template("home.html", events=events, timeline=timeline)
-    except BaseException:
+    except Exception:
         return render_template("home.html", timeline=timeline)
 
 
@@ -385,14 +385,24 @@ def send_posting():
     x = requests.post(
         SLACK_WEBHOOK,
         json={
-            "text": f"A new job has been posted to Techtonica! Read the details below to see if you're a good fit!  \n\n JOB DETAILS \n Job Title: {data['jobTitle']} \n Company: {data['company']} \n Type: {data['type']} \n Education Requirement: {data['educationReq']} \n Location: {data['location']} \n Referral offered: {data['referral']} \n Salary Range: {data['salaryRange']} \n Description: {data['description']} \n Application Link: {data['applicationLink']} \n \n CONTACT INFO \n Name: {data['firstName']} {data['lastName']}  \n Email: {data['email']}  \n "  # noqa: E501
+            "text": f"A new job has been posted to Techtonica! "
+            f"Read the details below to see if you're a good fit!"
+            f"\n\n JOB DETAILS \n Job Title: {data['jobTitle']} "
+            f"\n Company: {data['company']} \n Type: {data['type']} "
+            f"\n Education Requirement: {data['educationReq']} "
+            f"\n Location: {data['location']} "
+            f"\n Referral offered: {data['referral']} "
+            f"\n Salary Range: {data['salaryRange']} "
+            f"\n Description: {data['description']} "
+            f"\n Application Link: {data['applicationLink']} "
+            f"\n \n CONTACT INFO "
+            f"\n Name: {data['firstName']} {data['lastName']} "
+            f"\n Email: {data['email']}  \n "
         },
     )
 
     print(f"Message sent: {x.text}")
-    return jsonify(
-        {"message": "Data received successfully", "received_data": data}
-    )  # noqa: E501
+    return jsonify({"message": "Data received successfully", "received_data": data})
 
 
 if __name__ == "__main__":
