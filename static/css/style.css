@@ -1150,6 +1150,7 @@ input[type="radio"] {
   max-width: 65%;
   margin: auto;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 #consulting-list {
