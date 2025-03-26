@@ -44,15 +44,17 @@ endblock title %} {% block content %}
         class="orange-button"
         target="_blank"
         rel="noopener noreferrer"
-        >Download our partnering info sheet</a
       >
+        Download our partnering info sheet
+      </a>
       <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSdNrE6qtdhND2eN3e4PbRfxa4ro1EKiQ3zYkKhYVxtbRXSsGg/viewform?usp=sf_link"
         class="orange-button"
         target="_blank"
         rel="noopener noreferrer"
-        >Discuss partnering</a
       >
+        Discuss partnering
+      </a>
     </div>
   </div>
   <div class="row row__center blue-background">
@@ -601,6 +603,11 @@ endblock title %} {% block content %}
       To share a job posting on an inclusive team with Techtonica graduates who
       have 0-5 years of experience, please click here.
     </a>
+  </div>
+  <div class="row__center centered">
+    Need this talent for your team, but no capacity to support junior devs right
+    now? Check out
+    <a href="{{ url_for('render_consulting_page') }}">Techtonica consulting</a>!
   </div>
 </div>
 {% endblock content %}
