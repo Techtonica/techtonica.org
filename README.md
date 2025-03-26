@@ -460,10 +460,10 @@ To connect these locally, you can use a GUI tool such as [Sequel Pro](https://se
 Enter the credentials into the connection window with the following:
 
 - **Name:** Anything, but should indicate which environment it points to
-- **Host:** DB_HOST from .env
-- **Username:** DB_USERNAME from .env
-- **Password:** DB_PASSWORD from .env
-- **Database:** DB_NAME from .env
+- **Host:** DB_HOST from credentials
+- **Username:** DB_USERNAME from credentials
+- **Password:** DB_PASSWORD from credentials
+- **Database:** DB_NAME from credentials
 - **Port:** 3306
 
 ![This is a sample screenshot of a Sequel Pro connection.](static/img/database_connection.png)
