@@ -160,27 +160,7 @@ brew install mysql
 touch config.ini
 ```
 
-And then copy and paste this code into your new file (note: For the actual values, please see [Updating Techtonica's Website](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit?tab=t.0)):
-
-```sh
-[default]
-# Acceptable values are sandbox or production
-environment = sandbox
-dev_password = dev_password
-
-[production]
-square_application_id = production_application_id
-square_access_token = production_access_token
-square_location_id = production_location_id
-
-[sandbox]
-square_application_id = <sandbox app id>
-square_access_token = <sandbox access token>
-square_location_id = <sandbox location id>
-
-[slack]
-slack_webhook =  <slack webhook>
-```
+Please contact a Techtonica Staff member for `config.ini` file contents. Staff members can be reached through the Techtonica Slack workspace, or you can fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLScjCF6_xzIn-Uht3MDOr1__3YpIYDCTzx80cIE0KVCsPqcYKQ/viewform).
 
 ### Pre-Commit Hooks Guide
 
@@ -317,25 +297,26 @@ rebuild the Docker image in order for those changes to take effect._
 
 ### CSS / SCSS
 
-The Techtonica website uses Sass to manage it's CSS.
+The Techtonica website uses Sass to manage its CSS.
 
 Styling changes should **only** be made to the Sass (.scss) files and then compiled to
 CSS using one of the following commands:
 
-👷‍♀️ Install Sass using one of the following
+Compile once:
 
-Mac: `brew install sass/sass/sass`
+`sass static/sass/style.scss static/css/style.css`
 
-Windows: `choco install sass`
+OR
 
-To compile your Sass files to CSS and to keep track of changes in real-time.
+Watch for changes using `--watch`:
 
 ```sh
-sass static/sass/style.scss static/css/style.css
-sass --watch static/sass/style.scss static/css/style.css
+sass --watch static/sass/style.scss:static/css/style.css
 ```
 
-By running the --watch command, any modifications made to the CSS files are instantly reflected, saving you time and ensuring your styles are always up-to-date.
+By running the `--watch` command, any modifications made to the CSS files are instantly reflected, saving you time and ensuring your styles are always up-to-date.
+
+For installation help and more details, see the [CSS/SCSS Styling Instructions Wiki](https://github.com/Techtonica/techtonica.org/wiki/CSS-SCSS-Styling-Instructions-Wiki)
 
 ### Alt-Text Guidelines
 
