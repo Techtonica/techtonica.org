@@ -13,7 +13,7 @@ currently hosted on DreamHost.
     - [Install and Upgrade pip-tools](#install-and-upgrade-pip-tools)
     - [Install Pre-Commit Hooks](#install-pre-commit-hooks)
     - [Install Requirements](#install-requirements)
-    - [Create Config.ini File](#create-configini-file)
+    - [Create .env File](#create-env-file)
     - [Pre-Commit Hooks Guide](#pre-commit-hooks-guide)
     - [Optional: Installing Prettier Plug-in Locally](#optional-installing-prettier-plug-in-locally)
     - [Running Locally](#running-locally)
