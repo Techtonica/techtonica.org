@@ -3,6 +3,7 @@ This is the main Python file that sets up rendering and templating
 for Techtonica.org
 """
 
+import logging
 import os
 import sys
 from uuid import uuid4
@@ -18,6 +19,9 @@ from square.client import Client
 
 from dates import generate_application_timeline
 from db_connection import get_db_connection
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 load_dotenv(find_dotenv(usecwd=True))
 
@@ -296,7 +300,7 @@ except KeyError:
 
 if len(missing_credentials) > 0:
     missing_credentials_string = " ".join(missing_credentials)
-    print(
+    logger.warning(
         "The following credential(s) are missing: {credentials}".format(
             credentials=missing_credentials_string
         )
