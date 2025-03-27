@@ -273,6 +273,14 @@ def app_form_admin():
     return render_template("app-form-admin.html")
 
 
+@app.route("/admin/dashboard")
+def render_admin_dashboard_page():
+    """
+    Renders the admin dashboard page from jinja2 template
+    """
+    return render_template("admin_dashboard.html")
+
+
 def get_events():
     try:
         group_id = eventbrite.get_user()["id"]
@@ -354,6 +362,7 @@ def render_payment_form():
     """
     return redirect(url_for("render_job_form"))
 
+
 @app.route("/share-a-job")
 def render_job_form():
     """
@@ -368,6 +377,7 @@ def render_job_form():
         ACCOUNT_COUNTRY="ACCOUNT_COUNTRY",
         idempotencyKey=str(uuid4()),
     )
+
 
 # Square payment api route
 @app.route("/process-payment", methods=["POST"])
@@ -423,9 +433,7 @@ def send_posting():
     )
 
     print(f"Message sent: {x.text}")
-    return jsonify(
-        {"message": "Data received successfully", "received_data": data}
-    )
+    return jsonify({"message": "Data received successfully", "received_data": data})
 
 
 if __name__ == "__main__":
