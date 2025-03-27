@@ -21,7 +21,7 @@ Post A Job {% endblock title %} {% block content %}
   </p>
   {% if not credentials %}
   <p><a href="mailto:info@techtonica.org">Contact us</a> to post your job!</p>
-  {% endif %} {% if credentials %}
+  {% else %}
   <div class="column">
     <form class="payment-form" id="fast-checkout">
       <div class="wrapper">
