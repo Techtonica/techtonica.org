@@ -295,13 +295,13 @@ Install any requirements if they've changed:
 
 pip install -r dev.txt
 
-````
+```
 
 Start the application's server:
 
 ```sh
 FLASK_DEBUG=1 FLASK_APP=main_site.py flask run
-````
+```
 
 Browse to <http://localhost:5000>.
 
