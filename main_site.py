@@ -16,7 +16,8 @@ from flask import Flask, jsonify, redirect, render_template, request, url_for
 from flask_sslify import SSLify
 from pydantic import BaseModel
 from square.client import Client
-
+from course_management import course_bp
+from application_process import application_bp
 from dates import generate_application_timeline
 from db_connection import get_db_connection
 
