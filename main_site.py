@@ -378,9 +378,7 @@ def send_posting():
     )
 
     print(f"Message sent: {x.text}")
-    return jsonify(
-        {"message": "Data received successfully", "received_data": data}
-    )
+    return jsonify({"message": "Data received successfully", "received_data": data})
 
 
 if __name__ == "__main__":

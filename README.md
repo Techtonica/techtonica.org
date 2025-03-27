@@ -160,27 +160,7 @@ brew install mysql
 touch config.ini
 ```
 
-And then copy and paste this code into your new file (note: For the actual values, please see [Updating Techtonica's Website](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit?tab=t.0)):
-
-```sh
-[default]
-# Acceptable values are sandbox or production
-environment = sandbox
-dev_password = dev_password
-
-[production]
-square_application_id = production_application_id
-square_access_token = production_access_token
-square_location_id = production_location_id
-
-[sandbox]
-square_application_id = <sandbox app id>
-square_access_token = <sandbox access token>
-square_location_id = <sandbox location id>
-
-[slack]
-slack_webhook =  <slack webhook>
-```
+Please contact a Techtonica Staff member for `config.ini` file contents. Staff members can be reached through the Techtonica Slack workspace, or you can fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLScjCF6_xzIn-Uht3MDOr1__3YpIYDCTzx80cIE0KVCsPqcYKQ/viewform).
 
 ### Pre-Commit Hooks Guide
 
