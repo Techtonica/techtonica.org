@@ -118,7 +118,7 @@ pip install --upgrade pip
 
 ### Install and Upgrade pip-tools
 
-```
+```bash
 python -m pip install -U pip-tools
 ```
 
@@ -137,7 +137,7 @@ pre-commit install -f --install-hooks
 
 ### Install Requirements
 
-```
+```bash
 pip install -r dev.txt
 ```
 
@@ -151,7 +151,7 @@ brew install mysql
 
 ### Create .env File
 
-```
+```bash
 touch .env
 ```
 
@@ -174,6 +174,7 @@ DB_USERNAME="username"
 DB_PASSWORD="password"
 DB_HOST="host"
 DB_NAME="name"
+```
 
 ### Pre-Commit Hooks Guide
 
@@ -181,43 +182,33 @@ To manually run, test, and upgrade pre-commit hooks locally, follow these steps:
 
 To run hooks on specific files, use the command:
 
-```
-
+```bash
 pre-commit run --files <file1> <file2>
-
 ```
 
 For example, if you want to test a single file, you can use
 
-```
-
+```bash
 pre-commit run --files main_site.py
-
 ```
 
 To run all hooks on every file in the repository, use the
 command
 
-```
-
+```bash
 pre-commit run --all-files
-
 ```
 
 If you need to upgrade your hooks to their latest versions, run
 
-```
-
+```bash
 pre-commit autoupdate
-
 ```
 
 After upgrading, ensure you reinstall the hooks by running
 
-```
-
+```bash
 pre-commit install
-
 ```
 
 ### Optional: Installing Prettier Plug-in Locally
@@ -283,23 +274,19 @@ Each time you want to work on your code, you will need to activate your virtual 
 
 Activate your virtual environment:
 
-```
-
+```bash
 source venv/bin/activate
-
 ```
 
 Install any requirements if they've changed:
 
-```
-
+```bash
 pip install -r dev.txt
-
 ```
 
 Start the application's server:
 
-```sh
+```bash
 FLASK_DEBUG=1 FLASK_APP=main_site.py flask run
 ```
 
@@ -337,7 +324,7 @@ OR
 
 Watch for changes using `--watch`:
 
-```sh
+```bash
 sass --watch static/sass/style.scss:static/css/style.css
 ```
 
@@ -373,7 +360,7 @@ There are features on the site that use Square for payments and will periodicall
 
 Run your server using the following command, it will bypass any HTTPS cert errors.
 
-```sh
+```bash
 pip install pyopenssl
 FLASK_DEBUG=1 FLASK_APP=main_site.py FLASK_RUN_CERT=adhoc flask run
 ```
@@ -396,8 +383,8 @@ At the moment, we do not have styling in place that will enable us to have a cod
 3. Update the `data` section in `static/js/piechart.js#L30`.
 4. Uncomment out following in `full-time-program.html`.
 
-```
-  <!-- <div class="blue-background">
+```html
+<!-- <div class="blue-background">
      <canvas id="myChart" width="700" height="350"></canvas>
   </div> -->
 ```
@@ -406,18 +393,18 @@ At the moment, we do not have styling in place that will enable us to have a cod
 6. Add the screenshot to the `static/img` directory saved with YEAR-H#-Cohort-Demographics.jpg, ex. 2023-H1-Cohort-Demographics.jpg.
 7. Update `full-time-program.html` to point to the new image you just added. Update the alt text if necessary.
 
-```
- <img
-     src="{{ url_for('static', filename='img/2023-H1-Cohort-Demographics.jpg') }}"
-     alt="2023 Cohort Demographics."
-     class="full-width-img"
-  />
+```html
+<img
+  src="{{ url_for('static', filename='img/2023-H1-Cohort-Demographics.jpg') }}"
+  alt="2023 Cohort Demographics."
+  class="full-width-img"
+/>
 ```
 
 8. Re-comment the following.
 
-```
-  <!-- <div class="blue-background">
+```html
+<!-- <div class="blue-background">
      <canvas id="myChart" width="700" height="350"></canvas>
   </div> -->
 ```
@@ -444,7 +431,7 @@ dependencies. _If there are dependencies only needed for local development, thes
 1. Edit `requirements.in` or `dev.in` (referred to below as `file_name.in`). If you update requirements.in, you must also re-compile dev.in after.
 1. Generate the .txt file
 
-   ```sh
+   ```bash
    pip-compile -U <file_name.in>
    pip install -r <file_name.txt>
    ```
@@ -480,7 +467,7 @@ The below instructions are for setting up a new server in DreamHost.
 1. Update package tools, while you're still operating in the virtual
    environment:
 
-   ```sh
+   ```bash
    pip install -U pip setuptools pip-tools
    ```
 
@@ -531,19 +518,19 @@ Important: Only ever Pull from the server! There are currently 3 main servers in
 
 1. Change directory to the appropriate domain:
 
-   ```sh
+   ```bash
    cd techtonica.org
    ```
 
    or
 
-   ```sh
+   ```bash
    cd staging.techtonica.org
    ```
 
 1. Activate the virtual envrionment:
 
-   ```sh
+   ```bash
    . bin/activate
    ```
 
@@ -555,20 +542,19 @@ Important: Only ever Pull from the server! There are currently 3 main servers in
 
 1. Pull the latest code using
 
-   ```sh
+   ```bash
    git pull
    ```
 
 1. Update requirements:
 
-   ```sh
+   ```bash
    pip-sync
    ```
 
 1. "Restart" the server to showcase new changes
 
-   ```sh
-
+   ```bash
    # staging.techtonica.org
    systemctl --user stop gunicorn_staging
    systemctl --user enable gunicorn_staging
@@ -586,16 +572,15 @@ Important: Only ever Pull from the server! There are currently 3 main servers in
    systemctl --user enable gunicorn_techtonica
    systemctl --user restart gunicorn_techtonica
    systemctl --user status gunicorn_techtonica
-
    ```
 
 1. Deactivate virtual environment and exit server:
 
-   ```sh
+   ```bash
    deactivate
    ```
 
-   ```sh
+   ```bash
    exit
    ```
 
