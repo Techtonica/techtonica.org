@@ -1,0 +1,122 @@
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap {%
+endblock title %} {% block content %}
+
+<nav class="admin-nav-bar">
+  <button>Log Out</button>
+  <h2>Admin Dashboard</h2>
+</nav>
+<div class="admin-container">
+  <section class="admin-section quick-stats">
+    <div class="admin-box">
+      <div class="quick-stats-header">
+        <h4>Total Applications</h4>
+        <p>icon</p>
+      </div>
+      <p>1,234</p>
+      <p>+20.1% from last month</p>
+    </div>
+    <div class="admin-box">
+      <div class="quick-stats-header">
+        <h4>Pending Review</h4>
+        <p>icon</p>
+      </div>
+      <p>45</p>
+      <p>12 require immediate attention</p>
+    </div>
+    <div class="admin-box">
+      <div class="quick-stats-header">
+        <h4>Accepted</h4>
+        <p>icon</p>
+      </div>
+
+      <p>189</p>
+      <p>15.3% acceptance rate</p>
+    </div>
+    <div class="admin-box">
+      <div class="quick-stats-header">
+        <h4>Rejected</h4>
+        <p>icon</p>
+      </div>
+      <p>1,000</p>
+      <p>84.7% rejection rate</p>
+    </div>
+  </section>
+  <section class="admin-section">
+    <div class="admin-box">
+      <div class="status-overview-info">
+        <h3>Application Status Overview</h3>
+        <p class="admin-subtitle">Current status of all applications</p>
+      </div>
+      <label class="progress-bar-label" for="submitted"
+        ><p>Submitted:</p>
+        <p>60%</p></label
+      >
+      <progress id="submitted" max="100" value="60"></progress>
+      <label class="progress-bar-label" for="review"
+        ><p>In Review:</p>
+        <p>25%</p></label
+      >
+      <progress id="review" max="100" value="25"></progress>
+      <label class="progress-bar-label" for="accepted"
+        ><p>Accepted:</p>
+        <p>10%</p></label
+      >
+      <progress id="accepted" max="100" value="10"></progress>
+      <label class="progress-bar-label" for="rejected"
+        ><p>Rejected:</p>
+        <p>5%</p></label
+      >
+      <progress id="rejected" max="100" value="5"></progress>
+    </div>
+  </section>
+  <section class="admin-section">
+    <div class="admin-box">
+      <div class="recent-applicant-info">
+        <h3>Recent Applications</h3>
+        <p class="admin-subtitle">
+          Latest applications submitted to the system
+        </p>
+      </div>
+      <div class="recent-applicants-container">
+        <table class="recent-applicants">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Submitted</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            <td>Alice Johnson</td>
+            <td>alice@example.com</td>
+            <td><p id="review-text" class="status">In Review</p></td>
+            <td>2023-07-01</td>
+            <td><button>Review</button></td>
+          </tr>
+          <tr>
+            <td>Bob Smith</td>
+            <td>bob@example.com</td>
+            <td><p id="submitted-text" class="status">Submitted</p></td>
+            <td>2023-07-02</td>
+            <td><button>Review</button></td>
+          </tr>
+          <tr>
+            <td>Charlie Brown</td>
+            <td>charlie@example.com</td>
+            <td><p id="accepted-text" class="status">Accepted</p></td>
+            <td>2023-06-30</td>
+            <td><button>Review</button></td>
+          </tr>
+          <tr>
+            <td>Diana Prince</td>
+            <td>diana@example.com</td>
+            <td><p id="rejected-text" class="status">Rejected</p></td>
+            <td>2023-06-29</td>
+            <td><button>Review</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+{%endblock%}
