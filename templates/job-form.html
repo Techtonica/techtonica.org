@@ -12,13 +12,16 @@ Post A Job {% endblock title %} {% block content %}
 </script>
 
 <div id="payment-page">
-    <h1>
-      Post A Job
-    </h1>
-    <p>
-      Have a job opening but your company isn’t ready to become a hiring partner? <br>
-      Submit the job for $100 and we’ll share with our graduates who have 0-5 years of experience.
-    </p>
+  <h1>Post A Job</h1>
+  <p>
+    Have a job opening but your company isn’t ready to become a hiring partner?
+    <br />
+    Submit the job for $100 and we’ll share with our graduates who have 0-5
+    years of experience.
+  </p>
+  {% if not credentials %}
+  <p><a href="mailto:info@techtonica.org">Contact us</a> to post your job!</p>
+  {% else %}
   <div class="column">
     <form class="payment-form" id="fast-checkout">
       <div class="wrapper">
@@ -83,22 +86,22 @@ Submit your job for $100 to be shared with our 100+ full-stack software engineer
           <!-- TO-DO: File upload input for screenshots -->
         </div>
         <!-- <div id="ach-wrapper">
-          <label for="ach-account-holder-name">Full Name</label>
-          <input
+            <label for="ach-account-holder-name">Full Name</label>
+            <input
             id="ach-account-holder-name"
             type="text"
             placeholder="Jane Doe"
             name="ach-account-holder-name"
             autocomplete="name"
           />
-          <span id="ach-message"></span>
-          <button id="ach-button" type="button">
+            <span id="ach-message"></span>
+            <button id="ach-button" type="button">
             Pay with Bank Account
-          </button>
-          <div class="border">
-            <span>OR</span>
-          </div>
-        </div> -->
+            </button>
+            <div class="border">
+              <span>OR</span>
+            </div>
+          </div> -->
         <h3>Payment Info</h3>
         <div id="card-container"></div>
         <div class="checkbox-container">
@@ -120,6 +123,7 @@ Submit your job for $100 to be shared with our 100+ full-stack software engineer
       </div>
     </form>
   </div>
+  {% endif %}
 </div>
 <script type="text/javascript" src="/static/js/sq-card-pay.js"></script>
 <script type="text/javascript" src="/static/js/payment-flow.js"></script>
