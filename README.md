@@ -155,7 +155,7 @@ brew install mysql
 touch .env
 ```
 
-And then copy and paste this code into your new file. There is a sample in .env.example for you to use as well. Please contact a Techtonica Staff member for `.env` file contents. Staff members can be reached through the Techtonica Slack workspace, or you can fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLScjCF6_xzIn-Uht3MDOr1__3YpIYDCTzx80cIE0KVCsPqcYKQ/viewform).
+Copy and paste this code into your new file. There is a sample in .env.example for you to use as well. Please contact a Techtonica Staff member for `.env` file contents. Staff members can be reached through the Techtonica Slack workspace, or you can fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLScjCF6_xzIn-Uht3MDOr1__3YpIYDCTzx80cIE0KVCsPqcYKQ/viewform).
 
 ```sh
 # Your environment, either "local", "prod", "staging", or "testing"
@@ -471,22 +471,7 @@ The below instructions are for setting up a new server in DreamHost.
    pip install -U pip setuptools pip-tools
    ```
 
-1. Create a `.env` file in the root directory of the repo in whichever Dreamhost server if there isn't one already present, and populate it with the necessary keys.
-
-```sh
-ENVIRONMENT="local"
-SQUARE_APPLICATION_ID="id"
-SQUARE_ACCESS_TOKEN="token"
-SQUARE_LOCATION_ID="location"
-SLACK_WEBHOOK="webhook"
-PAYMENT_FORM_URL="url"
-APP_OPEN_DATE="date"
-APP_EXTENDED="boolean"
-DB_USERNAME="username"
-DB_PASSWORD="password"
-DB_HOST="host"
-DB_NAME="name"
-```
+1. Create a `.env` file in the root directory of the repo in whichever Dreamhost server if there isn't one already present, and populate it with the necessary keys. [Reach out](#create-env-file) to a member of Techtonica staff to get the exact values.
 
 ### Deploy Feature Branch
 
