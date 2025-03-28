@@ -1244,19 +1244,191 @@ input[type="radio"] {
 /* Form Styles */
 input[type="text"],
 input[type="email"] {
-    width: 100%;
-    padding: 5px;
-    margin-top: 5px;
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
 }
 
 button[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Admin Dashboard styling */
+
+.admin-nav-bar {
+  -webkit-display: inline-flex;
+  -moz-display: inline-flex;
+  display: inline-flex;
+  flex-flow: row-reverse wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-bottom: 0;
+  width: 100%;
+  height: 5rem;
+  background-color: white;
+  box-shadow: 0 0 8px 8px #ccc;
+  z-index: 100;
+}
+
+.admin-nav-bar * {
+  margin: 0.5em;
+}
+
+.main-content:has(.admin-container) {
+  margin-top: 0;
+}
+
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  margin: 3em 0;
+  background-color: #f1f1f1;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.quick-stats-header {
+  display: flex;
+  justify-content: space-between;
+  min-width: 300px;
+}
+
+.admin-box {
+  flex-grow: 2;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px 1px #ccc;
+  margin: 1em;
+  padding: 0.5em 1em;
+}
+
+.quick-stats .admin-box {
+  max-width: 350px;
+}
+
+.status-overview {
+  display: flex;
+  flex-direction: column;
+}
+
+.status-overview-info,
+.recent-applicant-info {
+  margin-bottom: 2em;
+}
+
+.admin-box > label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.admin-subtitle {
+  color: gray;
+}
+
+progress {
+  background-color: white;
+  width: 100%;
+  height: 1em;
+  border-radius: 20px;
+  margin-bottom: 2em;
+}
+
+progress::before {
+  position: absolute;
+  width: 30%;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
+
+#submitted::-webkit-progress-bar {
+  background-color: rgb(155, 225, 255);
+  border-radius: 20px;
+}
+
+#review::-webkit-progress-bar {
+  background-color: rgb(252, 237, 140);
+  border-radius: 20px;
+}
+
+#accepted::-webkit-progress-bar {
+  background-color: rgb(155, 255, 180);
+  border-radius: 20px;
+}
+
+#rejected::-webkit-progress-bar {
+  background-color: rgb(252, 202, 211);
+  border-radius: 20px;
+}
+
+progress::-webkit-progress-value {
+  background-color: black;
+  border-radius: 20px;
+}
+
+.recent-applicants-container {
+  overflow-x: auto;
+}
+
+.recent-applicants {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recent-applicants td {
+  border-width: 2px 0 0 0;
+  border-color: rgb(228, 228, 228);
+  border-style: solid;
+  border-collapse: collapse;
+  padding: 2em 2em;
+}
+
+.recent-applicants th {
+  text-align: left;
+  color: gray;
+  padding: 2em 2em;
+}
+
+.status {
+  padding: 0.5em;
+  border-radius: 50px;
+  text-align: center;
+  font-weight: bold;
+  width: fit-content;
+}
+
+#review-text {
+  color: rgb(138, 64, 0);
+  background-color: rgb(252, 237, 140);
+}
+
+#submitted-text {
+  color: rgb(0, 58, 108);
+  background-color: rgb(155, 225, 255);
+}
+
+#accepted-text {
+  color: rgb(0, 98, 24);
+  background-color: rgb(155, 255, 180);
+}
+
+#rejected-text {
+  color: rgb(138, 0, 25);
+  background-color: rgb(252, 202, 211);
+}
 
 /*# sourceMappingURL=style.css.map */
