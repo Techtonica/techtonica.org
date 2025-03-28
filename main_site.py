@@ -3,7 +3,7 @@ This is the main Python file that sets up rendering and templating
 for Techtonica.org
 """
 
-import configparser
+import logging
 import os
 import sys
 from uuid import uuid4
@@ -16,10 +16,14 @@ from flask import Flask, jsonify, redirect, render_template, request, url_for
 from flask_sslify import SSLify
 from pydantic import BaseModel
 from square.client import Client
-from course_management import course_bp
+
 from application_process import application_bp
+from course_management import course_bp
 from dates import generate_application_timeline
 from db_connection import get_db_connection
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 load_dotenv(find_dotenv(usecwd=True))
 
@@ -311,33 +315,54 @@ class Event(object):
 
 # ONLINE PAYMENT HANDLING *****************************************************
 
-# Config setting
-config = configparser.ConfigParser()
-config.read("config.ini")
+missing_credentials = []
 
 # Slack credentials
-SLACK_WEBHOOK = config.get("slack", "slack_webhook")
+try:
+    SLACK_WEBHOOK = os.environ["SLACK_WEBHOOK"]
+except KeyError:
+    missing_credentials.append("SLACK_WEBHOOK")
 
 # Square credentials
-CONFIG_TYPE = config.get("default", "environment")
-if CONFIG_TYPE == "production":
-    PAYMENT_FORM_URL = "https://web.squarecdn.com/v1/square.js"
-else:
-    PAYMENT_FORM_URL = "https://sandbox.web.squarecdn.com/v1/square.js"
-# PAYMENT_FORM_URL = (
-#     "https://web.squarecdn.com/v1/square.js"
-#     if CONFIG_TYPE == "production"
-#     else "https://sandbox.web.squarecdn.com/v1/square.js"
-# )
-APPLICATION_ID = config.get(CONFIG_TYPE, "square_application_id")
-LOCATION_ID = config.get(CONFIG_TYPE, "square_location_id")
-ACCESS_TOKEN = config.get(CONFIG_TYPE, "square_access_token")
+try:
+    CONFIG_TYPE = os.environ["ENVIRONMENT"]
+except KeyError:
+    missing_credentials.append("ENVIRONMENT")
+try:
+    PAYMENT_FORM_URL = os.environ["PAYMENT_FORM_URL"]
+except KeyError:
+    missing_credentials.append("PAYMENT_FORM_URL")
+try:
+    APPLICATION_ID = os.environ["SQUARE_APPLICATION_ID"]
+except KeyError:
+    missing_credentials.append("SQUARE_APPLICATION_ID")
+try:
+    LOCATION_ID = os.environ["SQUARE_LOCATION_ID"]
+except KeyError:
+    missing_credentials.append("SQUARE_LOCATION_ID")
+try:
+    ACCESS_TOKEN = os.environ["SQUARE_ACCESS_TOKEN"]
+except KeyError:
+    missing_credentials.append("SQUARE_ACCESS_TOKEN")
 
-client = Client(
-    access_token=ACCESS_TOKEN,
-    environment=config.get("default", "environment"),
-    user_agent_detail="techtonica_payment",
-)
+if len(missing_credentials) > 0:
+    missing_credentials_string = " ".join(missing_credentials)
+    logger.warning(
+        "The following credential(s) are missing: {credentials}".format(
+            credentials=missing_credentials_string
+        )
+    )
+else:
+    if CONFIG_TYPE.lower() == "prod":
+        SQUARE_ENVIRONMENT = "production"
+    else:
+        SQUARE_ENVIRONMENT = "sandbox"
+
+    client = Client(
+        access_token=ACCESS_TOKEN,
+        environment=SQUARE_ENVIRONMENT,
+        user_agent_detail="techtonica_payment",
+    )
 
 
 class Payment(BaseModel):
@@ -355,20 +380,26 @@ def render_payment_form():
     """
     return redirect(url_for("render_job_form"))
 
+
 @app.route("/share-a-job")
 def render_job_form():
     """
     Renders the job-form page from jinja2 template
     """
-    return render_template(
-        "job-form.html",
-        APPLICATION_ID=APPLICATION_ID,
-        PAYMENT_FORM_URL=PAYMENT_FORM_URL,
-        LOCATION_ID=LOCATION_ID,
-        ACCOUNT_CURRENCY="USD",
-        ACCOUNT_COUNTRY="ACCOUNT_COUNTRY",
-        idempotencyKey=str(uuid4()),
-    )
+    if len(missing_credentials) > 0:
+        return render_template("job-form.html", credentials=False)
+    else:
+        return render_template(
+            "job-form.html",
+            APPLICATION_ID=APPLICATION_ID,
+            PAYMENT_FORM_URL=PAYMENT_FORM_URL,
+            LOCATION_ID=LOCATION_ID,
+            ACCOUNT_CURRENCY="USD",
+            ACCOUNT_COUNTRY="ACCOUNT_COUNTRY",
+            idempotencyKey=str(uuid4()),
+            credentials=True,
+        )
+
 
 # Square payment api route
 @app.route("/process-payment", methods=["POST"])

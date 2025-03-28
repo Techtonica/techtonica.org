@@ -19,6 +19,33 @@
     <!-- // This code block only needs to be installed once to activate all integrations site wide // Begin Flipcause Integration Code //-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
+      .sr-only {
+        position: absolute;
+        left: -9999px;
+        z-index: 999;
+        padding: 0.5rem;
+        opacity: 0;
+      }
+
+      .sr-only:focus,
+      .sr-only:active {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding: 0.5rem;
+        opacity: 1;
+        background-color: #fc7625;
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        display: block;
+      }
+
+      .sr-only:focus + * {
+        margin-top: 3rem;
+      }
+
       #fc-direct-embed-loader-out {
         position: fixed;
         width: 100%;
@@ -960,7 +987,7 @@
               }
               console.log(
                 `Restored value for ${input.name || input.id}:`,
-                input.value
+                input.value,
               );
 
               // Save input values to localStorage on input change
@@ -1027,6 +1054,9 @@
     gtag("config", "G-ZGW3GJMQXR");
   </script>
   <body>
+    <a href="#main-content" class="sr-only" tabindex="0"
+      >Skip to main content</a
+    >
     <!-- BEGIN HEADER -->
     <nav class="nav-bar banner-visible">
       <div class="nav-bar-inner">
@@ -1132,7 +1162,9 @@
       </div>
     </nav>
     <!-- BEGIN MAIN CONTENT -->
-    <div class="main-content">{% block content %} {% endblock content %}</div>
+    <div class="main-content" id="main-content">
+      {% block content %} {% endblock content %}
+    </div>
     <!-- BEGIN FOOTER -->
     <div class="row row__center gray-background">
       <div class="column">

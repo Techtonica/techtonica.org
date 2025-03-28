@@ -68,9 +68,7 @@ def get_visitors():
 
     visitor_calendars = [
         c["id"]
-        for c in get_teamup_subcalendars(
-            TEAMUP_CALENDAR_ID, TEAMUP_SUBCALENDARS
-        )
+        for c in get_teamup_subcalendars(TEAMUP_CALENDAR_ID, TEAMUP_SUBCALENDARS)
     ]
     events = get_teampup_events(
         TEAMUP_CALENDAR_ID, next_weekday, next_weekday, visitor_calendars
@@ -116,9 +114,7 @@ def get_teamup_subcalendars(calendar_id, subcalendar_name_filters=None):
     subcalendars = response["subcalendars"]
     if subcalendar_name_filters:
         visitor_subcalendars = [
-            c
-            for c in subcalendars
-            if c["name"].lower() in subcalendar_name_filters
+            c for c in subcalendars if c["name"].lower() in subcalendar_name_filters
         ]
     else:
         visitor_subcalendars = subcalendars
@@ -168,6 +164,4 @@ if __name__ == "__main__":
         else:
             print("No visitors")
     elif visitors:
-        send_email(
-            VISITOR_EMAIL_FROM, VISITOR_EMAIL_TO, VISITOR_EMAIL_CC, visitors
-        )
+        send_email(VISITOR_EMAIL_FROM, VISITOR_EMAIL_TO, VISITOR_EMAIL_CC, visitors)
