@@ -129,6 +129,26 @@ def generate_application_timeline():
         cohort_start_day + timedelta(weeks=48) if cohort_start_day else None
     )
 
+    # Define button text based on application status
+    main_text = (
+        f"Apply by {app_close_datetime.strftime('%B %d')} (12pm PT)!"
+        if app_open
+        else "Outsource your software work!"
+    )
+    
+    # Define full-time page button texts
+    fulltime_top_button = (
+        "Apply Now!"
+        if app_open
+        else "Fill out our interest form to be notified about our next cohort!"
+    )
+    
+    fulltime_bottom_button = (
+        f"Apply by {app_close_datetime.strftime('%B %d')} (12pm PT)!"
+        if app_open
+        else "Sign up to join our events"
+    )
+
     return {
         "APP_OPEN_DATE": format_date(app_open_datetime),
         "APP_EXTENDED": app_extended,
@@ -150,9 +170,7 @@ def generate_application_timeline():
         "JOB_SEARCH_START_MONTH_YEAR": format_month_year(training_end),
         "JOB_SEARCH_END_MONTH_YEAR": format_month_year(job_search_end),
         "APP_OPEN": app_open,
-        "TEXT": (
-            "Apply Now!"
-            if not app_open
-            else f"Apply by {app_close_datetime.strftime('%B %d')} (12pm PT)!"
-        ),
+        "TEXT": main_text,
+        "FULLTIME_TOP_BUTTON": fulltime_top_button,
+        "FULLTIME_BOTTOM_BUTTON": fulltime_bottom_button
     }
