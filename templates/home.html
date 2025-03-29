@@ -10,25 +10,14 @@ endblock title %} {% block content %}
         talent needs.
       </p>
       <h2>
-        {% if timeline.APP_OPEN_DATE %}
         <a
-          href="{{ url_for('render_ft_program_page') }}"
+          href="{% if timeline.APP_OPEN %}{{ url_for('render_ft_program_page') }}{% else %}{{ url_for('render_sponsor_page') }}{% endif %}"
           class="sponsor"
           id="orange-button"
           target="_blank"
           rel="noopener noreferrer"
           >{{ timeline.TEXT }}</a
         >
-        {% else %}
-        <a
-          href="{{ url_for('render_sponsor_page') }}"
-          class="sponsor"
-          id="orange-button"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Outsource your software work!</a
-        >
-        {% endif %}
       </h2>
     </div>
   </div>
