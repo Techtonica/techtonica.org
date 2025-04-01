@@ -30,15 +30,80 @@ endblock title %} {% block content %}
         Make a positive social impact while fulfilling your diverse technical
         talent needs.
       </p>
-      <a
-        href="https://www.dropbox.com/scl/fi/5zoqis2ge820y9v2x1i9w/Partnering-with-Techtonica-Info-Sheet.pdf?rlkey=ulfq0kb7tvev5vvezwpxffytz&dl=0"
-      >
-        <img
-          src="{{ url_for('static', filename='img/partner-levels.png') }}"
-          alt="Sponsor benefits chart"
-          class="full-width-img"
-        />
-      </a>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Advocate</th>
+            <th>Ally</th>
+            <th>Supporter</th>
+            <th>Referral</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="table-prompt">
+              Outsource software engineering to Techtonica
+            </td>
+            <td class="table-check"></td>
+            <td class="table-check">&#x2713;</td>
+            <td class="table-check"></td>
+            <td class="table-check"></td>
+          </tr>
+          <tr>
+            <td class="table-prompt">
+              Guaranteed hire of diverse junior or experienced tech talent
+            </td>
+            <td class="table-check">&#x2713;</td>
+            <td class="table-check"></td>
+            <td class="table-check"></td>
+            <td class="table-check"></td>
+          </tr>
+          <tr>
+            <td class="table-prompt">
+              Inclusion workshop with socioeconomic perspective
+            </td>
+            <td class="table-check">&#x2713;</td>
+            <td class="table-check"></td>
+            <td class="table-check"></td>
+            <td class="table-check"></td>
+          </tr>
+          <tr>
+            <td class="table-prompt">
+              Technical interviews with Techtonica participants
+            </td>
+            <td class="table-check">&#x2713;</td>
+            <td class="table-check"></td>
+            <td class="table-check"></td>
+            <td class="table-check">&#x2713;</td>
+          </tr>
+          <tr>
+            <td class="table-prompt">Company Q&A and team volunteering</td>
+            <td class="table-check">&#x2713;</td>
+            <td class="table-check"></td>
+            <td class="table-check">&#x2713;</td>
+            <td class="table-check"></td>
+          </tr>
+          <tr>
+            <td class="table-prompt">
+              Newsletter and social media shout-outs (9,662+ followers)
+            </td>
+            <td class="table-check">&#x2713;</td>
+            <td class="table-check">&#x2713;</td>
+            <td class="table-check">&#x2713;</td>
+            <td class="table-check">&#x2713;</td>
+          </tr>
+          <tr>
+            <td class="table-prompt">
+              Logo on website & assets with other distinguished sponsors
+            </td>
+            <td class="table-check">&#x2713;</td>
+            <td class="table-check">&#x2713;</td>
+            <td class="table-check">&#x2713;</td>
+            <td class="table-check">&#x2713;</td>
+          </tr>
+        </tbody>
+      </table>
       <h2>
         <a
           href="https://www.dropbox.com/scl/fi/5zoqis2ge820y9v2x1i9w/Partnering-with-Techtonica-Info-Sheet.pdf?rlkey=ulfq0kb7tvev5vvezwpxffytz&dl=0"
@@ -616,4 +681,26 @@ endblock title %} {% block content %}
     <a href="{{ url_for('render_consulting_page') }}">Techtonica Consulting</a>!
   </div>
 </div>
+<style>
+  table {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+  }
+  table,
+  td {
+    border: 1px solid #0093b5;
+    border-collapse: collapse;
+  }
+  th {
+    padding: 5px;
+    column-width: 100px;
+  }
+  .table-check {
+    text-align: center;
+  }
+  .table-prompt {
+    padding-left: 5px;
+  }
+</style>
 {% endblock content %}
