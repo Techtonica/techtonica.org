@@ -2,7 +2,7 @@ import logging
 import os
 
 from dotenv import load_dotenv
-from sqlalchemy import create_engine, text
+from sqlalchemy import URL, create_engine, text
 
 load_dotenv()
 
@@ -20,11 +20,17 @@ def get_db_connection():
         logging.warning("Missing database credentials.")
         return None
 
+    url_object = URL.create(
+        "mysql+mysqlconnector",
+        username=user,
+        password=password,
+        host=host,
+        database=db,
+    )
+
     try:
 
-        engine = create_engine(
-            f"mysql+mysqlconnector://{user}:{password}@{host}/{db}"
-        )  # noqa: E501
+        engine = create_engine(url_object)
 
         # Test the connection
         engine.connect()

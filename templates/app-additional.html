@@ -1,28 +1,26 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
 Techtonica Application {% endblock title %} {% block content %}
-
-<div class="application-page">
+<section class="application-page">
   <h1>Techtonica Application</h1>
   <form action="#" method="POST" class="application-form" id="app-form-7">
     <fieldset>
       <legend>Additional Applicant Information</legend>
-      <div id="radio-wrapper">
+      <div id="radio-wrapper" role="radiogroup">
         <label for="times-applied"
           >How many times have you applied? (3 is the max allowed)
         </label>
         <div class="learn-more-wrapper">
-          <span class="learn-more-title">Learn More</span>
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-          <div class="learn-more-content">
-            <span
-              >If you have already applied three times in the past, you are not
-              eligible to apply again and should stop filling out this
-              form.</span
-            >
-          </div>
+          <button class="learn-more-title" type="button" aria-expanded="false">
+            Learn More
+            <span class="toggle-icon">
+              <span class="toggle-icon-plus">+</span>
+              <span class="toggle-icon-minus">-</span>
+            </span>
+          </button>
+          <p class="learn-more-content" tabindex="0">
+            If you have already applied three times in the past, you are not
+            eligible to apply again and should stop filling out this form.
+          </p>
         </div>
         <br />
         <input
@@ -54,7 +52,7 @@ Techtonica Application {% endblock title %} {% block content %}
           try</label
         ><br />
       </div>
-      <div id="radio-wrapper">
+      <div id="radio-wrapper" role="radiogroup">
         <label for="digitally-literate"
           >Are you digitally literate, meaning you are very familiar and good
           with computers and the internet, can type 40+ WPM, and you know how to
@@ -118,7 +116,7 @@ Techtonica Application {% endblock title %} {% block content %}
         name="FCC-screenshot"
         required
       /><br />
-      <div id="radio-wrapper">
+      <div id="radio-wrapper" role="radiogroup">
         <label for="able-to-participate"
           >Are you willing to participate actively in the program Monday to
           Friday during the full-time hours of the program (typically 8 a.m. to
@@ -141,7 +139,7 @@ Techtonica Application {% endblock title %} {% block content %}
         />
         <label for="able-to-participate-no">No</label><br />
       </div>
-      <div id="radio-wrapper">
+      <div id="radio-wrapper" role="radiogroup">
         <label for="stable-housing"
           >Do you have housing that will be stable for the six months of
           training and the following six months? </label
@@ -163,7 +161,7 @@ Techtonica Application {% endblock title %} {% block content %}
         />
         <label for="stable-housing-no">No</label><br />
       </div>
-      <div id="radio-wrapper">
+      <div id="radio-wrapper" role="radiogroup">
         <label for="currently-employed">Are you currently employed? </label
         ><br />
         <input
@@ -194,7 +192,7 @@ Techtonica Application {% endblock title %} {% block content %}
         />
         <label for="currently-employed-no">No</label><br />
       </div>
-      <div id="radio-wrapper">
+      <div id="radio-wrapper" role="radiogroup">
         <label for="willing-to-live-in-US"
           >Are you willing to live in the U.S. if required by the placement
           company? </label
@@ -216,23 +214,22 @@ Techtonica Application {% endblock title %} {% block content %}
         />
         <label for="willing-to-live-in-US-no">No</label><br />
       </div>
-      <div id="radio-wrapper">
+      <div id="radio-wrapper" role="radiogroup">
         <label for="willing-to-quit-job"
           >Are you willing to quit your job(s) to focus on your career
           transition into tech?
         </label>
         <div class="learn-more-wrapper">
-          <span class="learn-more-title">Learn More</span>
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-          <div class="learn-more-content">
-            <span
-              >We advise AGAINST working part-time during this intensive
-              program.</span
-            >
-          </div>
+          <button class="learn-more-title" type="button" aria-expanded="false">
+            Learn More
+            <span class="toggle-icon">
+              <span class="toggle-icon-plus">+</span>
+              <span class="toggle-icon-minus">-</span>
+            </span>
+          </button>
+          <p class="learn-more-content" tabindex="0">
+            We advise AGAINST working part-time during this intensive program.
+          </p>
         </div>
         <br />
         <input
@@ -266,7 +263,7 @@ Techtonica Application {% endblock title %} {% block content %}
       </div>
     </fieldset>
   </form>
-</div>
+</section>
 
 <style>
   form {
@@ -287,20 +284,33 @@ Techtonica Application {% endblock title %} {% block content %}
     padding: 2rem;
   }
 
-  .application-form .learn-more-wrapper .learn-more-title,
-  .application-form .learn-more-wrapper .toggle-icon {
-    color: #0093b5;
-    font-size: 18px;
-  }
-
-  .application-form .learn-more-wrapper .learn-more-content {
-    font-size: 18px;
-    color: black;
-  }
-
   .application-form .learn-more-wrapper {
-    display: inline-block;
-    padding-left: 5px;
+    display: inline;
+  }
+
+  .application-form .learn-more-content {
+    margin: 0.5em 0 0 0;
+    color: black;
+    font-size: large;
+  }
+
+  .application-form .learn-more-wrapper button {
+    display: inline;
+    background-color: white;
+    font-size: large;
+    color: #0093b5;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 0 0 0.5em;
+  }
+
+  .application-form .learn-more-wrapper button:hover {
+    background-color: white;
+    color: #16c1f3;
+  }
+
+  .application-form .learn-more-wrapper button:focus-visible {
+    padding: 3px;
   }
 
   .application-page > h1,
@@ -310,10 +320,21 @@ Techtonica Application {% endblock title %} {% block content %}
     text-align: center;
   }
 
+  legend {
+    color: rgba(0, 115, 149, 0.8);
+    font-size: 20px;
+  }
+
   .application-form > fieldset {
     padding: 2rem;
     border: 1px solid rgba(0, 0, 0, 0.559);
     border-radius: 0.5rem;
+    width: 100%;
+  }
+
+  .application-form > fieldset > input[type="file"],
+  .application-form > fieldset > #radio-wrapper > input[type="radio"] {
+    cursor: pointer;
   }
 
   .application-form > fieldset > input[type="text"],
@@ -329,7 +350,9 @@ Techtonica Application {% endblock title %} {% block content %}
     box-sizing: border-box;
   }
 
-  fieldset label {
+  .application-form > fieldset > label,
+  .application-form > fieldset > #radio-wrapper > label {
+    font-size: large;
     color: black;
   }
 
@@ -341,6 +364,7 @@ Techtonica Application {% endblock title %} {% block content %}
     font-size: large;
     padding: 1rem;
     border-radius: 0.5rem;
+    cursor: pointer;
   }
 
   button.continue-to-app-btn:hover,
@@ -454,8 +478,7 @@ Techtonica Application {% endblock title %} {% block content %}
 
       toggleIcon.style.cursor = "pointer";
 
-      toggleIcon.querySelector(".toggle-icon-plus").style.display =
-        "inline-block";
+      toggleIcon.querySelector(".toggle-icon-plus").style.display = "inline";
       toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
       content.style.display = "none";
 
@@ -466,12 +489,14 @@ Techtonica Application {% endblock title %} {% block content %}
           content.style.display = "block";
           toggleIcon.querySelector(".toggle-icon-plus").style.display = "none";
           toggleIcon.querySelector(".toggle-icon-minus").style.display =
-            "inline-block";
+            "inline";
+          title.setAttribute("aria-expanded", true);
         } else {
           content.style.display = "none";
           toggleIcon.querySelector(".toggle-icon-plus").style.display =
-            "inline-block";
+            "inline";
           toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
+          title.setAttribute("aria-expanded", false);
         }
 
         isExpanded = !isExpanded;

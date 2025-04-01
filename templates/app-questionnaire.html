@@ -1,7 +1,6 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
 Techtonica Application {% endblock title %} {% block content %}
-
-<div class="application-page">
+<section class="application-page">
   <h1>Techtonica Application</h1>
   <form action="#" method="POST" class="application-form" id="app-form-3">
     <fieldset>
@@ -152,7 +151,7 @@ Techtonica Application {% endblock title %} {% block content %}
       </div>
     </fieldset>
   </form>
-</div>
+</section>
 
 <style>
   form {
@@ -172,11 +171,16 @@ Techtonica Application {% endblock title %} {% block content %}
     background-color: #0093b5;
     padding: 2rem;
   }
+
   .application-page > h1,
   .application-page > p {
     max-width: 65%;
     margin: auto;
     text-align: center;
+  }
+
+  .application-form > fieldset > select {
+    cursor: pointer;
   }
 
   .application-form > fieldset > select {
@@ -195,14 +199,22 @@ Techtonica Application {% endblock title %} {% block content %}
     background-origin: content-box;
   }
 
+  legend {
+    color: rgba(0, 115, 149, 0.8);
+    font-size: 20px;
+  }
+
   .application-form > fieldset {
     padding: 2rem;
     border: 1px solid rgba(0, 0, 0, 0.559);
     border-radius: 0.5rem;
+    width: 100%;
   }
 
-  .application-form > fieldset > label {
+  .application-form > fieldset > label,
+  .application-form > fieldset > p {
     color: black;
+    font-size: large;
   }
 
   button.continue-to-app-btn,
@@ -213,6 +225,7 @@ Techtonica Application {% endblock title %} {% block content %}
     font-size: large;
     padding: 1rem;
     border-radius: 0.5rem;
+    cursor: pointer;
   }
 
   button.continue-to-app-btn:hover,

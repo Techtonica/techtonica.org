@@ -1,7 +1,6 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
 Techtonica Application {% endblock title %} {% block content %}
-
-<div class="application-page">
+<section class="application-page">
   <h1>Techtonica Application</h1>
   <form action="#" method="POST" class="application-form" id="app-form-5">
     <fieldset>
@@ -13,18 +12,17 @@ Techtonica Application {% endblock title %} {% block content %}
         setting.
       </label>
       <div class="learn-more-wrapper">
-        <span class="learn-more-title">Learn More</span>
-        <span class="toggle-icon">
-          <span class="toggle-icon-plus">+</span>
-          <span class="toggle-icon-minus">-</span>
-        </span>
-        <div class="learn-more-content">
-          <span
-            >This may not be a relative, significant other, or friend. It must
-            be someone who can speak to your work quality in an unbiased
-            manner.</span
-          >
-        </div>
+        <button class="learn-more-title" type="button" aria-expanded="false">
+          Learn More
+          <span class="toggle-icon">
+            <span class="toggle-icon-plus">+</span>
+            <span class="toggle-icon-minus">-</span>
+          </span>
+        </button>
+        <p class="learn-more-content" tabindex="0">
+          This may not be a relative, significant other, or friend. It must be
+          someone who can speak to your work quality in an unbiased manner.
+        </p>
       </div>
       <br />
       <label for="reference-1-fname">First Name: </label><br />
@@ -62,18 +60,17 @@ Techtonica Application {% endblock title %} {% block content %}
         setting.
       </label>
       <div class="learn-more-wrapper">
-        <span class="learn-more-title">Learn More</span>
-        <span class="toggle-icon">
-          <span class="toggle-icon-plus">+</span>
-          <span class="toggle-icon-minus">-</span>
-        </span>
-        <div class="learn-more-content">
-          <span
-            >This may not be a relative, significant other, or friend. It must
-            be someone who can speak to your work quality in an unbiased
-            manner.</span
-          >
-        </div>
+        <button class="learn-more-title" type="button" aria-expanded="false">
+          Learn More
+          <span class="toggle-icon">
+            <span class="toggle-icon-plus">+</span>
+            <span class="toggle-icon-minus">-</span>
+          </span>
+        </button>
+        <p class="learn-more-content" tabindex="0">
+          This may not be a relative, significant other, or friend. It must be
+          someone who can speak to your work quality in an unbiased manner.
+        </p>
       </div>
       <br />
       <label for="reference-2-fname">First Name: </label><br />
@@ -137,7 +134,7 @@ Techtonica Application {% endblock title %} {% block content %}
         name="emergency-contact-phone"
         id="emergency-contact-phone"
         pattern="^\+?1?[-.\s]?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$"
-        placeholder="ex. 415-555-1234 or 1-415-555-1234"
+        placeholder="XXX-XXX-XXXX"
         title="Please enter a valid phone number in the format: 415-555-1234 or 1-415-555-1234."
         minlength="10"
         required
@@ -187,7 +184,7 @@ Techtonica Application {% endblock title %} {% block content %}
       </div>
     </fieldset>
   </form>
-</div>
+</section>
 
 <style>
   form {
@@ -208,20 +205,32 @@ Techtonica Application {% endblock title %} {% block content %}
     padding: 2rem;
   }
 
-  .application-form .learn-more-wrapper .learn-more-title,
-  .application-form .learn-more-wrapper .toggle-icon {
-    color: #0093b5;
-    font-size: 18px;
-  }
-
-  .application-form .learn-more-wrapper .learn-more-content {
-    font-size: 18px;
-    color: black;
-  }
-
   .application-form .learn-more-wrapper {
-    display: inline-block;
-    padding-left: 5px;
+    display: inline;
+  }
+
+  .application-form .learn-more-content {
+    margin: 0.5em 0 0 0;
+    font-size: large;
+  }
+
+  .application-form .learn-more-wrapper button {
+    display: inline;
+    background-color: white;
+    font-size: large;
+    color: #0093b5;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 0 0 0.5em;
+  }
+
+  .application-form .learn-more-wrapper button:hover {
+    background-color: white;
+    color: #16c1f3;
+  }
+
+  .application-form .learn-more-wrapper button:focus-visible {
+    padding: 3px;
   }
 
   .application-page > h1,
@@ -231,14 +240,21 @@ Techtonica Application {% endblock title %} {% block content %}
     text-align: center;
   }
 
+  legend {
+    color: rgba(0, 115, 149, 0.8);
+    font-size: 20px;
+  }
+
   .application-form > fieldset {
     padding: 2rem;
     border: 1px solid rgba(0, 0, 0, 0.559);
     border-radius: 0.5rem;
+    width: 100%;
   }
 
   .application-form > fieldset > label {
     margin-bottom: 0.5rem;
+    font-size: large;
   }
 
   .application-form > fieldset > input[type="text"],
@@ -269,6 +285,7 @@ Techtonica Application {% endblock title %} {% block content %}
     font-size: large;
     padding: 1rem;
     border-radius: 0.5rem;
+    cursor: pointer;
   }
 
   button.continue-to-app-btn:hover,
@@ -374,8 +391,7 @@ Techtonica Application {% endblock title %} {% block content %}
 
       toggleIcon.style.cursor = "pointer";
 
-      toggleIcon.querySelector(".toggle-icon-plus").style.display =
-        "inline-block";
+      toggleIcon.querySelector(".toggle-icon-plus").style.display = "inline";
       toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
       content.style.display = "none";
 
@@ -386,12 +402,14 @@ Techtonica Application {% endblock title %} {% block content %}
           content.style.display = "block";
           toggleIcon.querySelector(".toggle-icon-plus").style.display = "none";
           toggleIcon.querySelector(".toggle-icon-minus").style.display =
-            "inline-block";
+            "inline";
+          title.setAttribute("aria-expanded", true);
         } else {
           content.style.display = "none";
           toggleIcon.querySelector(".toggle-icon-plus").style.display =
-            "inline-block";
+            "inline";
           toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
+          title.setAttribute("aria-expanded", false);
         }
 
         isExpanded = !isExpanded;
