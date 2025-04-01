@@ -1291,8 +1291,15 @@ button[type="submit"] {
   flex-direction: column;
 }
 
+.attention-overview {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .status-overview-info,
-.recent-applicant-info {
+.recent-applicant-info,
+.attention-overview {
   margin-bottom: 2em;
 }
 
@@ -1303,6 +1310,15 @@ button[type="submit"] {
 
 .admin-subtitle {
   color: gray;
+}
+
+.attention-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  text-align: center;
+  margin: 20px;
 }
 
 progress {
@@ -1377,8 +1393,9 @@ progress::-webkit-progress-value {
   width: fit-content;
 }
 
-#review-text {
-  color: rgb(138, 64, 0);
+#review-text,
+#applicant-action {
+  color: rgb(204, 150, 0);
   background-color: rgb(252, 237, 140);
 }
 
@@ -1392,9 +1409,16 @@ progress::-webkit-progress-value {
   background-color: rgb(155, 255, 180);
 }
 
-#rejected-text {
+#rejected-text,
+#admin-action {
   color: rgb(138, 0, 25);
   background-color: rgb(252, 202, 211);
+}
+
+#admin-action,
+#applicant-action {
+  padding: 5px;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
