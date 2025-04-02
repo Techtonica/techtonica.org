@@ -267,54 +267,54 @@ window.createPayment = async function(token) {
   }
 }
 
-window.sendSlackNotification = async () => {
-  var referralValue = "no"
+window.sendSlackNotification = async function() {
+  var referralValue = "no";
 
-  document.getElementsByName("referral").forEach((radio) => {
-    if (radio.checked) {
-      referralValue = radio.value
+  document.getElementsByName("referral").forEach(radio => {
+    if(radio.checked){
+      referralValue = radio.value;
     }
-  })
+  });
 
   var notificationValues = {
-    firstName: document.getElementById("firstname").value,
-    lastName: document.getElementById("lastname").value,
-    email: document.getElementById("email").value,
-    jobTitle: document.getElementById("jobtitle").value,
-    company: document.getElementById("company").value,
-    type: document.getElementById("type").value,
-    educationReq: document.getElementById("educationreq").value,
-    location: document.getElementById("location").value,
+    firstName: document.getElementById('firstname').value,
+    lastName: document.getElementById('lastname').value,
+    email: document.getElementById('email').value,
+    jobTitle: document.getElementById('jobtitle').value,
+    company: document.getElementById('company').value,
+    type: document.getElementById('type').value,
+    educationReq: document.getElementById('educationreq').value,
+    location: document.getElementById('location').value,
     referral: referralValue,
-    salaryRange: document.getElementById("salaryrange").value,
-    description: document.getElementById("description").value,
-    applicationLink: document.getElementById("applicationlink").value,
-  }
+    salaryRange: document.getElementById('salaryrange').value,
+    description: document.getElementById('description').value,
+    applicationLink: document.getElementById('applicationlink').value
+  };
 
-  var dataJsonString = JSON.stringify(notificationValues)
+  var dataJsonString = JSON.stringify(notificationValues);
 
   try {
-    // Use the process-job-posting.js endpoint
-    const response = await fetch("/process-job-posting", {
-      method: "POST",
+    // Use the Flask route for processing job postings
+    const response = await fetch('/process-job-posting', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json'
       },
-      body: dataJsonString,
-    })
-
-    const data = await response.json()
-
+      body: dataJsonString
+    });
+    
+    const data = await response.json();
+    
     if (!data.success) {
-      console.error("Error sending job posting:", data.error)
-      return false
+      console.error('Error sending job posting:', data.error);
+      return false;
     }
-
-    console.log("Job posting sent for approval:", data.postingId || "Unknown ID")
-    return true
+    
+    console.log('Job posting sent for approval:', data.postingId || 'Unknown ID');
+    return true;
   } catch (error) {
-    console.error("Error:", error)
-    return false
+    console.error('Error:', error);
+    return false;
   }
 }
 

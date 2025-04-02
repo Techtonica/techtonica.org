@@ -6,6 +6,7 @@ for Techtonica.org
 import configparser
 import os
 import sys
+import logging
 from uuid import uuid4
 import hmac
 import hashlib
@@ -39,6 +40,9 @@ sslify = SSLify(app)
 
 # Connect to Database
 engine = get_db_connection()
+
+# Create a temporary storage for pending job postings
+pending_job_postings = {}
 
 
 # MAIN HANDLERS
@@ -126,14 +130,12 @@ def render_openings_page():
     """
     return render_template("openings.html")
 
-
 # @app.route("/openings/stem/")
 # def render_stem_page():
 #     """
 #     Renders the STEM page from jinja2 template
 #     """
 #     return render_template("stem.html")
-
 
 # @app.route("/openings/tapm/")
 # def render_tapm_page():
@@ -149,14 +151,12 @@ def render_openings_page():
 #     """
 #     return render_template("ta.html")
 
-
 # @app.route("/openings/partnershipsmanager/")
 # def render_partnershipsmanager_page():
 #     """
 #     Renders the Partnerships Manager JD from jinja2 template
 #     """
 #     return render_template("partnershipsmanager.html")
-
 
 @app.route("/openings/sponsorshipslead/")
 def render_sponsorshipslead_page():
@@ -165,14 +165,12 @@ def render_sponsorshipslead_page():
     """
     return render_template("sponsorshipslead.html")
 
-
 # @app.route("/openings/curriculumdev/")
 # def render_curriculumdev_page():
 #     """
 #     Renders the curriculum dev page from jinja2 template
 #     """
 #     return render_template("curriculumdev.html")
-
 
 @app.route("/openings/board/")
 def render_board_page():
@@ -275,20 +273,13 @@ class Event(object):
 config = configparser.ConfigParser()
 config.read("config.ini")
 
-# Slack credentials
-SLACK_WEBHOOK = config.get("slack", "slack_webhook")
-
 # Square credentials
 CONFIG_TYPE = config.get("default", "environment")
 if CONFIG_TYPE == "production":
     PAYMENT_FORM_URL = "https://web.squarecdn.com/v1/square.js"
 else:
     PAYMENT_FORM_URL = "https://sandbox.web.squarecdn.com/v1/square.js"
-# PAYMENT_FORM_URL = (
-#     "https://web.squarecdn.com/v1/square.js"
-#     if CONFIG_TYPE == "production"
-#     else "https://sandbox.web.squarecdn.com/v1/square.js"
-# )
+
 APPLICATION_ID = config.get(CONFIG_TYPE, "square_application_id")
 LOCATION_ID = config.get(CONFIG_TYPE, "square_location_id")
 ACCESS_TOKEN = config.get(CONFIG_TYPE, "square_access_token")
@@ -299,8 +290,6 @@ client = Client(
     user_agent_detail="techtonica_payment",
 )
 
-# Create a temporary storage for pending job postings
-pending_job_postings = {}
 
 class Payment(BaseModel):
     token: str
@@ -321,43 +310,28 @@ def render_job_form():
     """
     Renders the job-form page from jinja2 template
     """
-    if len(missing_credentials) > 0:
+    try:
+        missing_credentials = []
+        if not APPLICATION_ID or not LOCATION_ID or not ACCESS_TOKEN:
+            missing_credentials.append("Square credentials")
+        
+        if len(missing_credentials) > 0:
+            return render_template("job-form.html", credentials=False)
+        else:
+            return render_template(
+                "job-form.html",
+                APPLICATION_ID=APPLICATION_ID,
+                PAYMENT_FORM_URL=PAYMENT_FORM_URL,
+                LOCATION_ID=LOCATION_ID,
+                ACCOUNT_CURRENCY="USD",
+                ACCOUNT_COUNTRY="US",
+                idempotencyKey=str(uuid4()),
+                credentials=True,
+            )
+    except Exception as e:
+        logger.error(f"Error rendering job form: {e}")
         return render_template("job-form.html", credentials=False)
-    else:
-        return render_template(
-            "job-form.html",
-            APPLICATION_ID=APPLICATION_ID,
-            PAYMENT_FORM_URL=PAYMENT_FORM_URL,
-            LOCATION_ID=LOCATION_ID,
-            ACCOUNT_CURRENCY="USD",
-            ACCOUNT_COUNTRY="ACCOUNT_COUNTRY",
-            idempotencyKey=str(uuid4()),
-            credentials=True,
-        )
 
-# old route - redirects to avoid breaking old links
-@app.route("/payment-form")
-def render_payment_form():
-    """
-    Redirects to current job-form route
-    """
-    return redirect(url_for("render_job_form"))
-
-
-@app.route("/share-a-job")
-def render_job_form():
-    """
-    Renders the job-form page from jinja2 template
-    """
-    return render_template(
-        "job-form.html",
-        APPLICATION_ID=APPLICATION_ID,
-        PAYMENT_FORM_URL=PAYMENT_FORM_URL,
-        LOCATION_ID=LOCATION_ID,
-        ACCOUNT_CURRENCY="USD",
-        ACCOUNT_COUNTRY="US",
-        idempotencyKey=str(uuid4()),
-    )
 
 # Square payment api route
 @app.route("/process-payment", methods=["POST"])
@@ -387,35 +361,332 @@ def create_payment():
         return {"errors": create_payment_response.errors}
 
 
-# Slack webhook route
-@app.route("/send-posting", methods=["POST"])
-def send_posting():
+# JOB POSTING APPROVAL WORKFLOW *****************************************************
+
+@app.route("/process-job-posting", methods=["POST"])
+def process_job_posting():
+    """
+    Processes a new job posting and sends it to staff for approval
+    """
     data = request.json
-    print(f"Received data: {data}")
+    print(f"Received job posting data: {data}")
+    
+    # Generate a unique ID for this job posting
+    posting_id = str(uuid4())
+    
+    # Store the job posting with its ID
+    pending_job_postings[posting_id] = data
+    
+    # Send to staff channel for approval
+    try:
+        send_to_staff_channel(data, posting_id)
+        return jsonify({
+            "success": True,
+            "message": "Job posting sent for staff approval",
+            "postingId": posting_id
+        })
+    except Exception as e:
+        print(f"Error sending job posting to staff channel: {e}")
+        return jsonify({
+            "success": False,
+            "error": "Failed to process job posting"
+        }), 500
 
-    x = requests.post(
-        SLACK_WEBHOOK,
-        json={
-            "text": f"A new job has been posted to Techtonica! "
-            f"Read the details below to see if you're a good fit!"
-            f"\n\n JOB DETAILS \n Job Title: {data['jobTitle']} "
-            f"\n Company: {data['company']} \n Type: {data['type']} "
-            f"\n Education Requirement: {data['educationReq']} "
-            f"\n Location: {data['location']} "
-            f"\n Referral offered: {data['referral']} "
-            f"\n Salary Range: {data['salaryRange']} "
-            f"\n Description: {data['description']} "
-            f"\n Application Link: {data['applicationLink']} "
-            f"\n \n CONTACT INFO "
-            f"\n Name: {data['firstName']} {data['lastName']} "
-            f"\n Email: {data['email']}  \n "
-        },
-    )
 
-    print(f"Message sent: {x.text}")
-    return jsonify(
-        {"message": "Data received successfully", "received_data": data}
+@app.route("/approve-job-post", methods=["GET"])
+def approve_job_post():
+    """
+    Approves a job posting and sends it to graduates
+    """
+    posting_id = request.args.get('id')
+    
+    if not posting_id:
+        return jsonify({
+            "success": False,
+            "error": "Missing posting ID"
+        }), 400
+    
+    # Get the job posting data
+    job_data = pending_job_postings.get(posting_id)
+    
+    if not job_data:
+        return jsonify({
+            "success": False,
+            "error": "Job posting not found"
+        }), 404
+    
+    # Send to graduates channel
+    try:
+        send_to_graduates_channel(job_data)
+        
+        # Remove from pending
+        del pending_job_postings[posting_id]
+        
+        # Return a simple HTML response
+        return """
+        <html>
+            <head>
+                <title>Job Posting Approved</title>
+                <style>
+                    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+                    .success { color: green; }
+                </style>
+            </head>
+            <body>
+                <h1 class="success">Job Posting Approved</h1>
+                <p>The job posting has been approved and sent to the graduates channel.</p>
+                <p>You can close this window now.</p>
+            </body>
+        </html>
+        """
+    except Exception as e:
+        print(f"Error approving job posting: {e}")
+        return jsonify({
+            "success": False,
+            "error": "Failed to approve job posting"
+        }), 500
+
+
+@app.route("/reject-job-post", methods=["GET"])
+def reject_job_post():
+    """
+    Rejects a job posting
+    """
+    posting_id = request.args.get('id')
+    
+    if not posting_id:
+        return jsonify({
+            "success": False,
+            "error": "Missing posting ID"
+        }), 400
+    
+    # Check if the job posting exists
+    if posting_id not in pending_job_postings:
+        return jsonify({
+            "success": False,
+            "error": "Job posting not found"
+        }), 404
+    
+    # Remove from pending
+    del pending_job_postings[posting_id]
+    
+    # Return a simple HTML response
+    return """
+    <html>
+        <head>
+            <title>Job Posting Rejected</title>
+            <style>
+                body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+                .rejected { color: red; }
+            </style>
+        </head>
+        <body>
+            <h1 class="rejected">Job Posting Rejected</h1>
+            <p>The job posting has been rejected and will not be sent to the graduates channel.</p>
+            <p>You can close this window now.</p>
+        </body>
+    </html>
+    """
+
+
+@app.route("/verify-slack-request", methods=["POST"])
+def verify_slack_request():
+    """
+    Verifies that a request is coming from Slack
+    """
+    # Get the Slack signing secret from environment variables
+    slack_signing_secret = os.environ.get("SLACK_SIGNING_SECRET")
+    
+    if not slack_signing_secret:
+        print("SLACK_SIGNING_SECRET is not set")
+        return jsonify({"error": "Server configuration error"}), 500
+    
+    # Get the Slack signature and timestamp from headers
+    slack_signature = request.headers.get("X-Slack-Signature")
+    slack_timestamp = request.headers.get("X-Slack-Request-Timestamp")
+    
+    if not slack_signature or not slack_timestamp:
+        return jsonify({"error": "Missing Slack signature headers"}), 400
+    
+    # Check if the request is older than 5 minutes
+    current_time = int(time.time())
+    if abs(current_time - int(slack_timestamp)) > 300:
+        return jsonify({"error": "Request timestamp is too old"}), 400
+    
+    # Get the request body as text
+    request_body = request.get_data().decode("utf-8")
+    
+    # Create the signature base string
+    base_string = f"v0:{slack_timestamp}:{request_body}"
+    
+    # Create the signature to compare with the one from Slack
+    my_signature = "v0=" + hmac.new(
+        slack_signing_secret.encode("utf-8"),
+        base_string.encode("utf-8"),
+        hashlib.sha256
+    ).hexdigest()
+    
+    # Check if the signatures match
+    if hmac.compare_digest(my_signature, slack_signature):
+        # Signatures match, request is from Slack
+        return jsonify({"success": True})
+    else:
+        # Signatures don't match
+        return jsonify({"error": "Invalid signature"}), 401
+
+
+def send_to_staff_channel(job_data, posting_id):
+    """
+    Sends a job posting to the staff channel for approval
+    """
+    staff_webhook = os.environ.get("SLACK_STAFF_WEBHOOK")
+    
+    if not staff_webhook:
+        raise Exception("SLACK_STAFF_WEBHOOK environment variable is not set")
+    
+    # Create approval buttons with the posting ID
+    base_url = request.host_url.rstrip('/')
+    approve_url = f"{base_url}/approve-job-post?id={posting_id}"
+    reject_url = f"{base_url}/reject-job-post?id={posting_id}"
+    
+    message = {
+        "text": "A new job posting requires approval",
+        "blocks": [
+            {
+                "type": "header",
+                "text": {
+                    "type": "plain_text",
+                    "text": "New Job Posting Requires Approval",
+                    "emoji": True
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": f"*Job Title:* {job_data.get('jobTitle')}\n*Company:* {job_data.get('company')}\n*Type:* {job_data.get('type', 'Not specified')}\n*Education Requirement:* {job_data.get('educationReq', 'Not specified')}\n*Location:* {job_data.get('location')}\n*Referral offered:* {job_data.get('referral')}\n*Salary Range:* {job_data.get('salaryRange', 'Not specified')}"
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": f"*Description:*\n{job_data.get('description', 'No description provided')}"
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": f"*Application Link:*\n{job_data.get('applicationLink', 'No link provided')}"
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": f"*Contact:*\n{job_data.get('firstName')} {job_data.get('lastName')} ({job_data.get('email')})"
+                }
+            },
+            {
+                "type": "actions",
+                "elements": [
+                    {
+                        "type": "button",
+                        "text": {
+                            "type": "plain_text",
+                            "text": "Approve",
+                            "emoji": True
+                        },
+                        "style": "primary",
+                        "url": approve_url
+                    },
+                    {
+                        "type": "button",
+                        "text": {
+                            "type": "plain_text",
+                            "text": "Reject",
+                            "emoji": True
+                        },
+                        "style": "danger",
+                        "url": reject_url
+                    }
+                ]
+            }
+        ]
+    }
+    
+    response = requests.post(
+        staff_webhook,
+        json=message
     )
+    
+    if response.status_code != 200:
+        raise Exception(f"Failed to send to staff channel: {response.text}")
+    
+    return response
+
+
+def send_to_graduates_channel(job_data):
+    """
+    Sends an approved job posting to the graduates channel
+    """
+    graduates_webhook = os.environ.get("SLACK_GRADUATES_WEBHOOK")
+    
+    if not graduates_webhook:
+        raise Exception("SLACK_GRADUATES_WEBHOOK environment variable is not set")
+    
+    message = {
+        "text": "A new job has been posted to Techtonica! Read the details below to see if you're a good fit!",
+        "blocks": [
+            {
+                "type": "header",
+                "text": {
+                    "type": "plain_text",
+                    "text": "New Job Opportunity",
+                    "emoji": True
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": f"*Job Title:* {job_data.get('jobTitle')}\n*Company:* {job_data.get('company')}\n*Type:* {job_data.get('type', 'Not specified')}\n*Education Requirement:* {job_data.get('educationReq', 'Not specified')}\n*Location:* {job_data.get('location')}\n*Referral offered:* {job_data.get('referral')}\n*Salary Range:* {job_data.get('salaryRange', 'Not specified')}"
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": f"*Description:*\n{job_data.get('description', 'No description provided')}"
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": f"*Application Link:*\n{job_data.get('applicationLink', 'No link provided')}"
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": f"*Contact:*\n{job_data.get('firstName')} {job_data.get('lastName')} ({job_data.get('email')})"
+                }
+            }
+        ]
+    }
+    
+    response = requests.post(
+        graduates_webhook,
+        json=message
+    )
+    
+    if response.status_code != 200:
+        raise Exception(f"Failed to send to graduates channel: {response.text}")
+    
+    return response
 
 
 if __name__ == "__main__":
