@@ -14,7 +14,32 @@ endblock title %} {% block content %}
   <div class="row row__center our-supporters" id="supporters">
     <div class="row">
       <div class="column centered">
-        <a
+        <section class="card forty-percent-width margin-1-percent">
+          <div class="content">
+            <p>
+              "My cohort members have become friends and constant
+              inspiration—they’re passionate, creative, and endlessly
+              supportive. They’ve encouraged me to push myself and grow in ways
+              I hadn’t expected. The staff has been incredible, too. Michelle
+              Glauser, our program Founder and CEO, is warm and attentive, and
+              her focus on constructive feedback is something I know will have a
+              lasting impact on me. Daaimah Tibrey, with her boundless energy
+              and dedication, has taught me so much, especially about writing
+              meaningful commit messages and PRs through her feedback on my
+              projects."
+            </p>
+            <p>
+              -Techtonica Graduate, Xiahui Zhang, on
+              <a
+                href="https://www.linkedin.com/posts/xiahui-zhang_my-journey-with-techtonica-from-law-to-activity-7262539138065653761-jYZp?utm_source=share&utm_medium=member_desktop"
+                rel="noopener noreferrer"
+                target="_blank"
+                >LinkedIn</a
+              >
+            </p>
+          </div>
+        </section>
+        <!-- <a
           href="https://www.linkedin.com/posts/xiahui-zhang_my-journey-with-techtonica-from-law-to-activity-7262539138065653761-jYZp?utm_source=share&utm_medium=member_desktop"
           rel="noopener noreferrer"
         >
@@ -23,8 +48,31 @@ endblock title %} {% block content %}
             alt="LinkedIn post by Xiahui Zhang on pivoting from law to tech with Techtonica, building projects, learning PERN, Git, etc."
             class="forty-percent-width margin-1-percent"
           />
-        </a>
-        <a
+        </a> -->
+        <section class="card forty-percent-width margin-1-percent">
+          <div class="content">
+            <p>
+              "For those of you who don't know, Techtonica is a software
+              engineering program that helps women and non-binary adults
+              overcome barriers into the tech industry. After many rounds of
+              interviews, evaluations, and 5 months of intensive technical
+              training, I'm excited to say that I am a Full Stack Software
+              Engineer specializing in the PERN stack! To kick off the week of
+              graduation, I just wanted to make a super special shoutout to the
+              Techtonica staff!"
+            </p>
+            <p>
+              -Techtonica Graduate, Abbie Huynh, on
+              <a
+                href="https://www.linkedin.com/posts/abbie-huynh_im-graduating-from-techtonica-this-week-activity-7262279909413171200-RThp?utm_source=share&utm_medium=member_desktop"
+                rel="noopener noreferrer"
+                target="_blank"
+                >LinkedIn</a
+              >
+            </p>
+          </div>
+        </section>
+        <!-- <a
           href="https://www.linkedin.com/posts/abbie-huynh_im-graduating-from-techtonica-this-week-activity-7262279909413171200-RThp?utm_source=share&utm_medium=member_desktop"
           rel="noopener noreferrer"
         >
@@ -33,7 +81,7 @@ endblock title %} {% block content %}
             alt="LinkedIn post by Abbie Huynh celebrating graduating from Techtonica, expressing gratitude for its support and mentorship."
             class="forty-percent-width margin-1-percent"
           />
-        </a>
+        </a> -->
         <a href="#" rel="noopener noreferrer">
           <img
             src="{{ url_for('static', filename='img/testimonials/Destinee-2023-min.png') }}"
@@ -826,4 +874,15 @@ endblock title %} {% block content %}
     </h2>
   </div>
 </div>
+<style>
+  .card {
+    border: 30px solid #0093b5;
+    border-radius: 3px;
+    /* height: 350px; */
+    display: inline-flex;
+  }
+  .content {
+    padding: 15px;
+  }
+</style>
 {% endblock content %}
