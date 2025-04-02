@@ -58,21 +58,41 @@ window.showSuccessPage = function(jobTitle, company) {
   });
 }
 
-// Function to check text for profanity using PurgoMalum API
+// Function to check text for profanity using PurgoMalum API with improved word boundary handling
 window.checkProfanity = async function(text) {
   if (!text || text.trim() === '') return { containsProfanity: false };
   
   try {
-    // Encode the text for URL
-    const encodedText = encodeURIComponent(text);
-    // Use PurgoMalum's containsprofanity endpoint
-    const response = await fetch(`https://www.purgomalum.com/service/containsprofanity?text=${encodedText}`);
-    const result = await response.text();
+    // Split the text into words to check them individually
+    // This helps avoid false positives in names like "Harshitha"
+    const words = text.split(/\s+/);
     
-    return { 
-      containsProfanity: result.trim() === 'true',
-      text: text
-    };
+    // Check each word individually
+    for (const word of words) {
+      // Skip very short words (likely not profanity)
+      if (word.length <= 2) continue;
+      
+      // Skip words that look like they might be names (first letter capitalized)
+      // This is a simple heuristic to reduce false positives on names
+      if (/^[A-Z][a-z]+$/.test(word)) continue;
+      
+      // Encode the word for URL
+      const encodedWord = encodeURIComponent(word);
+      
+      // Use PurgoMalum's containsprofanity endpoint for this specific word
+      const response = await fetch(`https://www.purgomalum.com/service/containsprofanity?text=${encodedWord}`);
+      const result = await response.text();
+      
+      if (result.trim() === 'true') {
+        return { 
+          containsProfanity: true,
+          text: word // Return the specific word that was flagged
+        };
+      }
+    }
+    
+    // If we get here, no individual word was flagged
+    return { containsProfanity: false };
   } catch (error) {
     console.error('Error checking profanity:', error);
     // If the API fails, we'll let the text pass to not block users
@@ -184,7 +204,7 @@ window.validateForm = async function() {
         
         // Get a readable label for the field
         const fieldLabel = fieldLabels[input.id] || input.id;
-        window.showError(`Inappropriate language detected in ${fieldLabel}. Please revise your content.`);
+        window.showError(`Potentially inappropriate word "${profanityCheck.text}" detected in ${fieldLabel}. Please revise your content.`);
         break; // Stop checking after first profanity found
       }
     }
@@ -202,14 +222,8 @@ window.validateForm = async function() {
 }
 
 window.createPayment = async function(token) {
-  // Show loading message
-  window.showError('Validating form...');
-  
-  // Validate form before processing payment
-  const isValid = await window.validateForm();
-  if (!isValid) {
-    return;
-  }
+  // If we have a token, the card info must be complete
+  // No need to check window.cardInfoComplete here
   
   // Show processing message
   window.showError('Processing payment...');
@@ -303,19 +317,29 @@ window.sendSlackNotification = async function() {
   }
 }
 
-// Form and checkbox functionality
+// Form and code of conduct checkbox functionality
 document.addEventListener("DOMContentLoaded", () => {
+  // Initialize the cardInfoComplete flag
+  window.cardInfoComplete = false;
+  
   const termsCheckbox = document.getElementById("code-of-conduct-checkbox");
   const cardButton = document.getElementById("card-button");
+  const cardContainer = document.getElementById('card-container');
   
   // Set initial button state
   cardButton.disabled = !termsCheckbox.checked;
   
-  // Add visual indicator for disabled state
+  // Visual indicator for disabled state
   if (cardButton.disabled) {
     cardButton.classList.add('disabled');
   } else {
     cardButton.classList.remove('disabled');
+  }
+  
+  // Add visual indicator for card container
+  if (cardContainer) {
+    // Add a subtle border that changes color when card info is complete
+    cardContainer.style.transition = 'border-color 0.3s ease';
   }
   
   termsCheckbox.addEventListener("change", function() {
@@ -330,7 +354,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   
-  // Add input event listeners to clear error styling when user types
+  // Input event listeners to clear error styling when user types
   const allInputs = document.querySelectorAll('input, textarea');
   allInputs.forEach(input => {
     input.addEventListener('input', function() {
@@ -354,14 +378,15 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById('fast-checkout').addEventListener('submit', async function(e) {
     e.preventDefault(); // Always prevent default to handle validation
     
-    // Show loading message
-    window.showError('Validating form...');
-    
-    const isValid = await window.validateForm();
-    if (isValid) {
-      // If valid, the form will be processed by the payment flow
-      window.showError('Form is valid. Please complete payment.');
+    // First validate the form fields
+    const isFormValid = await window.validateForm();
+    if (!isFormValid) {
+      return;
     }
+    
+    // If form is valid, let the card button handle the payment
+    // This will trigger the eventHandler in sq-card-pay.js
+    document.getElementById('card-button').click();
   });
 });
 

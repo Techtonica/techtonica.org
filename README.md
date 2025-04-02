@@ -12,7 +12,7 @@ currently hosted on DreamHost.
     - [Install and Upgrade pip-tools](#install-and-upgrade-pip-tools)
     - [Install Pre-Commit Hooks](#install-pre-commit-hooks)
     - [Install Requirements](#install-requirements)
-    - [Create Config.ini File](#create-configini-file)
+    - [Create .env File](#create-env-file)
     - [Pre-Commit Hooks Guide](#pre-commit-hooks-guide)
     - [Optional: Installing Prettier Plug-in Locally](#optional-installing-prettier-plug-in-locally)
     - [Running Locally](#running-locally)
@@ -118,7 +118,7 @@ pip install --upgrade pip
 
 ### Install and Upgrade pip-tools
 
-```
+```bash
 python -m pip install -U pip-tools
 ```
 
@@ -132,17 +132,12 @@ consistency.
 
 ```bash
 pip install pre-commit
-```
-
-2. Install the project pre-commit hooks:
-
-```bash
 pre-commit install -f --install-hooks
 ```
 
 ### Install Requirements
 
-```
+```bash
 pip install -r dev.txt
 ```
 
@@ -154,32 +149,31 @@ mysql --version
 brew install mysql
 ```
 
-### Create Config.ini File
+### Create .env File
 
-```
-touch config.ini
+```bash
+touch .env
 ```
 
-And then copy and paste this code into your new file (note: For the actual values, please see [Updating Techtonica's Website](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit?tab=t.0)):
+Copy and paste this code into your new file. There is a sample in .env.example for you to use as well. Please contact a Techtonica Staff member for `.env` file contents. Staff members can be reached through the Techtonica Slack workspace, or you can fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLScjCF6_xzIn-Uht3MDOr1__3YpIYDCTzx80cIE0KVCsPqcYKQ/viewform).
 
 ```sh
-[default]
-# Acceptable values are sandbox or production
-environment = sandbox
-dev_password = dev_password
-
-[production]
-square_application_id = production_application_id
-square_access_token = production_access_token
-square_location_id = production_location_id
-
-[sandbox]
-square_application_id = <sandbox app id>
-square_access_token = <sandbox access token>
-square_location_id = <sandbox location id>
-
-[slack]
-slack_webhook =  <slack webhook>
+# Your environment, either "local", "prod", "staging", or "testing"
+ENVIRONMENT="local"
+# Square credentials for the job posting feature
+SQUARE_APPLICATION_ID="id"
+SQUARE_ACCESS_TOKEN="token"
+SQUARE_LOCATION_ID="location"
+SLACK_WEBHOOK="webhook"
+PAYMENT_FORM_URL="url"
+# Application open date in format "MM/DD/YYYY HH:MM:SS" in UTC
+APP_OPEN_DATE="date"
+APP_EXTENDED="boolean"
+# Database credentials - more extensive explanation in the database section
+DB_USERNAME="username"
+DB_PASSWORD="password"
+DB_HOST="host"
+DB_NAME="name"
 ```
 
 ### Pre-Commit Hooks Guide
@@ -188,32 +182,32 @@ To manually run, test, and upgrade pre-commit hooks locally, follow these steps:
 
 To run hooks on specific files, use the command:
 
-```
+```bash
 pre-commit run --files <file1> <file2>
 ```
 
 For example, if you want to test a single file, you can use
 
-```
+```bash
 pre-commit run --files main_site.py
 ```
 
 To run all hooks on every file in the repository, use the
 command
 
-```
+```bash
 pre-commit run --all-files
 ```
 
 If you need to upgrade your hooks to their latest versions, run
 
-```
+```bash
 pre-commit autoupdate
 ```
 
 After upgrading, ensure you reinstall the hooks by running
 
-```
+```bash
 pre-commit install
 ```
 
@@ -229,12 +223,12 @@ The Prettier pre-commit hook automatically formats code when you attempt to comm
 
 #### What to Expect
 
-1. **Scenario:**  
+1. **Scenario:**
    During `git commit`, the Prettier pre-commit hook runs and identifies formatting issues.
 
    - If applicable, Prettier will fix these issues but may leave **unstaged changes** in your working directory.
 
-2. **Outcome:**  
+2. **Outcome:**
    You will need to stage these changes again (`git add`) before committing and pushing your changes to the remote repository.
 
 #### Why This Happens
@@ -247,7 +241,7 @@ To avoid this behavior and streamline your workflow, you can install a Prettier 
 
 #### Steps:
 
-1. Install the Prettier plug-in in your IDE (e.g., VS Code).  
+1. Install the Prettier plug-in in your IDE (e.g., VS Code).
    ![Prettier Plug-in in VS Code](static/img/Prettier-Plug-In.png)
 
 2. Enable the "Format on Save" setting:
@@ -280,19 +274,19 @@ Each time you want to work on your code, you will need to activate your virtual 
 
 Activate your virtual environment:
 
-```
+```bash
 source venv/bin/activate
 ```
 
 Install any requirements if they've changed:
 
-```
+```bash
 pip install -r dev.txt
 ```
 
 Start the application's server:
 
-```sh
+```bash
 FLASK_DEBUG=1 FLASK_APP=main_site.py flask run
 ```
 
@@ -330,7 +324,7 @@ OR
 
 Watch for changes using `--watch`:
 
-```sh
+```bash
 sass --watch static/sass/style.scss:static/css/style.css
 ```
 
@@ -356,17 +350,17 @@ There are features on the site that use Square for payments and will periodicall
 
 #### Setup
 
-1. Secrets required for the Square payment API and Slack webhook are stored in a config.ini file in the root directory of our repository.
+1. Secrets required for the Square payment API and Slack webhook are stored in a .env file in the root directory of our repository.
 2. This file is listed in our .gitignore file and will not be included when pushing or pulling updates.
 3. You will need to manually add it into your local repository to test these features locally, and will also need to manually add it into whatever Dreamhost server (testing, staging, or production) that you are using as well, if it’s not already there.
 4. BE CAREFUL ABOUT environment VALUE! If it’s set to production it will actually charge the cards you test with, so be sure to set it to sandbox when testing locally or on staging or testing.
-5. Please see the [Updating Techtonica's Website](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit?tab=t.0) doc to get the keys and secrets.
+5. Please contact a member of Techtonica staff to get the keys and secrets.
 
 #### Running Locally
 
 Run your server using the following command, it will bypass any HTTPS cert errors.
 
-```sh
+```bash
 pip install pyopenssl
 FLASK_DEBUG=1 FLASK_APP=main_site.py FLASK_RUN_CERT=adhoc flask run
 ```
@@ -389,8 +383,8 @@ At the moment, we do not have styling in place that will enable us to have a cod
 3. Update the `data` section in `static/js/piechart.js#L30`.
 4. Uncomment out following in `full-time-program.html`.
 
-```
-  <!-- <div class="blue-background">
+```html
+<!-- <div class="blue-background">
      <canvas id="myChart" width="700" height="350"></canvas>
   </div> -->
 ```
@@ -399,18 +393,18 @@ At the moment, we do not have styling in place that will enable us to have a cod
 6. Add the screenshot to the `static/img` directory saved with YEAR-H#-Cohort-Demographics.jpg, ex. 2023-H1-Cohort-Demographics.jpg.
 7. Update `full-time-program.html` to point to the new image you just added. Update the alt text if necessary.
 
-```
- <img
-     src="{{ url_for('static', filename='img/2023-H1-Cohort-Demographics.jpg') }}"
-     alt="2023 Cohort Demographics."
-     class="full-width-img"
-  />
+```html
+<img
+  src="{{ url_for('static', filename='img/2023-H1-Cohort-Demographics.jpg') }}"
+  alt="2023 Cohort Demographics."
+  class="full-width-img"
+/>
 ```
 
 8. Re-comment the following.
 
-```
-  <!-- <div class="blue-background">
+```html
+<!-- <div class="blue-background">
      <canvas id="myChart" width="700" height="350"></canvas>
   </div> -->
 ```
@@ -437,7 +431,7 @@ dependencies. _If there are dependencies only needed for local development, thes
 1. Edit `requirements.in` or `dev.in` (referred to below as `file_name.in`). If you update requirements.in, you must also re-compile dev.in after.
 1. Generate the .txt file
 
-   ```sh
+   ```bash
    pip-compile -U <file_name.in>
    pip install -r <file_name.txt>
    ```
@@ -453,10 +447,10 @@ To connect these locally, you can use a GUI tool such as [Sequel Pro](https://se
 Enter the credentials into the connection window with the following:
 
 - **Name:** Anything, but should indicate which environment it points to
-- **Host:** mysql.techtonica.org
-- **Username:** Username from credentials
-- **Password:** Password from credentials
-- **Database:** Database name from credentials
+- **Host:** DB_HOST from credentials
+- **Username:** DB_USERNAME from credentials
+- **Password:** DB_PASSWORD from credentials
+- **Database:** DB_NAME from credentials
 - **Port:** 3306
 
 ![This is a sample screenshot of a Sequel Pro connection.](static/img/database_connection.png)
@@ -473,31 +467,11 @@ The below instructions are for setting up a new server in DreamHost.
 1. Update package tools, while you're still operating in the virtual
    environment:
 
-   ```sh
+   ```bash
    pip install -U pip setuptools pip-tools
    ```
 
-1. Create a `config.ini` file in the root directory of the repo in whichever Dreamhost server if there isn't one already present, and populate it with the necessary keys.
-
-   ```sh
-   [default]
-   # Acceptable values are sandbox or production
-   environment = sandbox
-   dev_password = dev_password
-
-   [production]
-   square_application_id = production_application_id
-   square_access_token = production_access_token
-   square_location_id = production_location_id
-
-   [sandbox]
-   square_application_id = <sandbox app id>
-   square_access_token = <sandbox access token>
-   square_location_id = <sandbox location id>
-
-   [slack]
-   slack_webhook =  <slack webhook>
-   ```
+1. Create a `.env` file in the root directory of the repo in whichever Dreamhost server if there isn't one already present, and populate it with the necessary keys. [Reach out](#create-env-file) to a member of Techtonica staff to get the exact values.
 
 ### Deploy Feature Branch
 
@@ -529,19 +503,19 @@ Important: Only ever Pull from the server! There are currently 3 main servers in
 
 1. Change directory to the appropriate domain:
 
-   ```sh
+   ```bash
    cd techtonica.org
    ```
 
    or
 
-   ```sh
+   ```bash
    cd staging.techtonica.org
    ```
 
 1. Activate the virtual envrionment:
 
-   ```sh
+   ```bash
    . bin/activate
    ```
 
@@ -553,20 +527,19 @@ Important: Only ever Pull from the server! There are currently 3 main servers in
 
 1. Pull the latest code using
 
-   ```sh
+   ```bash
    git pull
    ```
 
 1. Update requirements:
 
-   ```sh
+   ```bash
    pip-sync
    ```
 
 1. "Restart" the server to showcase new changes
 
-   ```sh
-
+   ```bash
    # staging.techtonica.org
    systemctl --user stop gunicorn_staging
    systemctl --user enable gunicorn_staging
@@ -584,16 +557,15 @@ Important: Only ever Pull from the server! There are currently 3 main servers in
    systemctl --user enable gunicorn_techtonica
    systemctl --user restart gunicorn_techtonica
    systemctl --user status gunicorn_techtonica
-
    ```
 
 1. Deactivate virtual environment and exit server:
 
-   ```sh
+   ```bash
    deactivate
    ```
 
-   ```sh
+   ```bash
    exit
    ```
 
