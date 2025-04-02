@@ -144,6 +144,7 @@ def generate_application_timeline():
         
         # URLs for buttons when applications are open
         fulltime_top_button_url = "https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
+        fulltime_bottom_button_url = "https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
         home_button_url = "render_ft_program_page"  # This will be used with url_for in the template
     else:
         # Applications are closed, not scheduled, or scheduled for the future
@@ -153,6 +154,7 @@ def generate_application_timeline():
         
         # URLs for buttons when applications are closed
         fulltime_top_button_url = "https://docs.google.com/forms/d/e/1FAIpQLSfUdyIAfcU5KSqtYH5J5iPRgu-yycHdebnUKygQLEv-m7oVMw/viewform"
+        fulltime_bottom_button_url = "https://www.eventbrite.com/o/techtonica-11297022451" 
         home_button_url = "render_sponsor_page"  # This will be used with url_for in the template
 
     return {
@@ -181,5 +183,6 @@ def generate_application_timeline():
         "FULLTIME_TOP_BUTTON": fulltime_top_button,
         "FULLTIME_BOTTOM_BUTTON": fulltime_bottom_button,
         "FULLTIME_TOP_BUTTON_URL": fulltime_top_button_url,
+        "FULLTIME_BOTTOM_BUTTON_URL": fulltime_bottom_button_url,
         "HOME_BUTTON_URL": home_button_url
     }
