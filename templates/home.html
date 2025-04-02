@@ -11,13 +11,13 @@ endblock title %} {% block content %}
       </p>
       <h2>
         <a
-          href="{% if timeline.APP_OPEN %}{{ url_for('render_ft_program_page') }}{% else %}{{ url_for('render_sponsor_page') }}{% endif %}"
+          href="{{ url_for(timeline.HOME_BUTTON_URL) }}"
           class="sponsor"
           id="orange-button"
           target="_blank"
-          rel="noopener noreferrer"
-          >{{ timeline.TEXT }}</a
-        >
+          rel="noopener noreferrer">
+            {{ timeline.TEXT }}
+        </a>
       </h2>
     </div>
   </div>

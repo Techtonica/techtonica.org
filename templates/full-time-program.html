@@ -12,13 +12,13 @@ endblock title %} {% block content %}
       </p>
       <h2>
         <a
-          href="{% if timeline.APP_OPEN %}https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform{% else %}https://docs.google.com/forms/d/e/1FAIpQLSfUdyIAfcU5KSqtYH5J5iPRgu-yycHdebnUKygQLEv-m7oVMw/viewform{% endif %}"
+          href="{{ timeline.FULLTIME_TOP_BUTTON_URL }}"
           class="sponsor"
           id="orange-button"
           target="_blank"
-          rel="noopener noreferrer"
-          >{{timeline.FULLTIME_TOP_BUTTON}}</a
-        >
+          rel="noopener noreferrer">
+            {{timeline.FULLTIME_TOP_BUTTON}}
+        </a>
       </h2>
     </div>
   </div>
@@ -617,13 +617,13 @@ endblock title %} {% block content %}
     </div>
     <h2>
       <a
-        href="{% if timeline.APP_OPEN %}https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform{% else %}https://www.eventbrite.com/o/techtonica-11297022451{% endif %}"
+        href="{{ timeline.FULLTIME_TOP_BUTTON_URL }}"
         class="sponsor"
         id="orange-button"
         target="_blank"
-        rel="noopener noreferrer"
-        >{{timeline.FULLTIME_BOTTOM_BUTTON}}</a
-      >
+        rel="noopener noreferrer">
+          {{timeline.FULLTIME_BOTTOM_BUTTON}}
+      </a>
     </h2>
   </div>
 </div>
