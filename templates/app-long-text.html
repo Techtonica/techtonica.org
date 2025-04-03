@@ -387,14 +387,14 @@ Techtonica Application {% endblock title %} {% block content %}
         <button
           type="button"
           class="previous-btn"
-          onclick="window.location.href='/app-questionnaire'"
+          onclick="navigateToPage('/app-questionnaire')"
         >
           Previous
         </button>
         <button
           type="button"
           class="continue-to-app-btn"
-          onclick="window.location.href='/app-reference'"
+          onclick="validateAndNavigate('/app-reference')"
         >
           Next
         </button>
@@ -409,6 +409,129 @@ Techtonica Application {% endblock title %} {% block content %}
     </fieldset>
   </form>
 </section>
+
+<script>
+  // Attach live validation on page load
+  window.onload = function () {
+    attachLiveValidation();
+  };
+
+  // Function to attach event listeners for live validation
+  function attachLiveValidation() {
+    const form = document.getElementById("app-form-4");
+    const fields = form.querySelectorAll("[required]");
+    fields.forEach((field) => {
+      field.addEventListener("input", () => validateField(field)); // Text inputs
+      field.addEventListener("change", () => validateField(field)); // Dropdowns, radio buttons, file uploads
+    });
+  }
+
+  // Function to validate individual fields
+  function validateField(field) {
+    const validationType = field.dataset.validation || field.type; // Field type based on custom input data-validation="" or the type listed
+
+    if (validateFieldByType(field, validationType)) {
+      clearValidation(field); // Clear red border and error message if valid
+    } else {
+      markInvalid(field); // Highlight with red border and show error message if invalid
+    }
+  }
+
+  // Function to validate fields by type
+  function validateFieldByType(field, validationType) {
+    switch (validationType) {
+      case "url":
+        return isValidURL(field.value); // Validate URL format
+      case "radio":
+        return isRadioGroupValid(field.name); // Validate radio group selection
+      default:
+        return field.value.trim() !== ""; // Ensure field is not empty
+    }
+  }
+
+  // Validation helpers
+  function isValidURL(value) {
+    const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i; // Regex to check URL formatting
+    return urlPattern.test(value);
+  }
+
+  function isRadioGroupValid(name) {
+    const radios = document.getElementsByName(name);
+    return Array.from(radios).some((radio) => radio.checked); // Collects radio buttons in group and checks if at least one is selected
+  }
+
+  // Handle invalid fields
+  function markInvalid(field) {
+    if (field.type === "radio") {
+      // Append the error message only once for the radio group container
+      const radioGroup = field.closest('[role="radiogroup"]');
+      if (!radioGroup.querySelector(".error-message")) {
+        const errorMessage = document.createElement("span");
+        errorMessage.className = "error-message";
+        errorMessage.style.color = "red";
+        errorMessage.innerText = "This field is required.";
+        radioGroup.appendChild(errorMessage); // Append message to radio group container instead of to each radio button
+      }
+    } else {
+      // For other field types
+      field.style.border = "2px solid red";
+      if (
+        !field.nextElementSibling ||
+        field.nextElementSibling.className !== "error-message"
+      ) {
+        const errorMessage = document.createElement("span");
+        errorMessage.className = "error-message";
+        errorMessage.style.color = "red";
+        errorMessage.innerText = "This field is required.";
+        field.insertAdjacentElement("afterend", errorMessage); // Add message after the field
+      }
+    }
+  }
+
+  // Clear invalid styling and error message
+  function clearValidation(field) {
+    if (field.type === "radio") {
+      const radioGroup = field.closest('[role="radiogroup"]');
+      const errorMessage = radioGroup.querySelector(".error-message");
+      if (errorMessage) {
+        errorMessage.remove(); // Remove radio group error message
+      }
+    } else {
+      field.style.border = ""; // Remove red border for valid inputs
+      if (
+        field.nextElementSibling &&
+        field.nextElementSibling.className === "error-message"
+      ) {
+        field.nextElementSibling.remove(); // Remove error message after the field
+      }
+    }
+  }
+
+  // Final validation before navigation
+  function validateAndNavigate(nextPage) {
+    const form = document.getElementById("app-form-4");
+    const fields = form.querySelectorAll("[required]");
+    let isValid = true;
+
+    fields.forEach((field) => {
+      if (!validateFieldByType(field, field.dataset.validation || field.type)) {
+        markInvalid(field); // Highlight invalid fields
+        isValid = false; // Set flag to false if any field is invalid
+      }
+    });
+
+    if (isValid) {
+      window.location.href = nextPage;
+    } else {
+      alert("Please complete all required fields.");
+    }
+  }
+
+  // Navigation without validation for previous button
+  function navigateToPage(previousPage) {
+    window.location.href = previousPage;
+  }
+</script>
 
 <style>
   form {
