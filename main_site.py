@@ -3,8 +3,7 @@ This is the main Python file that sets up rendering and templating
 for Techtonica.org
 """
 
-import configparser
-import datetime
+import logging
 import os
 import sys
 from uuid import uuid4
@@ -18,34 +17,25 @@ from flask_sslify import SSLify
 from pydantic import BaseModel
 from square.client import Client
 
-load_dotenv(find_dotenv(usecwd=True))
+from dates import generate_application_timeline
+from db_connection import get_db_connection
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+load_dotenv(find_dotenv(usecwd=True))
 
 # Gracefully handle running locally without eventbrite token
 try:
     eventbrite = Eventbrite(os.environ["EVENTBRITE_OAUTH_TOKEN"])
-except BaseException:
-    print("Not able to authenticate to Eventbrite")
+except Exception:
+    print("Not able to authenticate to Eventbrite.")
 
 app = Flask(__name__)
 sslify = SSLify(app)
 
-# Gracefully handle running locally without app open date infortmation
-try:
-    app_open_date_string = os.environ["APP_OPEN_DATE"]
-    is_extended = os.environ["APP_EXTENDED"].lower() == "true"
-
-    # Gracefully handle running locally w app_open_date formatted incorrectly
-    try:
-        app_open_date = datetime.datetime.strptime(
-            app_open_date_string, "%m/%d/%y %H:%M:%S"
-        )
-    except BaseException:
-        print("Application open date is incorrectly formatted.")
-        app_open_date = None
-except BaseException:
-    print("Not able to retrieve application date information.")
-    app_open_date = None
+# Connect to Database
+engine = get_db_connection()
 
 
 # MAIN HANDLERS
@@ -54,12 +44,12 @@ def render_home_page():
     """
     Renders the home page from jinja2 template
     """
-    times = get_time()
+    timeline = generate_application_timeline()
     try:
         events = get_events()
-        return render_template("home.html", events=events, times=times)
-    except BaseException:
-        return render_template("home.html", times=times)
+        return render_template("home.html", events=events, timeline=timeline)
+    except Exception:
+        return render_template("home.html", timeline=timeline)
 
 
 @app.route("/team/")
@@ -195,8 +185,8 @@ def render_mentor_page():
     Renders the mentor page from jinja2 template
     & utilizes 'render_mentor_page' function
     """
-    mentor_timeline = get_mentor_timeline()
-    return render_template("mentor.html", mentor=mentor_timeline)
+    timeline = generate_application_timeline()
+    return render_template("mentor.html", timeline=timeline)
 
 
 @app.route("/full-time-program/")
@@ -205,8 +195,8 @@ def render_ft_program_page():
     Generates time-bound text and application extension variable
     Renders the full-time program page from jinja2 template with relevant times
     """
-    times = get_time()
-    return render_template("full-time-program.html", times=times)
+    timeline = generate_application_timeline()
+    return render_template("full-time-program.html", timeline=timeline)
 
 
 @app.route("/donate/")
@@ -257,71 +247,6 @@ def get_events():
         return []
 
 
-def get_time():
-    """Returns a dictionary containing app_open (a boolean for current state of
-    applications) and text (for application timeline-related button content)"""
-    if app_open_date is None:
-        app_open = True
-        text = "Apply Now!"
-    else:
-        today = datetime.datetime.today()
-        if is_extended:
-            app_close_date = app_open_date + datetime.timedelta(days=42)
-            date_string = app_close_date.strftime("%B %-d")
-            text = """Extended!
-            Apply by {date} (12pm PT)!""".format(
-                date=date_string
-            )
-        else:
-            app_close_date = app_open_date + datetime.timedelta(days=28)
-            date_string = app_close_date.strftime("%B %-d")
-            text = "Apply by {date} (12pm PT)!".format(date=date_string)
-
-        app_open = app_open_date <= today <= app_close_date
-
-    return {
-        "app_open": app_open,
-        "text": text,
-    }
-
-
-def get_mentor_timeline():
-    """Returns dynamically calculated mentor timeline dates."""
-    if app_open_date is None:
-        print("Warning: app_open_date is None. Mentor timeline not generated.")
-
-    else:
-        # Utilizing app open date variable from line 38
-        # Defining key dates
-        app_close_date = app_open_date + datetime.timedelta(weeks=4)
-        onboarding_day = app_close_date + datetime.timedelta(weeks=6)
-        pre_work_start = onboarding_day + datetime.timedelta(days=1)
-        start_day = pre_work_start + datetime.timedelta(weeks=4, days=3)
-
-        # Defining Cohort Type (January H1 or July H2)
-        start_month = start_day.strftime("%B")  # extracting month
-        cohort_half = "H1" if start_month == "January" else "H2"
-
-        # Defining training and job search periods
-        training_end = start_day + datetime.timedelta(weeks=24)
-        job_search_end = start_day + datetime.timedelta(weeks=48)
-
-        return {
-            "app_open_date": app_open_date.strftime("%B %d, %Y"),
-            "app_close_date": app_close_date.strftime("%B %d, %Y"),
-            "onboarding_day": onboarding_day.strftime("%B %d, %Y"),
-            "pre_work_start": pre_work_start.strftime("%B %d, %Y"),
-            "start_day": start_day.strftime("%B %d, %Y"),
-            "start_month": start_month,  # January or July
-            "year": start_day.year,
-            "cohort_half": cohort_half,  # H1 or H2
-            "training_start_month": start_month,
-            "training_end_month": training_end.strftime("%B"),
-            "job_search_start_month": training_end.strftime("%B"),
-            "job_search_end_month": job_search_end.strftime("%B"),
-        }
-
-
 class Event(object):
     def __init__(self, event):
         self.title = event["name"]["text"]
@@ -343,33 +268,54 @@ class Event(object):
 
 # ONLINE PAYMENT HANDLING *****************************************************
 
-# Config setting
-config = configparser.ConfigParser()
-config.read("config.ini")
+missing_credentials = []
 
 # Slack credentials
-SLACK_WEBHOOK = config.get("slack", "slack_webhook")
+try:
+    SLACK_WEBHOOK = os.environ["SLACK_WEBHOOK"]
+except KeyError:
+    missing_credentials.append("SLACK_WEBHOOK")
 
 # Square credentials
-CONFIG_TYPE = config.get("default", "environment")
-if CONFIG_TYPE == "production":
-    PAYMENT_FORM_URL = "https://web.squarecdn.com/v1/square.js"
-else:
-    PAYMENT_FORM_URL = "https://sandbox.web.squarecdn.com/v1/square.js"
-# PAYMENT_FORM_URL = (
-#     "https://web.squarecdn.com/v1/square.js"
-#     if CONFIG_TYPE == "production"
-#     else "https://sandbox.web.squarecdn.com/v1/square.js"
-# )
-APPLICATION_ID = config.get(CONFIG_TYPE, "square_application_id")
-LOCATION_ID = config.get(CONFIG_TYPE, "square_location_id")
-ACCESS_TOKEN = config.get(CONFIG_TYPE, "square_access_token")
+try:
+    CONFIG_TYPE = os.environ["ENVIRONMENT"]
+except KeyError:
+    missing_credentials.append("ENVIRONMENT")
+try:
+    PAYMENT_FORM_URL = os.environ["PAYMENT_FORM_URL"]
+except KeyError:
+    missing_credentials.append("PAYMENT_FORM_URL")
+try:
+    APPLICATION_ID = os.environ["SQUARE_APPLICATION_ID"]
+except KeyError:
+    missing_credentials.append("SQUARE_APPLICATION_ID")
+try:
+    LOCATION_ID = os.environ["SQUARE_LOCATION_ID"]
+except KeyError:
+    missing_credentials.append("SQUARE_LOCATION_ID")
+try:
+    ACCESS_TOKEN = os.environ["SQUARE_ACCESS_TOKEN"]
+except KeyError:
+    missing_credentials.append("SQUARE_ACCESS_TOKEN")
 
-client = Client(
-    access_token=ACCESS_TOKEN,
-    environment=config.get("default", "environment"),
-    user_agent_detail="techtonica_payment",
-)
+if len(missing_credentials) > 0:
+    missing_credentials_string = " ".join(missing_credentials)
+    logger.warning(
+        "The following credential(s) are missing: {credentials}".format(
+            credentials=missing_credentials_string
+        )
+    )
+else:
+    if CONFIG_TYPE.lower() == "prod":
+        SQUARE_ENVIRONMENT = "production"
+    else:
+        SQUARE_ENVIRONMENT = "sandbox"
+
+    client = Client(
+        access_token=ACCESS_TOKEN,
+        environment=SQUARE_ENVIRONMENT,
+        user_agent_detail="techtonica_payment",
+    )
 
 
 class Payment(BaseModel):
@@ -391,15 +337,19 @@ def render_job_form():
     """
     Renders the job-form page from jinja2 template
     """
-    return render_template(
-        "job-form.html",
-        APPLICATION_ID=APPLICATION_ID,
-        PAYMENT_FORM_URL=PAYMENT_FORM_URL,
-        LOCATION_ID=LOCATION_ID,
-        ACCOUNT_CURRENCY="USD",
-        ACCOUNT_COUNTRY="ACCOUNT_COUNTRY",
-        idempotencyKey=str(uuid4()),
-    )
+    if len(missing_credentials) > 0:
+        return render_template("job-form.html", credentials=False)
+    else:
+        return render_template(
+            "job-form.html",
+            APPLICATION_ID=APPLICATION_ID,
+            PAYMENT_FORM_URL=PAYMENT_FORM_URL,
+            LOCATION_ID=LOCATION_ID,
+            ACCOUNT_CURRENCY="USD",
+            ACCOUNT_COUNTRY="ACCOUNT_COUNTRY",
+            idempotencyKey=str(uuid4()),
+            credentials=True,
+        )
 
 
 # Square payment api route
@@ -439,14 +389,24 @@ def send_posting():
     x = requests.post(
         SLACK_WEBHOOK,
         json={
-            "text": f"A new job has been posted to Techtonica! Read the details below to see if you're a good fit!  \n\n JOB DETAILS \n Job Title: {data['jobTitle']} \n Company: {data['company']} \n Type: {data['type']} \n Education Requirement: {data['educationReq']} \n Location: {data['location']} \n Referral offered: {data['referral']} \n Salary Range: {data['salaryRange']} \n Description: {data['description']} \n Application Link: {data['applicationLink']} \n \n CONTACT INFO \n Name: {data['firstName']} {data['lastName']}  \n Email: {data['email']}  \n "  # noqa: E501
+            "text": f"A new job has been posted to Techtonica! "
+            f"Read the details below to see if you're a good fit!"
+            f"\n\n JOB DETAILS \n Job Title: {data['jobTitle']} "
+            f"\n Company: {data['company']} \n Type: {data['type']} "
+            f"\n Education Requirement: {data['educationReq']} "
+            f"\n Location: {data['location']} "
+            f"\n Referral offered: {data['referral']} "
+            f"\n Salary Range: {data['salaryRange']} "
+            f"\n Description: {data['description']} "
+            f"\n Application Link: {data['applicationLink']} "
+            f"\n \n CONTACT INFO "
+            f"\n Name: {data['firstName']} {data['lastName']} "
+            f"\n Email: {data['email']}  \n "
         },
     )
 
     print(f"Message sent: {x.text}")
-    return jsonify(
-        {"message": "Data received successfully", "received_data": data}
-    )  # noqa: E501
+    return jsonify({"message": "Data received successfully", "received_data": data})
 
 
 if __name__ == "__main__":

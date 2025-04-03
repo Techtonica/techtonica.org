@@ -10,3 +10,6 @@ env
 env*
 venv
 config.ini
+node_modules
+cert.pem
+key.pem

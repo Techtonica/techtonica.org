@@ -9,11 +9,10 @@ currently hosted on DreamHost.
   - [How](#how)
   - [Getting Started](#getting-started)
     - [Set Up Virtual Environment](#set-up-virtual-environment)
-    - [Install pip Version 23](#install-pip-version-23)
     - [Install and Upgrade pip-tools](#install-and-upgrade-pip-tools)
     - [Install Pre-Commit Hooks](#install-pre-commit-hooks)
     - [Install Requirements](#install-requirements)
-    - [Create Config.ini File](#create-configini-file)
+    - [Create .env File](#create-env-file)
     - [Pre-Commit Hooks Guide](#pre-commit-hooks-guide)
     - [Optional: Installing Prettier Plug-in Locally](#optional-installing-prettier-plug-in-locally)
     - [Running Locally](#running-locally)
@@ -46,13 +45,13 @@ We need to effectively communicate that Techtonica and its participants are wort
 
 There should be a good understanding of how the program works with vetting, training, mentoring, and placements.
 
-[Detailed instructions on how to update the website](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit)
+[Detailed instructions on how to update the website can be found here (you will need security clearance and viewing permissions from Techtonica staff)](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit).
 
 ## Getting Started
 
-You need Python version 3.8.10 and pip version 23 in order to properly update dependencies and replicate the production server environment locally.
+You need Python version 3.13.2 and Pip version 25.0.1 in order to properly update dependencies and replicate the production server environment locally.
 
-Using Python 3.8.10 and pip 23 helps ensure compatibility and consistency between your local development environment and the server environment. This minimizes potential issues during deployment by keeping dependencies in sync with the versions expected by the servers and eliminates discrepancies caused by different versions, ensuring that code runs the same way on every developer's machine.
+Using Python 3.13.2 and pip 25.0.1 helps ensure compatibility and consistency between your local development environment and the server environment. This minimizes potential issues during deployment by keeping dependencies in sync with the versions expected by the servers and eliminates discrepancies caused by different versions, ensuring that code runs the same way on every developer's machine.
 
 ### Set Up Virtual Environment
 
@@ -60,34 +59,66 @@ It is recommended you use a virtual environment to keep dependencies
 required by different projects separate. [Learn more about Python virtual
 environments](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
 
-Set up virtual environment with Python 3.8.10 and Pip 23 using [pyenv](https://github.com/pyenv/pyenv) and [venv](https://docs.python.org/3/library/venv.html):
+Set up virtual environment with Python 3.13.2 and Pip 25.0.1 using [pyenv](https://github.com/pyenv/pyenv) and [venv](https://docs.python.org/3/library/venv.html):
 
-```
-# Install pyenv using brew
+- Install pyenv using brew
+
+```bash
 brew install pyenv
-# Use pyenv to install version python 3.8.10
-pyenv install 3.8.10
-# Set your python version to 3.8.10
-pyenv local 3.8.10
-# Create a virtual environment using venv
+```
+
+- Use pyenv to install version python 3.13.2
+
+```bash
+pyenv install 3.13.2
+```
+
+- Set your python version to 3.13.2
+
+```bash
+pyenv local 3.13.2
+```
+
+- Ensure correct version of python
+
+```bash
+python --version
+# If not 3.13.2, try
+eval "$(pyenv init -)"
+```
+
+- Upgrade global pip and virtualenv to ensure latest version
+
+```bash
+pip install --upgrade pip
+pip install --upgrade virtualenv
+```
+
+- Create a virtual environment using venv
+
+```bash
 python -m venv venv
-# Activate your new virtual environment
+```
+
+- Activate your new virtual environment
+
+```bash
 source venv/bin/activate
 ```
 
-**Note: if you are running into an error with running `python -m venv venv` you may need to instead use the full path to the python executable when creating your virual environment. An example is `/Users/yourPCName/.pyenv/versions/3.8.10/bin/python -m venv venv`**
+- Verify pip version and upgrade if needed
 
-### Install pip Version 23
-
-Ensure you are running pip23 to match the version on the servers:
-
+```bash
+pip --version
+# If it is not the latest version 25.0.1, upgrade pip
+pip install --upgrade pip
 ```
-pip install --upgrade pip==23.0
-```
+
+**Note: if you are running into an error with running `python -m venv venv` you may need to instead use the full path to the python executable when creating your virual environment. An example is `/Users/yourPCName/.pyenv/versions/3.13.2/bin/python -m venv venv`**
 
 ### Install and Upgrade pip-tools
 
-```
+```bash
 python -m pip install -U pip-tools
 ```
 
@@ -99,43 +130,50 @@ consistency.
 1. [`Install pre-commit`](https://pre-commit.com/#install) globally.
 1. Install the project pre-commit hooks:
 
-```
+```bash
 pip install pre-commit
 pre-commit install -f --install-hooks
 ```
 
 ### Install Requirements
 
-```
+```bash
 pip install -r dev.txt
 ```
 
-### Create Config.ini File
+If you get an error installing mysqlclient, deactivate your virtual environment and make sure mysql is installed on your computer by doing the following:
 
-```
-touch config.ini
+```bash
+mysql --version
+# If command not found, do the following
+brew install mysql
 ```
 
-And then copy and paste this code into your new file (note: For the actual values, please see [Updating Techtonica's Website](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit?tab=t.0)):
+### Create .env File
+
+```bash
+touch .env
+```
+
+Copy and paste this code into your new file. There is a sample in .env.example for you to use as well. Please contact a Techtonica Staff member for `.env` file contents. Staff members can be reached through the Techtonica Slack workspace, or you can fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLScjCF6_xzIn-Uht3MDOr1__3YpIYDCTzx80cIE0KVCsPqcYKQ/viewform).
 
 ```sh
-   [default]
-   # Acceptable values are sandbox or production
-   environment = sandbox
-   dev_password = dev_password
-
-   [production]
-   square_application_id = production_application_id
-   square_access_token = production_access_token
-   square_location_id = production_location_id
-
-   [sandbox]
-   square_application_id = <sandbox app id>
-   square_access_token = <sandbox access token>
-   square_location_id = <sandbox location id>
-
-   [slack]
-   slack_webhook =  <slack webhook>
+# Your environment, either "local", "prod", "staging", or "testing"
+ENVIRONMENT="local"
+# Square credentials for the job posting feature
+SQUARE_APPLICATION_ID="id"
+SQUARE_ACCESS_TOKEN="token"
+SQUARE_LOCATION_ID="location"
+SLACK_WEBHOOK="webhook"
+PAYMENT_FORM_URL="url"
+# Application open date in format "MM/DD/YYYY HH:MM:SS" in UTC
+APP_OPEN_DATE="date"
+APP_EXTENDED="boolean"
+# Database credentials - more extensive explanation in the database section
+DB_USERNAME="username"
+DB_PASSWORD="password"
+DB_HOST="host"
+DB_NAME="name"
 ```
 
 ### Pre-Commit Hooks Guide
@@ -144,32 +182,32 @@ To manually run, test, and upgrade pre-commit hooks locally, follow these steps:
 
 To run hooks on specific files, use the command:
 
-```
+```bash
 pre-commit run --files <file1> <file2>
 ```
 
 For example, if you want to test a single file, you can use
 
-```
+```bash
 pre-commit run --files main_site.py
 ```
 
 To run all hooks on every file in the repository, use the
 command
 
-```
+```bash
 pre-commit run --all-files
 ```
 
 If you need to upgrade your hooks to their latest versions, run
 
-```
+```bash
 pre-commit autoupdate
 ```
 
 After upgrading, ensure you reinstall the hooks by running
 
-```
+```bash
 pre-commit install
 ```
 
@@ -185,12 +223,12 @@ The Prettier pre-commit hook automatically formats code when you attempt to comm
 
 #### What to Expect
 
-1. **Scenario:**  
+1. **Scenario:**
    During `git commit`, the Prettier pre-commit hook runs and identifies formatting issues.
 
    - If applicable, Prettier will fix these issues but may leave **unstaged changes** in your working directory.
 
-2. **Outcome:**  
+2. **Outcome:**
    You will need to stage these changes again (`git add`) before committing and pushing your changes to the remote repository.
 
 #### Why This Happens
@@ -203,8 +241,7 @@ To avoid this behavior and streamline your workflow, you can install a Prettier 
 
 #### Steps:
 
-1. Install the Prettier plug-in in your IDE (e.g., VS Code).  
-   ![Prettier Plug-in in VS Code](static/img/Prettier-Plug-In.png)
+1. Install the Prettier plug-in in your IDE (e.g., VS Code).
 
 2. Enable the "Format on Save" setting:
 
@@ -236,19 +273,19 @@ Each time you want to work on your code, you will need to activate your virtual 
 
 Activate your virtual environment:
 
-```
+```bash
 source venv/bin/activate
 ```
 
 Install any requirements if they've changed:
 
-```
+```bash
 pip install -r dev.txt
 ```
 
 Start the application's server:
 
-```sh
+```bash
 FLASK_DEBUG=1 FLASK_APP=main_site.py flask run
 ```
 
@@ -273,25 +310,26 @@ rebuild the Docker image in order for those changes to take effect._
 
 ### CSS / SCSS
 
-The Techtonica website uses Sass to manage it's CSS.
+The Techtonica website uses Sass to manage its CSS.
 
 Styling changes should **only** be made to the Sass (.scss) files and then compiled to
 CSS using one of the following commands:
 
-👷‍♀️ Install Sass using one of the following
+Compile once:
 
-Mac: `brew install sass/sass/sass`
+`sass static/sass/style.scss static/css/style.css`
 
-Windows: `choco install sass`
+OR
 
-To compile your Sass files to CSS and to keep track of changes in real-time.
+Watch for changes using `--watch`:
 
-```sh
-sass static/sass/style.scss static/css/style.css
-sass --watch static/sass/style.scss static/css/style.css
+```bash
+sass --watch static/sass/style.scss:static/css/style.css
 ```
 
-By running the --watch command, any modifications made to the CSS files are instantly reflected, saving you time and ensuring your styles are always up-to-date.
+By running the `--watch` command, any modifications made to the CSS files are instantly reflected, saving you time and ensuring your styles are always up-to-date.
+
+For installation help and more details, see the [CSS/SCSS Styling Instructions Wiki](https://github.com/Techtonica/techtonica.org/wiki/CSS-SCSS-Styling-Instructions-Wiki)
 
 ### Alt-Text Guidelines
 
@@ -311,17 +349,17 @@ There are features on the site that use Square for payments and will periodicall
 
 #### Setup
 
-1. Secrets required for the Square payment API and Slack webhook are stored in a config.ini file in the root directory of our repository.
+1. Secrets required for the Square payment API and Slack webhook are stored in a .env file in the root directory of our repository.
 2. This file is listed in our .gitignore file and will not be included when pushing or pulling updates.
 3. You will need to manually add it into your local repository to test these features locally, and will also need to manually add it into whatever Dreamhost server (testing, staging, or production) that you are using as well, if it’s not already there.
 4. BE CAREFUL ABOUT environment VALUE! If it’s set to production it will actually charge the cards you test with, so be sure to set it to sandbox when testing locally or on staging or testing.
-5. Please see the [Updating Techtonica's Website](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit?tab=t.0) doc to get the keys and secrets.
+5. Please contact a member of Techtonica staff to get the keys and secrets.
 
 #### Running Locally
 
 Run your server using the following command, it will bypass any HTTPS cert errors.
 
-```sh
+```bash
 pip install pyopenssl
 FLASK_DEBUG=1 FLASK_APP=main_site.py FLASK_RUN_CERT=adhoc flask run
 ```
@@ -344,8 +382,8 @@ At the moment, we do not have styling in place that will enable us to have a cod
 3. Update the `data` section in `static/js/piechart.js#L30`.
 4. Uncomment out following in `full-time-program.html`.
 
-```
-  <!-- <div class="blue-background">
+```html
+<!-- <div class="blue-background">
      <canvas id="myChart" width="700" height="350"></canvas>
   </div> -->
 ```
@@ -354,18 +392,18 @@ At the moment, we do not have styling in place that will enable us to have a cod
 6. Add the screenshot to the `static/img` directory saved with YEAR-H#-Cohort-Demographics.jpg, ex. 2023-H1-Cohort-Demographics.jpg.
 7. Update `full-time-program.html` to point to the new image you just added. Update the alt text if necessary.
 
-```
- <img
-     src="{{ url_for('static', filename='img/2023-H1-Cohort-Demographics.jpg') }}"
-     alt="2023 Cohort Demographics."
-     class="full-width-img"
-  />
+```html
+<img
+  src="{{ url_for('static', filename='img/2023-H1-Cohort-Demographics.jpg') }}"
+  alt="2023 Cohort Demographics."
+  class="full-width-img"
+/>
 ```
 
 8. Re-comment the following.
 
-```
-  <!-- <div class="blue-background">
+```html
+<!-- <div class="blue-background">
      <canvas id="myChart" width="700" height="350"></canvas>
   </div> -->
 ```
@@ -387,12 +425,12 @@ For detailed instructions, visit the [full guide on the Wiki](https://github.com
 ### Updating Dependencies
 
 This project uses [pip-tools](https://github.com/jazzband/pip-tools) to manage
-dependencies. _If there are dependencies only needed for local development, these go in dev.in/dev.txt. Otherwise they go in requirements.in/requirements.txt_. If you need to add or remove a Python library dependency:
+dependencies. _If there are dependencies only needed for local development, these go in dev.in/dev.txt. Otherwise, they go in requirements.in/requirements.txt_. If you need to add or remove a Python library dependency:
 
-1. Edit `requirements.in` or `dev.in` (referred to below as `file_name.in`)
+1. Edit `requirements.in` or `dev.in` (referred to below as `file_name.in`). If you update requirements.in, you must also re-compile dev.in after.
 1. Generate the .txt file
 
-   ```sh
+   ```bash
    pip-compile -U <file_name.in>
    pip install -r <file_name.txt>
    ```
@@ -408,10 +446,10 @@ To connect these locally, you can use a GUI tool such as [Sequel Pro](https://se
 Enter the credentials into the connection window with the following:
 
 - **Name:** Anything, but should indicate which environment it points to
-- **Host:** mysql.techtonica.org
-- **Username:** Username from credentials
-- **Password:** Password from credentials
-- **Database:** Database name from credentials
+- **Host:** DB_HOST from credentials
+- **Username:** DB_USERNAME from credentials
+- **Password:** DB_PASSWORD from credentials
+- **Database:** DB_NAME from credentials
 - **Port:** 3306
 
 ![This is a sample screenshot of a Sequel Pro connection.](static/img/database_connection.png)
@@ -428,31 +466,11 @@ The below instructions are for setting up a new server in DreamHost.
 1. Update package tools, while you're still operating in the virtual
    environment:
 
-   ```sh
+   ```bash
    pip install -U pip setuptools pip-tools
    ```
 
-1. Create a `config.ini` file in the root directory of the repo in whichever Dreamhost server if there isn't one already present, and populate it with the necessary keys.
-
-   ```sh
-   [default]
-   # Acceptable values are sandbox or production
-   environment = sandbox
-   dev_password = dev_password
-
-   [production]
-   square_application_id = production_application_id
-   square_access_token = production_access_token
-   square_location_id = production_location_id
-
-   [sandbox]
-   square_application_id = <sandbox app id>
-   square_access_token = <sandbox access token>
-   square_location_id = <sandbox location id>
-
-   [slack]
-   slack_webhook =  <slack webhook>
-   ```
+1. Create a `.env` file in the root directory of the repo in whichever Dreamhost server if there isn't one already present, and populate it with the necessary keys. [Reach out](#create-env-file) to a member of Techtonica staff to get the exact values.
 
 ### Deploy Feature Branch
 
@@ -484,19 +502,19 @@ Important: Only ever Pull from the server! There are currently 3 main servers in
 
 1. Change directory to the appropriate domain:
 
-   ```sh
+   ```bash
    cd techtonica.org
    ```
 
    or
 
-   ```sh
+   ```bash
    cd staging.techtonica.org
    ```
 
 1. Activate the virtual envrionment:
 
-   ```sh
+   ```bash
    . bin/activate
    ```
 
@@ -508,20 +526,19 @@ Important: Only ever Pull from the server! There are currently 3 main servers in
 
 1. Pull the latest code using
 
-   ```sh
+   ```bash
    git pull
    ```
 
 1. Update requirements:
 
-   ```sh
+   ```bash
    pip-sync
    ```
 
 1. "Restart" the server to showcase new changes
 
-   ```sh
-
+   ```bash
    # staging.techtonica.org
    systemctl --user stop gunicorn_staging
    systemctl --user enable gunicorn_staging
@@ -539,16 +556,15 @@ Important: Only ever Pull from the server! There are currently 3 main servers in
    systemctl --user enable gunicorn_techtonica
    systemctl --user restart gunicorn_techtonica
    systemctl --user status gunicorn_techtonica
-
    ```
 
 1. Deactivate virtual environment and exit server:
 
-   ```sh
+   ```bash
    deactivate
    ```
 
-   ```sh
+   ```bash
    exit
    ```
 

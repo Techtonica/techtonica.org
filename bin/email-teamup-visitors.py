@@ -137,7 +137,9 @@ def get_teamup_visitors(events):
 def make_teamup_request(calendar_id, url_path, params=None):
     headers = {"Teamup-Token": TEAMUP_API_KEY}
     response = requests.get(
-        f"{TEAMUP_API_URL}/{calendar_id}/{url_path}", headers=headers, params=params
+        f"{TEAMUP_API_URL}/{calendar_id}/{url_path}",
+        headers=headers,
+        params=params,
     )
     return response.json()
 
