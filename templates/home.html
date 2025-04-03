@@ -15,16 +15,18 @@ endblock title %} {% block content %}
         class="orange-button"
         target="_blank"
         rel="noopener noreferrer"
-        >{{ timeline.TEXT }}</a
       >
+        {{ timeline.TEXT }}
+      </a>
       {% else %}
       <a
         href="{{ url_for('render_sponsor_page') }}"
         class="orange-button"
         target="_blank"
         rel="noopener noreferrer"
-        >Outsource your software work!</a
       >
+        Outsource your software work!
+      </a>
       {% endif %}
     </div>
   </div>
