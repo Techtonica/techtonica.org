@@ -629,26 +629,24 @@ Techtonica Application {% endblock title %} {% block content %}
     const requiredFields = form.querySelectorAll("[required]");
     let allValid = true;
 
-    requiredFields.forEach(field => {
-        field.style.border = "";
+    requiredFields.forEach((field) => {
+      const parentElement = field.parentNode;
+      parentElement.style.border = "";
 
-        if ((field.type === "radio" || field.type === "checkbox") &&
-            !form.querySelector(`[name="${field.name}"]:checked`)
-        ) {
-            allValid = false;
-            field.parentNode.style.border = "2px solid red";
-        } else if (field.type !== "radio" && field.type !== "checkbox" && !field.value.trim()) {
-            allValid = false;
-            field.style.border = "2px solid red";
-        }
+      if (
+        (field.type === "radio" || field.type === "checkbox") &&
+        !form.querySelector(`[name="${field.name}"]:checked`)
+      ) {
+        allValid = false;
+        parentElement.style.border = "2px solid red";
+      }
     });
 
     if (!allValid) {
-        alert("Please fill out the missing field(s)!");
+      alert("Please fill out the missing field(s)!");
     } else {
-        window.location.href = "/app-additional";
+      window.location.href = "/app-additional";
     }
-}
-
+  }
 </script>
 {% endblock content %}
