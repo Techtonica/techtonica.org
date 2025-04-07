@@ -151,32 +151,9 @@ brew install mysql
 
 ### Create .env File
 
-More detailed information on setting up .env file can be found in this [GitHub Wiki page](https://github.com/Techtonica/techtonica.org/wiki/Setting-Up-the-.env-File).
+Please refer to the information on setting up .env file found in this [GitHub Wiki page](https://github.com/Techtonica/techtonica.org/wiki/Setting-Up-the-.env-File).
 
-```bash
-touch .env
-```
-
-Copy and paste this code into your new file. There is a sample in .env.example for you to use as well. Please contact a Techtonica Staff member for `.env` file contents. Staff members can be reached through the Techtonica Slack workspace, or you can fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLScjCF6_xzIn-Uht3MDOr1__3YpIYDCTzx80cIE0KVCsPqcYKQ/viewform).
-
-```sh
-# Your environment, either "local", "prod", "staging", or "testing"
-ENVIRONMENT="local"
-# Square credentials for the job posting feature
-SQUARE_APPLICATION_ID="id"
-SQUARE_ACCESS_TOKEN="token"
-SQUARE_LOCATION_ID="location"
-SLACK_WEBHOOK="webhook"
-PAYMENT_FORM_URL="url"
-# Application open date in format "MM/DD/YYYY HH:MM:SS" in UTC
-APP_OPEN_DATE="date"
-APP_EXTENDED="boolean"
-# Database credentials - more extensive explanation in the database section
-DB_USERNAME="username"
-DB_PASSWORD="password"
-DB_HOST="host"
-DB_NAME="name"
-```
+For environment variable credentials or general questions on the set up process, Techtonica staff members can be reached through the Techtonica Slack workspace, or you can fill out [this form](https://docs.google.com/forms/d/e/1FAIpQLScjCF6_xzIn-Uht3MDOr1__3YpIYDCTzx80cIE0KVCsPqcYKQ/viewform).
 
 ### Pre-Commit Hooks Guide
 
