@@ -151,6 +151,8 @@ brew install mysql
 
 ### Create .env File
 
+More detailed information on setting up .env file can be found in this [GitHub Wiki page](https://github.com/Techtonica/techtonica.org/wiki/Setting-Up-the-.env-File).
+
 ```bash
 touch .env
 ```
