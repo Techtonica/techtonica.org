@@ -45,7 +45,7 @@ We need to effectively communicate that Techtonica and its participants are wort
 
 There should be a good understanding of how the program works with vetting, training, mentoring, and placements.
 
-[Detailed instructions on how to update the website](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit)
+[Detailed instructions on how to update the website can be found here (you will need security clearance and viewing permissions from Techtonica staff)](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit).
 
 ## Getting Started
 
@@ -242,7 +242,6 @@ To avoid this behavior and streamline your workflow, you can install a Prettier 
 #### Steps:
 
 1. Install the Prettier plug-in in your IDE (e.g., VS Code).
-   ![Prettier Plug-in in VS Code](static/img/Prettier-Plug-In.png)
 
 2. Enable the "Format on Save" setting:
 
