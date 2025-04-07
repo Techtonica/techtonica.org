@@ -9,25 +9,16 @@ endblock title %} {% block content %}
         tech industry and partner companies fulfill their diverse technical
         talent needs.
       </p>
-      {% if timeline.APP_OPEN_DATE %}
-      <a
-        href="{{ url_for('render_ft_program_page') }}"
-        class="orange-button"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {{ timeline.TEXT }}
-      </a>
-      {% else %}
-      <a
-        href="{{ url_for('render_sponsor_page') }}"
-        class="orange-button"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Outsource your software work!
-      </a>
-      {% endif %}
+      <h2>
+        <a
+          href="{{ url_for(timeline.HOME_BUTTON_URL) }}"
+          class="sponsor"
+          id="orange-button"
+          target="_blank"
+          rel="noopener noreferrer">
+            {{ timeline.TEXT }}
+        </a>
+      </h2>
     </div>
   </div>
   <div class="row row__center what-we-do" id="whatwedo">
