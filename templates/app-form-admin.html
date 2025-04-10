@@ -345,19 +345,18 @@ Techtonica Application {% endblock title %} {% block content %}
       </div>
 
       <div id="radio-wrapper" role="radiogroup">
-        <label for="completed-form-truthfully"
-          >Do you confirm you've filled out this form truthfully? </label
-        ><br />
-        <label for="commit-to-two-JS-study-groups-yes">
-          <input
-            type="checkbox"
-            name="completed-form-truthfully"
-            id="completed-form-truthfully-yes"
-            value="Yes"
-            required
-          />
-          Yes, I confirm</label
-        >
+        <label for="completed-form-truthfully">
+          Do you confirm you've filled out this form truthfully?
+        </label>
+        <br />
+        <input
+          type="checkbox"
+          name="completed-form-truthfully"
+          id="completed-form-truthfully-yes"
+          value="Yes"
+          required
+        />
+        <label> Yes, I confirm </label>
       </div>
 
       <div class="form-button">
@@ -371,7 +370,7 @@ Techtonica Application {% endblock title %} {% block content %}
         <button
           type="button"
           class="continue-to-app-btn"
-          onclick="window.location.href='/app-additional'"
+          onclick="validateForm()"
         >
           Next
         </button>
@@ -623,5 +622,30 @@ Techtonica Application {% endblock title %} {% block content %}
       });
     });
   });
+
+  function validateForm() {
+    const form = document.getElementById("app-form-6");
+    const requiredFields = form.querySelectorAll("[required]");
+    let allValid = true;
+
+    requiredFields.forEach((field) => {
+      const parentElement = field.parentNode;
+      parentElement.style.border = "";
+
+      if (
+        (field.type === "radio" || field.type === "checkbox") &&
+        !form.querySelector(`[name="${field.name}"]:checked`)
+      ) {
+        allValid = false;
+        parentElement.style.border = "2px solid red";
+      }
+    });
+
+    if (!allValid) {
+      alert("Please fill out the missing field(s).");
+    } else {
+      window.location.href = "/app-additional";
+    }
+  }
 </script>
 {% endblock content %}
