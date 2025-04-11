@@ -526,6 +526,12 @@ Techtonica Application {% endblock title %} {% block content %}
         errorMessage.innerText = errorMessageText;
         radioGroup.insertBefore(errorMessage, radioGroup.firstChild); // Append message to radio group container instead of to each radio button
       }
+      // Highlight each radio button in the group
+      const radioButtons = radioGroup.querySelectorAll('input[type="radio"]');
+      radioButtons.forEach((radio) => {
+        radio.style.outline = "2px solid red"; // Add a red outline to the radio buttons
+        radio.style.outlineOffset = "2px"; // Optional: Add some spacing around the outline
+      });
     } else {
       // For other field types
       let parent = field.parentElement;
@@ -556,6 +562,12 @@ Techtonica Application {% endblock title %} {% block content %}
       if (errorMessage) {
         errorMessage.remove(); // Remove radio group error message
       }
+      // Remove red outline from each radio button in the group
+      const radioButtons = radioGroup.querySelectorAll('input[type="radio"]');
+      radioButtons.forEach((radio) => {
+        radio.style.outline = ""; // Clear the red outline
+        radio.style.outlineOffset = ""; // Clear the spacing
+      });
     } else {
       // Handle other input types
       const parent = field.parentElement;
