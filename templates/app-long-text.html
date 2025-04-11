@@ -508,6 +508,14 @@ Techtonica Application {% endblock title %} {% block content %}
 
   // Handle invalid fields
   function markInvalid(field) {
+    let errorMessageText = "This field is required."; // Default error message
+
+    if (field.type === "url") {
+      errorMessageText = "A valid URL is required.";
+    } else if (field.type === "radio") {
+      errorMessageText = "Please select an option.";
+    }
+
     if (field.type === "radio") {
       // Append the error message only once for the radio group container
       const radioGroup = field.closest('[role="radiogroup"]');
@@ -515,7 +523,7 @@ Techtonica Application {% endblock title %} {% block content %}
         const errorMessage = document.createElement("span");
         errorMessage.className = "error-message";
         errorMessage.style.color = "red";
-        errorMessage.innerText = "This field is required.";
+        errorMessage.innerText = errorMessageText;
         radioGroup.insertBefore(errorMessage, radioGroup.firstChild); // Append message to radio group container instead of to each radio button
       }
     } else {
@@ -531,7 +539,7 @@ Techtonica Application {% endblock title %} {% block content %}
         errorMessage = document.createElement("span");
         errorMessage.className = "error-message";
         errorMessage.style.color = "red";
-        errorMessage.innerText = "This field is required.";
+        errorMessage.innerText = errorMessageText;
 
         // Insert error message before the field
         parent.insertBefore(errorMessage, field);
