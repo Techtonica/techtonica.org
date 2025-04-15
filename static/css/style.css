@@ -1265,6 +1265,7 @@ button[type="submit"] {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 3em;
 }
 
 .quick-stats-header {
