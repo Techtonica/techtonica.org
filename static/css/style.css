@@ -1254,6 +1254,13 @@ button[type="submit"] {
   margin-top: 0;
 }
 
+.admin-button {
+  font-size: medium;
+  padding: 1em;
+  box-shadow: 0 3px 5px 1px #ccc;
+  border-radius: 5px;
+}
+
 .admin-container {
   display: flex;
   flex-direction: column;
