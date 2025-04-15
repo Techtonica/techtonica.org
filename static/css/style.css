@@ -1337,27 +1337,27 @@ progress::before {
   color: white;
 }
 
-#submitted::-webkit-progress-bar {
+#submitted::-webkit-progress-value {
   background-color: rgb(155, 225, 255);
   border-radius: 20px;
 }
 
-#review::-webkit-progress-bar {
+#review::-webkit-progress-value {
   background-color: rgb(252, 237, 140);
   border-radius: 20px;
 }
 
-#accepted::-webkit-progress-bar {
+#accepted::-webkit-progress-value {
   background-color: rgb(155, 255, 180);
   border-radius: 20px;
 }
 
-#rejected::-webkit-progress-bar {
+#rejected::-webkit-progress-value {
   background-color: rgb(252, 202, 211);
   border-radius: 20px;
 }
 
-progress::-webkit-progress-value {
+progress::-webkit-progress-bar {
   background-color: black;
   border-radius: 20px;
 }
