@@ -1,5 +1,5 @@
 # Stage 1 of 2
-FROM python:3.12-slim AS builder
+FROM python:3.13-slim AS builder
 # Install build dependencies for buiilding packages
 RUN apt-get update && apt-get install -y \
     gcc \
@@ -15,7 +15,7 @@ COPY requirements.txt .
 RUN pip install --prefix=/install --no-cache-dir -r requirements.txt
 
 # Stage 2 of 2
-FROM python:3.12-slim
+FROM python:3.13-slim
 
 # Install only runtime dependencies (for mysqlclient)
 RUN apt-get update && apt-get install -y \
