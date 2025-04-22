@@ -1366,7 +1366,7 @@ progress::before {
 }
 
 progress::-webkit-progress-bar {
-  background-color: black;
+  background-color: gray;
   border-radius: 20px;
 }
 
