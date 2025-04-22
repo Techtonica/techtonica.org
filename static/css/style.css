@@ -1294,6 +1294,10 @@ button[type="submit"] {
   max-width: 350px;
 }
 
+.quick-stats-percent {
+  font-weight: bold;
+}
+
 .status-overview {
   display: flex;
   flex-direction: column;

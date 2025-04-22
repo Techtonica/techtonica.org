@@ -1,5 +1,5 @@
-{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap {%
-endblock title %} {% block content %}
+{% set show_footer = False %}{% extends "base.html" %} {% block title %}
+Techtonica: Bridging the Tech Gap {% endblock title %} {% block content %}
 
 <nav class="admin-nav-bar">
   <button class="admin-button">Log Out</button>
@@ -32,7 +32,7 @@ endblock title %} {% block content %}
         </svg>
       </div>
       <p>1,234</p>
-      <p>+20.1% from last month</p>
+      <p class="quick-stats-percent">+20.1% from last month</p>
     </div>
     <div class="admin-box">
       <div class="quick-stats-header">
@@ -60,7 +60,7 @@ endblock title %} {% block content %}
         </svg>
       </div>
       <p>45</p>
-      <p>12 require immediate attention</p>
+      <p class="quick-stats-percent">12 require immediate attention</p>
     </div>
     <div class="admin-box">
       <div class="quick-stats-header">
@@ -95,7 +95,7 @@ endblock title %} {% block content %}
       </div>
 
       <p>189</p>
-      <p>15.3% acceptance rate</p>
+      <p class="quick-stats-percent">15.3% acceptance rate</p>
     </div>
     <div class="admin-box">
       <div class="quick-stats-header">
@@ -129,7 +129,7 @@ endblock title %} {% block content %}
         </svg>
       </div>
       <p>1,000</p>
-      <p>84.7% rejection rate</p>
+      <p class="quick-stats-percent">84.7% rejection rate</p>
     </div>
   </section>
   <section class="admin-section">
