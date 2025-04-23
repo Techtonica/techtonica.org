@@ -11,8 +11,8 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 # Copy requirements and install dependencies
-COPY requirements.txt .
-RUN pip install --prefix=/install --no-cache-dir -r requirements.txt
+COPY dev.txt .
+RUN pip install --prefix=/install --no-cache-dir -r dev.txt
 
 # Stage 2 of 2
 FROM python:3.13-slim
