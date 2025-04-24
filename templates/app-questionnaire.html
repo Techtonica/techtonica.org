@@ -137,7 +137,7 @@ Techtonica Application {% endblock title %} {% block content %}
         <button
           type="button"
           class="continue-to-app-btn"
-          onclick="window.location.href='/app-long-text'"
+          onclick="validateForm()"
         >
           Next
         </button>
@@ -315,5 +315,28 @@ Techtonica Application {% endblock title %} {% block content %}
     }
   }
 </style>
+
+<script>
+  function validateForm() {
+    const form = document.getElementById("app-form-3");
+    const requiredSelects = form.querySelectorAll("select[required]");
+    let allValid = true;
+
+    requiredSelects.forEach((select) => {
+      select.style.border = "";
+
+      if (select.value === "") {
+        allValid = false;
+        select.style.border = "2px solid red";
+      }
+    });
+
+    if (!allValid) {
+      alert("Please select an option for all questions.");
+    } else {
+      window.location.href = "/app-long-text";
+    }
+  }
+</script>
 
 {% endblock content %}

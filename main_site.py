@@ -17,8 +17,6 @@ from flask_sslify import SSLify
 from pydantic import BaseModel
 from square.client import Client
 
-from application_process import application_bp
-from course_management import course_bp
 from dates import generate_application_timeline
 from db_connection import get_db_connection
 
@@ -38,11 +36,6 @@ sslify = SSLify(app)
 
 # Connect to Database
 engine = get_db_connection()
-
-
-# MVP
-app.register_blueprint(application_bp, url_prefix="/application")
-app.register_blueprint(course_bp, url_prefix="/course")
 
 
 # MAIN HANDLERS
