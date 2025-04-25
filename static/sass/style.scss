@@ -1074,7 +1074,7 @@ input[type="radio"] {
 
 #payment-page {
   padding: 1.5em;
-  background-color: #0093b5;
+  background-color: $main-blue;
 }
 
 #payment-page > h1,
@@ -1226,7 +1226,7 @@ button.disabled {
 }
 
 .success-container a {
-  color: #0093b5;
+  color: $main-blue;
   text-decoration: underline;
 }
 
@@ -1274,7 +1274,7 @@ textarea.invalid {
   height: 20px;
   border: 3px solid rgba(0, 147, 181, 0.3);
   border-radius: 50%;
-  border-top-color: #0093b5;
+  border-top-color: $main-blue;
   animation: spinner 0.8s linear infinite;
   margin-right: 10px;
   vertical-align: middle;
@@ -1288,7 +1288,7 @@ textarea.invalid {
 }
 .sponsor-benefit-table,
 .sponsor-benefit-table td {
-  border: 1px solid #0093b5;
+  border: 1px solid $main-blue;
   border-collapse: collapse;
 }
 .sponsor-benefit-table th {
