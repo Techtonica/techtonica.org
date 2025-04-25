@@ -21,7 +21,6 @@ Post A Job {% endblock title %} {% block content %}
   </p>
   {% if not credentials %}
   <p><a href="mailto:info@techtonica.org">Contact us</a> to post your job!</p>
-  {% else %}
   <div class="column">
     <form class="payment-form" id="fast-checkout">
       <div class="wrapper">
@@ -119,7 +118,7 @@ Submit your job for $100 to be shared with our 100+ full-stack software engineer
           </label>
         </div>
         <button id="card-button" type="button" class="orange-button">
-          <h2>Pay with Card</h2>
+          Pay with Card
         </button>
         <span id="payment-flow-message"></span>
       </div>
