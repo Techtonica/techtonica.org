@@ -105,18 +105,20 @@ Submit your job for $100 to be shared with our 100+ full-stack software engineer
         <h3>Payment Info</h3>
         <div id="card-container"></div>
         <div class="checkbox-container">
-          <input type="checkbox" id="code-of-conduct-checkbox" required>
+          <input type="checkbox" id="code-of-conduct-checkbox" required />
           <label for="code-of-conduct-checkbox">
-            By checking this box, you agree that what you are submitting in this form adheres to 
+            By checking this box, you agree that what you are submitting in this
+            form adheres to
             <a
               href="{{ url_for('render_conduct_page') }}"
               title="Code of Conduct"
               target="_blank"
               rel="noopener noreferrer"
-              >Techtonica's Code of Conduct</a>.
+              >Techtonica's Code of Conduct</a
+            >.
           </label>
         </div>
-        <button id="card-button" type="button" class="sponsor">
+        <button id="card-button" type="button" class="orange-button">
           <h2>Pay with Card</h2>
         </button>
         <span id="payment-flow-message"></span>
