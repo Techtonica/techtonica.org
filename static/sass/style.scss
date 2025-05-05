@@ -137,7 +137,6 @@
 .main-header__text {
   max-width: 50%;
   padding: 0 1.5em;
-  text-shadow: 1px 1px 1px #666;
   background-color: #0093b5cc;
   border-top-left-radius: 25px;
   border-top: 5px solid #007395cc;
@@ -323,12 +322,14 @@
 
 .contact-us,
 .donate,
-.sponsor {
+.orange-button {
   @include prefix(border-radius, 8px, webkit moz o);
   color: $white;
   display: inline-block;
   background-color: $focal-orange;
   text-align: center;
+  padding-block: 24px;
+  padding-inline: 16px;
 
   &:hover {
     background-color: $light-blue;
@@ -337,27 +338,13 @@
   }
 }
 
-.sponsor:hover .link-on-blue {
+.orange-button:hover .link-on-blue {
   color: $dark-blue;
 }
 
 .contact-us {
   margin: 0.5em 0;
   padding: 0.75em 1.5em;
-}
-
-.sponsor {
-  line-height: 36px;
-  padding: 25px;
-  margin: 0;
-}
-
-#orange-button {
-  text-decoration: none;
-
-  &:hover {
-    color: $white;
-  }
 }
 
 #quotes {
@@ -956,7 +943,6 @@ p.press-release-bold {
   background-color: $focal-orange;
   text-align: center;
   font-size: 1.5em;
-  text-shadow: 1px 1px 1px #666;
 
   &:hover {
     background-color: $light-blue;
@@ -1088,7 +1074,7 @@ input[type="radio"] {
 
 #payment-page {
   padding: 1.5em;
-  background-color: #0093b5;
+  background-color: $main-blue;
 }
 
 #payment-page > h1,
@@ -1096,6 +1082,7 @@ input[type="radio"] {
   max-width: 65%;
   margin: auto;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 #consulting-list {
@@ -1239,7 +1226,7 @@ button.disabled {
 }
 
 .success-container a {
-  color: #0093b5;
+  color: $main-blue;
   text-decoration: underline;
 }
 
@@ -1287,7 +1274,7 @@ textarea.invalid {
   height: 20px;
   border: 3px solid rgba(0, 147, 181, 0.3);
   border-radius: 50%;
-  border-top-color: #0093b5;
+  border-top-color: $main-blue;
   animation: spinner 0.8s linear infinite;
   margin-right: 10px;
   vertical-align: middle;
@@ -1301,7 +1288,7 @@ textarea.invalid {
 }
 .sponsor-benefit-table,
 .sponsor-benefit-table td {
-  border: 1px solid #0093b5;
+  border: 1px solid $main-blue;
   border-collapse: collapse;
 }
 .sponsor-benefit-table th {

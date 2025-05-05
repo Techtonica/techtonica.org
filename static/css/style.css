@@ -43,7 +43,6 @@ p {
 
 h1 {
   color: white;
-  text-shadow: 2px 2px 5px #666;
   font-size: 4em;
   letter-spacing: 4px;
 }
@@ -69,11 +68,6 @@ button {
 }
 .blue-background a {
   color: white;
-  text-decoration: underline;
-  text-shadow: 1px 1px 1px #666;
-}
-.blue-background a:hover {
-  color: #16c1f3;
 }
 
 .white-background {
@@ -244,7 +238,6 @@ p {
 .main-header__text {
   max-width: 50%;
   padding: 0 1.5em;
-  text-shadow: 1px 1px 1px #666;
   background-color: rgba(0, 147, 181, 0.8);
   border-top-left-radius: 25px;
   border-top: 5px solid rgba(0, 115, 149, 0.8);
@@ -442,7 +435,7 @@ p {
 
 .contact-us,
 .donate,
-.sponsor {
+.orange-button {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -o-border-radius: 8px;
@@ -451,35 +444,24 @@ p {
   display: inline-block;
   background-color: #fc7625;
   text-align: center;
+  padding-block: 24px;
+  padding-inline: 16px;
 }
 .contact-us:hover,
 .donate:hover,
-.sponsor:hover {
+.orange-button:hover {
   background-color: #16c1f3;
   color: white;
   transition: 0.3s;
 }
 
-.sponsor:hover .link-on-blue {
+.orange-button:hover .link-on-blue {
   color: #05556d;
 }
 
 .contact-us {
   margin: 0.5em 0;
   padding: 0.75em 1.5em;
-}
-
-.sponsor {
-  line-height: 36px;
-  padding: 25px;
-  margin: 0;
-}
-
-#orange-button {
-  text-decoration: none;
-}
-#orange-button:hover {
-  color: white;
 }
 
 #quotes {
@@ -1030,7 +1012,6 @@ p.press-release-bold {
   background-color: #fc7625;
   text-align: center;
   font-size: 1.5em;
-  text-shadow: 1px 1px 1px #666;
 }
 #fast-checkout button:hover {
   background-color: #16c1f3;
@@ -1168,6 +1149,7 @@ input[type="radio"] {
   max-width: 65%;
   margin: auto;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 #consulting-list {
