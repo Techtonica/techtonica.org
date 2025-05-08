@@ -194,7 +194,7 @@ Techtonica Application {% endblock title %} {% block content %}
         <button
           type="button"
           class="continue-to-app-btn"
-          onclick="window.location.href='/app-questionnaire'"
+          onclick="validateForm()"
         >
           Next
         </button>
@@ -482,6 +482,36 @@ Techtonica Application {% endblock title %} {% block content %}
       });
     });
   });
+
+  function validateForm() {
+    const form = document.getElementById("app-form-2");
+    const requiredSelects = form.querySelectorAll("input[required]");
+    let allValid = true;
+
+    requiredSelects.forEach((select) => {
+      select.style.border = "";
+
+      if (
+        select.type === "radio" &&
+        !form.querySelector(`[name="${select.name}"]:checked`)
+      ) {
+        allValid = false;
+        const radios = form.querySelectorAll(`[name="${select.name}"]`);
+        radios.forEach((radio) => {
+          radio.parentElement.style.border = "2px solid red";
+        });
+      } else if (select.value === "") {
+        allValid = false;
+        select.style.border = "2px solid red";
+      }
+    });
+
+    if (!allValid) {
+      alert("Please select an option for all questions.");
+    } else {
+      window.location.href = "/app-questionnaire";
+    }
+  }
 </script>
 
 {% endblock content %}
