@@ -138,7 +138,7 @@ Techtonica Application {% endblock title %} {% block content %}
         required
       >
         <br />
-        <option value="none" selected disabled hidden>Select an Option</option>
+        <option value="">Select an Option</option>
         <option value="Agender/Genderless">Agender/Genderless</option>
         <option value="Genderfluid">Genderfluid</option>
         <option value="Cis Man">Cis Man</option>
@@ -220,7 +220,7 @@ Techtonica Application {% endblock title %} {% block content %}
       <label for="age-group">Select your age group </label><br />
       <select name="age-group" id="age-group" required>
         <br />
-        <option value="none" selected disabled hidden>Select an Option</option>
+        <option value="" selected disabled hidden>Select an Option</option>
         <option value="18-24">18-24</option>
         <option value="25-34">25-34</option>
         <option value="35-44">35-44</option>
@@ -796,19 +796,27 @@ Techtonica Application {% endblock title %} {% block content %}
     requiredFields.forEach((field) => {
       const parentElement = field.parentNode;
       parentElement.style.border = "";
+      field.style.border = "";
 
-      if (
-        (field.type === "radio" || field.type === "checkbox") &&
-        !form.querySelector(`[name="${field.name}"]:checked`)
-      ) {
-        allValid = false;
-        parentElement.style.border = "2px solid red";
+      const tag = field.tagName.toUpperCase();
+
+      if (field.type === "radio" || field.type === "checkbox") {
+        const isChecked = form.querySelector(`[name="${field.name}"]:checked`);
+        if (!isChecked) {
+          allValid = false;
+          parentElement.style.border = "2px solid red";
+        }
+      } else if (tag === "SELECT") {
+        if (field.value === "") {
+          allValid = false;
+          field.style.border = "2px solid red";
+        }
       } else if (
-        field.tagName === "SELECT" ||
         field.type === "text" ||
         field.type === "email" ||
+        field.type === "tel" ||
         field.type === "number" ||
-        field.tagName === "TEXTAREA"
+        tag === "TEXTAREA"
       ) {
         if (!field.value.trim()) {
           allValid = false;
