@@ -491,7 +491,16 @@ Techtonica Application {% endblock title %} {% block content %}
     requiredSelects.forEach((select) => {
       select.style.border = "";
 
-      if (select.value === "") {
+      if (
+        select.type === "radio" &&
+        !form.querySelector(`[name="${select.name}"]:checked`)
+      ) {
+        allValid = false;
+        const radios = form.querySelectorAll(`[name="${select.name}"]`);
+        radios.forEach((radio) => {
+          radio.parentElement.style.border = "2px solid red";
+        });
+      } else if (select.value === "") {
         allValid = false;
         select.style.border = "2px solid red";
       }
