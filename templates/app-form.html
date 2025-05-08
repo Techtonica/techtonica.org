@@ -485,11 +485,7 @@ Techtonica Application {% endblock title %} {% block content %}
         />
         <label for="high-school-graduate-ged-no">No</label><br />
       </div>
-      <button
-        type="button"
-        class="app-form-1"
-        onclick="window.location.href='/app-household'"
-      >
+      <button type="button" class="app-form-1" onclick="validateForm()">
         Continue
       </button>
     </fieldset>
@@ -791,6 +787,42 @@ Techtonica Application {% endblock title %} {% block content %}
       });
     });
   });
+
+  function validateForm() {
+    const form = document.getElementById("app-form-1");
+    const requiredFields = form.querySelectorAll("[required]");
+    let allValid = true;
+
+    requiredFields.forEach((field) => {
+      const parentElement = field.parentNode;
+      parentElement.style.border = "";
+
+      if (
+        (field.type === "radio" || field.type === "checkbox") &&
+        !form.querySelector(`[name="${field.name}"]:checked`)
+      ) {
+        allValid = false;
+        parentElement.style.border = "2px solid red";
+      } else if (
+        field.tagName === "SELECT" ||
+        field.type === "text" ||
+        field.type === "email" ||
+        field.type === "number" ||
+        field.tagName === "TEXTAREA"
+      ) {
+        if (!field.value.trim()) {
+          allValid = false;
+          field.style.border = "2px solid red";
+        }
+      }
+    });
+
+    if (!allValid) {
+      alert("Please fill out the missing field(s).");
+    } else {
+      window.location.href = "/app-household";
+    }
+  }
 </script>
 
 {% endblock content %}
