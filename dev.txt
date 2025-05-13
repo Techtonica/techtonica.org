@@ -45,7 +45,7 @@ executing==2.2.0
     # via stack-data
 fastapi==0.115.11
     # via -r requirements.in
-flask==3.1.0
+flask==3.1.1
     # via
     #   -r requirements.in
     #   flask-sslify
@@ -83,6 +83,7 @@ jsonpointer==2.4
     # via apimatic-core
 markupsafe==3.0.2
     # via
+    #   flask
     #   jinja2
     #   werkzeug
 matplotlib-inline==0.1.7
