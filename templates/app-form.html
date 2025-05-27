@@ -138,7 +138,7 @@ Techtonica Application {% endblock title %} {% block content %}
         required
       >
         <br />
-        <option value="none" selected disabled hidden>Select an Option</option>
+        <option value="">Select an Option</option>
         <option value="Agender/Genderless">Agender/Genderless</option>
         <option value="Genderfluid">Genderfluid</option>
         <option value="Cis Man">Cis Man</option>
@@ -220,7 +220,7 @@ Techtonica Application {% endblock title %} {% block content %}
       <label for="age-group">Select your age group </label><br />
       <select name="age-group" id="age-group" required>
         <br />
-        <option value="none" selected disabled hidden>Select an Option</option>
+        <option value="" selected disabled hidden>Select an Option</option>
         <option value="18-24">18-24</option>
         <option value="25-34">25-34</option>
         <option value="35-44">35-44</option>
@@ -485,11 +485,7 @@ Techtonica Application {% endblock title %} {% block content %}
         />
         <label for="high-school-graduate-ged-no">No</label><br />
       </div>
-      <button
-        type="button"
-        class="app-form-1"
-        onclick="window.location.href='/app-household'"
-      >
+      <button type="button" class="app-form-1" onclick="validateForm()">
         Continue
       </button>
     </fieldset>
@@ -791,6 +787,50 @@ Techtonica Application {% endblock title %} {% block content %}
       });
     });
   });
+
+  function validateForm() {
+    const form = document.getElementById("app-form-1");
+    const requiredFields = form.querySelectorAll("[required]");
+    let allValid = true;
+
+    requiredFields.forEach((field) => {
+      const parentElement = field.parentNode;
+      parentElement.style.border = "";
+      field.style.border = "";
+
+      const tag = field.tagName.toUpperCase();
+
+      if (field.type === "radio" || field.type === "checkbox") {
+        const isChecked = form.querySelector(`[name="${field.name}"]:checked`);
+        if (!isChecked) {
+          allValid = false;
+          parentElement.style.border = "2px solid red";
+        }
+      } else if (tag === "SELECT") {
+        if (field.value === "") {
+          allValid = false;
+          field.style.border = "2px solid red";
+        }
+      } else if (
+        field.type === "text" ||
+        field.type === "email" ||
+        field.type === "tel" ||
+        field.type === "number" ||
+        tag === "TEXTAREA"
+      ) {
+        if (!field.value.trim()) {
+          allValid = false;
+          field.style.border = "2px solid red";
+        }
+      }
+    });
+
+    if (!allValid) {
+      alert("Please fill out the missing field(s).");
+    } else {
+      window.location.href = "/app-household";
+    }
+  }
 </script>
 
 {% endblock content %}

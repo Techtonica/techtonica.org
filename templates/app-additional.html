@@ -75,47 +75,55 @@ Techtonica Application {% endblock title %} {% block content %}
         />
         <label for="digitally-literate-no">No</label><br />
       </div>
-      <label for="typing-test-screenshot"
-        >Please upload a screenshot of your results of a one-minute typing test
-        at
-        <a href="https://www.typingtest.com/" target="_blank"
-          >https://www.typingtest.com/</a
-        >
-        (you might want to sign up for an account and practice a couple of times
-        first). </label
-      ><br />
-      <input
-        type="file"
-        id="typing-test-screenshot"
-        name="typing-test-screenshot"
-        required
-      /><br />
-      <label for="wpm-score">How many WPM did you type? </label><br />
-      <input type="text" id="wpm-score" name="wpm-score" required /><br />
-      <label for="typing-accuracy-percentage"
-        >What was your typing accuracy percentage? </label
-      ><br />
-      <input
-        type="text"
-        name="typing-accuracy-percentage"
-        id="typing-accuracy-percentage"
-        required
-      /><br />
-      <label for="FCC-screenshot"
-        >Please upload a screenshot of your completed pre-req 113 Basic
-        JavaScript lessons at
-        <a href="https://www.freecodecamp.org/learn/" target="_blank"
-          >https://www.freecodecamp.org/learn</a
-        >. The screenshot should include ALL the lessons you have completed in a
-        single screenshot—you can use the Blipshot Chrome extension to create an
-        image of the whole window. </label
-      ><br />
-      <input
-        type="file"
-        id="FCC-screenshot"
-        name="FCC-screenshot"
-        required
-      /><br />
+      <div>
+        <label for="typing-test-screenshot"
+          >Please upload a screenshot of your results of a one-minute typing
+          test at
+          <a href="https://www.typingtest.com/" target="_blank"
+            >https://www.typingtest.com/</a
+          >
+          (you might want to sign up for an account and practice a couple of
+          times first). </label
+        ><br />
+        <input
+          type="file"
+          id="typing-test-screenshot"
+          name="typing-test-screenshot"
+          required
+        /><br />
+      </div>
+      <div>
+        <label for="wpm-score">How many WPM did you type? </label><br />
+        <input type="text" id="wpm-score" name="wpm-score" required /><br />
+      </div>
+      <div>
+        <label for="typing-accuracy-percentage"
+          >What was your typing accuracy percentage? </label
+        ><br />
+        <input
+          type="text"
+          name="typing-accuracy-percentage"
+          id="typing-accuracy-percentage"
+          required
+        /><br />
+      </div>
+      <div>
+        <label for="FCC-screenshot"
+          >Please upload a screenshot of your completed pre-req 113 Basic
+          JavaScript lessons at
+          <a href="https://www.freecodecamp.org/learn/" target="_blank"
+            >https://www.freecodecamp.org/learn</a
+          >. The screenshot should include ALL the lessons you have completed in
+          a single screenshot—you can use the Blipshot Chrome extension to
+          create an image of the whole window. </label
+        ><br />
+        <input
+          type="file"
+          id="FCC-screenshot"
+          name="FCC-screenshot"
+          required
+        /><br />
+      </div>
       <div id="radio-wrapper" role="radiogroup">
         <label for="able-to-participate"
           >Are you willing to participate actively in the program Monday to
@@ -257,9 +265,7 @@ Techtonica Application {% endblock title %} {% block content %}
         >
           Previous
         </button>
-        <button type="button" class="submit-btn" onclick="clearLocal()">
-          Submit
-        </button>
+        <button type="button" class="submit-btn">Submit</button>
       </div>
     </fieldset>
   </form>
@@ -464,8 +470,170 @@ Techtonica Application {% endblock title %} {% block content %}
 </style>
 
 <script>
+  // Attach live validation on page load
+  window.onload = function () {
+    attachLiveValidation();
+  };
+
+  // Function to attach event listeners for live validation
+  function attachLiveValidation() {
+    const form = document.getElementById("app-form-7");
+    const fields = form.querySelectorAll("[required]");
+    fields.forEach((field) => {
+      field.addEventListener("input", () => validateField(field)); // Text inputs
+      field.addEventListener("change", () => validateField(field)); // Dropdowns, radio buttons, file uploads
+    });
+
+    const submitButton = document.querySelector(".submit-btn");
+    if (submitButton) {
+      submitButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        validateAndSubmit();
+      });
+    }
+  }
+
+  // Function to validate individual fields
+  function validateField(field) {
+    const validationType = field.dataset.validation || field.type; // Field type based on custom input data-validation="" or the type listed
+
+    if (validateFieldByType(field, validationType)) {
+      clearValidation(field); // Clear red border and error message if valid
+    } else {
+      markInvalid(field); // Highlight with red border and show error message if invalid
+    }
+  }
+
+  // Function to validate fields by type
+  function validateFieldByType(field, validationType) {
+    switch (validationType) {
+      case "url":
+        return isValidURL(field.value); // Validate URL format
+      case "radio":
+        return isRadioGroupValid(field.name); // Validate radio group selection
+      case "file":
+        return field.files.length > 0; // Ensure file is uploaded
+      default:
+        return field.value.trim() !== ""; // Ensure field is not empty
+    }
+  }
+
+  // Validation helpers
+  function isValidURL(value) {
+    const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i; // Regex to check URL formatting
+    return urlPattern.test(value);
+  }
+
+  function isRadioGroupValid(name) {
+    const radios = document.getElementsByName(name);
+    return Array.from(radios).some((radio) => radio.checked); // Collects radio buttons in group and checks if at least one is selected
+  }
+
+  // Handle invalid fields
+  function markInvalid(field) {
+    let errorMessageText = "This field is required."; // Default error message
+
+    if (field.type === "url") {
+      errorMessageText = "A valid URL is required.";
+    } else if (field.type === "radio") {
+      errorMessageText = "Please select an option.";
+    } else if (field.type === "file") {
+      errorMessageText = "Please upload a file.";
+    }
+
+    if (field.type === "radio") {
+      // Append the error message only once for the radio group container
+      const radioGroup = field.closest('[role="radiogroup"]');
+      if (!radioGroup.querySelector(".error-message")) {
+        const errorMessage = document.createElement("span");
+        errorMessage.className = "error-message";
+        errorMessage.style.color = "red";
+        errorMessage.innerText = errorMessageText;
+        radioGroup.insertBefore(errorMessage, radioGroup.firstChild); // Append message to radio group container instead of to each radio button
+      }
+      // Highlight each radio button in the group
+      const radioButtons = radioGroup.querySelectorAll('input[type="radio"]');
+      radioButtons.forEach((radio) => {
+        radio.style.outline = "2px solid red"; // Add a red outline to the radio buttons
+        radio.style.outlineOffset = "2px"; // Optional: Add some spacing around the outline
+      });
+    } else {
+      // For other field types
+      let parent = field.parentElement;
+      if (!parent) {
+        console.error("Parent element not found");
+        return;
+      }
+      let errorMessage = parent.querySelector(".error-message");
+      if (!errorMessage) {
+        // Create error message element
+        errorMessage = document.createElement("span");
+        errorMessage.className = "error-message";
+        errorMessage.style.color = "red";
+        errorMessage.innerText = errorMessageText;
+
+        // Insert error message before the field
+        parent.insertBefore(errorMessage, field);
+      }
+      field.style.border = "2px solid red";
+    }
+  }
+
+  // Clear invalid styling and error message
+  function clearValidation(field) {
+    if (field.type === "radio") {
+      const radioGroup = field.closest('[role="radiogroup"]');
+      const errorMessage = radioGroup.querySelector(".error-message");
+      if (errorMessage) {
+        errorMessage.remove(); // Remove radio group error message
+      }
+      // Remove red outline from each radio button in the group
+      const radioButtons = radioGroup.querySelectorAll('input[type="radio"]');
+      radioButtons.forEach((radio) => {
+        radio.style.outline = ""; // Clear the red outline
+        radio.style.outlineOffset = ""; // Clear the spacing
+      });
+    } else {
+      // Handle other input types
+      const parent = field.parentElement;
+      const errorMessage = parent.querySelector(".error-message"); // Check for error message above the field
+      if (errorMessage) {
+        errorMessage.remove(); // Remove error message
+      }
+      field.style.border = ""; // Remove red border for valid inputs
+    }
+  }
+
+  // Final validation before navigation
+  function validateAndSubmit() {
+    const form = document.getElementById("app-form-7");
+    const fields = form.querySelectorAll("[required]");
+    let isValid = true;
+
+    fields.forEach((field) => {
+      if (!validateFieldByType(field, field.dataset.validation || field.type)) {
+        markInvalid(field); // Highlight invalid fields
+        isValid = false; // Set flag to false if any field is invalid
+      }
+    });
+
+    if (isValid) {
+      clearLocal(); // Code is setup to clear localStorage on submit, not to submit the form
+    } else {
+      alert("Please complete all required fields.");
+    }
+  }
+
+  // Navigation without validation for previous button
+  function navigateToPage(previousPage) {
+    window.location.href = previousPage;
+  }
+
   function clearLocal() {
     localStorage.clear();
+    // Reset all form fields
+    const form = document.getElementById("app-form-7");
+    form.reset(); // Resets form fields to their initial state
   }
 
   document.addEventListener("DOMContentLoaded", function () {

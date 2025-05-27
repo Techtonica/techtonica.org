@@ -167,13 +167,7 @@ Techtonica Application {% endblock title %} {% block content %}
         >
           Previous
         </button>
-        <button
-          type="button"
-          class="continue-to-app-btn"
-          onclick="window.location.href='/app-form-admin'"
-        >
-          Next
-        </button>
+        <button type="button" class="continue-to-app-btn">Next</button>
         <button
           type="button"
           class="save-btn"
@@ -382,6 +376,7 @@ Techtonica Application {% endblock title %} {% block content %}
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    // handle "Learn More" toggle functionality
     const learnMoreWrappers = document.querySelectorAll(".learn-more-wrapper");
 
     learnMoreWrappers.forEach((wrapper) => {
@@ -414,6 +409,29 @@ Techtonica Application {% endblock title %} {% block content %}
 
         isExpanded = !isExpanded;
       });
+    });
+
+    // handle form validation
+    const form = document.getElementById("app-form-5");
+    const nextButton = document.querySelector(".continue-to-app-btn");
+
+    nextButton.addEventListener("click", () => {
+      const requiredInputs = form.querySelectorAll("input[required]");
+      let isValid = true;
+
+      requiredInputs.forEach((input) => {
+        input.style.border = "";
+        if (!input.value.trim()) {
+          isValid = false;
+          input.style.border = "2px solid red";
+        }
+      });
+
+      if (!isValid) {
+        alert("Please fill out all required fields.");
+      } else {
+        window.location.href = "/app-form-admin";
+      }
     });
   });
 </script>
