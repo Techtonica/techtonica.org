@@ -1166,6 +1166,7 @@
       {% block content %} {% endblock content %}
     </div>
     <!-- BEGIN FOOTER -->
+    {% if show_footer is not defined or show_footer %}
     <div class="row row__center gray-background">
       <div class="column">
         <p class="centered social-links">
@@ -1352,7 +1353,7 @@
         </p>
       </div>
     </div>
-
+    {% endif %}
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link
       href="https://fonts.googleapis.com/css?family=Lato:400,700"
