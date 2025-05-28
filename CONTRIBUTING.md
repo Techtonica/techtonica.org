@@ -1,8 +1,8 @@
 # Step 1: Register as a Volunteer
-1. Before doing anything else, you must [register as a volunteer](https://docs.google.com/forms/d/e/1FAIpQLSeW0mo-Dpsig70374UEPvzexpas-31Ost_HsFwm0kjNOxtbtg/viewform?c=0&w=1)
+Before doing anything else, you must [register as a volunteer](https://docs.google.com/forms/d/e/1FAIpQLSeW0mo-Dpsig70374UEPvzexpas-31Ost_HsFwm0kjNOxtbtg/viewform?c=0&w=1)
 
 # Step 2: Read through and Agree to the Code of Conduct
-- [Code of Conduct](https://github.com/Techtonica/curriculum/blob/main/CODE_OF_CONDUCT.md).
+[Code of Conduct](https://github.com/Techtonica/curriculum/blob/main/CODE_OF_CONDUCT.md).
 
 # Step 3: Finding an Issue to Work On
 
