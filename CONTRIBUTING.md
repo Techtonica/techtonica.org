@@ -12,6 +12,7 @@
    - [Issues tagged with GSSoC](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20is%3Aopen%20label%3Agssoc%20no%3Aassignee)
    - [Issues tagged with ODHack14](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20is%3Aopen%20label%3AODHack14%20no%3Aassignee)
    - [Issues tagged with Hacktoberfest](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20is%3Aopen%20label%3AHacktoberfest%20no%3Aassignee)
+   - [Issues tagged with GHC](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20is%3Aopen%20label%3AGHC%20no%3Aassignee)
 
 ## Techtonica Volunteers
 - Find any [unassigned open issue](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20is%3Aopen%20no%3Aassignee)
