@@ -47,14 +47,8 @@ There should be a good understanding of how the program works with vetting, trai
 
 [Detailed instructions on how to update the website can be found here (you will need security clearance and viewing permissions from Techtonica staff)](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit).
 
-## Contributing
-If you would like to contribute to the website, please [sign up here](https://docs.google.com/forms/d/e/1FAIpQLSeW0mo-Dpsig70374UEPvzexpas-31Ost_HsFwm0kjNOxtbtg/viewform?c=0&w=1), then [request an issue](https://github.com/Techtonica/techtonica.org/issues) to work on. 
-- If you are already on the Techtonica slack or are coming from an external hackathon (such as GHC, OnlyDust, or Hacktoberfest) free to contact [program staff](https://techtonica.org/team/) via slack channel directly to inquire about your issue request. 
-- People are welcome to team up on an issue. If you see someone is already assigned, but you want to help, leave the other assignee a message on the issue about collaborating.
-Please note any labels or due dates that may be time sensitive! Any amount of help is appreciated, but if the deadline approaches and you won't be able to complete it, please leave a comment about your progress and unassign yourself from the issue so someone else can pick it up. If you forked the repo, go ahead and make a pull request with what you have, and transfer ownership of a copied slideshow to techtonicaorg@gmail.com.
-Completed curriculum:
-
-Thank you for your help in improving the website. See [CONTRIBUTING](/CONTRIBUTING.md) for details.
+## Contributors
+Thank you for your help in improving the website. See [CONTRIBUTING](/CONTRIBUTING.md) for details on how to get started!
 
 ## Getting Started
 
