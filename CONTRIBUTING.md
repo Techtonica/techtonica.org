@@ -7,8 +7,8 @@
 # Step 3: Finding an Issue to Work On
 
 ## External Hackathon Participants
-- **Follow Step 0 and Step 0.5 above**
-- If you are new to how to contribute to GitHub projects, review the [GSSoC guide](https://github.com/GSSoC24/Contributor/tree/main/gssoc-guidelines) or talk to a mentor (M) in Slack
+- **Follow Step 1 and Step 2 above**
+- If you are new to how to contribute to GitHub projects, review the [GSSoC guide](https://github.com/GSSoC24/Contributor/tree/main/gssoc-guidelines), [program staff](https://techtonica.org/team/), or talk to a Techtonica mentor via slack
    - [Issues tagged with GSSoC](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20is%3Aopen%20label%3Agssoc%20no%3Aassignee)
    - [Issues tagged with ODHack14](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20is%3Aopen%20label%3AODHack14%20no%3Aassignee)
    - [Issues tagged with Hacktoberfest](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20is%3Aopen%20label%3AHacktoberfest%20no%3Aassignee)
