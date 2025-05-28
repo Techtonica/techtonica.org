@@ -54,7 +54,7 @@ If you would like to contribute to the website, please [sign up here](https://do
 Please note any labels or due dates that may be time sensitive! Any amount of help is appreciated, but if the deadline approaches and you won't be able to complete it, please leave a comment about your progress and unassign yourself from the issue so someone else can pick it up. If you forked the repo, go ahead and make a pull request with what you have, and transfer ownership of a copied slideshow to techtonicaorg@gmail.com.
 Completed curriculum:
 
-Thank you for your help in improving the website. See CONTRIBUTING for details.
+Thank you for your help in improving the website. See [CONTRIBUTING](/contributing.md) for details.
 
 ## Getting Started
 
