@@ -8,14 +8,14 @@ Before opening an issue, commenting, etc you must read and agree to the [Code of
 
 ## External Hackathon Participants
 - **Follow Step 1 and Step 2 above**
-- If you are new to how to contribute to GitHub projects, review the [GSSoC guide](https://github.com/GSSoC24/Contributor/tree/main/gssoc-guidelines), [program staff](https://techtonica.org/team/), or talk to a Techtonica mentor via slack
+- If you are new to contributing to GitHub projects, review the [GSSoC guide](https://github.com/GSSoC24/Contributor/tree/main/gssoc-guidelines), [program staff](https://techtonica.org/team/), or talk to a Techtonica mentor via Slack (in #mentors).
    - [Issues tagged with GSSoC](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20is%3Aopen%20label%3Agssoc%20no%3Aassignee)
    - [Issues tagged with ODHack14](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20is%3Aopen%20label%3AODHack14%20no%3Aassignee)
    - [Issues tagged with Hacktoberfest](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20is%3Aopen%20label%3AHacktoberfest%20no%3Aassignee)
    - [Issues tagged with GHC](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20is%3Aopen%20label%3AGHC%20no%3Aassignee)
 
 ## Techtonica Volunteers
-- Find any [unassigned open issue](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20is%3Aopen%20no%3Aassignee)
+- Find any [unassigned open issue](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20is%3Aopen%20no%3Aassignee).
 
 ## All Contributors
 - If you find an issue that sounds interesting to you and you have the knowledge to complete it...
