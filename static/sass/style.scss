@@ -323,6 +323,7 @@
 .contact-us,
 .donate,
 .orange-button {
+  margin-bottom: 24px;
   @include prefix(border-radius, 8px, webkit moz o);
   color: $white;
   display: inline-block;
