@@ -47,6 +47,9 @@ There should be a good understanding of how the program works with vetting, trai
 
 [Detailed instructions on how to update the website can be found here (you will need security clearance and viewing permissions from Techtonica staff)](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit).
 
+## Contributors
+Thank you for your help in improving the website. See [CONTRIBUTING](/CONTRIBUTING.md) for details on how to get started!
+
 ## Getting Started
 
 You need Python version 3.13.2 and Pip version 25.0.1 in order to properly update dependencies and replicate the production server environment locally.
