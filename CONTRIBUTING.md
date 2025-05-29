@@ -33,6 +33,6 @@ Before opening an issue, commenting, etc you must read and agree to the [Code of
 🎗️ _**Please note, all repo support will operate within U.S. Pacific Timezone.**_
 
 ## Working on your Issue
-- Comment in the issue directly if you have a question (feel free to follow it up with a slack message).
+- Comment on the issue directly if you have a question (feel free to follow it up with a Slack message).
 - People are welcome to team up on an issue. If you see someone is already assigned but you want to help, leave the other assignee a message on the issue about collaborating.
 - Please note any time senstive due dates or labels! Any amount of help is appreciated, but if the deadline approaches and you won't be able to complete it, please leave a comment about your progress and unassign yourself from the issue so someone else can pick it up. If you forked the repo, go ahead and make a pull request with what you have. 
