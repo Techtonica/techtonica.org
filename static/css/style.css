@@ -1338,6 +1338,11 @@ textarea.invalid {
   vertical-align: middle;
 }
 
+/* News Page Styling */
+#news-title {
+  padding: 0;
+}
+
 /* Sponsor Page Styling */
 .sponsor-benefit-table {
   margin-right: auto;
