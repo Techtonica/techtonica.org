@@ -85,7 +85,7 @@ pyenv local 3.13.2
 - Ensure correct version of python
 
 ```bash
-python --version
+python3 --version
 # If not 3.13.2, try
 eval "$(pyenv init -)"
 ```
@@ -100,7 +100,7 @@ pip install --upgrade virtualenv
 - Create a virtual environment using venv
 
 ```bash
-python -m venv venv
+python3 -m venv venv
 ```
 
 - Activate your new virtual environment
@@ -122,7 +122,7 @@ pip install --upgrade pip
 ### Install and Upgrade pip-tools
 
 ```bash
-python -m pip install -U pip-tools
+python3 -m pip install -U pip-tools
 ```
 
 ### Install Pre-Commit Hooks
