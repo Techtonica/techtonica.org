@@ -2,7 +2,7 @@
 Before doing anything else, you must [register as a volunteer](https://docs.google.com/forms/d/e/1FAIpQLSeW0mo-Dpsig70374UEPvzexpas-31Ost_HsFwm0kjNOxtbtg/viewform?c=0&w=1).
 
 # Step 2: Read through and Agree to the Code of Conduct
-Before opening an issue, commenting, etc you must read and agree to the [Code of Conduct](https://github.com/Techtonica/curriculum/blob/main/CODE_OF_CONDUCT.md).
+Before opening an issue, commenting, etc you must read and agree to the [Code of Conduct](https://docs.google.com/document/d/16LUxODmHN3N2r4GPA-YeNgXP0MIQCl6gW_twJralb5w/edit?tab=t.0).
 
 # Step 3: Finding an Issue to Work On
 
