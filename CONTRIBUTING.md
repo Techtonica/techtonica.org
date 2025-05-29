@@ -24,7 +24,7 @@ Before opening an issue, commenting, etc you must read and agree to the [Code of
 - Leave a comment stating the following:
   - [ ] Formally ask to be assigned to the issue (feel free to follow it up with a slack message).
   - [ ] Formally acknowledge that you agree to the [Code of Conduct](https://docs.google.com/document/d/16LUxODmHN3N2r4GPA-YeNgXP0MIQCl6gW_twJralb5w/edit?tab=t.0).
-  - [ ] Include confirmation that you have filled out the [Volunteer Google Form](https://docs.google.com/forms/d/e/1FAIpQLSeW0mo-Dpsig70374UEPvzexpas-31Ost_HsFwm0kjNOxtbtg/viewform?c=0&w=1)
+  - [ ] Include confirmation that you have filled out the [Volunteer Google Form](https://docs.google.com/forms/d/e/1FAIpQLSeW0mo-Dpsig70374UEPvzexpas-31Ost_HsFwm0kjNOxtbtg/viewform?c=0&w=1).
   - [ ] Include any clarification questions you may have after reading the description. Specific questions work better, e.g. "Which file should change?" rather than asking a broader question such as requesting "an explanation" or "more details"
 - Once you have been assigned on the issue, **do not request assignment to any other issues until you have opened a Pull Request**. If you changed your mind and would rather work on a different one, comment on the originally assigned issue to request to be **unassigned**
 - Create a pull request of the changes requested by completing the prompted pull request template.
