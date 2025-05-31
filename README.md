@@ -47,6 +47,10 @@ There should be a good understanding of how the program works with vetting, trai
 
 [Detailed instructions on how to update the website can be found here (you will need security clearance and viewing permissions from Techtonica staff)](https://docs.google.com/document/d/1oL3BaemFfUD7DfoFzhTSwcX4lPxYbWN3Dy9oZFfGP0Y/edit).
 
+## Contributors
+
+Thank you for your help in improving the website. See [CONTRIBUTING](/CONTRIBUTING.md) for details on how to get started!
+
 ## Getting Started
 
 You need Python version 3.13.2 and Pip version 25.0.1 in order to properly update dependencies and replicate the production server environment locally.
@@ -82,7 +86,7 @@ pyenv local 3.13.2
 - Ensure correct version of python
 
 ```bash
-python --version
+python3 --version
 # If not 3.13.2, try
 eval "$(pyenv init -)"
 ```
@@ -97,7 +101,7 @@ pip install --upgrade virtualenv
 - Create a virtual environment using venv
 
 ```bash
-python -m venv venv
+python3 -m venv venv
 ```
 
 - Activate your new virtual environment
@@ -119,7 +123,7 @@ pip install --upgrade pip
 ### Install and Upgrade pip-tools
 
 ```bash
-python -m pip install -U pip-tools
+python3 -m pip install -U pip-tools
 ```
 
 ### Install Pre-Commit Hooks

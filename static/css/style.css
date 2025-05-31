@@ -436,6 +436,7 @@ p {
 .contact-us,
 .donate,
 .orange-button {
+  margin-bottom: 24px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -o-border-radius: 8px;
@@ -1372,6 +1373,11 @@ button[type="submit"] {
   border: none;
   cursor: pointer;
 }
+/* News Page Styling */
+#news-title {
+  padding: 0;
+}
+
 /* Sponsor Page Styling */
 .sponsor-benefit-table {
   margin-right: auto;
