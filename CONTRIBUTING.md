@@ -65,6 +65,7 @@ When addressing requests for changes it is best practice to do so in a visible a
 - Request a staff, peer, and mentor reviewer
 - The PR title should be descriptive enough to give an at a glance understanding of what you're working on
 
-
-
-
+## Application Automaton Work
+- You can find the app-based or application automation files on the `mvp` branch
+- Please point any of this related work to be merged back into `mvp` rather than `develop` branch, via your PR
+- Please get clarification from program staff when in doubt or having related questions
