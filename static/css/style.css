@@ -436,6 +436,7 @@ p {
 .contact-us,
 .donate,
 .orange-button {
+  margin-bottom: 24px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -o-border-radius: 8px;
@@ -1335,6 +1336,11 @@ textarea.invalid {
   animation: spinner 0.8s linear infinite;
   margin-right: 10px;
   vertical-align: middle;
+}
+
+/* News Page Styling */
+#news-title {
+  padding: 0;
 }
 
 /* Sponsor Page Styling */
