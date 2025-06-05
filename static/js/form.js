@@ -136,6 +136,6 @@ function validateForm() {
   if (!allValid) {
     alert("Please fill out the missing field(s).");
   } else {
-    window.location.href = "/household";
+    window.location.href = "/app-household";
   }
 } 
