@@ -94,7 +94,7 @@ python-http-client==3.3.7
     # via sendgrid
 pytz==2025.1
     # via -r requirements.in
-requests==2.32.3
+requests==2.32.4
     # via
     #   -r requirements.in
     #   apimatic-core
