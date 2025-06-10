@@ -1,0 +1,80 @@
+.form-wrapper {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-wrapper fieldset {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+.form-wrapper legend {
+    color: #007395cc;
+    padding: 0 0.5rem;
+}
+
+.form-wrapper label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    color: #007395cc;
+}
+
+.form-wrapper input[type="text"],
+.form-wrapper input[type="email"],
+.form-wrapper input[type="tel"],
+.form-wrapper input[type="url"],
+.form-wrapper input[type="number"],
+.form-wrapper select,
+.form-wrapper textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-wrapper textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.radio-wrapper,
+.checkbox-wrapper {
+    margin: 1rem 0;
+}
+
+.radio-wrapper label,
+.checkbox-wrapper label {
+    display: inline;
+    margin-right: 1rem;
+}
+
+.radio-wrapper input[type="radio"],
+.checkbox-wrapper input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+#form-message,
+#payment-flow-message {
+    display: block;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.error {
+    color: #bf0020;
+}
+
+.success {
+    color: #28a745;
+}
+
+@media only screen and (max-width: 600px) {
+    .form-wrapper {
+        padding: 1rem;
+    }
+}
