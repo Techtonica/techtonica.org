@@ -1,0 +1,26 @@
+{% macro contact_info() %}
+<fieldset>
+    <legend>Contact Information</legend>
+
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" name="firstname" required />
+
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" name="lastname" required />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required />
+</fieldset>
+{% endmacro %}
+
+{% macro conduct_checkbox() %}
+<div class="checkbox-container">
+    <input type="checkbox" id="code-of-conduct-checkbox" required />
+    <label for="code-of-conduct-checkbox">
+        By checking this box, you agree that what you are submitting in this
+        form adheres to
+        <a href="{{ url_for('render_conduct_page') }}" title="Code of Conduct" target="_blank"
+            rel="noopener noreferrer">Techtonica's Code of Conduct</a>.
+    </label>
+</div>
+{% endmacro %}
