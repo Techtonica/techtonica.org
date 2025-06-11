@@ -1,19 +1,4 @@
-{% macro form_wrapper(title, form_id='form', form_c{% macro radio_group(question, name, options) %}
-<div class="radio-wrapper">
-  <p>{{ question }}</p>
-  {% for opt in options %}
-  {% if opt is sequence and opt is not string %}
-  {% set value = opt[0] %}
-  {% set label = opt[1] %}
-  {% else %}
-  {% set value = opt.value %}
-  {% set label = opt.label %}
-  {% endif %}
-  <label for="{{ name }}-{{ value }}">{{ label }}</label>
-  <input type="radio" id="{{ name }}-{{ value }}" name="{{ name }}" value="{{ value }}" />
-  {% endfor %}
-</div>
-{% endmacro %}include_payment=false) %}
+{% macro form_wrapper(title, form_id='form', form_class='', include_payment=false) %}
 <div class="column">
   <form class="{{ form_class }}" id="{{ form_id }}">
     <div class="wrapper">
@@ -27,7 +12,85 @@
       {% if include_payment %}
       <h3>Payment Info</h3>
       <div id="card-container"></div>
-      {% endif %} {{ conduct_checkbox() }}
+      {% endif %}
+
+      {{ conduct_checkbox() }}
+      
+      {% if include_payment %}
+      <button id="card-button" type="button" class="orange-button">
+        Pay with Card
+      </button>
+      <span id="payment-flow-message"></span>
+      {% else %}
+      <button type="submit" class="orange-button">
+        Submit
+      </button>
+      <span id="form-message"></span>
+      {% endif %}
+    </div>
+  </form>
+</div>
+{% endmacro %}
+
+{% macro fieldset(legend='') %}
+<fieldset>
+  {% if legend %}
+  <legend>{{ legend }}</legend>
+  {% endif %}
+  {{ caller() }}
+</fieldset>
+{% endmacro %}
+
+{% macro input_field(label, id, type='text', required=true) %}
+<label for="{{ id }}">{{ label }}{% if not required %} <span>(optional)</span>{% endif %}</label>
+<input type="{{ type }}" id="{{ id }}" name="{{ id }}" {% if required %}required{% endif %} />
+{% endmacro %}
+
+{% macro textarea_field(label, id, rows=5, required=true) %}
+<label for="{{ id }}">{{ label }}{% if not required %} <span>(optional)</span>{% endif %}</label>
+<textarea id="{{ id }}" name="{{ id }}" rows="{{ rows }}" {% if required %}required{% endif %}></textarea>
+{% endmacro %}
+
+{% macro radio_group(question, name, options) %}
+<div class="radio-wrapper">
+  <p>{{ question }}</p>
+  {% for opt in options %}
+    {% if opt is sequence and opt is not string %}
+      {% set value = opt[0] %}
+      {% set label = opt[1] %}
+    {% else %}
+      {% set value = opt.value %}
+      {% set label = opt.label %}
+    {% endif %}
+    <label for="{{ name }}-{{ value }}">{{ label }}</label>
+    <input type="radio" id="{{ name }}-{{ value }}" name="{{ name }}" value="{{ value }}" />
+  {% endfor %}
+</div>
+{% endmacro %}
+
+{% macro checkbox_field(id, label, required=true) %}
+<div class="checkbox-wrapper">
+  <input type="checkbox" id="{{ id }}" name="{{ id }}" {% if required %}required{% endif %} />
+  <label for="{{ id }}">{{ label }}</label>
+</div>
+{% endmacro %}
+
+{% macro conduct_checkbox() %}
+<div class="checkbox-container">
+  <input type="checkbox" id="code-of-conduct-checkbox" required />
+  <label for="code-of-conduct-checkbox">
+    By checking this box, you agree that what you are submitting in this
+    form adheres to
+    <a
+      href="{{ url_for('render_conduct_page') }}"
+      title="Code of Conduct"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Techtonica's Code of Conduct</a
+    >.
+  </label>
+</div>
+{% endmacro %}
 
       {% if include_payment %}
       <button id="card-button" type="button" class="orange-button">

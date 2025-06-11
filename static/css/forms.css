@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   margin: 0;
   box-sizing: border-box;
@@ -304,3 +305,186 @@ button.save-btn:hover {
 }
 
 /*# sourceMappingURL=forms.css.map */
+=======
+/* Form Styles - Following Techtonica Style Guidelines */
+/* Note: This should be converted to SCSS when sass compiler is available */
+
+/* Form wrapper styles following existing payment form patterns */
+.form-wrapper {
+  padding: 50px 0px 50px 0px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  background: #fafafa;
+  color: black;
+}
+
+.form-wrapper .wrapper {
+  max-width: 50%;
+  justify-content: center;
+  position: relative;
+}
+
+/* Fieldset styles following existing application form patterns */
+.form-wrapper fieldset {
+  box-sizing: border-box;
+  margin: 1em;
+  padding: 2rem;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.559);
+  width: 100%;
+}
+
+.form-wrapper legend {
+  color: rgba(0, 115, 149, 0.8);
+  font-size: 20px;
+}
+
+/* Input field styles following existing patterns */
+.form-wrapper label {
+  margin-bottom: 0.5rem;
+  font-size: large;
+  color: rgba(0, 115, 149, 0.8);
+  display: block;
+}
+
+.form-wrapper input[type="text"],
+.form-wrapper input[type="email"],
+.form-wrapper input[type="tel"],
+.form-wrapper input[type="url"],
+.form-wrapper input[type="number"] {
+  box-sizing: border-box;
+  padding: 1em;
+  margin-bottom: 2em;
+  border: 1px solid rgba(0, 0, 0, 0.559);
+  border-radius: 6px;
+  width: 100%;
+}
+
+.form-wrapper textarea {
+  box-sizing: border-box;
+  padding: 1em;
+  margin-bottom: 2em;
+  border: 1px solid rgba(0, 0, 0, 0.559);
+  border-radius: 6px;
+  width: 100%;
+  min-height: 6em;
+}
+
+/* Radio group styles following existing patterns */
+.form-wrapper .radio-wrapper {
+  width: 100%;
+  margin-bottom: 2em;
+  color: rgba(0, 115, 149, 0.8);
+}
+
+.form-wrapper .radio-wrapper p {
+  margin-bottom: 1em;
+  font-size: large;
+}
+
+.form-wrapper .radio-wrapper label {
+  display: inline;
+  margin-right: 1em;
+  margin-bottom: 0;
+  font-size: medium;
+}
+
+.form-wrapper .radio-wrapper input[type="radio"] {
+  width: auto;
+  margin-right: 0.5em;
+  margin-bottom: 0;
+}
+
+/* Checkbox styles following existing patterns */
+.form-wrapper .checkbox-container {
+  margin: 25px;
+  padding-bottom: 30px;
+  display: flex;
+}
+
+.form-wrapper .checkbox-container input[type="checkbox"] {
+  margin-right: 15px;
+  width: auto;
+}
+
+.form-wrapper .checkbox-container label {
+  margin-bottom: 0;
+  font-size: medium;
+}
+
+/* Button styles following existing orange button patterns */
+.form-wrapper .orange-button {
+  margin-bottom: 24px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  color: white;
+  display: inline-block;
+  background-color: #fc7625;
+  text-align: center;
+  padding-block: 24px;
+  padding-inline: 16px;
+  width: 100%;
+  font-size: 1.5em;
+  border: none;
+  cursor: pointer;
+}
+
+.form-wrapper .orange-button:hover {
+  background-color: #16c1f3;
+  color: white;
+  transition: 0.3s;
+}
+
+/* Optional field styling */
+.form-wrapper label span {
+  font-style: italic;
+  color: rgba(0, 115, 149, 0.6);
+}
+
+/* Message styling */
+#form-message,
+#payment-flow-message {
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.error {
+  color: #bf0020;
+}
+
+.success {
+  color: #28a745;
+}
+
+/* Responsive design following existing patterns */
+@media (max-width: 900px) {
+  .form-wrapper .wrapper {
+    max-width: 75%;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-wrapper {
+    margin: 0px;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+  
+  .form-wrapper .wrapper {
+    max-width: 100%;
+  }
+  
+  .form-wrapper fieldset {
+    margin: 0px;
+    width: 100%;
+    padding: 1.5rem;
+  }
+}
+>>>>>>> 4bd028a (Address PR feedback: refactor forms to use reusable Jinja partials on mvp branch)
