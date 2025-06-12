@@ -1,92 +1,70 @@
 {% extends "base.html" %}
-{% from "_form_macros.html" import form_wrapper, fieldset, input_field, textarea_field, radio_group, checkbox_field %}
+{% from "form_macros.html" import form_wrapper, fieldset, input_field, textarea_field, radio_group, checkbox_field %}
 
 {% block title %}Techtonica: Bridging the Tech Gap — Application Form{% endblock title %}
 
 {% block content %}
-<div class="row row__center blue-background" style="padding: 0">
-    <h1 class="large-white-text">Application Form</h1>
-</div>
+<section class="application-page">
+  <h1>Techtonica Application</h1>
+  
+  {% call form_wrapper('General Applicant Demographics', 'app-form-1', 'application-form form-wrapper') %}
+    {% call fieldset('Personal Information') %}
+      {{ input_field('Full legal given or first name', 'first-name') }}
+      {{ input_field('Preferred given or first name', 'preferred-name', required=false) }}
+      {{ input_field('Full legal last/family name or surname', 'last-name') }}
+      {{ input_field('How to pronounce your full name', 'name-pronunciation', required=false) }}
+      {{ input_field('Email', 'email', 'email') }}
+    {% endcall %}
 
-{% call form_wrapper('Application Form', 'application-form', 'form-wrapper') %}
-{% call fieldset('Personal Information') %}
-{{ input_field('Phone Number', 'phone', 'tel') }}
-{{ input_field('Current Address', 'address') }}
-{{ input_field('GitHub Profile URL', 'github', 'url') }}
-{{ input_field('LinkedIn Profile URL', 'linkedin', 'url', required=false) }}
+    {% call fieldset('Demographics') %}
+      {{ radio_group('With which gender identity do you most align?', 'gender-identity', [
+        ('woman', 'Woman'),
+        ('man', 'Man'),
+        ('non-binary', 'Non-binary'),
+        ('genderfluid', 'Genderfluid'),
+        ('agender', 'Agender or genderless'),
+        ('prefer-not-to-say', 'Prefer not to say'),
+        ('other', 'Other')
+      ]) }}
 
-{{ radio_group(
-'Are you authorized to work in the United States?',
-'work-auth',
-[
-{'label': 'Yes', 'value': 'yes', 'required': true},
-{'label': 'No', 'value': 'no'}
-]
-) }}
+      {{ radio_group('What is your race and/or ethnicity?', 'race-ethnicity', [
+        ('asian', 'Asian'),
+        ('black', 'Black or African American'),
+        ('hispanic', 'Hispanic or Latino/Latina'),
+        ('native-american', 'Native American or American Indian'),
+        ('pacific-islander', 'Native Hawaiian or Pacific Islander'),
+        ('white', 'White'),
+        ('multiracial', 'Multiracial'),
+        ('prefer-not-to-say', 'Prefer not to say'),
+        ('other', 'Other')
+      ]) }}
+    {% endcall %}
 
-{{ radio_group(
-'Have you completed the JavaScript pre-requisite course?',
-'prereq',
-[
-{'label': 'Yes', 'value': 'yes', 'required': true},
-{'label': 'No', 'value': 'no'}
-]
-) }}
+    {% call fieldset('Background Information') %}
+      {{ textarea_field('Tell us about your background and why you want to join Techtonica', 'background') }}
+      {{ textarea_field('What are your career goals in tech?', 'goals') }}
+      {{ input_field('Phone Number', 'phone', 'tel') }}
+      {{ input_field('Current Address', 'address') }}
+    {% endcall %}
 
-{{ input_field('Typing Speed (WPM)', 'typing-speed', 'number') }}
+    {% call fieldset('Technical Background') %}
+      {{ input_field('GitHub Profile URL', 'github', 'url', required=false) }}
+      {{ input_field('LinkedIn Profile URL', 'linkedin', 'url', required=false) }}
+      
+      {{ radio_group('Are you authorized to work in the United States?', 'work-auth', [
+        ('yes', 'Yes'),
+        ('no', 'No')
+      ]) }}
 
-<label for="education">Highest Level of Education</label>
-<select id="education" name="education" required>
-    <option value="">Select one...</option>
-    <option value="ged">GED</option>
-    <option value="high-school">High School Diploma</option>
-    <option value="some-college">Some College</option>
-    <option value="associates">Associate's Degree</option>
-    <option value="bachelors">Bachelor's Degree</option>
-    <option value="masters">Master's Degree</option>
-    <option value="doctorate">Doctorate</option>
-</select>
+      {{ radio_group('Have you completed the JavaScript pre-requisite course?', 'prereq', [
+        ('yes', 'Yes'),
+        ('no', 'No')
+      ]) }}
 
-{{ textarea_field('Tell us about your background and why you want to join Techtonica', 'background') }}
-{{ textarea_field('What are your career goals in tech?', 'goals') }}
-{{ textarea_field('Describe a challenge you\'ve overcome and how you handled it', 'challenges') }}
-{% endcall %}
+      {{ input_field('Typing Speed (WPM)', 'typing-speed', 'number') }}
+    {% endcall %}
+  {% endcall %}
+</section>
 
-{% call fieldset('Program Commitment') %}
-{{ checkbox_field(
-'time-commitment',
-'I understand this is a full-time, 6-month program requiring attendance during Pacific Time hours'
-) }}
-
-{{ checkbox_field(
-'housing-commitment',
-'I confirm I have stable housing for the duration of the program and 6 months after'
-) }}
-
-{{ checkbox_field(
-'placement-commitment',
-'I agree to work at an assigned partner company upon successful completion of training'
-) }}
-{% endcall %}
-{% endcall %}
-
-<link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
-
-<script>
-    document.getElementById('application-form').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const formMessage = document.getElementById('form-message');
-
-        try {
-            // Here you would normally make an API call to submit the form
-            // For now, just show a success message
-            formMessage.textContent = 'Application submitted successfully! We will review your application and contact you soon.';
-            formMessage.className = 'success';
-            e.target.reset();
-        } catch (error) {
-            formMessage.textContent = 'There was an error submitting your application. Please try again.';
-            formMessage.className = 'error';
-        }
-    });
-</script>
+<script type="text/javascript" src="/static/js/form.js"></script>
 {% endblock content %}
