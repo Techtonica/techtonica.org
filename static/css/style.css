@@ -1338,6 +1338,41 @@ textarea.invalid {
   vertical-align: middle;
 }
 
+/* Flash message styles */
+.flash-message {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.flash-message.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.flash-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Form Styles */
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
 /* News Page Styling */
 #news-title {
   padding: 0;

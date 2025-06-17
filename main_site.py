@@ -231,6 +231,46 @@ def render_testimonials_page():
     return render_template("testimonials.html")
 
 
+@app.route("/app-form-details")
+def app_form_details():
+    return render_template("app/form-details.html")
+
+
+@app.route("/app-form")
+def app_form():
+    return render_template("app/form.html")
+
+
+@app.route("/app-additional")
+def app_additional():
+    return render_template("app/additional.html")
+
+
+@app.route("/app-household")
+def app_household():
+    return render_template("app/household.html")
+
+
+@app.route("/app-long-text")
+def app_long_text():
+    return render_template("app/long-text.html")
+
+
+@app.route("/app-questionnaire")
+def app_questionnaire():
+    return render_template("app/questionnaire.html")
+
+
+@app.route("/app-reference")
+def app_reference():
+    return render_template("app/reference.html")
+
+
+@app.route("/app-form-admin")
+def app_form_admin():
+    return render_template("app/form-admin.html")
+
+
 def get_events():
     try:
         group_id = eventbrite.get_user()["id"]
@@ -324,6 +364,8 @@ class Payment(BaseModel):
 
 
 # old route - redirects to avoid breaking old links
+
+
 @app.route("/payment-form")
 def render_payment_form():
     """
@@ -406,7 +448,9 @@ def send_posting():
     )
 
     print(f"Message sent: {x.text}")
-    return jsonify({"message": "Data received successfully", "received_data": data})
+    return jsonify(
+        {"message": "Data received successfully", "received_data": data}
+    )
 
 
 if __name__ == "__main__":
