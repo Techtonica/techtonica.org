@@ -16,6 +16,8 @@ Before opening an issue, commenting, etc you must read and agree to the [Code of
   - [Issues tagged with ODHack14](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20is%3Aopen%20label%3AODHack14%20no%3Aassignee)
   - [Issues tagged with Hacktoberfest](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20is%3Aopen%20label%3AHacktoberfest%20no%3Aassignee)
   - [Issues tagged with GHC](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20is%3Aopen%20label%3AGHC%20no%3Aassignee)
+  - [Issues tagged with 100daysofcode](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20state%3Aopen%20label%3A100daysofcode)
+  - [Issues tagged with 'good first issue'](https://github.com/Techtonica/techtonica.org/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22)
 
 ## Techtonica Volunteers
 
@@ -43,6 +45,9 @@ Before opening an issue, commenting, etc you must read and agree to the [Code of
 - People are welcome to team up on an issue. If you see someone is already assigned but you want to help, leave the other assignee a message on the issue about collaborating.
 - Please note any time senstive due dates or labels! Any amount of help is appreciated, but if the deadline approaches and you won't be able to complete it, please leave a comment about your progress and unassign yourself from the issue so someone else can pick it up. If you forked the repo, go ahead and make a pull request with what you have.
 
+## Slack Communication
+If you are in Techtonica's slack space, please communicate about curriculum related work or requests in the #curriculum channel. If you are not in the Techtonica slack community and would like to be added, after having completed [the volunteer form](https://docs.google.com/forms/d/e/1FAIpQLSeW0mo-Dpsig70374UEPvzexpas-31Ost_HsFwm0kjNOxtbtg/viewform?c=0&w=1), please kindly search your email for `You can join our Slack by clicking here` or send info@techtonica.org an email.
+
 ## Best Practices
 These best practices are very important when working on a development team. Having code reviews from a team means that there will potentially be multiple request for changes from several reviewers. It helps everyone in the code review to understand what has been addressed, iterated on, what remains outstanding, and even gives opportunity to provide any missing context to one another.
 
@@ -65,6 +70,7 @@ When addressing requests for changes it is best practice to do so in a visible a
 - Request a staff, peer, and mentor reviewer
 - The PR title should be descriptive enough to give an at a glance understanding of what you're working on
 
-
-
-
+## Application Automaton Work
+- You can find the app-based or application automation files on the `mvp` branch
+- Please point any of this related work to be merged back into `mvp` rather than `develop` branch, via your PR
+- Please get clarification from program staff when in doubt or having related questions
