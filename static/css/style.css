@@ -206,11 +206,7 @@ p {
 }
 
 .mc-closeModal {
-  text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .main-content {
@@ -230,8 +226,7 @@ p {
   justify-content: flex-end;
   width: 100%;
   height: 75vh;
-  background: url(../img/three-participants-at-laptops-min.jpg) #0093b5
-    no-repeat top right fixed;
+  background: url(../img/three-participants-at-laptops-min.jpg) #0093b5 no-repeat top right fixed;
   background-size: cover;
 }
 
@@ -277,8 +272,7 @@ p {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/2024-H2-Launch-Celebration-min.png) #0093b5 no-repeat
-    top fixed;
+  background: url(../img/2024-H2-Launch-Celebration-min.png) #0093b5 no-repeat top fixed;
   background-size: cover;
 }
 
@@ -669,8 +663,7 @@ table.mentor td:first-of-type {
   .main-header {
     display: block;
     position: relative;
-    background: url(../img/three-participants-at-laptops-min.jpg) #0093b5
-      no-repeat top center;
+    background: url(../img/three-participants-at-laptops-min.jpg) #0093b5 no-repeat top center;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
@@ -720,8 +713,7 @@ table.mentor td:first-of-type {
     position: relative;
     /*create the upper and lower lines as pseudo-elements of the middle line*/
   }
-  .lines:before,
-  .lines:after {
+  .lines:before, .lines:after {
     display: inline-block;
     width: 3rem;
     height: 0.4285714286rem;
@@ -753,8 +745,7 @@ table.mentor td:first-of-type {
     background: transparent;
     /*overlay the lines by setting both their top values to 0*/
   }
-  .lines-button.x.close .lines:before,
-  .lines-button.x.close .lines:after {
+  .lines-button.x.close .lines:before, .lines-button.x.close .lines:after {
     transform-origin: 50% 50%;
     top: 0;
     width: 2.5em;
@@ -980,6 +971,7 @@ p.press-release-bold {
   -apple-pay-button-type: plain;
   -apple-pay-button-style: black;
 }
+
 /* Fix for contact link visibility on job form page */
 #payment-page p a {
   color: #ffffff !important;
@@ -1127,8 +1119,8 @@ legend {
   color: rgba(0, 115, 149, 0.8);
 }
 
-#info-wrapper > fieldset > input[type="text"],
-#info-wrapper > fieldset > input[type="email"],
+#info-wrapper > fieldset > input[type=text],
+#info-wrapper > fieldset > input[type=email],
 #info-wrapper > fieldset > textarea {
   min-width: 90%;
   margin: auto auto 1em auto;
@@ -1141,7 +1133,7 @@ legend {
   min-height: 6em;
 }
 
-input[type="radio"] {
+input[type=radio] {
   width: 50px;
 }
 
@@ -1191,7 +1183,7 @@ input#code-of-conduct-checkbox {
   margin-right: 15px;
 }
 
-label[for="code-of-conduct-checkbox"] ~ a {
+label[for=code-of-conduct-checkbox] ~ a {
   color: rgba(0, 115, 149, 0.8);
   text-decoration: none;
 }
