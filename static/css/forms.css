@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body {
   margin: 0;
   box-sizing: border-box;
@@ -87,6 +86,41 @@ p {
   text-align: justify;
 }
 
+.form-wrapper .wrapper {
+  max-width: 50%;
+  justify-content: center;
+}
+.form-wrapper #info-wrapper {
+  margin-bottom: 2em;
+}
+.form-wrapper #info-wrapper > fieldset {
+  box-sizing: border-box;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.form-wrapper #info-wrapper > fieldset > label {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  color: rgba(0, 115, 149, 0.8);
+}
+.form-wrapper #info-wrapper > fieldset > input[type=text],
+.form-wrapper #info-wrapper > fieldset > input[type=email],
+.form-wrapper #info-wrapper > fieldset > input[type=tel],
+.form-wrapper #info-wrapper > fieldset > input[type=url],
+.form-wrapper #info-wrapper > fieldset > input[type=number],
+.form-wrapper #info-wrapper > fieldset > textarea {
+  min-width: 90%;
+  margin: auto auto 1em auto;
+  padding: 0.25em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+.form-wrapper #info-wrapper > fieldset > textarea {
+  min-height: 6em;
+}
+
 form {
   display: flex;
   justify-content: center;
@@ -105,34 +139,6 @@ form {
   padding: 2rem;
 }
 
-.application-form .learn-more-wrapper {
-  display: inline;
-}
-
-.application-form .learn-more-content {
-  margin: 0.5em 0 0 0;
-  font-size: large;
-}
-
-.application-form .learn-more-wrapper button {
-  display: inline;
-  background-color: white;
-  font-size: large;
-  color: #0093b5;
-  cursor: pointer;
-  padding: 0;
-  margin: 0 0 0 0.5em;
-}
-
-.application-form .learn-more-wrapper button:hover {
-  background-color: white;
-  color: #16c1f3;
-}
-
-.application-form .learn-more-wrapper button:focus-visible {
-  padding: 3px;
-}
-
 .application-page > h1,
 .application-page > label {
   max-width: 65%;
@@ -145,37 +151,118 @@ legend {
   font-size: 20px;
 }
 
-.application-form > fieldset {
-  padding: 2rem;
-  border: 1px solid rgba(0, 0, 0, 0.559);
-  border-radius: 0.5rem;
-  width: 100%;
+.application-form .learn-more-wrapper {
+  display: inline;
 }
-
-.application-form > fieldset > label {
-  margin-bottom: 0.5rem;
+.application-form .learn-more-content {
+  margin: 0.5em 0 0 0;
   font-size: large;
 }
-
+.application-form .learn-more-wrapper button {
+  display: inline;
+  background-color: white;
+  color: #0093b5;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 0 0 0.5em;
+}
+.application-form .learn-more-wrapper button:hover {
+  background-color: white;
+  color: #16c1f3;
+}
+.application-form .learn-more-wrapper button:focus-visible {
+  padding: 3px;
+}
+.application-form button {
+  background-color: #fc7625;
+  color: white;
+  font-size: large;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: auto;
+  display: block;
+  cursor: pointer;
+}
+.application-form button:hover {
+  background-color: #16c1f3;
+  color: white;
+  transition: 0.3s;
+}
+.application-form > fieldset {
+  border: 1px solid rgba(0, 0, 0, 0.559);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  width: 100%;
+}
+.application-form > fieldset > label {
+  color: #000000;
+  font-size: large;
+  margin-bottom: 0.5rem;
+}
 .application-form > fieldset > input[type=text],
 .application-form > fieldset > input[type=email],
 .application-form > fieldset > input[type=tel],
-.application-form > fieldset > input[type=textarea] {
-  box-sizing: border-box;
+.application-form > fieldset > input[type=date],
+.application-form > fieldset > input[type=number],
+.application-form > fieldset > input[type=url],
+.application-form > fieldset > textarea,
+.application-form > fieldset > select {
   padding: 1em;
   margin-bottom: 2em;
   border: 1px solid rgba(0, 0, 0, 0.559);
   border-radius: 6px;
   width: 100%;
+  box-sizing: border-box;
+}
+.application-form > fieldset > select,
+.application-form > fieldset > input[type=checkbox],
+.application-form > fieldset > #radio-wrapper > input[type=radio] {
+  cursor: pointer;
+}
+.application-form > fieldset > select {
+  appearance: none;
+  background-color: transparent;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmc+DQogIDxwYXRoIGZpbGw9ImdyYXkiIGQ9Ik0xMCwyMzIuN2w0OTAsNTM0LjVwNDkwLTUzNC41SDEweiIgLz4NCjwvc3ZnPg==);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 15px;
+  background-origin: content-box;
+}
+.application-form > fieldset > textarea {
+  min-height: 6em;
+}
+
+.radio-wrapper {
+  width: 100%;
+  margin-bottom: 1em;
+  color: rgba(0, 0, 0, 0.851);
+}
+.radio-wrapper input[type=radio] {
+  width: 50px;
+}
+.radio-wrapper label {
+  color: black;
+  margin-bottom: 2em;
+}
+.radio-wrapper.invalid {
+  padding: 10px;
+  background-color: rgba(255, 200, 200, 0.1);
+  border-radius: 4px;
+  border: 2px solid #bf0020;
 }
 
 #radio-wrapper label {
   color: black;
   margin-bottom: 2em;
 }
-
 #radio-wrapper input {
   background-color: #16c1f3;
+}
+#radio-wrapper > input[type=radio] {
+  margin: 0;
+}
+#radio-wrapper > label {
+  font-size: smaller;
 }
 
 .continue-to-app-btn {
@@ -211,6 +298,44 @@ button.save-btn:hover {
   justify-content: space-between;
 }
 
+.checkbox-wrapper {
+  margin-bottom: 1em;
+}
+.checkbox-wrapper input[type=checkbox] {
+  margin-right: 0.5em;
+}
+
+.checkbox-container {
+  margin: 25px;
+  padding-bottom: 30px;
+  display: flex;
+}
+.checkbox-container input#code-of-conduct-checkbox {
+  margin-right: 15px;
+}
+.checkbox-container label[for=code-of-conduct-checkbox] ~ a {
+  color: rgba(0, 115, 149, 0.8);
+  text-decoration: none;
+}
+.checkbox-container.invalid {
+  padding: 10px;
+  background-color: rgba(255, 200, 200, 0.1);
+  border-radius: 4px;
+  border: 2px solid #bf0020;
+}
+
+span {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#custom-gender,
+#custom-pronouns,
+#custom-race-ethnicity {
+  display: none;
+}
+
+/* ************** Responsive design ************** */
 @media only screen and (min-width: 320px) and (max-width: 599px) {
   html,
   body {
@@ -218,13 +343,14 @@ button.save-btn:hover {
     width: 100%;
   }
   .column {
-    padding: 0 1rem;
+    padding: 0;
     width: 100%;
     margin: auto;
     overflow-x: hidden;
     box-sizing: border-box;
   }
-  .row, .application-page {
+  .row,
+  .application-page {
     padding: 2em;
   }
   .justify {
@@ -251,7 +377,7 @@ button.save-btn:hover {
     max-width: fit-content;
   }
   .application-page > form {
-    width: inherit;
+    width: initial;
     margin-bottom: 2rem;
     padding: 1.5rem;
   }
@@ -271,220 +397,59 @@ button.save-btn:hover {
     gap: 0.5em;
     margin: auto;
   }
+  #radio-wrapper > input[type=radio] {
+    margin: 0;
+  }
+  #radio-wrapper > label,
+  .application-form > fieldset > label {
+    font-size: smaller;
+  }
+}
+@media (max-width: 600px) {
+  .form-wrapper .wrapper {
+    max-width: 100%;
+  }
+  .form-wrapper #info-wrapper {
+    max-width: 100%;
+    min-width: none;
+  }
+  .form-wrapper #info-wrapper > fieldset {
+    margin: 0px;
+    width: 100%;
+  }
 }
 @media only screen and (min-width: 600px) and (max-width: 910px) {
+  .column {
+    padding: 0;
+  }
   html,
   body {
     overflow-x: hidden;
     width: 100%;
   }
-  .column {
-    padding: 0 1rem;
-    width: 100%;
-    margin: auto;
-    overflow-x: hidden;
-    box-sizing: border-box;
-  }
-  .row {
-    padding: 2em;
-  }
   .application-page {
-    padding: 2em 0;
-  }
-  .application-page > h1 {
-    font-size: 2em;
-    max-width: fit-content;
+    padding: 2rem 0;
   }
   .application-page > form {
     width: initial;
     margin-bottom: 2rem;
   }
+  .application-page > h1 {
+    font-size: 2em;
+    max-width: fit-content;
+  }
   legend {
     font-size: 24px;
   }
 }
-
-/*# sourceMappingURL=forms.css.map */
-=======
-/* Form Styles - Following Techtonica Style Guidelines */
-/* Note: This should be converted to SCSS when sass compiler is available */
-
-/* Form wrapper styles following existing payment form patterns */
-.form-wrapper {
-  padding: 50px 0px 50px 0px;
-  width: 100%;
-  max-width: 1000px;
-  margin: 40px auto;
-  display: flex;
-  justify-content: center;
-  border-radius: 20px;
-  background: #fafafa;
-  color: black;
-}
-
-.form-wrapper .wrapper {
-  max-width: 50%;
-  justify-content: center;
-  position: relative;
-}
-
-/* Fieldset styles following existing application form patterns */
-.form-wrapper fieldset {
-  box-sizing: border-box;
-  margin: 1em;
-  padding: 2rem;
-  border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.559);
-  width: 100%;
-}
-
-.form-wrapper legend {
-  color: rgba(0, 115, 149, 0.8);
-  font-size: 20px;
-}
-
-/* Input field styles following existing patterns */
-.form-wrapper label {
-  margin-bottom: 0.5rem;
-  font-size: large;
-  color: rgba(0, 115, 149, 0.8);
-  display: block;
-}
-
-.form-wrapper input[type="text"],
-.form-wrapper input[type="email"],
-.form-wrapper input[type="tel"],
-.form-wrapper input[type="url"],
-.form-wrapper input[type="number"] {
-  box-sizing: border-box;
-  padding: 1em;
-  margin-bottom: 2em;
-  border: 1px solid rgba(0, 0, 0, 0.559);
-  border-radius: 6px;
-  width: 100%;
-}
-
-.form-wrapper textarea {
-  box-sizing: border-box;
-  padding: 1em;
-  margin-bottom: 2em;
-  border: 1px solid rgba(0, 0, 0, 0.559);
-  border-radius: 6px;
-  width: 100%;
-  min-height: 6em;
-}
-
-/* Radio group styles following existing patterns */
-.form-wrapper .radio-wrapper {
-  width: 100%;
-  margin-bottom: 2em;
-  color: rgba(0, 115, 149, 0.8);
-}
-
-.form-wrapper .radio-wrapper p {
-  margin-bottom: 1em;
-  font-size: large;
-}
-
-.form-wrapper .radio-wrapper label {
-  display: inline;
-  margin-right: 1em;
-  margin-bottom: 0;
-  font-size: medium;
-}
-
-.form-wrapper .radio-wrapper input[type="radio"] {
-  width: auto;
-  margin-right: 0.5em;
-  margin-bottom: 0;
-}
-
-/* Checkbox styles following existing patterns */
-.form-wrapper .checkbox-container {
-  margin: 25px;
-  padding-bottom: 30px;
-  display: flex;
-}
-
-.form-wrapper .checkbox-container input[type="checkbox"] {
-  margin-right: 15px;
-  width: auto;
-}
-
-.form-wrapper .checkbox-container label {
-  margin-bottom: 0;
-  font-size: medium;
-}
-
-/* Button styles following existing orange button patterns */
-.form-wrapper .orange-button {
-  margin-bottom: 24px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -o-border-radius: 8px;
-  border-radius: 8px;
-  color: white;
-  display: inline-block;
-  background-color: #fc7625;
-  text-align: center;
-  padding-block: 24px;
-  padding-inline: 16px;
-  width: 100%;
-  font-size: 1.5em;
-  border: none;
-  cursor: pointer;
-}
-
-.form-wrapper .orange-button:hover {
-  background-color: #16c1f3;
-  color: white;
-  transition: 0.3s;
-}
-
-/* Optional field styling */
-.form-wrapper label span {
-  font-style: italic;
-  color: rgba(0, 115, 149, 0.6);
-}
-
-/* Message styling */
-#form-message,
-#payment-flow-message {
-  display: block;
-  margin-top: 1rem;
-  text-align: center;
-}
-
-.error {
-  color: #bf0020;
-}
-
-.success {
-  color: #28a745;
-}
-
-/* Responsive design following existing patterns */
 @media (max-width: 900px) {
   .form-wrapper .wrapper {
     max-width: 75%;
   }
+  .form-wrapper #info-wrapper {
+    max-width: 100%;
+    min-width: none;
+  }
 }
 
-@media (max-width: 600px) {
-  .form-wrapper {
-    margin: 0px;
-    padding: 30px;
-    box-sizing: border-box;
-  }
-  
-  .form-wrapper .wrapper {
-    max-width: 100%;
-  }
-  
-  .form-wrapper fieldset {
-    margin: 0px;
-    width: 100%;
-    padding: 1.5rem;
-  }
-}
->>>>>>> 4bd028a (Address PR feedback: refactor forms to use reusable Jinja partials on mvp branch)
+/*# sourceMappingURL=forms.css.map */
