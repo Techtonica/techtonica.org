@@ -132,6 +132,24 @@
   align-items: center
 }
 
+// General base styles, resets, typography
+body {
+    font-family: sans-serif;
+    color: $text-color;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: $main-blue;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
 .row {
   @include prefix(display, flex, webkit moz);
   flex-flow: row wrap;

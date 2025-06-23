@@ -92,67 +92,159 @@
 </div>
 {% endmacro %}
 
-      {% if include_payment %}
-      <button id="card-button" type="button" class="orange-button">
-        Pay with Card
-      </button>
-      <span id="payment-flow-message"></span>
-      {% else %}
-      <button type="submit" class="orange-button">
-        Submit
-      </button>
-      <span id="form-message"></span>
-      {% endif %}
-    </div>
-  </form>
-</div>
-{% endmacro %}
-
-{% macro fieldset(legend='') %}
+{% macro contact_info() %}
 <fieldset>
-  {% if legend %}
-  <legend>{{ legend }}</legend>
-  {% endif %}
-  {{ caller() }}
+  <legend>Contact Information</legend>
+
+  {{ input_field('Full legal given or \'first\' name:', 'first-name', required=true) }}
+  {{ input_field('Preferred given or "first" name (if not the same as your legal "first" or given name):', 'preferred-name', required=false) }}
+  {{ input_field('Full legal last/family name or surname:', 'last-name', required=true) }}
+  {{ input_field('How to pronounce your full name:', 'name-pronunciation', required=false) }}
+  <div class="learn-more-wrapper">
+    <button class="learn-more-title" type="button" aria-expanded="false">
+      Learn More
+      <span class="toggle-icon">
+        <span class="toggle-icon-plus">+</span>
+        <span class="toggle-icon-minus">-</span>
+      </span>
+    </button>
+    <p
+      class="learn-more-content"
+      tabindex="0"
+      aria-labelledby="name-pronunciation"
+    >
+      You can make a recording on
+      <a href="www.name-coach.com">name-coach.com</a>, generate your link
+      and share in the text field if preferred.
+    </p>
+  </div>
+  <br />
+  {{ input_field('Email:', 'email', type='email', required=true) }}
+  <div class="learn-more-wrapper">
+    <button class="learn-more-title" type="button" aria-expanded="false">
+      Learn More
+      <span class="toggle-icon">
+        <span class="toggle-icon-plus">+</span>
+        <span class="toggle-icon-minus">-</span>
+      </span>
+    </button>
+    <p class="learn-more-content" tabindex="0" aria-labelledby="email">
+      Please use the same business-minded Gmail with your name (e.g.
+      janedoe@gmail.com) that you used in the shorter form. This is the
+      email we will contact you with for the duration of the application
+      process and program.
+    </p>
+  </div>
+  <br />
 </fieldset>
 {% endmacro %}
 
-{% macro input_field(label, id, type='text', required=true) %}
-<label for="{{ id }}">{{ label }}{% if not required %} <span>(optional)</span>{% endif %}</label>
-<input type="{{ type }}" id="{{ id }}" name="{{ id }}" {% if required %}required{% endif %} />
-{% endmacro %}
-
-{% macro textarea_field(label, id, rows=5, required=true) %}
-<label for="{{ id }}">{{ label }}{% if not required %} <span>(optional)</span>{% endif %}</label>
-<textarea id="{{ id }}" name="{{ id }}" rows="{{ rows }}" {% if required %}required{% endif %}></textarea>
-{% endmacro %}
-
-{% macro radio_group(question, name, options) %}
-<div class="radio-wrapper">
-  <p>{{ question }}</p>
-  {% for opt in options %}
-  <label for="{{ name }}-{{ opt.value }}">{{ opt.label }}</label>
-  <input type="radio" id="{{ name }}-{{ opt.value }}" name="{{ name }}" value="{{ opt.value }}" {% if opt.required
-    %}required{% endif %} />
-  {% endfor %}
+{% macro gender_identity_select() %}
+<label for="gender-identity">With which gender identity do you most align? </label>
+<div class="learn-more-wrapper">
+  <button class="learn-more-title" type="button" aria-expanded="false">
+    Learn More
+    <span class="toggle-icon">
+      <span class="toggle-icon-plus">+</span>
+      <span class="toggle-icon-minus">-</span>
+    </span>
+  </button>
+  <div
+    class="learn-more-content"
+    tabindex="0"
+    aria-labelledby="gender-identity"
+  >
+    <ul>
+      <li><strong>Agender or genderless: </strong>People who do not identify with any gender or feel an absence of gender. They may use terms like genderblank, genderfree, genderless, gendervoid, non-gendered, or null gender.</li>
+      <li><strong>Genderfluid: </strong>People whose gender identity is not fixed and may change over time, fluctuating between different gender expressions or identities.</li>
+      <li><strong>Cis Man or Cis Woman: </strong>A person whose gender identity aligns with the male or female sex they were assigned at birth.</li>
+      <li><strong>Non-binary or Genderqueer: </strong>People who do not identify exclusively as a man or a woman. They may feel like both, somewhere in between, or outside these categories entirely.</li>
+      <li><strong>Trans Man or Trans Woman: </strong>People whose gender identity differs from the sex they are assigned at birth. e.g., a transgender man is someone who was assigned female at birth but whose gender identity is male, while a transgender woman is someone who is assigned male at birth but whose gender identity is female.</li>
+      <li><strong>Other: </strong>A person whose gender identity does not fit within the listed categories or who prefers a different term.</li>
+    </ul>
+  </div>
 </div>
+<br />
+<select name="gender-identity" id="gender-identity" aria-label="Gender Identity selection" required>
+  <option value="">Select an Option</option>
+  <option value="Agender/Genderless">Agender/Genderless</option>
+  <option value="Genderfluid">Genderfluid</option>
+  <option value="Cis Man">Cis Man</option>
+  <option value="Non-binary/Genderqueer">Non-binary/Genderqueer</option>
+  <option value="Trans Man">Trans Man</option>
+  <option value="Trans Woman">Trans Woman</option>
+  <option value="Cis Woman">Cis Woman</option>
+  <option value="Other">Other</option>
+</select>
+<input type="text" id="custom-gender" name="custom-gender" placeholder="Please enter your gender identity" aria-label="custom gender input" disabled /><br />
 {% endmacro %}
 
-{% macro checkbox_field(id, label, required=true) %}
-<div class="checkbox-wrapper">
-  <input type="checkbox" id="{{ id }}" name="{{ id }}" {% if required %}required{% endif %} />
-  <label for="{{ id }}">{{ label }}</label>
-</div>
+{% macro pronouns_checkbox_group() %}
+<label for="pronouns">What are your pronouns? </label><br />
+{{ checkbox_field('pronouns-she-her', 'She/Her', required=true) }}
+{{ checkbox_field('pronouns-he-him', 'He/Him', required=true) }}
+{{ checkbox_field('pronouns-they-them', 'They/Them', required=true) }}
+{{ checkbox_field('pronouns-ze-zir', 'Ze/Zir', required=true) }}
+{{ checkbox_field('pronouns-other', 'Other', required=true) }}
+<input type="text" id="custom-pronouns" name="custom-pronouns" placeholder="Please enter your preferred pronouns" aria-label="custom pronouns selection" disabled /><br />
 {% endmacro %}
 
-{% macro conduct_checkbox() %}
-<div class="checkbox-container">
-  <input type="checkbox" id="code-of-conduct-checkbox" required />
-  <label for="code-of-conduct-checkbox">
-    By checking this box, you agree that what you are submitting in this
-    form adheres to
-    <a href="{{ url_for('render_conduct_page') }}" title="Code of Conduct" target="_blank"
-      rel="noopener noreferrer">Techtonica's Code of Conduct</a>.
-  </label>
+{% macro age_group_select() %}
+<label for="age-group">Select your age group </label><br />
+<select name="age-group" id="age-group" required>
+  <option value="" selected disabled hidden>Select an Option</option>
+  <option value="18-24">18-24</option>
+  <option value="25-34">25-34</option>
+  <option value="35-44">35-44</option>
+  <option value="45-54">45-54</option>
+  <option value="55-64">55-64</option>
+  <option value="65+">65+</option>
+</select><br />
+{% endmacro %}
+
+{% macro race_ethnicity_select() %}
+<label for="race-ethnicity">With which racial/ethnic groups do you most identify? </label>
+<div class="learn-more-wrapper">
+  <button class="learn-more-title" type="button" aria-expanded="false">
+    Learn More
+    <span class="toggle-icon">
+      <span class="toggle-icon-plus">+</span>
+      <span class="toggle-icon-minus">-</span>
+    </span>
+  </button>
+  <div
+    class="learn-more-content"
+    tabindex="0"
+    aria-labelledby="race-ethnicity"
+  >
+    <ul>
+      <li><strong>African-American, Black, or African:</strong> A person having origins in Africa, including those across the African diaspora, such as communities in the Americas, the Caribbean, and other regions.</li>
+      <li><strong>Central Asian:</strong> A person having origins in any of the Central Asian countries, including Kazakhstan, Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan.</li>
+      <li><strong>East Asian:</strong> A person having origins in any of the East Asian countries, including China, Japan, Korea, Mongolia, Tibet, and Taiwan.</li>
+      <li><strong>Hispanic or Latinx:</strong> A person of having origins in Cuba, Mexico, Puerto Rico, the Dominican Republic, or South or Central America.</li>
+      <li><strong>Middle Eastern or North African (MENA):</strong> A person having origins in the Middle East or North Africa.</li>
+      <li><strong>Native American, Alaskan Native, First Nations or Indigenous:</strong> A person having origins in any of the Indigenous peoples of North and South America (including Central America).</li>
+      <li><strong>Pacific Islander:</strong> A person having origins in any of the Pacific Islands, including Polynesia, Micronesia, and Melanesia.</li>
+      <li><strong>South Asian:</strong> A person having origins in any of the South Asian countries, including Bangladesh, Bhutan, India, Nepal, Pakistan, Afghanistan, and Sri Lanka.</li>
+      <li><strong>Southeast Asian:</strong> A person having origins in any of the Southeast Asian countries, including Cambodia, Indonesia, Laos, Malaysia, Myanmar, the Philippines, Singapore, Thailand, and Vietnam.</li>
+      <li><strong>White:</strong> A person having origins in Europe.</li>
+      <li><strong>Another race/ethnicity:</strong> A person who identifies with a racial/ethnic group not listed above.</li>
+    </ul>
+  </div>
 </div>
+<select name="race-ethnicity" id="race-ethnicity" aria-label="Racial Ethnicity Selection" required>
+  <option value="none" selected disabled hidden>Select an Option</option>
+  <option value="African-American/Black/African">African-American/Black/African</option>
+  <option value="Central Asian">Central Asian</option>
+  <option value="East Asian">East Asian</option>
+  <option value="Hispanic/Latinx">Hispanic/Latinx</option>
+  <option value="Middle Eastern or North African">Middle Eastern or North African</option>
+  <option value="Native American/Alaskan Native/First Nations/Indigenous">Native American/Alaskan Native/First Nations/Indigenous</option>
+  <option value="Pacific Islander">Pacific Islander</option>
+  <option value="South Asian">South Asian</option>
+  <option value="Southeast Asian">Southeast Asian</option>
+  <option value="White">White</option>
+  <option value="Other">Other</option>
+</select>
+<input type="text" id="custom-race-ethnicity" name="custom-race-ethnicity" aria-label="race-ethnicity input" placeholder="Please enter your racial/ethnic group" disabled /><br />
 {% endmacro %}

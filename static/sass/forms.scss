@@ -1,238 +1,374 @@
 @use "settings" as *;
 
-  form {
-    display: flex;
+// Form wrapper and structure
+.form-wrapper {
+  .wrapper {
+    max-width: 50%;
     justify-content: center;
-    align-items: center;
-    margin: 2rem auto;
-    width: 75%;
-    max-width: 150rem;
-    padding: 3rem;
-    background-color: white;
-    border: 1px solid rgb(0, 0, 0);
   }
 
-  .application-page {
-    justify-content: center;
-    background-color: $main-blue;
-    padding: 2rem;
-  }
-
-  .application-form .learn-more-wrapper {
-    display: inline;
-  }
-
-  .application-form .learn-more-content {
-    margin: 0.5em 0 0 0;
-    font-size: large;
-  }
-
-  .application-form .learn-more-wrapper button {
-    display: inline;
-    background-color: white;
-    font-size: large;
-    color: $main-blue;
-    cursor: pointer;
-    padding: 0;
-    margin: 0 0 0 0.5em;
-  }
-
-  .application-form .learn-more-wrapper button:hover {
-    background-color: white;
-    color: $light-blue;
-  }
-
-  .application-form .learn-more-wrapper button:focus-visible {
-    padding: 3px;
-  }
-
-  .application-page > h1,
-  .application-page > label {
-    max-width: 65%;
-    margin: auto;
-    text-align: center;
-  }
-
-  legend {
-    color: rgba(0, 115, 149, 0.8);
-    font-size: 20px;
-  }
-
-  .application-form > fieldset {
-    padding: 2rem;
-    border: 1px solid rgba(0, 0, 0, 0.559);
-    border-radius: 0.5rem;
-    width: 100%;
-  }
-
-  .application-form > fieldset > label {
-    margin-bottom: 0.5rem;
-    font-size: large;
-  }
-
-  .application-form > fieldset > input[type="text"],
-  .application-form > fieldset > input[type="email"],
-  .application-form > fieldset > input[type="tel"],
-  .application-form > fieldset > input[type="textarea"] {
-    box-sizing: border-box;
-    padding: 1em;
+  #info-wrapper {
     margin-bottom: 2em;
-    border: 1px solid rgba(0, 0, 0, 0.559);
-    border-radius: 6px;
-    width: 100%;
+
+    > fieldset {
+      box-sizing: border-box;
+      margin: 1em;
+      padding: 1em;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    > fieldset > label {
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+      color: $main-blue;
+    }
+
+    > fieldset > input[type="text"],
+    > fieldset > input[type="email"],
+    > fieldset > input[type="tel"],
+    > fieldset > input[type="url"],
+    > fieldset > input[type="number"],
+    > fieldset > textarea {
+      min-width: 90%;
+      margin: auto auto 1em auto;
+      padding: 0.25em;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+    }
+
+    > fieldset > textarea {
+      min-height: 6em;
+    }
+  }
+}
+
+// Main form styles
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  width: 75%;
+  max-width: 150rem;
+  padding: 3rem;
+  background-color: white;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+// Application page specific styles
+.application-page {
+  justify-content: center;
+  background-color: $main-blue;
+  padding: 2rem;
+}
+
+.application-form .learn-more-wrapper {
+  display: inline;
+}
+
+.application-form .learn-more-content {
+  margin: 0.5em 0 0 0;
+  font-size: large;
+}
+
+.application-form .learn-more-wrapper button {
+  display: inline;
+  background-color: white;
+  font-size: large;
+  color: $main-blue;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 0 0 0.5em;
+}
+
+.application-form .learn-more-wrapper button:hover {
+  background-color: white;
+  color: $light-blue;
+}
+
+.application-form .learn-more-wrapper button:focus-visible {
+  padding: 3px;
+}
+
+.application-page > h1,
+.application-page > label {
+  max-width: 65%;
+  margin: auto;
+  text-align: center;
+}
+
+// Legend styles
+legend {
+  color: $main-blue; // From second branch
+  font-size: 20px; // From first branch
+}
+
+// Fieldset styles for application form
+.application-form > fieldset {
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.559);
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+// Label inside fieldset for application form
+.application-form > fieldset > label {
+  margin-bottom: 0.5rem;
+  font-size: large;
+}
+
+// Input types inside fieldset for application form
+.application-form > fieldset > input[type="text"],
+.application-form > fieldset > input[type="email"],
+.application-form > fieldset > input[type="tel"],
+.application-form > fieldset > input[type="url"], // Added from second branch
+.application-form > fieldset > input[type="number"], // Added from second branch
+.application-form > fieldset > textarea {
+  box-sizing: border-box;
+  padding: 1em;
+  margin-bottom: 2em;
+  border: 1px solid rgba(0, 0, 0, 0.559);
+  border-radius: 6px;
+  width: 100%;
+}
+
+.application-form > fieldset > textarea {
+  min-height: 6em; // Added from second branch
+}
+
+// Radio button styling
+.radio-wrapper {
+  width: 100%;
+  margin-bottom: 1em;
+  color: $main-blue;
+
+  input[type="radio"] {
+    width: 50px;
   }
 
-  #radio-wrapper label {
+  label {
     color: black;
     margin-bottom: 2em;
   }
-  #radio-wrapper input {
+
+  // Invalid state styling
+  &.invalid {
+    padding: 10px;
+    background-color: rgba(255, 200, 200, 0.1);
+    border-radius: 4px;
+    border: 2px solid $error-color;
+  }
+}
+
+#radio-wrapper {
+  label {
+    color: black;
+    margin-bottom: 2em;
+  }
+
+  input {
     background-color: $light-blue;
   }
+}
 
-  .continue-to-app-btn {
-      width: 50%;
-    }
+// Button styles
+.continue-to-app-btn {
+  width: 50%;
+}
 
-  button.continue-to-app-btn,
-  button.previous-btn,
-  button.save-btn {
-    background-color: $focal-orange;
-    color: white;
-    font-size: large;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
+button.continue-to-app-btn,
+button.previous-btn,
+button.save-btn {
+  background-color: $focal-orange;
+  color: white;
+  font-size: large;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+button.continue-to-app-btn:hover,
+button.previous-btn:hover,
+button.save-btn:hover {
+  background-color: $light-blue;
+  color: white;
+  transition: 0.3s;
+}
+
+.form-button {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Checkbox styling
+.checkbox-wrapper {
+  margin-bottom: 1em;
+
+  input[type="checkbox"] {
+    margin-right: 0.5em;
+  }
+}
+
+.checkbox-container {
+  margin: 25px;
+  padding-bottom: 30px;
+  display: flex;
+
+  input#code-of-conduct-checkbox {
+    margin-right: 15px;
   }
 
-  button.continue-to-app-btn:hover,
-  button.previous-btn:hover,
-  button.save-btn:hover {
-    background-color: $light-blue;
-    color: white;
-    transition: 0.3s;
+  label[for="code-of-conduct-checkbox"] ~ a {
+    color: $main-blue;
+    text-decoration: none;
   }
 
-  .form-button {
-    display: flex;
+  // Invalid state styling
+  &.invalid {
+    padding: 10px;
+    background-color: rgba(255, 200, 200, 0.1);
+    border-radius: 4px;
+    border: 2px solid $error-color;
+  }
+}
+
+// Optional field styling
+span {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* ************** Responsive design ************** */
+
+// Mobile (320px to 599px)
+@media only screen and (min-width: 320px) and (max-width: 599px) {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  .column {
+    padding: 0 1rem;
+    width: 100%;
     margin: auto;
-    align-items: center;
-    justify-content: space-between;
+    overflow-x: hidden;
+    box-sizing: border-box;
   }
+  .row,
+  .application-page {
+    padding: 2em;
+  }
+  .justify {
+    text-align: left;
+  }
+  .large-white-text {
+    font-size: 1.5em;
+  }
+  button.previous-btn,
+  button.continue-to-app-btn,
+  button.save-btn {
+    font-size: smaller;
+  }
+  .application-form .learn-more-wrapper .learn-more-title,
+  .application-form .learn-more-wrapper .toggle-icon {
+    color: $main-blue;
+    font-size: smaller;
+  }
+  .application-form .learn-more-wrapper .learn-more-content {
+    font-size: smaller;
+  }
+  .application-page > h1 {
+    font-size: 1.5em;
+    max-width: fit-content;
+  }
+  .application-page > form {
+    width: inherit;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+  }
+  legend {
+    font-size: 18px;
+  }
+  .application-form > fieldset {
+    min-width: 95%;
+    word-wrap: break-word;
+    padding: 1.5rem;
+    margin: 0;
+  }
+  .application-form > fieldset > label {
+    font-size: smaller;
+  }
+  .form-button {
+    gap: 0.5em;
+    margin: auto;
+  }
+}
 
-  @media only screen and (min-width: 320px) and (max-width: 599px) {
-
-    html,
-    body {
-      overflow-x: hidden;
-      width: 100%;
+// Small screens (max-width 600px)
+@media (max-width: 600px) {
+  .form-wrapper {
+    .wrapper {
+      max-width: 100%;
     }
-
-    .column {
-      padding: 0 1rem;
-      width: 100%;
-      margin: auto;
-      overflow-x: hidden;
-      box-sizing: border-box;
-    }
-
-    .row, .application-page {
-      padding: 2em;
-    }
-
-    .justify {
-      text-align: left;
-    }
-
-    .large-white-text {
-      font-size: 1.5em;
-    }
-
-    button.previous-btn,
-    button.continue-to-app-btn,
-    button.save-btn {
-      font-size: smaller;
-    }
-
-    .application-form .learn-more-wrapper .learn-more-title,
-    .application-form .learn-more-wrapper .toggle-icon {
-      color: $main-blue;
-      font-size: smaller;
-    }
-
-    .application-form .learn-more-wrapper .learn-more-content {
-      font-size: smaller;
-    }
-
-    .application-page > h1 {
-      font-size: 1.5em;
-      max-width: fit-content;
-    }
-
-    .application-page > form {
-      width: inherit;
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-    }
-
-    legend {
-      font-size: 18px;
-    }
-
-    .application-form > fieldset {
-      min-width: 95%;
-      word-wrap: break-word;
-      padding: 1.5rem;
-      margin: 0;
-    }
-
-    .application-form > fieldset > label {
-      font-size: smaller;
-    }
-
-    .form-button {
-      gap: 0.5em;
-      margin: auto;
+    #info-wrapper {
+      max-width: 100%;
+      min-width: none;
+      > fieldset {
+        margin: 0px;
+        width: 100%;
+      }
     }
   }
+}
 
-  @media only screen and (min-width: 600px) and (max-width: 910px) {
-    html,
-    body {
-      overflow-x: hidden;
-      width: 100%;
+// Tablet (600px to 910px)
+@media only screen and (min-width: 600px) and (max-width: 910px) {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  .column {
+    padding: 0 1rem;
+    width: 100%;
+    margin: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  .row {
+    padding: 2em;
+  }
+  .application-page {
+    padding: 2em 0;
+  }
+  .application-page > h1 {
+    font-size: 2em;
+    max-width: fit-content;
+  }
+  .application-page > form {
+    width: initial;
+    margin-bottom: 2rem;
+  }
+  legend {
+    font-size: 24px;
+  }
+}
+
+// Medium screens (max-width 900px)
+@media (max-width: 900px) {
+  .form-wrapper {
+    .wrapper {
+      max-width: 75%;
     }
-
-    .column {
-      padding: 0 1rem;
-      width: 100%;
-      margin: auto;
-      overflow-x: hidden;
-      box-sizing: border-box;
-    }
-
-    .row {
-      padding: 2em;
-    }
-
-    .application-page {
-      padding: 2em 0;
-    }
-
-    .application-page > h1 {
-      font-size: 2em;
-      max-width: fit-content;
-    }
-
-    .application-page > form {
-      width: initial;
-      margin-bottom: 2rem;
-    }
-
-    legend {
-      font-size: 24px;
+    #info-wrapper {
+      max-width: 100%;
+      min-width: none;
     }
   }
+}

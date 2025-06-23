@@ -24,8 +24,10 @@ Post A Job {% endblock title %} {% block content %}
   {% if not credentials %}
   <p><a href="mailto:info@techtonica.org">Contact us</a> to post your job!</p>
   {% else %}
-  {% call form_wrapper('Job Listing Form', 'fast-checkout', 'payment-form form-wrapper', include_payment=true) %} {%
-  call fieldset('Job Details') %}
+  {# Adjusted form_wrapper call to match parameters: title, form_id, form_class, include_payment #}
+  {% call form_wrapper('Job Listing Form', 'fast-checkout', 'payment-form form-wrapper', include_payment=true) %}
+  {% call fieldset('Job Details') %}
+  {# input_field now takes label, id, type, required #}
   {{ input_field('Job Title', 'jobtitle') }}
   {{ input_field('Company', 'company') }}
   {{ input_field('Type', 'type', required=false) }}
@@ -34,9 +36,9 @@ Post A Job {% endblock title %} {% block content %}
 
   {{ radio_group('Can you make a referral/connection?', 'referral', [('yes', 'Yes'), ('no', 'No')]) }}
 
-  {{ input_field('Salary Range', 'salaryrange', required=false) }} {{ textarea_field('Description', 'description',
-  required=false) }}
-  {{ textarea_field('Link to Apply', 'applicationlink', required=false) }}
+  {{ input_field('Salary Range', 'salaryrange', required=false) }}
+  {{ textarea_field('Description', 'description', required=false) }}
+  {{ input_field('Link to Apply', 'applicationlink', required=false) }}
   {% endcall %}
   {% endcall %}
   {% endif %}
