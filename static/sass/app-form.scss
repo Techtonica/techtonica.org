@@ -1,0 +1,202 @@
+// Form components styles following Techtonica styling guidelines
+@import "settings";
+
+// Styles specific to the application page and application form
+
+.application-page {
+  justify-content: center;
+  background-color: $main-blue;
+  padding: 2rem;
+}
+.application-page > h1,
+.application-page > p {
+  max-width: 65%;
+  margin: auto;
+  text-align: center;
+}
+
+form { // This targets the main form element, which is .application-form in form.jinja
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  width: 75%;
+  max-width: 150rem;
+  padding: 3rem;
+  background-color: $white;
+  border: 1px solid $text-color;
+}
+
+.application-form {
+  .learn-more-wrapper {
+    display: inline;
+  }
+
+  .learn-more-content {
+    margin: 0.5em 0 0 0;
+    font-size: large;
+  }
+
+  .learn-more-wrapper button {
+    display: inline;
+    background-color: $white;
+    color: $main-blue;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 0 0 0.5em;
+  }
+
+  .learn-more-wrapper button:hover {
+    background-color: $white;
+    color: $hover-blue;
+  }
+
+  .learn-more-wrapper button:focus-visible {
+    padding: 3px;
+  }
+
+  button { // General button styling within application-form
+    background-color: $focal-orange;
+    color: $white;
+    font-size: large;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: auto;
+    display: block;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: $hover-blue;
+    color: $white;
+    transition: 0.3s;
+  }
+
+  > fieldset {
+    border: 1px solid $form-border-color;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    width: 100%;
+  }
+
+  > fieldset > label {
+    color: $text-color;
+    font-size: large;
+  }
+
+  > fieldset > input[type="text"],
+  > fieldset > input[type="email"],
+  > fieldset > input[type="tel"],
+  > fieldset > input[type="date"],
+  > fieldset > input[type="number"],
+  > fieldset > input[type="url"],
+  > fieldset > textarea,
+  > fieldset > select {
+    padding: 1em;
+    margin-bottom: 2em;
+    border: 1px solid $form-border-color;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  > fieldset > select,
+  > fieldset > input[type="checkbox"],
+  > fieldset > #radio-wrapper > input[type="radio"] {
+    cursor: pointer;
+  }
+
+  > fieldset > select {
+    appearance: none;
+    background-color: transparent;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmc+DQogIDxwYXRoIGZpbGw9ImdyYXkiIGQ9Ik0xMCwyMzIuN2w0OTAsNTM0LjVwNDkwLTUzNC41SDEweiIgLz4NCjwvc3ZnPg==);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 15px;
+    background-origin: content-box;
+  }
+}
+
+#radio-wrapper { // This specific ID rule was in the inline block
+  width: 100%;
+  color: $radio-wrapper-color;
+}
+
+#custom-gender,
+#custom-pronouns,
+#custom-race-ethnicity {
+  display: none;
+}
+
+// Responsive design for application page and form
+@media only screen and (min-width: 320px) and (max-width: 599px) {
+  .column {
+    padding: 0;
+  }
+  .application-page > form {
+    width: initial;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+  }
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  .application-page {
+    padding: 2rem 0;
+  }
+  .application-page > h1 {
+    font-size: 1.5em;
+    max-width: fit-content;
+  }
+  legend {
+    font-size: 18px;
+  }
+  .application-form > fieldset {
+    min-width: 95%;
+    word-wrap: break-word;
+    padding: 1.5rem;
+    margin: 0;
+  }
+  #radio-wrapper > input[type="radio"] {
+    margin: 0;
+  }
+  #radio-wrapper > label,
+  .application-form > fieldset > label {
+    font-size: smaller;
+  }
+  .application-form .learn-more-wrapper .learn-more-title,
+  .application-form .learn-more-wrapper .toggle-icon {
+    color: $main-blue;
+    font-size: smaller;
+  }
+
+  .application-form .learn-more-wrapper .learn-more-content {
+    font-size: smaller;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 910px) {
+  .column {
+    padding: 0;
+  }
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  .application-page {
+    padding: 2rem 0;
+  }
+  .application-page > form {
+    width: initial;
+    margin-bottom: 2rem;
+  }
+  .application-page > h1 {
+    font-size: 2em;
+    max-width: fit-content;
+  }
+  legend {
+    font-size: 24px;
+  }
+}
