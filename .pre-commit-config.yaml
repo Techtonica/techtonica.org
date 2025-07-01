@@ -35,5 +35,5 @@ repos:
       - id: prettier
 
 default_language_version:
-  python: python3.13.5
+  python: python3.13.2
 # minimum_pre_commit_version: "1.21"
