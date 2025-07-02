@@ -135,7 +135,7 @@
   align-items: center;
 }
 
-// Base styles that should be at the top
+// General base styles, resets, typography
 body {
   font-family: sans-serif;
   color: $text-color;
@@ -153,7 +153,6 @@ h1, h2, h3 {
   padding: 1rem;
 }
 
-// Layout classes
 .row {
   @include prefix(display, flex, webkit moz);
   flex-flow: row wrap;
@@ -1783,6 +1782,3 @@ progress::-webkit-progress-bar {
     font-size: 13px;
   }
 }
-
-// Import modular stylesheets at the end
-@import 'app-form';
