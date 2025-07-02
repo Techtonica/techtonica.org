@@ -430,6 +430,7 @@ p {
 .contact-us,
 .donate,
 .orange-button {
+  margin-bottom: 24px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -o-border-radius: 8px;
@@ -1340,6 +1341,17 @@ textarea.invalid {
   top: 0;
   left: 0;
   margin-bottom: 0;
+}
+
+/* News Page Styling */
+#news-title {
+  padding: 0;
+}
+
+/* Sponsor Page Styling */
+.sponsor-benefit-table {
+  margin-right: auto;
+  margin-left: auto;
   width: 100%;
   height: 5rem;
   background-color: white;
