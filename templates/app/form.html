@@ -1,4 +1,4 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 {% from "form_macros.html" import fieldset, input_field, textarea_field, radio_group, checkbox_field, conduct_checkbox, contact_info, gender_identity_select, pronouns_checkbox_group, age_group_select, race_ethnicity_select %}
 
 {% block title %} Techtonica: Bridging the Tech Gap —
@@ -13,7 +13,7 @@ Techtonica Application {% endblock title %}
       {{ gender_identity_select() }}
       {{ pronouns_checkbox_group() }}
 
-      {{ input_field('What is your birth date?', 'birth-date', type='date') }}
+      {{ input_field('What is your birth date?', 'birth-date', type='date', required=true) }}
 
       {{ age_group_select() }}
 
@@ -67,6 +67,98 @@ Techtonica Application {% endblock title %}
     {% endcall %}
   </form>
 </section>
+
+<script>
+// Enhanced form validation
+function validateForm() {
+  let isValid = true;
+  const form = document.getElementById('app-form-1');
+  
+  // Clear previous validation styling
+  form.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
+  form.querySelectorAll('.validation-message').forEach(el => el.style.display = 'none');
+  
+  // Validate required fields
+  const requiredFields = form.querySelectorAll('input[required], select[required], textarea[required]');
+  requiredFields.forEach(field => {
+    if (!field.value.trim()) {
+      field.classList.add('invalid');
+      isValid = false;
+    }
+  });
+  
+  // Validate pronouns group (at least one checkbox must be selected)
+  const pronounsGroup = form.querySelector('.pronouns-group');
+  const pronounsCheckboxes = pronounsGroup.querySelectorAll('input[type="checkbox"]');
+  const pronounsChecked = Array.from(pronounsCheckboxes).some(cb => cb.checked);
+  
+  if (!pronounsChecked) {
+    pronounsGroup.classList.add('invalid');
+    pronounsGroup.querySelector('.validation-message').style.display = 'block';
+    isValid = false;
+  }
+  
+  // Validate radio groups (each group must have one selected)
+  const radioGroups = form.querySelectorAll('.radio-wrapper');
+  radioGroups.forEach(group => {
+    const radios = group.querySelectorAll('input[type="radio"]');
+    const hasSelection = Array.from(radios).some(radio => radio.checked);
+    if (!hasSelection) {
+      group.classList.add('invalid');
+      isValid = false;
+    }
+  });
+  
+  if (isValid) {
+    // Form is valid, proceed to next page
+    console.log('Form is valid, proceeding...');
+    // Add your navigation logic here
+  } else {
+    // Scroll to first invalid field
+    const firstInvalid = form.querySelector('.invalid');
+    if (firstInvalid) {
+      firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+}
+
+// Add real-time validation
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('app-form-1');
+  
+  // Remove invalid styling when user starts fixing the field
+  form.addEventListener('input', function(e) {
+    if (e.target.classList.contains('invalid')) {
+      e.target.classList.remove('invalid');
+    }
+  });
+  
+  // Handle pronouns validation
+  const pronounsCheckboxes = form.querySelectorAll('.pronouns-group input[type="checkbox"]');
+  pronounsCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+      const pronounsGroup = this.closest('.pronouns-group');
+      const anyChecked = Array.from(pronounsCheckboxes).some(cb => cb.checked);
+      
+      if (anyChecked) {
+        pronounsGroup.classList.remove('invalid');
+        pronounsGroup.querySelector('.validation-message').style.display = 'none';
+      }
+    });
+  });
+  
+  // Handle radio group validation
+  const radioInputs = form.querySelectorAll('input[type="radio"]');
+  radioInputs.forEach(radio => {
+    radio.addEventListener('change', function() {
+      const radioWrapper = this.closest('.radio-wrapper');
+      if (radioWrapper) {
+        radioWrapper.classList.remove('invalid');
+      }
+    });
+  });
+});
+</script>
 
 <script src="{{ url_for('static', filename='js/form.js') }}"></script>
 {% endblock content %}

@@ -76,7 +76,7 @@
 </div>
 {% endmacro %}
 
-{% macro checkbox_field(id, label, required=true) %}
+{% macro checkbox_field(id, label, required=false) %}
 <div class="checkbox-wrapper">
   <input type="checkbox" id="{{ id }}" name="{{ id }}" {% if required %}required{% endif %} />
   <label for="{{ id }}">{{ label }}</label>
@@ -188,13 +188,18 @@
 {% endmacro %}
 
 {% macro pronouns_checkbox_group() %}
-<label for="pronouns">What are your pronouns? </label><br />
-{{ checkbox_field('pronouns-she-her', 'She/Her', required=true) }}
-{{ checkbox_field('pronouns-he-him', 'He/Him', required=true) }}
-{{ checkbox_field('pronouns-they-them', 'They/Them', required=true) }}
-{{ checkbox_field('pronouns-ze-zir', 'Ze/Zir', required=true) }}
-{{ checkbox_field('pronouns-other', 'Other', required=true) }}
-<input type="text" id="custom-pronouns" name="custom-pronouns" placeholder="Please enter your preferred pronouns" aria-label="custom pronouns selection" disabled /><br />
+<div class="pronouns-group" data-required-group="pronouns">
+  <label>What are your pronouns? <span class="required-indicator">*</span></label><br />
+  {{ checkbox_field('pronouns-she-her', 'She/Her', required=false) }}
+  {{ checkbox_field('pronouns-he-him', 'He/Him', required=false) }}
+  {{ checkbox_field('pronouns-they-them', 'They/Them', required=false) }}
+  {{ checkbox_field('pronouns-ze-zir', 'Ze/Zir', required=false) }}
+  {{ checkbox_field('pronouns-other', 'Other', required=false) }}
+  <input type="text" id="custom-pronouns" name="custom-pronouns" placeholder="Please enter your preferred pronouns" aria-label="custom pronouns selection" disabled /><br />
+  <div class="validation-message" style="display: none; color: red; font-size: smaller;">
+    Please select at least one pronoun option.
+  </div>
+</div>
 {% endmacro %}
 
 {% macro age_group_select() %}
