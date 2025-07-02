@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* General form components and styling that can be reused across different forms
   - general reusable form components 
   - application-specific styling*/
@@ -230,101 +231,155 @@ span {
   color: rgba(0, 0, 0, 0.6);
 }
 
-@media (max-width: 900px) {
-  .form-wrapper .wrapper {
-    max-width: 75%;
-  }
-  .form-wrapper #info-wrapper {
-    max-width: 100%;
-    min-width: none;
-  }
+/* Square Payment System Styling */
+.payment-form {
+  padding: 50px 0px 50px 0px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  align-items: center;
 }
-@media only screen and (min-width: 320px) and (max-width: 599px) {
-  html,
-  body {
-    overflow-x: hidden;
-    width: 100%;
-  }
-  .column {
-    padding: 0;
-    width: 100%;
-    margin: auto;
-    overflow-x: hidden;
-    box-sizing: border-box;
-  }
-  .row,
-  .application-page {
-    padding: 2em;
-  }
-  .justify {
-    text-align: left;
-  }
-  .large-white-text {
-    font-size: 1.5em;
-  }
-  button.previous-btn,
-  button.continue-to-app-btn,
-  button.save-btn {
-    font-size: smaller;
-  }
-  .application-form .learn-more-wrapper .learn-more-title,
-  .application-form .learn-more-wrapper .toggle-icon {
-    color: #0093b5;
-    font-size: smaller;
-  }
-  .application-form .learn-more-wrapper .learn-more-content {
-    font-size: smaller;
-  }
-  .application-page > h1 {
-    font-size: 1.5em;
-    max-width: fit-content;
-  }
-  .application-page > form {
-    width: initial;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-  }
-  legend {
-    font-size: 18px;
-  }
-  .application-form > fieldset {
-    min-width: 95%;
-    word-wrap: break-word;
-    padding: 1.5rem;
-    margin: 0;
-  }
-  .application-form > fieldset > label {
-    font-size: smaller;
-  }
-  .form-button {
-    gap: 0.5em;
-    margin: auto;
-  }
-  #radio-wrapper > input[type=radio] {
-    margin: 0;
-  }
-  #radio-wrapper > label,
-  .application-form > fieldset > label {
-    font-size: smaller;
-  }
+
+#apple-pay-button {
+  height: 48px;
+  width: 100%;
+  display: inline-block;
+  -webkit-appearance: -apple-pay-button;
+  -apple-pay-button-type: plain;
+  -apple-pay-button-style: black;
 }
-@media (max-width: 600px) {
-  .form-wrapper .wrapper {
-    max-width: 100%;
-  }
-  .form-wrapper #info-wrapper {
-    max-width: 100%;
-    min-width: none;
-  }
-  .form-wrapper #info-wrapper > fieldset {
-    margin: 0px;
-    width: 100%;
-  }
+
+#fast-checkout {
+  background: #fafafa;
+  color: black;
 }
-/* Styles specific to app-form page (form.html)
-  - application page layout
-  - form container 
-  - application-specific*/
+#fast-checkout h3 {
+  color: #0093b5;
+}
+#fast-checkout input {
+  border-radius: 6px;
+  position: relative;
+}
+#fast-checkout .wrapper {
+  position: relative;
+}
+#fast-checkout button {
+  width: 100%;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  color: white;
+  display: inline-block;
+  background-color: #fc7625;
+  text-align: center;
+  font-size: 1.5em;
+}
+#fast-checkout button:hover {
+  background-color: #16c1f3;
+  color: white;
+  transition: 0.3s;
+}
+#fast-checkout .border {
+  color: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.1);
+  height: 1px;
+  width: 100%;
+  margin: 30px 0;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: uppercase;
+  position: relative;
+}
+#fast-checkout .border span {
+  position: absolute;
+  top: -10px;
+  background: #fafafa;
+  padding: 0 10px;
+  left: calc(50% - 1em - 5px);
+}
+
+#ach-wrapper {
+  display: none;
+}
+#ach-wrapper input:first-of-type {
+  margin-bottom: 10px;
+}
+
+#ach-message {
+  width: 100%;
+  margin-top: 11px;
+  margin-bottom: 11px;
+  font-size: 14px;
+  display: inline-block;
+  color: #bf0020;
+}
+#ach-message:empty:before {
+  content: "​";
+}
+
+#payment-flow-message {
+  width: 100%;
+  margin-top: 11px;
+  margin-bottom: 11px;
+  height: 100px;
+  display: block;
+}
+#payment-flow-message.error {
+  color: #bf0020;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+#payment-flow-message.success {
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.wrapper {
+  max-width: 50%;
+  justify-content: center;
+}
+
+#card-container {
+  max-width: 387px;
+  margin: auto;
+}
+
+#payment-page {
+  padding: 1.5em;
+  background-color: #0093b5;
+}
+#payment-page > h1,
+#payment-page > p {
+  max-width: 65%;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#consulting-list {
+  list-style-position: inside;
+  border-style: solid;
+  border-color: #05556d;
+  border-width: thick;
+  padding: 3% 5% 3% 5%;
+}
+
+#consulting-bullet-items {
+  border-style: solid;
+  border-color: #05556d;
+  border-radius: 5px;
+  padding: 1%;
+  margin: 1%;
+  list-style-type: none;
+}
+
 .application-page {
   justify-content: center;
   background-color: #0093b5;
@@ -447,6 +502,109 @@ span {
   margin-bottom: 1em;
 }
 
+/* Form responsive design */
+@media (max-width: 900px) {
+  .form-wrapper .wrapper {
+    max-width: 75%;
+  }
+  .form-wrapper #info-wrapper {
+    max-width: 100%;
+    min-width: none;
+  }
+  .wrapper {
+    max-width: 75%;
+  }
+}
+@media (max-width: 600px) {
+  .form-wrapper .wrapper {
+    max-width: 100%;
+  }
+  .form-wrapper #info-wrapper {
+    max-width: 100%;
+    min-width: none;
+  }
+  .form-wrapper #info-wrapper > fieldset {
+    margin: 0px;
+    width: 100%;
+  }
+  .payment-form {
+    margin: 0px;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+  .wrapper {
+    max-width: 100%;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 599px) {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  .column {
+    padding: 0;
+    width: 100%;
+    margin: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  .row,
+  .application-page {
+    padding: 2em;
+  }
+  .justify {
+    text-align: left;
+  }
+  .large-white-text {
+    font-size: 1.5em;
+  }
+  button.previous-btn,
+  button.continue-to-app-btn,
+  button.save-btn {
+    font-size: smaller;
+  }
+  .application-form .learn-more-wrapper .learn-more-title,
+  .application-form .learn-more-wrapper .toggle-icon {
+    color: #0093b5;
+    font-size: smaller;
+  }
+  .application-form .learn-more-wrapper .learn-more-content {
+    font-size: smaller;
+  }
+  .application-page > h1 {
+    font-size: 1.5em;
+    max-width: fit-content;
+  }
+  .application-page > form {
+    width: initial;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+  }
+  legend {
+    font-size: 18px;
+  }
+  .application-form > fieldset {
+    min-width: 95%;
+    word-wrap: break-word;
+    padding: 1.5rem;
+    margin: 0;
+  }
+  .application-form > fieldset > label {
+    font-size: smaller;
+  }
+  .form-button {
+    gap: 0.5em;
+    margin: auto;
+  }
+  #radio-wrapper > input[type=radio] {
+    margin: 0;
+  }
+  #radio-wrapper > label,
+  .application-form > fieldset > label {
+    font-size: smaller;
+  }
+}
 @media only screen and (min-width: 320px) and (max-width: 599px) {
   .column {
     padding: 0;

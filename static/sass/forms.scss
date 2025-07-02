@@ -1,6 +1,7 @@
 /* General form components and styling that can be reused across different forms
   - general reusable form components 
   - application-specific styling*/
+
 @use "settings" as *;
 
 // Form wrapper and structure - used by multiple forms
@@ -170,129 +171,167 @@ span {
   color: rgba(0, 0, 0, 0.6);
 }
 
-// Responsive design for general forms
-@media (max-width: 900px) {
-  .form-wrapper {
-    .wrapper {
-      max-width: 75%;
-    }
-
-    #info-wrapper {
-      max-width: 100%;
-      min-width: none;
-    }
-  }
+/* Square Payment System Styling */
+.payment-form {
+  padding: 50px 0px 50px 0px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  align-items: center;
 }
 
-// Mobile (320px to 599px)
-@media only screen and (min-width: 320px) and (max-width: 599px) {
-  html,
-  body {
-    overflow-x: hidden;
-    width: 100%;
-  }
+#apple-pay-button {
+  height: 48px;
+  width: 100%;
+  display: inline-block;
+  -webkit-appearance: -apple-pay-button;
+  -apple-pay-button-type: plain;
+  -apple-pay-button-style: black;
+}
 
-  .column {
-    padding: 0;
-    width: 100%;
-    margin: auto;
-    overflow-x: hidden;
-    box-sizing: border-box;
-  }
+#fast-checkout {
+  background: #fafafa;
+  color: black;
 
-  .row,
-  .application-page {
-    padding: 2em;
-  }
-
-  .justify {
-    text-align: left;
-  }
-
-  .large-white-text {
-    font-size: 1.5em;
-  }
-
-  button.previous-btn,
-  button.continue-to-app-btn,
-  button.save-btn {
-    font-size: smaller;
-  }
-
-  .application-form .learn-more-wrapper .learn-more-title,
-  .application-form .learn-more-wrapper .toggle-icon {
+  h3 {
     color: $main-blue;
-    font-size: smaller;
   }
 
-  .application-form .learn-more-wrapper .learn-more-content {
-    font-size: smaller;
+  input {
+    border-radius: 6px;
+    position: relative;
   }
 
-  .application-page > h1 {
+  .wrapper {
+    position: relative;
+  }
+
+  button {
+    width: 100%;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    color: $white;
+    display: inline-block;
+    background-color: $focal-orange;
+    text-align: center;
     font-size: 1.5em;
-    max-width: fit-content;
+
+    &:hover {
+      background-color: $light-blue;
+      color: $white;
+      transition: 0.3s;
+    }
   }
 
-  .application-page > form {
-    width: initial;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
+  .border {
+    color: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.1);
+    height: 1px;
+    width: 100%;
+    margin: 30px 0;
+    font-size: 12px;
+    line-height: 20px;
+    text-transform: uppercase;
+    position: relative;
+
+    span {
+      position: absolute;
+      top: -10px;
+      background: #fafafa;
+      padding: 0 10px;
+      left: calc(50% - 1em - 5px);
+    }
+  }
+}
+
+#ach-wrapper {
+  display: none;
+
+  input:first-of-type {
+    margin-bottom: 10px;
+  }
+}
+
+#ach-message {
+  width: 100%;
+  margin-top: 11px;
+  margin-bottom: 11px;
+  font-size: 14px;
+  display: inline-block;
+  color: #bf0020;
+
+  &:empty:before {
+    content: "\200b";
+  }
+}
+
+#payment-flow-message {
+  width: 100%;
+  margin-top: 11px;
+  margin-bottom: 11px;
+  height: 100px;
+  display: block;
+
+  &.error {
+    color: #bf0020;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.4;
   }
 
-  legend {
-    font-size: 18px;
+  &.success {
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 10px;
   }
+}
 
-  .application-form > fieldset {
-    min-width: 95%;
-    word-wrap: break-word;
-    padding: 1.5rem;
-    margin: 0;
-  }
+.wrapper {
+  max-width: 50%;
+  justify-content: center;
+}
 
-  .application-form > fieldset > label {
-    font-size: smaller;
-  }
+#card-container {
+  max-width: 387px;
+  margin: auto;
+}
 
-  .form-button {
-    gap: 0.5em;
+#payment-page {
+  padding: 1.5em;
+  background-color: $main-blue;
+
+  > h1,
+  > p {
+    max-width: 65%;
     margin: auto;
-  }
-
-  #radio-wrapper > input[type="radio"] {
-    margin: 0;
-  }
-
-  #radio-wrapper > label,
-  .application-form > fieldset > label {
-    font-size: smaller;
+    text-align: center;
+    margin-bottom: 2rem;
   }
 }
 
-// Small screens (max-width 600px)
-@media (max-width: 600px) {
-  .form-wrapper {
-    .wrapper {
-      max-width: 100%;
-    }
-
-    #info-wrapper {
-      max-width: 100%;
-      min-width: none;
-
-      > fieldset {
-        margin: 0px;
-        width: 100%;
-      }
-    }
-  }
+// Consulting page form elements
+#consulting-list {
+  list-style-position: inside;
+  border-style: solid;
+  border-color: #05556d;
+  border-width: thick;
+  padding: 3% 5% 3% 5%;
 }
 
-/* Styles specific to app-form page (form.html)
-  - application page layout
-  - form container 
-  - application-specific*/
+#consulting-bullet-items {
+  border-style: solid;
+  border-color: #05556d;
+  border-radius: 5px;
+  padding: 1%;
+  margin: 1%;
+  list-style-type: none;
+}
 
 // Application page layout - ONLY used on application form
 .application-page {
@@ -438,6 +477,138 @@ span {
     border-radius: 8px;
     background-color: rgba(191, 0, 32, 0.05);
     margin-bottom: 1em;
+  }
+}
+
+/* Form responsive design */
+@media (max-width: 900px) {
+  .form-wrapper {
+    .wrapper {
+      max-width: 75%;
+    }
+
+    #info-wrapper {
+      max-width: 100%;
+      min-width: none;
+    }
+  }
+
+  .wrapper {
+    max-width: 75%;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-wrapper {
+    .wrapper {
+      max-width: 100%;
+    }
+
+    #info-wrapper {
+      max-width: 100%;
+      min-width: none;
+
+      > fieldset {
+        margin: 0px;
+        width: 100%;
+      }
+    }
+  }
+
+  .payment-form {
+    margin: 0px;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+
+  .wrapper {
+    max-width: 100%;
+  }
+}
+
+// Mobile (320px to 599px)
+@media only screen and (min-width: 320px) and (max-width: 599px) {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .column {
+    padding: 0;
+    width: 100%;
+    margin: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .row,
+  .application-page {
+    padding: 2em;
+  }
+
+  .justify {
+    text-align: left;
+  }
+
+  .large-white-text {
+    font-size: 1.5em;
+  }
+
+  button.previous-btn,
+  button.continue-to-app-btn,
+  button.save-btn {
+    font-size: smaller;
+  }
+
+  .application-form .learn-more-wrapper .learn-more-title,
+  .application-form .learn-more-wrapper .toggle-icon {
+    color: $main-blue;
+    font-size: smaller;
+  }
+
+  .application-form .learn-more-wrapper .learn-more-content {
+    font-size: smaller;
+  }
+
+  .application-page > h1 {
+    font-size: 1.5em;
+    max-width: fit-content;
+  }
+
+  .application-page > form {
+    width: initial;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+  }
+
+  legend {
+    font-size: 18px;
+  }
+
+  .application-form > fieldset {
+    min-width: 95%;
+    word-wrap: break-word;
+    padding: 1.5rem;
+    margin: 0;
+  }
+
+  .application-form > fieldset > label {
+    font-size: smaller;
+  }
+
+  .form-button {
+    gap: 0.5em;
+    margin: auto;
+  }
+
+  #radio-wrapper > input[type="radio"] {
+    margin: 0;
+  }
+
+  #radio-wrapper > label,
+  .application-form > fieldset > label {
+    font-size: smaller;
   }
 }
 
