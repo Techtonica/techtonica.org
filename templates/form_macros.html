@@ -41,9 +41,17 @@
 </fieldset>
 {% endmacro %}
 
-{% macro input_field(label, id, type='text', required=true) %}
+{% macro input_field(label, id, type='text', required=true, pattern='', title='', placeholder='', minlength='', maxlength='', autocomplete='') %}
 <label for="{{ id }}">{{ label }}{% if not required %} <span>(optional)</span>{% endif %}</label>
-<input type="{{ type }}" id="{{ id }}" name="{{ id }}" {% if required %}required{% endif %} />
+<input type="{{ type }}" id="{{ id }}" name="{{ id }}" 
+       {% if required %}required{% endif %}
+       {% if pattern %}pattern="{{ pattern }}"{% endif %}
+       {% if title %}title="{{ title }}"{% endif %}
+       {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
+       {% if minlength %}minlength="{{ minlength }}"{% endif %}
+       {% if maxlength %}maxlength="{{ maxlength }}"{% endif %}
+       {% if autocomplete %}autocomplete="{{ autocomplete }}"{% endif %}
+/>
 {% endmacro %}
 
 {% macro textarea_field(label, id, rows=5, required=true) %}
