@@ -1281,6 +1281,21 @@ textarea.invalid {
   vertical-align: middle;
 }
 
+/* Admin Dashboard styling */
+
+.admin-nav-bar {
+  -webkit-display: inline-flex;
+  -moz-display: inline-flex;
+  display: inline-flex;
+  flex-flow: row-reverse wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-bottom: 0;
+}
+
 /* News Page Styling */
 #news-title {
   padding: 0;
@@ -1291,27 +1306,225 @@ textarea.invalid {
   margin-right: auto;
   margin-left: auto;
   width: 100%;
-}
-.sponsor-benefit-table,
-.sponsor-benefit-table td {
-  border: 1px solid $main-blue;
-  border-collapse: collapse;
-}
-.sponsor-benefit-table th {
-  padding: 5px;
-  column-width: 100px;
-}
-.sponsor-table-cell {
-  text-align: center;
-}
-.sponsor-table-prompt {
-  padding-left: 5px;
+  height: 5rem;
+  background-color: white;
+  box-shadow: 0 0 8px 8px #ccc;
+  z-index: 100;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 699px) {
+.admin-nav-bar * {
+  margin: 0.5em;
+}
+
+.main-content:has(.admin-container) {
+  margin-top: 0;
+}
+
+.admin-button {
+  font-size: medium;
+  padding: 1em;
+  box-shadow: 0 3px 5px 1px #ccc;
+  border-radius: 5px;
+}
+
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  margin: 3em 0;
+  background-color: #f1f1f1;
+}
+
+.quick-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3em;
+}
+
+.quick-stats-header {
+  display: flex;
+  justify-content: space-between;
+  min-width: 300px;
+}
+
+.admin-box {
+  flex-grow: 2;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px 1px #ccc;
+  margin: 1em;
+  padding: 0.5em 1em;
+}
+
+.quick-stats .admin-box {
+  max-width: 350px;
+}
+
+.quick-stats-percent {
+  font-weight: bold;
+}
+
+.status-overview {
+  display: flex;
+  flex-direction: column;
+}
+
+.attention-overview {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.status-overview-info,
+.recent-applicant-info,
+.attention-overview {
+  margin-bottom: 2em;
+}
+
+.admin-box > label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.admin-subtitle {
+  color: gray;
+}
+
+.attention-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  text-align: center;
+  margin: 20px;
+}
+
+progress {
+  background-color: white;
+  width: 100%;
+  height: 1em;
+  border-radius: 20px;
+  margin-bottom: 2em;
+}
+
+progress::before {
+  position: absolute;
+  width: 30%;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
+
+#submitted::-webkit-progress-value {
+  background-color: rgb(155, 225, 255);
+  border-radius: 20px;
+}
+
+#review::-webkit-progress-value {
+  background-color: rgb(252, 237, 140);
+  border-radius: 20px;
+}
+
+#accepted::-webkit-progress-value {
+  background-color: rgb(155, 255, 180);
+  border-radius: 20px;
+}
+
+#rejected::-webkit-progress-value {
+  background-color: rgb(252, 202, 211);
+  border-radius: 20px;
+}
+
+progress::-webkit-progress-bar {
+  background-color: gray;
+  border-radius: 20px;
+}
+
+.recent-applicants-container {
+  overflow-x: auto;
+}
+
+.recent-applicants {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recent-applicants td {
+  border-width: 2px 0 0 0;
+  border-color: rgb(228, 228, 228);
+  border-style: solid;
+  border-collapse: collapse;
+  padding: 2em 2em;
+}
+
+.recent-applicants th {
+  text-align: left;
+  color: gray;
+  padding: 2em 2em;
+}
+
+.status {
+  padding: 0.5em;
+  border-radius: 50px;
+  text-align: center;
+  font-weight: bold;
+  width: fit-content;
+}
+
+#review-text,
+#applicant-action {
+  color: rgb(204, 150, 0);
+  background-color: rgb(252, 237, 140);
+}
+
+#submitted-text {
+  color: rgb(0, 58, 108);
+  background-color: rgb(155, 225, 255);
+}
+
+#accepted-text {
+  color: rgb(0, 98, 24);
+  background-color: rgb(155, 255, 180);
+}
+
+#rejected-text,
+#admin-action {
+  color: rgb(138, 0, 25);
+  background-color: rgb(252, 202, 211);
+}
+
+#admin-action,
+#applicant-action {
+  padding: 5px;
+  border-radius: 10px;
+
+  /* Sponsor Page Styling */
   .sponsor-benefit-table {
-    max-width: 100%;
-    table-layout: inherit;
-    font-size: 13px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+  }
+  .sponsor-benefit-table,
+  .sponsor-benefit-table td {
+    border: 1px solid $main-blue;
+    border-collapse: collapse;
+  }
+  .sponsor-benefit-table th {
+    padding: 5px;
+    column-width: 100px;
+  }
+  .sponsor-table-cell {
+    text-align: center;
+  }
+  .sponsor-table-prompt {
+    padding-left: 5px;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 699px) {
+    .sponsor-benefit-table {
+      max-width: 100%;
+      table-layout: inherit;
+      font-size: 13px;
+    }
   }
 }
