@@ -1,21 +1,28 @@
+// Core SCSS variables for Techtonica project
+
+// Colors
 $main-blue: #0093b5;
 $light-blue: #16c1f3;
 $dark-blue: #05556d;
 $white: white;
 $light-gray: #ccc;
 $dark-gray: #666;
-$thick-dark-text-shadow: 2px 2px 5px $dark-gray;
-$thin-dark-text-shadow: 1px 1px 1px $dark-gray;
-$thin-light-text-shadow: 0px 0px 1px $light-gray;
 $focal-orange: #fc7625; // Updated to match application-form button background
-$button-size: 3rem;
-$transition: 0.3s; // increase this to see the transformations in slow-motion
 $hover-blue: #16c1f3; // New variable for button hover color
 $text-color: #000000; // Updated to match rgb(0,0,0) for labels and form border
 $form-border-color: rgba(0, 0, 0, 0.559); // New variable for specific form border opacity
 $legend-color: rgba(0, 115, 149, 0.8); // New variable for legend color
 $radio-wrapper-color: rgba(0, 0, 0, 0.851); // New variable for radio wrapper color
 $error-color: #bf0020; // Updated to match invalid state border
+
+// Effects
+$transition: 0.3s; // increase this to see the transformations in slow-motion
+$thick-dark-text-shadow: 2px 2px 5px $dark-gray;
+$thin-dark-text-shadow: 1px 1px 1px $dark-gray;
+$thin-light-text-shadow: 0px 0px 1px $light-gray;
+
+// Sizing
+$button-size: 3rem;
 
 body {
   margin: 0;

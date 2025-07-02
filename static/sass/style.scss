@@ -1,3 +1,9 @@
+/* Main stylesheet for Techtonica website
+  - global styles
+  - global layout
+  - global navigation
+  - global validation
+  - imports all component stylesheets*/
 @use "settings" as *;
 @use "mixins" as *;
 @use "forms" as *;
@@ -8,7 +14,6 @@
   gap: 2rem;
   margin: 3rem 0;
   padding: 2rem 2rem;
-
   // Default to 4 columns for wider screens
   grid-template-columns: repeat(4, 1fr);
 
@@ -31,7 +36,6 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-
 
     &:hover {
       transform: translateY(-8px);
@@ -119,7 +123,6 @@
     text-align: center;
     margin-top: 2rem;
   }
-
 }
 
 // Action Buttons
@@ -129,25 +132,25 @@
   justify-content: center;
   margin: 3rem 0;
   flex-wrap: wrap;
-  align-items: center
+  align-items: center;
 }
 
 // General base styles, resets, typography
 body {
-    font-family: sans-serif;
-    color: $text-color;
-    margin: 0;
-    padding: 0;
+  font-family: sans-serif;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2, h3 {
-    color: $main-blue;
+  color: $main-blue;
 }
 
 .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 .row {
@@ -255,6 +258,7 @@ h1, h2, h3 {
   color: white;
   padding: 3rem;
 }
+
 .nav-bar {
   @include prefix(display, inline-flex, webkit moz);
   flex-flow: row-reverse wrap;
@@ -348,8 +352,7 @@ h1, h2, h3 {
   justify-content: flex-end;
   width: 100%;
   height: 75vh;
-  background: url(../img/three-participants-at-laptops-min.jpg) $main-blue
-    no-repeat top right fixed;
+  background: url(../img/three-participants-at-laptops-min.jpg) $main-blue no-repeat top right fixed;
   background-size: cover;
 }
 
@@ -375,10 +378,8 @@ h1, h2, h3 {
 }
 
 .main-header__header {
-  // Responsive font-size fomula, min size 28px on 320px width screen.
   font-size: calc(28px + 24 * (100vw - 320px) / 960);
 
-  // Caps max fontsize above x-large-screen breakpoint.
   @media only screen and (min-width: 1200px) {
     font-size: 3.5rem;
   }
@@ -391,8 +392,7 @@ h1, h2, h3 {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/2024-H2-Launch-Celebration-min.png) $main-blue
-    no-repeat top fixed;
+  background: url(../img/2024-H2-Launch-Celebration-min.png) $main-blue no-repeat top fixed;
   background-size: cover;
 }
 
@@ -475,7 +475,6 @@ h1, h2, h3 {
 }
 
 .resize-200px {
-  /* Ensure each teams image is square */
   object-fit: cover;
   width: 200px;
   max-height: 200px;
@@ -518,7 +517,7 @@ h1, h2, h3 {
 }
 
 .icon-text {
-  font-size: 0.7rem; /* Smaller text size */
+  font-size: 0.7rem;
   text-align: center;
   line-height: 1.2;
   margin-top: 0.25rem;
@@ -530,6 +529,7 @@ h1, h2, h3 {
   justify-content: center;
   gap: 1rem;
 }
+
 .social-link {
   display: flex;
   flex-direction: column;
@@ -650,7 +650,7 @@ table.mentor {
 }
 
 .videowrapper {
-  max-width: 560px; /* you have to have a size or this method doesn't work */
+  max-width: 560px;
   max-height: 315px;
   margin-right: auto;
   margin-left: auto;
@@ -789,8 +789,7 @@ table.mentor {
   .main-header {
     display: block;
     position: relative;
-    background: url(../img/three-participants-at-laptops-min.jpg) $main-blue
-      no-repeat top center;
+    background: url(../img/three-participants-at-laptops-min.jpg) $main-blue no-repeat top center;
     @include prefix(background-size, contain, webkit moz o);
   }
 
@@ -836,11 +835,9 @@ table.mentor {
   }
 
   .lines {
-    //create middle line
     @include line;
     position: relative;
 
-    /*create the upper and lower lines as pseudo-elements of the middle line*/
     &:before,
     &:after {
       @include line;
@@ -874,10 +871,8 @@ table.mentor {
   }
 
   .lines-button.x.close .lines {
-    /*hide the middle line*/
     background: transparent;
 
-    /*overlay the lines by setting both their top values to 0*/
     &:before,
     &:after {
       transform-origin: 50% 50%;
@@ -885,7 +880,6 @@ table.mentor {
       width: 2.5em;
     }
 
-    // rotate the lines to form the x shape
     &:before {
       transform: rotate3d(0, 0, 1, 45deg);
     }
@@ -905,51 +899,52 @@ table.mentor {
   }
 
   .social-link {
-    width: 50px; /* Slightly smaller width for mobile */
+    width: 50px;
   }
+
   .social-media,
   .hiring {
     width: 2.5rem;
     height: 2.5rem;
   }
+
   .hiring {
     width: 3.75rem;
   }
+
   .icon-text {
-    font-size: 0.6rem; /* Even smaller text for mobile */
+    font-size: 0.6rem;
   }
 }
 
-// For responsive embedded video size on mobile view
 @media (max-width: 560px) {
   .videowrapper {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; // 16:9 aspect ratio
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
   }
 
-  // Responsive iframe
   .videowrapper iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border: 0; // Remove default border
+    border: 0;
   }
 
   table.mentor {
     td {
-      display: block; // Make table cells stack vertically
-      width: 100%; // Let cells take the full width
-      padding: 0.5rem; // Adjust padding for smaller screens
-      box-sizing: border-box; // Ensure consistent border sizing
+      display: block;
+      width: 100%;
+      padding: 0.5rem;
+      box-sizing: border-box;
 
       &:first-of-type {
-        border-right: none; // Remove unnecessary border
-        vertical-align: top; // Retain alignment
+        border-right: none;
+        vertical-align: top;
       }
     }
   }
@@ -961,7 +956,6 @@ table.mentor {
   }
 }
 
-/* iphone 4 and 4s media query */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
   .main-header__text {
     font-size: 1rem;
@@ -969,7 +963,6 @@ table.mentor {
   }
 }
 
-/* iphone 4 and 4s landscape media query */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   .main-header {
     background-size: cover;
@@ -981,7 +974,6 @@ table.mentor {
   }
 }
 
-/* Samsung Galaxy s5 portrait media query */
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
   .main-header__text {
     font-size: 1rem;
@@ -992,7 +984,6 @@ table.mentor {
   }
 }
 
-/* Samsung Galaxy s5 landscape media query */
 @media screen and (device-width: 640px) and (device-height: 360px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
   .main-header__text {
     font-size: 1rem;
@@ -1050,8 +1041,7 @@ table.mentor {
   text-align: center;
 }
 
-/* Events Stuff */
-
+// Events Stuff
 .event-item {
   max-width: 30%;
   flex-basis: 25%;
@@ -1110,8 +1100,7 @@ p.press-release-bold {
   font-style: bold;
 }
 
-/* Square Payment Styling */
-
+// Square Payment Styling
 .payment-form {
   padding: 50px 0px 50px 0px;
   width: 100%;
@@ -1266,7 +1255,6 @@ p.press-release-bold {
   box-sizing: border-box;
   margin: 1em;
   padding: 1em;
-
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -1325,6 +1313,7 @@ input[type="radio"] {
   border-width: thick;
   padding: 3% 5% 3% 5%;
 }
+
 #consulting-bullet-items {
   border-style: solid;
   border-color: #05556d;
@@ -1400,7 +1389,47 @@ label[for="code-of-conduct-checkbox"] ~ a {
   }
 }
 
-/* Invalid radio wrapper styling */
+// Form validation styling
+.invalid {
+  border: 2px solid $error-color !important;
+  background-color: rgba(191, 0, 32, 0.1) !important;
+  box-shadow: 0 0 5px rgba(191, 0, 32, 0.3) !important;
+}
+
+.pronouns-group.invalid {
+  padding: 15px;
+  border: 2px solid $error-color;
+  border-radius: 8px;
+  background-color: rgba(191, 0, 32, 0.05);
+  margin-bottom: 1em;
+}
+
+.radio-wrapper.invalid {
+  padding: 15px;
+  border: 2px solid $error-color;
+  border-radius: 8px;
+  background-color: rgba(191, 0, 32, 0.05);
+  margin-bottom: 1em;
+}
+
+.validation-message {
+  color: $error-color;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+  display: block;
+}
+
+.required-indicator {
+  color: $error-color;
+  font-weight: bold;
+}
+
+.invalid:focus {
+  outline: 2px solid $error-color;
+  outline-offset: 2px;
+}
+
 #radio-wrapper.invalid {
   padding: 10px;
   background-color: rgba(255, 200, 200, 0.1);
@@ -1408,7 +1437,6 @@ label[for="code-of-conduct-checkbox"] ~ a {
   border: 2px solid #bf0020;
 }
 
-/* Invalid checkbox container styling */
 .checkbox-container.invalid {
   padding: 10px;
   background-color: rgba(255, 200, 200, 0.1);
@@ -1416,14 +1444,13 @@ label[for="code-of-conduct-checkbox"] ~ a {
   border: 2px solid #bf0020;
 }
 
-/* Disabled button styling */
 button:disabled,
 button.disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-/* Success page styling */
+// Success page styling
 .success-container {
   text-align: center;
   padding: 40px 20px;
@@ -1467,14 +1494,13 @@ button.disabled {
   margin-top: 30px;
 }
 
-/* Existing styles for invalid fields, etc. */
 input.invalid,
 textarea.invalid {
   border: 2px solid #bf0020 !important;
   background-color: rgba(255, 200, 200, 0.1);
 }
 
-/* Processing state styling */
+// Processing state styling
 .processing {
   position: relative;
   pointer-events: none;
@@ -1494,7 +1520,6 @@ textarea.invalid {
   z-index: 10;
 }
 
-/* Spinner animation for processing state */
 @keyframes spinner {
   to {
     transform: rotate(360deg);
@@ -1514,7 +1539,6 @@ textarea.invalid {
 }
 
 /* Admin Dashboard styling */
-
 .admin-nav-bar {
   -webkit-display: inline-flex;
   -moz-display: inline-flex;
@@ -1525,23 +1549,12 @@ textarea.invalid {
   position: fixed;
   top: 0;
   left: 0;
-  margin-bottom: 0;
-}
-
-/* News Page Styling */
-#news-title {
-  padding: 0;
-}
-
-/* Sponsor Page Styling */
-.sponsor-benefit-table {
-  margin-right: auto;
-  margin-left: auto;
   width: 100%;
   height: 5rem;
   background-color: white;
   box-shadow: 0 0 8px 8px #ccc;
   z-index: 100;
+  margin-bottom: 0;
 }
 
 .admin-nav-bar * {
@@ -1729,34 +1742,45 @@ progress::-webkit-progress-bar {
 #applicant-action {
   padding: 5px;
   border-radius: 10px;
+}
 
-  /* Sponsor Page Styling */
+// News Page Styling
+#news-title {
+  padding: 0;
+}
+
+// Sponsor Page Styling
+.sponsor-benefit-table {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
+
+.sponsor-benefit-table,
+.sponsor-benefit-table td {
+  border: 1px solid $main-blue;
+  border-collapse: collapse;
+}
+
+.sponsor-benefit-table th {
+  padding: 5px;
+  column-width: 100px;
+}
+
+.sponsor-table-cell {
+  text-align: center;
+}
+
+.sponsor-table-prompt {
+  padding-left: 5px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 699px) {
   .sponsor-benefit-table {
-    margin-right: auto;
-    margin-left: auto;
-    width: 100%;
-  }
-  .sponsor-benefit-table,
-  .sponsor-benefit-table td {
-    border: 1px solid $main-blue;
-    border-collapse: collapse;
-  }
-  .sponsor-benefit-table th {
-    padding: 5px;
-    column-width: 100px;
-  }
-  .sponsor-table-cell {
-    text-align: center;
-  }
-  .sponsor-table-prompt {
-    padding-left: 5px;
-  }
-
-  @media only screen and (min-width: 320px) and (max-width: 699px) {
-    .sponsor-benefit-table {
-      max-width: 100%;
-      table-layout: inherit;
-      font-size: 13px;
-    }
+    max-width: 100%;
+    table-layout: inherit;
+    font-size: 13px;
   }
 }
+
+@import 'app-form';

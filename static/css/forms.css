@@ -1,3 +1,8 @@
+/* General form components and styling that can be reused across different forms
+  - base form wrapper
+  - fieldset
+  - input
+  - component styling*/
 body {
   margin: 0;
   box-sizing: border-box;
@@ -121,115 +126,9 @@ p {
   min-height: 6em;
 }
 
-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem auto;
-  width: 75%;
-  max-width: 150rem;
-  padding: 3rem;
-  background-color: white;
-  border: 1px solid rgb(0, 0, 0);
-}
-
-.application-page {
-  justify-content: center;
-  background-color: #0093b5;
-  padding: 2rem;
-}
-
-.application-page > h1,
-.application-page > label {
-  max-width: 65%;
-  margin: auto;
-  text-align: center;
-}
-
 legend {
   color: rgba(0, 115, 149, 0.8);
   font-size: 20px;
-}
-
-.application-form .learn-more-wrapper {
-  display: inline;
-}
-.application-form .learn-more-content {
-  margin: 0.5em 0 0 0;
-  font-size: large;
-}
-.application-form .learn-more-wrapper button {
-  display: inline;
-  background-color: white;
-  color: #0093b5;
-  cursor: pointer;
-  padding: 0;
-  margin: 0 0 0 0.5em;
-}
-.application-form .learn-more-wrapper button:hover {
-  background-color: white;
-  color: #16c1f3;
-}
-.application-form .learn-more-wrapper button:focus-visible {
-  padding: 3px;
-}
-.application-form button {
-  background-color: #fc7625;
-  color: white;
-  font-size: large;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin: auto;
-  display: block;
-  cursor: pointer;
-}
-.application-form button:hover {
-  background-color: #16c1f3;
-  color: white;
-  transition: 0.3s;
-}
-.application-form > fieldset {
-  border: 1px solid rgba(0, 0, 0, 0.559);
-  border-radius: 0.5rem;
-  padding: 2rem;
-  width: 100%;
-}
-.application-form > fieldset > label {
-  color: #000000;
-  font-size: large;
-  margin-bottom: 0.5rem;
-}
-.application-form > fieldset > input[type=text],
-.application-form > fieldset > input[type=email],
-.application-form > fieldset > input[type=tel],
-.application-form > fieldset > input[type=date],
-.application-form > fieldset > input[type=number],
-.application-form > fieldset > input[type=url],
-.application-form > fieldset > textarea,
-.application-form > fieldset > select {
-  padding: 1em;
-  margin-bottom: 2em;
-  border: 1px solid rgba(0, 0, 0, 0.559);
-  border-radius: 6px;
-  width: 100%;
-  box-sizing: border-box;
-}
-.application-form > fieldset > select,
-.application-form > fieldset > input[type=checkbox],
-.application-form > fieldset > #radio-wrapper > input[type=radio] {
-  cursor: pointer;
-}
-.application-form > fieldset > select {
-  appearance: none;
-  background-color: transparent;
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmc+DQogIDxwYXRoIGZpbGw9ImdyYXkiIGQ9Ik0xMCwyMzIuN2w0OTAsNTM0LjVwNDkwLTUzNC41SDEweiIgLz4NCjwvc3ZnPg==);
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: 15px;
-  background-origin: content-box;
-}
-.application-form > fieldset > textarea {
-  min-height: 6em;
 }
 
 .radio-wrapper {
@@ -243,12 +142,6 @@ legend {
 .radio-wrapper label {
   color: black;
   margin-bottom: 2em;
-}
-.radio-wrapper.invalid {
-  padding: 10px;
-  background-color: rgba(255, 200, 200, 0.1);
-  border-radius: 4px;
-  border: 2px solid #bf0020;
 }
 
 #radio-wrapper label {
@@ -304,24 +197,8 @@ button.save-btn:hover {
 .checkbox-wrapper input[type=checkbox] {
   margin-right: 0.5em;
 }
-
-.checkbox-container {
-  margin: 25px;
-  padding-bottom: 30px;
-  display: flex;
-}
-.checkbox-container input#code-of-conduct-checkbox {
-  margin-right: 15px;
-}
-.checkbox-container label[for=code-of-conduct-checkbox] ~ a {
-  color: rgba(0, 115, 149, 0.8);
-  text-decoration: none;
-}
-.checkbox-container.invalid {
-  padding: 10px;
-  background-color: rgba(255, 200, 200, 0.1);
-  border-radius: 4px;
-  border: 2px solid #bf0020;
+.checkbox-wrapper label {
+  cursor: pointer;
 }
 
 span {
@@ -329,13 +206,15 @@ span {
   color: rgba(0, 0, 0, 0.6);
 }
 
-#custom-gender,
-#custom-pronouns,
-#custom-race-ethnicity {
-  display: none;
+@media (max-width: 900px) {
+  .form-wrapper .wrapper {
+    max-width: 75%;
+  }
+  .form-wrapper #info-wrapper {
+    max-width: 100%;
+    min-width: none;
+  }
 }
-
-/* ************** Responsive design ************** */
 @media only screen and (min-width: 320px) and (max-width: 599px) {
   html,
   body {
@@ -416,39 +295,6 @@ span {
   .form-wrapper #info-wrapper > fieldset {
     margin: 0px;
     width: 100%;
-  }
-}
-@media only screen and (min-width: 600px) and (max-width: 910px) {
-  .column {
-    padding: 0;
-  }
-  html,
-  body {
-    overflow-x: hidden;
-    width: 100%;
-  }
-  .application-page {
-    padding: 2rem 0;
-  }
-  .application-page > form {
-    width: initial;
-    margin-bottom: 2rem;
-  }
-  .application-page > h1 {
-    font-size: 2em;
-    max-width: fit-content;
-  }
-  legend {
-    font-size: 24px;
-  }
-}
-@media (max-width: 900px) {
-  .form-wrapper .wrapper {
-    max-width: 75%;
-  }
-  .form-wrapper #info-wrapper {
-    max-width: 100%;
-    min-width: none;
   }
 }
 

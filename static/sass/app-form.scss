@@ -1,13 +1,18 @@
-// Form components styles following Techtonica styling guidelines
+/* Styles specific to app-form page (form.html)
+  - application page layout
+  - form container 
+  - application-specific
+*/
+
 @import "settings";
 
-// Styles specific to the application page and application form
-
+// Application page layout
 .application-page {
   justify-content: center;
   background-color: $main-blue;
   padding: 2rem;
 }
+
 .application-page > h1,
 .application-page > p {
   max-width: 65%;
@@ -15,7 +20,7 @@
   text-align: center;
 }
 
-form { // This targets the main form element, which is .application-form in form.jinja
+form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,6 +32,7 @@ form { // This targets the main form element, which is .application-form in form
   border: 1px solid $text-color;
 }
 
+// Application form specific styling
 .application-form {
   .learn-more-wrapper {
     display: inline;
@@ -55,7 +61,7 @@ form { // This targets the main form element, which is .application-form in form
     padding: 3px;
   }
 
-  button { // General button styling within application-form
+  button {
     background-color: $focal-orange;
     color: $white;
     font-size: large;
@@ -117,15 +123,21 @@ form { // This targets the main form element, which is .application-form in form
   }
 }
 
-#radio-wrapper { // This specific ID rule was in the inline block
+#radio-wrapper {
   width: 100%;
   color: $radio-wrapper-color;
 }
 
+// Application form specific field hiding
 #custom-gender,
 #custom-pronouns,
 #custom-race-ethnicity {
   display: none;
+}
+
+// Application form specific pronouns group
+.pronouns-group {
+  margin-bottom: 1.5em;
 }
 
 // Responsive design for application page and form
@@ -176,6 +188,7 @@ form { // This targets the main form element, which is .application-form in form
     font-size: smaller;
   }
 }
+
 @media only screen and (min-width: 600px) and (max-width: 910px) {
   .column {
     padding: 0;
