@@ -5,7 +5,7 @@
   - component styling*/
 @use "settings" as *;
 
-// Form wrapper and structure
+// Form wrapper and structure - used by multiple forms
 .form-wrapper {
   .wrapper {
     max-width: 50%;
@@ -54,7 +54,7 @@ legend {
   font-size: 20px;
 }
 
-// Radio button styling
+// General radio button styling
 .radio-wrapper {
   width: 100%;
   margin-bottom: 1em;
@@ -67,6 +67,14 @@ legend {
   label {
     color: black;
     margin-bottom: 2em;
+  }
+
+  &.invalid {
+    padding: 15px;
+    border: 2px solid $error-color;
+    border-radius: 8px;
+    background-color: rgba(191, 0, 32, 0.05);
+    margin-bottom: 1em;
   }
 }
 
@@ -123,7 +131,7 @@ button.save-btn:hover {
   justify-content: space-between;
 }
 
-// Checkbox styling
+// General checkbox styling
 .checkbox-wrapper {
   margin-bottom: 1em;
 
@@ -133,6 +141,28 @@ button.save-btn:hover {
 
   label {
     cursor: pointer;
+  }
+}
+
+.checkbox-container {
+  margin: 25px;
+  padding-bottom: 30px;
+  display: flex;
+
+  input#code-of-conduct-checkbox {
+    margin-right: 15px;
+  }
+
+  label[for="code-of-conduct-checkbox"] ~ a {
+    color: $legend-color;
+    text-decoration: none;
+  }
+
+  &.invalid {
+    padding: 10px;
+    background-color: rgba(255, 200, 200, 0.1);
+    border-radius: 4px;
+    border: 2px solid $error-color;
   }
 }
 

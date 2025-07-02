@@ -162,6 +162,13 @@ legend {
   color: black;
   margin-bottom: 2em;
 }
+.radio-wrapper.invalid {
+  padding: 15px;
+  border: 2px solid #bf0020;
+  border-radius: 8px;
+  background-color: rgba(191, 0, 32, 0.05);
+  margin-bottom: 1em;
+}
 
 #radio-wrapper label {
   color: black;
@@ -218,6 +225,25 @@ button.save-btn:hover {
 }
 .checkbox-wrapper label {
   cursor: pointer;
+}
+
+.checkbox-container {
+  margin: 25px;
+  padding-bottom: 30px;
+  display: flex;
+}
+.checkbox-container input#code-of-conduct-checkbox {
+  margin-right: 15px;
+}
+.checkbox-container label[for=code-of-conduct-checkbox] ~ a {
+  color: rgba(0, 115, 149, 0.8);
+  text-decoration: none;
+}
+.checkbox-container.invalid {
+  padding: 10px;
+  background-color: rgba(255, 200, 200, 0.1);
+  border-radius: 4px;
+  border: 2px solid #bf0020;
 }
 
 span {
@@ -2132,15 +2158,13 @@ p {
   background-color: #0093b5;
   padding: 2rem;
 }
-
 .application-page > h1,
 .application-page > p {
   max-width: 65%;
   margin: auto;
   text-align: center;
 }
-
-form {
+.application-page > form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2154,10 +2178,6 @@ form {
 
 .application-form .learn-more-wrapper {
   display: inline;
-}
-.application-form .learn-more-content {
-  margin: 0.5em 0 0 0;
-  font-size: large;
 }
 .application-form .learn-more-wrapper button {
   display: inline;
@@ -2173,6 +2193,10 @@ form {
 }
 .application-form .learn-more-wrapper button:focus-visible {
   padding: 3px;
+}
+.application-form .learn-more-content {
+  margin: 0.5em 0 0 0;
+  font-size: large;
 }
 .application-form button {
   background-color: #fc7625;
@@ -2243,27 +2267,34 @@ form {
 .pronouns-group {
   margin-bottom: 1.5em;
 }
+.pronouns-group.invalid {
+  padding: 15px;
+  border: 2px solid #bf0020;
+  border-radius: 8px;
+  background-color: rgba(191, 0, 32, 0.05);
+  margin-bottom: 1em;
+}
 
 @media only screen and (min-width: 320px) and (max-width: 599px) {
   .column {
     padding: 0;
+  }
+  .application-page {
+    padding: 2rem 0;
   }
   .application-page > form {
     width: initial;
     margin-bottom: 2rem;
     padding: 1.5rem;
   }
+  .application-page > h1 {
+    font-size: 1.5em;
+    max-width: fit-content;
+  }
   html,
   body {
     overflow-x: hidden;
     width: 100%;
-  }
-  .application-page {
-    padding: 2rem 0;
-  }
-  .application-page > h1 {
-    font-size: 1.5em;
-    max-width: fit-content;
   }
   legend {
     font-size: 18px;
