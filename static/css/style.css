@@ -972,6 +972,16 @@ p.press-release-bold {
   align-items: center;
 }
 
+#payment-page a {
+  color: white;
+  text-decoration: underline;
+}
+
+#payment-page a:hover {
+  color: #16c1f3;
+  text-decoration: underline;
+}
+
 #apple-pay-button {
   height: 48px;
   width: 100%;
