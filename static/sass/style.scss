@@ -1,6 +1,238 @@
 @import "settings";
 @import "mixins";
 
+
+// Base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 4rem;
+}
+
+// New Sponsor Tiers Design
+.sponsor-tiers-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+  padding: 2rem 0;
+}
+
+.sponsor-tier-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+  }
+
+  &.featured {
+    border-color: #4a90e2;
+    background: linear-gradient(135deg, #f8fbff 0%, #e8f4ff 100%);
+
+    &::before {
+      content: 'Most Popular';
+      position: absolute;
+      top: 20px;
+      right: -30px;
+      background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+      color: white;
+      padding: 8px 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transform: rotate(45deg);
+      box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+    }
+  }
+}
+
+.tier-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.tier-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.tier-description {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.tier-features {
+  list-style: none;
+  margin: 1.5rem 0;
+
+  li {
+    padding: 0.75rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: #2c3e50;
+    font-size: 0.95rem;
+    line-height: 1.5;
+
+    &::before {
+      content: '✓';
+      color: #27ae60;
+      font-weight: bold;
+      font-size: 1.1rem;
+      min-width: 20px;
+    }
+  }
+}
+
+.tier-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.tier-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(74, 144, 226, 0.3);
+  }
+
+  &.secondary {
+    background: white;
+    color: #4a90e2;
+    border: 2px solid #4a90e2;
+
+    &:hover {
+      background: #4a90e2;
+      color: white;
+    }
+  }
+}
+
+// Action Buttons
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+// Legacy styles integration
+.blue-background {
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+
+  h3 {
+    color: white;
+  }
+}
+
+.large-white-text {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: $white;
+  letter-spacing: 2px;
+}
+
+.blue-h1 {
+  color: #4a90e2;
+  font-size: 2.5rem;
+  margin: 2rem 0;
+}
+
+.centered {
+  text-align: center;
+}
+
+.full-width-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  max-width: 2440px;
+
+  @media screen and (min-width: 2881px) {
+    width: 2880px !important;
+    height: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+.chart-container {
+  text-align: center;
+  margin: 2rem 0;
+  @include prefix(display, flex, webkit moz);
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: rgba(0, 147, 181, 1);
+  color: white;
+  padding: 3rem;
+}
+
+.sponsor-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.sponsor-logo {
+  max-width: 150px;
+  height: auto;
+  margin: 1rem;
+  filter: grayscale(0.3);
+  transition: filter 0.3s ease;
+  width: 20%;
+  margin: 25px;
+
+  &:hover {
+    filter: grayscale(0);
+  }
+}
+
+// Flexbox layout styles
 .row {
   @include prefix(display, flex, webkit moz);
   flex-flow: row wrap;
@@ -10,6 +242,7 @@
 
 .row__center {
   align-items: center;
+  justify-content: center;
 }
 
 .staff-team {
@@ -23,16 +256,10 @@
 .column {
   @include prefix(flex, 1, webkit moz);
   padding: 0 1rem;
+  min-width: 300px;
 }
 
-.chart-container {
-  @include prefix(display, flex, webkit moz);
-  flex-flow: row wrap;
-  justify-content: space-around;
-  background-color: rgba(0, 147, 181, 1);
-  color: white;
-  padding: 3rem;
-}
+// Navigation styles
 .nav-bar {
   @include prefix(display, inline-flex, webkit moz);
   flex-flow: row-reverse wrap;
@@ -64,10 +291,10 @@
   flex-grow: 1;
   padding: 1em 0;
   text-shadow: $thin-light-text-shadow;
-}
 
-.nav-link:hover {
-  color: $light-blue;
+  &:hover {
+    color: $light-blue;
+  }
 }
 
 .dropdown-toggle::after {
@@ -118,10 +345,7 @@
     1px 1px 0 #000;
 }
 
-.main-content {
-  margin-top: 4rem;
-}
-
+// Header styles
 .main-header {
   @include prefix(background-size, cover, webkit moz o);
   @include prefix(display, flex, webkit moz o);
@@ -156,7 +380,7 @@
 }
 
 .main-header__header {
-  // Responsive font-size fomula, min size 28px on 320px width screen.
+  // Responsive font-size formula, min size 28px on 320px width screen.
   font-size: calc(28px + 24 * (100vw - 320px) / 960);
 
   // Caps max fontsize above x-large-screen breakpoint.
@@ -183,15 +407,16 @@
   align-items: center;
   justify-content: flex-end;
   width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 #sponsor-hero {
   width: 100%;
-}
-
-.sponsor-logo {
-  width: 20%;
-  margin: 25px;
+  max-width: 800px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .sponsor-img {
@@ -204,19 +429,7 @@
   padding-top: 5%;
 }
 
-.full-width-img {
-  width: 100%;
-  max-width: 2440px;
-  height: auto;
-
-  @media screen and (min-width: 2881px) {
-    width: 2880px !important;
-    height: auto !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-
+// Utility classes
 .forty-percent-width {
   width: 40%;
 }
@@ -311,6 +524,7 @@
   justify-content: center;
   gap: 1rem;
 }
+
 .social-link {
   display: flex;
   flex-direction: column;
@@ -320,6 +534,7 @@
   width: 60px;
 }
 
+// Button styles
 .contact-us,
 .donate,
 .orange-button {
@@ -331,11 +546,19 @@
   text-align: center;
   padding-block: 24px;
   padding-inline: 16px;
+  background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.3);
 
   &:hover {
     background-color: $light-blue;
     color: $white;
     transition: 0.3s;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
   }
 }
 
@@ -348,6 +571,7 @@
   padding: 0.75em 1.5em;
 }
 
+// Text styles
 #quotes {
   color: $white;
   font-size: 2em;
@@ -358,13 +582,6 @@
   color: $white;
   padding: 1.5rem;
   margin: 0;
-}
-
-.large-white-text {
-  color: $white;
-  font-size: 2em;
-  letter-spacing: 2px;
-  text-align: center;
 }
 
 a:hover {
@@ -430,11 +647,51 @@ table.mentor {
 }
 
 .videowrapper {
-  max-width: 560px; /* you have to have a size or this method doesn't work */
+  max-width: 560px; 
   max-height: 315px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 2rem;
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .sponsor-tiers-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .sponsor-tier-card {
+    padding: 1.5rem;
+  }
+  
+  .tier-name {
+    font-size: 1.5rem;
+  }
+  
+  .large-white-text {
+    font-size: 1.5rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 10px;
+  }
+  
+  .sponsor-tier-card {
+    padding: 1rem;
+  }
+  
+  .tier-features li {
+    font-size: 0.9rem;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -469,6 +726,7 @@ table.mentor {
   .column {
     @include prefix(flex, 0 0 100%, webkit moz o);
     box-sizing: border-box;
+    min-width: 300px;
   }
 
   h1 {
@@ -733,6 +991,16 @@ table.mentor {
       }
     }
   }
+
+  .sponsor-logo {
+    width: 38%;
+    margin: 15px;
+  }
+
+  .sponsor-img {
+    width: 33%;
+    margin: 20px;
+  }
 }
 
 @media (max-width: 411px) {
@@ -842,10 +1110,6 @@ table.mentor {
   font-size: 1rem;
 }
 
-.blue-background h3 {
-  color: white;
-}
-
 .collapsible {
   color: $main-blue;
   cursor: pointer;
@@ -900,9 +1164,6 @@ p.press-release-bold {
   display: flex;
   justify-content: center;
   border-radius: 20px;
-}
-
-.payment-form {
   align-items: center;
 }
 
