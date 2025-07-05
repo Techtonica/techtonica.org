@@ -985,6 +985,18 @@ p.press-release-bold {
   -apple-pay-button-style: black;
 }
 
+/* Fix for contact link visibility on job form page */
+#payment-page p a {
+  color: #ffffff !important;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#payment-page p a:hover {
+  color: #16c1f3 !important;
+  text-decoration: underline;
+}
+
 #fast-checkout {
   background: #fafafa;
   color: black;
