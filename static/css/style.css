@@ -114,8 +114,7 @@ body {
   margin: 3rem 0;
   padding: 2rem 0;
 }
-
-.sponsor-tier-card {
+.sponsor-tiers-container .sponsor-tier-card {
   background: white;
   border-radius: 16px;
   padding: 2rem;
@@ -124,17 +123,17 @@ body {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  font-family: Lato sans-serif;
+  font-family: Lato, sans-serif;
 }
-.sponsor-tier-card:hover {
+.sponsor-tiers-container .sponsor-tier-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 16px 48px rgb(5, 85, 109);
 }
-.sponsor-tier-card.featured {
+.sponsor-tiers-container .sponsor-tier-card.featured {
   border-color: #0093B5;
   background: linear-gradient(135deg, #f8fbff 0%, #e8f4ff 100%);
 }
-.sponsor-tier-card.featured::before {
+.sponsor-tiers-container .sponsor-tier-card.featured::before {
   content: "Most Popular";
   position: absolute;
   top: 20px;
@@ -147,35 +146,30 @@ body {
   transform: rotate(45deg);
   box-shadow: 0 4px 12px rgb(5, 85, 109);
 }
-
-.tier-header {
+.sponsor-tiers-container .tier-header {
   text-align: center;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 2px solid #05556d;
 }
-
-.tier-name {
+.sponsor-tiers-container .tier-name {
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 400;
   color: #05556d;
   margin-bottom: 0.5rem;
-  font-family: Lato sans-serif;
-  font-weight: 400;
+  font-family: Lato, sans-serif;
 }
-
-.tier-description {
+.sponsor-tiers-container .tier-description {
   color: #05556d;
   font-size: 0.95rem;
   line-height: 1.4;
-  font-family: Lato sans-serif;
+  font-family: Lato, sans-serif;
 }
-
-.tier-features {
+.sponsor-tiers-container .tier-features {
   list-style: none;
   margin: 1.5rem 0;
 }
-.tier-features li {
+.sponsor-tiers-container .tier-features li {
   padding: 0.75rem 0;
   display: flex;
   align-items: flex-start;
@@ -183,23 +177,21 @@ body {
   color: #000;
   font-size: 0.95rem;
   line-height: 1.5;
-  font-family: Lato sans-serif;
+  font-family: Lato, sans-serif;
   font-weight: 200;
 }
-.tier-features li::before {
+.sponsor-tiers-container .tier-features li::before {
   content: "✓";
   color: #0093B5;
   font-weight: bold;
   font-size: 1.1rem;
   min-width: 20px;
 }
-
-.tier-cta {
+.sponsor-tiers-container .tier-cta {
   text-align: center;
   margin-top: 2rem;
 }
-
-.tier-button {
+.sponsor-tiers-container .tier-button {
   display: inline-block;
   padding: 1rem 2rem;
   background: #f67625;
@@ -211,18 +203,18 @@ body {
   border: none;
   cursor: pointer;
   font-size: 1rem;
-  font-style: Lato sans-serif;
+  font-family: Lato, sans-serif;
 }
-.tier-button:hover {
+.sponsor-tiers-container .tier-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(74, 144, 226, 0.3);
 }
-.tier-button.secondary {
+.sponsor-tiers-container .tier-button.secondary {
   background: white;
   color: #16c1f3;
   border: 2px solid #16c1f3;
 }
-.tier-button.secondary:hover {
+.sponsor-tiers-container .tier-button.secondary:hover {
   background: #16c1f3;
   color: white;
 }
@@ -672,7 +664,8 @@ body {
 }
 
 .icon-text {
-  font-size: 0.7rem; /* Smaller text size */
+  font-size: 0.7rem;
+  /* Smaller text size */
   text-align: center;
   line-height: 1.2;
   margin-top: 0.25rem;
@@ -1064,7 +1057,8 @@ table.mentor td:first-of-type {
     margin-top: 5rem;
   }
   .social-link {
-    width: 50px; /* Slightly smaller width for mobile */
+    width: 50px;
+    /* Slightly smaller width for mobile */
   }
   .social-media,
   .hiring {
@@ -1075,7 +1069,8 @@ table.mentor td:first-of-type {
     width: 3.75rem;
   }
   .icon-text {
-    font-size: 0.6rem; /* Even smaller text for mobile */
+    font-size: 0.6rem;
+    /* Even smaller text for mobile */
   }
 }
 @media (max-width: 560px) {
