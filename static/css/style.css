@@ -91,7 +91,7 @@ p {
   display: grid;
   gap: 2rem;
   margin: 3rem 0;
-  padding: 2rem 0;
+  padding: 2rem 2rem;
   grid-template-columns: repeat(4, 1fr);
 }
 @media (max-width: 1024px) {
@@ -151,6 +151,7 @@ p {
   color: #05556d;
   font-size: 0.95rem;
   line-height: 1.4;
+  text-align: center;
 }
 .sponsor-tiers-container .tier-features {
   list-style: none;
@@ -202,17 +203,17 @@ p {
   font-size: 1rem;
 }
 .sponsor-tiers-container .tier-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(74, 144, 226, 0.3);
-}
-.sponsor-tiers-container .tier-button.secondary {
-  background: white;
-  color: #16c1f3;
-  border: 2px solid #16c1f3;
-}
-.sponsor-tiers-container .tier-button.secondary:hover {
   background: #0093b5;
   color: white;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .row {

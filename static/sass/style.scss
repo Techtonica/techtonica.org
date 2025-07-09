@@ -7,7 +7,7 @@
   display: grid;
   gap: 2rem;
   margin: 3rem 0;
-  padding: 2rem 0;
+  padding: 2rem 2rem;
 
   // Default to 4 columns for wider screens
   grid-template-columns: repeat(4, 1fr);
@@ -76,6 +76,7 @@
     color: $dark-blue;
     font-size: 0.95rem;
     line-height: 1.4;
+    text-align: center;
   }
 
   .tier-features {
@@ -133,21 +134,20 @@
     font-size: 1rem;
 
     &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(74, 144, 226, 0.3);
-    }
-
-    &.secondary {
-      background: white;
-      color: $light-blue;
-      border: 2px solid $light-blue;
-
-      &:hover {
-        background: $main-blue;
-        color: white;
-      }
+      background: $main-blue;
+      color: white;
     }
   }
+}
+
+// Action Buttons
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+  align-items: center
 }
 
 .row {
