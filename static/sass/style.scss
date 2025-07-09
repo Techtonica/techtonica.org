@@ -2,34 +2,25 @@
 @import "mixins";
 
 
-// Base styles
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f8f9fa;
-}
-
-.main-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  margin-top: 4rem;
-}
-
 // New Sponsor Tiers Design
 .sponsor-tiers-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin: 3rem 0;
   padding: 2rem 0;
+
+  // Default to 4 columns for wider screens
+  grid-template-columns: repeat(4, 1fr);
+
+  // For tablet-sized screens, switch to 2 columns
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // For mobile screens, stack them in a single column
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
 
   .sponsor-tier-card {
     background: white;
@@ -40,7 +31,7 @@ body {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    font-family: Lato, sans-serif;
+
 
     &:hover {
       transform: translateY(-8px);
@@ -48,7 +39,7 @@ body {
     }
 
     &.featured {
-      border-color: #0093B5;
+      border-color: $dark-blue;
       background: linear-gradient(135deg, #f8fbff 0%, #e8f4ff 100%);
 
       &::before {
@@ -71,22 +62,20 @@ body {
     text-align: center;
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid #05556d;
+    border-bottom: 2px solid $dark-blue;
   }
 
   .tier-name {
     font-size: 1.8rem;
-    font-weight: 400; 
-    color: #05556d;
+    font-weight: 400;
+    color: $dark-blue;
     margin-bottom: 0.5rem;
-    font-family: Lato, sans-serif;
   }
 
   .tier-description {
-    color: #05556d;
+    color: $dark-blue;
     font-size: 0.95rem;
     line-height: 1.4;
-    font-family: Lato, sans-serif;
   }
 
   .tier-features {
@@ -101,15 +90,26 @@ body {
       color: #000;
       font-size: 0.95rem;
       line-height: 1.5;
-      font-family: Lato, sans-serif;
       font-weight: 200;
 
       &::before {
         content: '✓';
-        color: #0093B5;
+        color: $main-blue;
         font-weight: bold;
         font-size: 1.1rem;
         min-width: 20px;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
       }
     }
   }
@@ -122,7 +122,7 @@ body {
   .tier-button {
     display: inline-block;
     padding: 1rem 2rem;
-    background: #f67625;
+    background: $focal-orange;
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -131,7 +131,6 @@ body {
     border: none;
     cursor: pointer;
     font-size: 1rem;
-    font-family: Lato, sans-serif; 
 
     &:hover {
       transform: translateY(-2px);
@@ -140,104 +139,17 @@ body {
 
     &.secondary {
       background: white;
-      color: #16c1f3;
-      border: 2px solid #16c1f3;
+      color: $light-blue;
+      border: 2px solid $light-blue;
 
       &:hover {
-        background: #16c1f3;
+        background: $main-blue;
         color: white;
       }
     }
   }
 }
-// Action Buttons
-.action-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin: 3rem 0;
-  flex-wrap: wrap;
-}
 
-// Legacy styles integration
-.blue-background {
-  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
-  color: white;
-  padding: 2rem;
-  border-radius: 12px;
-  margin: 2rem 0;
-
-  h3 {
-    color: white;
-  }
-}
-
-.large-white-text {
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: $white;
-  letter-spacing: 2px;
-}
-
-.blue-h1 {
-  color: #4a90e2;
-  font-size: 2.5rem;
-  margin: 2rem 0;
-}
-
-.centered {
-  text-align: center;
-}
-
-.full-width-img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  max-width: 2440px;
-
-  @media screen and (min-width: 2881px) {
-    width: 2880px !important;
-    height: auto !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-
-.chart-container {
-  text-align: center;
-  margin: 2rem 0;
-  @include prefix(display, flex, webkit moz);
-  flex-flow: row wrap;
-  justify-content: space-around;
-  background-color: rgba(0, 147, 181, 1);
-  color: white;
-  padding: 3rem;
-}
-
-.sponsor-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.sponsor-logo {
-  max-width: 150px;
-  height: auto;
-  margin: 1rem;
-  filter: grayscale(0.3);
-  transition: filter 0.3s ease;
-  width: 20%;
-  margin: 25px;
-
-  &:hover {
-    filter: grayscale(0);
-  }
-}
-
-// Flexbox layout styles
 .row {
   @include prefix(display, flex, webkit moz);
   flex-flow: row wrap;
@@ -247,7 +159,6 @@ body {
 
 .row__center {
   align-items: center;
-  justify-content: center;
 }
 
 .top-testimonials {
@@ -334,10 +245,16 @@ body {
 .column {
   @include prefix(flex, 1, webkit moz);
   padding: 0 1rem;
-  min-width: 300px;
 }
 
-// Navigation styles
+.chart-container {
+  @include prefix(display, flex, webkit moz);
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: rgba(0, 147, 181, 1);
+  color: white;
+  padding: 3rem;
+}
 .nav-bar {
   @include prefix(display, inline-flex, webkit moz);
   flex-flow: row-reverse wrap;
@@ -369,10 +286,10 @@ body {
   flex-grow: 1;
   padding: 1em 0;
   text-shadow: $thin-light-text-shadow;
+}
 
-  &:hover {
-    color: $light-blue;
-  }
+.nav-link:hover {
+  color: $light-blue;
 }
 
 .dropdown-toggle::after {
@@ -420,7 +337,10 @@ body {
     1px 1px 0 #000;
 }
 
-// Header styles
+.main-content {
+  margin-top: 4rem;
+}
+
 .main-header {
   @include prefix(background-size, cover, webkit moz o);
   @include prefix(display, flex, webkit moz o);
@@ -428,7 +348,8 @@ body {
   justify-content: flex-end;
   width: 100%;
   height: 75vh;
-  background: url(../img/three-participants-at-laptops-min.jpg) $main-blue no-repeat top right fixed;
+  background: url(../img/three-participants-at-laptops-min.jpg) $main-blue
+    no-repeat top right fixed;
   background-size: cover;
 }
 
@@ -454,7 +375,7 @@ body {
 }
 
 .main-header__header {
-  // Responsive font-size formula, min size 28px on 320px width screen.
+  // Responsive font-size fomula, min size 28px on 320px width screen.
   font-size: calc(28px + 24 * (100vw - 320px) / 960);
 
   // Caps max fontsize above x-large-screen breakpoint.
@@ -470,7 +391,8 @@ body {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/2024-H2-Launch-Celebration-min.png) $main-blue no-repeat top fixed;
+  background: url(../img/2024-H2-Launch-Celebration-min.png) $main-blue
+    no-repeat top fixed;
   background-size: cover;
 }
 
@@ -480,16 +402,15 @@ body {
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  text-align: center;
-  margin-bottom: 2rem;
 }
 
 #sponsor-hero {
   width: 100%;
-  max-width: 800px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.sponsor-logo {
+  width: 20%;
+  margin: 25px;
 }
 
 .sponsor-img {
@@ -502,7 +423,19 @@ body {
   padding-top: 5%;
 }
 
-// Utility classes
+.full-width-img {
+  width: 100%;
+  max-width: 2440px;
+  height: auto;
+
+  @media screen and (min-width: 2881px) {
+    width: 2880px !important;
+    height: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
 .forty-percent-width {
   width: 40%;
 }
@@ -585,8 +518,7 @@ body {
 }
 
 .icon-text {
-  font-size: 0.7rem;
-  /* Smaller text size */
+  font-size: 0.7rem; /* Smaller text size */
   text-align: center;
   line-height: 1.2;
   margin-top: 0.25rem;
@@ -598,7 +530,6 @@ body {
   justify-content: center;
   gap: 1rem;
 }
-
 .social-link {
   display: flex;
   flex-direction: column;
@@ -608,7 +539,6 @@ body {
   width: 60px;
 }
 
-// Button styles
 .contact-us,
 .donate,
 .orange-button {
@@ -620,19 +550,11 @@ body {
   text-align: center;
   padding-block: 24px;
   padding-inline: 16px;
-  background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.3);
 
   &:hover {
     background-color: $light-blue;
     color: $white;
     transition: 0.3s;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.4);
   }
 }
 
@@ -645,7 +567,6 @@ body {
   padding: 0.75em 1.5em;
 }
 
-// Text styles
 #quotes {
   color: $white;
   font-size: 2em;
@@ -656,6 +577,13 @@ body {
   color: $white;
   padding: 1.5rem;
   margin: 0;
+}
+
+.large-white-text {
+  color: $white;
+  font-size: 2em;
+  letter-spacing: 2px;
+  text-align: center;
 }
 
 a:hover {
@@ -721,51 +649,11 @@ table.mentor {
 }
 
 .videowrapper {
-  max-width: 560px;
+  max-width: 560px; /* you have to have a size or this method doesn't work */
   max-height: 315px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 2rem;
-}
-
-// Responsive Design
-@media (max-width: 768px) {
-  .sponsor-tiers-container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 1rem;
-  }
-
-  .sponsor-tier-card {
-    padding: 1.5rem;
-  }
-
-  .tier-name {
-    font-size: 1.5rem;
-  }
-
-  .large-white-text {
-    font-size: 1.5rem;
-  }
-
-  .action-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-content {
-    padding: 10px;
-  }
-
-  .sponsor-tier-card {
-    padding: 1rem;
-  }
-
-  .tier-features li {
-    font-size: 0.9rem;
-  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -800,7 +688,6 @@ table.mentor {
   .column {
     @include prefix(flex, 0 0 100%, webkit moz o);
     box-sizing: border-box;
-    min-width: 300px;
   }
 
   h1 {
@@ -890,7 +777,7 @@ table.mentor {
     align-items: flex-start;
   }
 
-  .nav-bar-inner>.nav-link--mobile {
+  .nav-bar-inner > .nav-link--mobile {
     border-bottom: 1px solid $light-gray;
   }
 
@@ -901,7 +788,8 @@ table.mentor {
   .main-header {
     display: block;
     position: relative;
-    background: url(../img/three-participants-at-laptops-min.jpg) $main-blue no-repeat top center;
+    background: url(../img/three-participants-at-laptops-min.jpg) $main-blue
+      no-repeat top center;
     @include prefix(background-size, contain, webkit moz o);
   }
 
@@ -1016,23 +904,18 @@ table.mentor {
   }
 
   .social-link {
-    width: 50px;
-    /* Slightly smaller width for mobile */
+    width: 50px; /* Slightly smaller width for mobile */
   }
-
   .social-media,
   .hiring {
     width: 2.5rem;
     height: 2.5rem;
   }
-
   .hiring {
     width: 3.75rem;
   }
-
   .icon-text {
-    font-size: 0.6rem;
-    /* Even smaller text for mobile */
+    font-size: 0.6rem; /* Even smaller text for mobile */
   }
 }
 
@@ -1068,16 +951,6 @@ table.mentor {
         vertical-align: top; // Retain alignment
       }
     }
-  }
-
-  .sponsor-logo {
-    width: 38%;
-    margin: 15px;
-  }
-
-  .sponsor-img {
-    width: 33%;
-    margin: 20px;
   }
 }
 
@@ -1188,6 +1061,10 @@ table.mentor {
   font-size: 1rem;
 }
 
+.blue-background h3 {
+  color: white;
+}
+
 .collapsible {
   color: $main-blue;
   cursor: pointer;
@@ -1242,6 +1119,9 @@ p.press-release-bold {
   display: flex;
   justify-content: center;
   border-radius: 20px;
+}
+
+.payment-form {
   align-items: center;
 }
 
@@ -1381,7 +1261,7 @@ p.press-release-bold {
   margin-bottom: 2em;
 }
 
-#info-wrapper>fieldset {
+#info-wrapper > fieldset {
   box-sizing: border-box;
   margin: 1em;
   padding: 1em;
@@ -1394,15 +1274,15 @@ legend {
   color: #007395cc;
 }
 
-#info-wrapper>fieldset>label {
+#info-wrapper > fieldset > label {
   margin-top: 1em;
   margin-bottom: 0.5em;
   color: #007395cc;
 }
 
-#info-wrapper>fieldset>input[type="text"],
-#info-wrapper>fieldset>input[type="email"],
-#info-wrapper>fieldset>textarea {
+#info-wrapper > fieldset > input[type="text"],
+#info-wrapper > fieldset > input[type="email"],
+#info-wrapper > fieldset > textarea {
   min-width: 90%;
   margin: auto auto 1em auto;
   padding: 0.25em;
@@ -1410,7 +1290,7 @@ legend {
   border-radius: 6px;
 }
 
-#info-wrapper>fieldset>textarea {
+#info-wrapper > fieldset > textarea {
   min-height: 6em;
 }
 
@@ -1429,8 +1309,8 @@ input[type="radio"] {
   background-color: $main-blue;
 }
 
-#payment-page>h1,
-#payment-page>p {
+#payment-page > h1,
+#payment-page > p {
   max-width: 65%;
   margin: auto;
   text-align: center;
@@ -1444,7 +1324,6 @@ input[type="radio"] {
   border-width: thick;
   padding: 3% 5% 3% 5%;
 }
-
 #consulting-bullet-items {
   border-style: solid;
   border-color: #05556d;
@@ -1464,7 +1343,7 @@ input#code-of-conduct-checkbox {
   margin-right: 15px;
 }
 
-label[for="code-of-conduct-checkbox"]~a {
+label[for="code-of-conduct-checkbox"] ~ a {
   color: #007395cc;
   text-decoration: none;
 }
@@ -1504,7 +1383,7 @@ label[for="code-of-conduct-checkbox"]~a {
     min-width: none;
   }
 
-  #info-wrapper>fieldset {
+  #info-wrapper > fieldset {
     margin: 0px;
     width: 100%;
   }
@@ -1644,22 +1523,18 @@ textarea.invalid {
   margin-left: auto;
   width: 100%;
 }
-
 .sponsor-benefit-table,
 .sponsor-benefit-table td {
   border: 1px solid $main-blue;
   border-collapse: collapse;
 }
-
 .sponsor-benefit-table th {
   padding: 5px;
   column-width: 100px;
 }
-
 .sponsor-table-cell {
   text-align: center;
 }
-
 .sponsor-table-prompt {
   padding-left: 5px;
 }
@@ -1671,3 +1546,4 @@ textarea.invalid {
     font-size: 13px;
   }
 }
+
