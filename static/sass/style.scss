@@ -122,19 +122,18 @@
 
   .tier-button {
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 1.5rem 1rem;
     background: $focal-orange;
     color: white;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
 
     &:hover {
-      background: $main-blue;
+      background: $light-blue;
       color: white;
     }
   }
