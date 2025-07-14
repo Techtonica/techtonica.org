@@ -9,7 +9,7 @@
   }
 
   button.continue-to-app-btn {
-    background-color: #fc7625;
+    background-color: $focal-orange;
     color: white;
     font-size: large;
     padding: 1rem;
@@ -21,7 +21,7 @@
   }
 
   button.continue-to-app-btn:hover {
-    background-color: #16c1f3;
+    background-color: $hover-blue;
     color: white;
     transition: 0.3s;
   }
