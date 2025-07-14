@@ -1624,40 +1624,40 @@ progress::-webkit-progress-bar {
 #applicant-action {
   padding: 5px;
   border-radius: 10px;
-
-  /* News Page Styling */
-  #news-title {
-    padding: 0;
-  }
-
   /* Sponsor Page Styling */
-  .sponsor-benefit-table {
-    margin-right: auto;
-    margin-left: auto;
-    width: 100%;
-  }
-  .sponsor-benefit-table,
-  .sponsor-benefit-table td {
-    border: 1px solid $main-blue;
-    border-collapse: collapse;
-  }
-  .sponsor-benefit-table th {
-    padding: 5px;
-    column-width: 100px;
-  }
-  .sponsor-table-cell {
-    text-align: center;
-  }
-  .sponsor-table-prompt {
-    padding-left: 5px;
-  }
-
-  @media only screen and (min-width: 320px) and (max-width: 699px) {
-    .sponsor-benefit-table {
-      max-width: 100%;
-      table-layout: inherit;
-      font-size: 13px;
-    }
+}
+#admin-action .sponsor-benefit-table,
+#applicant-action .sponsor-benefit-table {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
+#admin-action .sponsor-benefit-table,
+#admin-action .sponsor-benefit-table td,
+#applicant-action .sponsor-benefit-table,
+#applicant-action .sponsor-benefit-table td {
+  border: 1px solid #0093b5;
+  border-collapse: collapse;
+}
+#admin-action .sponsor-benefit-table th,
+#applicant-action .sponsor-benefit-table th {
+  padding: 5px;
+  column-width: 100px;
+}
+#admin-action .sponsor-table-cell,
+#applicant-action .sponsor-table-cell {
+  text-align: center;
+}
+#admin-action .sponsor-table-prompt,
+#applicant-action .sponsor-table-prompt {
+  padding-left: 5px;
+}
+@media only screen and (min-width: 320px) and (max-width: 699px) {
+  #admin-action .sponsor-benefit-table,
+  #applicant-action .sponsor-benefit-table {
+    max-width: 100%;
+    table-layout: inherit;
+    font-size: 13px;
   }
 }
 
