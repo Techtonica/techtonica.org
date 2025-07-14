@@ -1,7 +1,6 @@
 // Form components and styling for Techtonica website
 
 @import "settings";
-@import "mixins";
 
 /* Application Form Details Page Styling */
 
@@ -10,7 +9,7 @@
   }
 
   button.continue-to-app-btn {
-    background-color: $focal-orange;
+    background-color: #fc7625;
     color: white;
     font-size: large;
     padding: 1rem;
@@ -22,7 +21,7 @@
   }
 
   button.continue-to-app-btn:hover {
-    background-color: $hover-blue;
+    background-color: #16c1f3;
     color: white;
     transition: 0.3s;
   }
