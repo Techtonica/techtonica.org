@@ -189,22 +189,6 @@ p {
   text-align: center;
   margin-top: 2rem;
 }
-.sponsor-tiers-container .tier-button {
-  display: inline-block;
-  padding: 1.5rem 1rem;
-  background: #fc7625;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s;
-  border: none;
-  cursor: pointer;
-}
-.sponsor-tiers-container .tier-button:hover {
-  background: #16c1f3;
-  color: white;
-}
 
 .action-buttons {
   display: flex;
@@ -625,6 +609,7 @@ p {
 
 .contact-us,
 .donate,
+.tier-button,
 .orange-button {
   margin-bottom: 24px;
   -webkit-border-radius: 8px;
@@ -640,6 +625,7 @@ p {
 }
 .contact-us:hover,
 .donate:hover,
+.tier-button:hover,
 .orange-button:hover {
   background-color: #16c1f3;
   color: white;

@@ -120,23 +120,6 @@
     margin-top: 2rem;
   }
 
-  .tier-button {
-    display: inline-block;
-    padding: 1.5rem 1rem;
-    background: $focal-orange;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.3s;
-    border: none;
-    cursor: pointer;
-
-    &:hover {
-      background: $light-blue;
-      color: white;
-    }
-  }
 }
 
 // Action Buttons
@@ -540,6 +523,7 @@
 
 .contact-us,
 .donate,
+.tier-button,
 .orange-button {
   margin-bottom: 24px;
   @include prefix(border-radius, 8px, webkit moz o);
