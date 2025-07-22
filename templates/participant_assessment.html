@@ -613,6 +613,531 @@ Participant Assessment {% endblock title %} {% block content %}
         <br />
       </div>
 
+      <h2>Attendance & Honesty</h2>
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="on-time">What does "being on time" for program activities include?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="on-time-a"
+          name="on-time"
+          value="A"
+          required
+        />
+        <label for="on-time-a">A. Arriving exactly at the start time.</label>
+        <br />
+        <input
+          type="radio"
+          id="on-time-b"
+          name="on-time"
+          value="B"
+          required
+        />
+        <label for="on-time-b">B. Being present for only the main lecture.</label>
+        <br />
+        <input
+          type="radio"
+          id="on-time-c"
+          name="on-time"
+          value="C"
+          required
+        />
+        <label for="on-time-c">C. Notifying staff 5 minutes before if you are late.</label>
+        <br />
+        <input
+          type="radio"
+          id="on-time-d"
+          name="on-time"
+          value="D"
+          required
+        />
+        <label for="on-time-d">D. Being in the meeting with your camera on and ready to be present.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="planned-absences">How many days of planned absences are participants allowed during the program, and how must they be approved?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="planned-absences-a"
+          name="planned-absences"
+          value="A"
+          required
+        />
+        <label for="planned-absences-a">A. Unlimited, with verbal notification.</label>
+        <br />
+        <input
+          type="radio"
+          id="planned-absences-b"
+          name="planned-absences"
+          value="B"
+          required
+        />
+        <label for="planned-absences-b">B. 3 days, with no prior approval needed.</label>
+        <br />
+        <input
+          type="radio"
+          id="planned-absences-c"
+          name="planned-absences"
+          value="C"
+          required
+        />
+        <label for="planned-absences-c">C. Up to 5 days, pre-approved by Techtonica (TPM and STEM) at least 24 hours in advance.</label>
+        <br />
+        <input
+          type="radio"
+          id="planned-absences-d"
+          name="planned-absences"
+          value="D"
+          required
+        />
+        <label for="planned-absences-d">D. 10 days, as long as assignments are completed.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="two-days-forfeit">What happens if a participant is absent for two (2) consecutive days without leave/notice?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="two-days-forfeit-a"
+          name="two-days-forfeit"
+          value="A"
+          required
+        />
+        <label for="two-days-forfeit-a">A. They receive a verbal warning.</label>
+        <br />
+        <input
+          type="radio"
+          id="two-days-forfeit-b"
+          name="two-days-forfeit"
+          value="B"
+          required
+        />
+        <label for="two-days-forfeit-b">B. They forfeit their participation in the program.</label>
+        <br />
+        <input
+          type="radio"
+          id="two-days-forfeit-c"
+          name="two-days-forfeit"
+          value="C"
+          required
+        />
+        <label for="two-days-forfeit-c">C. Their stipend is reduced by 50%.</label>
+        <br />
+        <input
+          type="radio"
+          id="two-days-forfeit-d"
+          name="two-days-forfeit"
+          value="D"
+          required
+        />
+        <label for="two-days-forfeit-d">D. They must make up the time on a weekend.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="honesty-violation">Which of the following is considered a violation of honesty? (Select all that apply)
+        </label>
+        <br />
+        <input
+          type="checkbox"
+          id="honesty-violation-a"
+          name="honesty-violation"
+          value="A"
+          required
+        />
+        <label for="honesty-violation-a">A. Copying others' work and submitting it as your own.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="honesty-violation-b"
+          name="honesty-violation"
+          value="B"
+          required
+        />
+        <label for="honesty-violation-b">B. Not properly acknowledging your sources.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="honesty-violation-c"
+          name="honesty-violation"
+          value="C"
+          required
+        />
+        <label for="honesty-violation-c">C. Giving or accepting assistance on assignments you're supposed to complete alone.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="honesty-violation-d"
+          name="honesty-violation"
+          value="D"
+          required
+        />
+        <label for="honesty-violation-d">D. Taking program time to work on non-program things.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="honesty-violation-e"
+          name="honesty-violation"
+          value="E"
+          required
+        />
+        <label for="honesty-violation-d">E. All of the above.</label>
+        <br />
+      </div>
+
+
+      <h2>Mentors, Assignments & Placement</h2>
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="mentor-commitment">How often should you meet with your individual mentor?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="mentor-commitment-a"
+          name="mentor-commitment"
+          value="A"
+          required
+        />
+        <label for="mentor-commitment-a">A. Once per month.</label>
+        <br />
+        <input
+          type="radio"
+          id="mentor-commitment-b"
+          name="mentor-commitment"
+          value="B"
+          required
+        />
+        <label for="mentor-commitment-b">B. Once per week, outside of Techtonica program hours.</label>
+        <br />
+        <input
+          type="radio"
+          id="mentor-commitment-c"
+          name="mentor-commitment"
+          value="C"
+          required
+        />
+        <label for="mentor-commitment-c">C. Only when you have a specific problem.</label>
+        <br />
+        <input
+          type="radio"
+          id="mentor-commitment-d"
+          name="mentor-commitment"
+          value="D"
+          required
+        />
+        <label for="mentor-commitment-d">D. As often as your mentor requests.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="assignment-definition">What is considered an "assignment" in the Techtonica program? (Select all that apply)
+        </label>
+        <br />
+        <input
+          type="checkbox"
+          id="assignment-definition-a"
+          name="assignment-definition"
+          value="A"
+          required
+        />
+        <label for="assignment-definition-a">A. Reading and watching materials.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="assignment-definition-b"
+          name="assignment-definition"
+          value="B"
+          required
+        />
+        <label for="assignment-definition-b">B. Writing code and building projects.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="assignment-definition-c"
+          name="assignment-definition"
+          value="C"
+          required
+        />
+        <label for="assignment-definition-c">C. Completing surveys.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="assignment-definition-d"
+          name="assignment-definition"
+          value="D"
+          required
+        />
+        <label for="assignment-definition-d">D. Attending at least one networking event each month.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="assignment-definition-e"
+          name="assignment-definition"
+          value="E"
+          required
+        />
+        <label for="assignment-definition-d">E. All of the above.</label>
+        <br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="no-placement-guarantee">What is Techtonica's stance on guaranteeing job placement upon program completion?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="no-placement-guarantee-a"
+          name="no-placement-guarantee"
+          value="A"
+          required
+        />
+        <label for="no-placement-guarantee-a">A. Job placement is guaranteed for all participants.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-placement-guarantee-b"
+          name="no-placement-guarantee"
+          value="B"
+          required
+        />
+        <label for="no-placement-guarantee-b">B. Placement is guaranteed only for top-performing participants.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-placement-guarantee-c"
+          name="no-placement-guarantee"
+          value="C"
+          required
+        />
+        <label for="no-placement-guarantee-c">C. There is no guarantee of placement, but Techtonica makes a good faith effort to secure positions.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-placement-guarantee-d"
+          name="no-placement-guarantee"
+          value="D"
+          required
+        />
+        <label for="no-placement-guarantee-d">D. Participants are solely responsible for finding their own placements.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="ineligible-for-placement">Which of the following criteria might prevent a Techtonica participant from interviewing for placements? (Select all that apply)
+        </label>
+        <br />
+        <input
+          type="checkbox"
+          id="ineligible-for-placement-a"
+          name="ineligible-for-placement"
+          value="A"
+          required
+        />
+        <label for="ineligible-for-placement-a">A. Not submitting assignments on time.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="ineligible-for-placement-b"
+          name="ineligible-for-placement"
+          value="B"
+          required
+        />
+        <label for="ineligible-for-placement-b">B. Not completing their final projects.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="ineligible-for-placement-c"
+          name="ineligible-for-placement"
+          value="C"
+          required
+        />
+        <label for="ineligible-for-placement-c">C. Not scoring at least an average of 3.5 on practice interviews.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="ineligible-for-placement-d"
+          name="ineligible-for-placement"
+          value="D"
+          required
+        />
+        <label for="ineligible-for-placement-d">D. Not meeting other program requirements.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="ineligible-for-placement-e"
+          name="ineligible-for-placement"
+          value="E"
+          required
+        />
+        <label for="ineligible-for-placement-d">E. All of the above.</label>
+        <br />
+      </div>
+
+
+      <h2>Tuition & Stipends</h2>
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="tax-form-distributed">What type of tax form may be sent to participants who received stipends at the end of January of the following year?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="tax-form-distributed-a"
+          name="tax-form-distributed"
+          value="A"
+          required
+        />
+        <label for="tax-form-distributed-a">A. W-2 Form.</label>
+        <br />
+        <input
+          type="radio"
+          id="tax-form-distributed-b"
+          name="tax-form-distributed"
+          value="B"
+          required
+        />
+        <label for="tax-form-distributed-b">B. 1040 Form.</label>
+        <br />
+        <input
+          type="radio"
+          id="tax-form-distributed-c"
+          name="tax-form-distributed"
+          value="C"
+          required
+        />
+        <label for="tax-form-distributed-c">C. W-9 Form.</label>
+        <br />
+        <input
+          type="radio"
+          id="tax-form-distributed-d"
+          name="tax-form-distributed"
+          value="D"
+          required
+        />
+        <label for="tax-form-distributed-d">D. 1099-Miscellaneous Tax Form.</label><br />
+      </div>
+
+        <label for="late-monthly-tuition-payment">What is the consequence of late monthly tuition payments?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="late-monthly-tuition-payment-a"
+          name="late-monthly-tuition-payment"
+          value="A"
+          required
+        />
+        <label for="late-monthly-tuition-payment-a">A. A flat late fee of $50.</label>
+        <br />
+        <input
+          type="radio"
+          id="late-monthly-tuition-payment-b"
+          name="late-monthly-tuition-payment"
+          value="B"
+          required
+        />
+        <label for="late-monthly-tuition-payment-b">B. Daily compounding interest at a 12% rate, which could lead to removal from the Program.</label>
+        <br />
+        <input
+          type="radio"
+          id="late-monthly-tuition-payment-c"
+          name="late-monthly-tuition-payment"
+          value="C"
+          required
+        />
+        <label for="late-monthly-tuition-payment-c">C. A warning, with no immediate financial penalty.</label>
+        <br />
+        <input
+          type="radio"
+          id="late-monthly-tuition-payment-d"
+          name="late-monthly-tuition-payment"
+          value="D"
+          required
+        />
+        <label for="late-monthly-tuition-payment-d">D. The Participant's stipend is immediately reduced.</label><br />
+      </div>
+
+        <label for="participant-tax-liability">Who is responsible for a Participant's tax liability related to stipends received?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="participant-tax-liability-a"
+          name="participant-tax-liability"
+          value="A"
+          required
+        />
+        <label for="participant-tax-liability-a">A. The Organization.</label>
+        <br />
+        <input
+          type="radio"
+          id="participant-tax-liability-b"
+          name="participant-tax-liability"
+          value="B"
+          required
+        />
+        <label for="participant-tax-liability-b">B. Social Good Fund (the fiscal sponsor).</label>
+        <br />
+        <input
+          type="radio"
+          id="participant-tax-liability-c"
+          name="participant-tax-liability"
+          value="C"
+          required
+        />
+        <label for="participant-tax-liability-c">C. The Participant.</label>
+        <br />
+        <input
+          type="radio"
+          id="participant-tax-liability-d"
+          name="participant-tax-liability"
+          value="D"
+          required
+        />
+        <label for="participant-tax-liability-d">D. The IRS.</label><br />
+      </div>
+
+        <label for="tax-form-receipt-timeline">When will a 1099-NEC tax form be emailed to Participants who received stipends?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="tax-form-receipt-timeline-a"
+          name="tax-form-receipt-timeline"
+          value="A"
+          required
+        />
+        <label for="tax-form-receipt-timeline-a">A. At the end of the Program.</label>
+        <br />
+        <input
+          type="radio"
+          id="tax-form-receipt-timeline-b"
+          name="tax-form-receipt-timeline"
+          value="B"
+          required
+        />
+        <label for="tax-form-receipt-timeline-b">B. Within 30 days of the last stipend payment.</label>
+        <br />
+        <input
+          type="radio"
+          id="tax-form-receipt-timeline-c"
+          name="tax-form-receipt-timeline"
+          value="C"
+          required
+        />
+        <label for="tax-form-receipt-timeline-c">C. At the end of January of the year following Program completion.</label>
+        <br />
+        <input
+          type="radio"
+          id="tax-form-receipt-timeline-d"
+          name="tax-form-receipt-timeline"
+          value="D"
+          required
+        />
+        <label for="tax-form-receipt-timeline-d">D. Only upon request from the Participant.</label><br />
+      </div>
+
+
       <div>
         <button
           type="button"
