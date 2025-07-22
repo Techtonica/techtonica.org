@@ -93,7 +93,6 @@ Participant Assessment {% endblock title %} {% block content %}
       <div id="radio-wrapper" role="radiogroup">
         <label for="participant-expectations">As a Participant, which of the following are you expected to do? (Select all that apply)
         </label>
-
         <br />
         <input
           type="checkbox"
@@ -142,292 +141,446 @@ Participant Assessment {% endblock title %} {% block content %}
         <br />
       </div>
 
-      <!-- 
       <div id="radio-wrapper" role="radiogroup">
-        <label for="sharing-personal-journey"
-          >Do you agree to share your personal story/journey into tech as
-          requested at Techtonica events and in Techtonica media? </label
-        ><br />
-        <input
-          type="radio"
-          id="sharing-personal-journey-yes"
-          name="sharing-personal-journey"
-          value="Yes"
-          required
-        />
-        <label for="sharing-personal-journey-yes">Yes</label>
-        <input
-          type="radio"
-          id="sharing-personal-journey-no"
-          name="sharing-personal-journey"
-          value="No"
-          required
-        />
-        <label for="sharing-personal-journey-no">No</label><br />
-      </div>
-
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="commit-to-conduct"
-          >Do you commit to abiding by Techtonica's Code of Conduct
-          <a href="https://techtonica.org/conduct/" target="_blank"
-            >(https://techtonica.org/conduct/)</a
-          >, Program Handbook, and Participant Agreement? </label
-        ><br />
-        <input
-          type="radio"
-          id="commit-to-conduct-yes"
-          name="commit-to-conduct"
-          value="Yes"
-          required
-        />
-        <label for="commit-to-conduct-yes">Yes</label>
-        <input
-          type="radio"
-          id="commit-to-conduct-no"
-          name="commit-to-conduct"
-          value="No"
-          required
-        />
-        <label for="commit-to-conduct-no">No</label><br />
-      </div>
-
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="commit-to-work-with-others"
-          >Do you commit to working with the people assigned to work with you,
-          whether volunteer, staff, fellow participants, or someone else? </label
-        ><br />
-        <input
-          type="radio"
-          id="commit-to-work-with-others-yes"
-          name="commit-to-work-with-others"
-          value="Yes"
-          required
-        />
-        <label for="commit-to-work-with-others-yes">Yes</label>
-        <input
-          type="radio"
-          id="commit-to-work-with-others-no"
-          name="commit-to-work-with-others"
-          value="No"
-          required
-        />
-        <label for="commit-to-work-with-others-no">No</label><br />
-      </div>
-
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="commit-to-program-schedule"
-          >Do you commit to always being present at, on time to, and prepared
-          for the program, which is conducted from 8 AM - 5 PM Pacific Time
-          Monday through Friday, as well as other Techtonica-required events
-          that may happen outside these hours? </label
-        ><br />
-        <input
-          type="radio"
-          id="commit-to-program-schedule-yes"
-          name="commit-to-program-schedule"
-          value="Yes"
-          required
-        />
-        <label for="commit-to-program-schedule-yes">Yes</label>
-        <input
-          type="radio"
-          id="commit-to-program-schedule-no"
-          name="commit-to-program-schedule"
-          value="No"
-          required
-        />
-        <label for="commit-to-program-schedule-no">No</label><br />
-      </div>
-
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="commit-to-placement"
-          >Do you commit to working with whichever company we might place you
-          with? </label
-        ><br />
-        <input
-          type="radio"
-          id="commit-to-placement-yes"
-          name="commit-to-placement"
-          value="Yes"
-          required
-        />
-        <label for="commit-to-placement-yes">Yes</label>
-        <input
-          type="radio"
-          id="commit-to-placement-no"
-          name="commit-to-placement"
-          value="No"
-          required
-        />
-        <label for="commit-to-placement-no">No</label><br />
-      </div>
-
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="willing-to-relocate"
-          >Would you be willing to move to a new city to be placed in a job?
+        <label for="written-communication">What is the expectation regarding sharing private assessment information with other Participants after the Program?
         </label>
-        <div class="learn-more-wrapper">
-          <button class="learn-more-title" type="button" aria-expanded="false">
-            Learn More
-            <span class="toggle-icon">
-              <span class="toggle-icon-plus">+</span>
-              <span class="toggle-icon-minus">-</span>
-            </span>
-          </button>
-          <p class="learn-more-content" tabindex="0">
-            While this is not currently a requirement, it may be a requirement
-            again in the near future, and it increases your chances of securing
-            a job.
-          </p>
-        </div>
         <br />
         <input
           type="radio"
-          id="willing-to-relocate-yes"
-          name="willing-to-relocate"
-          value="Yes"
+          id="sharing-assessment-info-a"
+          name="sharing-assessment-info"
+          value="A"
           required
         />
-        <label for="willing-to-relocate-yes">Yes</label>
+        <label for="sharing-assessment-info-a">A. It is encouraged for collaborative learning.</label>
+        <br />
         <input
           type="radio"
-          id="willing-to-relocate-no"
-          name="willing-to-relocate"
-          value="No"
+          id="sharing-assessment-info-b"
+          name="sharing-assessment-info"
+          value="B"
           required
         />
-        <label for="willing-to-relocate-no">No</label><br />
+        <label for="sharing-assessment-info-b">B. It is allowed only with explicit permission from the Organization.</label>
+        <br />
+        <input
+          type="radio"
+          id="sharing-assessment-info-c"
+          name="sharing-assessment-info"
+          value="C"
+          required
+        />
+        <label for="sharing-assessment-info-c">C. Participants agree never to share private assessment information.</label>
+        <br />
+        <input
+          type="radio"
+          id="sharing-assessment-info-d"
+          name="sharing-assessment-info"
+          value="D"
+          required
+        />
+        <label for="sharing-assessment-info-d">D. It is only allowed if both parties agree.</label><br />
       </div>
 
       <div id="radio-wrapper" role="radiogroup">
-        <label for="aware-no-guaranteed-placement"
-          >Are you fully aware that placements are not guaranteed by Techtonica
-          and you may need to start a job search after graduation? </label
-        ><br />
+        <label for="primary-participant-responsibility">According to the handbook, what is a primary responsibility of every participant?
+        </label>
+        <br />
         <input
           type="radio"
-          id="aware-no-guaranteed-placement-yes"
-          name="aware-no-guaranteed-placement"
-          value="Yes"
+          id="primary-participant-responsibility-a"
+          name="primary-participant-responsibility"
+          value="A"
           required
         />
-        <label for="aware-no-guaranteed-placement-yes">Yes, I'm aware</label>
+        <label for="primary-participant-responsibility-a">A. To only focus on technical skills.</label>
+        <br />
         <input
           type="radio"
-          id="aware-no-guaranteed-placement-no"
-          name="aware-no-guaranteed-placement"
-          value="No"
+          id="primary-participant-responsibility-b"
+          name="primary-participant-responsibility"
+          value="B"
           required
         />
-        <label for="aware-no-guaranteed-placement-no">No</label><br />
+        <label for="primary-participant-responsibility-b">B. To be aware of and abide by existing policies and rules.</label>
+        <br />
+        <input
+          type="radio"
+          id="primary-participant-responsibility-c"
+          name="primary-participant-responsibility"
+          value="C"
+          required
+        />
+        <label for="primary-participant-responsibility-c">C. To always work independently without seeking help.</label>
+        <br />
+        <input
+          type="radio"
+          id="primary-participant-responsibility-d"
+          name="primary-participant-responsibility"
+          value="D"
+          required
+        />
+        <label for="primary-participant-responsibility-d">D. To ensure all program plans remain unchanged.</label>
+        <br />
       </div>
 
       <div id="radio-wrapper" role="radiogroup">
-        <label for="aware-of-tuition-cost"
-          >Are you aware that Techtonica’s tuition costs $18,000 and that
-          tuition and stipend scholarships are available? </label
-        ><br />
-        <input
-          type="radio"
-          name="aware-of-tuition-cost"
-          id="aware-of-tuition-cost-yes"
-          value="Yes"
-          required
-        />
-        <label for="aware-of-tuition-cost-yes">Yes</label>
-        <input
-          type="radio"
-          id="aware-of-tuition-cost-no"
-          name="aware-of-tuition-cost"
-          value="No"
-          required
-        />
-        <label for="aware-of-tuition-cost-no">No</label><br />
-      </div>
-
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="interested-in-scholarships"
-          >Did you want to apply for tuition and stipend scholarships? </label
-        ><br />
-        <input
-          type="radio"
-          name="interested-in-scholarships"
-          id="interested-in-scholarships-yes"
-          value="Yes"
-          required
-        />
-        <label for="interested-in-scholarships-yes">Yes</label>
-        <input
-          type="radio"
-          id="interested-in-scholarships-no"
-          name="interested-in-scholarships"
-          value="No"
-          required
-        />
-        <label for="interested-in-scholarships-no">No</label><br />
-      </div>
-
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="promote-techtonica"
-          >Could you please spread the word about Techtonica to friends, family,
-          and people in your area? </label
-        ><br />
-        <input
-          type="radio"
-          name="promote-techtonica"
-          id="promote-techtonica-yes"
-          value="Yes"
-          required
-        />
-        <label for="promote-techtonica-yes">Yes</label>
-        <input
-          type="radio"
-          id="promote-techtonica-no"
-          name="promote-techtonica"
-          value="No"
-          required
-        />
-        <label for="promote-techtonica-no">No</label><br />
-      </div>
-
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="commit-to-two-JS-study-groups"
-          >For the next step in the application process, you'll need to join TWO
-          of our digital literacy testing and JavaScript events on different
-          days (if we decide to move forward with your application, we'll send
-          you details based on availability and times selected). Please confirm
-          you will make it to two of the provided dates or forfeit your
-          application. </label
-        ><br />
-        <input
-          type="checkbox"
-          name="commit-to-two-JS-study-groups"
-          id="commit-to-two-JS-study-groups-yes"
-          value="Yes"
-          required
-        />
-        <label for="commit-to-two-JS-study-groups-yes">Yes, I confirm</label
-        ><br />
-      </div>
-
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="completed-form-truthfully">
-          Do you confirm you've filled out this form truthfully?
+        <label for="strengthen-participant-characteristics">Which of the following characteristics are participants encouraged to strengthen during the program? (Select all that apply)
         </label>
         <br />
         <input
           type="checkbox"
-          name="completed-form-truthfully"
-          id="completed-form-truthfully-yes"
-          value="Yes"
+          id="strengthen-participant-characteristics-a"
+          name="strengthen-participant-characteristics"
+          value="A"
           required
         />
-        <label> Yes, I confirm </label>
-      </div>  -->
-
+        <label for="strengthen-participant-characteristics-a">A. Resilience.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="strengthen-participant-characteristics-b"
+          name="strengthen-participant-characteristics"
+          value="B"
+          required
+        />
+        <label for="strengthen-participant-characteristics-b">B. Autonomy.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="strengthen-participant-characteristics-c"
+          name="strengthen-participant-characteristics"
+          value="C"
+          required
+        />
+        <label for="strengthen-participant-characteristics-c">C. Stress Management.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="strengthen-participant-characteristics-d"
+          name="strengthen-participant-characteristics"
+          value="D"
+          required
+        />
+        <label for="strengthen-participant-characteristics-d">D. Growth Mindset.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="strengthen-participant-characteristics-e"
+          name="strengthen-participant-characteristics"
+          value="E"
+          required
+        />
+        <label for="strengthen-participant-characteristics-d">E. All of the above.</label>
+        <br />
+      </div>
+    
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="error-help">When asking for help with an error, what information should you be ready to describe?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="error-help-a"
+          name="error-help"
+          value="A"
+          required
+        />
+        <label for="error-help-a">A. Only the error message you are getting.</label>
+        <br />
+        <input
+          type="radio"
+          id="error-help-b"
+          name="error-help"
+          value="B"
+          required
+        />
+        <label for="error-help-b">B. What errors you're getting and what you've already tried to solve them.</label>
+        <br />
+        <input
+          type="radio"
+          id="error-help-c"
+          name="error-help"
+          value="C"
+          required
+        />
+        <label for="error-help-c">C. The solution you think is correct.</label>
+        <br />
+        <input
+          type="radio"
+          id="error-help-d"
+          name="error-help"
+          value="D"
+          required
+        />
+        <label for="error-help-d">D. The name of the person you expect to help you.</label>
+        <br />
+      </div>
+    
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="navigating-distractions">What is the expectation regarding distractions during program time?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="navigating-distractions-a"
+          name="navigating-distractions"
+          value="A"
+          required
+        />
+        <label for="navigating-distractions-a">A. They are allowed during breaks.</label>
+        <br />
+        <input
+          type="radio"
+          id="navigating-distractions-b"
+          name="navigating-distractions"
+          value="B"
+          required
+        />
+        <label for="navigating-distractions-b">B. Participants should eliminate distractions and stay focused on learning.</label>
+        <br />
+        <input
+          type="radio"
+          id="navigating-distractions-c"
+          name="navigating-distractions"
+          value="C"
+          required
+        />
+        <label for="navigating-distractions-c">C. Distractions are acceptable if they relate to personal growth..</label>
+        <br />
+        <input
+          type="radio"
+          id="navigating-distractions-d"
+          name="navigating-distractions"
+          value="D"
+          required
+        />
+        <label for="navigating-distractions-d">D. They are only an issue during group activities.</label>
+        <br />
+      </div>
     </fieldset>
 
-      <div>
+
+    <fieldset>
+      <legend>Communication & Professionalism</legend>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="receiving-feedback">When receiving feedback, what is a recommended action?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="receiving-feedback-a"
+          name="receiving-feedback"
+          value="A"
+          required
+        />
+        <label for="receiving-feedback-a">A. Immediately explain your intentions.</label>
+        <br />
+        <input
+          type="radio"
+          id="receiving-feedback-b"
+          name="receiving-feedback"
+          value="B"
+          required
+        />
+        <label for="receiving-feedback-b">B. Actively listen, summarize feedback to check understanding, and thank the person.</label>
+        <br />
+        <input
+          type="radio"
+          id="receiving-feedback-c"
+          name="receiving-feedback"
+          value="C"
+          required
+        />
+        <label for="receiving-feedback-c">C. Take it personally to understand its full impact.</label>
+        <br />
+        <input
+          type="radio"
+          id="receiving-feedback-d"
+          name="receiving-feedback"
+          value="D"
+          required
+        />
+        <label for="receiving-feedback-d">D. Ignore it if you disagree with it.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="giving-feedback">Which of the following is an acceptable way to give Techtonica feedback? (Select all that apply)
+        </label>
+        <br />
+        <input
+          type="checkbox"
+          id="giving-feedback-a"
+          name="giving-feedback"
+          value="A"
+          required
+        />
+        <label for="giving-feedback-a">A. Weekly survey for feedback.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="giving-feedback-b"
+          name="giving-feedback"
+          value="B"
+          required
+        />
+        <label for="giving-feedback-b">B. Staff reviews.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="giving-feedback-c"
+          name="giving-feedback"
+          value="C"
+          required
+        />
+        <label for="giving-feedback-c">C. Peer reviews.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="giving-feedback-d"
+          name="giving-feedback"
+          value="D"
+          required
+        />
+        <label for="giving-feedback-d">D. Anonymous feedback form as a last resort.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="giving-feedback-e"
+          name="giving-feedback"
+          value="E"
+          required
+        />
+        <label for="giving-feedback-d">E. All of the above.</label>
+        <br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="camera-expectations">For virtual events and meetings, what is an expectation regarding your camera and focus?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="camera-expectations-a"
+          name="camera-expectations"
+          value="A"
+          required
+        />
+        <label for="camera-expectations-a">A. Keep your camera off to save bandwidth.</label>
+        <br />
+        <input
+          type="radio"
+          id="camera-expectations-b"
+          name="camera-expectations"
+          value="B"
+          required
+        />
+        <label for="camera-expectations-b">B. Keep your camera on and show you are focused on the speaker (no texting, eating).</label>
+        <br />
+        <input
+          type="radio"
+          id="camera-expectations-c"
+          name="camera-expectations"
+          value="C"
+          required
+        />
+        <label for="camera-expectations-c">C. You can text as long as you are still listening.</label>
+        <br />
+        <input
+          type="radio"
+          id="camera-expectations-d"
+          name="camera-expectations"
+          value="D"
+          required
+        />
+        <label for="camera-expectations-d">D. Eating is allowed if your microphone is muted.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="written-communication">Where should all written Techtonica-related communication primarily take place?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="written-communication-a"
+          name="written-communication"
+          value="A"
+          required
+        />
+        <label for="written-communication-a">A. Personal email accounts.</label>
+        <br />
+        <input
+          type="radio"
+          id="written-communication-b"
+          name="written-communication"
+          value="B"
+          required
+        />
+        <label for="written-communication-b">B. Official Techtonica Slack, official Techtonica docs, Techtonica platforms, or via email.</label>
+        <br />
+        <input
+          type="radio"
+          id="written-communication-c"
+          name="written-communication"
+          value="C"
+          required
+        />
+        <label for="written-communication-c">C. Social media direct messages.</label>
+        <br />
+        <input
+          type="radio"
+          id="written-communication-d"
+          name="written-communication"
+          value="D"
+          required
+        />
+        <label for="written-communication-d">D. Any platform convenient for the participant.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="tech-question-format">When asking a question in the #tech-help Slack channel, what is the recommended format?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="tech-question-format-a"
+          name="tech-question-format"
+          value="A"
+          required
+        />
+        <label for="tech-question-format-a">A. "Can I ask a question?"</label>
+        <br />
+        <input
+          type="radio"
+          id="tech-question-format-b"
+          name="tech-question-format"
+          value="B"
+          required
+        />
+        <label for="tech-question-format-b">B. Just post your code and error message.</label>
+        <br />
+        <input
+          type="radio"
+          id="tech-question-format-c"
+          name="tech-question-format"
+          value="C"
+          required
+        />
+        <label for="tech-question-format-c">C. Thoughtfully write out the question including tech stack, goal, what you've tried, errors, and a link to code.</label>
+        <br />
+        <input
+          type="radio"
+          id="tech-question-format-d"
+          name="tech-question-format"
+          value="D"
+          required
+        />
+        <label for="tech-question-format-d">D. Send a private message to a staff member.</label>
+        <br />
+      </div>
+    </fieldset>
+      <!-- <div>
         <button
           type="button"
           class="save-btn"
@@ -435,7 +588,7 @@ Participant Assessment {% endblock title %} {% block content %}
         >
           Save
         </button>
-      </div>
+      </div> -->
   </form>
 </section>
 
