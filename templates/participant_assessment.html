@@ -6,12 +6,12 @@ Participant Assessment {% endblock title %} {% block content %}
     <fieldset>
       <legend>Techtonica Participant Assessment of Handbook, Agreement, & Code of Conduct</legend>
 
-      <h5>Purpose for You, the Participant:</h5>
+      <h3>Purpose for You, the Participant:</h3>
 
       <p>Welcome to the Techtonica program! To ensure you have the clearest possible understanding of how our program works, your responsibilities, and the support available to you, we've created this short assessment. Its main purpose is to help you confirm your grasp of the essential information found in the Participant Handbook, Participant Agreement, and Code of Conduct.</p>
       <br/>
 
-      <h5>By completing this assessment, you'll:</h5>
+      <h3>By completing this assessment, you'll:</h3>
       <ul>
         <li>
           <strong>Gain Clarity:</strong> Solidify your understanding of key areas like program expectations, attendance policies, financial details (tuition and stipends), job placement support, the violation process, and community conduct guidelines.</li>
@@ -25,7 +25,7 @@ Participant Assessment {% endblock title %} {% block content %}
 
       <p>Think of this as a helpful tool designed to set you up for success from day one, ensuring you feel confident and well-informed about your journey with Techtonica.</p>
 
-      <h5>How This Helps Program Staff:</h5>
+      <h3>How This Helps Program Staff:</h3>
       <ul>
         <li>
           <strong>Identify Knowledge Gaps:</strong> Quickly pinpoint common areas where participants might be experiencing confusion or uncertainty.
@@ -43,7 +43,7 @@ Participant Assessment {% endblock title %} {% block content %}
       
       <p>Ultimately, this assessment helps us ensure that we are effectively communicating vital program information and that you, our valued participant, are fully prepared and confident as you embark on your Techtonica journey.</p>
 
-      <h2>Program Structure, General Responsibilities, & Participation Expectations</h2>
+      <h4>Program Structure, General Responsibilities, & Participation Expectations</h4>
       <div id="radio-wrapper" role="radiogroup">
         <label for="program-duration">What is the expected duration of the Techtonica training program?
         </label>
@@ -396,7 +396,7 @@ Participant Assessment {% endblock title %} {% block content %}
         <br />
       </div>
 
-      <h2>Communication & Professionalism</h2>
+      <h4>Communication & Professionalism</h4>
       <div id="radio-wrapper" role="radiogroup">
         <label for="receiving-feedback">When receiving feedback, what is a recommended action?
         </label>
@@ -613,7 +613,7 @@ Participant Assessment {% endblock title %} {% block content %}
         <br />
       </div>
 
-      <h2>Attendance & Honesty</h2>
+      <h4>Attendance & Honesty</h4>
       <div id="radio-wrapper" role="radiogroup">
         <label for="on-time">What does "being on time" for program activities include?
         </label>
@@ -789,7 +789,7 @@ Participant Assessment {% endblock title %} {% block content %}
       </div>
 
 
-      <h2>Mentors, Assignments & Placement</h2>
+      <h4>Mentors, Assignments & Placement</h4>
       <div id="radio-wrapper" role="radiogroup">
         <label for="mentor-commitment">How often should you meet with your individual mentor?
         </label>
@@ -975,7 +975,7 @@ Participant Assessment {% endblock title %} {% block content %}
       </div>
 
 
-      <h2>Tuition & Stipends</h2>
+      <h4>Tuition & Stipends</h4>
       <div id="radio-wrapper" role="radiogroup">
         <label for="tax-form-distributed">What type of tax form may be sent to participants who received stipends at the end of January of the following year?
         </label>
@@ -1140,6 +1140,212 @@ Participant Assessment {% endblock title %} {% block content %}
         <label for="tax-form-receipt-timeline-d">D. Only upon request from the Participant.</label><br />
       </div>
 
+
+      <h4>Job Placement & Program Withdrawal/Termination</h4>
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="no-placement-guaranteed">Does Techtonica guarantee job placement upon completion of the Program?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="no-placement-guaranteed-a"
+          name="no-placement-guaranteed"
+          value="A"
+          required
+        />
+        <label for="no-placement-guaranteed-a">A. Yes, job placement is guaranteed for all participants.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-placement-guaranteed-b"
+          name="no-placement-guaranteed"
+          value="B"
+          required
+        />
+        <label for="no-placement-guaranteed-b">B. No, job placement is not guaranteed, but the Organization makes a good faith effort to secure positions.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-placement-guaranteed-c"
+          name="no-placement-guaranteed"
+          value="C"
+          required
+        />
+        <label for="no-placement-guaranteed-c">C. Only for participants who receive a full tuition scholarship.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-placement-guaranteed-d"
+          name="no-placement-guaranteed"
+          value="D"
+          required
+        />
+        <label for="no-placement-guaranteed-d">D. Only if the participant agrees to relocate for in-person work.</label><br />
+      </div>
+
+      <div>
+        <label for="unplaced-financial-consequences">If a Participant completes the Program but is not placed with a hiring Sponsor, what are the financial consequences?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="unplaced-financial-consequences-a"
+          name="unplaced-financial-consequences"
+          value="A"
+          required
+        />
+        <label for="unplaced-financial-consequences-a">A. They are required to pay a fee for job search support.</label>
+        <br />
+        <input
+          type="radio"
+          id="unplaced-financial-consequences-b"
+          name="unplaced-financial-consequences"
+          value="B"
+          required
+        />
+        <label for="unplaced-financial-consequences-b">B. They must return any stipends received.</label>
+        <br />
+        <input
+          type="radio"
+          id="unplaced-financial-consequences-c"
+          name="unplaced-financial-consequences"
+          value="C"
+          required
+        />
+        <label for="unplaced-financial-consequences-c">C. There are no financial consequences, but if they have an outstanding tuition balance, that must be paid in full.</label>
+        <br />
+        <input
+          type="radio"
+          id="unplaced-financial-consequences-d"
+          name="unplaced-financial-consequences"
+          value="D"
+          required
+        />
+        <label for="unplaced-financial-consequences-d">D. They must pay the sponsor for placement.</label><br />
+      </div>
+
+      <div>
+        <label for="nontechnical-withdrawal-financial-obligation">If a Participant withdraws from the Program for a reason other than starting a technical job, what could be the financial obligation?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="nontechnical-withdrawal-financial-obligation-a"
+          name="nontechnical-withdrawal-financial-obligation"
+          value="A"
+          required
+        />
+        <label for="nontechnical-withdrawal-financial-obligation-a">A. No financial obligation, as long as they provide notice.</label>
+        <br />
+        <input
+          type="radio"
+          id="nontechnical-withdrawal-financial-obligation-b"
+          name="nontechnical-withdrawal-financial-obligation"
+          value="B"
+          required
+        />
+        <label for="nontechnical-withdrawal-financial-obligation-b">B. They could be required to return any awarded and disbursed stipends and pay $1,000 per partial or full week of participation, or remaining tuition payments.</label>
+        <br />
+        <input
+          type="radio"
+          id="nontechnical-withdrawal-financial-obligation-c"
+          name="nontechnical-withdrawal-financial-obligation"
+          value="C"
+          required
+        />
+        <label for="nontechnical-withdrawal-financial-obligation-c">C. Only the remaining tuition payments are due.</label>
+        <br />
+        <input
+          type="radio"
+          id="nontechnical-withdrawal-financial-obligation-d"
+          name="nontechnical-withdrawal-financial-obligation"
+          value="D"
+          required
+        />
+        <label for="nontechnical-withdrawal-financial-obligation-d">D. Only the return of disbursed stipends.</label><br />
+      </div>
+
+      <div>
+        <label for="technical-withdrawal-financial-obligation">If a Participant withdraws from the Program to start a technical job with a company that is NOT a Sponsor, what is a potential financial obligation?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="technical-withdrawal-financial-obligation-a"
+          name="technical-withdrawal-financial-obligation"
+          value="A"
+          required
+        />
+        <label for="technical-withdrawal-financial-obligation-a">A. No financial obligation, as they secured a job.</label>
+        <br />
+        <input
+          type="radio"
+          id="technical-withdrawal-financial-obligation-b"
+          name="technical-withdrawal-financial-obligation"
+          value="B"
+          required
+        />
+        <label for="technical-withdrawal-financial-obligation-b">B. They must commit the company to becoming an advocate hiring sponsor ($35,000) or personally pay a withdrawal fee of $17,000 or remaining tuition payments.</label>
+        <br />
+        <input
+          type="radio"
+          id="technical-withdrawal-financial-obligation-c"
+          name="technical-withdrawal-financial-obligation"
+          value="C"
+          required
+        />
+        <label for="technical-withdrawal-financial-obligation-c">C. They only need to return any stipends received.</label>
+        <br />
+        <input
+          type="radio"
+          id="technical-withdrawal-financial-obligation-d"
+          name="technical-withdrawal-financial-obligation"
+          value="D"
+          required
+        />
+        <label for="technical-withdrawal-financial-obligation-d">D. A flat fee of $1,000.</label><br />
+      </div>
+
+      <div>
+        <label for="placement-decisions">Who makes the final decision about which hiring Sponsor a placed Participant might be assigned to?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="placement-decisions-a"
+          name="placement-decisions"
+          value="A"
+          required
+        />
+        <label for="placement-decisions-a">A. The Participant.</label>
+        <br />
+        <input
+          type="radio"
+          id="placement-decisions-b"
+          name="placement-decisions"
+          value="B"
+          required
+        />
+        <label for="placement-decisions-b">B. The hiring Sponsor.</label>
+        <br />
+        <input
+          type="radio"
+          id="placement-decisions-c"
+          name="placement-decisions"
+          value="C"
+          required
+        />
+        <label for="placement-decisions-c">C. The Organization.</label>
+        <br />
+        <input
+          type="radio"
+          id="placement-decisions-d"
+          name="placement-decisions"
+          value="D"
+          required
+        />
+        <label for="placement-decisions-d">D. It is a mutual decision between the Participant and the Organization.</label><br />
+      </div>
 
       <!-- <div>
         <button
