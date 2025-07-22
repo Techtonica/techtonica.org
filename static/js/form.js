@@ -139,3 +139,30 @@ function validateForm() {
     window.location.href = "/app-household";
   }
 } 
+
+function saveBtnValidation(){
+    document.addEventListener("DOMContentLoaded", function () {
+
+    // handle participant assessment form validation
+    const form = document.getElementById("participant_assessment");
+
+    saveButton.addEventListener("click", () => {
+      const requiredInputs = form.querySelectorAll("input[required]");
+      let isValid = true;
+
+      requiredInputs.forEach((input) => {
+        input.style.border = "";
+        if (!input.value.trim()) {
+          isValid = false;
+          input.style.border = "2px solid red";
+        }
+      });
+
+      if (!isValid) {
+        alert("Please fill out all required fields.");
+      } else {
+        window.location.href = "/thankyou";
+      }
+    });
+  });
+}
