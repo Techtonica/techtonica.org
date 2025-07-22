@@ -140,10 +140,10 @@ function validateForm() {
   }
 } 
 
+// participant assessment form save button input validation
 function saveBtnValidation(){
     document.addEventListener("DOMContentLoaded", function () {
 
-    // handle participant assessment form validation
     const form = document.getElementById("participant_assessment");
 
     saveButton.addEventListener("click", () => {
@@ -151,10 +151,15 @@ function saveBtnValidation(){
       let isValid = true;
 
       requiredInputs.forEach((input) => {
-        input.style.border = "";
-        if (!input.value.trim()) {
+        const parentElement = input.parentNode;
+        parentElement.style.border = "";
+
+        if (
+          (input.type === "radio" || input.type === "checkbox") &&
+          !form.querySelector(`[name="${input.name}"]:checked`)
+        ) {
           isValid = false;
-          input.style.border = "2px solid red";
+          parentElement.style.border = "2px solid red";
         }
       });
 

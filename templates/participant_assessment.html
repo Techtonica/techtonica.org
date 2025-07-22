@@ -90,6 +90,58 @@ Participant Assessment {% endblock title %} {% block content %}
         <br />
       </div>
 
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="participant-expectations">As a Participant, which of the following are you expected to do? (Select all that apply)
+        </label>
+
+        <br />
+        <input
+          type="checkbox"
+          id="participant-expectations-a"
+          name="participant-expectations"
+          value="A"
+          required
+        />
+        <label for="participant-expectations-a">A. Attend and actively participate in scheduled Program hours.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="participant-expectations-b"
+          name="participant-expectations"
+          value="B"
+          required
+        />
+        <label for="participant-expectations-b">B. Meet with mentors once per week.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="participant-expectations-c"
+          name="participant-expectations"
+          value="C"
+          required
+        />
+        <label for="participant-expectations-c">C. Complete assignments and projects by stated deadlines.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="participant-expectations-d"
+          name="participant-expectations"
+          value="D"
+          required
+        />
+        <label for="participant-expectations-d">D. Attend at least one networking event each month of the Program and the following three months.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="participant-expectations-e"
+          name="participant-expectations"
+          value="E"
+          required
+        />
+        <label for="participant-expectations-d">E. All of the above.</label>
+        <br />
+      </div>
+
       <!-- 
       <div id="radio-wrapper" role="radiogroup">
         <label for="sharing-personal-journey"
@@ -373,24 +425,17 @@ Participant Assessment {% endblock title %} {% block content %}
         <label> Yes, I confirm </label>
       </div>  -->
 
+    </fieldset>
+
+      <div>
         <button
           type="button"
           class="save-btn"
-          onclick="window.location.href='/thankyou'"
+          onclick="saveBtnValidation()"
         >
           Save
         </button>
       </div>
-    </fieldset>
-    <div>
-      <button
-        type="button"
-        class="save-btn"
-        onclick="saveBtnValidation()"
-      >
-        Save
-      </button>
-    </div>
   </form>
 </section>
 
