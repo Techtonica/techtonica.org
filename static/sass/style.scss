@@ -1,6 +1,5 @@
-@import "settings";
-@import "mixins";
-
+@use "settings" as *;
+@use "mixins" as *;
 
 // New Sponsor Tiers Design
 .sponsor-tiers-container {
@@ -801,11 +800,11 @@ table.mentor {
     right: 0;
     top: 0;
     margin: 0.5rem 0;
-    padding: $button-size/2 $button-size/3;
+    padding: calc($button-size / 2) calc($button-size / 3);
     transition: 0.3s;
     cursor: pointer;
     user-select: none;
-    border-radius: $button-size/7;
+    border-radius: calc($button-size / 7);
 
     &:hover {
       opacity: 1;
@@ -829,15 +828,15 @@ table.mentor {
       position: absolute;
       left: 0;
       content: "";
-      transform-origin: $button-size/14 center;
+      transform-origin: calc($button-size / 14) center;
     }
 
     &:before {
-      top: $button-size/4;
+      top: calc($button-size / 4);
     }
 
     &:after {
-      top: -$button-size/4;
+      top: calc(-#{$button-size} / 4);
     }
   }
 
@@ -846,11 +845,11 @@ table.mentor {
 
     .lines {
       &:before {
-        top: $button-size/3;
+        top: calc($button-size / 3);
       }
 
       &:after {
-        top: -$button-size/3;
+        top: calc(-#{$button-size} / 3);
       }
     }
   }
