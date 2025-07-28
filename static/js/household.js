@@ -64,14 +64,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.validateForm = function () {
     const form = document.getElementById("app-form-2");
-    const requiredSelects = form.querySelectorAll("input[required]");
+    const requiredInputs = form.querySelectorAll("input[required]");
     let allValid = true;
 
-    requiredSelects.forEach((select) => {
-      select.style.border = "";
+    requiredInputs.forEach((input) => {
+      input.style.border = "";
 
-      if (select.type === "radio") {
-        const group = form.querySelectorAll(`input[name="${select.name}"]`);
+      if (input.type === "file") {
+        if (input.files.length === 0) {
+          allValid = false;
+          input.style.border = "2px solid red";
+        }
+        return;
+      }
+
+      if (input.type === "radio") {
+        const group = form.querySelectorAll(`input[name="${input.name}"]`);
         const isChecked = Array.from(group).some((radio) => radio.checked);
         if (!isChecked) {
           allValid = false;
@@ -79,14 +87,16 @@ document.addEventListener("DOMContentLoaded", function () {
             radio.parentElement.style.border = "2px solid red";
           });
         }
-      } else if (select.value === "") {
+      } else if (input.value.trim() === "") {
         allValid = false;
-        select.style.border = "2px solid red";
+        input.style.border = "2px solid red";
       }
     });
 
     if (!allValid) {
-      alert("Please select an option for all questions.");
+      alert(
+        "Please select an option or provide input for all required fields."
+      );
     } else {
       window.location.href = "/app-questionnaire";
     }
