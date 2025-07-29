@@ -449,6 +449,9 @@ Techtonica Application {% endblock title %} {% block content %}
 
   document.addEventListener("DOMContentLoaded", function () {
     const learnMoreWrappers = document.querySelectorAll(".learn-more-wrapper");
+    const usBankRadios = document.querySelectorAll(
+      'input[name="US-bank-account"]',
+    );
 
     learnMoreWrappers.forEach((wrapper) => {
       const title = wrapper.querySelector(".learn-more-title");
@@ -479,6 +482,13 @@ Techtonica Application {% endblock title %} {% block content %}
         }
 
         isExpanded = !isExpanded;
+      });
+    });
+
+    usBankRadios.forEach((radio) => {
+      radio.addEventListener("change", function () {
+        const radioWrapper = document.getElementById("radio-wrapper");
+        radioWrapper.style.border = "";
       });
     });
   });
