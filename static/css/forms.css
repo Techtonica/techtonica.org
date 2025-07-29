@@ -86,7 +86,6 @@ p {
   text-align: justify;
 }
 
-/* Application Form Reference Page Styling */
 form {
   display: flex;
   justify-content: center;
@@ -178,6 +177,10 @@ legend {
   background-color: #16c1f3;
 }
 
+.continue-to-app-btn {
+  width: 50%;
+}
+
 button.continue-to-app-btn,
 button.previous-btn,
 button.save-btn {
@@ -186,6 +189,9 @@ button.save-btn {
   font-size: large;
   padding: 1rem;
   border-radius: 0.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   cursor: pointer;
 }
 
@@ -205,16 +211,31 @@ button.save-btn:hover {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 599px) {
-  .column {
-    padding: 0;
-  }
   html,
   body {
     overflow-x: hidden;
     width: 100%;
   }
-  .application-page {
-    padding: 2rem 0;
+  .column {
+    padding: 0 1rem;
+    width: 100%;
+    margin: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  .row, .application-page {
+    padding: 2em;
+  }
+  .justify {
+    text-align: left;
+  }
+  .large-white-text {
+    font-size: 1.5em;
+  }
+  button.previous-btn,
+  button.continue-to-app-btn,
+  button.save-btn {
+    font-size: smaller;
   }
   .application-form .learn-more-wrapper .learn-more-title,
   .application-form .learn-more-wrapper .toggle-icon {
@@ -249,31 +270,33 @@ button.save-btn:hover {
     gap: 0.5em;
     margin: auto;
   }
-  button.previous-btn,
-  button.continue-to-app-btn,
-  button.save-btn {
-    font-size: smaller;
-  }
 }
 @media only screen and (min-width: 600px) and (max-width: 910px) {
-  .column {
-    padding: 0;
-  }
   html,
   body {
     overflow-x: hidden;
     width: 100%;
   }
-  .application-page {
-    padding: 2rem 0;
+  .column {
+    padding: 0 1rem;
+    width: 100%;
+    margin: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
   }
-  .application-page > form {
-    width: initial;
-    margin-bottom: 2rem;
+  .row {
+    padding: 2em;
+  }
+  .application-page {
+    padding: 2em 0;
   }
   .application-page > h1 {
     font-size: 2em;
     max-width: fit-content;
+  }
+  .application-page > form {
+    width: initial;
+    margin-bottom: 2rem;
   }
   legend {
     font-size: 24px;
