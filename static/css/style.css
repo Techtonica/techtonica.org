@@ -911,7 +911,7 @@ table.mentor td:first-of-type {
     top: 0.75rem;
   }
   .lines:after {
-    top: -0.75rem;
+    top: calc(-3rem / 4);
   }
   .lines-button:hover {
     opacity: 1;
@@ -920,7 +920,7 @@ table.mentor td:first-of-type {
     top: 1rem;
   }
   .lines-button:hover .lines:after {
-    top: -1rem;
+    top: calc(-3rem / 3);
   }
   .lines-button.x.close .lines {
     /*hide the middle line*/
