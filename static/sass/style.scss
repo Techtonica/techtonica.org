@@ -1,5 +1,135 @@
-@import "settings";
-@import "mixins";
+@use "settings" as *;
+@use "mixins" as *;
+
+// New Sponsor Tiers Design
+.sponsor-tiers-container {
+  display: grid;
+  gap: 2rem;
+  margin: 3rem 0;
+  padding: 2rem 2rem;
+
+  // Default to 4 columns for wider screens
+  grid-template-columns: repeat(4, 1fr);
+
+  // For tablet-sized screens, switch to 2 columns
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // For mobile screens, stack them in a single column
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsor-tier-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(5, 85, 109, 1);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 48px rgba(5, 85, 109, 1);
+    }
+
+    &.featured {
+      border-color: $dark-blue;
+      background: linear-gradient(135deg, #f8fbff 0%, #e8f4ff 100%);
+
+      &::before {
+        content: 'Most Popular';
+        position: absolute;
+        top: 20px;
+        right: -30px;
+        background: linear-gradient(135deg, #0093B5 0%, #05556d 100%);
+        color: white;
+        padding: 8px 40px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        transform: rotate(45deg);
+        box-shadow: 0 4px 12px rgba(5, 85, 109, 1);
+      }
+    }
+  }
+
+  .tier-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid $dark-blue;
+  }
+
+  .tier-name {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: $dark-blue;
+    margin-bottom: 0.5rem;
+  }
+
+  .tier-description {
+    color: $dark-blue;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .tier-features {
+    list-style: none;
+    margin: 1.5rem 0;
+
+    li {
+      padding: 0.75rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      color: #000;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      font-weight: 200;
+
+      &::before {
+        content: '✓';
+        color: $main-blue;
+        font-weight: bold;
+        font-size: 1.1rem;
+        min-width: 20px;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    }
+  }
+
+  .tier-cta {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+}
+
+// Action Buttons
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+  align-items: center
+}
 
 .row {
   @include prefix(display, flex, webkit moz);
@@ -392,6 +522,7 @@
 
 .contact-us,
 .donate,
+.tier-button,
 .orange-button {
   margin-bottom: 24px;
   @include prefix(border-radius, 8px, webkit moz o);
@@ -669,11 +800,11 @@ table.mentor {
     right: 0;
     top: 0;
     margin: 0.5rem 0;
-    padding: $button-size/2 $button-size/3;
+    padding: calc($button-size / 2) calc($button-size / 3);
     transition: 0.3s;
     cursor: pointer;
     user-select: none;
-    border-radius: $button-size/7;
+    border-radius: calc($button-size / 7);
 
     &:hover {
       opacity: 1;
@@ -697,15 +828,15 @@ table.mentor {
       position: absolute;
       left: 0;
       content: "";
-      transform-origin: $button-size/14 center;
+      transform-origin: calc($button-size / 14) center;
     }
 
     &:before {
-      top: $button-size/4;
+      top: calc($button-size / 4);
     }
 
     &:after {
-      top: -$button-size/4;
+      top: calc(-#{$button-size} / 4);
     }
   }
 
@@ -714,11 +845,11 @@ table.mentor {
 
     .lines {
       &:before {
-        top: $button-size/3;
+        top: calc($button-size / 3);
       }
 
       &:after {
-        top: -$button-size/3;
+        top: calc(-#{$button-size} / 3);
       }
     }
   }
