@@ -1,0 +1,283 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  line-height: 1.4em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 1.5rem 0;
+  color: #0093b5;
+  line-height: 1.3em;
+  font-weight: 700;
+}
+
+h1,
+h2 {
+  letter-spacing: 2px;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 1px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "lato", helvetica, sans-serif;
+}
+
+h1 {
+  color: white;
+  font-size: 4em;
+  letter-spacing: 4px;
+}
+
+a {
+  color: #0093b5;
+  text-decoration: none;
+}
+
+button {
+  background-color: white;
+  border: 0;
+}
+
+.blue-h1 {
+  color: #05556d;
+  text-shadow: 0px 0px 1px #ccc;
+}
+
+.blue-background {
+  background-color: #0093b5;
+  color: white;
+}
+.blue-background a {
+  color: white;
+}
+
+.white-background {
+  background-color: white;
+  color: #0093b5;
+}
+
+.centered {
+  text-align: center;
+}
+
+.centered p {
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+}
+
+/* Application Form Reference Page Styling */
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  width: 75%;
+  max-width: 150rem;
+  padding: 3rem;
+  background-color: white;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.application-page {
+  justify-content: center;
+  background-color: #0093b5;
+  padding: 2rem;
+}
+
+.application-form .learn-more-wrapper {
+  display: inline;
+}
+
+.application-form .learn-more-content {
+  margin: 0.5em 0 0 0;
+  font-size: large;
+}
+
+.application-form .learn-more-wrapper button {
+  display: inline;
+  background-color: white;
+  font-size: large;
+  color: #0093b5;
+  cursor: pointer;
+  padding: 0;
+  margin: 0 0 0 0.5em;
+}
+
+.application-form .learn-more-wrapper button:hover {
+  background-color: white;
+  color: #16c1f3;
+}
+
+.application-form .learn-more-wrapper button:focus-visible {
+  padding: 3px;
+}
+
+.application-page > h1,
+.application-page > label {
+  max-width: 65%;
+  margin: auto;
+  text-align: center;
+}
+
+legend {
+  color: rgba(0, 115, 149, 0.8);
+  font-size: 20px;
+}
+
+.application-form > fieldset {
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.559);
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.application-form > fieldset > label {
+  margin-bottom: 0.5rem;
+  font-size: large;
+}
+
+.application-form > fieldset > input[type=text],
+.application-form > fieldset > input[type=email],
+.application-form > fieldset > input[type=tel],
+.application-form > fieldset > input[type=textarea] {
+  box-sizing: border-box;
+  padding: 1em;
+  margin-bottom: 2em;
+  border: 1px solid rgba(0, 0, 0, 0.559);
+  border-radius: 6px;
+  width: 100%;
+}
+
+#radio-wrapper label {
+  color: black;
+  margin-bottom: 2em;
+}
+
+#radio-wrapper input {
+  background-color: #16c1f3;
+}
+
+button.continue-to-app-btn,
+button.previous-btn,
+button.save-btn {
+  background-color: #fc7625;
+  color: white;
+  font-size: large;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+button.continue-to-app-btn:hover,
+button.previous-btn:hover,
+button.save-btn:hover {
+  background-color: #16c1f3;
+  color: white;
+  transition: 0.3s;
+}
+
+.form-button {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 599px) {
+  .column {
+    padding: 0;
+  }
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  .application-page {
+    padding: 2rem 0;
+  }
+  .application-form .learn-more-wrapper .learn-more-title,
+  .application-form .learn-more-wrapper .toggle-icon {
+    color: #0093b5;
+    font-size: smaller;
+  }
+  .application-form .learn-more-wrapper .learn-more-content {
+    font-size: smaller;
+  }
+  .application-page > h1 {
+    font-size: 1.5em;
+    max-width: fit-content;
+  }
+  .application-page > form {
+    width: inherit;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+  }
+  legend {
+    font-size: 18px;
+  }
+  .application-form > fieldset {
+    min-width: 95%;
+    word-wrap: break-word;
+    padding: 1.5rem;
+    margin: 0;
+  }
+  .application-form > fieldset > label {
+    font-size: smaller;
+  }
+  .form-button {
+    gap: 0.5em;
+    margin: auto;
+  }
+  button.previous-btn,
+  button.continue-to-app-btn,
+  button.save-btn {
+    font-size: smaller;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 910px) {
+  .column {
+    padding: 0;
+  }
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  .application-page {
+    padding: 2rem 0;
+  }
+  .application-page > form {
+    width: initial;
+    margin-bottom: 2rem;
+  }
+  .application-page > h1 {
+    font-size: 2em;
+    max-width: fit-content;
+  }
+  legend {
+    font-size: 24px;
+  }
+}
+
+/*# sourceMappingURL=forms.css.map */
