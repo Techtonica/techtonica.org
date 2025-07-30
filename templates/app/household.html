@@ -194,7 +194,7 @@ Techtonica Application {% endblock title %} {% block content %}
         <button
           type="button"
           class="continue-to-app-btn"
-          onclick="validateHouseholdForm()"
+          onclick="validateForm()"
         >
           Next
         </button>
@@ -417,112 +417,6 @@ Techtonica Application {% endblock title %} {% block content %}
   }
 </style>
 
-<script>
-  function greaterThanZero(input) {
-    if (input.value <= 0) {
-      input.setCustomValidity("Please enter a number greater than 0.");
-    } else {
-      input.setCustomValidity("");
-    }
-    input.reportValidity();
-  }
-
-  function greaterThan25000(input) {
-    if (input.value <= 25000) {
-      input.setCustomValidity(
-        "Please enter a number greater than or equal to 25000.",
-      );
-    } else {
-      input.setCustomValidity("");
-    }
-    input.reportValidity();
-  }
-
-  function inputIsWholeNumber(input) {
-    if (!Number.isInteger(Number(input.value))) {
-      input.setCustomValidity("Please enter a whole number.");
-    } else {
-      input.setCustomValidity("");
-    }
-    input.reportValidity();
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const learnMoreWrappers = document.querySelectorAll(".learn-more-wrapper");
-    const usBankRadios = document.querySelectorAll(
-      'input[name="US-bank-account"]',
-    );
-
-    learnMoreWrappers.forEach((wrapper) => {
-      const title = wrapper.querySelector(".learn-more-title");
-      const content = wrapper.querySelector(".learn-more-content");
-      const toggleIcon = wrapper.querySelector(".toggle-icon");
-
-      toggleIcon.style.cursor = "pointer";
-
-      toggleIcon.querySelector(".toggle-icon-plus").style.display = "inline";
-      toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
-      content.style.display = "none";
-
-      let isExpanded = false;
-
-      title.addEventListener("click", () => {
-        if (!isExpanded) {
-          content.style.display = "block";
-          toggleIcon.querySelector(".toggle-icon-plus").style.display = "none";
-          toggleIcon.querySelector(".toggle-icon-minus").style.display =
-            "inline";
-          title.setAttribute("aria-expanded", true);
-        } else {
-          content.style.display = "none";
-          toggleIcon.querySelector(".toggle-icon-plus").style.display =
-            "inline";
-          toggleIcon.querySelector(".toggle-icon-minus").style.display = "none";
-          title.setAttribute("aria-expanded", false);
-        }
-
-        isExpanded = !isExpanded;
-      });
-    });
-
-    usBankRadios.forEach((radio) => {
-      radio.addEventListener("change", function () {
-        const radioWrapper = document.getElementById("radio-wrapper");
-        radioWrapper.style.border = "";
-      });
-    });
-  });
-
-  function validateHouseholdForm() {
-    const form = document.getElementById("app-form-2");
-    const requiredSelects = form.querySelectorAll("input[required]");
-    let allValid = true;
-
-    requiredSelects.forEach((select) => {
-      select.style.border = "";
-
-      if (
-        select.type === "radio" &&
-        !form.querySelector(`[name="${select.name}"]:checked`)
-      ) {
-        allValid = false;
-        const radios = form.querySelectorAll(`[name="${select.name}"]`);
-        radios.forEach((radio) => {
-          radio.parentElement.style.border = "2px solid red";
-        });
-      } else if (select.value === "") {
-        allValid = false;
-        select.style.border = "2px solid red";
-      }
-    });
-
-    if (!allValid) {
-      alert("Please select or write an answer for all questions.");
-    } else {
-      window.location.href = "/app-questionnaire";
-    }
-  }
-</script>
 <script src="{{ url_for('static', filename='js/household.js') }}"></script>
 
 {% endblock content %}
