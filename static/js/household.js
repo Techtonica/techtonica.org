@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function greaterThan25000(input) {
     if (input.value <= 25000) {
       input.setCustomValidity(
-        "Please enter a number greater than or equal to 25000."
+        "Please enter a number greater than or equal to 25000.",
       );
     } else {
       input.setCustomValidity("");
@@ -33,6 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
   window.inputIsWholeNumber = inputIsWholeNumber;
 
   const learnMoreWrappers = document.querySelectorAll(".learn-more-wrapper");
+  const usBankRadios = document.querySelectorAll(
+    'input[name="US-bank-account"]',
+  );
 
   learnMoreWrappers.forEach((wrapper) => {
     const title = wrapper.querySelector(".learn-more-title");
@@ -59,6 +62,13 @@ document.addEventListener("DOMContentLoaded", function () {
         title.setAttribute("aria-expanded", false);
       }
       isExpanded = !isExpanded;
+    });
+  });
+
+  usBankRadios.forEach((radio) => {
+    radio.addEventListener("change", function () {
+      const radioWrapper = document.getElementById("radio-wrapper");
+      radioWrapper.style.border = "";
     });
   });
 
@@ -95,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!allValid) {
       alert(
-        "Please select an option or provide input for all required fields."
+        "Please select an option or provide input for all required fields.",
       );
     } else {
       window.location.href = "/app-questionnaire";
