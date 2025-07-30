@@ -41,7 +41,7 @@ Before opening an issue, commenting, etc you must read and agree to the [Code of
   - [sass style folder](https://github.com/Techtonica/techtonica.org/tree/develop/static/sass) - settings has some built in site wide variables, styles.css has the site wide styling
   - [Post a job feature styling](https://techtonica.org/share-a-job)
 
-🎗️ _**Please note, all repo support will operate within U.S. Pacific Timezone.**_
+🎗️ _**Please note, all repo support will be provided on weekdays, U.S. Pacific Timezone. The quickest means of support would be to join the Slack #website channel.**_
 
 ## Working on your Issue
 - Comment on the issue directly if you have a question (feel free to follow it up with a Slack message).
