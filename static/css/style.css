@@ -109,8 +109,9 @@ p {
   - global typography
   - imports all component stylesheets*/
 /* General form components and styling that can be reused across different forms
-  - general reusable form components 
-  - application-specific styling*/
+  - general reusable form components & styling
+  - application-specific styling
+*/
 .form-wrapper .wrapper {
   max-width: 50%;
   justify-content: center;

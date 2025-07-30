@@ -1,7 +1,8 @@
 @charset "UTF-8";
 /* General form components and styling that can be reused across different forms
-  - general reusable form components 
-  - application-specific styling*/
+  - general reusable form components & styling
+  - application-specific styling
+*/
 body {
   margin: 0;
   box-sizing: border-box;
@@ -90,6 +91,10 @@ p {
   text-align: justify;
 }
 
+/* General form components and styling that can be reused across different forms
+  - general reusable form components & styling
+  - application-specific styling
+*/
 .form-wrapper .wrapper {
   max-width: 50%;
   justify-content: center;
