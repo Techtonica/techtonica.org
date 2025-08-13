@@ -46,8 +46,32 @@
     padding: 3px;
   }
 
+  .application-form button {
+    background-color: $focal-orange;
+    color: white;
+    font-size: large;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: auto;
+    display: block;
+    cursor: pointer;
+  }
+
+  .application-form button:hover {
+    background-color: $light-blue;
+    color: white;
+    transition: 0.3s;
+  }
+
   .application-page > h1,
   .application-page > label {
+    max-width: 65%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .application-page > h1,
+  .application-page > p {
     max-width: 65%;
     margin: auto;
     text-align: center;
@@ -68,6 +92,7 @@
   .application-form > fieldset > label {
     margin-bottom: 0.5rem;
     font-size: large;
+    color: rgb(0, 0, 0);
   }
 
   .application-form > fieldset > input[type="text"],
@@ -82,12 +107,52 @@
     width: 100%;
   }
 
+  .application-form > fieldset > input[type="date"],
+  .application-form > fieldset > input[type="number"],
+  .application-form > fieldset > input[type="url"],
+  .application-form > fieldset > textarea,
+  .application-form > fieldset > select {
+    padding: 1em;
+    margin-bottom: 2em;
+    border: 1px solid rgba(0, 0, 0, 0.559);
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .application-form > fieldset > select,
+  .application-form > fieldset > input[type="checkbox"],
+  .application-form > fieldset > #radio-wrapper > input[type="radio"] {
+    cursor: pointer;
+  }
+
+  .application-form > fieldset > select {
+    appearance: none;
+    background-color: transparent;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBmaWxsPSJncmF5IiBkPSJNMTAsMjMyLjdsNDkwLDUzNC41bDQ5MC01MzQuNUgxMHoiIC8+DQo8L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 15px;
+    background-origin: content-box;
+  }
+
+  #radio-wrapper {
+    width: 100%;
+    color: rgba(0, 0, 0, 0.851);
+  }
+
   #radio-wrapper label {
     color: black;
     margin-bottom: 2em;
   }
   #radio-wrapper input {
     background-color: $light-blue;
+  }
+
+  #custom-gender,
+  #custom-pronouns,
+  #custom-race-ethnicity {
+    display: none;
   }
 
   .continue-to-app-btn {
@@ -124,11 +189,41 @@
   }
 
   @media only screen and (min-width: 320px) and (max-width: 599px) {
-
+    .column {
+      padding: 0;
+    }
+    .application-page > form {
+      width: initial;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+    }
     html,
     body {
       overflow-x: hidden;
       width: 100%;
+    }
+    .application-page {
+      padding: 2rem 0;
+    }
+    .application-page > h1 {
+      font-size: 1.5em;
+      max-width: fit-content;
+    }
+    legend {
+      font-size: 18px;
+    }
+    .application-form > fieldset {
+      min-width: 95%;
+      word-wrap: break-word;
+      padding: 1.5rem;
+      margin: 0;
+    }
+    #radio-wrapper > input[type="radio"] {
+      margin: 0;
+    }
+    #radio-wrapper > label,
+    .application-form > fieldset > label {
+      font-size: smaller;
     }
 
     .column {
@@ -200,10 +295,27 @@
   }
 
   @media only screen and (min-width: 600px) and (max-width: 910px) {
+    .column {
+      padding: 0;
+    }
     html,
     body {
       overflow-x: hidden;
       width: 100%;
+    }
+    .application-page {
+      padding: 2rem 0;
+    }
+    .application-page > form {
+      width: initial;
+      margin-bottom: 2rem;
+    }
+    .application-page > h1 {
+      font-size: 2em;
+      max-width: fit-content;
+    }
+    legend {
+      font-size: 24px;
     }
 
     .column {
