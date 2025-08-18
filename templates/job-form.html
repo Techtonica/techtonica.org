@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
+{% extends "base.html" %}
+{% from "form_macros.html" import form_wrapper, fieldset, input_field, textarea_field, radio_group, conduct_checkbox %}
+{% block title %} Techtonica: Bridging the Tech Gap —
 Post A Job {% endblock title %} {% block content %}
 <!-- link to the Web SDK library -->
 <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
@@ -14,117 +16,31 @@ Post A Job {% endblock title %} {% block content %}
 <div id="payment-page">
   <h1>Post A Job</h1>
   <p>
-    Have a job opening but your company isn’t ready to become a hiring partner?
+    Have a job opening but your company isn't ready to become a hiring partner?
     <br />
-    Submit the job for $100 and we’ll share with our graduates who have 0-5
+    Submit the job for $100 and we'll share with our graduates who have 0-5
     years of experience.
   </p>
   {% if not credentials %}
   <p><a href="mailto:info@techtonica.org">Contact us</a> to post your job!</p>
   {% else %}
-  <div class="column">
-    <form class="payment-form" id="fast-checkout">
-      <div class="wrapper">
-        <h3>Job Listing Form</h3>
-        <div id="info-wrapper" class="info-wrapper">
-          <fieldset>
-            <legend>Contact Information</legend>
+  {# Adjusted form_wrapper call to match parameters: title, form_id, form_class, include_payment #}
+  {% call form_wrapper('Job Listing Form', 'fast-checkout', 'payment-form form-wrapper', include_payment=true) %}
+  {% call fieldset('Job Details') %}
+  {# input_field now takes label, id, type, required #}
+  {{ input_field('Job Title', 'jobtitle') }}
+  {{ input_field('Company', 'company') }}
+  {{ input_field('Type', 'type', required=false) }}
+  {{ input_field('Education Requirement', 'educationreq', required=false) }}
+  {{ input_field('Location', 'location') }}
 
-            <label for="firstname">First Name</label>
-            <input type="text" id="firstname" name="firstname" required />
+  {{ radio_group('Can you make a referral/connection?', 'referral', [('yes', 'Yes'), ('no', 'No')]) }}
 
-            <label for="lastname">Last Name</label>
-            <input type="text" id="lastname" name="lastname" required />
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </fieldset>
-
-          <fieldset>
-            <legend>Job Details</legend>
-
-            <label for="jobtitle">Job Title</label>
-            <input type="text" id="jobtitle" name="jobtitle" required />
-
-            <label for="company">Company</label>
-            <input type="text" id="company" name="company" required />
-
-            <label for="type">Type <span>(optional)</span></label>
-            <input type="text" id="type" name="type" />
-
-            <label for="educationreq"
-              >Education Requirement <span>(optional)</span></label
-            >
-            <input type="text" id="educationreq" name="educationreq" />
-
-            <label for="location">Location</label>
-            <input type="text" id="location" name="location" required />
-
-            <div id="radio-wrapper">
-              <p>Can you make a referral/connection?</p>
-              <label for="ref-yes">Yes</label>
-              <input type="radio" id="ref-yes" name="referral" value="yes" />
-              <label for="ref-no">No</label>
-              <input type="radio" id="ref-no" name="referral" value="no" />
-            </div>
-
-            <label for="salaryrange"
-              >Salary Range <span>(optional)</span></label
-            >
-            <input type="text" id="salaryrange" name="salaryrange" />
-
-            <label for="description">Description <span>(optional)</span></label>
-            <textarea id="description" name="description">
-Submit your job for $100 to be shared with our 100+ full-stack software engineer graduates.</textarea
-            >
-
-            <label for="applicationlink"
-              >Link to Apply <span>(optional)</span></label
-            >
-            <textarea id="applicationlink" name="applicationlink"></textarea>
-          </fieldset>
-          <!-- TO-DO: File upload input for screenshots -->
-        </div>
-        <!-- <div id="ach-wrapper">
-            <label for="ach-account-holder-name">Full Name</label>
-            <input
-            id="ach-account-holder-name"
-            type="text"
-            placeholder="Jane Doe"
-            name="ach-account-holder-name"
-            autocomplete="name"
-          />
-            <span id="ach-message"></span>
-            <button id="ach-button" type="button">
-            Pay with Bank Account
-            </button>
-            <div class="border">
-              <span>OR</span>
-            </div>
-          </div> -->
-        <h3>Payment Info</h3>
-        <div id="card-container"></div>
-        <div class="checkbox-container">
-          <input type="checkbox" id="code-of-conduct-checkbox" required />
-          <label for="code-of-conduct-checkbox">
-            By checking this box, you agree that what you are submitting in this
-            form adheres to
-            <a
-              href="{{ url_for('render_conduct_page') }}"
-              title="Code of Conduct"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Techtonica's Code of Conduct</a
-            >.
-          </label>
-        </div>
-        <button id="card-button" type="button" class="orange-button">
-          Pay with Card
-        </button>
-        <span id="payment-flow-message"></span>
-      </div>
-    </form>
-  </div>
+  {{ input_field('Salary Range', 'salaryrange', required=false) }}
+  {{ textarea_field('Description', 'description', required=false) }}
+  {{ input_field('Link to Apply', 'applicationlink', required=false) }}
+  {% endcall %}
+  {% endcall %}
   {% endif %}
 </div>
 <script type="text/javascript" src="/static/js/sq-card-pay.js"></script>

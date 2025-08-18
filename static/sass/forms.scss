@@ -1,6 +1,354 @@
-@import "settings";
+/* General form components and styling that can be reused across different forms
+  - general reusable form components & styling
+  - application-specific styling
+*/
 
-  form {
+@use "settings" as *;
+@use "mixins" as *;
+
+// Form wrapper and structure - used by multiple forms
+.form-wrapper {
+  .wrapper {
+    max-width: 50%;
+    justify-content: center;
+  }
+
+  #info-wrapper {
+    margin-bottom: 2em;
+
+    > fieldset {
+      box-sizing: border-box;
+      margin: 1em;
+      padding: 1em;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    > fieldset > label {
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+      color: $legend-color;
+    }
+
+    > fieldset > input[type="text"],
+    > fieldset > input[type="email"],
+    > fieldset > input[type="tel"],
+    > fieldset > input[type="url"],
+    > fieldset > input[type="number"],
+    > fieldset > textarea {
+      min-width: 90%;
+      margin: auto auto 1em auto;
+      padding: 0.25em;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+    }
+
+    > fieldset > textarea {
+      min-height: 6em;
+    }
+  }
+}
+
+// Legend styles
+legend {
+  color: $legend-color;
+  font-size: 20px;
+}
+
+// General radio button styling
+.radio-wrapper {
+  width: 100%;
+  margin-bottom: 1em;
+  color: $radio-wrapper-color;
+
+  input[type="radio"] {
+    width: 50px;
+  }
+
+  label {
+    color: black;
+    margin-bottom: 2em;
+  }
+
+  &.invalid {
+    padding: 15px;
+    border: 2px solid $error-color;
+    border-radius: 8px;
+    background-color: rgba(191, 0, 32, 0.05);
+    margin-bottom: 1em;
+  }
+}
+
+#radio-wrapper {
+  label {
+    color: black;
+    margin-bottom: 2em;
+  }
+
+  input {
+    background-color: $light-blue;
+  }
+
+  > input[type="radio"] {
+    margin: 0;
+  }
+
+  > label {
+    font-size: smaller;
+  }
+}
+
+// Button styles
+.continue-to-app-btn {
+  width: 50%;
+}
+
+button.continue-to-app-btn,
+button.previous-btn,
+button.save-btn {
+  background-color: $focal-orange;
+  color: white;
+  font-size: large;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+button.continue-to-app-btn:hover,
+button.previous-btn:hover,
+button.save-btn:hover {
+  background-color: $light-blue;
+  color: white;
+  transition: 0.3s;
+}
+
+.form-button {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// General checkbox styling
+.checkbox-wrapper {
+  margin-bottom: 1em;
+
+  input[type="checkbox"] {
+    margin-right: 0.5em;
+  }
+
+  label {
+    cursor: pointer;
+  }
+}
+
+.checkbox-container {
+  margin: 25px;
+  padding-bottom: 30px;
+  display: flex;
+
+  input#code-of-conduct-checkbox {
+    margin-right: 15px;
+  }
+
+  label[for="code-of-conduct-checkbox"] ~ a {
+    color: $legend-color;
+    text-decoration: none;
+  }
+
+  &.invalid {
+    padding: 10px;
+    background-color: rgba(255, 200, 200, 0.1);
+    border-radius: 4px;
+    border: 2px solid $error-color;
+  }
+}
+
+// Optional field styling
+span {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Square Payment System Styling */
+.payment-form {
+  padding: 50px 0px 50px 0px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  align-items: center;
+}
+
+#apple-pay-button {
+  height: 48px;
+  width: 100%;
+  display: inline-block;
+  -webkit-appearance: -apple-pay-button;
+  -apple-pay-button-type: plain;
+  -apple-pay-button-style: black;
+}
+
+#fast-checkout {
+  background: #fafafa;
+  color: black;
+
+  h3 {
+    color: $main-blue;
+  }
+
+  input {
+    border-radius: 6px;
+    position: relative;
+  }
+
+  .wrapper {
+    position: relative;
+  }
+
+  button {
+    width: 100%;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    color: $white;
+    display: inline-block;
+    background-color: $focal-orange;
+    text-align: center;
+    font-size: 1.5em;
+
+    &:hover {
+      background-color: $light-blue;
+      color: $white;
+      transition: 0.3s;
+    }
+  }
+
+  .border {
+    color: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.1);
+    height: 1px;
+    width: 100%;
+    margin: 30px 0;
+    font-size: 12px;
+    line-height: 20px;
+    text-transform: uppercase;
+    position: relative;
+
+    span {
+      position: absolute;
+      top: -10px;
+      background: #fafafa;
+      padding: 0 10px;
+      left: calc(50% - 1em - 5px);
+    }
+  }
+}
+
+#ach-wrapper {
+  display: none;
+
+  input:first-of-type {
+    margin-bottom: 10px;
+  }
+}
+
+#ach-message {
+  width: 100%;
+  margin-top: 11px;
+  margin-bottom: 11px;
+  font-size: 14px;
+  display: inline-block;
+  color: #bf0020;
+
+  &:empty:before {
+    content: "\200b";
+  }
+}
+
+#payment-flow-message {
+  width: 100%;
+  margin-top: 11px;
+  margin-bottom: 11px;
+  height: 100px;
+  display: block;
+
+  &.error {
+    color: #bf0020;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  &.success {
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+}
+
+.wrapper {
+  max-width: 50%;
+  justify-content: center;
+}
+
+#card-container {
+  max-width: 387px;
+  margin: auto;
+}
+
+#payment-page {
+  padding: 1.5em;
+  background-color: $main-blue;
+
+  > h1,
+  > p {
+    max-width: 65%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+// Consulting page form elements
+#consulting-list {
+  list-style-position: inside;
+  border-style: solid;
+  border-color: #05556d;
+  border-width: thick;
+  padding: 3% 5% 3% 5%;
+}
+
+#consulting-bullet-items {
+  border-style: solid;
+  border-color: #05556d;
+  border-radius: 5px;
+  padding: 1%;
+  margin: 1%;
+  list-style-type: none;
+}
+
+// Application page layout - ONLY used on application form
+.application-page {
+  justify-content: center;
+  background-color: $main-blue;
+  padding: 2rem;
+
+  > h1,
+  > p {
+    max-width: 65%;
+    margin: auto;
+    text-align: center;
+  }
+
+  > form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,231 +356,348 @@
     width: 75%;
     max-width: 150rem;
     padding: 3rem;
-    background-color: white;
-    border: 1px solid rgb(0, 0, 0);
+    background-color: $white;
+    border: 1px solid $text-color;
   }
+}
 
-  .application-page {
-    justify-content: center;
-    background-color: $main-blue;
-    padding: 2rem;
-  }
-
-  .application-form .learn-more-wrapper {
+// Application form specific styling - different from general forms
+.application-form {
+  // Learn more functionality - specific to application form
+  .learn-more-wrapper {
     display: inline;
+
+    button {
+      display: inline;
+      background-color: $white;
+      color: $main-blue;
+      cursor: pointer;
+      padding: 0;
+      margin: 0 0 0 0.5em;
+
+      &:hover {
+        background-color: $white;
+        color: $hover-blue;
+      }
+
+      &:focus-visible {
+        padding: 3px;
+      }
+    }
   }
 
-  .application-form .learn-more-content {
+  .learn-more-content {
     margin: 0.5em 0 0 0;
     font-size: large;
   }
 
-  .application-form .learn-more-wrapper button {
-    display: inline;
-    background-color: white;
-    font-size: large;
-    color: $main-blue;
-    cursor: pointer;
-    padding: 0;
-    margin: 0 0 0 0.5em;
-  }
-
-  .application-form .learn-more-wrapper button:hover {
-    background-color: white;
-    color: $light-blue;
-  }
-
-  .application-form .learn-more-wrapper button:focus-visible {
-    padding: 3px;
-  }
-
-  .application-page > h1,
-  .application-page > label {
-    max-width: 65%;
-    margin: auto;
-    text-align: center;
-  }
-
-  legend {
-    color: rgba(0, 115, 149, 0.8);
-    font-size: 20px;
-  }
-
-  .application-form > fieldset {
-    padding: 2rem;
-    border: 1px solid rgba(0, 0, 0, 0.559);
-    border-radius: 0.5rem;
-    width: 100%;
-  }
-
-  .application-form > fieldset > label {
-    margin-bottom: 0.5rem;
-    font-size: large;
-  }
-
-  .application-form > fieldset > input[type="text"],
-  .application-form > fieldset > input[type="email"],
-  .application-form > fieldset > input[type="tel"],
-  .application-form > fieldset > input[type="textarea"] {
-    box-sizing: border-box;
-    padding: 1em;
-    margin-bottom: 2em;
-    border: 1px solid rgba(0, 0, 0, 0.559);
-    border-radius: 6px;
-    width: 100%;
-  }
-
-  #radio-wrapper label {
-    color: black;
-    margin-bottom: 2em;
-  }
-  #radio-wrapper input {
-    background-color: $light-blue;
-  }
-
-  .continue-to-app-btn {
-      width: 50%;
-    }
-
-  button.continue-to-app-btn,
-  button.previous-btn,
-  button.save-btn {
+  // Application form buttons - larger than general form buttons
+  button {
     background-color: $focal-orange;
-    color: white;
+    color: $white;
     font-size: large;
     padding: 1rem;
     border-radius: 0.5rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
-  }
-
-  button.continue-to-app-btn:hover,
-  button.previous-btn:hover,
-  button.save-btn:hover {
-    background-color: $light-blue;
-    color: white;
-    transition: 0.3s;
-  }
-
-  .form-button {
-    display: flex;
     margin: auto;
-    align-items: center;
-    justify-content: space-between;
+    display: block;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $hover-blue;
+      color: $white;
+      transition: 0.3s;
+    }
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 599px) {
+  // Application form fieldsets - different styling than general forms
+  > fieldset {
+    border: 1px solid $form-border-color;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    width: 100%;
 
-    html,
-    body {
-      overflow-x: hidden;
-      width: 100%;
+    > label {
+      color: $text-color;
+      font-size: large;
     }
 
-    .column {
-      padding: 0 1rem;
+    // Application form inputs - larger padding and margins
+    > input[type="text"],
+    > input[type="email"],
+    > input[type="tel"],
+    > input[type="date"],
+    > input[type="number"],
+    > input[type="url"],
+    > textarea,
+    > select {
+      padding: 1em;
+      margin-bottom: 2em;
+      border: 1px solid $form-border-color;
+      border-radius: 6px;
       width: 100%;
-      margin: auto;
-      overflow-x: hidden;
       box-sizing: border-box;
     }
 
-    .row, .application-page {
-      padding: 2em;
+    > select,
+    > input[type="checkbox"],
+    > #radio-wrapper > input[type="radio"] {
+      cursor: pointer;
     }
 
-    .justify {
-      text-align: left;
+    > select {
+      appearance: none;
+      background-color: transparent;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmc+DQogIDxwYXRoIGZpbGw9ImdyYXkiIGQ9Ik0xMCwyMzIuN2w0OTAsNTM0LjVwNDkwLTUzNC41SDEweiIgLz4NCjwvc3ZnPg==);
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: 15px;
+      background-origin: content-box;
+    }
+  }
+}
+
+// Application-specific radio wrapper styling
+#radio-wrapper {
+  width: 100%;
+  color: $radio-wrapper-color;
+}
+
+// Application-specific field hiding
+#custom-gender,
+#custom-pronouns,
+#custom-race-ethnicity {
+  display: none;
+}
+
+// Application-specific pronouns group
+.pronouns-group {
+  margin-bottom: 1.5em;
+
+  &.invalid {
+    padding: 15px;
+    border: 2px solid $error-color;
+    border-radius: 8px;
+    background-color: rgba(191, 0, 32, 0.05);
+    margin-bottom: 1em;
+  }
+}
+
+/* Form responsive design */
+@media (max-width: 900px) {
+  .form-wrapper {
+    .wrapper {
+      max-width: 75%;
     }
 
-    .large-white-text {
-      font-size: 1.5em;
+    #info-wrapper {
+      max-width: 100%;
+      min-width: none;
+    }
+  }
+
+  .wrapper {
+    max-width: 75%;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-wrapper {
+    .wrapper {
+      max-width: 100%;
     }
 
-    button.previous-btn,
-    button.continue-to-app-btn,
-    button.save-btn {
-      font-size: smaller;
-    }
+    #info-wrapper {
+      max-width: 100%;
+      min-width: none;
 
-    .application-form .learn-more-wrapper .learn-more-title,
-    .application-form .learn-more-wrapper .toggle-icon {
-      color: $main-blue;
-      font-size: smaller;
+      > fieldset {
+        margin: 0px;
+        width: 100%;
+      }
     }
+  }
 
-    .application-form .learn-more-wrapper .learn-more-content {
-      font-size: smaller;
-    }
+  .payment-form {
+    margin: 0px;
+    padding: 30px;
+    box-sizing: border-box;
+  }
 
-    .application-page > h1 {
-      font-size: 1.5em;
-      max-width: fit-content;
-    }
+  .wrapper {
+    max-width: 100%;
+  }
+}
 
-    .application-page > form {
-      width: inherit;
+// Mobile (320px to 599px)
+@media only screen and (min-width: 320px) and (max-width: 599px) {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .column {
+    padding: 0;
+    width: 100%;
+    margin: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .row,
+  .application-page {
+    padding: 2em;
+  }
+
+  .justify {
+    text-align: left;
+  }
+
+  .large-white-text {
+    font-size: 1.5em;
+  }
+
+  button.previous-btn,
+  button.continue-to-app-btn,
+  button.save-btn {
+    font-size: smaller;
+  }
+
+  .application-form .learn-more-wrapper .learn-more-title,
+  .application-form .learn-more-wrapper .toggle-icon {
+    color: $main-blue;
+    font-size: smaller;
+  }
+
+  .application-form .learn-more-wrapper .learn-more-content {
+    font-size: smaller;
+  }
+
+  .application-page > h1 {
+    font-size: 1.5em;
+    max-width: fit-content;
+  }
+
+  .application-page > form {
+    width: initial;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+  }
+
+  legend {
+    font-size: 18px;
+  }
+
+  .application-form > fieldset {
+    min-width: 95%;
+    word-wrap: break-word;
+    padding: 1.5rem;
+    margin: 0;
+  }
+
+  .application-form > fieldset > label {
+    font-size: smaller;
+  }
+
+  .form-button {
+    gap: 0.5em;
+    margin: auto;
+  }
+
+  #radio-wrapper > input[type="radio"] {
+    margin: 0;
+  }
+
+  #radio-wrapper > label,
+  .application-form > fieldset > label {
+    font-size: smaller;
+  }
+}
+
+// Application form specific responsive design
+@media only screen and (min-width: 320px) and (max-width: 599px) {
+  .column {
+    padding: 0;
+  }
+
+  .application-page {
+    padding: 2rem 0;
+
+    > form {
+      width: initial;
       margin-bottom: 2rem;
       padding: 1.5rem;
     }
 
-    legend {
-      font-size: 18px;
-    }
-
-    .application-form > fieldset {
-      min-width: 95%;
-      word-wrap: break-word;
-      padding: 1.5rem;
-      margin: 0;
-    }
-
-    .application-form > fieldset > label {
-      font-size: smaller;
-    }
-
-    .form-button {
-      gap: 0.5em;
-      margin: auto;
+    > h1 {
+      font-size: 1.5em;
+      max-width: fit-content;
     }
   }
 
-  @media only screen and (min-width: 600px) and (max-width: 910px) {
-    html,
-    body {
-      overflow-x: hidden;
-      width: 100%;
-    }
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
 
-    .column {
-      padding: 0 1rem;
-      width: 100%;
-      margin: auto;
-      overflow-x: hidden;
-      box-sizing: border-box;
-    }
+  legend {
+    font-size: 18px;
+  }
 
-    .row {
-      padding: 2em;
-    }
+  .application-form > fieldset {
+    min-width: 95%;
+    word-wrap: break-word;
+    padding: 1.5rem;
+    margin: 0;
+  }
 
-    .application-page {
-      padding: 2em 0;
-    }
+  #radio-wrapper > input[type="radio"] {
+    margin: 0;
+  }
 
-    .application-page > h1 {
-      font-size: 2em;
-      max-width: fit-content;
-    }
+  #radio-wrapper > label,
+  .application-form > fieldset > label {
+    font-size: smaller;
+  }
 
-    .application-page > form {
+  .application-form .learn-more-wrapper .learn-more-title,
+  .application-form .learn-more-wrapper .toggle-icon {
+    color: $main-blue;
+    font-size: smaller;
+  }
+
+  .application-form .learn-more-wrapper .learn-more-content {
+    font-size: smaller;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 910px) {
+  .column {
+    padding: 0;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .application-page {
+    padding: 2rem 0;
+
+    > form {
       width: initial;
       margin-bottom: 2rem;
     }
 
-    legend {
-      font-size: 24px;
+    > h1 {
+      font-size: 2em;
+      max-width: fit-content;
     }
   }
+
+  legend {
+    font-size: 24px;
+  }
+}
