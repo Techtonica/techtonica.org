@@ -139,3 +139,35 @@ function validateForm() {
     window.location.href = "/app-household";
   }
 } 
+
+// participant assessment form save button input validation
+function saveBtnValidation(){
+    document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.getElementById("participant_assessment");
+
+    saveButton.addEventListener("click", () => {
+      const requiredInputs = form.querySelectorAll("input[required]");
+      let isValid = true;
+
+      requiredInputs.forEach((input) => {
+        const parentElement = input.parentNode;
+        parentElement.style.border = "";
+
+        if (
+          (input.type === "radio" || input.type === "checkbox") &&
+          !form.querySelector(`[name="${input.name}"]:checked`)
+        ) {
+          isValid = false;
+          parentElement.style.border = "2px solid red";
+        }
+      });
+
+      if (!isValid) {
+        alert("Please fill out all required fields.");
+      } else {
+        window.location.href = "/thankyou";
+      }
+    });
+  });
+}
