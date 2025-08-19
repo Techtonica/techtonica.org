@@ -199,6 +199,22 @@ def render_ft_program_page():
     return render_template("full-time-program.html", timeline=timeline)
 
 
+@app.route("/web-dev-foundation-program/")
+def render_web_dev_foundation_program_page():
+    """
+    Renders the part time web dev foundation page from jinja2 template
+    """
+    return render_template("web-dev-foundation-program.html")
+
+
+@app.route("/software-engineering-program/")
+def render_swe_program_page():
+    """
+    Renders the part time software engineering page from jinja2 template
+    """
+    return render_template("software-engineering-program.html")
+
+
 @app.route("/donate/")
 def render_donate_page():
     """
