@@ -152,7 +152,7 @@
 
 .testimonial-post {
   width: 100%;
-  background-color: #0093b5;
+  background-color: $main-blue;
   margin: 0;
   padding: 4rem;
   padding-top: 2rem;
@@ -172,7 +172,7 @@
   padding-left: 0rem;
   padding-right: 2rem;
   width: 100%;
-  background-color: #fafafa;
+  background-color: $white;
   border-radius: 1px;
 }
 
@@ -244,7 +244,7 @@
     flex: 1;
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: rgba(0, 147, 181, 0.3) transparent;
+    scrollbar-color: $dark-blue transparent;
   }
 
   .top-testimonials {
@@ -262,12 +262,12 @@
   }
 
   .testimonial-text::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 147, 181, 0.3);
+    background-color: $dark-blue;
     border-radius: 2px;
   }
 
   .testimonial-text::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 147, 181, 0.5);
+    background-color: $dark-blue;
   }
 }
 
@@ -307,12 +307,12 @@
   }
 
   .testimonial-text::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 147, 181, 0.3);
+    background-color: $dark-blue;
     border-radius: 3px;
   }
 
   .testimonial-text::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 147, 181, 0.5);
+    background-color: $dark-blue;
   }
 }
 
