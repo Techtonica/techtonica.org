@@ -365,7 +365,7 @@ p {
     overflow: hidden;
   }
   .testimonial-text {
-    font-size: clamp(14px, 1.5vw, 18px);
+    font-size: clamp(14px, 1.5vw, 17px);
     line-height: 1.5em;
     flex: 1;
     overflow-y: auto;
