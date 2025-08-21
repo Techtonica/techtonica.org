@@ -271,6 +271,51 @@
   }
 }
 
+/* Tablet / iPad - maintains squares in 2-column layout */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .testimonial-post {
+    width: calc(50% - 1.5rem) !important; /* Force 2-column layout */
+    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+    display: flex;
+    flex-direction: column;
+    max-width: 400px; /* Limit max size for readability */
+  }
+
+  .testimonial-post .post-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .testimonial-text {
+    font-size: 15px; /* Slightly larger than mobile for tablet readability */
+    line-height: 1.5em;
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 147, 181, 0.3) transparent;
+  }
+
+  /* Custom scrollbar for webkit browsers on tablets */
+  .testimonial-text::-webkit-scrollbar {
+    width: 6px; /* Slightly wider scrollbar for touch interaction */
+  }
+
+  .testimonial-text::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .testimonial-text::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 147, 181, 0.3);
+    border-radius: 3px;
+  }
+
+  .testimonial-text::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 147, 181, 0.5);
+  }
+}
+
 .staff-team {
   align-items: flex-start;
 }
