@@ -183,6 +183,33 @@
   padding: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  position: relative;
+}
+
+/* Only show gradient when content is actually scrollable */
+.testimonial-text[scrollHeight]::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 15px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.95));
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Scrollable text overflow, JavaScript detection */
+.testimonial-text.has-overflow::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 15px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.95));
+  pointer-events: none;
+  z-index: 1;
 }
 
 @media (max-width: 480px) {

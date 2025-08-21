@@ -24,3 +24,10 @@ $(document).ready(function () {
     $(".nav-link").toggleClass("nav-link--mobile");
   });
 });
+
+// Detect testimonials with scrollable content
+document.querySelectorAll('.testimonial-text').forEach(element => {
+  if (element.scrollHeight > element.clientHeight) {
+    element.classList.add('has-overflow');
+  }
+});
