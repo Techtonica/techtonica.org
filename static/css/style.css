@@ -221,7 +221,7 @@ p {
 }
 
 .testimonial-post {
-  width: 40%;
+  width: 100%;
   background-color: #0093b5;
   margin: 0;
   padding: 4rem;
@@ -242,7 +242,7 @@ p {
   padding-left: 0rem;
   padding-right: 2rem;
   width: 100%;
-  background-color: #fafafa;
+  background-color: white;
   border-radius: 1px;
 }
 
@@ -255,6 +255,22 @@ p {
   padding-bottom: 1rem;
 }
 
+@media (max-width: 480px) {
+  .testimonial-text {
+    font-size: 12px;
+    line-height: 1.4em;
+    padding: 0.75rem;
+  }
+  .testimonial-post {
+    max-width: 320px;
+    padding: 1.25rem;
+  }
+  .testimonial-post .post-content {
+    padding: 0.75rem;
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+  }
+}
 @media (min-width: 768px) {
   .testimonial-post {
     width: calc(50% - 1.5rem);
@@ -267,17 +283,87 @@ p {
 }
 @media (max-width: 767px) {
   .testimonial-post {
+    width: 100% !important;
+    max-width: 350px;
+    margin: 0 auto 1.5rem auto;
+    aspect-ratio: 1/1;
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
   }
   .testimonial-post .post-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
     padding-left: 0.5rem;
     padding-right: 1.5rem;
+    overflow: hidden;
   }
   .testimonial-text {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.5em;
     padding: 1rem;
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #05556d transparent;
+  }
+  .top-testimonials {
+    padding: 1rem;
+    gap: 0;
+  }
+  /* Custom scrollbar for webkit browsers */
+  .testimonial-text::-webkit-scrollbar {
+    width: 4px;
+  }
+  .testimonial-text::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .testimonial-text::-webkit-scrollbar-thumb {
+    background-color: #05556d;
+    border-radius: 2px;
+  }
+  .testimonial-text::-webkit-scrollbar-thumb:hover {
+    background-color: #05556d;
+  }
+}
+/* Tablet / iPad - maintains squares in 2-column layout */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .testimonial-post {
+    width: calc(50% - 1.5rem) !important; /* Force 2-column layout */
+    aspect-ratio: 1/1; /* Maintain square aspect ratio */
+    display: flex;
+    flex-direction: column;
+    max-width: 400px; /* Limit max size for readability */
+  }
+  .testimonial-post .post-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .testimonial-text {
+    font-size: 15px; /* Slightly larger than mobile for tablet readability */
+    line-height: 1.5em;
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 147, 181, 0.3) transparent;
+  }
+  /* Custom scrollbar for webkit browsers on tablets */
+  .testimonial-text::-webkit-scrollbar {
+    width: 6px; /* Slightly wider scrollbar for touch interaction */
+  }
+  .testimonial-text::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .testimonial-text::-webkit-scrollbar-thumb {
+    background-color: #05556d;
+    border-radius: 3px;
+  }
+  .testimonial-text::-webkit-scrollbar-thumb:hover {
+    background-color: #05556d;
   }
 }
 .staff-team {
