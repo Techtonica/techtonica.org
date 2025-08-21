@@ -247,7 +247,7 @@ p {
 }
 
 .testimonial-text {
-  font-size: clamp(12px, 3.5vw, 14px); /* Fluid base font size */
+  font-size: 14px;
   line-height: 1.6em;
   color: #333;
   padding: 1rem;
@@ -282,10 +282,9 @@ p {
   z-index: 1;
 }
 
-/* Small mobile screens */
 @media (max-width: 480px) {
   .testimonial-text {
-    font-size: clamp(11px, 3vw, 12px); /* Fluid small mobile font */
+    font-size: clamp(11px, 3vw, 12px);
     line-height: 1.4em;
     padding: 0.75rem;
   }
@@ -299,8 +298,7 @@ p {
     padding-right: 1rem;
   }
 }
-/* Mobile screens - single column squares */
-@media (min-width: 768px) {
+@media (max-width: 767px) {
   .testimonial-post {
     width: 100% !important;
     max-width: 350px;
@@ -320,7 +318,7 @@ p {
     overflow: hidden;
   }
   .testimonial-text {
-    font-size: clamp(12px, 3.5vw, 14px); /* Fluid mobile font */
+    font-size: clamp(8px, 3vw, 14px);
     line-height: 1.5em;
     padding: 1rem;
     flex: 1;
@@ -332,6 +330,7 @@ p {
     padding: 1rem;
     gap: 0;
   }
+  /* Custom scrollbar for webkit browsers */
   .testimonial-text::-webkit-scrollbar {
     width: 4px;
   }
@@ -346,10 +345,51 @@ p {
     background-color: #05556d;
   }
 }
-/* Tablet screens - 2-column squares */
+@media (min-width: 768px) {
+  .testimonial-post {
+    width: calc(50% - 1.5rem);
+  }
+}
+@media (min-width: 1024px) {
+  .testimonial-post {
+    width: calc(33.333% - 1.5rem);
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+  }
+  .testimonial-post .post-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .testimonial-text {
+    font-size: clamp(14px, 1.5vw, 12px);
+    line-height: 1.5em;
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #05556d transparent;
+  }
+  .testimonial-text::-webkit-scrollbar {
+    width: 8px;
+  }
+  .testimonial-text::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .testimonial-text::-webkit-scrollbar-thumb {
+    background-color: #05556d;
+    border-radius: 4px;
+  }
+  .testimonial-text::-webkit-scrollbar-thumb:hover {
+    background-color: #05556d;
+  }
+}
+/* Tablet / iPad - maintains squares in 2-column layout */
 @media (min-width: 768px) and (max-width: 1024px) {
   .testimonial-post {
-    width: calc(50% - 1.5rem) !important;
+    width: calc(50% - 1.5rem) !important; /* Force 2-column layout */
     aspect-ratio: 1/1; /* Maintain square aspect ratio */
     display: flex;
     flex-direction: column;
@@ -362,7 +402,7 @@ p {
     overflow: hidden;
   }
   .testimonial-text {
-    font-size: clamp(14px, 2vw, 15px); /* Fluid tablet font */
+    font-size: clamp(14px, 2vw, 15px);
     line-height: 1.5em;
     flex: 1;
     overflow-y: auto;
