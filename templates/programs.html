@@ -11,18 +11,17 @@ endblock title %} {% block content %}
         remote job placement or job search support for women and non-binary
         adults seeking economic empowerment.
       </p>
-      <a 
+      <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSfUdyIAfcU5KSqtYH5J5iPRgu-yycHdebnUKygQLEv-m7oVMw/viewform"
-        class="sponsor" 
-        id="orange-button" 
-        target="_blank" 
+        class="orange-button"
+        target="_blank"
         rel="noopener noreferrer"
       >
-        Fill out our interest form to be notified about our next cohort!
+        Get Notified About the Next Cohort
       </a>
     </div>
   </div>
-  <div class="row row__baseline blue-background">
+  <div class="row row__baseline">
     <p>
       Techtonica’s programs are virtual technical training program that provide 
       the opportunity seeking economic empowerment to learn technical skills in 
@@ -38,7 +37,7 @@ endblock title %} {% block content %}
       excited for long-term careers in the field, have a good attitude and a growth 
       mindset, can calmly manage extended periods of frustration and want to pay it forward.
     </p>
-  <div class="row">
+  <div class="row blue-background">
     <div class="column column-med centered">
       <h3>
         <a href="{{ url_for('render_ft_program_page') }}">
@@ -51,27 +50,30 @@ endblock title %} {% block content %}
         followed by six months of job search support or remote job placement.
       </p>
     </div>
+  </div>
+  <div class="row blue-background">
+    <h2 class="large-white-text">Part-Time Programs</h2>
     <div class="column column-med centered">
-      <h3>
+      <h4>
         <a href="{{ url_for('render_web_dev_foundation_program_page') }}">
           Part-Time Web Dev Foundation Program
         </a>
-      </h3>
+      </h4>
       <p>
         Free, virtual 10-week introductory coding fundamentals training. The 
         program gives more people the chance to try out coding before committing 
         fully to a career transition and and to ease the financial risk participants
         take on by quitting their jobs to do a full-time program in the current 
-        difficult job market for junior engineers. _Pre-requisite for eligibility to 
-        apply to the part-time Software Engineering Program._
+        difficult job market for junior engineers. Pre-requisite for eligibility to 
+        apply to the part-time Software Engineering Program.
       </p>
     </div>
     <div class="column column-med centered">
-      <h3>
+      <h4>
         <a href="{{ url_for('render_swe_program_page') }}">
           Part-Time Software Engineering Program
         </a>
-      </h3>
+      </h4>
       <p>
         26-week full-stack PERN software engineering program with need-based, 
         sliding-scale, subsidized tuition and stipend scholarships, followed by 
@@ -79,21 +81,14 @@ endblock title %} {% block content %}
       </p>
     </div>
   </div>
-  <div class="row">
+  <div class="row blue-background">
+    <h2 class="large-white-text">Graduate Programs</h2>
     <div class="column column-med centered">
-      <h3>Graduate Seeker Program</h3>
-      <p>
-        Offered intermittently, job seeking Techtonica graduates work together with 
-        some structure, accountability, support, reviewing, learning, practice, and 
-        stipends to make the job search process a little easier.
-      </p>
-    </div>
-    <div class="column column-med centered">
-      <h3>
+      <h4>
         <a href="{{ url_for('render_consulting_page') }}">
           Graduate Consulting Program
         </a>
-      </h3>
+      </h4>
       <p>
         Offered on a rolling basis, Techtonica graduates who have successfully 
         completed our Full-Time or Part-Time Software Engineering program are able 
@@ -102,6 +97,14 @@ endblock title %} {% block content %}
         gain real-world software engineering consulting experience, including 
         scoping projects, talking to clients, meeting deliverables, holding 
         retrospectives, reviewing PRs, and more.
+      </p>
+    </div>
+    <div class="column column-med centered">
+      <h4>Graduate Seeker Program</h4>
+      <p>
+        Offered intermittently, job seeking Techtonica graduates work together with 
+        some structure, accountability, support, reviewing, learning, practice, and 
+        stipends to make the job search process a little easier.
       </p>
     </div>
   </div>
