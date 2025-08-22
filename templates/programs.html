@@ -1,118 +1,109 @@
 {% extends "base.html" %} {% block title %} Techtonica Programs {%
 endblock title %} {% block content %}
 
-<div class="main-content"></div>
-<!-- <div class="row row__center blue-background" style="padding: 0">
-  <h2 class="large-white-text">Techtonica Programs</h2>
-</div> -->
-<div class="row row__center">
-    <div class="column">
-    <h1 class="blue-h1">Our Programs at a Glance</h1>
-    <ol>
-      <li>
+<div class="main-content">
+  <div class="program-header" title="Programs">
+    <div class="main-header__text blue-background">
+      <h1 class="main-header__header">Our Programs at a Glance </h1>
+      <p>
+        We offer software engineering training with need-based, sliding-scale,
+        subsidized tuition and stipend scholarships, followed by six months of
+        remote job placement or job search support for women and non-binary
+        adults seeking economic empowerment.
+      </p>
+      <a 
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfUdyIAfcU5KSqtYH5J5iPRgu-yycHdebnUKygQLEv-m7oVMw/viewform"
+        class="sponsor" 
+        id="orange-button" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        Fill out our interest form to be notified about our next cohort!
+      </a>
+    </div>
+  </div>
+  <div class="row row__baseline blue-background">
+    <p>
+      Techtonica’s programs are virtual technical training program that provide 
+      the opportunity seeking economic empowerment to learn technical skills in 
+      a safe, inclusive space. We aim to empower those most underrepresented in 
+      tech and to help tech become more diverse and inclusive. To that end, we 
+      have been very intentional about creating a safe community, building a network, 
+      and providing personalized support, which means open communication is absolutely 
+      necessary.
+    </p>
+    <p>
+      We select participants who are independent but good at collaborating, motivated 
+      to succeed, committed to learning to code, flexible, curious, open-minded, and 
+      excited for long-term careers in the field, have a good attitude and a growth 
+      mindset, can calmly manage extended periods of frustration and want to pay it forward.
+    </p>
+  <div class="row">
+    <div class="column column-med centered">
+      <h3>
+        <a href="{{ url_for('render_ft_program_page') }}">
+          Full-Time Program
+        </a>
+      </h3>
+      <p>
+        Five to six month, full-stack PERN software engineering program with 
+        need-based, sliding-scale, subsidized tuition and stipend scholarships, 
+        followed by six months of job search support or remote job placement.
+      </p>
+    </div>
+    <div class="column column-med centered">
+      <h3>
         <a href="{{ url_for('render_web_dev_foundation_program_page') }}">
           Part-Time Web Dev Foundation Program
         </a>
-         (Fundamental Technical Training)
-      </li>
-      <li>
+      </h3>
+      <p>
+        Free, virtual 10-week introductory coding fundamentals training. The 
+        program gives more people the chance to try out coding before committing 
+        fully to a career transition and and to ease the financial risk participants
+        take on by quitting their jobs to do a full-time program in the current 
+        difficult job market for junior engineers. _Pre-requisite for eligibility to 
+        apply to the part-time Software Engineering Program._
+      </p>
+    </div>
+    <div class="column column-med centered">
+      <h3>
         <a href="{{ url_for('render_swe_program_page') }}">
           Part-Time Software Engineering Program
         </a>
-         (Project-Based Full Stack Accelerator)
-      <li>
-        Seeker Program (Job Search Support for Graduates of Part-Time Software Engineering Program)
-      </li>
-      <li>
-        <a href="{{ url_for('render_consulting_page') }}"
-          >Techtonica Consulting
-        </a>
-        (Real-World Experience for Graduates of Part-Time Web Dev Foundation Program)
-      </li>
-    </ol>
+      </h3>
+      <p>
+        26-week full-stack PERN software engineering program with need-based, 
+        sliding-scale, subsidized tuition and stipend scholarships, followed by 
+        six months of job search support or remote job placement.
+      </p>
+    </div>
   </div>
-<!-- TO-DO: add interest form -->
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUdyIAfcU5KSqtYH5J5iPRgu-yycHdebnUKygQLEv-m7oVMw/viewform"
-  class="sponsor" id="orange-button" target="_blank" rel="noopener noreferrer">Fill out our interest form to be notified about our next cohort!
-  </a>
-  <div class="column">
-    <p>
-      <!-- Techtonica Consulting will be your partner in software engineering
-      solutions, freeing your internal team members to be more productive in the
-      areas most vital to the business while giving underrepresented software
-      engineers the chance to demonstrate their skills by creating innovative
-      products, testing software, streamlining core business operations, and
-      enhancing efficiency with the guidance of senior engineers at Techtonica.
-      If you or someone you know has a specific software development project
-      that requires assistance or support, Techtonica's team of skilled
-      graduates and senior engineers stands ready to deliver innovative and
-      effective solutions. -->
-    </p>
-    <img
-      id="consulting-hero"
-      src="{{ url_for('static', filename='img/Horizontal-Partnerships-Manager-with-Participants-min.jpeg') }}"
-    />
-    <p>
-      <!-- We work with clients of any size, from Fortune 500 companies to
-      community-driven, open-source projects. Our engagement rates may be as low
-      as $5000, depending on required deliverables and length of time. Your
-      support for the Techtonica Consulting program enriches the journey and
-      development of our participants, propelling them towards their next
-      milestones by equipping them with invaluable real-world technical
-      experience as part of their software engineering journey. -->
-    </p>
-    <p>
-      <!-- Participating in a Techtonica Consulting project can help streamline your
-      team's workload and increase overall productivity. Techtonica Consulting
-      allows you to leverage junior software engineers supervised by experienced
-      senior personnel at Techtonica, effectively outsourcing specific projects
-      or tasks. This delegation reduces the burden on your existing staff,
-      enabling them to focus on high-priority tasks while providing valuable
-      real-world experience to Techtonica graduates. -->
-    </p>
-    <p>
-      <!-- Techtonica consultants are Techtonica graduates who have successfully
-      completed our full-time, project-based, open-source software engineering
-      training curriculum, followed by varying amounts of professional software
-      engineering experience. However, a lot of organizations don't currently
-      have the capacity to support entry-level talent. To continue helping those
-      organizations meet their software development needs while prioritizing
-      learning opportunities for participants who are finishing our program, new
-      Techtonica graduates from diverse backgrounds work on real software
-      projects alongside our senior software engineers. Techtonica consultants
-      gain real-world software engineering consulting experience, including
-      scoping projects, talking to clients, meeting deliverables, holding
-      retrospectives, reviewing PRs, and more. -->
-    </p>
-    <p>
-      <!-- Techtonica holds weekly check-ins with consultants involved in client
-      projects. Consultants also have opportunities to pair or ask for advice in
-      regular office hours, a weekly team meeting for each project, and a weekly
-      review for all consultants. Senior software engineers review PRs and hold
-      retrospectives with involved consultants. Our team also meets with yours
-      to sync as needed, and shares regular updates about progress. -->
-    </p>
-    <p>
-      <!-- All Techtonica graduates have extensive project-based experience with the
-      PERN stack (Postgres, Express, React, and Node). Graduates may also have
-      experience in a wide variety of other technologies, and current
-      consultants have used Java, Python, JavaScript, HTML, CSS, SQL, C#, Go,
-      Ruby, and assorted APIs on past projects. Because this is an educational
-      experience, we're also very open to learning new technologies to support
-      your tech stack. -->
-    </p>
-    Some projects that would be most fitting for Techtonica Consulting include:
-    <!-- ..... -->
-    <h2>How It Works</h2>
-    <!-- TO-DO: columns here containing descriptions and buttons for programs -->
-    <a
-      href="https://docs.google.com/forms/d/e/1FAIpQLSdNrE6qtdhND2eN3e4PbRfxa4ro1EKiQ3zYkKhYVxtbRXSsGg/viewform?usp=sf_link"
-      class="orange-button"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Discuss consulting
-    </a>
+  <div class="row">
+    <div class="column column-med centered">
+      <h3>Graduate Seeker Program</h3>
+      <p>
+        Offered intermittently, job seeking Techtonica graduates work together with 
+        some structure, accountability, support, reviewing, learning, practice, and 
+        stipends to make the job search process a little easier.
+      </p>
+    </div>
+    <div class="column column-med centered">
+      <h3>
+        <a href="{{ url_for('render_consulting_page') }}">
+          Graduate Consulting Program
+        </a>
+      </h3>
+      <p>
+        Offered on a rolling basis, Techtonica graduates who have successfully 
+        completed our Full-Time or Part-Time Software Engineering program are able 
+        to continue prioritizing their professional development by helping partner 
+        organizations meet their software development needs. Graduates are able to 
+        gain real-world software engineering consulting experience, including 
+        scoping projects, talking to clients, meeting deliverables, holding 
+        retrospectives, reviewing PRs, and more.
+      </p>
+    </div>
   </div>
 </div>
 {% endblock content %}
