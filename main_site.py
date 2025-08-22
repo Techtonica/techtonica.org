@@ -215,6 +215,14 @@ def render_swe_program_page():
     return render_template("software-engineering-program.html")
 
 
+@app.route("/programs/")
+def render_programs_page():
+    """
+    Renders the programs page from jinja2 template
+    """
+    return render_template("programs.html")
+
+
 @app.route("/donate/")
 def render_donate_page():
     """

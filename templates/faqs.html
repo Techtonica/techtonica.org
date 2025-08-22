@@ -151,14 +151,13 @@ FAQs {% endblock title %} {% block content %}
         </span>
       </h3>
       <div class="faq-content">
-        <!-- TO-DO: Should there be a programs tab linked here? -->
         <p>
           We are seeking participants who can show consistent responsibility,
           resilience, commitment, and interest, among other criteria that our
           partner companies work out with us. See our
-          <a href="{{ url_for('render_ft_program_page') }}"
-            >full-time program page</a
-          >
+          <a href="{{ url_for('render_programs_page') }}">
+            programs page
+          </a>
           for more information.
         </p>
       </div>
@@ -175,15 +174,13 @@ FAQs {% endblock title %} {% block content %}
           <span class="toggle-icon-minus">-</span>
         </span>
       </h3>
-      <!-- TO-DO: Should there be a programs tab linked here? -->
       <div class="faq-content">
         <p>
-          See if you're eligible on our
-          <a href="{{ url_for('render_ft_program_page') }}"
-            >full-time program page</a
+          See if you're eligible by visiting the 
+          <a href="{{ url_for('render_programs_page') }}"
+            >programs page</a
           >
-          and fill out the interest or application form (usually open around
-          April and October each year).
+          and fill out the interest or application form.
         </p>
       </div>
     </div>
@@ -268,7 +265,7 @@ FAQs {% endblock title %} {% block content %}
     <div class="faq-wrapper">
       <h3 id="duration" class="faq-header">
         <span class="faq-title"
-          >How long is Techtonica's full-time program?</span
+          >How long is Techtonica's program?</span
         >
         <span class="toggle-icon">
           <span class="toggle-icon-plus">+</span>
@@ -276,11 +273,20 @@ FAQs {% endblock title %} {% block content %}
         </span>
       </h3>
       <div class="faq-content">
-        <p>
-          The program consists of five to six months of full-time training,
-          Monday through Friday, followed by six months of placement or job
-          search support.
-        </p>
+        <ol>
+          <li><strong>Full-Time Program:</strong> consists of five to six months of full-time training,
+        Monday through Friday, followed by six months of placement or job
+        search support</li>
+          <li><strong>Part-Time Web Development Program:</strong> 10-weeks of free, virtual introduction 
+            to coding fundamentals</li>
+          <li><strong>Part-Time Software Engineering Program: 26-weeks of accelerated
+            full-stack development</strong></li>
+          <li>
+            <a href="{{ url_for('render_programs_page') }}">
+              See all programs
+            </a>
+          </li>
+        </ol>
       </div>
     </div>
 

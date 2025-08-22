@@ -8,39 +8,15 @@
       <p>
         Ten weeks of free, intensive, hands-on software engineering learning for women and non-binary adults seeking economic empowerment and technical upskilling support.
       </p>
-      <!-- Full Time Application Long Form Link 
-      TO-DO: adjust form to include general language -or- create a separate form 
-      -->
       <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSdG1fai_ezO8HfYopIrRyO0AdpsffjUQTTYwiS8GOEoZqMbkA/viewform"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
         class="orange-button"
         target="_blank"
         rel="noopener noreferrer"
       >
-      <!-- TO-DO: confirm this date works for application cut off -->
         Apply by Sept 10th at 12pm PT
       </a>
     </div>
-  </div>
-  <div class="column">
-    <h1 class="blue-h1">Our Programs at a Glance</h1>
-    <ol>
-      <li>Part-Time Web Dev Foundation Program (Fundamental Technical Training)</li>
-      <li>
-        <a href="{{ url_for('render_swe_program_page') }}">
-          Part-Time Software Engineering Program
-        </a>
-         (Project-Based Full Stack Accelerator)
-      <li>
-        Seeker Program (Job Search Support for Graduates of Part-Time Software Engineering Program)
-      </li>
-      <li>
-        <a href="{{ url_for('render_consulting_page') }}"
-          >Techtonica Consulting
-        </a>
-        (Real-World Experience for Graduates of Part-Time Web Dev Foundation Program)
-      </li>
-    </ol>
   </div>
   <div class="chart-container">
     <canvas id="myChart"></canvas>
@@ -74,7 +50,7 @@
       What bootcamps and Techtonica have in common is the fact that they are
       intensive training. However, bootcamps can be pretty passive classroom
       learning with students and they cost between $1,075 and $2,200 per week
-      without many scholarship opportunities. The program give more people the 
+      without many scholarship opportunities. The program gives more people the 
       chance to try out coding before committing fully to a career transition 
       and and to ease the financial risk participants take on by quitting their jobs
       to do a full-time program in the current difficult job market for junior
@@ -266,14 +242,14 @@
             below)
           </li>
           <li>can commit to always being present and on time and prepared</li>
-          <li>are willing to be part of the program during Pacific Time hours</li>
+          <li>are willing to be part of the program during 5pm to 9pm Pacific Time hours</li>
           <li>
             are dedicated to building a long-term career in tech and contributing
             to a diverse, inclusive, equitable tech environment
           </li>
           <li>
-            have housing that will be stable for the entirety of the ten months of
-            part-time training and the following six months
+            have housing that will be stable for the duration of the training and 
+            the following six months
           </li>
           <li>
             are willing to live in the U.S. and relocate to an in-person location
@@ -404,22 +380,13 @@
         </p>
       </div>
       <div class="column column-med centered">
-        <!-- TO-DO: Confirm they are doing a single application long form, if not will we remove the "2/2" text? -->
-        <h3>1. One application form</h3>
+        <h3>1. Two application form</h3>
         <p>
-          Thoroughly fill out and submit the long application form
-          by the deadline. This is different from the interest form that is 
-          linked on this page before applications are open. The form will 
+          Thoroughly fill out and submit both the short first application form (this
+          is different from the interest form that is linked on this page before 
+          applications are open) and the longer second application form (linked to 
+          upon submitting the first form) by the deadline. The second form will 
           take some time, so don't start too late!
-        </p>
-      </div>
-      <div class="column column-med centered">
-        <h3>
-          2. One invite-only digital literacy testing and JavaScript events
-        </h3>
-        <p>
-          Participate in one of the application workshops offered (details will
-          be sent to selected applicants).
         </p>
       </div>
     </div>
@@ -434,10 +401,6 @@
       </div>
       <div class="row">
       <div class="column column-med centered">
-        <!-- embedded long-form application -->
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdG1fai_ezO8HfYopIrRyO0AdpsffjUQTTYwiS8GOEoZqMbkA/viewform?embedded=true" width="640" height="600" frameborder="0" marginheight="0" id="application" marginwidth="0">Loading…</iframe>
-        <!-- embedded short-form application -->
-        <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform?embedded=true" width="640" height="600" frameborder="0" marginheight="0" id="application" marginwidth="0">Loading…</iframe> -->
       </div>
     </div>
   </div>
@@ -555,16 +518,21 @@
         </h3>
       </div>
     </div>
-    <!-- Full Time Application Long Form Link 
-      TO-DO: adjust form to include general language -or- create a separate form 
-      -->
     <a
-      href="https://docs.google.com/forms/d/e/1FAIpQLSdG1fai_ezO8HfYopIrRyO0AdpsffjUQTTYwiS8GOEoZqMbkA/viewform"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
       class="orange-button"
       target="_blank"
       rel="noopener noreferrer"
     >
       Apply Now!
+    </a>
+    <a
+      href="{{ url_for('render_programs_page') }}"
+      class="orange-button"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      See All Programs
     </a>
   </div>
 </div>
@@ -572,20 +540,17 @@
   <h1>Acceptance & Onboarding</h1>
   <div class="row">
     <div class="column column-med centered">
-      <h3>0. Attend mandatory pre-work study groups</h3>
+      <h3>0. Review official docs and return signed agreement</h3>
     </div>
     <div class="column column-med centered">
-      <h3>1. Complete pre-start assignments (about 10-20 hours per week)</h3>
+      <h3>1. Attend all mandatory pre-work study groups</h3>
     </div>
     <div class="column column-med centered">
       <h3>
-        2. Hit the ground running on day 1!
+        2. Complete pre-start assignments (about 10-20 hours per week)
       </h3>
     </div>
   <div class="row">
-    <!-- TO-DO: 
-    - will the web dev session have loaner laptops? if so,
-    how soon ahead of session should laptops go out? -->
     <div class="column column-med centered">
       <h3>3. Pictures, laptop setup, pitch practice, etc.</h3>
     </div>
