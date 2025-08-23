@@ -118,34 +118,11 @@ p {
   transform: translateY(-8px);
   box-shadow: 0 16px 48px rgb(5, 85, 109);
 }
-.sponsor-tiers-container .sponsor-tier-card.featured {
-  border-color: #05556d;
-  background: linear-gradient(135deg, #f8fbff 0%, #e8f4ff 100%);
-}
-.sponsor-tiers-container .sponsor-tier-card.featured::before {
-  content: "Most Popular";
-  position: absolute;
-  top: 20px;
-  right: -30px;
-  background: linear-gradient(135deg, #0093B5 0%, #05556d 100%);
-  color: white;
-  padding: 8px 40px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  transform: rotate(45deg);
-  box-shadow: 0 4px 12px rgb(5, 85, 109);
-}
 .sponsor-tiers-container .tier-header {
   text-align: center;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 2px solid #05556d;
-}
-.sponsor-tiers-container .tier-name {
-  font-size: 1.8rem;
-  font-weight: 400;
-  color: #05556d;
-  margin-bottom: 0.5rem;
 }
 .sponsor-tiers-container .tier-description {
   color: #05556d;
