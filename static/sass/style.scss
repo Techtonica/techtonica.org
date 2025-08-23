@@ -183,36 +183,6 @@
   padding: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  position: relative;
-}
-
-/* Only show gradient when content is actually scrollable */
-.testimonial-text[scrollHeight]::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 15px;
-  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.95));
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Used with JavaScript detection for scrollable text overflow  */
-.testimonial-text.has-overflow::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: clamp(40px, 8vh, 65px); /* Scale with viewport height */
-  background: linear-gradient(to bottom, 
-    transparent 0%, 
-    rgba(255, 255, 255, 0.7) 60%, 
-    rgba(255, 255, 255, 0.95) 100%);
-  pointer-events: none;
-  z-index: 1;
 }
 
 @media (max-width: 480px) {
@@ -256,36 +226,16 @@
   }
 
   .testimonial-text {
-    font-size: clamp(8px, 3vw, 14px);
-    line-height: 1.5em;
+    font-size: clamp(6px, 2.5vw, 10px);
+    line-height: 1.3em;
     padding: 1rem;
     flex: 1;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: $dark-blue transparent;
+    overflow: hidden;
   }
 
   .top-testimonials {
     padding: 1rem;
     gap: 0;
-  }
-
-  /* Custom scrollbar for webkit browsers */
-  .testimonial-text::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  .testimonial-text::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .testimonial-text::-webkit-scrollbar-thumb {
-    background-color: $dark-blue;
-    border-radius: 2px;
-  }
-
-  .testimonial-text::-webkit-scrollbar-thumb:hover {
-    background-color: $dark-blue;
   }
 }
 
@@ -312,29 +262,10 @@
   }
 
   .testimonial-text {
-    font-size: clamp(14px, 1vw, 17px);
-    line-height: 1.5em;
+    font-size: clamp(10px, 1vw, 14px);
+    line-height: 1.3em;
     flex: 1;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: $dark-blue transparent;
-  }
-
-  .testimonial-text::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  .testimonial-text::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .testimonial-text::-webkit-scrollbar-thumb {
-    background-color: $dark-blue;
-    border-radius: 4px;
-  }
-
-  .testimonial-text::-webkit-scrollbar-thumb:hover {
-    background-color: $dark-blue;
+    overflow: hidden;
   }
 }
 
@@ -357,30 +288,10 @@
   }
 
   .testimonial-text {
-    font-size: clamp(14px, 2vw, 15px);
-    line-height: 1.5em;
+    font-size: clamp(8px, 1.5vw, 12px);
+    line-height: 1.3em;
     flex: 1;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: $dark-blue transparent;
-  }
-
-  /* Custom scrollbar for webkit browsers on tablets */
-  .testimonial-text::-webkit-scrollbar {
-    width: 6px; /* Slightly wider scrollbar for touch interaction */
-  }
-
-  .testimonial-text::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .testimonial-text::-webkit-scrollbar-thumb {
-    background-color: $dark-blue;
-    border-radius: 3px;
-  }
-
-  .testimonial-text::-webkit-scrollbar-thumb:hover {
-    background-color: $dark-blue;
+    overflow: hidden;
   }
 }
 
