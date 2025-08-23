@@ -187,7 +187,7 @@
 
 @media (max-width: 480px) {
   .testimonial-text {
-    font-size: clamp(11px, 3vw, 12px);
+    font-size: clamp(10px, 2.8vw, 12px); // previous: clamp(11px, 3vw, 12px); 
     line-height: 1.4em; 
     padding: 0.75rem; 
   }
@@ -204,7 +204,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (min-width: 481px) and (max-width: 767px) {
 .testimonial-post {
     width: 100% !important;
     max-width: 350px;
@@ -226,7 +226,7 @@
   }
 
   .testimonial-text {
-    font-size: clamp(6px, 2.5vw, 10px);
+    font-size: clamp(12px, 2.5vw, 15px); // previous: clamp(6px, 2.5vw, 10px); 
     line-height: 1.3em;
     padding: 1rem;
     flex: 1;
@@ -252,6 +252,7 @@
     display: flex;
     flex-direction: column;
     max-width: 450px;
+    padding: 1rem;
   }
 
   .testimonial-post .post-content {
@@ -288,7 +289,7 @@
   }
 
   .testimonial-text {
-    font-size: clamp(8px, 1.5vw, 12px);
+    font-size: clamp(11px, 1.5vw, 16px); // previous: font-size: clamp(8px, 1.5vw, 12px);
     line-height: 1.3em;
     flex: 1;
     overflow: hidden;
