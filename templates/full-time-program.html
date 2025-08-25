@@ -421,7 +421,7 @@ endblock title %} {% block content %}
       </ul>
     </div>
   </div>
-  <div class="row row__baseline how-it-works" id="howitworks">
+  <div class="row row__baseline how-it-works">
     <h1 class="blue-h1">Application Process</h1>
     <p>
       For the January ("H1") cohort, the application forms open, emails to
@@ -439,8 +439,8 @@ endblock title %} {% block content %}
           Log in to
           <a
             href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/"
-            target="blank"
-            ref="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
             >freeCodeCamp</a
           >
           and expand the "LEGACY JavaScript Algorithms and Data Structures
@@ -491,15 +491,30 @@ endblock title %} {% block content %}
         <p>Participate in board interviews.</p>
       </div>
     </div>
+    <!-- embedded application -->
+    <!-- <div class="row">
+      <div class="column column-med centered">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform?embedded=true" width="640" height="600" frameborder="0" marginheight="0" id="application" marginwidth="0">Loading…</iframe>
+      </div>
+    </div> -->
     <div class="row">
       <div class="column column-med centered">
-        <!-- embedded application -->
-        <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform?embedded=true" width="640" height="600" frameborder="0" marginheight="0" id="application" marginwidth="0">Loading…</iframe> -->
-        <!-- Old link (Might be reused)
-        <p class="column column-med centered">
-          <a target="_blank" href="http://techtonica.eventbrite.com/">Sign up to join our events (such as our pre-req study groups) here</a>
-        </p>
-        -->
+        <a
+          href="http://techtonica.eventbrite.com/"
+          class="orange-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Sign up to join our events
+        </a>
+        <a
+          href="{{ url_for('render_programs_page') }}"
+          class="orange-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          See All Programs
+        </a>
       </div>
     </div>
   </div>
@@ -550,18 +565,27 @@ endblock title %} {% block content %}
     </div>
   </div>
 </div>
-<div class="row row__baseline how-it-works" id="howitworks">
+<div class="row row__baseline how-it-works">
   <h1 class="blue-h1">How to Prepare</h1>
   <div class="row">
     <div class="column column-med centered">
       <h3>
-        0. Learn as much JavaScript ahead of time as possible—<a
+        0. Learn as much vanilla JavaScript ahead of time.
+      </h3>
+      <p>Working through 
+        <a
           target="_blank"
           href="http://freecodecamp.org"
-          >freeCodeCamp</a
         >
-        and <a>Codecademy</a> are great for this.
-      </h3>
+          freeCodeCamp
+        </a> and 
+        <a 
+        target="_blank"
+        href="https://www.codecademy.com/"
+        >
+          Codecademy
+        </a> are great resources for this.
+      </p>
     </div>
     <div class="column column-med centered">
       <h3>
@@ -574,47 +598,67 @@ endblock title %} {% block content %}
       </h3>
     </div>
     <div class="column column-med centered">
-      <h3>2. Develop your typing and Mac keyboard shortcut skills.</h3>
+      <h3>2. Familiarity with Mac 
+        <a 
+          target="_blank"
+          href="https://github.com/Techtonica/curriculum/blob/main/dev-tools/keyboard-shortcuts.md"
+        >
+          keyboard shortcuts
+        </a> and 
+        <a
+          target="_blank"
+          href="https://github.com/Techtonica/curriculum/tree/main/git"
+        >
+          git
+        </a>.
+      </h3>
     </div>
   </div>
   <div class="row">
     <div class="column column-med centered">
       <h3>
-        3. Learn about different tech companies and long-term pathways in tech
-        to start formulating an idea of your career goals.
+        3. Commit to Your Technical Path.
       </h3>
+      <p>Learn about different tech companies and long-term pathways in tech
+        to start formulating an idea of your career goals</p>
     </div>
     <div class="column column-med centered">
       <h3>4. Practice learning and applying concepts quickly.</h3>
     </div>
     <div class="column column-med centered">
       <h3>
-        5. Practice talking out loud about your thought process and
-        collaborating with others.
+        5. Practice talking out loud.
       </h3>
+      <p>Regularly communicate your thought process and
+        collaborating with others.</p>
     </div>
     <div class="row">
       <div class="column column-med centered">
         <h3>
-          6. Practice your English Proficiency Levels. Here is a guide to
+          6. Practice your English Proficiency Levels.
+        </h3>
+        <p>Here is a guide to
           understand your
           <a
             target="_blank"
             href="https://magoosh.com/english-speaking/english-proficiency-levels-a-guide-to-determining-your-level/"
             >English Proficiency Levels</a
           >
-        </h3>
+        </p>
       </div>
       <div class="column column-med centered">
         <h3>
-          7. If you need a reasonable accommodation for any part of our process,
+          7. Communicate your Needs.
+        </h3>
+        <p>
+          If you need a reasonable accommodation for any part of our process,
           <a
             target="_blank"
             href="https://github.com/Techtonica/curriculum/blob/main/underrepresented-in-tech-resources/resources-adhd.md"
             >and including ADHD,</a
           >
           we encourage open communication around what works best for you.
-        </h3>
+        </p>
       </div>
     </div>
     <a
@@ -624,6 +668,14 @@ endblock title %} {% block content %}
       rel="noopener noreferrer"
     >
       {{timeline.FULLTIME_BOTTOM_BUTTON}}
+    </a>
+    <a
+      href="{{ url_for('render_programs_page') }}"
+      class="orange-button"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      See All Programs
     </a>
   </div>
 </div>
