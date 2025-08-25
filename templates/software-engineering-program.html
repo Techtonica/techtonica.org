@@ -10,14 +10,22 @@
         followed by six months of remote job placement or job search support 
         for women and non-binary adults seeking economic empowerment.
       </p>
+      <a
+        href="{{ url_for('render_programs_page') }}"
+        class="orange-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        See All Programs
+      </a>
     </div>
   </div>
   <div class="column">
     <h1 class="blue-h1">Our Programs at a Glance</h1>
     <ol>
       <li>
-        <a href="{{ url_for('render_web_dev_foundation_program_page') }}">
-          Part-Time Web Dev Foundation Program
+        <a href="{{ url_for('render_web_dev_foundations_page') }}">
+          Part-Time Web Dev Foundations Program
         </a>
          (Fundamental Technical Training)
       </li>
@@ -30,7 +38,7 @@
         <a href="{{ url_for('render_consulting_page') }}"
           >Techtonica Consulting
         </a>
-        (Real-World Experience for Graduates of Part-Time Web Dev Foundation Program)
+        (Real-World Experience for Graduates of Part-Time Software Engineering Program)
       </li>
     </ol>
   </div>
@@ -289,7 +297,7 @@
       <ul>
         <li>
           successfully completed the 
-          <a href="{{ url_for('render_web_dev_foundation_program_page') }}">
+          <a href="{{ url_for('render_web_dev_foundations_page') }}">
             Web Dev Foundations program
           </a>
           , participants become eligible to apply for the software engineering program, an accelerator of full stack implementation and skills application.
@@ -379,8 +387,8 @@
     <div class="row">
       <div class="column column-med centered">
         <h3>0. Successful completion of the 
-          <a href="{{ url_for('render_web_dev_foundation_program_page') }}">
-            Web Dev Foundation program
+          <a href="{{ url_for('render_web_dev_foundations_page') }}">
+            Web Dev Foundations program
           </a>
         </h3>
       </div>

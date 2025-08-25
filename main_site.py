@@ -199,12 +199,12 @@ def render_ft_program_page():
     return render_template("full-time-program.html", timeline=timeline)
 
 
-@app.route("/web-dev-foundation/")
-def render_web_dev_foundation_page():
+@app.route("/web-dev-foundations/")
+def render_web_dev_foundations_page():
     """
-    Renders the part time web dev foundation page from jinja2 template
+    Renders the part time web dev foundations page from jinja2 template
     """
-    return render_template("web-dev-foundation.html")
+    return render_template("web-dev-foundations.html")
 
 
 @app.route("/software-engineering-program/")
