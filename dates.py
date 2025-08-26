@@ -149,7 +149,7 @@ def generate_application_timeline():
     else:
         # Applications are closed, not scheduled, or scheduled for the future
         main_text = "Outsource your software work!"
-        fulltime_top_button = "Fill out our interest form to be notified about our next cohort!"
+        fulltime_top_button = "Get notified about the next cohort!"
         fulltime_bottom_button = "Sign up to join our events"
         
         # URLs for buttons when applications are closed
