@@ -188,15 +188,15 @@ def render_mentor_page():
     timeline = generate_application_timeline()
     return render_template("mentor.html", timeline=timeline)
 
-# FT program page hidden from dropdown while not active
-# @app.route("/full-time-program/")
-# def render_ft_program_page():
-#     """
-#     Generates time-bound text and application extension variable
-#     Renders the full-time program page from jinja2 template with relevant times
-#     """
-#     timeline = generate_application_timeline()
-#     return render_template("full-time-program.html", timeline=timeline)
+
+@app.route("/full-time-program/")
+def render_ft_program_page():
+    """
+    Generates time-bound text and application extension variable
+    Renders the full-time program page from jinja2 template with relevant times
+    """
+    timeline = generate_application_timeline()
+    return render_template("full-time-program.html", timeline=timeline)
 
 
 @app.route("/web-dev-foundations/")
