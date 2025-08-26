@@ -189,7 +189,7 @@ def render_mentor_page():
     return render_template("mentor.html", timeline=timeline)
 
 
-# @app.route("/full-time-program/")
+@app.route("/full-time-program/")
 def render_ft_program_page():
     """
     Generates time-bound text and application extension variable
