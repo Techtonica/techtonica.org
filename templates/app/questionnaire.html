@@ -315,25 +315,55 @@ Techtonica Application {% endblock title %} {% block content %}
     }
   }
 </style>
-
 <script>
+  console.log("This is the console that is showing");
+  document.addEventListener("DOMContentLoaded", () => {
+    document
+      .querySelectorAll("#app-form-3 select[required]")
+      .forEach((select) => {
+        select.addEventListener("change", () => {
+          if (select.value) {
+            select.style.border = "";
+
+            const err = select.nextElementSibling;
+            if (err?.classList.contains("error-message")) {
+              err.remove();
+            }
+          }
+        });
+      });
+  });
   function validateForm() {
+    console.log(" validate form");
     const form = document.getElementById("app-form-3");
+
     const requiredSelects = form.querySelectorAll("select[required]");
     let allValid = true;
 
     requiredSelects.forEach((select) => {
       select.style.border = "";
 
+      const existingError = select.nextElementSibling;
+      if (existingError?.classList.contains("error-message")) {
+        existingError.remove();
+      }
+
       if (select.value === "") {
         allValid = false;
         select.style.border = "2px solid red";
+
+        const error = document.createElement("div");
+        error.className = "error-message";
+        error.style.color = "red";
+        error.style.fontSize = "12px";
+        error.innerText = "Please select an option.";
+
+        //select.parentNode.insertBefore(error, select.nextSibling)
+        select.insertAdjacentElement("afterend", error);
       }
     });
 
-    if (!allValid) {
-      alert("Please select an option for all questions.");
-    } else {
+    if (allValid) {
       window.location.href = "/app-long-text";
     }
   }
