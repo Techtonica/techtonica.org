@@ -20,21 +20,6 @@ endblock title %} {% block content %}
       </a>
     </div>
   </div>
-  <div class="column">
-    <h1 class="blue-h1">Our Programs at a Glance</h1>
-    <ol>
-      <li>Full-Time Software Engineering Program (Technical Training)</li>
-      <li>
-        Seeker Program (Job Search Support for Graduates of Full-Time Program)
-      </li>
-      <li>
-        <a href="{{ url_for('render_consulting_page') }}"
-          >Techtonica Consulting
-        </a>
-        (Real-World Experience for Graduates of Full-Time Program)
-      </li>
-    </ol>
-  </div>
   <div class="chart-container">
     <canvas id="myChart"></canvas>
   </div>
@@ -507,14 +492,6 @@ endblock title %} {% block content %}
         >
           Sign up to join our events
         </a>
-        <a
-          href="{{ url_for('render_programs_page') }}"
-          class="orange-button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          See All Programs
-        </a>
       </div>
     </div>
   </div>
@@ -570,9 +547,7 @@ endblock title %} {% block content %}
   <div class="row">
     <div class="column column-med centered">
       <h3>
-        0. Learn as much vanilla JavaScript ahead of time.
-      </h3>
-      <p>Working through 
+        0. Learn as much JavaScript ahead of time, 
         <a
           target="_blank"
           href="http://freecodecamp.org"
@@ -585,7 +560,7 @@ endblock title %} {% block content %}
         >
           Codecademy
         </a> are great resources for this.
-      </p>
+      </h3>
     </div>
     <div class="column column-med centered">
       <h3>
@@ -598,67 +573,56 @@ endblock title %} {% block content %}
       </h3>
     </div>
     <div class="column column-med centered">
-      <h3>2. Familiarity with Mac 
+      <h3>2. Showcase you are building familiarity with Mac 
         <a 
           target="_blank"
           href="https://github.com/Techtonica/curriculum/blob/main/dev-tools/keyboard-shortcuts.md"
         >
-          keyboard shortcuts
-        </a> and 
+          keyboard shortcuts,
+        </a> 
         <a
           target="_blank"
           href="https://github.com/Techtonica/curriculum/tree/main/git"
         >
-          git
-        </a>.
+          git,
+        </a> and 
+        <a
+          target="_blank"
+          href="https://github.com/Techtonica/curriculum/blob/main/career/working-and-collaborating-remotely.md"
+        >remote culture</a>.
       </h3>
     </div>
   </div>
   <div class="row">
     <div class="column column-med centered">
       <h3>
-        3. Commit to Your Technical Path.
+        3. Research the different tech companies and long-term tech pathways
+        to build your career goals.
       </h3>
-      <p>Learn about different tech companies and long-term pathways in tech
-        to start formulating an idea of your career goals</p>
     </div>
     <div class="column column-med centered">
       <h3>4. Practice learning and applying concepts quickly.</h3>
     </div>
     <div class="column column-med centered">
-      <h3>
-        5. Practice talking out loud.
-      </h3>
-      <p>Regularly communicate your thought process and
-        collaborating with others.</p>
+      <h3>5. Practice communicating your thought process and
+        collaborating with others.</h3>
     </div>
     <div class="row">
       <div class="column column-med centered">
         <h3>
-          6. Practice your English Proficiency Levels.
-        </h3>
-        <p>Here is a guide to
-          understand your
+          6. Practice your English Proficiency Levels (
           <a
             target="_blank"
             href="https://magoosh.com/english-speaking/english-proficiency-levels-a-guide-to-determining-your-level/"
-            >English Proficiency Levels</a
-          >
-        </p>
+            >see levels guide</a
+          >).
+        </h3>
       </div>
       <div class="column column-med centered">
         <h3>
-          7. Communicate your Needs.
+          7. Communicate your needs, reasonable accommodation, or 
+          what works best for you.
         </h3>
-        <p>
-          If you need a reasonable accommodation for any part of our process,
-          <a
-            target="_blank"
-            href="https://github.com/Techtonica/curriculum/blob/main/underrepresented-in-tech-resources/resources-adhd.md"
-            >and including ADHD,</a
-          >
-          we encourage open communication around what works best for you.
-        </p>
       </div>
     </div>
     <a
@@ -668,14 +632,6 @@ endblock title %} {% block content %}
       rel="noopener noreferrer"
     >
       {{timeline.FULLTIME_BOTTOM_BUTTON}}
-    </a>
-    <a
-      href="{{ url_for('render_programs_page') }}"
-      class="orange-button"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      See All Programs
     </a>
   </div>
 </div>
