@@ -133,6 +133,7 @@ p {
 .sponsor-tiers-container .tier-features {
   list-style: none;
   margin: 1.5rem 0;
+  padding-inline-start: 10px;
 }
 .sponsor-tiers-container .tier-features li {
   padding: 0.75rem 0;
