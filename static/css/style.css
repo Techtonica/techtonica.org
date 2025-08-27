@@ -193,22 +193,24 @@ p {
 .top-testimonials {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: stretch;
   gap: 1.5rem;
+  flex-wrap: wrap;
   padding: 2rem;
+  box-sizing: border-box;
 }
 
 .testimonial-post {
-  width: 100%;
-  background-color: #0093b5;
-  margin: 0;
-  padding: 4rem;
-  padding-top: 2rem;
-  padding-bottom: 1.5rem;
-  overflow-clip-margin: content-box;
-  overflow: clip;
-  border-radius: 2px;
+  --size: clamp(260px, 37vw, 42.5%);
+  flex: 0 0 var(--size);
+  width: var(--size);
+  aspect-ratio: 1/1;
+  background: #0093b5;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
   transition: transform 0.3s ease;
+  min-width: 0;
 }
 
 .testimonial-post:hover {
@@ -216,110 +218,63 @@ p {
 }
 
 .testimonial-post .post-content {
-  padding: 1rem;
-  padding-left: 0rem;
-  padding-right: 2rem;
-  width: 100%;
-  background-color: white;
-  border-radius: 1px;
+  width: 80%;
+  aspect-ratio: 1/1;
+  background: white;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(8px, 2.5vmin, 16px);
+  overflow: hidden;
+  -webkit-overflow-scrolling: auto;
+  min-width: 0;
+  min-height: 0;
+  text-align: left;
 }
 
 .testimonial-text {
-  font-size: 14px;
-  line-height: 1.6em;
+  font-size: clamp(10px, 2.4vw, 14px);
+  line-height: 1.35;
   color: #333;
-  padding: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  margin: 0;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
-@media (max-width: 480px) {
-  .testimonial-text {
-    font-size: clamp(10px, 2.8vw, 12px);
-    line-height: 1.4em;
-    padding: 0.75rem;
-  }
-  .testimonial-post {
-    max-width: 320px;
-    padding: 1.25rem;
-  }
+.testimonial-row {
+  padding: 0 !important;
+}
+
+@media (min-width: 800px) and (max-width: 1060px) {
   .testimonial-post .post-content {
-    padding: 0.75rem;
-    padding-left: 0.5rem;
-    padding-right: 1rem;
+    width: 86%;
+    padding: clamp(6px, 1.6vmin, 12px);
+  }
+  .testimonial-text {
+    font-size: clamp(9px, 1.6vw, 13px);
+    line-height: 1.3;
   }
 }
-@media (min-width: 481px) and (max-width: 767px) {
-  .testimonial-post {
-    width: 100% !important;
-    max-width: 350px;
-    margin: 0 auto 1.5rem auto;
-    aspect-ratio: 1/1;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-  }
-  .testimonial-post .post-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    padding-left: 0.5rem;
-    padding-right: 1.5rem;
-    overflow: hidden;
-  }
-  .testimonial-text {
-    font-size: clamp(12px, 2.5vw, 15px);
-    line-height: 1.3em;
-    padding: 1rem;
-    flex: 1;
-    overflow: hidden;
-  }
+.testimonial-text a {
+  word-break: break-word;
+}
+
+@media (max-width: 800px) {
   .top-testimonials {
-    padding: 1rem;
-    gap: 0;
+    padding: 12px;
+    gap: 12px;
   }
-}
-/* Tablet / iPad - maintains squares in 2-column layout */
-@media (min-width: 768px) and (max-width: 1024px) {
   .testimonial-post {
-    aspect-ratio: 1/1; /* Maintain square aspect ratio */
-    display: flex;
-    flex-direction: column;
-    max-width: 400px; /* Limit max size for readability */
+    --size: min(70vw, 92vw);
+    flex-basis: var(--size);
+    width: var(--size);
   }
   .testimonial-post .post-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    width: 86%;
   }
   .testimonial-text {
-    font-size: clamp(11px, 1.5vw, 16px);
-    line-height: 1.3em;
-    flex: 1;
-    overflow: hidden;
-  }
-}
-@media (min-width: 1024px) {
-  .testimonial-post {
-    aspect-ratio: 1/1;
-    display: flex;
-    flex-direction: column;
-    max-width: 520px;
-    padding: 1rem;
-  }
-  .testimonial-post .post-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-  .testimonial-text {
-    font-size: clamp(12px, 1.5vw, 16px);
-    line-height: 1.3em;
-    flex: 1;
-    overflow: hidden;
+    font-size: clamp(9px, 3.6vw, 14px);
   }
 }
 .staff-team {
@@ -428,7 +383,11 @@ p {
 }
 
 .mc-closeModal {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .main-content {
@@ -448,7 +407,8 @@ p {
   justify-content: flex-end;
   width: 100%;
   height: 75vh;
-  background: url(../img/three-participants-at-laptops-min.jpg) #0093b5 no-repeat top right fixed;
+  background: url(../img/three-participants-at-laptops-min.jpg) #0093b5
+    no-repeat top right fixed;
   background-size: cover;
 }
 
@@ -494,7 +454,8 @@ p {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/2024-H2-Launch-Celebration-min.png) #0093b5 no-repeat top fixed;
+  background: url(../img/2024-H2-Launch-Celebration-min.png) #0093b5 no-repeat
+    top fixed;
   background-size: cover;
 }
 
@@ -887,7 +848,8 @@ table.mentor td:first-of-type {
   .main-header {
     display: block;
     position: relative;
-    background: url(../img/three-participants-at-laptops-min.jpg) #0093b5 no-repeat top center;
+    background: url(../img/three-participants-at-laptops-min.jpg) #0093b5
+      no-repeat top center;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
@@ -937,7 +899,8 @@ table.mentor td:first-of-type {
     position: relative;
     /*create the upper and lower lines as pseudo-elements of the middle line*/
   }
-  .lines:before, .lines:after {
+  .lines:before,
+  .lines:after {
     display: inline-block;
     width: 3rem;
     height: 0.4285714286rem;
@@ -969,7 +932,8 @@ table.mentor td:first-of-type {
     background: transparent;
     /*overlay the lines by setting both their top values to 0*/
   }
-  .lines-button.x.close .lines:before, .lines-button.x.close .lines:after {
+  .lines-button.x.close .lines:before,
+  .lines-button.x.close .lines:after {
     transform-origin: 50% 50%;
     top: 0;
     width: 2.5em;
@@ -1345,8 +1309,8 @@ legend {
   color: rgba(0, 115, 149, 0.8);
 }
 
-#info-wrapper > fieldset > input[type=text],
-#info-wrapper > fieldset > input[type=email],
+#info-wrapper > fieldset > input[type="text"],
+#info-wrapper > fieldset > input[type="email"],
 #info-wrapper > fieldset > textarea {
   min-width: 90%;
   margin: auto auto 1em auto;
@@ -1359,7 +1323,7 @@ legend {
   min-height: 6em;
 }
 
-input[type=radio] {
+input[type="radio"] {
   width: 50px;
 }
 
@@ -1409,7 +1373,7 @@ input#code-of-conduct-checkbox {
   margin-right: 15px;
 }
 
-label[for=code-of-conduct-checkbox] ~ a {
+label[for="code-of-conduct-checkbox"] ~ a {
   color: rgba(0, 115, 149, 0.8);
   text-decoration: none;
 }
