@@ -1127,7 +1127,9 @@ p.press-release-bold {
   height: 48px;
   width: 100%;
   display: inline-block;
+  appearance: none;
   -webkit-appearance: -apple-pay-button;
+  -moz-appearance: none;
   -apple-pay-button-type: plain;
   -apple-pay-button-style: black;
 }
