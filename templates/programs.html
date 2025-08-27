@@ -1,0 +1,108 @@
+{% extends "base.html" %} {% block title %} Techtonica Programs {%
+endblock title %} {% block content %}
+
+<div class="main-content">
+  <div class="program-header" title="Programs">
+    <div class="main-header__text blue-background">
+      <h1 class="main-header__header">Our Programs at a Glance </h1>
+      <p>
+        We offer software engineering training with need-based, sliding-scale,
+        subsidized tuition and stipend scholarships, followed by six months of
+        remote job placement or job search support for women and non-binary
+        adults seeking economic empowerment.
+      </p>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfUdyIAfcU5KSqtYH5J5iPRgu-yycHdebnUKygQLEv-m7oVMw/viewform"
+        class="orange-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Get notified about the next cohort!
+      </a>
+    </div>
+  </div>
+  <div class="row row__baseline">
+    <p>
+      Techtonica’s programs are virtual technical training programs that provide 
+      the opportunity for those seeking economic empowerment to learn technical skills in 
+      a safe, inclusive space. We aim to empower those most underrepresented in 
+      tech and to help tech become more diverse and inclusive. To that end, we 
+      have been very intentional about creating a safe community, building a network, 
+      and providing personalized support, which means open communication is absolutely 
+      necessary.
+    </p>
+    <p>
+      We select participants who are independent but good at collaborating, motivated 
+      to succeed, committed to learning to code, flexible, curious, open-minded, and 
+      excited for long-term careers in the field, have a good attitude and a growth 
+      mindset, can calmly manage extended periods of frustration and want to pay it forward.
+    </p>
+  <div class="row blue-background">
+    <div class="column column-med centered">
+      <h2 class="white-text">
+        Full-Time Program
+      </h2>
+      <p>
+        Five to six month, full-stack PERN software engineering program with 
+        need-based, sliding-scale, subsidized tuition and stipend scholarships, 
+        followed by six months of job search support or remote job placement.
+      </p>
+    </div>
+  </div>
+  <div class="row blue-background">
+    <div class="column column-med centered">
+      <h2>
+        <a href="{{ url_for('render_web_dev_foundations_page') }}">
+          Part-Time Web Dev Foundations Program
+        </a>
+      </h2>
+      <p>
+        Free, virtual 10-week introductory coding fundamentals training. The 
+        program gives more people the chance to try out coding before committing 
+        fully to a career transition and to ease the financial risk participants
+        take on by quitting their jobs to do a full-time program in the current 
+        difficult job market for junior engineers. Pre-requisite for eligibility to 
+        apply to the part-time Software Engineering Program.
+      </p>
+    </div>
+    <div class="column column-med centered">
+      <h2>
+        <a href="{{ url_for('render_swe_program_page') }}">
+          Part-Time Software Engineering Program
+        </a>
+      </h2>
+      <p>
+        26-week accelerated full-stack PERN software engineering program with need-based, 
+        sliding-scale, subsidized tuition and stipend scholarships, followed by 
+        six months of job search support or remote job placement.
+      </p>
+    </div>
+  </div>
+  <div class="row blue-background">
+    <div class="column column-med centered">
+      <h2>
+        <a href="{{ url_for('render_consulting_page') }}">
+          Graduate Consulting Program
+        </a>
+      </h2>
+      <p>
+        Offered on a rolling basis, Techtonica graduates who have successfully 
+        completed our Full-Time or Part-Time Software Engineering program are able 
+        to continue prioritizing their professional development by helping partner 
+        organizations meet their software development needs. Graduates are able to 
+        gain real-world software engineering consulting experience, including 
+        scoping projects, talking to clients, meeting deliverables, holding 
+        retrospectives, reviewing PRs, and more.
+      </p>
+    </div>
+    <div class="column column-med centered">
+      <h2 class="white-text">Graduate Seeker Program</h2>
+      <p>
+        Offered intermittently, job seeking Techtonica graduates work together with 
+        some structure, accountability, support, reviewing, learning, practice, and 
+        stipends to make the job search process a little easier.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock content %}

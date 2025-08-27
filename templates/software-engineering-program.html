@@ -1,40 +1,39 @@
-{% extends "base.html" %} {% block title %} Techtonica Full-Time Program {%
-endblock title %} {% block content %}
+{% extends "base.html" %} {% block title %} Techtonica Part-Time Software Engineering Program {% endblock title %} {% block content %}
+
 <div class="main-content">
-  <div class="program-header" title="Full-Time Program">
+  <div class="program-header" title="Software Engineering Program">
     <div class="main-header__text blue-background">
-      <h1 class="main-header__header">Full-Time Program</h1>
+      <h1 class="main-header__header">Part-Time Software Engineering Program</h1>
       <p>
-        Hands on software engineering training with need-based, sliding-scale,
-        subsidized tuition and stipend scholarships, followed by six months of
-        remote job placement or job search support for women and non-binary
-        adults seeking economic empowerment.
+        Twenty-six weeks of part-time intensive, hands-on software engineering with 
+        need-based, sliding-scale, subsidized tuition and stipend scholarships, 
+        followed by six months of remote job placement or job search support 
+        for women and non-binary adults seeking economic empowerment. The 
+        Web Dev Foundations Program must be successfully completed prior to applying 
+        for the Software Engineering Program.
       </p>
-      <a
-        href="{{ timeline.FULLTIME_TOP_BUTTON_URL }}"
+      <a 
+        href="{{ url_for('render_web_dev_foundations_page') }}"
         class="orange-button"
         target="_blank"
         rel="noopener noreferrer"
       >
-        {{timeline.FULLTIME_TOP_BUTTON}}
+        Apply to Pre-Req Web Dev Foundations by Sept 10th at 12pm PT
       </a>
     </div>
   </div>
-  <div class="chart-container">
-    <canvas id="myChart"></canvas>
-  </div>
   <div class="column">
-    <h1 class="blue-h1">The Full-Time Program</h1>
+    <h1 class="blue-h1">The Part-Time Software Engineering Program</h1>
     <p>
-      Techtonica’s full-time, virtual software engineering training program
-      provides the opportunity seeking economic empowerment to learn technical
-      skills in a safe, inclusive space and start their first jobs in tech. We
-      select participants who are independent but good at collaborating,
-      motivated to succeed, committed to learning to code, flexible, curious,
-      open-minded, and excited for long-term careers in the field, have a good
-      attitude and a growth mindset, can calmly manage extended periods of
-      frustration (troubleshooting is something you'll face forever in tech!),
-      and want to pay it forward.
+      Techtonica’s part-time twenty-six week program is virtual full stack software 
+      engineering accelerator training program provides the opportunity seeking economic 
+      empowerment to continue learning and applying technical skills in a safe, 
+      inclusive space and start their first jobs in tech. We select participants 
+      who are independent but good at collaborating, motivated to succeed, committed 
+      to learning to code, flexible, curious, open-minded, and excited for long-term 
+      careers in the field, have a good attitude and a growth mindset, can calmly 
+      manage extended periods of frustration (troubleshooting is something you'll 
+      face forever in tech!), and want to pay it forward.
     </p>
     <p>
       We aim to empower those most underrepresented in tech and to help tech
@@ -77,9 +76,9 @@ endblock title %} {% block content %}
       discount comes out to $15,300.
     </p>
     <p>
-      If you will not have $18,000 beyond 10 months of living costs, you are
+      If you will not have $18,000 beyond 6 months of living costs, you are
       eligible to apply for a partial or full scholarship. If you will not be
-      able to cover tuition or 10 months of living costs, you are eligible to
+      able to cover tuition or 6 months of living costs, you are eligible to
       apply for a tuition scholarship as well as a monthly stipend. Only those
       determined to be in need of full scholarships will be considered for
       monthly stipends. At present, 90-95% of past applicants would have been
@@ -112,30 +111,29 @@ endblock title %} {% block content %}
       tech. You'll also be expected to speak and present in front of people
       often—a very useful skill to have for a successful career.
     </p>
-    <p> Note: In no way during the Program is the Participant employed by the 
+    <p>Note: In no way during the Program is the Participant employed by the 
       Organization or eligible for employee benefits such as health insurance, 
       vacation or sick pay, retirement plans, or unemployment insurance.
     </p>
-    <p>
+    <!-- TO-DO: Should this be re-recorded to fit the second session swe program? -->
+    <!-- <p>
       Watch our
       <a
-        title="Tuition Video"
+        title="Full Time Program Tuition Video"
         target="_blank"
         href="https://youtu.be/ateYQ7Qb3l8"
-        >Techtonica's Sliding Scale, Needs Based Tuition Q&A Session</a
+        >Techtonica's Full-Time Program Sliding Scale, Needs Based Tuition Q&A Session</a
       >, to learn more.
-    </p>
+    </p> -->
   </div>
   <div class="column">
     <h1 class="blue-h1">The Schedule</h1>
     <p>
-      The program usually runs Monday through Friday, 8:00 AM to 5:00 PM
-      (Pacific Time) for six months (typically from January to June and July to
-      December). The January 2026 cohort's length is anticipated to be 5 months.
+      The January 2026 program runs Monday through Friday, 5:00 PM to 9:00 PM
+      (Pacific Time) is anticipated to be 26-weeks, with a three to four weekend hackathons.
       The training is followed by six months of remote job placement or job
       search and community support. Participants who work the hardest and meet
-      and exceed expectations will be invited to continue. We do not recommend
-      working during the program. We do not provide medical medical insurance,
+      and exceed expectations will be invited to continue.  We do not provide medical insurance,
       so we recommend you google programs in your area (like MediCal in
       California). We also can't help with visas, student or otherwise.
     </p>
@@ -273,63 +271,16 @@ endblock title %} {% block content %}
     <div class="column">
       <h1>Eligibility</h1>
       <p>
-        You are eligible to apply for Techtonica’s full-time program if you:
+        You are eligible to apply for Techtonica’s part-time software engineering program if you:
       </p>
       <ul>
         <li>
-          are a woman (cis OR trans) or non-binary adult. We especially
-          encourage Latinx, Black, and non-binary folks to apply.
+          successfully completed the 
+          <a href="{{ url_for('render_web_dev_foundations_page') }}">
+            Web Dev Foundations program
+          </a>
+          , participants become eligible to apply for the software engineering program, an accelerator of full stack implementation and skills application.
         </li>
-        <li>
-          are digitally literate, meaning you are very familiar and good with
-          computers and the internet, can type 50+ WPM with 80%+ accuracy, and
-          you know how to use a mouse/trackpad, browsers, and email
-        </li>
-        <li>
-          at the very least graduated from high school or received your GED
-        </li>
-        <li>
-          completed the JavaScript pre-req (see the Application Process section
-          below)
-        </li>
-        <li>can commit to always being present and on time and prepared</li>
-        <li>are willing to be part of the program during Pacific Time hours</li>
-        <li>
-          are dedicated to building a long-term career in tech and contributing
-          to a diverse, inclusive, equitable tech environment
-        </li>
-        <li>
-          have housing that will be stable for the entirety of the six months of
-          full-time training and the following six months
-        </li>
-        <li>
-          are willing to live in the U.S. and relocate to an in-person location
-          of placement, if required by placement company
-        </li>
-        <li>have a U.S. bank account</li>
-        <li>
-          have
-          <a
-            href="https://www.uscis.gov/i-9-central/form-i-9-acceptable-documents"
-            target="_blank"
-            rel="noopener noreferrer"
-            >the proof that you are legally employable in the United States</a
-          >
-          at the time of application (we can't help with visas)
-        </li>
-        <li>
-          agree to work at an assigned partner company if we match you upon
-          successful completion of six months of training
-        </li>
-        <li>
-          are willing to appear in Techtonica's media and pitch yourself to
-          Techtonica's partners
-        </li>
-        <li>
-          have not attended a full-time coding bootcamp, completed a C.S.
-          degree, or worked as a software engineer in the last six years
-        </li>
-        <li>can have high-speed internet set up by the start of the program</li>
         <li>
           agree to abide by
           <a
@@ -362,9 +313,11 @@ endblock title %} {% block content %}
         </li>
       </ul>
       <p>
-        Please note that since the program became fully remote/virtual in 2020,
-        participants are not required to live in the San Francisco Bay Area to
-        join the program.
+          Please note that since the program became fully remote/virtual in 2020,
+          participants are not required to live in the San Francisco Bay Area to
+          join the program. However, if placements are available, sponsors may 
+          require you to live in or relocate to California locations such as Los 
+          Angeles, San Diego, or San Francisco areas for in-person placement.
       </p>
       <p>
         If you don't get in the first time, you can apply two more times for a
@@ -410,90 +363,49 @@ endblock title %} {% block content %}
   </div>
   <div class="row row__baseline how-it-works">
     <h1 class="blue-h1">Application Process</h1>
-    <p>
-      For the January ("H1") cohort, the application forms open, emails to
-      interested folks go out, and forms close again around October. For the
-      July to December ("H2") cohort, the application forms open, emails to
-      interested folks go out, and forms close again around March. The
-      application process continues for about four to five weeks after
-      applications close, with candidates eliminated at each step of the
-      process.
-    </p>
     <div class="row">
       <div class="column column-med centered">
-        <h3>0. Completion of a JavaScript Pre-Req Course</h3>
-        <p>
-          Log in to
-          <a
-            href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >freeCodeCamp</a
-          >
-          and expand the "LEGACY JavaScript Algorithms and Data Structures
-          Certification" section on the /learn page. Complete the first 113
-          lessons about Legacy JavaScript. This should take 4-12 hours. Be ready
-          to upload a screenshot of the completed course checklist in the
-          application form.
-        </p>
-      </div>
-      <div class="column column-med centered">
-        <h3>1. Two application forms</h3>
-        <p>
-          Thoroughly fill out and submit both the short first application form
-          (this is different from the interest form that is linked on this page
-          before applications are open) and the longer second application form
-          (linked to upon submitting the first form) by the deadline. The second
-          form will take some time, so don't start too late! Additionally attend
-          one Tuesday evening JS study group.
-        </p>
-      </div>
-      <div class="column column-med centered">
-        <h3>
-          2. One invite-only digital literacy testing and JavaScript events
+        <h3>0. Successful completion of the 
+          <a href="{{ url_for('render_web_dev_foundations_page') }}">
+            Web Dev Foundations program
+          </a>
         </h3>
         <p>
-          Participate in one of the application workshops offered (details will
-          be sent to selected applicants).
+          In order to be eligible to apply for the accelerated full-stack
+          Software Engineering program you must first complete the Web Dev 
+          Foundations program successfully.
         </p>
       </div>
-    </div>
-    <div class="row">
       <div class="column column-med centered">
-        <h3>3. Pair Programming & Code Challenge</h3>
+        <h3>1. Pair Programming & Code Challenge</h3>
         <p>
           Complete a code challenge during pair programming with staff, followed
           by a take-home JavaScript code challenge problem.
         </p>
       </div>
+    </div>
+    <div class="row">
       <div class="column column-med centered">
-        <h3>4. Staff interviews</h3>
+        <h3>2. Technical & Non-Technical Astuteness</h3>
         <p>
-          Participate in staff interviews. This will include pair programming,
+          Demonstrated success with development best practices, autonomy, collaboration, curiosity, feedback, coachability, following instructions, humility, confidence, growth mindset, vulnerability, resilience, commitment, logical, programmatic thinking, and digital literacy.
+        </p>
+      </div> 
+    </div>
+    <div class="row">
+      <div class="column column-med centered">
+        <h3>3. Staff Interviews</h3>
+        <p>
+          Participate in staff interviews will include pair programming,
           questions about you and your application, and questions from you.
         </p>
       </div>
       <div class="column column-med centered">
-        <h3>5. Board interviews</h3>
-        <p>Participate in board interviews.</p>
-      </div>
-    </div>
-    <!-- embedded application -->
-    <!-- <div class="row">
-      <div class="column column-med centered">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform?embedded=true" width="640" height="600" frameborder="0" marginheight="0" id="application" marginwidth="0">Loading…</iframe>
-      </div>
-    </div> -->
-    <div class="row">
-      <div class="column column-med centered">
-        <a
-          href="http://techtonica.eventbrite.com/"
-          class="orange-button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Sign up to join our events
-        </a>
+        <h3>4. Board Interviews</h3>
+        <p>
+          Participate in board interviews will include questions about you 
+          and your application, and questions from you.
+        </p>
       </div>
     </div>
   </div>
@@ -543,129 +455,119 @@ endblock title %} {% block content %}
       />
     </div>
   </div>
-</div>
-<div class="row row__baseline how-it-works">
-  <h1 class="blue-h1">How to Prepare</h1>
-  <div class="row">
-    <div class="column column-med centered">
-      <h3>
-        0. Learn as much JavaScript ahead of time, 
-        <a
-          target="_blank"
-          href="http://freecodecamp.org"
-        >
-          freeCodeCamp
-        </a> and 
-        <a 
-        target="_blank"
-        href="https://www.codecademy.com/"
-        >
-          Codecademy
-        </a> are great resources for this.
-      </h3>
-    </div>
-    <div class="column column-med centered">
-      <h3>
-        1. Attend coding meetups or
-        <a
-          target="_blank"
-          href="https://www.eventbrite.com/o/techtonica-11297022451"
-          >our study groups</a
-        >.
-      </h3>
-    </div>
-    <div class="column column-med centered">
-      <h3>2. Showcase you are building familiarity with Mac 
-        <a 
-          target="_blank"
-          href="https://github.com/Techtonica/curriculum/blob/main/dev-tools/keyboard-shortcuts.md"
-        >
-          keyboard shortcuts,
-        </a> 
-        <a
-          target="_blank"
-          href="https://github.com/Techtonica/curriculum/tree/main/git"
-        >
-          git,
-        </a> and 
-        <a
-          target="_blank"
-          href="https://github.com/Techtonica/curriculum/blob/main/career/working-and-collaborating-remotely.md"
-        >remote culture</a>.
-      </h3>
-    </div>
   </div>
-  <div class="row">
-    <div class="column column-med centered">
-      <h3>
-        3. Research the different tech companies and long-term tech pathways
-        to build your career goals.
-      </h3>
-    </div>
-    <div class="column column-med centered">
-      <h3>4. Practice learning and applying concepts quickly.</h3>
-    </div>
-    <div class="column column-med centered">
-      <h3>5. Practice communicating your thought process and
-        collaborating with others.</h3>
+  <div class="row row__baseline how-it-works">
+    <h1 class="blue-h1">How to Prepare</h1>
+    <div class="row">
+      <div class="column column-med centered">
+        <h3>
+          0. Showcase confident curiosity with Javascript, 
+          <a
+            target="_blank"
+            href="http://freecodecamp.org"
+          >
+            freeCodeCamp
+          </a> and 
+          <a 
+          target="_blank"
+          href="https://www.codecademy.com/"
+          >
+            Codecademy
+          </a> are great resources.
+        </h3>
+      </div>
+      <div class="column column-med centered">
+        <h3>
+          1. Research the different tech companies and long-term tech pathways
+          to build your career goals.
+        </h3>
+      </div>
+      <div class="column column-med centered">
+        <h3>
+          2. Regularly communicate your thought process and
+          collaborating with others.
+        </h3>
+      </div>
+      <div class="column column-med centered">
+        <h3>
+          3. Communicate your needs, reasonable accommodation, or 
+          what works best for you.
+        </h3>
+      </div>   
     </div>
     <div class="row">
       <div class="column column-med centered">
         <h3>
-          6. Practice your English Proficiency Levels (
+          4. Practice your English Proficiency Levels (
           <a
             target="_blank"
             href="https://magoosh.com/english-speaking/english-proficiency-levels-a-guide-to-determining-your-level/"
-            >see levels guide</a
-          >).
+          >
+            see levels guide
+          </a>).
         </h3>
       </div>
       <div class="column column-med centered">
+        <h3>5. Learning and applying concepts quickly.</h3>
+      </div>
+      <div class="column column-med centered">
         <h3>
-          7. Communicate your needs, reasonable accommodation, or 
-          what works best for you.
+          6. Attend coding meetups or
+          <a
+            target="_blank"
+            href="https://www.eventbrite.com/o/techtonica-11297022451"
+            >our study groups</a
+          >.
+        </h3>
+      </div>
+      <div class="column column-med centered">
+        <h3>7. Showcase your mastered digital literacy through familiarity with Mac 
+          <a 
+            target="_blank"
+            href="https://github.com/Techtonica/curriculum/blob/main/dev-tools/keyboard-shortcuts.md"
+          >
+            keyboard shortcuts,
+          </a>
+          <a
+            target="_blank"
+            href="https://github.com/Techtonica/curriculum/tree/main/git"
+          >
+            git,
+          </a> and 
+          <a
+            target="_blank"
+            href="https://github.com/Techtonica/curriculum/blob/main/career/working-and-collaborating-remotely.md"
+          >remote culture</a>.
         </h3>
       </div>
     </div>
-    <a
-      href="{{ timeline.FULLTIME_BOTTOM_BUTTON_URL }}"
-      class="orange-button"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {{timeline.FULLTIME_BOTTOM_BUTTON}}
-    </a>
   </div>
-</div>
-<div class="row row__baseline blue-background">
-  <h1>Acceptance & Onboarding</h1>
-  <div class="row">
-    <div class="column column-med centered">
-      <h3>0. Assess financial need with Techtonica staff member</h3>
+  <div class="row row__baseline blue-background">
+    <h1>Acceptance & Onboarding</h1>
+    <div class="row">
+      <div class="column column-med centered">
+        <h3>0. Assess financial need with Techtonica staff member</h3>
+      </div>
+      <div class="column column-med centered">
+        <h3>1. Review official docs and return signed agreement</h3>
+      </div>
+      <div class="column column-med centered">
+        <h3>
+          2. Mentor matching, industry pitch practice, etc.
+        </h3>
+      </div>
     </div>
-    <div class="column column-med centered">
-      <h3>1. Review official docs and return signed agreement</h3>
-    </div>
-    <div class="column column-med centered">
-      <h3>
-        2. Attend Onboarding Day usually about 5 weeks before the official start
-        of the program— pictures, mentor matching, laptop setup, pitch practice,
-        pre-work, etc.
-      </h3>
-    </div>
-  </div>
-  <div class="row">
-    <div class="column column-med centered">
-      <h3>3. Join weekly pre-start study groups</h3>
-    </div>
-    <div class="column column-med centered">
-      <h3>4. Complete pre-start assignments (about 10-20 hours per week)</h3>
-    </div>
-    <div class="column column-med centered">
-      <h3>
-        5. Hit the ground running on day 1, usually in mid-January or mid-July!
-      </h3>
+    <div class="row">
+      <div class="column column-med centered">
+        <a
+          href="http://techtonica.eventbrite.com/"
+          class="orange-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Sign up to join our events
+        </a>
+      </div>
     </div>
   </div>
-</div>
 {% endblock content %}
