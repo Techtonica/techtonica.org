@@ -31,7 +31,6 @@
     position: relative;
     overflow: hidden;
 
-
     &:hover {
       transform: translateY(-8px);
       box-shadow: 0 16px 48px rgba(5, 85, 109, 1);
@@ -68,7 +67,7 @@
       font-weight: 200;
 
       &::before {
-        content: '✓';
+        content: "✓";
         color: $main-blue;
         font-weight: bold;
         font-size: 1.1rem;
@@ -93,7 +92,6 @@
     text-align: center;
     margin-top: 2rem;
   }
-
 }
 
 // Action Buttons
@@ -103,7 +101,7 @@
   justify-content: center;
   margin: 3rem 0;
   flex-wrap: wrap;
-  align-items: center
+  align-items: center;
 }
 
 .row {
@@ -162,14 +160,14 @@
 
 @media (max-width: 480px) {
   .testimonial-text {
-    font-size: clamp(10px, 2.8vw, 12px); // previous: clamp(11px, 3vw, 12px); 
-    line-height: 1.4em; 
-    padding: 0.75rem; 
+    font-size: clamp(10px, 2.8vw, 12px); // previous: clamp(11px, 3vw, 12px);
+    line-height: 1.4em;
+    padding: 0.75rem;
   }
 
   .testimonial-post {
     max-width: 320px;
-    padding: 1.25rem; 
+    padding: 1.25rem;
   }
 
   .testimonial-post .post-content {
@@ -180,7 +178,7 @@
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
-.testimonial-post {
+  .testimonial-post {
     width: 100% !important;
     max-width: 350px;
     margin: 0 auto 1.5rem auto;
@@ -201,7 +199,7 @@
   }
 
   .testimonial-text {
-    font-size: clamp(12px, 2.5vw, 15px); // previous: clamp(6px, 2.5vw, 10px); 
+    font-size: clamp(12px, 2.5vw, 15px); // previous: clamp(6px, 2.5vw, 10px);
     line-height: 1.3em;
     padding: 1rem;
     flex: 1;
@@ -217,7 +215,6 @@
 /* Tablet / iPad - maintains squares in 2-column layout */
 @media (min-width: 768px) and (max-width: 1024px) {
   .testimonial-post {
-    width: calc(50% - 1.5rem) !important; /* Force 2-column layout */
     aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
     display: flex;
     flex-direction: column;
@@ -232,16 +229,19 @@
   }
 
   .testimonial-text {
-    font-size: clamp(11px, 1.5vw, 16px); // previous: font-size: clamp(8px, 1.5vw, 12px);
+    font-size: clamp(
+      11px,
+      1.5vw,
+      16px
+    ); // previous: font-size: clamp(8px, 1.5vw, 12px);
     line-height: 1.3em;
     flex: 1;
     overflow: hidden;
   }
 }
 
-
 // replaced @media (min-width: 1024px)
-// @media (min-width: 1024px) and (max-width: 1199px) { 
+// @media (min-width: 1024px) and (max-width: 1199px) {
 //   .testimonial-post {
 //     width: calc(33.333% - 1.5rem);
 //     aspect-ratio: 1/1;
@@ -288,10 +288,8 @@
 //   }
 // }
 
-
 @media (min-width: 1024px) {
   .testimonial-post {
-    width: calc(50% - 1.5rem);
     aspect-ratio: 1/1;
     display: flex;
     flex-direction: column;
@@ -411,7 +409,10 @@
 }
 
 .mc-closeModal {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
     1px 1px 0 #000;
 }
 
@@ -1627,4 +1628,3 @@ textarea.invalid {
     font-size: 13px;
   }
 }
-

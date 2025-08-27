@@ -283,7 +283,6 @@ p {
 /* Tablet / iPad - maintains squares in 2-column layout */
 @media (min-width: 768px) and (max-width: 1024px) {
   .testimonial-post {
-    width: calc(50% - 1.5rem) !important; /* Force 2-column layout */
     aspect-ratio: 1/1; /* Maintain square aspect ratio */
     display: flex;
     flex-direction: column;
@@ -304,7 +303,6 @@ p {
 }
 @media (min-width: 1024px) {
   .testimonial-post {
-    width: calc(50% - 1.5rem);
     aspect-ratio: 1/1;
     display: flex;
     flex-direction: column;
