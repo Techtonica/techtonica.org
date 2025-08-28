@@ -145,7 +145,7 @@ def generate_application_timeline():
         # URLs for buttons when applications are open
         fulltime_top_button_url = "https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
         fulltime_bottom_button_url = "https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
-        home_button_url = "render_ft_program_page"  # This will be used with url_for in the template
+        home_button_url = "render_swe_program_page"  # This will be used with url_for in the template
     else:
         # Applications are closed, not scheduled, or scheduled for the future
         main_text = "Outsource your software work!"
