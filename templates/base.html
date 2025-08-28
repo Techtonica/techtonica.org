@@ -963,45 +963,14 @@
           </div>
         </div>
         <!-- End of Partner Dropdown -->
-        <!-- Programs Dropdown -->
-        <div class="nav-link dropdown">
-          <a
-            href="#"
-            class="nav-link dropdown-toggle"
-            onclick="toggleDropdown(event, 'programsDropdown')"
-          >
-            Programs
-          </a>
-          <div class="dropdown-menu" id="programsDropdown">
-            <a
-              href="{{ url_for('render_web_dev_foundations_page') }}"
-              class="nav-link dropdown-item"
-            >
-              Part-Time Web Dev Foundations Program
-            </a>
-            <a
-              href="{{ url_for('render_swe_program_page') }}"
-              class="nav-link dropdown-item"
-            >
-              Part-Time Software Engineering Program
-            </a>
-            <!-- FT program page hidden from dropdown while not active -->
-            <!-- <a
-              href="{{ url_for('render_ft_program_page') }}"
-              class="nav-link dropdown-item"
-            >
-              Full-Time Program
-            </a> -->
-            <a
-              href="{{ url_for('render_programs_page') }}"
-              class="nav-link dropdown-item"
-            >
-              See All Programs
-            </a>
-          </div>
-          </div>
-        </div>
-        <!-- End of Programs Dropdown -->
+        
+        <!-- Apply Link -->
+        <a 
+          href="{{ url_for('render_swe_program_page') }}" 
+          class="nav-link"
+        >
+          Apply
+        </a>
 
         <!-- <a href="{{ url_for('render_home_page') }}#supporters" class="supporters nav-link">Supporters</a> -->      
 
