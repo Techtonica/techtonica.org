@@ -190,6 +190,10 @@ p {
   align-items: center;
 }
 
+.left-justify-text {
+  text-align-last: left;
+}
+
 .top-testimonials {
   display: flex;
   justify-content: center;
