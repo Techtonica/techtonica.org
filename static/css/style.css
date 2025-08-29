@@ -168,6 +168,122 @@ p {
   margin-top: 2rem;
 }
 
+/* Program Cards Grid Styling */
+.programs-grid-container {
+  padding: 2rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.program-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.program-card__header {
+  background-color: #0093b5;
+  padding: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+.program-card__title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.program-card__title a {
+  color: white;
+  text-decoration: none;
+}
+
+.program-card__title a:hover {
+  text-decoration: underline;
+}
+
+.program-card__content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.program-card__content p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  flex: 0;
+}
+
+.program-card__features {
+  list-style: none;
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.program-card__features li {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.program-card__features li::before {
+  content: "✓";
+  color: #0093b5;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.program-card__button {
+  margin-top: auto;
+  background-color: #fc7625;
+  color: white;
+  text-align: center;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  align-self: flex-start;
+  transition: background-color 0.3s ease;
+}
+
+.program-card__button:hover {
+  background-color: #16c1f3;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .programs-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+}
 .action-buttons {
   display: flex;
   gap: 1rem;
