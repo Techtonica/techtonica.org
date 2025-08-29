@@ -190,11 +190,6 @@ p {
   align-items: center;
 }
 
-.left-justify-text {
-  text-align: left;
-  text-align-last: left;
-}
-
 .row_left {
   justify-content: flex-start;
 }
