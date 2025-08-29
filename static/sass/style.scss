@@ -1,5 +1,108 @@
-@import "settings";
-@import "mixins";
+@use "settings" as *;
+@use "mixins" as *;
+
+// New Sponsor Tiers Design
+.sponsor-tiers-container {
+  display: grid;
+  gap: 2rem;
+  margin: 3rem 0;
+  padding: 2rem 2rem;
+
+  // Default to 4 columns for wider screens
+  grid-template-columns: repeat(4, 1fr);
+
+  // For tablet-sized screens, switch to 2 columns
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // For mobile screens, stack them in a single column
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsor-tier-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(5, 85, 109, 1);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 48px rgba(5, 85, 109, 1);
+    }
+  }
+
+  .tier-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid $dark-blue;
+  }
+
+  .tier-description {
+    color: $dark-blue;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .tier-features {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding-inline-start: 10px;
+
+    li {
+      padding: 0.75rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      color: #000;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      font-weight: 200;
+
+      &::before {
+        content: "✓";
+        color: $main-blue;
+        font-weight: bold;
+        font-size: 1.1rem;
+        min-width: 20px;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+      }
+    }
+  }
+
+  .tier-cta {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+
+// Action Buttons
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
 
 .row {
   @include prefix(display, flex, webkit moz);
@@ -10,6 +113,94 @@
 
 .row__center {
   align-items: center;
+}
+
+.row_left {
+    justify-content: flex-start;
+}
+
+// Testimonials
+.top-testimonials {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.testimonial-post {
+  --size: clamp(260px, 37vw, 42.5%);
+  flex: 0 0 var(--size);
+  width: var(--size);
+  aspect-ratio: 1 / 1;
+  background: $main-blue;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  transition: transform 0.3s ease;
+  min-width: 0;
+  container-type: inline-size;
+  container-name: testimonial;
+}
+
+.testimonial-post:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-post .post-content {
+  width: 80%;
+  aspect-ratio: 1 / 1;
+  background: $white;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(8px, 2.5vmin, 16px);
+  overflow: hidden;
+  -webkit-overflow-scrolling: auto;
+  min-width: 0;
+  min-height: 0;
+  text-align: left;
+}
+
+.testimonial-text {
+  font-size: clamp(9px, 3.6cqw, 14px);
+  line-height: 1.35;
+  color: #333;
+  margin: 0;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.testimonial-row {
+  padding: 0 !important;
+}
+.testimonial-text a {
+  word-break: break-word;
+}
+
+@media (min-width: 800px) and (max-width: 1060px) {
+  .testimonial-post .post-content {
+    width: 86%;
+    padding: clamp(6px, 1.6vmin, 12px);
+  }
+}
+
+@media (max-width: 800px) {
+  .top-testimonials {
+    padding: 12px;
+    gap: 12px;
+  }
+  .testimonial-post {
+    --size: min(70vw, 92vw);
+    flex-basis: var(--size);
+    width: var(--size);
+  }
+  .testimonial-post .post-content {
+    width: 86%;
+  }
 }
 
 .staff-team {
@@ -322,6 +513,7 @@
 
 .contact-us,
 .donate,
+.tier-button,
 .orange-button {
   margin-bottom: 24px;
   @include prefix(border-radius, 8px, webkit moz o);
@@ -599,11 +791,11 @@ table.mentor {
     right: 0;
     top: 0;
     margin: 0.5rem 0;
-    padding: $button-size/2 $button-size/3;
+    padding: calc($button-size / 2) calc($button-size / 3);
     transition: 0.3s;
     cursor: pointer;
     user-select: none;
-    border-radius: $button-size/7;
+    border-radius: calc($button-size / 7);
 
     &:hover {
       opacity: 1;
@@ -627,15 +819,15 @@ table.mentor {
       position: absolute;
       left: 0;
       content: "";
-      transform-origin: $button-size/14 center;
+      transform-origin: calc($button-size / 14) center;
     }
 
     &:before {
-      top: $button-size/4;
+      top: calc($button-size / 4);
     }
 
     &:after {
-      top: -$button-size/4;
+      top: calc(-#{$button-size} / 4);
     }
   }
 
@@ -644,11 +836,11 @@ table.mentor {
 
     .lines {
       &:before {
-        top: $button-size/3;
+        top: calc($button-size / 3);
       }
 
       &:after {
-        top: -$button-size/3;
+        top: calc(-#{$button-size} / 3);
       }
     }
   }
@@ -910,9 +1102,23 @@ p.press-release-bold {
   height: 48px;
   width: 100%;
   display: inline-block;
+  appearance: none;
   -webkit-appearance: -apple-pay-button;
+  -moz-appearance: none;
   -apple-pay-button-type: plain;
   -apple-pay-button-style: black;
+}
+
+/* Fix for contact link visibility on job form page */
+#payment-page p a {
+  color: #ffffff !important;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#payment-page p a:hover {
+  color: #16c1f3 !important;
+  text-decoration: underline;
 }
 
 #fast-checkout {

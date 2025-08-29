@@ -12,28 +12,46 @@ endblock title %} {% block content %}
   </div>
 
   <div class="row row__center our-supporters" id="supporters">
-    <div class="row">
+    <div class="row testimonial-row">
       <div class="column centered">
-        <a
-          href="https://www.linkedin.com/posts/xiahui-zhang_my-journey-with-techtonica-from-law-to-activity-7262539138065653761-jYZp?utm_source=share&utm_medium=member_desktop"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="{{ url_for('static', filename='img/testimonials/LinkedIn-Xiahui-2024-min.png') }}"
-            alt="LinkedIn post by Xiahui Zhang on pivoting from law to tech with Techtonica, building projects, learning PERN, Git, etc."
-            class="forty-percent-width margin-1-percent"
-          />
-        </a>
-        <a
-          href="https://www.linkedin.com/posts/abbie-huynh_im-graduating-from-techtonica-this-week-activity-7262279909413171200-RThp?utm_source=share&utm_medium=member_desktop"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="{{ url_for('static', filename='img/testimonials/LinkedIn-Abbie-2024-min.png') }}"
-            alt="LinkedIn post by Abbie Huynh celebrating graduating from Techtonica, expressing gratitude for its support and mentorship."
-            class="forty-percent-width margin-1-percent"
-          />
-        </a>
+        <div class="top-testimonials">
+          <div class="testimonial-post">
+            <div class="post-content">
+              <p class="testimonial-text">
+                "My cohort members have become friends and constant inspiration
+                – they're passionate, creative, and endlessly supportive.
+                They've encouraged me to push myself and grow in ways I hadn't
+                expected. Michelle Glauser, our program Founder and CEO, is warm
+                and attentive, and her focus on constructive feedback is
+                something I know will have a lasting impact on me."
+                <br />
+                <br />
+                – Techtonica Graduate, Xiahui Zhang, on
+                <a href="https://www.linkedin.com/in/xiahui-zhang/">LinkedIn</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="testimonial-post">
+            <div class="post-content">
+              <p class="testimonial-text">
+                "For those of you who don't know, Techtonica is a software
+                engineering program that helps women and non-binary adults
+                overcome barriers into the tech industry! After many rounds of
+                interviews, evaluations, and 5 months of intensive technical
+                training, I'm excited to say that I am a Full Stack Software
+                Engineer specializing in the PERN stack! To kick off the week of
+                graduation, I just wanted to make a super special shoutout to
+                the Techtonica staff!"
+                <br />
+                <br />
+                – Techtonica Graduate, Abbie Huynh, on
+                <a href="https://www.linkedin.com/in/abbie-huynh/">LinkedIn</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
         <a href="#" rel="noopener noreferrer">
           <img
             src="{{ url_for('static', filename='img/testimonials/Destinee-2023-min.png') }}"
@@ -41,6 +59,7 @@ endblock title %} {% block content %}
             class="forty-percent-width margin-1-percent"
           />
         </a>
+
         <a
           href="https://www.switchup.org/bootcamps/techtonica#reviews"
           rel="noopener noreferrer"
@@ -51,6 +70,7 @@ endblock title %} {% block content %}
             class="forty-percent-width margin-1-percent"
           />
         </a>
+
         <a
           href="https://www.linkedin.com/posts/almabntz_bridgethetechgap-activity-7003408574815076352-EwO5?utm_source=share&utm_medium=member_desktop"
           rel="noopener noreferrer"
@@ -826,4 +846,5 @@ endblock title %} {% block content %}
     </h2>
   </div>
 </div>
+<script type="text/javascript" src="/static/js/scroll.js"></script>
 {% endblock content %}

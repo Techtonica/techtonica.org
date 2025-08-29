@@ -1,3 +1,6 @@
+@use "settings" as *;
+
+
 /// Mixin to prefix a property
 /// @author Hugo Giraudel
 /// @param {String} $property - Property name
@@ -17,8 +20,8 @@
 @mixin line {
   display: inline-block;
   width: $button-size;
-  height: $button-size/7;
+  height: calc($button-size / 7);
   background: $light-blue;
-  border-radius: $button-size/14;
+  border-radius: calc($button-size / 14);
   transition: $transition;
 }
