@@ -139,12 +139,12 @@ def render_openings_page():
 #     """
 #     return render_template("tapm.html")
 
-# @app.route("/openings/ta/")
-# def render_ta_page():
-#     """
-#     Renders the TA page from jinja2 template
-#     """
-#     return render_template("ta.html")
+@app.route("/openings/ta/")
+def render_ta_page():
+    """
+    Renders the TA page from jinja2 template
+    """
+    return render_template("ta.html")
 
 
 # @app.route("/openings/partnershipsmanager/")
@@ -189,14 +189,22 @@ def render_mentor_page():
     return render_template("mentor.html", timeline=timeline)
 
 
-@app.route("/full-time-program/")
-def render_ft_program_page():
+# @app.route("/full-time-program/")
+# def render_ft_program_page():
+#     """
+#     Generates time-bound text and application extension variable
+#     Renders the full-time program page from jinja2 template with relevant times
+#     """
+#     timeline = generate_application_timeline()
+#     return render_template("full-time-program.html", timeline=timeline)
+
+
+@app.route("/software-engineering-program/")
+def render_swe_program_page():
     """
-    Generates time-bound text and application extension variable
-    Renders the full-time program page from jinja2 template with relevant times
+    Renders the part time software engineering page from jinja2 template
     """
-    timeline = generate_application_timeline()
-    return render_template("full-time-program.html", timeline=timeline)
+    return render_template("software-engineering-program.html")
 
 
 @app.route("/donate/")

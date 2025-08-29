@@ -9,6 +9,7 @@ endblock title %} {% block content %}
         tech industry and partner companies fulfill their diverse technical
         talent needs.
       </p>
+<!-- Comment out env triggered CTA
       <a
         href="{{ url_for(timeline.HOME_BUTTON_URL) }}"
         class="orange-button"
@@ -16,6 +17,14 @@ endblock title %} {% block content %}
         rel="noopener noreferrer"
       >
         {{ timeline.TEXT }}
+      </a> -->
+      <a 
+        href="{{ url_for('render_swe_program_page') }}"
+        class="orange-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Apply Now!
       </a>
     </div>
   </div>
@@ -23,11 +32,9 @@ endblock title %} {% block content %}
     <div class="column">
       <h1 class="blue-h1">Our Participants</h1>
       <p>
-        Our full-time program participants go through a rigorous, lengthy
-        application process that includes multiple workshops, interviews, and a
-        code challenge. By the time each cohort graduates, they will have
-        completed more than 1,000 hours of collaborative, project-based learning
-        developed by industry professionals. Most
+        Our program participants are the best of the best! They make it through our rigorous
+        application process and program that includes many workshops, interviews,
+        code challenges, pairing sessions, projects, and more. Most 
         <a href="{{ url_for('render_sponsor_page') }}">partner companies</a>
         that hire our graduates would like to employ them forever!
       </p>
@@ -43,7 +50,7 @@ endblock title %} {% block content %}
       </a>
     </div>
   </div>
-  <div class="row row__center blue-background why-why" id="why">
+  <div class="row row__center blue-background why-why">
     <div class="column">
       <img
         src="{{ url_for('static', filename='img/Tenderloin.jpg') }}"
@@ -65,7 +72,7 @@ endblock title %} {% block content %}
       </p>
     </div>
   </div>
-  <div class="row row__baseline how-it-works" id="howitworks">
+  <div class="row row__baseline how-it-works">
     <h1 class="blue-h1">How it Works</h1>
     <div class="row">
       <div class="column column-med centered">
@@ -79,7 +86,7 @@ endblock title %} {% block content %}
         <p>
           We invite the most interested, resilient, independent, curious,
           open-minded, communicative, collaborative, confident, respectful
-          attendees to apply to our full-time program.
+          attendees to apply to our program.
         </p>
       </div>
       <div class="column column-med centered">
@@ -91,8 +98,8 @@ endblock title %} {% block content %}
         <h3>Partner Companies</h3>
         <p>
           Companies
-          <a href="{{ url_for('render_sponsor_page') }}"> sponsor</a> the
-          full-time program participants' pre-placement training and provide
+          <a href="{{ url_for('render_sponsor_page') }}"> sponsor</a> the 
+          program participants' pre-placement training and provide
           mentors.
         </p>
         <p>
@@ -106,11 +113,11 @@ endblock title %} {% block content %}
           alt=""
           aria-hidden="true"
         />
-        <h3>Full-Time Program</h3>
+        <h3>Program</h3>
         <p>
-          As needed, accepted participants receive living stipends, laptops, and
-          more than 1,000 hours of full-time, project-based, collaborative
-          training.
+          As needed, accepted participants receive living stipends and laptops, and
+          do hundreds of hours of full-stack, project-based, collaborative
+          learning.
         </p>
         <p>We place as many graduates as possible with sponsor companies.</p>
       </div>
