@@ -115,6 +115,10 @@
   align-items: center;
 }
 
+.row_left {
+    justify-content: flex-start;
+}
+
 // Testimonials
 .top-testimonials {
   display: flex;
