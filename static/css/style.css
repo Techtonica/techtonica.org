@@ -686,19 +686,19 @@ iframe#youtubeiframe {
   padding-top: 0.5rem;
 }
 
-table.part-time-swe, table.mentor {
+table.mentor {
   border-top: 1px solid #000;
   border-left: 1px solid #000;
   border-right: 1px solid #000;
 }
-table.part-time-swe td, table.mentor td {
+table.mentor td {
   border-bottom: 1px solid #000;
   padding: 1rem;
 }
-table.part-time-swe td ul, table.mentor td ul {
+table.mentor td ul {
   margin: 0;
 }
-table.part-time-swe td:first-of-type, table.mentor td:first-of-type {
+table.mentor td:first-of-type {
   border-right: 1px solid #000;
   vertical-align: top;
 }
@@ -968,13 +968,13 @@ table.part-time-swe td:first-of-type, table.mentor td:first-of-type {
     height: 100%;
     border: 0;
   }
-  table.part-time-swe td, table.mentor td {
+  table.mentor td {
     display: block;
     width: 100%;
     padding: 0.5rem;
     box-sizing: border-box;
   }
-  table.part-time-swe td:first-of-type, table.mentor td:first-of-type {
+  table.mentor td:first-of-type {
     border-right: none;
     vertical-align: top;
   }

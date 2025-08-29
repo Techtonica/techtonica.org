@@ -589,7 +589,7 @@ iframe#youtubeiframe {
   padding-top: 0.5rem;
 }
 
-table.part-time-swe, table.mentor {
+table.mentor {
   border-top: 1px solid #000;
   border-left: 1px solid #000;
   border-right: 1px solid #000;
@@ -908,7 +908,7 @@ table.part-time-swe, table.mentor {
     border: 0; // Remove default border
   }
 
-  table.part-time-swe, table.mentor {
+  table.mentor {
     td {
       display: block; // Make table cells stack vertically
       width: 100%; // Let cells take the full width
