@@ -23,7 +23,7 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.DREAMHOST_USER }}@${{ secrets.DREAMHOST_HOST }} << 'EOF'
             cd testing.techtonica.org
-            source bin/activate
+            source testing/bin/activate
             cd techtonica/
             git pull origin develop
             pip-sync || pip install -r requirements.txt
