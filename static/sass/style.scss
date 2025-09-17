@@ -1,12 +1,52 @@
 @use "settings" as *;
 @use "mixins" as *;
 
+// Shared card styles mixin for consistency between sponsor and program cards
+@mixin card-base {
+  background: $white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(5, 85, 109, 0.2);
+  border: 2px solid transparent;
+  transition: all $transition ease;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(5, 85, 109, 0.3);
+  }
+}
+
+@mixin card-features-list {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+
+  li {
+    padding: 0.75rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+
+    &::before {
+      content: "✓";
+      color: $main-blue;
+      font-weight: bold;
+      font-size: 1rem;
+      min-width: 20px;
+    }
+  }
+}
+
 // New Sponsor Tiers Design
 .sponsor-tiers-container {
   display: grid;
   gap: 2rem;
   margin: 3rem 0;
-  padding: 2rem 2rem;
+  padding: 2rem;
 
   // Default to 4 columns for wider screens
   grid-template-columns: repeat(4, 1fr);
@@ -22,19 +62,8 @@
   }
 
   .sponsor-tier-card {
-    background: white;
-    border-radius: 16px;
+    @include card-base;
     padding: 2rem;
-    box-shadow: 0 8px 32px rgba(5, 85, 109, 1);
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-
-    &:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 48px rgba(5, 85, 109, 1);
-    }
   }
 
   .tier-header {
@@ -52,27 +81,12 @@
   }
 
   .tier-features {
-    list-style: none;
-    margin: 1.5rem 0;
+    @include card-features-list;
     padding-inline-start: 10px;
 
     li {
-      padding: 0.75rem 0;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
       color: #000;
-      font-size: 0.95rem;
-      line-height: 1.5;
       font-weight: 200;
-
-      &::before {
-        content: "✓";
-        color: $main-blue;
-        font-weight: bold;
-        font-size: 1.1rem;
-        min-width: 20px;
-      }
 
       .sr-only {
         position: absolute;
@@ -94,7 +108,7 @@
   }
 }
 
-/* Program Cards Grid Styling */
+// Program Cards Grid Styling
 .programs-grid-container {
   padding: 2rem 1rem;
   width: 100%;
@@ -105,111 +119,85 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .program-card {
+  @include card-base;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  height: 100%;
+  border-radius: 8px; // Slightly smaller radius for program cards
+
+  &__header {
+    background-color: $main-blue;
+    padding: 1.5rem;
+    color: $white;
+    text-align: center;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: $white;
+
+    a {
+      color: $white;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    p {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      flex: 0;
+    }
+  }
+
+  &__features {
+    @include card-features-list;
+    flex-grow: 1;
+  }
+
+  &__button {
+    margin-top: auto;
+    background-color: $focal-orange;
+    color: $white;
+    text-align: center;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    align-self: flex-start;
+    transition: background-color $transition ease;
+
+    &:hover {
+      background-color: $light-blue;
+      color: $white;
+    }
+  }
 }
 
-.program-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-.program-card__header {
-  background-color: #0093b5;
-  padding: 1.5rem;
-  color: white;
-  text-align: center;
-}
-
-.program-card__title {
-  margin: 0;
-  font-size: 1.5rem;
-  color: white;
-}
-
-.program-card__title a {
-  color: white;
-  text-decoration: none;
-}
-
-.program-card__title a:hover {
-  text-decoration: underline;
-}
-
-.program-card__content {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.program-card__content p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  flex: 0;
-}
-
-.program-card__features {
-  list-style: none;
-  margin: 0 0 1.5rem 0;
-  padding: 0;
-  flex-grow: 1;
-}
-
-.program-card__features li {
-  padding: 0.5rem 0;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-.program-card__features li::before {
-  content: "✓";
-  color: #0093b5;
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.program-card__button {
-  margin-top: auto;
-  background-color: #fc7625;
-  color: white;
-  text-align: center;
-  padding: 0.8rem 1.5rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 500;
-  display: inline-block;
-  align-self: flex-start;
-  transition: background-color 0.3s ease;
-}
-
-.program-card__button:hover {
-  background-color: #16c1f3;
-  color: white;
-}
-
-/* Responsive adjustments */
+// Responsive adjustments
 @media (max-width: 768px) {
   .programs-grid {
     grid-template-columns: 1fr;
-    padding: 1rem;
     gap: 1.5rem;
+  }
+
+  .programs-grid-container {
+    padding: 1rem;
   }
 }
 
@@ -235,7 +223,7 @@
 }
 
 .row_left {
-    justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 // Testimonials
@@ -1610,8 +1598,6 @@ textarea.invalid {
 #news-title {
   padding: 0;
 }
-
-
 
 /* Sponsor Page Styling */
 .sponsor-benefit-table {
