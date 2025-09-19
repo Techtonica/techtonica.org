@@ -91,7 +91,7 @@ p {
   display: grid;
   gap: 2rem;
   margin: 3rem 0;
-  padding: 2rem 2rem;
+  padding: 2rem;
   grid-template-columns: repeat(4, 1fr);
 }
 @media (max-width: 1024px) {
@@ -107,16 +107,19 @@ p {
 .sponsor-tiers-container .sponsor-tier-card {
   background: white;
   border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 8px 32px rgb(5, 85, 109);
+  box-shadow: 0 8px 32px rgba(5, 85, 109, 0.2);
   border: 2px solid transparent;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  height: 100%;
 }
 .sponsor-tiers-container .sponsor-tier-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 48px rgb(5, 85, 109);
+  box-shadow: 0 16px 48px rgba(5, 85, 109, 0.3);
+}
+.sponsor-tiers-container .sponsor-tier-card {
+  padding: 2rem;
 }
 .sponsor-tiers-container .tier-header {
   text-align: center;
@@ -133,24 +136,29 @@ p {
 .sponsor-tiers-container .tier-features {
   list-style: none;
   margin: 1.5rem 0;
-  padding-inline-start: 10px;
+  padding: 0;
 }
 .sponsor-tiers-container .tier-features li {
   padding: 0.75rem 0;
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
-  color: #000;
   font-size: 0.95rem;
-  line-height: 1.5;
-  font-weight: 200;
+  line-height: 1.4;
 }
 .sponsor-tiers-container .tier-features li::before {
   content: "✓";
   color: #0093b5;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1rem;
   min-width: 20px;
+}
+.sponsor-tiers-container .tier-features {
+  padding-inline-start: 10px;
+}
+.sponsor-tiers-container .tier-features li {
+  color: #000;
+  font-weight: 200;
 }
 .sponsor-tiers-container .tier-features li .sr-only {
   position: absolute;
@@ -168,7 +176,6 @@ p {
   margin-top: 2rem;
 }
 
-/* Program Cards Grid Styling */
 .programs-grid-container {
   padding: 2rem 1rem;
   width: 100%;
@@ -179,84 +186,81 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .program-card {
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(5, 85, 109, 0.2);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
 }
-
 .program-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(5, 85, 109, 0.3);
 }
-
+.program-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+}
 .program-card__header {
   background-color: #0093b5;
   padding: 1.5rem;
   color: white;
   text-align: center;
 }
-
 .program-card__title {
   margin: 0;
   font-size: 1.5rem;
   color: white;
 }
-
 .program-card__title a {
   color: white;
   text-decoration: none;
 }
-
 .program-card__title a:hover {
   text-decoration: underline;
 }
-
 .program-card__content {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
-
 .program-card__content p {
   margin-top: 0;
   margin-bottom: 1rem;
   flex: 0;
 }
-
 .program-card__features {
   list-style: none;
-  margin: 0 0 1.5rem 0;
+  margin: 1.5rem 0;
   padding: 0;
-  flex-grow: 1;
 }
-
 .program-card__features li {
-  padding: 0.5rem 0;
+  padding: 0.75rem 0;
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
   font-size: 0.95rem;
   line-height: 1.4;
 }
-
 .program-card__features li::before {
   content: "✓";
   color: #0093b5;
   font-weight: bold;
   font-size: 1rem;
+  min-width: 20px;
 }
-
+.program-card__features {
+  flex-grow: 1;
+}
 .program-card__button {
   margin-top: auto;
   background-color: #fc7625;
@@ -270,18 +274,18 @@ p {
   align-self: flex-start;
   transition: background-color 0.3s ease;
 }
-
 .program-card__button:hover {
   background-color: #16c1f3;
   color: white;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .programs-grid {
     grid-template-columns: 1fr;
-    padding: 1rem;
     gap: 1.5rem;
+  }
+  .programs-grid-container {
+    padding: 1rem;
   }
 }
 .action-buttons {
@@ -498,7 +502,11 @@ p {
 }
 
 .mc-closeModal {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .main-content {
@@ -518,7 +526,8 @@ p {
   justify-content: flex-end;
   width: 100%;
   height: 75vh;
-  background: url(../img/three-participants-at-laptops-min.jpg) #0093b5 no-repeat top right fixed;
+  background: url(../img/three-participants-at-laptops-min.jpg) #0093b5
+    no-repeat top right fixed;
   background-size: cover;
 }
 
@@ -564,7 +573,8 @@ p {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/2024-H2-Launch-Celebration-min.png) #0093b5 no-repeat top fixed;
+  background: url(../img/2024-H2-Launch-Celebration-min.png) #0093b5 no-repeat
+    top fixed;
   background-size: cover;
 }
 
@@ -957,7 +967,8 @@ table.mentor td:first-of-type {
   .main-header {
     display: block;
     position: relative;
-    background: url(../img/three-participants-at-laptops-min.jpg) #0093b5 no-repeat top center;
+    background: url(../img/three-participants-at-laptops-min.jpg) #0093b5
+      no-repeat top center;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
@@ -1007,7 +1018,8 @@ table.mentor td:first-of-type {
     position: relative;
     /*create the upper and lower lines as pseudo-elements of the middle line*/
   }
-  .lines:before, .lines:after {
+  .lines:before,
+  .lines:after {
     display: inline-block;
     width: 3rem;
     height: 0.4285714286rem;
@@ -1039,7 +1051,8 @@ table.mentor td:first-of-type {
     background: transparent;
     /*overlay the lines by setting both their top values to 0*/
   }
-  .lines-button.x.close .lines:before, .lines-button.x.close .lines:after {
+  .lines-button.x.close .lines:before,
+  .lines-button.x.close .lines:after {
     transform-origin: 50% 50%;
     top: 0;
     width: 2.5em;
@@ -1415,8 +1428,8 @@ legend {
   color: rgba(0, 115, 149, 0.8);
 }
 
-#info-wrapper > fieldset > input[type=text],
-#info-wrapper > fieldset > input[type=email],
+#info-wrapper > fieldset > input[type="text"],
+#info-wrapper > fieldset > input[type="email"],
 #info-wrapper > fieldset > textarea {
   min-width: 90%;
   margin: auto auto 1em auto;
@@ -1429,7 +1442,7 @@ legend {
   min-height: 6em;
 }
 
-input[type=radio] {
+input[type="radio"] {
   width: 50px;
 }
 
@@ -1479,7 +1492,7 @@ input#code-of-conduct-checkbox {
   margin-right: 15px;
 }
 
-label[for=code-of-conduct-checkbox] ~ a {
+label[for="code-of-conduct-checkbox"] ~ a {
   color: rgba(0, 115, 149, 0.8);
   text-decoration: none;
 }
