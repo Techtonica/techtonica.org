@@ -286,6 +286,16 @@ def render_admin_dashboard_page():
     """
     return render_template("admin_dashboard.html")
 
+# Participant Handbook and Participant Agreement Assessment
+@app.route("/participant-assessment")
+def render_participant_assessment_page():
+    """
+    Renders the participant assessment page from jinja2 template
+    """
+    return render_template("participant_assessment.html")
+
+
+# Eventbrite event displaying
 
 def get_events():
     try:

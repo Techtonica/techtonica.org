@@ -1,0 +1,2256 @@
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
+Participant Assessment {% endblock title %} {% block content %}
+
+<section class="participant-assessment-page">
+  <form action="#" method="POST" class="participant-assessment-form" id="participant_assessment">
+    <fieldset>
+      <legend>Techtonica Participant Assessment of Handbook, Agreement, & Code of Conduct</legend>
+
+      <h3>Purpose for You, the Participant:</h3>
+
+      <p>Welcome to the Techtonica program! To ensure you have the clearest possible understanding of how our program works, your responsibilities, and the support available to you, we've created this short assessment. Its main purpose is to help you confirm your grasp of the essential information found in the Participant Handbook, Participant Agreement, and Code of Conduct.</p>
+      <br/>
+
+      <h3>By completing this assessment, you'll:</h3>
+      <ul>
+        <li>
+          <strong>Gain Clarity:</strong> Solidify your understanding of key areas like program expectations, attendance policies, financial details (tuition and stipends), job placement support, the violation process, and community conduct guidelines.</li>
+        <li>
+          <strong>Prevent Future Confusion:</strong> Address any potential misunderstandings upfront, so you can focus on your learning and growth without unnecessary frustration.
+        </li>
+        <li>
+          <strong>Ensure Success:</strong> Equip yourself with the foundational knowledge needed to navigate the program effectively and make the most of this valuable opportunity.
+        </li>
+      </ul>
+
+      <p>Think of this as a helpful tool designed to set you up for success from day one, ensuring you feel confident and well-informed about your journey with Techtonica.</p>
+
+      <h3>How This Helps Program Staff:</h3>
+      <ul>
+        <li>
+          <strong>Identify Knowledge Gaps:</strong> Quickly pinpoint common areas where participants might be experiencing confusion or uncertainty.
+        </li>
+        <li>
+          <strong>Provide Targeted Support:</strong> Understand which topics require more detailed explanation or follow-up, enabling us to offer more focused guidance and resources.
+        </li>
+        <li>
+          <strong>Proactively Address Issues:</strong> Mitigate potential frustrations or misunderstandings before they escalate, leading to a smoother and more positive experience for everyone.
+        </li>
+        <li>
+          <strong>Ensure Readiness:</strong> Confirm that all participants are entering the program with a shared and accurate understanding of its critical components, fostering a more cohesive and productive cohort environment.
+        </li>
+      </ul>
+      
+      <p>Ultimately, this assessment helps us ensure that we are effectively communicating vital program information and that you, our valued participant, are fully prepared and confident as you embark on your Techtonica journey.</p>
+
+      <h4>Who Are You?</h4>
+       <div>
+        <label for="participant-assessment-name">
+          Share Your First & Last Name</label>
+        <br />
+        <textarea
+          name="participant-assessment-name"
+          id="participant-assessment-name"
+          cols="100"
+          rows="4"
+        >
+        </textarea>
+        <br />
+      </div>
+
+      <h4>1. Program Structure, General Responsibilities, & Participation Expectations</h4>
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="program-duration">What is the expected duration of the Techtonica training program?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="program-duration-a"
+          name="program-duration"
+          value="A"
+          required
+        />
+        <label for="program-duration-a">A. Exactly 5 months, no exceptions.</label>
+        <br />
+        <input
+          type="radio"
+          id="program-duration-b"
+          name="program-duration"
+          value="B"
+          required
+        />
+        <label for="program-duration-b">B. Up to 5 months, but may be shortened with at least two weeks' notice if funding is insufficient.</label>
+        <br />
+        <input
+          type="radio"
+          id="program-duration-c"
+          name="program-duration"
+          value="C"
+          required
+        />
+        <label for="program-duration-c">C. 6 months, including a mandatory job search period.</label>
+        <br />
+        <input
+          type="radio"
+          id="program-duration-d"
+          name="program-duration"
+          value="D"
+          required
+        />
+        <label for="program-duration-d">D. It varies based on individual participant progress.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="no-employee-benefits">Which of the following is NOT an employee benefit provided by the Organization to Participants during the Program?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="no-employee-benefits-a"
+          name="no-employee-benefits"
+          value="A"
+          required
+        />
+        <label for="no-employee-benefits-a">A. Health insurance.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-employee-benefits-b"
+          name="no-employee-benefits"
+          value="B"
+          required
+        />
+        <label for="no-employee-benefits-b">B. Vacation or sick pay.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-employee-benefits-c"
+          name="no-employee-benefits"
+          value="C"
+          required
+        />
+        <label for="no-employee-benefits-c">C. Retirement plans.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-employee-benefits-d"
+          name="no-employee-benefits"
+          value="D"
+          required
+        />
+        <label for="no-employee-benefits-d">D. None of the above; Participants are not employed by the Organization.</label>
+        <br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="participant-expectations">As a Participant, which of the following are you expected to do? (Select all that apply)
+        </label>
+        <br />
+        <input
+          type="checkbox"
+          id="participant-expectations-a"
+          name="participant-expectations"
+          value="A"
+          required
+        />
+        <label for="participant-expectations-a">A. Attend and actively participate in scheduled Program hours.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="participant-expectations-b"
+          name="participant-expectations"
+          value="B"
+          required
+        />
+        <label for="participant-expectations-b">B. Meet with mentors once per week.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="participant-expectations-c"
+          name="participant-expectations"
+          value="C"
+          required
+        />
+        <label for="participant-expectations-c">C. Complete assignments and projects by stated deadlines.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="participant-expectations-d"
+          name="participant-expectations"
+          value="D"
+          required
+        />
+        <label for="participant-expectations-d">D. Attend at least one networking event each month of the Program and the following three months.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="participant-expectations-e"
+          name="participant-expectations"
+          value="E"
+          required
+        />
+        <label for="participant-expectations-d">E. All of the above.</label>
+        <br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="written-communication">What is the expectation regarding sharing private assessment information with other Participants after the Program?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="sharing-assessment-info-a"
+          name="sharing-assessment-info"
+          value="A"
+          required
+        />
+        <label for="sharing-assessment-info-a">A. It is encouraged for collaborative learning.</label>
+        <br />
+        <input
+          type="radio"
+          id="sharing-assessment-info-b"
+          name="sharing-assessment-info"
+          value="B"
+          required
+        />
+        <label for="sharing-assessment-info-b">B. It is allowed only with explicit permission from the Organization.</label>
+        <br />
+        <input
+          type="radio"
+          id="sharing-assessment-info-c"
+          name="sharing-assessment-info"
+          value="C"
+          required
+        />
+        <label for="sharing-assessment-info-c">C. Participants agree never to share private assessment information.</label>
+        <br />
+        <input
+          type="radio"
+          id="sharing-assessment-info-d"
+          name="sharing-assessment-info"
+          value="D"
+          required
+        />
+        <label for="sharing-assessment-info-d">D. It is only allowed if both parties agree.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="primary-participant-responsibility">According to the handbook, what is a primary responsibility of every participant?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="primary-participant-responsibility-a"
+          name="primary-participant-responsibility"
+          value="A"
+          required
+        />
+        <label for="primary-participant-responsibility-a">A. To only focus on technical skills.</label>
+        <br />
+        <input
+          type="radio"
+          id="primary-participant-responsibility-b"
+          name="primary-participant-responsibility"
+          value="B"
+          required
+        />
+        <label for="primary-participant-responsibility-b">B. To be aware of and abide by existing policies and rules.</label>
+        <br />
+        <input
+          type="radio"
+          id="primary-participant-responsibility-c"
+          name="primary-participant-responsibility"
+          value="C"
+          required
+        />
+        <label for="primary-participant-responsibility-c">C. To always work independently without seeking help.</label>
+        <br />
+        <input
+          type="radio"
+          id="primary-participant-responsibility-d"
+          name="primary-participant-responsibility"
+          value="D"
+          required
+        />
+        <label for="primary-participant-responsibility-d">D. To ensure all program plans remain unchanged.</label>
+        <br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="strengthen-participant-characteristics">Which of the following characteristics are participants encouraged to strengthen during the program? (Select all that apply)
+        </label>
+        <br />
+        <input
+          type="checkbox"
+          id="strengthen-participant-characteristics-a"
+          name="strengthen-participant-characteristics"
+          value="A"
+          required
+        />
+        <label for="strengthen-participant-characteristics-a">A. Resilience.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="strengthen-participant-characteristics-b"
+          name="strengthen-participant-characteristics"
+          value="B"
+          required
+        />
+        <label for="strengthen-participant-characteristics-b">B. Autonomy.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="strengthen-participant-characteristics-c"
+          name="strengthen-participant-characteristics"
+          value="C"
+          required
+        />
+        <label for="strengthen-participant-characteristics-c">C. Stress Management.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="strengthen-participant-characteristics-d"
+          name="strengthen-participant-characteristics"
+          value="D"
+          required
+        />
+        <label for="strengthen-participant-characteristics-d">D. Growth Mindset.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="strengthen-participant-characteristics-e"
+          name="strengthen-participant-characteristics"
+          value="E"
+          required
+        />
+        <label for="strengthen-participant-characteristics-d">E. All of the above.</label>
+        <br />
+      </div>
+    
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="error-help">When asking for help with an error, what information should you be ready to describe?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="error-help-a"
+          name="error-help"
+          value="A"
+          required
+        />
+        <label for="error-help-a">A. Only the error message you are getting.</label>
+        <br />
+        <input
+          type="radio"
+          id="error-help-b"
+          name="error-help"
+          value="B"
+          required
+        />
+        <label for="error-help-b">B. What errors you're getting and what you've already tried to solve them.</label>
+        <br />
+        <input
+          type="radio"
+          id="error-help-c"
+          name="error-help"
+          value="C"
+          required
+        />
+        <label for="error-help-c">C. The solution you think is correct.</label>
+        <br />
+        <input
+          type="radio"
+          id="error-help-d"
+          name="error-help"
+          value="D"
+          required
+        />
+        <label for="error-help-d">D. The name of the person you expect to help you.</label>
+        <br />
+      </div>
+    
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="navigating-distractions">What is the expectation regarding distractions during program time?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="navigating-distractions-a"
+          name="navigating-distractions"
+          value="A"
+          required
+        />
+        <label for="navigating-distractions-a">A. They are allowed during breaks.</label>
+        <br />
+        <input
+          type="radio"
+          id="navigating-distractions-b"
+          name="navigating-distractions"
+          value="B"
+          required
+        />
+        <label for="navigating-distractions-b">B. Participants should eliminate distractions and stay focused on learning.</label>
+        <br />
+        <input
+          type="radio"
+          id="navigating-distractions-c"
+          name="navigating-distractions"
+          value="C"
+          required
+        />
+        <label for="navigating-distractions-c">C. Distractions are acceptable if they relate to personal growth..</label>
+        <br />
+        <input
+          type="radio"
+          id="navigating-distractions-d"
+          name="navigating-distractions"
+          value="D"
+          required
+        />
+        <label for="navigating-distractions-d">D. They are only an issue during group activities.</label>
+        <br />
+      </div>
+
+      <h4>2. Communication & Professionalism</h4>
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="receiving-feedback">When receiving feedback, what is a recommended action?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="receiving-feedback-a"
+          name="receiving-feedback"
+          value="A"
+          required
+        />
+        <label for="receiving-feedback-a">A. Immediately explain your intentions.</label>
+        <br />
+        <input
+          type="radio"
+          id="receiving-feedback-b"
+          name="receiving-feedback"
+          value="B"
+          required
+        />
+        <label for="receiving-feedback-b">B. Actively listen, summarize feedback to check understanding, and thank the person.</label>
+        <br />
+        <input
+          type="radio"
+          id="receiving-feedback-c"
+          name="receiving-feedback"
+          value="C"
+          required
+        />
+        <label for="receiving-feedback-c">C. Take it personally to understand its full impact.</label>
+        <br />
+        <input
+          type="radio"
+          id="receiving-feedback-d"
+          name="receiving-feedback"
+          value="D"
+          required
+        />
+        <label for="receiving-feedback-d">D. Ignore it if you disagree with it.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="giving-feedback">Which of the following is an acceptable way to give Techtonica feedback? (Select all that apply)
+        </label>
+        <br />
+        <input
+          type="checkbox"
+          id="giving-feedback-a"
+          name="giving-feedback"
+          value="A"
+          required
+        />
+        <label for="giving-feedback-a">A. Weekly survey for feedback.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="giving-feedback-b"
+          name="giving-feedback"
+          value="B"
+          required
+        />
+        <label for="giving-feedback-b">B. Staff reviews.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="giving-feedback-c"
+          name="giving-feedback"
+          value="C"
+          required
+        />
+        <label for="giving-feedback-c">C. Peer reviews.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="giving-feedback-d"
+          name="giving-feedback"
+          value="D"
+          required
+        />
+        <label for="giving-feedback-d">D. Anonymous feedback form as a last resort.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="giving-feedback-e"
+          name="giving-feedback"
+          value="E"
+          required
+        />
+        <label for="giving-feedback-d">E. All of the above.</label>
+        <br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="camera-expectations">For virtual events and meetings, what is an expectation regarding your camera and focus?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="camera-expectations-a"
+          name="camera-expectations"
+          value="A"
+          required
+        />
+        <label for="camera-expectations-a">A. Keep your camera off to save bandwidth.</label>
+        <br />
+        <input
+          type="radio"
+          id="camera-expectations-b"
+          name="camera-expectations"
+          value="B"
+          required
+        />
+        <label for="camera-expectations-b">B. Keep your camera on and show you are focused on the speaker (no texting, eating).</label>
+        <br />
+        <input
+          type="radio"
+          id="camera-expectations-c"
+          name="camera-expectations"
+          value="C"
+          required
+        />
+        <label for="camera-expectations-c">C. You can text as long as you are still listening.</label>
+        <br />
+        <input
+          type="radio"
+          id="camera-expectations-d"
+          name="camera-expectations"
+          value="D"
+          required
+        />
+        <label for="camera-expectations-d">D. Eating is allowed if your microphone is muted.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="written-communication">Where should all written Techtonica-related communication primarily take place?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="written-communication-a"
+          name="written-communication"
+          value="A"
+          required
+        />
+        <label for="written-communication-a">A. Personal email accounts.</label>
+        <br />
+        <input
+          type="radio"
+          id="written-communication-b"
+          name="written-communication"
+          value="B"
+          required
+        />
+        <label for="written-communication-b">B. Official Techtonica Slack, official Techtonica docs, Techtonica platforms, or via email.</label>
+        <br />
+        <input
+          type="radio"
+          id="written-communication-c"
+          name="written-communication"
+          value="C"
+          required
+        />
+        <label for="written-communication-c">C. Social media direct messages.</label>
+        <br />
+        <input
+          type="radio"
+          id="written-communication-d"
+          name="written-communication"
+          value="D"
+          required
+        />
+        <label for="written-communication-d">D. Any platform convenient for the participant.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="tech-question-format">When asking a question in the #tech-help Slack channel, what is the recommended format?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="tech-question-format-a"
+          name="tech-question-format"
+          value="A"
+          required
+        />
+        <label for="tech-question-format-a">A. "Can I ask a question?"</label>
+        <br />
+        <input
+          type="radio"
+          id="tech-question-format-b"
+          name="tech-question-format"
+          value="B"
+          required
+        />
+        <label for="tech-question-format-b">B. Just post your code and error message.</label>
+        <br />
+        <input
+          type="radio"
+          id="tech-question-format-c"
+          name="tech-question-format"
+          value="C"
+          required
+        />
+        <label for="tech-question-format-c">C. Thoughtfully write out the question including tech stack, goal, what you've tried, errors, and a link to code.</label>
+        <br />
+        <input
+          type="radio"
+          id="tech-question-format-d"
+          name="tech-question-format"
+          value="D"
+          required
+        />
+        <label for="tech-question-format-d">D. Send a private message to a staff member.</label>
+        <br />
+      </div>
+
+      <h4>3. Attendance & Honesty</h4>
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="on-time">What does "being on time" for program activities include?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="on-time-a"
+          name="on-time"
+          value="A"
+          required
+        />
+        <label for="on-time-a">A. Arriving exactly at the start time.</label>
+        <br />
+        <input
+          type="radio"
+          id="on-time-b"
+          name="on-time"
+          value="B"
+          required
+        />
+        <label for="on-time-b">B. Being present for only the main lecture.</label>
+        <br />
+        <input
+          type="radio"
+          id="on-time-c"
+          name="on-time"
+          value="C"
+          required
+        />
+        <label for="on-time-c">C. Notifying staff 5 minutes before if you are late.</label>
+        <br />
+        <input
+          type="radio"
+          id="on-time-d"
+          name="on-time"
+          value="D"
+          required
+        />
+        <label for="on-time-d">D. Being in the meeting with your camera on and ready to be present.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="planned-absences">How many days of planned absences are participants allowed during the program, and how must they be approved?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="planned-absences-a"
+          name="planned-absences"
+          value="A"
+          required
+        />
+        <label for="planned-absences-a">A. Unlimited, with verbal notification.</label>
+        <br />
+        <input
+          type="radio"
+          id="planned-absences-b"
+          name="planned-absences"
+          value="B"
+          required
+        />
+        <label for="planned-absences-b">B. 3 days, with no prior approval needed.</label>
+        <br />
+        <input
+          type="radio"
+          id="planned-absences-c"
+          name="planned-absences"
+          value="C"
+          required
+        />
+        <label for="planned-absences-c">C. Up to 5 days, pre-approved by Techtonica (TPM and STEM) at least 24 hours in advance.</label>
+        <br />
+        <input
+          type="radio"
+          id="planned-absences-d"
+          name="planned-absences"
+          value="D"
+          required
+        />
+        <label for="planned-absences-d">D. 10 days, as long as assignments are completed.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="two-days-forfeit">What happens if a participant is absent for two (2) consecutive days without leave/notice?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="two-days-forfeit-a"
+          name="two-days-forfeit"
+          value="A"
+          required
+        />
+        <label for="two-days-forfeit-a">A. They receive a verbal warning.</label>
+        <br />
+        <input
+          type="radio"
+          id="two-days-forfeit-b"
+          name="two-days-forfeit"
+          value="B"
+          required
+        />
+        <label for="two-days-forfeit-b">B. They forfeit their participation in the program.</label>
+        <br />
+        <input
+          type="radio"
+          id="two-days-forfeit-c"
+          name="two-days-forfeit"
+          value="C"
+          required
+        />
+        <label for="two-days-forfeit-c">C. Their stipend is reduced by 50%.</label>
+        <br />
+        <input
+          type="radio"
+          id="two-days-forfeit-d"
+          name="two-days-forfeit"
+          value="D"
+          required
+        />
+        <label for="two-days-forfeit-d">D. They must make up the time on a weekend.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="honesty-violation">Which of the following is considered a violation of honesty? (Select all that apply)
+        </label>
+        <br />
+        <input
+          type="checkbox"
+          id="honesty-violation-a"
+          name="honesty-violation"
+          value="A"
+          required
+        />
+        <label for="honesty-violation-a">A. Copying others' work and submitting it as your own.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="honesty-violation-b"
+          name="honesty-violation"
+          value="B"
+          required
+        />
+        <label for="honesty-violation-b">B. Not properly acknowledging your sources.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="honesty-violation-c"
+          name="honesty-violation"
+          value="C"
+          required
+        />
+        <label for="honesty-violation-c">C. Giving or accepting assistance on assignments you're supposed to complete alone.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="honesty-violation-d"
+          name="honesty-violation"
+          value="D"
+          required
+        />
+        <label for="honesty-violation-d">D. Taking program time to work on non-program things.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="honesty-violation-e"
+          name="honesty-violation"
+          value="E"
+          required
+        />
+        <label for="honesty-violation-d">E. All of the above.</label>
+        <br />
+      </div>
+
+
+      <h4>4. Mentors, Assignments & Placement</h4>
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="mentor-commitment">How often should you meet with your individual mentor?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="mentor-commitment-a"
+          name="mentor-commitment"
+          value="A"
+          required
+        />
+        <label for="mentor-commitment-a">A. Once per month.</label>
+        <br />
+        <input
+          type="radio"
+          id="mentor-commitment-b"
+          name="mentor-commitment"
+          value="B"
+          required
+        />
+        <label for="mentor-commitment-b">B. Once per week, outside of Techtonica program hours.</label>
+        <br />
+        <input
+          type="radio"
+          id="mentor-commitment-c"
+          name="mentor-commitment"
+          value="C"
+          required
+        />
+        <label for="mentor-commitment-c">C. Only when you have a specific problem.</label>
+        <br />
+        <input
+          type="radio"
+          id="mentor-commitment-d"
+          name="mentor-commitment"
+          value="D"
+          required
+        />
+        <label for="mentor-commitment-d">D. As often as your mentor requests.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="assignment-definition">What is considered an "assignment" in the Techtonica program? (Select all that apply)
+        </label>
+        <br />
+        <input
+          type="checkbox"
+          id="assignment-definition-a"
+          name="assignment-definition"
+          value="A"
+          required
+        />
+        <label for="assignment-definition-a">A. Reading and watching materials.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="assignment-definition-b"
+          name="assignment-definition"
+          value="B"
+          required
+        />
+        <label for="assignment-definition-b">B. Writing code and building projects.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="assignment-definition-c"
+          name="assignment-definition"
+          value="C"
+          required
+        />
+        <label for="assignment-definition-c">C. Completing surveys.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="assignment-definition-d"
+          name="assignment-definition"
+          value="D"
+          required
+        />
+        <label for="assignment-definition-d">D. Attending at least one networking event each month.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="assignment-definition-e"
+          name="assignment-definition"
+          value="E"
+          required
+        />
+        <label for="assignment-definition-d">E. All of the above.</label>
+        <br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="no-placement-guarantee">What is Techtonica's stance on guaranteeing job placement upon program completion?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="no-placement-guarantee-a"
+          name="no-placement-guarantee"
+          value="A"
+          required
+        />
+        <label for="no-placement-guarantee-a">A. Job placement is guaranteed for all participants.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-placement-guarantee-b"
+          name="no-placement-guarantee"
+          value="B"
+          required
+        />
+        <label for="no-placement-guarantee-b">B. Placement is guaranteed only for top-performing participants.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-placement-guarantee-c"
+          name="no-placement-guarantee"
+          value="C"
+          required
+        />
+        <label for="no-placement-guarantee-c">C. There is no guarantee of placement, but Techtonica makes a good faith effort to secure positions.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-placement-guarantee-d"
+          name="no-placement-guarantee"
+          value="D"
+          required
+        />
+        <label for="no-placement-guarantee-d">D. Participants are solely responsible for finding their own placements.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="ineligible-for-placement">Which of the following criteria might prevent a Techtonica participant from interviewing for placements? (Select all that apply)
+        </label>
+        <br />
+        <input
+          type="checkbox"
+          id="ineligible-for-placement-a"
+          name="ineligible-for-placement"
+          value="A"
+          required
+        />
+        <label for="ineligible-for-placement-a">A. Not submitting assignments on time.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="ineligible-for-placement-b"
+          name="ineligible-for-placement"
+          value="B"
+          required
+        />
+        <label for="ineligible-for-placement-b">B. Not completing their final projects.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="ineligible-for-placement-c"
+          name="ineligible-for-placement"
+          value="C"
+          required
+        />
+        <label for="ineligible-for-placement-c">C. Not scoring at least an average of 3.5 on practice interviews.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="ineligible-for-placement-d"
+          name="ineligible-for-placement"
+          value="D"
+          required
+        />
+        <label for="ineligible-for-placement-d">D. Not meeting other program requirements.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="ineligible-for-placement-e"
+          name="ineligible-for-placement"
+          value="E"
+          required
+        />
+        <label for="ineligible-for-placement-d">E. All of the above.</label>
+        <br />
+      </div>
+
+
+      <h4>5. Tuition & Stipends</h4>
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="tax-form-distributed">What type of tax form may be sent to participants who received stipends at the end of January of the following year?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="tax-form-distributed-a"
+          name="tax-form-distributed"
+          value="A"
+          required
+        />
+        <label for="tax-form-distributed-a">A. W-2 Form.</label>
+        <br />
+        <input
+          type="radio"
+          id="tax-form-distributed-b"
+          name="tax-form-distributed"
+          value="B"
+          required
+        />
+        <label for="tax-form-distributed-b">B. 1040 Form.</label>
+        <br />
+        <input
+          type="radio"
+          id="tax-form-distributed-c"
+          name="tax-form-distributed"
+          value="C"
+          required
+        />
+        <label for="tax-form-distributed-c">C. W-9 Form.</label>
+        <br />
+        <input
+          type="radio"
+          id="tax-form-distributed-d"
+          name="tax-form-distributed"
+          value="D"
+          required
+        />
+        <label for="tax-form-distributed-d">D. 1099-Miscellaneous Tax Form.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="late-monthly-tuition-payment">What is the consequence of late monthly tuition payments?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="late-monthly-tuition-payment-a"
+          name="late-monthly-tuition-payment"
+          value="A"
+          required
+        />
+        <label for="late-monthly-tuition-payment-a">A. A flat late fee of $50.</label>
+        <br />
+        <input
+          type="radio"
+          id="late-monthly-tuition-payment-b"
+          name="late-monthly-tuition-payment"
+          value="B"
+          required
+        />
+        <label for="late-monthly-tuition-payment-b">B. Daily compounding interest at a 12% rate, which could lead to removal from the Program.</label>
+        <br />
+        <input
+          type="radio"
+          id="late-monthly-tuition-payment-c"
+          name="late-monthly-tuition-payment"
+          value="C"
+          required
+        />
+        <label for="late-monthly-tuition-payment-c">C. A warning, with no immediate financial penalty.</label>
+        <br />
+        <input
+          type="radio"
+          id="late-monthly-tuition-payment-d"
+          name="late-monthly-tuition-payment"
+          value="D"
+          required
+        />
+        <label for="late-monthly-tuition-payment-d">D. The Participant's stipend is immediately reduced.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="participant-tax-liability">Who is responsible for a Participant's tax liability related to stipends received?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="participant-tax-liability-a"
+          name="participant-tax-liability"
+          value="A"
+          required
+        />
+        <label for="participant-tax-liability-a">A. The Organization.</label>
+        <br />
+        <input
+          type="radio"
+          id="participant-tax-liability-b"
+          name="participant-tax-liability"
+          value="B"
+          required
+        />
+        <label for="participant-tax-liability-b">B. Social Good Fund (the fiscal sponsor).</label>
+        <br />
+        <input
+          type="radio"
+          id="participant-tax-liability-c"
+          name="participant-tax-liability"
+          value="C"
+          required
+        />
+        <label for="participant-tax-liability-c">C. The Participant.</label>
+        <br />
+        <input
+          type="radio"
+          id="participant-tax-liability-d"
+          name="participant-tax-liability"
+          value="D"
+          required
+        />
+        <label for="participant-tax-liability-d">D. The IRS.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="tax-form-receipt-timeline">When will a 1099-NEC tax form be emailed to Participants who received stipends?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="tax-form-receipt-timeline-a"
+          name="tax-form-receipt-timeline"
+          value="A"
+          required
+        />
+        <label for="tax-form-receipt-timeline-a">A. At the end of the Program.</label>
+        <br />
+        <input
+          type="radio"
+          id="tax-form-receipt-timeline-b"
+          name="tax-form-receipt-timeline"
+          value="B"
+          required
+        />
+        <label for="tax-form-receipt-timeline-b">B. Within 30 days of the last stipend payment.</label>
+        <br />
+        <input
+          type="radio"
+          id="tax-form-receipt-timeline-c"
+          name="tax-form-receipt-timeline"
+          value="C"
+          required
+        />
+        <label for="tax-form-receipt-timeline-c">C. At the end of January of the year following Program completion.</label>
+        <br />
+        <input
+          type="radio"
+          id="tax-form-receipt-timeline-d"
+          name="tax-form-receipt-timeline"
+          value="D"
+          required
+        />
+        <label for="tax-form-receipt-timeline-d">D. Only upon request from the Participant.</label><br />
+      </div>
+
+
+      <h4>6. Job Placement & Program Withdrawal/Termination</h4>
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="no-placement-guaranteed">Does Techtonica guarantee job placement upon completion of the Program?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="no-placement-guaranteed-a"
+          name="no-placement-guaranteed"
+          value="A"
+          required
+        />
+        <label for="no-placement-guaranteed-a">A. Yes, job placement is guaranteed for all participants.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-placement-guaranteed-b"
+          name="no-placement-guaranteed"
+          value="B"
+          required
+        />
+        <label for="no-placement-guaranteed-b">B. No, job placement is not guaranteed, but the Organization makes a good faith effort to secure positions.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-placement-guaranteed-c"
+          name="no-placement-guaranteed"
+          value="C"
+          required
+        />
+        <label for="no-placement-guaranteed-c">C. Only for participants who receive a full tuition scholarship.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-placement-guaranteed-d"
+          name="no-placement-guaranteed"
+          value="D"
+          required
+        />
+        <label for="no-placement-guaranteed-d">D. Only if the participant agrees to relocate for in-person work.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="unplaced-financial-consequences">If a Participant completes the Program but is not placed with a hiring Sponsor, what are the financial consequences?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="unplaced-financial-consequences-a"
+          name="unplaced-financial-consequences"
+          value="A"
+          required
+        />
+        <label for="unplaced-financial-consequences-a">A. They are required to pay a fee for job search support.</label>
+        <br />
+        <input
+          type="radio"
+          id="unplaced-financial-consequences-b"
+          name="unplaced-financial-consequences"
+          value="B"
+          required
+        />
+        <label for="unplaced-financial-consequences-b">B. They must return any stipends received.</label>
+        <br />
+        <input
+          type="radio"
+          id="unplaced-financial-consequences-c"
+          name="unplaced-financial-consequences"
+          value="C"
+          required
+        />
+        <label for="unplaced-financial-consequences-c">C. There are no financial consequences, but if they have an outstanding tuition balance, that must be paid in full.</label>
+        <br />
+        <input
+          type="radio"
+          id="unplaced-financial-consequences-d"
+          name="unplaced-financial-consequences"
+          value="D"
+          required
+        />
+        <label for="unplaced-financial-consequences-d">D. They must pay the sponsor for placement.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="nontechnical-withdrawal-financial-obligation">If a Participant withdraws from the Program for a reason other than starting a technical job, what could be the financial obligation?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="nontechnical-withdrawal-financial-obligation-a"
+          name="nontechnical-withdrawal-financial-obligation"
+          value="A"
+          required
+        />
+        <label for="nontechnical-withdrawal-financial-obligation-a">A. No financial obligation, as long as they provide notice.</label>
+        <br />
+        <input
+          type="radio"
+          id="nontechnical-withdrawal-financial-obligation-b"
+          name="nontechnical-withdrawal-financial-obligation"
+          value="B"
+          required
+        />
+        <label for="nontechnical-withdrawal-financial-obligation-b">B. They could be required to return any awarded and disbursed stipends and pay $1,000 per partial or full week of participation, or remaining tuition payments.</label>
+        <br />
+        <input
+          type="radio"
+          id="nontechnical-withdrawal-financial-obligation-c"
+          name="nontechnical-withdrawal-financial-obligation"
+          value="C"
+          required
+        />
+        <label for="nontechnical-withdrawal-financial-obligation-c">C. Only the remaining tuition payments are due.</label>
+        <br />
+        <input
+          type="radio"
+          id="nontechnical-withdrawal-financial-obligation-d"
+          name="nontechnical-withdrawal-financial-obligation"
+          value="D"
+          required
+        />
+        <label for="nontechnical-withdrawal-financial-obligation-d">D. Only the return of disbursed stipends.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="technical-withdrawal-financial-obligation">If a Participant withdraws from the Program to start a technical job with a company that is NOT a Sponsor, what is a potential financial obligation?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="technical-withdrawal-financial-obligation-a"
+          name="technical-withdrawal-financial-obligation"
+          value="A"
+          required
+        />
+        <label for="technical-withdrawal-financial-obligation-a">A. No financial obligation, as they secured a job.</label>
+        <br />
+        <input
+          type="radio"
+          id="technical-withdrawal-financial-obligation-b"
+          name="technical-withdrawal-financial-obligation"
+          value="B"
+          required
+        />
+        <label for="technical-withdrawal-financial-obligation-b">B. They must commit the company to becoming an advocate hiring sponsor ($35,000) or personally pay a withdrawal fee of $17,000 or remaining tuition payments.</label>
+        <br />
+        <input
+          type="radio"
+          id="technical-withdrawal-financial-obligation-c"
+          name="technical-withdrawal-financial-obligation"
+          value="C"
+          required
+        />
+        <label for="technical-withdrawal-financial-obligation-c">C. They only need to return any stipends received.</label>
+        <br />
+        <input
+          type="radio"
+          id="technical-withdrawal-financial-obligation-d"
+          name="technical-withdrawal-financial-obligation"
+          value="D"
+          required
+        />
+        <label for="technical-withdrawal-financial-obligation-d">D. A flat fee of $1,000.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="placement-decisions">Who makes the final decision about which hiring Sponsor a placed Participant might be assigned to?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="placement-decisions-a"
+          name="placement-decisions"
+          value="A"
+          required
+        />
+        <label for="placement-decisions-a">A. The Participant.</label>
+        <br />
+        <input
+          type="radio"
+          id="placement-decisions-b"
+          name="placement-decisions"
+          value="B"
+          required
+        />
+        <label for="placement-decisions-b">B. The hiring Sponsor.</label>
+        <br />
+        <input
+          type="radio"
+          id="placement-decisions-c"
+          name="placement-decisions"
+          value="C"
+          required
+        />
+        <label for="placement-decisions-c">C. The Organization.</label>
+        <br />
+        <input
+          type="radio"
+          id="placement-decisions-d"
+          name="placement-decisions"
+          value="D"
+          required
+        />
+        <label for="placement-decisions-d">D. It is a mutual decision between the Participant and the Organization.</label><br />
+      </div>
+
+
+
+      <h4>7. Violations & General Terms</h4>
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="participant-agreement-violation">What is a potential consequence for any violation of the Participant Agreement?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="participant-agreement-violation-a"
+          name="participant-agreement-violation"
+          value="A"
+          required
+        />
+        <label for="participant-agreement-violation-a">A. A verbal warning only.</label>
+        <br />
+        <input
+          type="radio"
+          id="participant-agreement-violation-b"
+          name="participant-agreement-violation"
+          value="B"
+          required
+        />
+        <label for="participant-agreement-violation-b">B. A discussion that could lead to penalization up to and including removal from the Program and being required to pay up to $18,000 of tuition.</label>
+        <br />
+        <input
+          type="radio"
+          id="participant-agreement-violation-c"
+          name="participant-agreement-violation"
+          value="C"
+          required
+        />
+        <label for="participant-agreement-violation-c">C. Immediate termination without discussion.</label>
+        <br />
+        <input
+          type="radio"
+          id="participant-agreement-violation-d"
+          name="participant-agreement-violation"
+          value="D"
+          required
+        />
+        <label for="participant-agreement-violation-d">D. Only a reduction in stipend.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="no-soliticitation-of-services">For how long after termination of the Agreement are Participants expected to refrain from soliciting service providers or agents of the Organization as partners or employees?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="no-soliticitation-of-services-a"
+          name="no-soliticitation-of-services"
+          value="A"
+          required
+        />
+        <label for="no-soliticitation-of-services-a">A. 6 months.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-soliticitation-of-services-b"
+          name="no-soliticitation-of-services"
+          value="B"
+          required
+        />
+        <label for="no-soliticitation-of-services-b">B. 1 year.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-soliticitation-of-services-c"
+          name="no-soliticitation-of-services"
+          value="C"
+          required
+        />
+        <label for="no-soliticitation-of-services-c">C. 2 years.</label>
+        <br />
+        <input
+          type="radio"
+          id="no-soliticitation-of-services-d"
+          name="no-soliticitation-of-services"
+          value="D"
+          required
+        />
+        <label for="no-soliticitation-of-services-d">D. Indefinitely.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="discipline-process">What is the first step in Techtonica's progressive discipline process for unacceptable participant behavior?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="discipline-process-a"
+          name="discipline-process"
+          value="A"
+          required
+        />
+        <label for="discipline-process-a">A. Written warning.</label>
+        <br />
+        <input
+          type="radio"
+          id="discipline-process-b"
+          name="discipline-process"
+          value="B"
+          required
+        />
+        <label for="discipline-process-b">B. Dismissal from the program.</label>
+        <br />
+        <input
+          type="radio"
+          id="discipline-process-c"
+          name="discipline-process"
+          value="C"
+          required
+        />
+        <label for="discipline-process-c">C. Verbal warning.</label>
+        <br />
+        <input
+          type="radio"
+          id="discipline-process-d"
+          name="discipline-process"
+          value="D"
+          required
+        />
+        <label for="discipline-process-d">D. 50% stipend reduction.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="pip-and-stipend">If a participant receives a written warning and is placed on a Performance Improvement Plan (PIP), what happens to their upcoming monthly stipend?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="pip-and-stipend-a"
+          name="pip-and-stipend"
+          value="A"
+          required
+        />
+        <label for="pip-and-stipend-a">A. It is cut in half for that month.</label>
+        <br />
+        <input
+          type="radio"
+          id="pip-and-stipend-b"
+          name="pip-and-stipend"
+          value="B"
+          required
+        />
+        <label for="pip-and-stipend-b">B. It is increased by 50%.</label>
+        <br />
+        <input
+          type="radio"
+          id="pip-and-stipend-c"
+          name="pip-and-stipend"
+          value="C"
+          required
+        />
+        <label for="pip-and-stipend-c">C. It remains unchanged.</label>
+        <br />
+        <input
+          type="radio"
+          id="pip-and-stipend-d"
+          name="pip-and-stipend"
+          value="D"
+          required
+        />
+        <label for="pip-and-stipend-d">D. It is stopped entirely.</label><br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="post-PIP-violation">If a participant has received a written warning and PIP with a re-commitment statement, and then commits another violation, what is the likely outcome?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="post-PIP-violation-a"
+          name="post-PIP-violation"
+          value="A"
+          required
+        />
+        <label for="post-PIP-violation-a">A. Another verbal warning.</label>
+        <br />
+        <input
+          type="radio"
+          id="post-PIP-violation-b"
+          name="post-PIP-violation"
+          value="B"
+          required
+        />
+        <label for="post-PIP-violation-b">B. They will have effectively dismissed themselves from the program.</label>
+        <br />
+        <input
+          type="radio"
+          id="post-PIP-violation-c"
+          name="post-PIP-violation"
+          value="C"
+          required
+        />
+        <label for="post-PIP-violation-c">C. Their stipend will be cut by 100%.</label>
+        <br />
+        <input
+          type="radio"
+          id="post-PIP-violation-d"
+          name="post-PIP-violation"
+          value="D"
+          required
+        />
+        <label for="post-PIP-violation-d">D. They will be given a new PIP.</label><br />
+      </div>
+
+
+      <h4>8. Core Principles & Scope</h4>
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="space-for-members-and-guests">Techtonica is dedicated to providing a safe, inclusive, welcoming, and harassment-free space for all members and guests, regardless of which of the following characteristics? (Select all that apply)
+        </label>
+        <br />
+        <input
+          type="checkbox"
+          id="space-for-members-and-guests-a"
+          name="space-for-members-and-guests"
+          value="A"
+          required
+        />
+        <label for="space-for-members-and-guests-a">A. Gender identity and expression.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="space-for-members-and-guests-b"
+          name="space-for-members-and-guests"
+          value="B"
+          required
+        />
+        <label for="space-for-members-and-guests-b">B. Sexual orientation.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="space-for-members-and-guests-c"
+          name="space-for-members-and-guests"
+          value="C"
+          required
+        />
+        <label for="space-for-members-and-guests-c">C. Disability.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="space-for-members-and-guests-d"
+          name="space-for-members-and-guests"
+          value="D"
+          required
+        />
+        <label for="space-for-members-and-guests-d">D. Socioeconomic status.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="space-for-members-and-guests-e"
+          name="space-for-members-and-guests"
+          value="E"
+          required
+        />
+        <label for="space-for-members-and-guests-d">E. All of the above.</label>
+        <br />
+      </div>
+      
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="code-of-conduct-application">Where does the Techtonica Code of Conduct apply? (Select all that apply)
+        </label>
+        <br />  
+        <input
+          type="checkbox"
+          id="code-of-conduct-application-a"
+          name="code-of-conduct-application"
+          value="A"
+          required
+        />
+        <label for="code-of-conduct-application-a">A. All Techtonica spaces (online and off).</label>
+        <br />
+        <input
+          type="checkbox"
+          id="code-of-conduct-application-b"
+          name="code-of-conduct-application"
+          value="B"
+          required
+        />
+        <label for="code-of-conduct-application-b">B. Techtonica events (for both members and their guests).</label>
+        <br />
+        <input
+          type="checkbox"
+          id="code-of-conduct-application-c"
+          name="code-of-conduct-application"
+          value="C"
+          required
+        />
+        <label for="code-of-conduct-application-c">C. One-on-one communications pertaining to Techtonica business.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="code-of-conduct-application-d"
+          name="code-of-conduct-application"
+          value="D"
+          required
+        />
+        <label for="code-of-conduct-application-d">D. Specific Slack channels (with additional posted rules).</label>
+        <br />
+        <input
+          type="checkbox"
+          id="code-of-conduct-application-e"
+          name="code-of-conduct-application"
+          value="E"
+          required
+        />
+        <label for="code-of-conduct-application-d">E. All of the above.</label>
+        <br />
+      </div>
+
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="no-outing-identity">What is Techtonica's priority regarding safety and comfort?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="safety-comfort-priority-a"
+          name="safety-comfort-priority"
+          value="A"
+          required
+        />
+        <label for="safety-comfort-priority-a">A. Prioritizing privileged people's comfort over marginalized people's safety.</label>
+        <br />
+        <input
+          type="radio"
+          id="safety-comfort-priority-b"
+          name="safety-comfort-priority"
+          value="B"
+          required
+        />
+        <label for="safety-comfort-priority-b">B. Prioritizing marginalized people's safety over privileged people's comfort.</label>
+        <br />
+        <input
+          type="radio"
+          id="safety-comfort-priority-c"
+          name="safety-comfort-priority"
+          value="C"
+          required
+        />
+        <label for="safety-comfort-priority-c">C. Balancing both equally.</label>
+        <br />
+        <input
+          type="radio"
+          id="safety-comfort-priority-d"
+          name="safety-comfort-priority"
+          value="D"
+          required
+        />
+        <label for="safety-comfort-priority-d">D. It depends on the specific situation.</label><br />
+      </div>
+
+
+     <h4>9. Prohibited Behavior</h4>
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="code-of-conduct-harrassment">Which of the following is considered a form of harassment under the Code of Conduct? (Select all that apply)
+        </label>
+        <br />  
+        <input
+          type="checkbox"
+          id="code-of-conduct-harrassment-a"
+          name="code-of-conduct-harrassment"
+          value="A"
+          required
+        />
+        <label for="code-of-conduct-harrassment-a">A. Discriminatory language related to gender, race, or religion.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="code-of-conduct-harrassment-b"
+          name="code-of-conduct-harrassment"
+          value="B"
+          required
+        />
+        <label for="code-of-conduct-harrassment-b">B. Unwelcome sexual attention.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="code-of-conduct-harrassment-c"
+          name="code-of-conduct-harrassment"
+          value="C"
+          required
+        />
+        <label for="code-of-conduct-harrassment-c">C. Violent language or threats of violence.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="code-of-conduct-harrassment-d"
+          name="code-of-conduct-harrassment"
+          value="D"
+          required
+        />
+        <label for="code-of-conduct-harrassment-d">D. Specific Slack channels (with additional posted rules).</label>
+        <br />
+        <input
+          type="checkbox"
+          id="code-of-conduct-harrassment-e"
+          name="code-of-conduct-harrassment"
+          value="E"
+          required
+        />
+        <label for="code-of-conduct-harrassment-d">E. All of the above.</label>
+        <br />
+      </div>
+
+      <div>
+        <label for="considered-harassment">Is "trolling, insults, or personal attacks" considered harassment?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="considered-harassment-a"
+          name="considered-harassment"
+          value="A"
+          required
+        />
+        <label for="considered-harassment-a">A. Yes.</label>
+        <br />
+        <input
+          type="radio"
+          id="considered-harassment-b"
+          name="considered-harassment"
+          value="B"
+          required
+        />
+        <label for="considered-harassment-b">B. No.</label>
+        <br />
+        <input
+          type="radio"
+          id="considered-harassment-c"
+          name="considered-harassment"
+          value="C"
+          required
+        />
+        <label for="considered-harassment-c">C. Only if it's directed at a staff member.</label>
+        <br />
+        <input
+          type="radio"
+          id="considered-harassment-d"
+          name="considered-harassment"
+          value="D"
+          required
+        />
+        <label for="considered-harassment-d">D. Only if it's in a public channel.</label><br />
+      </div>
+
+      <div>
+        <label for="explicit-harassment">Which of the following actions is explicitly listed as harassment?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="explicit-harassment-a"
+          name="explicit-harassment"
+          value="A"
+          required
+        />
+        <label for="explicit-harassment-a">A. Criticizing racist behavior.</label>
+        <br />
+        <input
+          type="radio"
+          id="explicit-harassment-b"
+          name="explicit-harassment"
+          value="B"
+          required
+        />
+        <label for="explicit-harassment-b">B. Reasonable communication of boundaries like "leave me alone."</label>
+        <br />
+        <input
+          type="radio"
+          id="explicit-harassment-c"
+          name="explicit-harassment"
+          value="C"
+          required
+        />
+        <label for="explicit-harassment-c">C. Publication of non-harassing private communication without consent.</label>
+        <br />
+        <input
+          type="radio"
+          id="explicit-harassment-d"
+          name="explicit-harassment"
+          value="D"
+          required
+        />
+        <label for="explicit-harassment-d">D. Verbal communication in a tone you don't find pleasant.</label><br />
+      </div>
+
+      <div>
+        <label for="outing-policy">What is the policy regarding "outing" any aspect of a person's identity?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="outing-policy-a"
+          name="outing-policy"
+          value="A"
+          required
+        />
+        <label for="outing-policy-a">A. It is allowed if it's relevant to the program.</label>
+        <br />
+        <input
+          type="radio"
+          id="outing-policy-b"
+          name="outing-policy"
+          value="B"
+          required
+        />
+        <label for="outing-policy-b">B. It is prohibited without their consent.</label>
+        <br />
+        <input
+          type="radio"
+          id="outing-policy-c"
+          name="outing-policy"
+          value="C"
+          required
+        />
+        <label for="outing-policy-c">C. It is acceptable if done privately.</label>
+        <br />
+        <input
+          type="radio"
+          id="outing-policy-d"
+          name="outing-policy"
+          value="D"
+          required
+        />
+        <label for="outing-policy-d">D. It is only an issue if it causes direct harm.</label><br />
+      </div>
+
+
+     <h4>10. Appropriate Behavior & Enforcement</h4>
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="healthy-community">Which of the following contributes to a healthy Techtonica community? (Select all that apply)
+        </label>
+        <br />  
+        <input
+          type="checkbox"
+          id="healthy-community-a"
+          name="healthy-community"
+          value="A"
+          required
+        />
+        <label for="healthy-community-a">A. Participating in an authentic and empathetic way.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="healthy-community-b"
+          name="healthy-community"
+          value="B"
+          required
+        />
+        <label for="healthy-community-b">B. Using welcoming and inclusive language.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="healthy-community-c"
+          name="healthy-community"
+          value="C"
+          required
+        />
+        <label for="healthy-community-c">C. Alerting community moderators if you notice a dangerous situation or Code of Conduct violation.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="healthy-community-d"
+          name="healthy-community"
+          value="D"
+          required
+        />
+        <label for="healthy-community-d">D. Gracefully accepting constructive criticism.</label>
+        <br />
+        <input
+          type="checkbox"
+          id="healthy-community-e"
+          name="healthy-community"
+          value="E"
+          required
+        />
+        <label for="healthy-community-d">E. All of the above.</label>
+        <br />
+      </div>
+
+      <div>
+        <label for="request-to-stop-harassment">If a participant is asked to stop any harassing behavior, what is expected of them?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="request-to-stop-harassment-a"
+          name="request-to-stop-harassment"
+          value="A"
+          required
+        />
+        <label for="request-to-stop-harassment-a">A. They can explain their intentions before complying.</label>
+        <br />
+        <input
+          type="radio"
+          id="request-to-stop-harassment-b"
+          name="request-to-stop-harassment"
+          value="B"
+          required
+        />
+        <label for="request-to-stop-harassment-b">B. They are expected to comply immediately.</label>
+        <br />
+        <input
+          type="radio"
+          id="request-to-stop-harassment-c"
+          name="request-to-stop-harassment"
+          value="C"
+          required
+        />
+        <label for="request-to-stop-harassment-c">C. They can appeal the request to a moderator.</label>
+        <br />
+        <input
+          type="radio"
+          id="request-to-stop-harassment-d"
+          name="request-to-stop-harassment"
+          value="D"
+          required
+        />
+        <label for="request-to-stop-harassment-d">D. They can ignore it if they believe it's a "reverse-ism."</label><br />
+      </div>
+
+      <div>
+        <label for="community-moderation">What actions may community moderators take if a participant violates the Code of Conduct?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="community-moderation-a"
+          name="community-moderation"
+          value="A"
+          required
+        />
+        <label for="community-moderation-a">A. Only a discussion with mediators.</label>
+        <br />
+        <input
+          type="radio"
+          id="community-moderation-b"
+          name="community-moderation"
+          value="B"
+          required
+        />
+        <label for="community-moderation-b">B. Any action they deem appropriate, up to and including expulsion from an event and/or the community.</label>
+        <br />
+        <input
+          type="radio"
+          id="community-moderation-c"
+          name="community-moderation"
+          value="C"
+          required
+        />
+        <label for="community-moderation-c">C. Only a private warning.</label>
+        <br />
+        <input
+          type="radio"
+          id="community-moderation-d"
+          name="community-moderation"
+          value="D"
+          required
+        />
+        <label for="community-moderation-d">D. They must first get permission from all affected parties.</label><br />
+      </div>
+
+
+     <h4>11. Reporting & Moderation</h4>
+      <div id="radio-wrapper" role="radiogroup">
+        <label for="code-of-conduct-violation">If you experience or witness a Code of Conduct violation, how can you report it? (Select all that apply)
+        </label>
+        <br />  
+        <input
+          type="radio"
+          id="code-of-conduct-violation-a"
+          name="code-of-conduct-violation"
+          value="A"
+          required
+        />
+        <label for="code-of-conduct-violation-a">A. Emailing info@techtonica.org.</label>
+        <br />
+        <input
+          type="radio"
+          id="code-of-conduct-violation-b"
+          name="code-of-conduct-violation"
+          value="B"
+          required
+        />
+        <label for="code-of-conduct-violation-b">B. Contacting a staff member privately (email, text, phone, in person).</label>
+        <br />
+        <input
+          type="radio"
+          id="code-of-conduct-violation-c"
+          name="code-of-conduct-violation"
+          value="C"
+          required
+        />
+        <label for="code-of-conduct-violation-c">C. Communicating with the event organizer (if at an event).</label>
+        <br />
+        <input
+          type="radio"
+          id="code-of-conduct-violation-d"
+          name="code-of-conduct-violation"
+          value="D"
+          required
+        />
+        <label for="code-of-conduct-violation-d">D. Submitting an anonymous report via the online form.</label>
+        <br />
+        <input
+          type="radio"
+          id="code-of-conduct-violation-e"
+          name="code-of-conduct-violation"
+          value="E"
+          required
+        />
+        <label for="code-of-conduct-violation-e">E. All of the above.</label><br />
+      </div>
+
+      <div>
+        <label for="code-of-conduct-report">What details should be included in a report of a Code of Conduct violation? (Select all that apply)
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="code-of-conduct-report-a"
+          name="code-of-conduct-report"
+          value="A"
+          required
+        />
+        <label for="code-of-conduct-report-a">A. Contact info for the reporter (unless anonymous).</label>
+        <br />
+        <input
+          type="radio"
+          id="code-of-conduct-report-b"
+          name="code-of-conduct-report"
+          value="B"
+          required
+        />
+        <label for="code-of-conduct-report-b">B. Names or descriptions of people involved.</label>
+        <br />
+        <input
+          type="radio"
+          id="code-of-conduct-report-c"
+          name="code-of-conduct-report"
+          value="C"
+          required
+        />
+        <label for="code-of-conduct-report-c">C. When and where it happened.</label>
+        <br />
+        <input
+          type="radio"
+          id="code-of-conduct-report-d"
+          name="code-of-conduct-report"
+          value="D"
+          required
+        />
+        <label for="code-of-conduct-report-d">D. What happened and any additional context.</label>
+        <br />
+        <input
+          type="radio"
+          id="code-of-conduct-report-e"
+          name="code-of-conduct-report"
+          value="E"
+          required
+        />
+        <label for="code-of-conduct-report-e">E. All of the above.</label><br />
+      </div>
+
+      <div>
+        <label for="violating-moderator">If the person violating the Code of Conduct is a moderator, what will happen?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="violating-moderator-a"
+          name="violating-moderator"
+          value="A"
+          required
+        />
+        <label for="violating-moderator-a">A. They will handle the incident themselves to ensure fairness.</label>
+        <br />
+        <input
+          type="radio"
+          id="violating-moderator-b"
+          name="violating-moderator"
+          value="B"
+          required
+        />
+        <label for="violating-moderator-b">B. The report will be automatically dismissed.</label>
+        <br />
+        <input
+          type="radio"
+          id="violating-moderator-c"
+          name="violating-moderator"
+          value="C"
+          required
+        />
+        <label for="violating-moderator-c">C. They will be given a verbal warning only.</label>
+        <br />
+        <input
+          type="radio"
+          id="violating-moderator-d"
+          name="violating-moderator"
+          value="D"
+          required
+        />
+        <label for="violating-moderator-d">D. They will recuse themselves or be excused from handling the incident.</label><br />
+      </div>
+
+      <div>
+        <label for="naming-victims-policy">What is Techtonica's policy on naming harassment victims?
+        </label>
+        <br />
+        <input
+          type="radio"
+          id="naming-victims-policy-a"
+          name="naming-victims-policy"
+          value="A"
+          required
+        />
+        <label for="naming-victims-policy-a">A. Victims' names will always be made public for transparency.</label>
+        <br />
+        <input
+          type="radio"
+          id="naming-victims-policy-b"
+          name="naming-victims-policy"
+          value="B"
+          required
+        />
+        <label for="naming-victims-policy-b">B. Victims' names will not be named without their consent.</label>
+        <br />
+        <input
+          type="radio"
+          id="naming-victims-policy-c"
+          name="naming-victims-policy"
+          value="C"
+          required
+        />
+        <label for="naming-victims-policy-c">C. Victims' names will only be shared with law enforcement.</label>
+        <br />
+        <input
+          type="radio"
+          id="naming-victims-policy-d"
+          name="naming-victims-policy"
+          value="D"
+          required
+        />
+        <label for="naming-victims-policy-d">D. It depends on the severity of the harassment.</label><br />
+      </div>
+
+
+      <h4>Share Your Final Thoughts</h4>
+      <div>
+        <label for="participant-assessment-questions">
+          What questions do you have after reading through the Participant Handbook and Participant Agreement documents? (Please write complete statements.)</label>
+        <br />
+        <textarea
+          name="participant-assessment-questions"
+          id="participant-assessment-questions"
+          cols="100"
+          rows="4"
+        >
+        </textarea>
+        <br />
+      </div>
+
+      <div>
+        <label for="participant-assessment-other-details">
+          Are there any other details that you want to share?</label>
+        <br />
+        <textarea
+          name="participant-assessment-other-details"
+          id="participant-assessment-other-details"
+          cols="100"
+          rows="4"
+        >
+        </textarea>
+        <br />
+      </div>
+      <div>
+        <button
+          type="button"
+          class="save-btn"
+          onclick="saveBtnValidation()"
+        >
+          Save
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</section>
+
+<script type="text/javascript" src="/static/js/form.js"></script>
+{% endblock content %}
