@@ -10,13 +10,22 @@ endblock title %} {% block content %}
         talent needs.
       </p>
       <!-- Comment out env triggered CTA -->
-      <a
+      <!-- <a
         href="{{ url_for(timeline.HOME_BUTTON_URL) }}"
         class="orange-button"
         target="_blank"
         rel="noopener noreferrer"
       >
         {{ timeline.TEXT }}
+      </a> -->
+      <!-- Hard coded to point to consulting page during non-app-open time -->
+      <a
+        href="{{ url_for('render_consulting_page') }}"
+        class="orange-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Outsource your software work!
       </a>
     </div>
   </div>
