@@ -1,0 +1,565 @@
+{% extends "base.html" %} {% block title %} Techtonica's Part-Time Software Engineering Program {% endblock title %} {% block content %}
+
+<div class="main-content">
+  <div class="program-header" title="Software Engineering Program">
+
+  <div class="main-header__text blue-background">
+      <h1 class="main-header__header">Part-Time Software Engineering Program</h1>
+      <p>
+        Part-time, intensive software engineering training for women and non-binary 
+        adults seeking economic empowerment through tech careers
+      </p>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfUdyIAfcU5KSqtYH5J5iPRgu-yycHdebnUKygQLEv-m7oVMw/viewform"
+        class="orange-button"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Get notified about the next cohort!
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <h1 class="blue-h1">The Part-Time Software Engineering Program</h1>
+    <p>
+      Techtonica’s part-time, virtual, intensive Software Engineering Program provides 
+      women and non-binary adults seeking economic empowerment the opportunity to 
+      learn technical skills that prepare for a career transition into tech in a safe, 
+      inclusive space. The Program is made up of two parts: the introductory Part I: 
+      Web Dev Foundations (September-December) and the advanced Part II: Software Applications (January-June). 
+    </p>
+    <p>
+      The program takes place Monday through Friday, 5 PM to 9 PM Pacific Time 
+      (20 hours per week) and includes some weekend hackathons. Part I: Web Dev Foundations 
+      consists of four weeks of pre-work followed by ten weeks of free group learning about web 
+      development fundamentals important to tech careers. Participants who perform the best 
+      during Part I will be invited to join Part II: Software Applications, which consists 
+      of 26 weeks of more advanced, project-based, personalized learning. Part II also has individual
+      mentors, tuition (with need-based, sliding-scale, subsidized tuition and stipend scholarships 
+      available), and is followed by job placement or job search support.
+    </p>
+    <!-- Program cards grid -->
+    <div class="programs-grid-container">
+      <div class="programs-grid">
+        <!-- Part I: Web Dev Foundations Card -->
+        <div class="program-card">
+          <div class="program-card__header">
+            <h2 class="program-card__title">
+              Part I: Web Dev Foundations
+            </h2>
+          </div>
+          <div class="program-card__content">
+            <ul class="program-card__features">
+              <li>September-December 2025 (including pre-work)</li>
+              <li>Up to 30 participants</li>
+              <li>Covers the basics of full-stack web development</li>
+              <li>Free</li>
+              <li>No stipends</li>
+              <li>No placements</li>
+              <li>Group mentors</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Part II: Software Applications Card -->
+        <div class="program-card">
+          <div class="program-card__header">
+            <h2 class="program-card__title">
+              Part II: Software Applications
+            </h2>
+          </div>
+          <div class="program-card__content">
+            <ul class="program-card__features">
+              <li>January-June 2026</li>
+              <li>10-15 participants selected from people who successfully complete Part I</li>
+              <li>Builds full-stack software application skills</li>
+              <li>Tuition & scholarships</li>
+              <li>Stipend scholarships</li>
+              <li>May have some placements</li>
+              <li>Group and individually-assigned mentors</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row__center row_left blue-background why-why">
+    <h1 class="main-header__header">
+      What Makes Techtonica Different
+    </h1>
+    <p>
+      Techtonica provides an intensive, inexpensive, personalized learning 
+      experience for the active learner in contrast to the passive classroom 
+      learning and expense of coding bootcamps. Our part-time program was 
+      devised to allow participants to continue to work during the day, thus 
+      easing the financial risk participants take on by quitting their jobs to 
+      do the full-time program in the current difficult job market for junior 
+      engineers.
+    </p>
+    <p>
+      Techtonica aims to be more like the workplace to make the transition into 
+      the industry better — instead of having an instructor constantly guiding 
+      you (which you won't have in any software engineering job), you are given 
+      a general schedule of topics and assignments (see 
+      <a
+        title="Curriculum"
+        target="_blank"
+        href="https://github.com/techtonica/curriculum"
+        >our curriculum repo</a
+      > for 
+      an idea of the resources provided) and you're expected to figure out what 
+      to do on your own or in collaboration with other participants, volunteers, 
+      mentors, tech groups, and Techtonica staff. Because our resources are 
+      open-source, they are continuously being improved and you can even make 
+      improvements as you work through them. In the best jobs, there are regular 
+      check-ins with very understanding managers and mentors provide regular 
+      support, but that is not always the case. Techtonica’s program is as 
+      hands-on and project-based as possible to best prepare you for work in 
+      tech. You'll also be expected to speak and present in front of people 
+      often — a very useful skill to have for a successful career. The limited, 
+      not-guaranteed placements we secure also set Techtonica apart.
+    </p>
+    <p>
+      88% of our graduates so far are BIPOC, 21% have a disability, 21% are 
+      parents, 10% identify outside the gender binary, and 1% are veterans. 
+      Our cohorts have had between 8 and 18 participants so far, and income 
+      increase is usually 3-5x. Techtonica’s small-but-dedicated team, board 
+      members, and volunteers provide personalized support.
+    </p>
+
+    <br />
+      <img
+        src="{{ url_for('static', filename='img/curriculum-covered-topic-logos.png') }}"
+        alt="Various logo images of full stack web development technology taught within the curriculum"
+        class="full-width-img"
+      />
+
+    <p>
+      The schedule includes knowledge checks to give you a reason to review 
+      what you've learned, to provide you with feedback on where you need to 
+      improve, and to prepare you for long-term success in the workplace. As 
+      we consider your progress, we take everything you do in the program into 
+      account (not just assessments)—if you're on time and present, if you're 
+      meeting deadlines, if you're completing assignments, if you're following 
+      process, if you're communicating about your needs, if you're consistently 
+      meeting with your mentors, if you're building your network, if you're 
+      collaborating well, if you're solving problems, if you're dealing with 
+      the stress of an intensive program well, if you're lifting others with 
+      you, if you're reading instructions, how your mentor feels you're doing, 
+      how you indicate you're doing in surveys and one-on-ones, etc. If we see 
+      any indications you’re struggling in one area, we assess the overall 
+      picture and work out a plan for improvement. Consistent problems and 
+      lack of improvement could indicate someone’s not ready to continue the 
+      program. Because of limited capacity and the high expectations of our 
+      program and partners, not everyone completes the program. About 50% of 
+      people who successfully complete Part I of the program will be accepted 
+      to Part II.
+    </p>
+    <p>
+    Also, check out
+      <a 
+        href="https://x.com/TechtonicaOrg/status/1558191593861029888"
+        target="_blank"
+      >this video about a day in the life of a Techtonica participant</a
+      >, <a href="https://linktr.ee/techtonicaorg" target="_blank">our social media</a>,
+      <a href="{{ url_for('render_testimonials_page') }}"
+        >our testimonials page</a
+      >, and <a href="https://techtonica.eventbrite.com" target="_blank">our info session</a>.
+    </p>
+
+    <!-- Commenting out past info session video below, to be replaced with 2026 H1 Application Info Session -->
+    <!-- <div class="videowrapper">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/Hwnig_yhROM?si=WeivAEXNuDYh48XM"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div> -->
+  </div>
+  <br />
+
+  <img
+    src="{{ url_for('static', filename='img/participant-presenting-korean-recipe-page-project-on-virtual-call.png') }}"
+    alt="Participant presenting a Korean recipe page project on a virtual call"
+    class="full-width-img"
+  />
+  <div class="row row__center row_left">
+   <p>
+      We aim to empower those most underrepresented in tech and to help tech
+      become more diverse and inclusive. To that end, we have been very
+      intentional about creating a safe community, building a network, and
+      providing personalized support, which means open communication is
+      absolutely necessary. If a special situation comes up, we need you to let
+      us know so we can sympathize and brainstorm solutions with you. We've had
+      participants lose housing, have their laptop stolen, become pregnant, face
+      abuse, and more, and if we don't know about it, we can't help.
+    </p>
+    <p>
+      Participants are required to use a computer with an Apple operating system or 
+      a "Mac" for this program. We recommend a computer that is 2017 or later. Limited 
+      laptops are available to rent for this program (we will reach out to accepted 
+      applicants to make arrangements). 
+    </p>
+    <p>
+      For participants with ADHD, we can provide accommodations and
+      <a
+        target="_blank"
+        href="https://github.com/Techtonica/curriculum/blob/main/underrepresented-in-tech-resources/resources-adhd.md"
+        > resources.</a
+      >
+      We encourage open communication around what works best for you.
+    </p>
+  </div>
+
+  </div>
+
+  <br />
+
+  <div class="column">
+    <img
+      src="{{url_for('static', filename='img/mentor-mentee-virtual-meeting.png')}}"
+      alt="Program participant having virtual video call meeting with mentor"
+      class="full-width-img"
+    />
+  </div>
+
+  <br />
+
+  <div class="row row__center row_left blue-background why-why">
+    <h1 class="main-header__header">
+      Who
+    </h1>
+    <p>
+      We select participants who are independent but good at collaborating, 
+      motivated to succeed, committed to learning to code, flexible, curious, 
+      open-minded, and excited for long-term careers in the field, have a good 
+      attitude and a growth mindset, can calmly manage extended periods of 
+      frustration (troubleshooting is something you'll face forever in tech!), 
+      and want to pay it forward.
+    </p>
+    <h3>Eligibility</h3>
+    <div>
+      <p>
+        You are eligible to apply for Techtonica’s part-time software engineering program if you:
+      </p>
+      <ul>
+        <li>
+          are a woman (cis OR trans) or non-binary adult. We especially
+          encourage Latinx, Black, and non-binary folks to apply.
+        </li>
+        <li>
+          are digitally literate, meaning you are very familiar and good with
+          computers and the internet, can type 50+ WPM with 80%+ accuracy, and
+          you know how to use a mouse/trackpad, browsers, and email
+        </li>
+        <li>
+          at the very least graduated from high school or received your GED
+        </li>
+        <!-- TO-DO: if application process section name is changes, update this note -->
+        <li>
+          completed the JavaScript pre-req (see the Application Process section
+          below)
+        </li>
+        <li>can commit to always being present and on time and prepared</li>
+        <li>are willing to be part of the program during 5pm to 9pm Pacific Time hours</li>
+        <li>
+          are dedicated to building a long-term career in tech and contributing
+          to a diverse, inclusive, equitable tech environment
+        </li>
+        <li>
+          have housing that will be stable for the entirety of the six months of 
+          training and the following six months
+        </li>
+        <li>
+          are willing to live in the U.S. and relocate for an in-person placement 
+          if required by a placement company (placements we are currently working 
+          on for summer 2026 are located in California locations such as Los Angeles, 
+          San Diego, and the San Francisco Bay Area)
+        </li>
+        <li>have a U.S. bank account</li>
+        <li>
+          have
+          <a
+            href="https://www.uscis.gov/i-9-central/form-i-9-acceptable-documents"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            the proof that you are legally employable in the United States
+          </a>
+          at the time of application (we can't help with visas)
+        </li>
+        <li>
+          agree to work at an assigned partner company if we match you upon
+          successful completion of six months of training
+        </li>
+        <li>
+          are willing to appear in Techtonica's media and pitch yourself to
+          Techtonica's partners
+        </li>
+        <li>
+          have not attended a full-time coding bootcamp, completed a C.S.
+          degree, or worked as a software engineer in the last six years
+        </li>
+        <li>can have high-speed internet set up by the start of the program</li>
+        <li>
+          agree to abide by
+          <a
+            href="{{ url_for('render_conduct_page') }}"
+            title="Code of Conduct"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Techtonica's Code of Conduct</a
+          >,
+          <a
+            href="https://docs.google.com/document/d/1bPp3wT4YUo2PuNSYLMwIW9TkU6trd7NSuR9ieHv9MME/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Participant Handbook</a
+          >, and
+          <a
+            href="https://docs.google.com/document/d/1ZU1ZdWp3S0udb6kuEdRA3yRp3lngM4FSnQZO-_GHyls/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Participant Agreement</a
+          >
+        </li>
+        <li>haven't already applied three times</li>
+        <li>
+          (for white applicants) are willing to do personal anti-racism work
+        </li>
+      </ul>
+    </div>
+    <p>
+      Please note that since Techtonica is fully remote, participants are 
+      not required to live in the San Francisco Bay Area or California to 
+      join the program, but as stated in the requirements above, you must be 
+      willing to relocate for an in-person placement if required by a placement 
+      company (placements we are currently working on for summer 2026 are 
+      located in California locations such as Los Angeles, San Diego, and 
+      the San Francisco Bay Area).
+    </p>
+    <h3>What We Look For</h3>
+    <div>
+      <p>
+        This program is very competitive; we select and graduate participants
+        who continuously prove that they are:
+      </p>
+      <ul>
+        <li>self-motivated</li>
+        <li>resilient</li>
+        <li>logical</li>
+        <li>humble</li>
+        <li>respectful</li>
+        <li>independent</li>
+        <li>open-minded</li>
+        <li>flexible</li>
+        <li>persistent</li>
+        <li>optimistic</li>
+        <li>punctual</li>
+        <li>committed</li>
+        <li>responsive to feedback</li>
+        <li>willing to ask questions</li>
+        <li>able to set and reach goals</li>
+        <li>able to deal with stress well</li>
+        <li>inclusive and able and willing to work with anyone</li>
+        <li>proud of owning their learning</li>
+        <li>always curious and ready to learn and improve</li>
+        <li>transparent and compassionate communicators</li>
+        <li>hard-working and ready to make sacrifices</li>
+        <li>dedicated to seeing things through to the end</li>
+      </ul>
+      <p>You are probably not a good fit if you:</p>
+      <ul>
+        <li>would rather be passively trained than learn through discovery</li>
+        <li>prefer always being told exactly what to do</li>
+        <li>won't prioritize your participation in the program</li>
+        <li>
+          have unaddressed mental or physical health issues, insecure housing,
+          no internet or can't manage the stress of quickly learning a whole new
+          career in a healthy way
+        </li>
+        <li>don't like when plans change</li>
+        <li>can't advocate for yourself</li>
+        <li>don't like details</li>
+        <li>don't get along with everyone</li>
+        <li>don't care about diversity, equity, inclusion, and belonging</li>
+        <li>are quickly frustrated every time you get stuck on a problem</li>
+        <li>
+          don't feel comfortable asking questions until you understand
+          complicated concepts
+        </li>
+        <li>
+          can't lay aside learning everything about something in place of just
+          learning enough to make progress on your work
+        </li>
+        <li>take longer than most people to learn and apply new concepts</li>
+        <li>aren't sure if you want to be a software engineer</li>
+        <li>
+          can’t give, receive or implement constructive feedback with an open
+          mind
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="column">
+    <img
+      src="{{url_for('static', filename='img/organization-wide-attendees-cheering-hands.png')}}"
+      alt="Organization-wide meeting attendees cheering with their hands up"
+      class="full-width-img"
+    />
+  </div>
+
+  <br />
+
+  <div class="row row__baseline">
+    <h1 class="blue-h1">Schedule Overview</h1>
+    <div class="row">
+      <div class="column column-med centered">
+        <h3>
+          0. Completion of a JavaScript Algorithms and Data Structures course
+        </h3>
+        <p>
+          Log in to
+          <a
+            href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            freeCodeCamp
+          </a> and expand the "LEGACY JavaScript Algorithms and 
+          Data Structures Certification" section on the /learn page. Complete the 
+          first 113 lessons about Legacy JavaScript. This should take 4-12 hours. 
+          Be ready to upload a screenshot of the completed course checklist in the 
+          application form.
+          </li>
+        </p>
+      </div>
+      <div class="column column-med centered">
+        <h3>1. Two Application Forms Submitted by September 10th</h3>
+        <p>
+          Thoroughly fill out and submit both the short first application form (this 
+          is different from the interest form that is linked on this page before 
+          applications are open) and the longer second application form (linked to 
+          upon submitting the first form) by the deadline. The second form will take 
+          some time, so don't start too late!
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column column-med centered">
+        <h3>2. Acceptance, Agreements, and Laptops</h3>
+      </div> 
+      <div class="column column-med centered">
+        <h3>3. Mandatory Pre-Work & Study Groups</h3>
+      </div>
+      <div class="column column-med centered">
+        <h3>4. Part I: Web Dev Foundations</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column column-med centered">
+        <h3>5. Pair Programming & Code Challenge</h3>
+      </div>
+      <div class="column column-med centered">
+        <h3>6. Assessment of Technical & Non-Technical Core Competencies</h3>
+      </div> 
+      <div class="column column-med centered">
+        <h3>7. Staff Interviews</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column column-med centered">
+        <h3>8. Board Interviews</h3>
+        <p>
+          Participate in board interviews that will include questions about you and 
+          your application, and questions from you.
+        </p>
+      </div>
+      <div class="column column-med centered">
+        <h3>9. Part II: Software Applications</h3>
+      </div>
+      <div class="column column-med centered">
+        <h3>10. Placements or Job Search Support</h3>
+      </div>
+    </div>
+    <p>
+      If you are not accepted the first time you apply, you may apply two more times for a
+      maximum of three times, and those do not have to be consecutive
+      application rounds. If you have any special circumstances that make you
+      question your eligibility for Techtonica’s program, please feel free to
+      contact us and we will be happy to discuss with you. If you are
+      interested in Techtonica but cannot participate in the next cohort,
+      please fill out our <a href="https://docs.google.com/forms/d/e/1FAIpQLSfUdyIAfcU5KSqtYH5J5iPRgu-yycHdebnUKygQLEv-m7oVMw/viewform?usp=sf_link"
+      target="_blank">interest form</a>.
+    </p>
+  </div>
+
+  <br />
+
+  <div class="column">
+    <img
+      src="{{url_for('static', filename='img/final-project-collage.jpeg')}}"
+      alt="Collage of past participant final projects"
+      class="full-width-img"
+    />
+  </div>
+
+  <br />
+
+  <div class="row row__center row_left blue-background why-why">
+    <h1 class="main-header__header">
+      Part II: Software Applications Specifics
+    </h1>
+    <p>
+      Part II: Software Applications will accept 10-15 participants from those 
+      who successfully completed Part I and will begin in January 2026.
+    </p>
+    <p>
+      Upon successful completion of Part II of the program, some participants may 
+      be placed in paid technical positions with partner companies, but there is 
+      no guarantee this will happen. If you are placed with a company and you both 
+      meet the requirements, you may earn an OJT ("On-the-Job Training") certificate 
+      from the State of California's Division of Apprenticeship Standards.
+    </p>
+    <h3>Tuition & Scholarships for Part II</h3>
+    <p>
+      As many companies have changed their priorities over the last few years, Techtonica 
+      has had difficulty relying only on a corporate sponsorship model. As a result, 
+      Techtonica adopted a tuition-based model with need-based, sliding-scale, subsidized 
+      tuition and stipend scholarships to enable the program to serve more participants, 
+      in addition to continuing to seek sponsorships.
+    </p>
+    <p>
+      Full tuition for Part II: Software Applications is $14,000 when paid upfront or $15,000 
+      with six monthly payments of $2,500. 
+    </p>
+    <p>
+      Since Techtonica adopted tuition, 93% of participants have been eligible for need-based, 
+      sliding-scale tuition and stipend scholarships. If you will not have $15,000 beyond six 
+      months of living costs, you are eligible to apply for a partial or full scholarship. 
+      If you will not be able to cover tuition or six months of living costs, you are eligible 
+      to apply for a tuition scholarship as well as a monthly stipend. Only those determined 
+      to be in need of full scholarships will be considered for monthly stipends. 
+    </p>
+
+    <!-- TO-DO: Should this be re-recorded to fit the second session swe program? -->
+    <!-- <p>
+      Watch our
+      <a
+        title="Full Time Program Tuition Video"
+        target="_blank"
+        href="https://youtu.be/ateYQ7Qb3l8"
+        >Techtonica's Full-Time Program Sliding Scale, Needs Based Tuition Q&A Session</a
+      >, to learn more.
+    </p> -->
+  </div>
+{% endblock content %}

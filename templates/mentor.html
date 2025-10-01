@@ -17,7 +17,7 @@ Mentoring {% endblock title %} {% block content %}
 <div class="row row__center about-us">
   <div class="column">
     <p>
-      Techtonica is a rigorous, six-month training program followed by job
+      Techtonica is a rigorous, virtual technical training program followed by job
       placement for women and non-binary adults with low incomes. Our program
       participants will benefit from the experience, insight, and support of
       someone who understands their desire to become software engineers and has
@@ -110,10 +110,10 @@ Mentoring {% endblock title %} {% block content %}
             </li>
             <li>Stay accessible, committed, and engaged with mentees.</li>
             <li>
-              Outside of program hours (Monday through Friday from 8:30 to 5:30
-              PM), meet with your mentee or the cohort via video calls at least
-              two hours per week for the year of the program (the six months of
-              the training followed by six months of placement or job search and
+              Outside of part-time program hours (Monday through Friday from 5:00PM to 9:00
+              PM Pacific Time), meet with your mentee or the cohort via video calls 
+              at least two hours per week for the year of the program (the six months 
+              of the training followed by six months of placement or job search and
               community support).
             </li>
             <li>Respond to mentee communications within 24 hours.</li>
@@ -148,7 +148,48 @@ Mentoring {% endblock title %} {% block content %}
         </td>
       </tr>
     </table>
-    {% if timeline.APP_OPEN_DATE %}
+
+    <h3>September 2025 Web Dev Foundations Cohort Timeline</h3>
+    <table class="mentor" cellpadding="0" cellspacing="0">
+      <tr>
+        <td>August - September 2025</td>
+        <td>Mentor applications and open interviews</td>
+      </tr>
+      <tr>
+        <td>September 15th - October 10th</td>
+        <td>Support participants doing pre-work</td>
+      </tr>
+       <tr>
+        <td>October 14th</td>
+        <td>First day H2 2025 cohort</td>
+      </tr>
+      <tr>
+        <td>October 14, 2025 - December 5, 2025</td>
+        <td>Support during foundations Techtonica training</td>
+      </tr>
+    </table>
+
+    <h3>January 2026 SWE Program Cohort Timeline</h3>
+    <table class="mentor" cellpadding="0" cellspacing="0">
+      <tr>
+        <td>November 2025 - January 2026</td>
+        <td>Mentor applications and open interviews</td>
+      </tr>
+      <tr>
+        <td>January 5, 2026</td>
+        <td>First day H1 2026 cohort and participant/mentor matches at onboarding day</td>
+      </tr>
+      <tr>
+        <td>January 2026 - June 2026</td>
+        <td>Support during Techtonica training</td>
+      </tr>
+      <tr>
+        <td>June 2026 - December 2026</td>
+        <td>Support during placement or job search</td>
+      </tr>
+    </table>
+    <!-- TO-DO: Time Bound Rendered PT Table Addition via Issue #811 -->
+    <!-- {% if timeline.APP_OPEN_DATE %}
     <h3>
       {{ timeline.START_MONTH }} {{ timeline.START_YEAR }} Cohort Timeline
     </h3>
@@ -190,7 +231,7 @@ Mentoring {% endblock title %} {% block content %}
         <td>Support during placement or job search</td>
       </tr>
     </table>
-    {% endif %}
+    {% endif %} -->
   </div>
 </div>
 <div class="column row row__center blue-background">
