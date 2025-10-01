@@ -118,6 +118,18 @@ p {
   transform: translateY(-8px);
   box-shadow: 0 16px 48px rgba(5, 85, 109, 0.3);
 }
+.sponsor-tiers-container .sponsor-tier-card.featured::before {
+  content: "Most Popular";
+  position: absolute;
+  top: 20px;
+  right: -30px;
+  background: linear-gradient(135deg, #0093b5 0%, #05556d 100%);
+  color: white;
+  padding: 8px 40px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transform: rotate(45deg);
+  box-shadow: 0 4px 12px rgb(5, 85, 109);
 .sponsor-tiers-container .sponsor-tier-card {
   padding: 2rem;
 }
@@ -1584,7 +1596,7 @@ button.disabled {
 }
 
 .success-container h2 {
-  color: #28a745;
+  color: white;
   margin-bottom: 20px;
 }
 
