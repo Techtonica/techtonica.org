@@ -2,84 +2,21 @@
 Techtonica Application {% endblock title %} {% block content %}
 <section class="application-page">
   <h1>Techtonica Application</h1>
-  <form action="#" method="POST" class="application-form" id="app-form-1">
+
+  <!-- Step 1: Gender Identity Eligibility Filter -->
+  <div class="form-step" id="step-1" style="display: block">
+    <div class="step-header">
+      <h2>Step 1 of 7: Eligibility Check</h2>
+      <p>
+        To get started, we need to confirm your eligibility for our program.
+      </p>
+    </div>
+
     <fieldset>
-      <legend>General Applicant Demographics</legend>
-      <label for="first-name">Full legal given or 'first' name: </label><br />
-      <input
-        type="text"
-        id="first-name"
-        name="first-name"
-        required
-        autocomplete="given-name"
-      /><br />
-      <label for="preferred-name"
-        >Preferred given or "first" name (if not the same as your legal "first"
-        or given name): <span>(Optional)</span></label
-      ><br />
-      <input type="text" id="preferred-name" name="preferred-name" /><br />
-      <label for="last-name">Full legal last/family name or surname: </label
-      ><br />
-      <input
-        type="text"
-        id="last-name"
-        name="last-name"
-        required
-        autocomplete="family-name"
-      /><br />
-      <label for="name-pronunciation"
-        >How to pronounce your full name: <span>(Optional)</span></label
+      <legend>Gender Identity</legend>
+      <label for="gender-identity-check"
+        >With which gender identity do you most align?</label
       >
-      <div class="learn-more-wrapper">
-        <button class="learn-more-title" type="button" aria-expanded="false">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <p
-          class="learn-more-content"
-          tabindex="0"
-          aria-labelledby="name-pronunciation"
-        >
-          You can make a recording on
-          <a href="www.name-coach.com">name-coach.com</a>, generate your link
-          and share in the text field if preferred.
-        </p>
-      </div>
-      <br />
-      <input
-        type="text"
-        id="name-pronunciation"
-        name="name-pronunciation"
-      /><br />
-      <label for="email">Email: </label>
-      <div class="learn-more-wrapper">
-        <button class="learn-more-title" type="button" aria-expanded="false">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <p class="learn-more-content" tabindex="0" aria-labelledby="email">
-          Please use the same business-minded Gmail with your name (e.g.
-          janedoe@gmail.com) that you used in the shorter form. This is the
-          email we will contact you with for the duration of the application
-          process and program.
-        </p>
-      </div>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        autocomplete="email"
-      /><br />
-      <label for="gender-identity"
-        >With which gender identity do you most align?
-      </label>
       <div class="learn-more-wrapper">
         <button class="learn-more-title" type="button" aria-expanded="false">
           Learn More
@@ -91,181 +28,153 @@ Techtonica Application {% endblock title %} {% block content %}
         <div
           class="learn-more-content"
           tabindex="0"
-          aria-labelledby="gender-identity"
+          aria-labelledby="gender-identity-check"
         >
+          <p>
+            <strong>Our program serves women and non-binary adults.</strong>
+            This includes:
+          </p>
           <ul>
             <li>
-              <strong>Agender or genderless: </strong>People who do not identify
-              with any gender or feel an absence of gender. They may use terms
-              like genderblank, genderfree, genderless, gendervoid,
-              non-gendered, or null gender.
+              <strong>Cis Woman:</strong> A person whose gender identity aligns
+              with the female sex they were assigned at birth.
             </li>
             <li>
-              <strong>Genderfluid: </strong>People whose gender identity is not
-              fixed and may change over time, fluctuating between different
-              gender expressions or identities.
+              <strong>Trans Woman:</strong> A person who was assigned male at
+              birth but whose gender identity is female.
             </li>
             <li>
-              <strong>Cis Man or Cis Woman: </strong>A person whose gender
-              identity aligns with the male or female sex they were assigned at
-              birth.
-            </li>
-            <li>
-              <strong>Non-binary or Genderqueer: </strong>People who do not
+              <strong>Non-binary or Genderqueer:</strong> People who do not
               identify exclusively as a man or a woman. They may feel like both,
               somewhere in between, or outside these categories entirely.
             </li>
             <li>
-              <strong>Trans Man or Trans Woman: </strong>People whose gender
-              identity differs from the sex they are assigned at birth. e.g., a
-              transgender man is someone who was assigned female at birth but
-              whose gender identity is male, while a transgender woman is
-              someone who is assigned male at birth but whose gender identity is
-              female.
+              <strong>Agender or Genderless:</strong> People who do not identify
+              with any gender or feel an absence of gender.
             </li>
             <li>
-              <strong>Other: </strong>A person whose gender identity does not
-              fit within the listed categories or who prefers a different term.
+              <strong>Genderfluid:</strong> People whose gender identity is not
+              fixed and may change over time, fluctuating between different
+              gender expressions or identities.
             </li>
           </ul>
         </div>
       </div>
-      <br />
+
       <select
-        name="gender-identity"
-        id="gender-identity"
-        aria-label="Gender Identity selection"
+        name="gender-identity-check"
+        id="gender-identity-check"
+        aria-label="Gender Identity Eligibility Check"
         required
       >
-        <br />
-        <option value="">Select an Option</option>
+        <option value="">Please select your gender identity</option>
+        <option value="Cis Woman">Cis Woman</option>
+        <option value="Trans Woman">Trans Woman</option>
+        <option value="Non-binary/Genderqueer">Non-binary/Genderqueer</option>
         <option value="Agender/Genderless">Agender/Genderless</option>
         <option value="Genderfluid">Genderfluid</option>
         <option value="Cis Man">Cis Man</option>
-        <option value="Non-binary/Genderqueer">Non-binary/Genderqueer</option>
         <option value="Trans Man">Trans Man</option>
-        <option value="Trans Woman">Trans Woman</option>
-        <option value="Cis Woman">Cis Woman</option>
-        <option value="Other">Other</option>
+        <option value="Other">Other (please specify)</option>
       </select>
+
       <input
         type="text"
-        id="custom-gender"
-        name="custom-gender"
-        placeholder="Please enter your gender identity"
-        aria-label="custom gender input"
-        disabled
-      /><br />
-      <label for="pronouns">What are your pronouns? </label><br />
-      <label for="pronouns">
+        id="custom-gender-check"
+        name="custom-gender-check"
+        placeholder="Please specify your gender identity"
+        aria-label="Custom gender identity"
+        style="display: none; margin-top: 10px"
+      />
+
+      <button type="button" class="continue-btn" onclick="checkEligibility()">
+        Continue
+      </button>
+    </fieldset>
+  </div>
+
+  <!-- Eligibility Message for Non-Qualifying Applicants -->
+  <div
+    class="form-step eligibility-message"
+    id="not-eligible"
+    style="display: none"
+  >
+    <div class="step-header">
+      <h2>Thank You for Your Interest</h2>
+    </div>
+    <div class="message-content">
+      <p>
+        Thank you for your interest in Techtonica's software engineering
+        program. Currently, our program specifically serves women and non-binary
+        adults seeking economic empowerment through tech careers.
+      </p>
+      <p>
+        While this particular program may not be the right fit, we encourage you
+        to:
+      </p>
+      <ul>
+        <li>
+          Follow our
+          <a href="{{ url_for('render_home_page') }}">blog and social media</a>
+          for updates on future programs
+        </li>
+        <li>
+          Consider
+          <a href="{{ url_for('render_sponsor_page') }}"
+            >supporting our mission</a
+          >
+          through sponsorship or volunteering
+        </li>
+        <li>
+          Share our program with women and non-binary individuals in your
+          network who might benefit
+        </li>
+      </ul>
+      <p>
+        We appreciate your understanding and your interest in advancing
+        diversity in technology.
+      </p>
+    </div>
+  </div>
+
+  <!-- Step 2: Main Application Form (shown only for eligible candidates) -->
+  <div class="form-step" id="step-2" style="display: none">
+    <div class="step-header">
+      <h2>Step 2 of 7: General Information</h2>
+      <p>
+        Great! You're eligible for our program. Let's collect some basic
+        information about you.
+      </p>
+    </div>
+
+    <form action="#" method="POST" class="application-form" id="app-form-1">
+      <fieldset>
+        <legend>General Applicant Demographics</legend>
+        <label for="first-name">Full legal given or 'first' name: </label><br />
         <input
-          type="checkbox"
-          name="pronouns"
-          id="pronouns-she-her"
-          value="She/Her"
+          type="text"
+          id="first-name"
+          name="first-name"
           required
-        />
-        She/Her</label
-      ><br />
-      <label for="pronouns">
+          autocomplete="given-name"
+        /><br />
+        <label for="preferred-name"
+          >Preferred given or "first" name (if not the same as your legal
+          "first" or given name): <span>(Optional)</span></label
+        ><br />
+        <input type="text" id="preferred-name" name="preferred-name" /><br />
+        <label for="last-name">Full legal last/family name or surname: </label
+        ><br />
         <input
-          type="checkbox"
-          name="pronouns"
-          id="pronouns-he-him"
-          value="He/Him"
+          type="text"
+          id="last-name"
+          name="last-name"
           required
-        />
-        He/Him</label
-      ><br />
-      <label for="pronouns">
-        <input
-          type="checkbox"
-          name="pronouns"
-          id="pronouns-they-them"
-          value="They/Them"
-          required
-        />
-        They/Them</label
-      ><br />
-      <label for="pronouns">
-        <input
-          type="checkbox"
-          name="pronouns"
-          id="pronouns-ze-zir"
-          value="Ze/Zir"
-          required
-        />
-        Ze/Zir</label
-      ><br />
-      <label for="pronouns">
-        <input
-          type="checkbox"
-          name="pronouns"
-          id="pronouns-other"
-          value="Other"
-          required
-        />
-        Other</label
-      ><br />
-      <input
-        type="text"
-        id="custom-pronouns"
-        name="custom-pronouns"
-        placeholder="Please enter your preferred pronouns"
-        aria-label="custom pronouns selection"
-        disabled
-      /><br />
-      <label for="birth-date">What is your birth date? </label><br />
-      <input type="date" id="birth-date" name="birth-date" /><br />
-      <label for="age-group">Select your age group </label><br />
-      <select name="age-group" id="age-group" required>
-        <br />
-        <option value="" selected disabled hidden>Select an Option</option>
-        <option value="18-24">18-24</option>
-        <option value="25-34">25-34</option>
-        <option value="35-44">35-44</option>
-        <option value="45-54">45-54</option>
-        <option value="55-64">55-64</option>
-        <option value="65+">65+</option></select
-      ><br />
-      <label for="phone-number">Cell phone number with area code </label><br />
-      <input
-        type="tel"
-        name="phone-number"
-        id="phone-number"
-        pattern="^\+?1?[-.\s]?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$"
-        placeholder="XXX-XXX-XXXX"
-        title="Please enter a valid phone number in the format: 415-555-1234 or 1-415-555-1234."
-        minlength="10"
-        required
-        autocomplete="tel"
-      /><br />
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="veteran-status">Are you a U.S. veteran? </label><br />
-        <input
-          type="radio"
-          id="veteran-status-yes"
-          name="veteran-status"
-          value="Yes"
-          required
-        />
-        <label for="veteran-status-yes">Yes</label>
-        <input
-          type="radio"
-          id="veteran-status-no"
-          name="veteran-status"
-          value="No"
-          required
-        />
-        <label for="veteran-status-no">No</label><br />
-      </div>
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="disabled-status">
-          Do you have a disability? (You can find some examples here:
-          <a href="https://askjan.org/a-to-z.cfm" target="_blank"
-            >https://askjan.org/a-to-z.cfm</a
-          >)
-        </label>
+          autocomplete="family-name"
+        /><br />
+        <label for="name-pronunciation"
+          >How to pronounce your full name: <span>(Optional)</span></label
+        >
         <div class="learn-more-wrapper">
           <button class="learn-more-title" type="button" aria-expanded="false">
             Learn More
@@ -277,424 +186,938 @@ Techtonica Application {% endblock title %} {% block content %}
           <p
             class="learn-more-content"
             tabindex="0"
-            aria-labelledby="disabled-status"
+            aria-labelledby="name-pronunciation"
           >
-            You are considered to have a disability if you have a physical or
-            mental impairment or medical condition that substantially limits a
-            major life activity.
+            You can make a recording on
+            <a href="www.name-coach.com">name-coach.com</a>, generate your link
+            and share in the text field if preferred.
           </p>
         </div>
         <br />
         <input
-          type="radio"
-          id="disabled-status-yes"
-          name="disabled-status"
-          value="Yes"
-          required
-        />
-        <label for="disabled-status-yes">Yes</label>
-        <input
-          type="radio"
-          id="disabled-status-no"
-          name="disabled-status"
-          value="No"
-          required
-        />
-        <label for="disabled-status-no">No</label><br />
-      </div>
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="parental-status"
-          >Are you a parent or legal guardian of a minor? </label
-        ><br />
-        <input
-          type="radio"
-          id="parental-status-yes"
-          name="parental-status"
-          value="Yes"
-          required
-        />
-        <label for="parental-status-yes">Yes</label>
-        <input
-          type="radio"
-          id="parental-status-no"
-          name="parental-status"
-          value="No"
-          required
-        />
-        <label for="parental-status-no">No</label><br />
-      </div>
-      <label for="race-ethnicity"
-        >With which racial/ethnic groups do you most identify?
-      </label>
-      <div class="learn-more-wrapper">
-        <button class="learn-more-title" type="button" aria-expanded="false">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <div
-          class="learn-more-content"
-          tabindex="0"
-          aria-labelledby="race-ethnicity"
-        >
-          <ul>
-            <li>
-              <strong>African-American, Black, or African:</strong> A person
-              having origins in Africa, including those across the African
-              diaspora, such as communities in the Americas, the Caribbean, and
-              other regions.
-            </li>
-            <li>
-              <strong>Central Asian:</strong> A person having origins in any of
-              the Central Asian countries, including Kazakhstan, Kyrgyzstan,
-              Tajikistan, Turkmenistan, Uzbekistan.
-            </li>
-            <li>
-              <strong>East Asian:</strong> A person having origins in any of the
-              East Asian countries, including China, Japan, Korea, Mongolia,
-              Tibet, and Taiwan.
-            </li>
-            <li>
-              <strong>Hispanic or Latinx:</strong> A person of having origins in
-              Cuba, Mexico, Puerto Rico, the Dominican Republic, or South or
-              Central America.
-            </li>
-            <li>
-              <strong>Middle Eastern or North African (MENA):</strong> A person
-              having origins in the Middle East or North Africa.
-            </li>
-            <li>
-              <strong
-                >Native American, Alaskan Native, First Nations or
-                Indigenous:</strong
-              >
-              A person having origins in any of the Indigenous peoples of North
-              and South America (including Central America).
-            </li>
-            <li>
-              <strong>Pacific Islander:</strong> A person having origins in any
-              of the Pacific Islands, including Polynesia, Micronesia, and
-              Melanesia.
-            </li>
-            <li>
-              <strong>South Asian:</strong> A person having origins in any of
-              the South Asian countries, including Bangladesh, Bhutan, India,
-              Nepal, Pakistan, Afghanistan, and Sri Lanka.
-            </li>
-            <li>
-              <strong>Southeast Asian:</strong> A person having origins in any
-              of the Southeast Asian countries, including Cambodia, Indonesia,
-              Laos, Malaysia, Myanmar, the Philippines, Singapore, Thailand, and
-              Vietnam.
-            </li>
-            <li><strong>White:</strong> A person having origins in Europe.</li>
-            <li>
-              <strong>Another race/ethnicity:</strong> A person who identifies
-              with a racial/ethnic group not listed above.
-            </li>
-          </ul>
+          type="text"
+          id="name-pronunciation"
+          name="name-pronunciation"
+        /><br />
+        <label for="email">Email: </label>
+        <div class="learn-more-wrapper">
+          <button class="learn-more-title" type="button" aria-expanded="false">
+            Learn More
+            <span class="toggle-icon">
+              <span class="toggle-icon-plus">+</span>
+              <span class="toggle-icon-minus">-</span>
+            </span>
+          </button>
+          <p class="learn-more-content" tabindex="0" aria-labelledby="email">
+            Please use the same business-minded Gmail with your name (e.g.
+            janedoe@gmail.com) that you used in the shorter form. This is the
+            email we will contact you with for the duration of the application
+            process and program.
+          </p>
         </div>
-      </div>
-      <select
-        name="race-ethnicity"
-        id="race-ethnicity"
-        aria-label="Racial Ethnicity Selection"
-        required
-      >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          autocomplete="email"
+        /><br />
+
+        <!-- Hidden field to store the gender identity from step 1 -->
+        <input type="hidden" id="gender-identity" name="gender-identity" />
+
+        <label for="gender-identity-confirm"
+          >Gender Identity (confirmed from previous step):
+        </label>
+        <input
+          type="text"
+          id="gender-identity-confirm"
+          name="gender-identity-confirm"
+          readonly
+          style="background-color: #f5f5f5; border: 1px solid #ccc"
+        />
         <br />
-        <option value="none" selected disabled hidden>Select an Option</option>
-        <option value="African-American/Black/African">
-          African-American/Black/African
-        </option>
-        <option value="Central Asian">Central Asian</option>
-        <option value="East Asian">East Asian</option>
-        <option value="Hispanic/Latinx">Hispanic/Latinx</option>
-        <option value="Middle Eastern or North African">
-          Middle Eastern or North African
-        </option>
-        <option value="Native American/Alaskan Native/First Nations/Indigenous">
-          Native American/Alaskan Native/First Nations/Indigenous
-        </option>
-        <option value="Pacific Islander">Pacific Islander</option>
-        <option value="South Asian">South Asian</option>
-        <option value="Southeast Asian">Southeast Asian</option>
-        <option value="White">White</option>
-        <option value="Other">Other</option>
-      </select>
-      <input
-        type="text"
-        id="custom-race-ethnicity"
-        name="custom-race-ethnicity"
-        aria-label="race-ethnicity input"
-        placeholder="Please enter your racial/ethnic group"
-        disabled
-      /><br />
-      <label for="address"
-        >What is the full mailing address of where you live? (Don't forget unit
-        number, if applicable, and city, state, and zip code.)</label
-      ><br />
-      <input
-        type="text"
-        name="address"
-        id="address"
-        required
-        pattern="^\d+\s[A-z]+\s[A-z]+(?:\s[A-z]+)*,\s[A-z]+\s[A-z]+,\s[A-Z]{2}\s\d{5}(?:-\d{4})?$"
-        title="Please enter a valid U.S. mailing address."
-      /><br />
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="US-employment-status"
-          >Can you currently legally be employed in the U.S.? </label
+
+        <label for="pronouns">What are your pronouns? </label><br />
+        <label for="pronouns">
+          <input
+            type="checkbox"
+            name="pronouns"
+            id="pronouns-she-her"
+            value="She/Her"
+            required
+          />
+          She/Her</label
+        ><br />
+        <label for="pronouns">
+          <input
+            type="checkbox"
+            name="pronouns"
+            id="pronouns-he-him"
+            value="He/Him"
+            required
+          />
+          He/Him</label
+        ><br />
+        <label for="pronouns">
+          <input
+            type="checkbox"
+            name="pronouns"
+            id="pronouns-they-them"
+            value="They/Them"
+            required
+          />
+          They/Them</label
+        ><br />
+        <label for="pronouns">
+          <input
+            type="checkbox"
+            name="pronouns"
+            id="pronouns-ze-zir"
+            value="Ze/Zir"
+            required
+          />
+          Ze/Zir</label
+        ><br />
+        <label for="pronouns">
+          <input
+            type="checkbox"
+            name="pronouns"
+            id="pronouns-other"
+            value="Other"
+            required
+          />
+          Other</label
         ><br />
         <input
-          type="radio"
-          id="US-employment-status-yes"
-          name="US-employment-status"
-          value="Yes"
-          required
-        />
-        <label for="US-employment-status-yes">Yes</label>
-        <input
-          type="radio"
-          id="US-employment-status-no"
-          name="US-employment-status"
-          value="No"
-          required
-        />
-        <label for="US-employment-status-no">No</label><br />
-      </div>
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="high-school-graduate-ged"
-          >Have you graduated from high school/received your GED? </label
+          type="text"
+          id="custom-pronouns"
+          name="custom-pronouns"
+          placeholder="Please enter your preferred pronouns"
+          aria-label="custom pronouns selection"
+          disabled
+        /><br />
+        <label for="birth-date">What is your birth date? </label><br />
+        <input type="date" id="birth-date" name="birth-date" /><br />
+        <label for="age-group">Select your age group </label><br />
+        <select name="age-group" id="age-group" required>
+          <br />
+          <option value="" selected disabled hidden>Select an Option</option>
+          <option value="18-24">18-24</option>
+          <option value="25-34">25-34</option>
+          <option value="35-44">35-44</option>
+          <option value="45-54">45-54</option>
+          <option value="55-64">55-64</option>
+          <option value="65+">65+</option></select
+        ><br />
+        <label for="phone-number">Cell phone number with area code </label
         ><br />
         <input
-          type="radio"
-          id="high-school-graduate-ged-yes"
-          name="high-school-graduate-ged"
-          value="Yes"
+          type="tel"
+          name="phone-number"
+          id="phone-number"
+          pattern="^\+?1?[-.\s]?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$"
+          placeholder="XXX-XXX-XXXX"
+          title="Please enter a valid phone number in the format: 415-555-1234 or 1-415-555-1234."
+          minlength="10"
           required
-        />
-        <label for="high-school-graduate-ged-yes">Yes</label>
+          autocomplete="tel"
+        /><br />
+        <div id="radio-wrapper" role="radiogroup">
+          <label for="veteran-status">Are you a U.S. veteran? </label><br />
+          <input
+            type="radio"
+            id="veteran-status-yes"
+            name="veteran-status"
+            value="Yes"
+            required
+          />
+          <label for="veteran-status-yes">Yes</label>
+          <input
+            type="radio"
+            id="veteran-status-no"
+            name="veteran-status"
+            value="No"
+            required
+          />
+          <label for="veteran-status-no">No</label><br />
+        </div>
+        <div id="radio-wrapper" role="radiogroup">
+          <label for="disabled-status">
+            Do you have a disability? (You can find some examples here:
+            <a href="https://askjan.org/a-to-z.cfm" target="_blank"
+              >https://askjan.org/a-to-z.cfm</a
+            >)
+          </label>
+          <div class="learn-more-wrapper">
+            <button
+              class="learn-more-title"
+              type="button"
+              aria-expanded="false"
+            >
+              Learn More
+              <span class="toggle-icon">
+                <span class="toggle-icon-plus">+</span>
+                <span class="toggle-icon-minus">-</span>
+              </span>
+            </button>
+            <p
+              class="learn-more-content"
+              tabindex="0"
+              aria-labelledby="disabled-status"
+            >
+              You are considered to have a disability if you have a physical or
+              mental impairment or medical condition that substantially limits a
+              major life activity.
+            </p>
+          </div>
+          <br />
+          <input
+            type="radio"
+            id="disabled-status-yes"
+            name="disabled-status"
+            value="Yes"
+            required
+          />
+          <label for="disabled-status-yes">Yes</label>
+          <input
+            type="radio"
+            id="disabled-status-no"
+            name="disabled-status"
+            value="No"
+            required
+          />
+          <label for="disabled-status-no">No</label><br />
+        </div>
+        <div id="radio-wrapper" role="radiogroup">
+          <label for="parental-status"
+            >Are you a parent or legal guardian of a minor? </label
+          ><br />
+          <input
+            type="radio"
+            id="parental-status-yes"
+            name="parental-status"
+            value="Yes"
+            required
+          />
+          <label for="parental-status-yes">Yes</label>
+          <input
+            type="radio"
+            id="parental-status-no"
+            name="parental-status"
+            value="No"
+            required
+          />
+          <label for="parental-status-no">No</label><br />
+        </div>
+        <label for="race-ethnicity"
+          >With which racial/ethnic groups do you most identify?
+        </label>
+        <div class="learn-more-wrapper">
+          <button class="learn-more-title" type="button" aria-expanded="false">
+            Learn More
+            <span class="toggle-icon">
+              <span class="toggle-icon-plus">+</span>
+              <span class="toggle-icon-minus">-</span>
+            </span>
+          </button>
+          <div
+            class="learn-more-content"
+            tabindex="0"
+            aria-labelledby="race-ethnicity"
+          >
+            <ul>
+              <li>
+                <strong>African-American, Black, or African:</strong> A person
+                having origins in Africa, including those across the African
+                diaspora, such as communities in the Americas, the Caribbean,
+                and other regions.
+              </li>
+              <li>
+                <strong>Central Asian:</strong> A person having origins in any
+                of the Central Asian countries, including Kazakhstan,
+                Kyrgyzstan, Tajikistan, Turkmenistan, Uzbekistan.
+              </li>
+              <li>
+                <strong>East Asian:</strong> A person having origins in any of
+                the East Asian countries, including China, Japan, Korea,
+                Mongolia, Tibet, and Taiwan.
+              </li>
+              <li>
+                <strong>Hispanic or Latinx:</strong> A person of having origins
+                in Cuba, Mexico, Puerto Rico, the Dominican Republic, or South
+                or Central America.
+              </li>
+              <li>
+                <strong>Middle Eastern or North African (MENA):</strong> A
+                person having origins in the Middle East or North Africa.
+              </li>
+              <li>
+                <strong
+                  >Native American, Alaskan Native, First Nations or
+                  Indigenous:</strong
+                >
+                A person having origins in any of the Indigenous peoples of
+                North and South America (including Central America).
+              </li>
+              <li>
+                <strong>Pacific Islander:</strong> A person having origins in
+                any of the Pacific Islands, including Polynesia, Micronesia, and
+                Melanesia.
+              </li>
+              <li>
+                <strong>South Asian:</strong> A person having origins in any of
+                the South Asian countries, including Bangladesh, Bhutan, India,
+                Nepal, Pakistan, Afghanistan, and Sri Lanka.
+              </li>
+              <li>
+                <strong>Southeast Asian:</strong> A person having origins in any
+                of the Southeast Asian countries, including Cambodia, Indonesia,
+                Laos, Malaysia, Myanmar, the Philippines, Singapore, Thailand,
+                and Vietnam.
+              </li>
+              <li>
+                <strong>White:</strong> A person having origins in Europe.
+              </li>
+              <li>
+                <strong>Another race/ethnicity:</strong> A person who identifies
+                with a racial/ethnic group not listed above.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <select
+          name="race-ethnicity"
+          id="race-ethnicity"
+          aria-label="Racial Ethnicity Selection"
+          required
+        >
+          <br />
+          <option value="none" selected disabled hidden>
+            Select an Option
+          </option>
+          <option value="African-American/Black/African">
+            African-American/Black/African
+          </option>
+          <option value="Central Asian">Central Asian</option>
+          <option value="East Asian">East Asian</option>
+          <option value="Hispanic/Latinx">Hispanic/Latinx</option>
+          <option value="Middle Eastern or North African">
+            Middle Eastern or North African
+          </option>
+          <option
+            value="Native American/Alaskan Native/First Nations/Indigenous"
+          >
+            Native American/Alaskan Native/First Nations/Indigenous
+          </option>
+          <option value="Pacific Islander">Pacific Islander</option>
+          <option value="South Asian">South Asian</option>
+          <option value="Southeast Asian">Southeast Asian</option>
+          <option value="White">White</option>
+          <option value="Other">Other</option>
+        </select>
         <input
-          type="radio"
-          id="high-school-graduate-ged-no"
-          name="high-school-graduate-ged"
-          value="No"
+          type="text"
+          id="custom-race-ethnicity"
+          name="custom-race-ethnicity"
+          aria-label="race-ethnicity input"
+          placeholder="Please enter your racial/ethnic group"
+          disabled
+        /><br />
+        <label for="address"
+          >What is the full mailing address of where you live? (Don't forget
+          unit number, if applicable, and city, state, and zip code.)</label
+        ><br />
+        <input
+          type="text"
+          name="address"
+          id="address"
           required
-        />
-        <label for="high-school-graduate-ged-no">No</label><br />
-      </div>
-      <button type="button" class="app-form-1" onclick="validateForm()">
-        Continue
-      </button>
-    </fieldset>
-  </form>
+          pattern="^\d+\s[A-z]+\s[A-z]+(?:\s[A-z]+)*,\s[A-z]+\s[A-z]+,\s[A-Z]{2}\s\d{5}(?:-\d{4})?$"
+          title="Please enter a valid U.S. mailing address."
+        /><br />
+        <div id="radio-wrapper" role="radiogroup">
+          <label for="US-employment-status"
+            >Can you currently legally be employed in the U.S.? </label
+          ><br />
+          <input
+            type="radio"
+            id="US-employment-status-yes"
+            name="US-employment-status"
+            value="Yes"
+            required
+          />
+          <label for="US-employment-status-yes">Yes</label>
+          <input
+            type="radio"
+            id="US-employment-status-no"
+            name="US-employment-status"
+            value="No"
+            required
+          />
+          <label for="US-employment-status-no">No</label><br />
+        </div>
+        <div id="radio-wrapper" role="radiogroup">
+          <label for="high-school-graduate-ged"
+            >Have you graduated from high school/received your GED? </label
+          ><br />
+          <input
+            type="radio"
+            id="high-school-graduate-ged-yes"
+            name="high-school-graduate-ged"
+            value="Yes"
+            required
+          />
+          <label for="high-school-graduate-ged-yes">Yes</label>
+          <input
+            type="radio"
+            id="high-school-graduate-ged-no"
+            name="high-school-graduate-ged"
+            value="No"
+            required
+          />
+          <label for="high-school-graduate-ged-no">No</label><br />
+        </div>
+        <button type="button" class="continue-btn" onclick="validateForm()">
+          Continue to Next Section
+        </button>
+      </fieldset>
+    </form>
+  </div>
 </section>
 
 <style>
-  /* .application-form is .payment-form in job-form.html */
-  form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem auto;
-    width: 75%;
-    max-width: 150rem;
-    padding: 3rem;
-    background-color: white;
-    border: 1px solid rgb(0, 0, 0);
-  }
-
+  /* Progressive Form Styles */
   .application-page {
     justify-content: center;
     background-color: #0093b5;
     padding: 2rem;
+    min-height: 100vh;
   }
-  .application-page > h1,
-  .application-page > p {
+
+  .application-page > h1 {
     max-width: 65%;
     margin: auto;
     text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
   }
 
-  .application-form .learn-more-wrapper {
-    display: inline;
-  }
-
-  .application-form .learn-more-content {
-    margin: 0.5em 0 0 0;
-    font-size: large;
-  }
-
-  .application-form .learn-more-wrapper button {
-    display: inline;
+  .form-step {
     background-color: white;
+    margin: 2rem auto;
+    width: 75%;
+    max-width: 50rem;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .step-header h2 {
     color: #0093b5;
-    cursor: pointer;
-    padding: 0;
-    margin: 0 0 0 0.5em;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
   }
 
-  .application-form .learn-more-wrapper button:hover {
-    background-color: white;
-    color: #16c1f3;
+  .step-header p {
+    color: #666;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
   }
 
-  .application-form .learn-more-wrapper button:focus-visible {
-    padding: 3px;
+  .eligibility-message {
+    text-align: center;
   }
 
-  .application-form button {
-    background-color: #fc7625;
-    color: white;
-    font-size: large;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin: auto;
-    display: block;
-    cursor: pointer;
+  .eligibility-message h2 {
+    color: #0093b5;
+    margin-bottom: 1.5rem;
   }
 
-  .application-form button:hover {
-    background-color: #16c1f3;
-    color: white;
-    transition: 0.3s;
+  .message-content {
+    color: #333;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
-  legend {
-    color: rgba(0, 115, 149, 0.8);
-    font-size: 20px;
+  .message-content ul {
+    text-align: left;
+    margin: 1.5rem 0;
   }
 
-  .application-form > fieldset {
-    border: 1px solid rgba(0, 0, 0, 0.559);
-    border-radius: 0.5rem;
+  .message-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .message-content a {
+    color: #0093b5;
+    text-decoration: none;
+  }
+
+  .message-content a:hover {
+    text-decoration: underline;
+  }
+
+  /* Form Styles */
+  .application-form fieldset {
     padding: 2rem;
-    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
   }
 
-  .application-form > fieldset > label {
-    color: rgb(0, 0, 0);
-    font-size: large;
+  .application-form legend {
+    color: rgba(0, 115, 149, 0.8);
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 0 1rem;
   }
 
-  .application-form > fieldset > input[type="text"],
-  .application-form > fieldset > input[type="email"],
-  .application-form > fieldset > input[type="tel"],
-  .application-form > fieldset > input[type="date"],
-  .application-form > fieldset > input[type="number"],
-  .application-form > fieldset > input[type="url"],
-  .application-form > fieldset > textarea,
-  .application-form > fieldset > select {
-    padding: 1em;
-    margin-bottom: 2em;
-    border: 1px solid rgba(0, 0, 0, 0.559);
-    border-radius: 6px;
+  .application-form label {
+    display: block;
+    margin: 1rem 0 0.5rem 0;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .application-form input[type="text"],
+  .application-form input[type="email"],
+  .application-form input[type="tel"],
+  .application-form input[type="date"],
+  .application-form select {
     width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
     box-sizing: border-box;
   }
 
-  .application-form > fieldset > select,
-  .application-form > fieldset > input[type="checkbox"],
-  .application-form > fieldset > #radio-wrapper > input[type="radio"] {
-    cursor: pointer;
+  .application-form select {
+    height: 3rem;
+    background-color: white;
   }
 
-  .application-form > fieldset > select {
-    appearance: none;
-    background-color: transparent;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBmaWxsPSJncmF5IiBkPSJNMTAsMjMyLjdsNDkwLDUzNC41bDQ5MC01MzQuNUgxMHoiIC8+DQo8L3N2Zz4=);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 15px;
-    background-origin: content-box;
+  .application-form input[type="radio"],
+  .application-form input[type="checkbox"] {
+    margin: 0.5rem 1rem 0.5rem 0;
+    transform: scale(1.2);
   }
 
   #radio-wrapper {
-    width: 100%;
-    color: rgba(0, 0, 0, 0.851);
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 0.25rem;
   }
 
-  #custom-gender,
-  #custom-pronouns,
-  #custom-race-ethnicity {
+  #radio-wrapper label {
+    display: inline;
+    margin-left: 0.5rem;
+    font-weight: normal;
+  }
+
+  /* Learn More Expandable Sections */
+  .learn-more-wrapper {
+    display: inline-block;
+    margin: 0.5rem 0;
+  }
+
+  .learn-more-title {
+    background: none;
+    border: none;
+    color: #0093b5;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: underline;
+    padding: 0;
+    margin-left: 0.5rem;
+  }
+
+  .learn-more-title:hover {
+    color: #16c1f3;
+  }
+
+  .learn-more-title:focus {
+    outline: 2px solid #0093b5;
+    outline-offset: 2px;
+  }
+
+  .learn-more-content {
+    display: none;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #f0f8ff;
+    border-left: 4px solid #0093b5;
+    border-radius: 0.25rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .learn-more-content ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .learn-more-content li {
+    margin-bottom: 0.75rem;
+  }
+
+  .toggle-icon-plus,
+  .toggle-icon-minus {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .toggle-icon-minus {
     display: none;
   }
 
-  @media only screen and (min-width: 320px) and (max-width: 599px) {
-    .column {
-      padding: 0;
-    }
-    .application-page > form {
-      width: initial;
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-    }
-    html,
-    body {
-      overflow-x: hidden;
-      width: 100%;
-    }
+  /* Buttons */
+  .continue-btn {
+    background-color: #ff6601;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin: 1.5rem auto;
+    display: block;
+    min-width: 200px;
+    transition: background-color 0.3s ease;
+  }
+
+  .continue-btn:hover {
+    background-color: #e55a01;
+  }
+
+  .continue-btn:focus {
+    outline: 2px solid #ff6601;
+    outline-offset: 2px;
+  }
+
+  /* Error States */
+  .error {
+    border: 2px solid #dc3545 !important;
+  }
+
+  .error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+    display: block;
+  }
+
+  /* Responsive Design */
+  @media only screen and (max-width: 600px) {
     .application-page {
-      padding: 2rem 0;
-    }
-    .application-page > h1 {
-      font-size: 1.5em;
-      max-width: fit-content;
-    }
-    legend {
-      font-size: 18px;
-    }
-    .application-form > fieldset {
-      min-width: 95%;
-      word-wrap: break-word;
-      padding: 1.5rem;
-      margin: 0;
-    }
-    #radio-wrapper > input[type="radio"] {
-      margin: 0;
-    }
-    #radio-wrapper > label,
-    .application-form > fieldset > label {
-      font-size: smaller;
-    }
-    .application-form .learn-more-wrapper .learn-more-title,
-    .application-form .learn-more-wrapper .toggle-icon {
-      color: #0093b5;
-      font-size: smaller;
+      padding: 1rem;
     }
 
-    .application-form .learn-more-wrapper .learn-more-content {
-      font-size: smaller;
+    .form-step {
+      width: 95%;
+      padding: 1.5rem;
+      margin: 1rem auto;
+    }
+
+    .application-page > h1 {
+      font-size: 2rem;
+      max-width: 95%;
+    }
+
+    .step-header h2 {
+      font-size: 1.5rem;
+    }
+
+    .application-form fieldset {
+      padding: 1rem;
+    }
+
+    .application-form label {
+      font-size: 0.9rem;
+    }
+
+    .learn-more-content {
+      font-size: 0.85rem;
     }
   }
+
   @media only screen and (min-width: 600px) and (max-width: 910px) {
-    .column {
-      padding: 0;
+    .form-step {
+      width: 85%;
+      padding: 2rem;
     }
-    html,
-    body {
-      overflow-x: hidden;
-      width: 100%;
-    }
-    .application-page {
-      padding: 2rem 0;
-    }
-    .application-page > form {
-      width: initial;
-      margin-bottom: 2rem;
-    }
+
     .application-page > h1 {
-      font-size: 2em;
-      max-width: fit-content;
+      font-size: 2.2rem;
     }
-    legend {
-      font-size: 24px;
+
+    .step-header h2 {
+      font-size: 1.6rem;
     }
   }
 </style>
 
-<script src="{{ url_for('static', filename='js/form.js') }}"></script>
+<script>
+  // Progressive form functionality with eligibility checking
+  document.addEventListener("DOMContentLoaded", function () {
+    // Initialize form state
+    initializeForm();
+
+    // Handle gender identity eligibility check
+    const genderSelect = document.getElementById("gender-identity-check");
+    const customGenderInput = document.getElementById("custom-gender-check");
+
+    if (genderSelect) {
+      genderSelect.addEventListener("change", function () {
+        if (this.value === "Other") {
+          customGenderInput.style.display = "block";
+          customGenderInput.removeAttribute("disabled");
+          customGenderInput.setAttribute("required", "required");
+        } else {
+          customGenderInput.style.display = "none";
+          customGenderInput.setAttribute("disabled", "true");
+          customGenderInput.removeAttribute("required");
+        }
+      });
+    }
+
+    // Handle pronouns custom input toggle
+    const pronounsCheckboxes = document.querySelectorAll(
+      "input[name='pronouns']",
+    );
+    const customPronounsInput = document.getElementById("custom-pronouns");
+
+    if (pronounsCheckboxes.length > 0 && customPronounsInput) {
+      pronounsCheckboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", () => {
+          if (document.getElementById("pronouns-other").checked) {
+            customPronounsInput.style.display = "block";
+            customPronounsInput.removeAttribute("disabled");
+            customPronounsInput.setAttribute("name", "pronouns");
+          } else {
+            customPronounsInput.style.display = "none";
+            customPronounsInput.setAttribute("disabled", "true");
+            customPronounsInput.removeAttribute("name");
+          }
+        });
+      });
+    }
+
+    // Handle race/ethnicity custom input toggle
+    const raceEthnicitySelect = document.getElementById("race-ethnicity");
+    const customRaceEthnicityInput = document.getElementById(
+      "custom-race-ethnicity",
+    );
+
+    if (raceEthnicitySelect && customRaceEthnicityInput) {
+      raceEthnicitySelect.addEventListener("change", function () {
+        if (this.value === "Other") {
+          customRaceEthnicityInput.style.display = "block";
+          customRaceEthnicityInput.removeAttribute("disabled");
+          this.removeAttribute("name");
+          customRaceEthnicityInput.setAttribute(
+            "name",
+            "custom-race-ethnicity",
+          );
+        } else {
+          customRaceEthnicityInput.style.display = "none";
+          customRaceEthnicityInput.setAttribute("disabled", "true");
+          customRaceEthnicityInput.removeAttribute("name");
+          this.setAttribute("name", "custom-race-ethnicity");
+        }
+      });
+    }
+
+    // Learn more expandable sections
+    initializeLearnMoreSections();
+  });
+
+  function initializeForm() {
+    // Hide all steps except the first one
+    const steps = document.querySelectorAll(".form-step");
+    steps.forEach((step, index) => {
+      if (index === 0) {
+        step.style.display = "block";
+      } else {
+        step.style.display = "none";
+      }
+    });
+  }
+
+  function checkEligibility() {
+    const genderSelect = document.getElementById("gender-identity-check");
+    const customGenderInput = document.getElementById("custom-gender-check");
+    const step1 = document.getElementById("step-1");
+    const step2 = document.getElementById("step-2");
+    const notEligibleDiv = document.getElementById("not-eligible");
+
+    let selectedGender = genderSelect.value;
+
+    // If "Other" is selected, get the custom input value
+    if (selectedGender === "Other") {
+      selectedGender = customGenderInput.value.trim();
+      if (!selectedGender) {
+        alert("Please specify your gender identity.");
+        return;
+      }
+    }
+
+    if (!selectedGender) {
+      alert("Please select your gender identity to continue.");
+      return;
+    }
+
+    // Check if the selected gender identity is eligible
+    const eligibleIdentities = [
+      "Cis Woman",
+      "Trans Woman",
+      "Non-binary/Genderqueer",
+      "Agender/Genderless",
+      "Genderfluid",
+    ];
+
+    const isEligible =
+      eligibleIdentities.includes(selectedGender) ||
+      selectedGender.toLowerCase().includes("woman") ||
+      selectedGender.toLowerCase().includes("female") ||
+      selectedGender.toLowerCase().includes("non-binary") ||
+      selectedGender.toLowerCase().includes("nonbinary") ||
+      selectedGender.toLowerCase().includes("genderqueer") ||
+      selectedGender.toLowerCase().includes("agender") ||
+      selectedGender.toLowerCase().includes("genderfluid");
+
+    if (isEligible) {
+      // Store the gender identity and show the main form
+      document.getElementById("gender-identity").value = selectedGender;
+      document.getElementById("gender-identity-confirm").value = selectedGender;
+
+      step1.style.display = "none";
+      step2.style.display = "block";
+    } else {
+      // Show not eligible message
+      step1.style.display = "none";
+      notEligibleDiv.style.display = "block";
+    }
+  }
+
+  function initializeLearnMoreSections() {
+    const learnMoreWrappers = document.querySelectorAll(".learn-more-wrapper");
+
+    learnMoreWrappers.forEach((wrapper) => {
+      const title = wrapper.querySelector(".learn-more-title");
+      const content = wrapper.querySelector(".learn-more-content");
+      const toggleIcon = wrapper.querySelector(".toggle-icon");
+
+      if (!title || !content || !toggleIcon) return;
+
+      const plusIcon = toggleIcon.querySelector(".toggle-icon-plus");
+      const minusIcon = toggleIcon.querySelector(".toggle-icon-minus");
+
+      // Initialize state
+      content.style.display = "none";
+      if (plusIcon) plusIcon.style.display = "inline";
+      if (minusIcon) minusIcon.style.display = "none";
+      title.setAttribute("aria-expanded", "false");
+
+      let isExpanded = false;
+
+      title.addEventListener("click", () => {
+        if (!isExpanded) {
+          content.style.display = "block";
+          if (plusIcon) plusIcon.style.display = "none";
+          if (minusIcon) minusIcon.style.display = "inline";
+          title.setAttribute("aria-expanded", "true");
+        } else {
+          content.style.display = "none";
+          if (plusIcon) plusIcon.style.display = "inline";
+          if (minusIcon) minusIcon.style.display = "none";
+          title.setAttribute("aria-expanded", "false");
+        }
+
+        isExpanded = !isExpanded;
+      });
+    });
+  }
+
+  // Form validation function
+  function validateForm() {
+    const form = document.getElementById("app-form-1");
+    const requiredFields = form.querySelectorAll("[required]");
+    let allValid = true;
+    let firstInvalidField = null;
+
+    // Clear previous error states
+    requiredFields.forEach((field) => {
+      field.classList.remove("error");
+      const existingError = field.parentNode.querySelector(".error-message");
+      if (existingError) {
+        existingError.remove();
+      }
+    });
+
+    requiredFields.forEach((field) => {
+      let isValid = true;
+
+      const tag = field.tagName.toUpperCase();
+
+      if (field.type === "radio" || field.type === "checkbox") {
+        const isChecked = form.querySelector(`[name="${field.name}"]:checked`);
+        if (!isChecked) {
+          isValid = false;
+        }
+      } else if (tag === "SELECT") {
+        if (field.value === "" || field.value === "none") {
+          isValid = false;
+        }
+      } else if (
+        field.type === "text" ||
+        field.type === "email" ||
+        field.type === "tel" ||
+        field.type === "number" ||
+        tag === "TEXTAREA"
+      ) {
+        if (!field.value.trim()) {
+          isValid = false;
+        }
+      }
+
+      if (!isValid) {
+        allValid = false;
+        field.classList.add("error");
+
+        if (!firstInvalidField) {
+          firstInvalidField = field;
+        }
+
+        // Add error message
+        const errorMessage = document.createElement("span");
+        errorMessage.className = "error-message";
+        errorMessage.textContent = "This field is required";
+        field.parentNode.insertBefore(errorMessage, field.nextSibling);
+      }
+    });
+
+    if (!allValid) {
+      alert("Please fill out all required fields marked in red.");
+      if (firstInvalidField) {
+        firstInvalidField.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+        firstInvalidField.focus();
+      }
+    } else {
+      // Form is valid, proceed to next page
+      window.location.href = "/app-household";
+    }
+  }
+</script>
 
 {% endblock content %}
