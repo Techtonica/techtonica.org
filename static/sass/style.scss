@@ -755,6 +755,9 @@ table.mentor {
     padding: 1em;
     margin: 0 auto;
     overflow-x: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .column-med {
@@ -996,6 +999,9 @@ table.mentor {
   }
   .icon-text {
     font-size: 0.6rem; /* Even smaller text for mobile */
+  }
+  .event-item {
+    max-width: 100%;
   }
 }
 
