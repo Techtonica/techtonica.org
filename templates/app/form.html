@@ -578,7 +578,11 @@ Techtonica Application {% endblock title %} {% block content %}
           />
           <label for="high-school-graduate-ged-no">No</label><br />
         </div>
-        <button type="button" class="continue-btn" onclick="validateForm()">
+        <button
+          type="button"
+          class="continue-btn"
+          onclick="validateStep2Form()"
+        >
           Continue to Next Section
         </button>
       </fieldset>
@@ -1046,8 +1050,8 @@ Techtonica Application {% endblock title %} {% block content %}
     });
   }
 
-  // Form validation function
-  function validateForm() {
+  // Form validation function for Step 2
+  function validateStep2Form() {
     const form = document.getElementById("app-form-1");
     const requiredFields = form.querySelectorAll("[required]");
     let allValid = true;
