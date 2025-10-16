@@ -1078,9 +1078,6 @@ table.mentor td:first-of-type {
   .icon-text {
     font-size: 0.6rem; /* Even smaller text for mobile */
   }
-  .event-item {
-    max-width: 100%;
-  }
 }
 @media (max-width: 560px) {
   .videowrapper {
@@ -1203,6 +1200,12 @@ table.mentor td:first-of-type {
   padding: 1rem 2rem;
 }
 
+@media (max-width: 910px) {
+  .event-item {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
 .event-item__address {
   font-size: 1rem;
 }
