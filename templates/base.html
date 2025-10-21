@@ -696,7 +696,6 @@
 
     <script src="{{ url_for('static', filename='js/base.js') }}" defer></script>
 
-    
     <div id="fc-fade" class="fc-black_overlay" onclick="close_window()"></div>
 
     <div id="fc-light" class="fc-white_content">
@@ -779,13 +778,13 @@
     <script>
       (function (i, s, o, g, r, a, m) {
         i["GoogleAnalyticsObject"] = r;
-        (i[r] =
+        ((i[r] =
           i[r] ||
           function () {
             (i[r].q = i[r].q || []).push(arguments);
           }),
-          (i[r].l = 1 * new Date());
-        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+          (i[r].l = 1 * new Date()));
+        ((a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]));
         a.async = 1;
         a.src = g;
         m.parentNode.insertBefore(a, m);
@@ -963,17 +962,13 @@
           </div>
         </div>
         <!-- End of Partner Dropdown -->
-        
+
         <!-- Apply Link -->
-        <a 
-          href="{{ url_for('render_swe_program_page') }}" 
-          class="nav-link"
-        >
+        <a href="{{ url_for('render_swe_program_page') }}" class="nav-link">
           Apply
         </a>
 
-        <!-- <a href="{{ url_for('render_home_page') }}#supporters" class="supporters nav-link">Supporters</a> -->      
-
+        <!-- <a href="{{ url_for('render_home_page') }}#supporters" class="supporters nav-link">Supporters</a> -->
       </div>
     </nav>
     <!-- BEGIN MAIN CONTENT -->

@@ -1603,6 +1603,15 @@ button.disabled {
 
 .success-container button {
   margin-top: 30px;
+  color: white;
+}
+
+#post-another-job.orange-button h2 {
+  font: white;
+}
+
+button#post-another-job.orange-button {
+  width: auto;
 }
 
 /* Existing styles for invalid fields, etc. */
