@@ -755,6 +755,9 @@ table.mentor {
     padding: 1em;
     margin: 0 auto;
     overflow-x: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .column-med {
@@ -1135,6 +1138,13 @@ table.mentor {
   max-width: 30%;
   flex-basis: 25%;
   padding: 1rem 2rem;
+}
+
+@media (max-width: 910px) {
+  .event-item {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
 }
 
 .event-item__address {
