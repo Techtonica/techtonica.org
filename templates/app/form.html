@@ -578,11 +578,7 @@ Techtonica Application {% endblock title %} {% block content %}
           />
           <label for="high-school-graduate-ged-no">No</label><br />
         </div>
-        <button
-          type="button"
-          class="continue-btn"
-          onclick="validateStep2Form()"
-        >
+        <button type="button" class="continue-btn" onclick="validateForm()">
           Continue to Next Section
         </button>
       </fieldset>
@@ -692,7 +688,12 @@ Techtonica Application {% endblock title %} {% block content %}
   .application-form input[type="email"],
   .application-form input[type="tel"],
   .application-form input[type="date"],
-  .application-form select {
+  .application-form select,
+  .form-step input[type="text"],
+  .form-step input[type="email"],
+  .form-step input[type="tel"],
+  .form-step input[type="date"],
+  .form-step select {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #ccc;
@@ -702,7 +703,8 @@ Techtonica Application {% endblock title %} {% block content %}
     box-sizing: border-box;
   }
 
-  .application-form select {
+  .application-form select,
+  .form-step select {
     height: 3rem;
     background-color: white;
   }
@@ -821,34 +823,57 @@ Techtonica Application {% endblock title %} {% block content %}
   /* Responsive Design */
   @media only screen and (max-width: 600px) {
     .application-page {
-      padding: 1rem;
+      padding: 0.5rem;
     }
 
     .form-step {
-      width: 95%;
-      padding: 1.5rem;
-      margin: 1rem auto;
+      width: calc(100% - 1rem);
+      padding: 1rem;
+      margin: 0.5rem auto;
+      box-sizing: border-box;
     }
 
     .application-page > h1 {
-      font-size: 2rem;
-      max-width: 95%;
+      font-size: 1.8rem;
+      max-width: 100%;
+      margin-bottom: 1rem;
+      padding: 0 0.5rem;
     }
 
     .step-header h2 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
     }
 
-    .application-form fieldset {
-      padding: 1rem;
+    .step-header p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
     }
 
-    .application-form label {
+    .application-form fieldset,
+    .form-step fieldset {
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
+
+    .application-form legend,
+    .form-step legend {
+      font-size: 1.1rem;
+      padding: 0;
+    }
+
+    .application-form label,
+    .form-step label {
       font-size: 0.9rem;
     }
 
     .learn-more-content {
       font-size: 0.85rem;
+    }
+
+    .continue-btn {
+      width: 100%;
+      margin-top: 1rem;
     }
   }
 
@@ -864,6 +889,32 @@ Techtonica Application {% endblock title %} {% block content %}
 
     .step-header h2 {
       font-size: 1.6rem;
+    }
+  }
+
+  /* Extra small screens */
+  @media only screen and (max-width: 360px) {
+    .application-page {
+      padding: 0.25rem;
+    }
+
+    .form-step {
+      width: calc(100% - 0.5rem);
+      padding: 0.75rem;
+      margin: 0.25rem auto;
+    }
+
+    .application-page > h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .step-header h2 {
+      font-size: 1.2rem;
+    }
+
+    .step-header p {
+      font-size: 0.9rem;
     }
   }
 </style>
@@ -1050,8 +1101,8 @@ Techtonica Application {% endblock title %} {% block content %}
     });
   }
 
-  // Form validation function for Step 2
-  function validateStep2Form() {
+  // Form validation function
+  function validateForm() {
     const form = document.getElementById("app-form-1");
     const requiredFields = form.querySelectorAll("[required]");
     let allValid = true;
