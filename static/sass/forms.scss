@@ -1,4 +1,4 @@
-@import "settings";
+@use "settings" as *;
 
   form {
     display: flex;
@@ -18,14 +18,76 @@
     padding: 2rem;
   }
 
-  .application-form .learn-more-wrapper {
-    display: inline;
+  .form-step {
+    background-color: white;
+    margin: 2rem auto;
+    width: 75%;
+    max-width: 50rem;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
-  .application-form .learn-more-content {
-    margin: 0.5em 0 0 0;
-    font-size: large;
-  }
+.application-form .learn-more-wrapper {
+  display: inline-block;
+  margin: 0.5rem 0;
+}
+
+.application-form .learn-more-wrapper .learn-more-title {
+  display: inline;
+  background: none;
+  border: none;
+  color: $main-blue;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: underline;
+  padding: 0;
+  margin-left: 0.5rem;
+}
+
+.application-form .learn-more-wrapper .learn-more-title:hover {
+  color: $light-blue;
+}
+
+.application-form .learn-more-wrapper .learn-more-title:focus {
+  outline: 2px solid $main-blue;
+  outline-offset: 2px;
+}
+
+.application-form .learn-more-wrapper .learn-more-content {
+  display: none;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #f0f8ff;
+  border-left: 4px solid $main-blue;
+  border-radius: 0.25rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.application-form .learn-more-wrapper .learn-more-content ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.application-form .learn-more-wrapper .learn-more-content li {
+  margin-bottom: 0.75rem;
+}
+
+.toggle-icon-plus,
+.toggle-icon-minus {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.toggle-icon-minus {
+  display: none;
+}
+
+  // .application-form .learn-more-content {
+  //   margin: 0.5em 0 0 0;
+  //   font-size: large;
+  // }
 
   .application-form .learn-more-wrapper button {
     display: inline;
@@ -82,6 +144,40 @@
     width: 100%;
   }
 
+  .form-step {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      box-sizing: border-box;
+    }
+
+    select {
+      height: 3rem;
+      background-color: white;
+    }
+
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem 0;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin: 0.5rem 1rem 0.5rem 0;
+      transform: scale(1.2);
+    }
+  }
+
   #radio-wrapper label {
     color: black;
     margin-bottom: 2em;
@@ -90,11 +186,16 @@
     background-color: $light-blue;
   }
 
-  .continue-to-app-btn {
+  // Alias for backward compatibility
+  button.continue-btn {
+    @extend .continue-to-app-btn;
+  }
+
+  button.continue-btn {
       width: 50%;
     }
 
-  button.continue-to-app-btn,
+  button.continue-btn,
   button.previous-btn,
   button.save-btn {
     background-color: $focal-orange;
@@ -108,7 +209,7 @@
     cursor: pointer;
   }
 
-  button.continue-to-app-btn:hover,
+  button.continue-btn:hover,
   button.previous-btn:hover,
   button.save-btn:hover {
     background-color: $light-blue;
@@ -121,6 +222,90 @@
     margin: auto;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .step-header h2 {
+    color: $main-blue;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .step-header p {
+    color: #666;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+
+  .eligibility-message {
+    text-align: center;
+  }
+
+  .eligibility-message h2 {
+    color: $main-blue;
+    margin-bottom: 1.5rem;
+  }
+
+  .message-content {
+    color: #333;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .message-content ul {
+    text-align: left;
+    margin: 1.5rem 0;
+  }
+
+  .message-content li {
+    margin-bottom: 0.5rem;
+  }
+
+  .message-content a {
+    color: $main-blue;
+    text-decoration: none;
+  }
+
+  .message-content a:hover {
+    text-decoration: underline;
+  }
+
+  .error {
+    border: 2px solid #dc3545 !important;
+  }
+
+  .error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+    display: block;
+  }
+
+  @media only screen and (max-width: 360px) {
+    .application-page {
+      padding: 0.25rem;
+    }
+    
+    .form-step {
+      width: calc(100% - 0.5rem);
+      padding: 0.75rem;
+      margin: 0.25rem auto;
+    }
+    
+    .application-page > h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .step-header h2 {
+      font-size: 1.2rem;
+    }
+    
+    .step-header p {
+      font-size: 0.9rem;
+    }
   }
 
   @media only screen and (min-width: 320px) and (max-width: 599px) {
@@ -152,7 +337,7 @@
     }
 
     button.previous-btn,
-    button.continue-to-app-btn,
+    button.continue-btn,
     button.save-btn {
       font-size: smaller;
     }
@@ -197,6 +382,40 @@
       gap: 0.5em;
       margin: auto;
     }
+
+    .form-step {
+      width: calc(100% - 1rem);
+      padding: 1rem;
+      margin: 0.5rem auto;
+      box-sizing: border-box;
+    }
+    
+    .step-header h2 {
+      font-size: 1.4rem;
+    }
+    
+    .step-header p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .application-form fieldset,
+    .form-step fieldset {
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
+    
+    legend {
+      font-size: 1.1rem;
+      padding: 0;
+    }
+    
+    .continue-btn,
+    .continue-to-app-btn {
+      width: 100%;
+      margin-top: 1rem;
+    }
   }
 
   @media only screen and (min-width: 600px) and (max-width: 910px) {
@@ -235,4 +454,14 @@
     legend {
       font-size: 24px;
     }
+
+    .form-step {
+      width: 85%;
+      padding: 2rem;
+    }
+    
+    .step-header h2 {
+      font-size: 1.6rem;
+    }
+
   }
