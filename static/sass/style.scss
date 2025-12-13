@@ -729,6 +729,11 @@ table.mentor {
   flex-grow: 1;
 }
 
+// privacy page source reference text
+#original-template-source {
+  text-align: left;
+}
+
 .videowrapper {
   max-width: 560px; /* you have to have a size or this method doesn't work */
   max-height: 315px;
