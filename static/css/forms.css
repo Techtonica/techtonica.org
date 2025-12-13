@@ -170,6 +170,11 @@ form {
   display: none;
 }
 
+.application-form .learn-more-content {
+  margin: 0.5em 0 0 0;
+  font-size: large;
+}
+
 .application-form .learn-more-wrapper button {
   display: inline;
   background-color: white;
@@ -243,9 +248,7 @@ legend {
   background-color: white;
 }
 .form-step label {
-  display: block;
   margin: 1rem 0 0.5rem 0;
-  font-weight: bold;
   color: #333;
 }
 .form-step input[type=radio],
