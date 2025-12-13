@@ -734,6 +734,7 @@ Techtonica Application {% endblock title %} {% block content %}
       "Non-binary/Genderqueer",
       "Agender/Genderless",
       "Genderfluid",
+      "Trans Man"
     ];
 
     const isEligible =
@@ -744,7 +745,8 @@ Techtonica Application {% endblock title %} {% block content %}
       selectedGender.toLowerCase().includes("nonbinary") ||
       selectedGender.toLowerCase().includes("genderqueer") ||
       selectedGender.toLowerCase().includes("agender") ||
-      selectedGender.toLowerCase().includes("genderfluid");
+      selectedGender.toLowerCase().includes("genderfluid") || 
+      selectedGender.toLowerCase().includes("trans") ;
 
     if (isEligible) {
       // Store the gender identity and show the main form

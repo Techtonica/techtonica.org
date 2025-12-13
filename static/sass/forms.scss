@@ -28,66 +28,66 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
-.application-form .learn-more-wrapper {
-  display: inline-block;
-  margin: 0.5rem 0;
-}
+  .application-form .learn-more-wrapper {
+    display: inline-block;
+    margin: 0.5rem 0;
+  }
 
-.application-form .learn-more-wrapper .learn-more-title {
-  display: inline;
-  background: none;
-  border: none;
-  color: $main-blue;
-  cursor: pointer;
-  font-size: 1rem;
-  text-decoration: underline;
-  padding: 0;
-  margin-left: 0.5rem;
-}
+  .application-form .learn-more-wrapper .learn-more-title {
+    display: inline;
+    background: none;
+    border: none;
+    color: $main-blue;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: underline;
+    padding: 0;
+    margin-left: 0.5rem;
+  }
 
-.application-form .learn-more-wrapper .learn-more-title:hover {
-  color: $light-blue;
-}
+  .application-form .learn-more-wrapper .learn-more-title:hover {
+    color: $light-blue;
+  }
 
-.application-form .learn-more-wrapper .learn-more-title:focus {
-  outline: 2px solid $main-blue;
-  outline-offset: 2px;
-}
+  .application-form .learn-more-wrapper .learn-more-title:focus {
+    outline: 2px solid $main-blue;
+    outline-offset: 2px;
+  }
 
-.application-form .learn-more-wrapper .learn-more-content {
-  display: none;
-  margin: 1rem 0;
-  padding: 1rem;
-  background-color: #f0f8ff;
-  border-left: 4px solid $main-blue;
-  border-radius: 0.25rem;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
+  .application-form .learn-more-wrapper .learn-more-content {
+    display: none;
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #f0f8ff;
+    border-left: 4px solid $main-blue;
+    border-radius: 0.25rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
 
-.application-form .learn-more-wrapper .learn-more-content ul {
-  margin: 0.5rem 0;
-  padding-left: 1.5rem;
-}
+  .application-form .learn-more-wrapper .learn-more-content ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+  }
 
-.application-form .learn-more-wrapper .learn-more-content li {
-  margin-bottom: 0.75rem;
-}
+  .application-form .learn-more-wrapper .learn-more-content li {
+    margin-bottom: 0.75rem;
+  }
 
-.toggle-icon-plus,
-.toggle-icon-minus {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
+  .toggle-icon-plus,
+  .toggle-icon-minus {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
 
-.toggle-icon-minus {
-  display: none;
-}
+  .toggle-icon-minus {
+    display: none;
+  }
 
-  // .application-form .learn-more-content {
-  //   margin: 0.5em 0 0 0;
-  //   font-size: large;
-  // }
+  .application-form .learn-more-content {
+    margin: 0.5em 0 0 0;
+    font-size: large;
+  }
 
   .application-form .learn-more-wrapper button {
     display: inline;
