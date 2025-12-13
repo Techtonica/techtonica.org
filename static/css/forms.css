@@ -361,12 +361,9 @@ button.save-btn:hover {
   .application-page {
     padding: 0.25rem;
   }
-  .form {
-    padding: 1rem !important;
-  }
   .form-step {
     width: calc(100% - 0.5rem);
-    padding: 0.75rem;
+    padding: 0.75rem !important;
     margin: 0.25rem auto;
   }
   .application-page > h1 {
