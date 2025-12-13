@@ -123,7 +123,8 @@ form {
 }
 
 .application-form .learn-more-wrapper {
-  display: inline-block;
+  display: inline;
+  vertical-align: top;
   margin: 0.5rem 0;
 }
 
@@ -361,7 +362,7 @@ button.save-btn:hover {
     padding: 0.25rem;
   }
   .form {
-    padding: 1rem;
+    padding: 1rem !important;
   }
   .form-step {
     width: calc(100% - 0.5rem);

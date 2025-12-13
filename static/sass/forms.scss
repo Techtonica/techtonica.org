@@ -37,7 +37,8 @@
   }
 
   .application-form .learn-more-wrapper {
-    display: inline-block;
+    display: inline;
+    vertical-align: top;
     margin: 0.5rem 0;
   }
 
@@ -285,7 +286,7 @@
     }
 
     .form {
-      padding: 1rem;
+      padding: 1rem !important;
     }
     
     .form-step {
