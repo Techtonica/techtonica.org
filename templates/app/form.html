@@ -12,85 +12,87 @@ Techtonica Application {% endblock title %} {% block content %}
       </p>
     </div>
 
-    <fieldset>
-      <legend>Gender Identity</legend>
-      <label for="gender-identity-check"
-        >With which gender identity do you most align?</label
-      >
-      <div class="learn-more-wrapper">
-        <button class="learn-more-title" type="button" aria-expanded="false">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <div
-          class="learn-more-content"
-          tabindex="0"
-          aria-labelledby="gender-identity-check"
+    <form action="#" method="POST" class="application-form" id="app-form-1">
+      <fieldset>
+        <legend>Gender Identity</legend>
+        <label for="gender-identity-check"
+          >With which gender identity do you most align?</label
         >
-          <p>
-            <strong>Our program serves women and non-binary adults.</strong>
-            This includes:
-          </p>
-          <ul>
-            <li>
-              <strong>Cis Woman:</strong> A person whose gender identity aligns
-              with the female sex they were assigned at birth.
-            </li>
-            <li>
-              <strong>Trans Woman:</strong> A person who was assigned male at
-              birth but whose gender identity is female.
-            </li>
-            <li>
-              <strong>Non-binary or Genderqueer:</strong> People who do not
-              identify exclusively as a man or a woman. They may feel like both,
-              somewhere in between, or outside these categories entirely.
-            </li>
-            <li>
-              <strong>Agender or Genderless:</strong> People who do not identify
-              with any gender or feel an absence of gender.
-            </li>
-            <li>
-              <strong>Genderfluid:</strong> People whose gender identity is not
-              fixed and may change over time, fluctuating between different
-              gender expressions or identities.
-            </li>
-          </ul>
+        <div class="learn-more-wrapper">
+          <button class="learn-more-title" type="button" aria-expanded="false">
+            Learn More
+            <span class="toggle-icon">
+              <span class="toggle-icon-plus">+</span>
+              <span class="toggle-icon-minus">-</span>
+            </span>
+          </button>
+          <div
+            class="learn-more-content"
+            tabindex="0"
+            aria-labelledby="gender-identity-check"
+          >
+            <p>
+              <strong>Our program serves women and non-binary adults.</strong>
+              This includes:
+            </p>
+            <ul>
+              <li>
+                <strong>Cis Woman:</strong> A person whose gender identity aligns
+                with the female sex they were assigned at birth.
+              </li>
+              <li>
+                <strong>Trans Woman:</strong> A person who was assigned male at
+                birth but whose gender identity is female.
+              </li>
+              <li>
+                <strong>Non-binary or Genderqueer:</strong> People who do not
+                identify exclusively as a man or a woman. They may feel like both,
+                somewhere in between, or outside these categories entirely.
+              </li>
+              <li>
+                <strong>Agender or Genderless:</strong> People who do not identify
+                with any gender or feel an absence of gender.
+              </li>
+              <li>
+                <strong>Genderfluid:</strong> People whose gender identity is not
+                fixed and may change over time, fluctuating between different
+                gender expressions or identities.
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <select
-        name="gender-identity-check"
-        id="gender-identity-check"
-        aria-label="Gender Identity Eligibility Check"
-        required
-      >
-        <option value="">Please select your gender identity</option>
-        <option value="Cis Woman">Cis Woman</option>
-        <option value="Trans Woman">Trans Woman</option>
-        <option value="Non-binary/Genderqueer">Non-binary/Genderqueer</option>
-        <option value="Agender/Genderless">Agender/Genderless</option>
-        <option value="Genderfluid">Genderfluid</option>
-        <option value="Cis Man">Cis Man</option>
-        <option value="Trans Man">Trans Man</option>
-        <option value="Other">Other (please specify)</option>
-      </select>
+        <select
+          name="gender-identity-check"
+          id="gender-identity-check"
+          aria-label="Gender Identity Eligibility Check"
+          required
+        >
+          <option value="">Please select your gender identity</option>
+          <option value="Cis Woman">Cis Woman</option>
+          <option value="Trans Woman">Trans Woman</option>
+          <option value="Non-binary/Genderqueer">Non-binary/Genderqueer</option>
+          <option value="Agender/Genderless">Agender/Genderless</option>
+          <option value="Genderfluid">Genderfluid</option>
+          <option value="Cis Man">Cis Man</option>
+          <option value="Trans Man">Trans Man</option>
+          <option value="Other">Other (please specify)</option>
+        </select>
 
-      <input
-        type="text"
-        id="custom-gender-check"
-        name="custom-gender-check"
-        placeholder="Please specify your gender identity"
-        aria-label="Custom gender identity"
-        style="display: none; margin-top: 10px"
-      />
+        <input
+          type="text"
+          id="custom-gender-check"
+          name="custom-gender-check"
+          placeholder="Please specify your gender identity"
+          aria-label="Custom gender identity"
+          style="display: none; margin-top: 10px"
+        />
 
-      <button type="button" class="continue-btn" onclick="checkEligibility()">
-        Continue
-      </button>
-    </fieldset>
+        <button type="button" class="continue-btn" onclick="checkEligibility()">
+          Continue
+        </button>
+      </fieldset>
+    </form>
   </div>
 
   <!-- Eligibility Message for Non-Qualifying Applicants -->

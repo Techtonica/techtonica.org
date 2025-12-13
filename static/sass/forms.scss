@@ -26,6 +26,16 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
+    .toggle-icon-plus,
+  .toggle-icon-minus {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .toggle-icon-minus {
+    display: none;
+  }
+
   .application-form .learn-more-wrapper {
     display: inline-block;
     margin: 0.5rem 0;
@@ -70,16 +80,6 @@
 
   .application-form .learn-more-wrapper .learn-more-content li {
     margin-bottom: 0.75rem;
-  }
-
-  .toggle-icon-plus,
-  .toggle-icon-minus {
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-
-  .toggle-icon-minus {
-    display: none;
   }
 
   .application-form .learn-more-content {
