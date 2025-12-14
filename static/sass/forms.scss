@@ -26,7 +26,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
-    .toggle-icon-plus,
+  .toggle-icon-plus,
   .toggle-icon-minus {
     font-weight: bold;
     font-size: 1.2rem;
@@ -294,6 +294,12 @@
     .application-page > h1 {
       font-size: 1.6rem;
       margin-bottom: 0.75rem;
+    }
+   
+    .application-form fieldset, .form-step fieldset {
+        padding: 0;
+        margin: 0;
+        border: none;
     }
     
     .step-header h2 {
