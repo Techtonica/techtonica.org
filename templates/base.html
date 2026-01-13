@@ -16,39 +16,11 @@
       rel="icon"
       type="image/x-icon"
     />
-    <!-- // This code block only needs to be installed once to activate all integrations site wide // Begin Flipcause Integration Code //-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="{{ url_for('static', filename='js/base.js') }}" defer></script>
+<!-- // this is the line of code leftover from code block //-->
+   
 
-    <div id="fc-fade" class="fc-black_overlay" onclick="close_window()"></div>
 
-    <div id="fc-light" class="fc-white_content">
-      <div id="fc-lightbox-loader" class="fc-lightbox-loader"></div>
-
-      <div id="fc-main" class="fc-main-box">
-        <div
-          id="fc-close"
-          class="fc-widget_close"
-          onclick="close_window()"
-        ></div>
-
-        <iframe
-          id="fc-myFrame"
-          iframe
-          height="580"
-          width="925"
-          style="
-            border: 0;
-            border-radius: 5px 5px 5px 5px;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-            background: #fff;
-          "
-          scrolling="no"
-          src=""
-        ></iframe>
-      </div>
-    </div>
-    <!--END Flipcause Main Integration Code-->
+    
     <title>
       {% block title %} Techtonica: Bridging the Tech Gap {% endblock title %}
     </title>
