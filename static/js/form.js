@@ -197,6 +197,8 @@ function validateFieldByType(field, validationType) {
       return field.files.length > 0; // Ensure file is uploaded
     case "select-one":
       return isValidSelect(field.value);
+    case "date":
+      return isValidateDate(field.value);
     default:
       return field.value.trim() !== ""; // Ensure field is not empty
   }
@@ -215,6 +217,18 @@ function isValidSelect(value) {
 function isRadioGroupValid(name) {
   const radios = document.getElementsByName(name);
   return Array.from(radios).some((radio) => radio.checked); // Collects radio buttons in group and checks if at least one is selected
+}
+
+function isValidateDate(value) {
+  if (!value) {
+    return false;
+  }
+
+  const selectedDate = new Date(value);
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  return selectedDate < today;
 }
 
 // Handle invalid fields
