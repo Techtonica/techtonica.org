@@ -180,9 +180,8 @@ Techtonica Application {% endblock title %} {% block content %}
   </form>
 </section>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // handle "Learn More" toggle functionality
-    const learnMoreWrappers = document.querySelectorAll(".learn-more-wrapper");
-
-<script src="{{ url_for('static', filename='js/app-reference.js') }}"></script>
+  window.onload = function () {
+    attachLiveValidation("app-form-5", "/app-form-admin");
+  };
+</script>
 {% endblock content %}

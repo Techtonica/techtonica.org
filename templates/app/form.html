@@ -485,9 +485,7 @@ Techtonica Application {% endblock title %} {% block content %}
         />
         <label for="high-school-graduate-ged-no">No</label><br />
       </div>
-      <button type="button" class="app-form-1" onclick="validateForm()">
-        Continue
-      </button>
+      <button type="button" class="continue-to-app-btn">Continue</button>
     </fieldset>
   </form>
 </section>
@@ -695,6 +693,11 @@ Techtonica Application {% endblock title %} {% block content %}
   }
 </style>
 
-<script src="{{ url_for('static', filename='js/form.js') }}"></script>
+<script>
+  // Attach live validation on page load
+  window.onload = function () {
+    attachLiveValidation("app-form-1", "/app-household");
+  };
+</script>
 
 {% endblock content %}
