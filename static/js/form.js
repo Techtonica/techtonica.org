@@ -229,22 +229,17 @@ function markInvalid(field) {
     });
   } else {
     // For other field types
-    let parent = field.parentElement;
-    if (!parent) {
-      console.error("Parent element not found");
-      return;
-    }
-    let errorMessage = parent.querySelector(".error-message");
-    if (!errorMessage) {
-      // Create error message element
+    let errorMessage = field.previousElementSibling;
+
+    if (!errorMessage || !errorMessage.classList.contains("error-message")) {
       errorMessage = document.createElement("span");
       errorMessage.className = "error-message";
       errorMessage.style.color = "red";
       errorMessage.innerText = errorMessageText;
 
-      // Insert error message before the field
-      parent.insertBefore(errorMessage, field);
+      field.parentElement.insertBefore(errorMessage, field);
     }
+
     field.style.border = "2px solid red";
   }
 }
