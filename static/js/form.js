@@ -259,12 +259,11 @@ function clearValidation(field) {
       radio.style.outlineOffset = ""; // Clear the spacing
     });
   } else {
-    // Handle other input types
-    const parent = field.parentElement;
-    const errorMessage = parent.querySelector(".error-message"); // Check for error message above the field
-    if (errorMessage) {
-      errorMessage.remove(); // Remove error message
+    let prev = field.previousElementSibling;
+    if (prev && prev.classList.contains("error-message")) {
+      prev.remove();
     }
+
     field.style.border = ""; // Remove red border for valid inputs
   }
 }
