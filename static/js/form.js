@@ -180,9 +180,11 @@ function validateFieldByType(field, validationType) {
     case "radio":
       return isRadioGroupValid(field.name); // Validate radio group selection
     case "checkbox":
-      return isRadioGroupValid(field.name); // Validate radio group selection
+      return isRadioGroupValid(field.name); // Validate checkbox selection
     case "file":
       return field.files.length > 0; // Ensure file is uploaded
+    case "select-one":
+      return isValidSelect(field.value);
     default:
       return field.value.trim() !== ""; // Ensure field is not empty
   }
@@ -192,6 +194,10 @@ function validateFieldByType(field, validationType) {
 function isValidURL(value) {
   const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i; // Regex to check URL formatting
   return urlPattern.test(value);
+}
+
+function isValidSelect(value) {
+  return value !== "";
 }
 
 function isRadioGroupValid(name) {
