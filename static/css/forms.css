@@ -91,7 +91,6 @@ form {
   justify-content: center;
   align-items: center;
   margin: 2rem auto;
-  width: 75%;
   max-width: 150rem;
   padding: 3rem;
   background-color: white;
@@ -104,8 +103,70 @@ form {
   padding: 2rem;
 }
 
+.form-step {
+  background-color: white;
+  margin: 2rem auto;
+  max-width: 50rem;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-icon-plus,
+.toggle-icon-minus {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.toggle-icon-minus {
+  display: none;
+}
+
 .application-form .learn-more-wrapper {
   display: inline;
+  vertical-align: top;
+  margin: 0.5rem 0;
+}
+
+.application-form .learn-more-wrapper .learn-more-title {
+  display: inline;
+  background: none;
+  border: none;
+  color: #0093b5;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: underline;
+  padding: 0;
+  margin-left: 0.5rem;
+}
+
+.application-form .learn-more-wrapper .learn-more-title:hover {
+  color: #16c1f3;
+}
+
+.application-form .learn-more-wrapper .learn-more-title:focus {
+  outline: 2px solid #0093b5;
+  outline-offset: 2px;
+}
+
+.application-form .learn-more-wrapper .learn-more-content {
+  display: none;
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #f0f8ff;
+  border-left: 4px solid #0093b5;
+  border-radius: 0.25rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.application-form .learn-more-wrapper .learn-more-content ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.application-form .learn-more-wrapper .learn-more-content li {
+  margin-bottom: 0.75rem;
 }
 
 .application-form .learn-more-content {
@@ -168,6 +229,33 @@ legend {
   width: 100%;
 }
 
+.form-step input[type=text],
+.form-step input[type=email],
+.form-step input[type=tel],
+.form-step input[type=date],
+.form-step select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+.form-step select {
+  height: 3rem;
+  background-color: white;
+}
+.form-step label {
+  margin: 1rem 0 0.5rem 0;
+  color: #333;
+}
+.form-step input[type=radio],
+.form-step input[type=checkbox] {
+  margin: 0.5rem 1rem 0.5rem 0;
+  transform: scale(1.2);
+}
+
 #radio-wrapper label {
   color: black;
   margin-bottom: 2em;
@@ -177,11 +265,11 @@ legend {
   background-color: #16c1f3;
 }
 
-.continue-to-app-btn {
+button.continue-btn {
   width: 50%;
 }
 
-button.continue-to-app-btn,
+button.continue-btn,
 button.previous-btn,
 button.save-btn {
   background-color: #fc7625;
@@ -195,7 +283,7 @@ button.save-btn {
   cursor: pointer;
 }
 
-button.continue-to-app-btn:hover,
+button.continue-btn:hover,
 button.previous-btn:hover,
 button.save-btn:hover {
   background-color: #16c1f3;
@@ -210,6 +298,90 @@ button.save-btn:hover {
   justify-content: space-between;
 }
 
+.step-header h2 {
+  color: #0093b5;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.step-header p {
+  color: #666;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.eligibility-message {
+  text-align: center;
+}
+
+.eligibility-message h2 {
+  color: #0093b5;
+  margin-bottom: 1.5rem;
+}
+
+.message-content {
+  color: #333;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.message-content ul {
+  text-align: left;
+  margin: 1.5rem 0;
+}
+
+.message-content li {
+  margin-bottom: 0.5rem;
+}
+
+.message-content a {
+  color: #0093b5;
+  text-decoration: none;
+}
+
+.message-content a:hover {
+  text-decoration: underline;
+}
+
+.error {
+  border: 2px solid #dc3545 !important;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+@media only screen and (max-width: 360px) {
+  .application-page {
+    padding: 0.25rem;
+  }
+  .form-step {
+    width: calc(100% - 0.5rem);
+    padding: 0.75rem;
+    margin: 0.25rem auto;
+  }
+  .application-page > h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+  }
+  .application-form fieldset, .form-step fieldset {
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+  .step-header h2 {
+    font-size: 1.2rem;
+  }
+  .step-header p {
+    font-size: 0.9rem;
+  }
+}
 @media only screen and (min-width: 320px) and (max-width: 599px) {
   html,
   body {
@@ -233,7 +405,7 @@ button.save-btn:hover {
     font-size: 1.5em;
   }
   button.previous-btn,
-  button.continue-to-app-btn,
+  button.continue-btn,
   button.save-btn {
     font-size: smaller;
   }
@@ -270,6 +442,35 @@ button.save-btn:hover {
     gap: 0.5em;
     margin: auto;
   }
+  .form-step {
+    width: calc(100% - 1rem);
+    padding: 1rem;
+    margin: 0.5rem auto;
+    box-sizing: border-box;
+  }
+  .step-header h2 {
+    font-size: 1.4rem;
+  }
+  .step-header p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .application-form fieldset,
+  .form-step fieldset {
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+  legend {
+    font-size: 1.1rem;
+    padding: 0;
+  }
+  .continue-btn,
+  .continue-to-app-btn,
+  button.continue-btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
 }
 @media only screen and (min-width: 600px) and (max-width: 910px) {
   html,
@@ -300,6 +501,13 @@ button.save-btn:hover {
   }
   legend {
     font-size: 24px;
+  }
+  .form-step {
+    width: 85%;
+    padding: 2rem;
+  }
+  .step-header h2 {
+    font-size: 1.6rem;
   }
 }
 
