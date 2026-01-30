@@ -1,25 +1,3 @@
-/* what is the error?
-1. ctx variable only should run when on the sponser page
-2. it should not run anywhere else
-
-pseudocode://this did not work
-1. if current web page = sponsor
-2. let ctx variable = document.getElementById("myChart").getContext
-3. if not, set ctx variable to null
-*/
-
-//below also didn't work
-
-// if(window.location.href === '127.0.0.1:5000/sponsor/') {
-//   let ctx = document.getElementById("myChart").getContext("2d")
-// } else {
-//   let ctx = null
-// }
-
-//let ctx = document.getElementById("myChart").getContext("2d");
-
-//solution: encase entire file in if statement:
-
 let pieChart = document.getElementById("myChart");
 
 if (pieChart) {
