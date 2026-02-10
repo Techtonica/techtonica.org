@@ -138,7 +138,7 @@ Techtonica Application {% endblock title %} {% block content %}
         required
       >
         <br />
-        <option value="">Select an Option</option>
+        <option value="" selected hidden disabled>Select an Option</option>
         <option value="Agender/Genderless">Agender/Genderless</option>
         <option value="Genderfluid">Genderfluid</option>
         <option value="Cis Man">Cis Man</option>
@@ -156,54 +156,49 @@ Techtonica Application {% endblock title %} {% block content %}
         aria-label="custom gender input"
         disabled
       /><br />
-      <label for="pronouns">What are your pronouns? </label><br />
-      <label for="pronouns">
+      <label>What are your pronouns? </label><br />
+      <label>
         <input
           type="checkbox"
           name="pronouns"
           id="pronouns-she-her"
           value="She/Her"
-          required
         />
         She/Her</label
       ><br />
-      <label for="pronouns">
+      <label>
         <input
           type="checkbox"
           name="pronouns"
           id="pronouns-he-him"
           value="He/Him"
-          required
         />
         He/Him</label
       ><br />
-      <label for="pronouns">
+      <label>
         <input
           type="checkbox"
           name="pronouns"
           id="pronouns-they-them"
           value="They/Them"
-          required
         />
         They/Them</label
       ><br />
-      <label for="pronouns">
+      <label>
         <input
           type="checkbox"
           name="pronouns"
           id="pronouns-ze-zir"
           value="Ze/Zir"
-          required
         />
         Ze/Zir</label
       ><br />
-      <label for="pronouns">
+      <label>
         <input
           type="checkbox"
           name="pronouns"
           id="pronouns-other"
           value="Other"
-          required
         />
         Other</label
       ><br />
@@ -216,7 +211,7 @@ Techtonica Application {% endblock title %} {% block content %}
         disabled
       /><br />
       <label for="birth-date">What is your birth date? </label><br />
-      <input type="date" id="birth-date" name="birth-date" /><br />
+      <input type="date" id="birth-date" name="birth-date" required /><br />
       <label for="age-group">Select your age group </label><br />
       <select name="age-group" id="age-group" required>
         <br />
@@ -403,8 +398,7 @@ Techtonica Application {% endblock title %} {% block content %}
         aria-label="Racial Ethnicity Selection"
         required
       >
-        <br />
-        <option value="none" selected disabled hidden>Select an Option</option>
+        <option value="" selected hidden disabled>Select an Option</option>
         <option value="African-American/Black/African">
           African-American/Black/African
         </option>
@@ -485,9 +479,7 @@ Techtonica Application {% endblock title %} {% block content %}
         />
         <label for="high-school-graduate-ged-no">No</label><br />
       </div>
-      <button type="button" class="app-form-1" onclick="validateForm()">
-        Continue
-      </button>
+      <button type="button" class="continue-to-app-btn">Continue</button>
     </fieldset>
   </form>
 </section>
@@ -695,6 +687,11 @@ Techtonica Application {% endblock title %} {% block content %}
   }
 </style>
 
-<script src="{{ url_for('static', filename='js/form.js') }}"></script>
+<script>
+  // Attach live validation on page load
+  window.onload = function () {
+    attachLiveValidation("app-form-1", "/app-household");
+  };
+</script>
 
 {% endblock content %}

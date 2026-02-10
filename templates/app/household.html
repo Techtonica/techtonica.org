@@ -191,13 +191,7 @@ Techtonica Application {% endblock title %} {% block content %}
         >
           Previous
         </button>
-        <button
-          type="button"
-          class="continue-to-app-btn"
-          onclick="validateForm()"
-        >
-          Next
-        </button>
+        <button type="button" class="continue-to-app-btn">Next</button>
         <button
           type="button"
           class="save-btn"
@@ -417,6 +411,12 @@ Techtonica Application {% endblock title %} {% block content %}
   }
 </style>
 
-<script src="{{ url_for('static', filename='js/household.js') }}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    window.onload = function () {
+      attachLiveValidation("app-form-2", "/app-questionnaire");
+    };
+  });
+</script>
 
 {% endblock content %}

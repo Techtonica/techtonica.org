@@ -437,13 +437,7 @@ Techtonica Application {% endblock title %} {% block content %}
         >
           Previous
         </button>
-        <button
-          type="button"
-          class="continue-to-app-btn"
-          onclick="validateAndNavigate('/app-reference')"
-        >
-          Next
-        </button>
+        <button type="button" class="continue-to-app-btn">Next</button>
         <button
           type="button"
           class="save-btn"
@@ -655,5 +649,13 @@ Techtonica Application {% endblock title %} {% block content %}
     }
   }
 </style>
-<script src="{{ url_for('static', filename='js/long-text.js') }}"></script>
+
+<script>
+  // Attach live validation on page load
+
+  window.onload = function () {
+    attachLiveValidation("app-form-4", "/app-reference");
+  };
+</script>
+
 {% endblock content %}
