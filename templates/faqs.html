@@ -611,8 +611,8 @@ FAQs {% endblock title %} {% block content %}
       <div class="faq-content">
         <p>
           Thank you! You can donate once or regularly
-          <a href="https://techtonica.org/donate/">here</a>. Since our fiscal
-          sponsor is
+          <a href="{{ url_for('render_donate_page')}}">here</a>. Since our
+          fiscal sponsor is
           <a href="http://www.socialgoodfund.org">Social Good Fund</a>
           (nonprofit EIN 46-1323531), all donations will be sent to them first
           before being distributed to us. Please
@@ -644,11 +644,7 @@ FAQs {% endblock title %} {% block content %}
             >
             for our full-time program, workshops, or events.
           </li> -->
-          <li>
-            <a onclick="open_window('NjY0ODM=','www.flipcause.com')"
-              >Make donations</a
-            >.
-          </li>
+          <li><a href="{{ url_for('render_donate_page')}}">Donate</a>.</li>
           <li>
             <a
               href="https://docs.google.com/document/d/1Fl9obaF3kdusiEb8dUW8lszzCACRbKSd5GQqwDdFirU/edit"
