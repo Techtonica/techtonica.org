@@ -89,6 +89,7 @@ form {
     margin: 0;
 
     label,
+    p,
     > #radio-wrapper {
       color: black;
       font-size: large;
@@ -226,6 +227,7 @@ legend {
       padding: 1.5rem;
 
       label,
+      p,
       #radio-wrapper > label {
         font-size: smaller;
       }

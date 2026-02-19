@@ -167,6 +167,7 @@ form {
   margin: 0;
 }
 .application-form > fieldset label,
+.application-form > fieldset p,
 .application-form > fieldset > #radio-wrapper {
   color: black;
   font-size: large;
@@ -289,6 +290,7 @@ legend {
     padding: 1.5rem;
   }
   .application-form > fieldset label,
+  .application-form > fieldset p,
   .application-form > fieldset #radio-wrapper > label {
     font-size: smaller;
   }
