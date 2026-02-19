@@ -167,6 +167,15 @@ legend {
 #radio-wrapper {
   width: 100%;
   color: rgba(0, 0, 0, 0.851);
+
+  label {
+    color: black;
+    margin-bottom: 2em;
+  }
+
+  input {
+    background-color: $light-blue;
+  }
 }
 
 #custom-gender,

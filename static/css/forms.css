@@ -240,6 +240,13 @@ legend {
   width: 100%;
   color: rgba(0, 0, 0, 0.851);
 }
+#radio-wrapper label {
+  color: black;
+  margin-bottom: 2em;
+}
+#radio-wrapper input {
+  background-color: #16c1f3;
+}
 
 #custom-gender,
 #custom-pronouns,
