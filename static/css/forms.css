@@ -166,7 +166,7 @@ form {
   word-wrap: break-word;
   margin: 0;
 }
-.application-form > fieldset > label,
+.application-form > fieldset label,
 .application-form > fieldset > #radio-wrapper {
   color: black;
   font-size: large;
@@ -174,25 +174,24 @@ form {
 .application-form > fieldset {
   /* italic helper text in labels (e.g. household form net worth question) */
 }
-.application-form > fieldset > label i {
+.application-form > fieldset label i {
   color: #0093b5;
   font-weight: bold;
   font-size: large;
 }
 .application-form > fieldset {
-  /* inputs from both sources (deduped into one list) */
+  /* inputs from both sources (deduped into one list)
+     use descendant selector so controls work when wrapped in <div> (e.g. long-text form) */
 }
-.application-form > fieldset > input[type="text"],
-.application-form > fieldset > input[type="email"],
-.application-form > fieldset > input[type="tel"],
-.application-form > fieldset > input[type="date"],
-.application-form > fieldset > input[type="number"],
-.application-form > fieldset > input[type="url"],
-.application-form > fieldset > input[type="file"],
-.application-form > fieldset > textarea,
-.application-form > fieldset > select,
-.application-form > fieldset > input[type="checkbox"],
-.application-form > fieldset > input[type="radio"] {
+.application-form > fieldset input[type="text"],
+.application-form > fieldset input[type="email"],
+.application-form > fieldset input[type="tel"],
+.application-form > fieldset input[type="date"],
+.application-form > fieldset input[type="number"],
+.application-form > fieldset input[type="url"],
+.application-form > fieldset input[type="file"],
+.application-form > fieldset textarea,
+.application-form > fieldset select {
   padding: 1em;
   margin-bottom: 2em;
   border: 1px solid rgba(0, 0, 0, 0.559);
@@ -200,11 +199,10 @@ form {
   width: 100%;
   box-sizing: border-box;
 }
-.application-form > fieldset > input[type="file"],
-.application-form > fieldset > select,
-.application-form > fieldset > input[type="checkbox"],
-.application-form > fieldset > #radio-wrapper > input[type="radio"],
-.application-form > fieldset > #radio-wrapper > input[type="checkbox"] {
+.application-form > fieldset input[type="file"],
+.application-form > fieldset select,
+.application-form > fieldset #radio-wrapper > input[type="radio"],
+.application-form > fieldset #radio-wrapper > input[type="checkbox"] {
   cursor: pointer;
 }
 .application-form > fieldset > select {
@@ -290,7 +288,7 @@ legend {
     min-width: 95%;
     padding: 1.5rem;
   }
-  .application-form > fieldset > label,
+  .application-form > fieldset label,
   .application-form > fieldset #radio-wrapper > label {
     font-size: smaller;
   }

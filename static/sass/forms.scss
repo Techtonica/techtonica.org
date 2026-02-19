@@ -88,31 +88,30 @@ form {
     word-wrap: break-word;
     margin: 0;
 
-    > label,
+    label,
     > #radio-wrapper {
       color: black;
       font-size: large;
     }
 
     /* italic helper text in labels (e.g. household form net worth question) */
-    > label i {
+    label i {
       color: $main-blue;
       font-weight: bold;
       font-size: large;
     }
 
-    /* inputs from both sources (deduped into one list) */
-    > input[type="text"],
-    > input[type="email"],
-    > input[type="tel"],
-    > input[type="date"],
-    > input[type="number"],
-    > input[type="url"],
-    > input[type="file"],
-    > textarea,
-    > select,
-    > input[type="checkbox"],
-    > input[type="radio"] {
+    /* inputs from both sources (deduped into one list)
+       use descendant selector so controls work when wrapped in <div> (e.g. long-text form) */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"],
+    input[type="url"],
+    input[type="file"],
+    textarea,
+    select {
       padding: 1em;
       margin-bottom: 2em;
       border: 1px solid rgba(0, 0, 0, 0.559);
@@ -121,11 +120,10 @@ form {
       box-sizing: border-box;
     }
 
-    > input[type="file"],
-    > select,
-    > input[type="checkbox"],
-    > #radio-wrapper > input[type="radio"],
-    > #radio-wrapper > input[type="checkbox"] {
+    input[type="file"],
+    select,
+    #radio-wrapper > input[type="radio"],
+    #radio-wrapper > input[type="checkbox"] {
       cursor: pointer;
     }
 
@@ -227,7 +225,7 @@ legend {
       min-width: 95%;
       padding: 1.5rem;
 
-      > label,
+      label,
       #radio-wrapper > label {
         font-size: smaller;
       }
