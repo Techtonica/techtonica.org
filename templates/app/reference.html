@@ -16,19 +16,10 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
         worked closely with you and can speak to your capabilities in a work
         setting.
       </label>
-      <div class="learn-more-wrapper">
-        <button class="learn-more-title" type="button" aria-expanded="false">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <p class="learn-more-content" tabindex="0">
-          This may not be a relative, significant other, or friend. It must be
-          someone who can speak to your work quality in an unbiased manner.
-        </p>
-      </div>
+      {% with title="Learn More", content="This may not be a relative,
+      significant other, or friend. It must be someone who can speak to your
+      work quality in an unbiased manner." %} {% include
+      "components/learn-more.html" %} {% endwith %}
       <br />
       <label for="reference-1-fname">First Name: </label><br />
       <input
@@ -64,19 +55,10 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
         worked closely with you and can speak to your capabilities in a work
         setting.
       </label>
-      <div class="learn-more-wrapper">
-        <button class="learn-more-title" type="button" aria-expanded="false">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <p class="learn-more-content" tabindex="0">
-          This may not be a relative, significant other, or friend. It must be
-          someone who can speak to your work quality in an unbiased manner.
-        </p>
-      </div>
+      {% with title="Learn More", content="This may not be a relative,
+      significant other, or friend. It must be someone who can speak to your
+      work quality in an unbiased manner." %} {% include
+      "components/learn-more.html" %} {% endwith %}
       <br />
       <label for="reference-2-fname">First Name: </label><br />
       <input
