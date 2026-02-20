@@ -1,5 +1,10 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
-Techtonica Application {% endblock title %} {% block content %}
+Techtonica Application {% endblock title %} {% block extra_stylesheets %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/forms.css') }}"
+/>
+{% endblock %} {% block content %}
 <section class="application-page">
   <h1>Techtonica Application</h1>
   <form action="#" method="POST" class="application-form" id="app-form-5">
@@ -151,13 +156,12 @@ Techtonica Application {% endblock title %} {% block content %}
         >Anything else you want to share with us?
         <span>(Optional)</span> </label
       ><br />
-      <input
-        type="textarea"
+      <textarea
         name="anything-else-to-share"
         id="anything-else-to-share"
         cols="100"
         rows="3"
-      />
+      ></textarea>
       <br />
       <div class="form-button">
         <button
