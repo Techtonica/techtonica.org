@@ -59,6 +59,7 @@ form {
       margin: 0.5em 0 0 0;
       font-size: large;
       color: black;
+      text-align: left; /* override settings p { text-align: justify } */
     }
   }
 
