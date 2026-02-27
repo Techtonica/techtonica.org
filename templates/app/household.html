@@ -33,12 +33,12 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
         <label for="US-bank-account-no">No</label><br />
       </div>
       <label for="annual-income">What is your annual household income?</label>
-      {% with title="Learn More", content="Only put a total whole number in this
-      field (i.e. 1200, not 1200.09). If you have any special circumstances that
-      make you question your eligibility for Techtonica’s program, please feel
-      free to contact us (<a href="mailto:info@techtonica.org"
-        >info@techtonica.org</a
-      >) and we will be happy to discuss with you." %} {% include
+      {% set learn_more_content %} Only put a total whole number in this field
+      (i.e. 1200, not 1200.09). If you have any special circumstances that make
+      you question your eligibility for Techtonica’s program, please feel free
+      to contact us (<a href="mailto:info@techtonica.org">info@techtonica.org</a
+      >) and we will be happy to discuss with you. {% endset %} {% with
+      title="Learn More", content=learn_more_content %} {% include
       "components/learn-more.html" %} {% endwith %}
       <br />
       <input
