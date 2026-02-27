@@ -35,10 +35,11 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
       <label for="name-pronunciation"
         >How to pronounce your full name: <span>(Optional)</span></label
       >
-      {% with title="Learn More", content="You can make a recording on
+      {% set learn_more_content %} You can make a recording on
       <a href="https://www.name-coach.com" target="_blank">name-coach.com</a>,
-      generate your link and share in the text field if preferred." %} {%
-      include "components/learn-more.html" %} {% endwith %}
+      generate your link and share in the text field if preferred. {% endset %}
+      {% with title="Learn More", content=learn_more_content %} {% include
+      "components/learn-more.html" %} {% endwith %}
       <br />
       <input
         type="text"
