@@ -7,6 +7,9 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
 {% endblock %} {% block content %}
 <section class="application-page">
   <h1>Techtonica Application</h1>
+  {% with current_step='app-form-admin' %} {% include
+  "components/progress-bar.html" %} {% endwith %}
+
   <form action="#" method="POST" class="application-form" id="app-form-6">
     <fieldset>
       <legend>Administrative Questions</legend>
