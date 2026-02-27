@@ -349,6 +349,7 @@ legend {
   max-width: 85%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 2%;
   /* Visible progress text (helpful + accessible; especially on mobile) */
 }
 .tt-stepper__summary {
@@ -451,9 +452,9 @@ legend {
 }
 
 /* ---------------------------------------------------------
-   Mobile: hide the dot stepper, show the "Step X of Y" text
-   Matches your existing mobile breakpoint (320–599px)
-   --------------------------------------------------------- */
+     Mobile: hide the dot stepper, show the "Step X of Y" text
+     Matches your existing mobile breakpoint (320–599px)
+     --------------------------------------------------------- */
 @media only screen and (min-width: 320px) and (max-width: 599px) {
   .tt-stepper__list {
     display: none;
@@ -464,8 +465,8 @@ legend {
   }
 }
 /* ---------------------------------------------------------
-   Screen reader utility 
-   --------------------------------------------------------- */
+     Screen reader utility 
+     --------------------------------------------------------- */
 .sr-only {
   position: absolute;
   width: 1px;
