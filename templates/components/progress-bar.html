@@ -1,7 +1,7 @@
 <nav class="tt-stepper" aria-label="Form progress">
-  {% set steps = [ ('app-form', 'Applicant Demographics'), ('app-household',
-  'Household'), ('app-questionnaire', 'Questionnaire'), ('app-long-text', 'Long
-  answers'), ('app-reference', 'References'), ('app-form-admin', 'Admin'),
+  {% set steps = [ ('app-form', 'About you'), ('app-household', 'Household'),
+  ('app-questionnaire', 'Questionnaire'), ('app-long-text', 'Long answers'),
+  ('app-reference', 'References'), ('app-form-admin', 'Admin'),
   ('app-additional', 'Additional') ] %} {% set ns =
   namespace(current_step_index=1, current_label='Eligibility') %} {% for
   step_name, step_label in steps %} {% if step_name == current_step %} {% set
