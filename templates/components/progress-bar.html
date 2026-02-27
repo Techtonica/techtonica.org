@@ -1,0 +1,44 @@
+<nav class="tt-stepper" aria-label="Form progress">
+  {% set steps = [ ('app-form', 'Applicant Demographics'), ('app-household',
+  'Household'), ('app-questionnaire', 'Questionnaire'), ('app-long-text', 'Long
+  answers'), ('app-reference', 'References'), ('app-form-admin', 'Admin'),
+  ('app-additional', 'Additional') ] %} {% set ns =
+  namespace(current_step_index=1, current_label='Eligibility') %} {% for
+  step_name, step_label in steps %} {% if step_name == current_step %} {% set
+  ns.current_step_index = loop.index %} {% set ns.current_label = step_label %}
+  {% endif %} {% endfor %}
+  <p class="tt-stepper__summary" aria-live="polite">
+    Step <span class="tt-stepper__step">{{ ns.current_step_index }}</span> of
+    <span class="tt-stepper__total">{{ steps | length }}</span> — {{
+    ns.current_label }}
+  </p>
+
+  <ol class="tt-stepper__list">
+    {% for step_name, step_label in steps %} {% set step_index = loop.index %}
+    {% if step_index < ns.current_step_index %}
+    <li class="tt-stepper__item is-complete">
+      <a class="tt-stepper__link" href="/{{ step_name }}">
+        <span class="tt-stepper__dot" aria-hidden="true">✓</span>
+        <span class="tt-stepper__label">{{ step_label }}</span>
+        <span class="sr-only">Completed</span>
+      </a>
+    </li>
+    {% elif step_name == current_step %}
+    <li class="tt-stepper__item is-current" aria-current="step">
+      <span class="tt-stepper__link" tabindex="-1">
+        <span class="tt-stepper__dot" aria-hidden="true">{{ step_index }}</span>
+        <span class="tt-stepper__label">{{ step_label }}</span>
+        <span class="sr-only">Current step</span>
+      </span>
+    </li>
+    {% else %}
+    <li class="tt-stepper__item">
+      <span class="tt-stepper__link" aria-disabled="true">
+        <span class="tt-stepper__dot" aria-hidden="true">{{ step_index }}</span>
+        <span class="tt-stepper__label">{{ step_label }}</span>
+        <span class="sr-only">Not completed</span>
+      </span>
+    </li>
+    {% endif %} {% endfor %}
+  </ol>
+</nav>
