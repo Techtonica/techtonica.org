@@ -447,7 +447,6 @@ legend {
   text-align: center;
   line-height: 1.2;
   max-width: 10ch;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -455,7 +454,7 @@ legend {
      Mobile: hide the dot stepper, show the "Step X of Y" text
      Matches your existing mobile breakpoint (320–599px)
      --------------------------------------------------------- */
-@media only screen and (min-width: 320px) and (max-width: 599px) {
+@media only screen and (min-width: 320px) and (max-width: 699px) {
   .tt-stepper__list {
     display: none;
   }
