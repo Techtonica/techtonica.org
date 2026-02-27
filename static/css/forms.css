@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* .application-form is .payment-form in job-form.html */
 body {
   margin: 0;
@@ -338,6 +339,143 @@ legend {
   legend {
     font-size: 24px;
   }
+}
+/*
+   Form Progress Indicator 
+*/
+.tt-stepper {
+  /* Uses global font from settings.scss; keep for safety if embedded elsewhere */
+  font-family: "lato", helvetica, sans-serif;
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  /* Visible progress text (helpful + accessible; especially on mobile) */
+}
+.tt-stepper__summary {
+  margin: 0 0 0.75rem 0;
+  color: #05556d;
+  font-size: 1rem;
+}
+.tt-stepper {
+  /* Step list (desktop / tablet) */
+}
+.tt-stepper__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.tt-stepper__item {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  /* Connector line: from right edge of dot to left edge of next dot */
+}
+.tt-stepper__item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 12px; /* vertically centered on 24px dot */
+  left: calc(50% + 12px); /* right edge of 24px dot */
+  right: calc(-1rem - 50% + 12px); /* extends to left edge of next dot */
+  height: 3px;
+  background: #ccc;
+}
+.tt-stepper__item {
+  /* Completed step */
+}
+.tt-stepper__item.is-complete .tt-stepper__dot {
+  background: #0093b5;
+  border-color: #0093b5;
+  color: white;
+}
+.tt-stepper__item.is-complete::after {
+  background: #0093b5;
+}
+.tt-stepper__item.is-complete .tt-stepper__label {
+  color: #05556d;
+}
+.tt-stepper__item {
+  /* Current step */
+}
+.tt-stepper__item.is-current .tt-stepper__dot {
+  background: #fc7625;
+  border-color: #fc7625;
+  color: white;
+}
+.tt-stepper__item.is-current .tt-stepper__label {
+  color: #05556d;
+  font-weight: 700;
+}
+.tt-stepper {
+  /* Use <a> for completed steps, <span> for current/upcoming (or keep them all <a>) */
+}
+.tt-stepper__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #666;
+}
+.tt-stepper__link:focus-visible .tt-stepper__dot {
+  outline: 3px solid #16c1f3;
+  outline-offset: 3px;
+}
+.tt-stepper__link {
+  /* If you render upcoming steps as disabled links */
+}
+.tt-stepper__link[aria-disabled="true"] {
+  cursor: default;
+  pointer-events: none;
+}
+.tt-stepper__dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #ccc;
+  background: white;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+.tt-stepper__label {
+  font-size: 0.95rem;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 10ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------------------------------------------------------
+   Mobile: hide the dot stepper, show the "Step X of Y" text
+   Matches your existing mobile breakpoint (320–599px)
+   --------------------------------------------------------- */
+@media only screen and (min-width: 320px) and (max-width: 599px) {
+  .tt-stepper__list {
+    display: none;
+  }
+  .tt-stepper__summary {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+/* ---------------------------------------------------------
+   Screen reader utility 
+   --------------------------------------------------------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /*# sourceMappingURL=forms.css.map */
