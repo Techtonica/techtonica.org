@@ -297,19 +297,9 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
           List all the steps one-by-one that you would use to tell a robot how
           to make a sandwich (if all the ingredients are ready and available).
         </label>
-        <div class="learn-more-wrapper">
-          <button class="learn-more-title" type="button" aria-expanded="false">
-            Learn More
-            <span class="toggle-icon">
-              <span class="toggle-icon-plus">+</span>
-              <span class="toggle-icon-minus">-</span>
-            </span>
-          </button>
-          <p class="learn-more-content" tabindex="0">
-            This is to help us assess your logical thinking; please be specific
-            and thorough.
-          </p>
-        </div>
+        {% with title="Learn More", content="This is to help us assess your
+        logical thinking; please be specific and thorough." %} {% include
+        "components/learn-more.html" %} {% endwith %}
         <br />
         <textarea
           name="robot-sandwich"
@@ -356,20 +346,10 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
         <label for="how-did-you-find-out">
           How did you find out about Techtonica?
         </label>
-        <div class="learn-more-wrapper">
-          <button class="learn-more-title" type="button" aria-expanded="false">
-            Learn More
-            <span class="toggle-icon">
-              <span class="toggle-icon-plus">+</span>
-              <span class="toggle-icon-minus">-</span>
-            </span>
-          </button>
-          <p class="learn-more-content" tabindex="0">
-            The more specific you can be, the better—was it a flyer, and if so,
-            where? Did a friend tell you, and if so, how did they find out? Was
-            it a Facebook group, and if so, which one? Etc.
-          </p>
-        </div>
+        {% with title="Learn More", content="The more specific you can be, the
+        better—was it a flyer, and if so, where? Did a friend tell you, and if
+        so, how did they find out? Was it a Facebook group, and if so, which
+        one? Etc." %} {% include "components/learn-more.html" %} {% endwith %}
         <br />
         <textarea
           name="how-did-you-find-out"
@@ -398,18 +378,9 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
           Other full URLs to you online (blog, Twitter, GitHub, Instagram, etc.)
           <span>(Optional)</span>
         </label>
-        <div class="learn-more-wrapper">
-          <button class="learn-more-title" type="button" aria-expanded="false">
-            Learn More
-            <span class="toggle-icon">
-              <span class="toggle-icon-plus">+</span>
-              <span class="toggle-icon-minus">-</span>
-            </span>
-          </button>
-          <p class="learn-more-content" tabindex="0">
-            For example, https://twitter.com/TechtonicaOrg
-          </p>
-        </div>
+        {% with title="Learn More", content="For example,
+        https://twitter.com/TechtonicaOrg" %} {% include
+        "components/learn-more.html" %} {% endwith %}
         <br />
         <input
           type="url"

@@ -33,22 +33,13 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
         <label for="US-bank-account-no">No</label><br />
       </div>
       <label for="annual-income">What is your annual household income?</label>
-      <div class="learn-more-wrapper">
-        <button class="learn-more-title" type="button" aria-expanded="false">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <p class="learn-more-content" tabindex="0">
-          Only put a total whole number in this field (i.e. 1200, not 1200.09).
-          If you have any special circumstances that make you question your
-          eligibility for Techtonica’s program, please feel free to contact us
-          (<a href="mailto:info@techtonica.org">info@techtonica.org</a>) and we
-          will be happy to discuss with you.
-        </p>
-      </div>
+      {% set learn_more_content %} Only put a total whole number in this field
+      (i.e. 1200, not 1200.09). If you have any special circumstances that make
+      you question your eligibility for Techtonica’s program, please feel free
+      to contact us (<a href="mailto:info@techtonica.org">info@techtonica.org</a
+      >) and we will be happy to discuss with you. {% endset %} {% with
+      title="Learn More", content=learn_more_content %} {% include
+      "components/learn-more.html" %} {% endwith %}
       <br />
       <input
         type="number"
@@ -115,21 +106,11 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
           letter, public benefits verification, etc).
         </i>
       </label>
-      <div class="learn-more-wrapper">
-        <button class="learn-more-title" type="button" aria-expanded="false">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <p class="learn-more-content" tabindex="0">
-          Only put a total whole number in this field (i.e. 1200, not 1200.09).
-          If you need to provide an explanation for your answers, please do so
-          in the 'Anything else you want to share with us?' question which is
-          second-to-last in this form.
-        </p>
-      </div>
+      {% with title="Learn More", content="Only put a total whole number in this
+      field (i.e. 1200, not 1200.09). If you need to provide an explanation for
+      your answers, please do so in the 'Anything else you want to share with
+      us?' question which is second-to-last in this form." %} {% include
+      "components/learn-more.html" %} {% endwith %}
       <br />
       <input
         type="text"
@@ -143,18 +124,9 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
         savings and investment accounts, copies of a home ownership document
         such as a deed, etc.)
       </label>
-      <div class="learn-more-wrapper">
-        <button class="learn-more-title" type="button" aria-expanded="false">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <p class="learn-more-content" tabindex="0">
-          This info helps us calculate overall stipend needs.
-        </p>
-      </div>
+      {% with title="Learn More", content="This info helps us calculate overall
+      stipend needs." %} {% include "components/learn-more.html" %} {% endwith
+      %}
       <br />
       <input
         type="file"
@@ -166,20 +138,11 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
       <label for="average-monthly-cost"
         >What are your average monthly costs?
       </label>
-      <div class="learn-more-wrapper">
-        <button class="learn-more-title" type="button" aria-expanded="false">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <p class="learn-more-content" tabindex="0">
-          Only put a total whole number in this field (i.e. 1200, not 1200.09).
-          This includes things like: groceries, phone & internet, medical
-          expenses, childcare, rent, insurance, utilities, loan payments, etc.
-        </p>
-      </div>
+      {% with title="Learn More", content="Only put a total whole number in this
+      field (i.e. 1200, not 1200.09). This includes things like: groceries,
+      phone & internet, medical expenses, childcare, rent, insurance, utilities,
+      loan payments, etc." %} {% include "components/learn-more.html" %} {%
+      endwith %}
       <br />
       <input
         type="number"

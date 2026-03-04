@@ -17,19 +17,9 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
           during the program that works well so it won't be a problem during our
           intensive program?
         </label>
-        <div class="learn-more-wrapper">
-          <button class="learn-more-title" type="button" aria-expanded="false">
-            Learn More
-            <span class="toggle-icon">
-              <span class="toggle-icon-plus">+</span>
-              <span class="toggle-icon-minus">-</span>
-            </span>
-          </button>
-          <p class="learn-more-content" tabindex="0">
-            This is to let us know if we will need to help you secure a MacBook
-            during the program
-          </p>
-        </div>
+        {% with title="Learn More", content="This is to let us know if we will
+        need to help you secure a MacBook during the program" %} {% include
+        "components/learn-more.html" %} {% endwith %}
         <br />
         <input
           type="radio"
@@ -205,20 +195,10 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
         <label for="willing-to-relocate-yes"
           >Would you be willing to move to a new city to be placed in a job?
         </label>
-        <div class="learn-more-wrapper">
-          <button class="learn-more-title" type="button" aria-expanded="false">
-            Learn More
-            <span class="toggle-icon">
-              <span class="toggle-icon-plus">+</span>
-              <span class="toggle-icon-minus">-</span>
-            </span>
-          </button>
-          <p class="learn-more-content" tabindex="0">
-            While this is not currently a requirement, it may be a requirement
-            again in the near future, and it increases your chances of securing
-            a job.
-          </p>
-        </div>
+        {% with title="Learn More", content="While this is not currently a
+        requirement, it may be a requirement again in the near future, and it
+        increases your chances of securing a job." %} {% include
+        "components/learn-more.html" %} {% endwith %}
         <br />
         <input
           type="radio"

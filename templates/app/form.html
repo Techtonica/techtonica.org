@@ -35,24 +35,11 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
       <label for="name-pronunciation"
         >How to pronounce your full name: <span>(Optional)</span></label
       >
-      <div class="learn-more-wrapper">
-        <button class="learn-more-title" type="button" aria-expanded="false">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <p
-          class="learn-more-content"
-          tabindex="0"
-          aria-labelledby="name-pronunciation"
-        >
-          You can make a recording on
-          <a href="www.name-coach.com">name-coach.com</a>, generate your link
-          and share in the text field if preferred.
-        </p>
-      </div>
+      {% set learn_more_content %} You can make a recording on
+      <a href="https://www.name-coach.com" target="_blank">name-coach.com</a>,
+      generate your link and share in the text field if preferred. {% endset %}
+      {% with title="Learn More", content=learn_more_content %} {% include
+      "components/learn-more.html" %} {% endwith %}
       <br />
       <input
         type="text"
@@ -60,21 +47,11 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
         name="name-pronunciation"
       /><br />
       <label for="email">Email: </label>
-      <div class="learn-more-wrapper">
-        <button class="learn-more-title" type="button" aria-expanded="false">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <p class="learn-more-content" tabindex="0" aria-labelledby="email">
-          Please use the same business-minded Gmail with your name (e.g.
-          janedoe@gmail.com) that you used in the shorter form. This is the
-          email we will contact you with for the duration of the application
-          process and program.
-        </p>
-      </div>
+      {% with title="Learn More", content="Please use the same business-minded
+      Gmail with your name (e.g. janedoe@gmail.com) that you used in the shorter
+      form. This is the email we will contact you with for the duration of the
+      application process and program." %} {% include
+      "components/learn-more.html" %} {% endwith %}
       <input
         type="email"
         id="email"
@@ -85,56 +62,41 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
       <label for="gender-identity"
         >With which gender identity do you most align?
       </label>
-      <div class="learn-more-wrapper">
-        <button class="learn-more-title" type="button" aria-expanded="false">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <div
-          class="learn-more-content"
-          tabindex="0"
-          aria-labelledby="gender-identity"
-        >
-          <ul>
-            <li>
-              <strong>Agender or genderless: </strong>People who do not identify
-              with any gender or feel an absence of gender. They may use terms
-              like genderblank, genderfree, genderless, gendervoid,
-              non-gendered, or null gender.
-            </li>
-            <li>
-              <strong>Genderfluid: </strong>People whose gender identity is not
-              fixed and may change over time, fluctuating between different
-              gender expressions or identities.
-            </li>
-            <li>
-              <strong>Cis Man or Cis Woman: </strong>A person whose gender
-              identity aligns with the male or female sex they were assigned at
-              birth.
-            </li>
-            <li>
-              <strong>Non-binary or Genderqueer: </strong>People who do not
-              identify exclusively as a man or a woman. They may feel like both,
-              somewhere in between, or outside these categories entirely.
-            </li>
-            <li>
-              <strong>Trans Man or Trans Woman: </strong>People whose gender
-              identity differs from the sex they are assigned at birth. e.g., a
-              transgender man is someone who was assigned female at birth but
-              whose gender identity is male, while a transgender woman is
-              someone who is assigned male at birth but whose gender identity is
-              female.
-            </li>
-            <li>
-              <strong>Other: </strong>A person whose gender identity does not
-              fit within the listed categories or who prefers a different term.
-            </li>
-          </ul>
-        </div>
-      </div>
+      {% with title="Learn More", content="
+      <ul>
+        <li>
+          <strong>Agender or genderless: </strong>People who do not identify
+          with any gender or feel an absence of gender. They may use terms like
+          genderblank, genderfree, genderless, gendervoid, non-gendered, or null
+          gender.
+        </li>
+        <li>
+          <strong>Genderfluid: </strong>People whose gender identity is not
+          fixed and may change over time, fluctuating between different gender
+          expressions or identities.
+        </li>
+        <li>
+          <strong>Cis Man or Cis Woman: </strong>A person whose gender identity
+          aligns with the male or female sex they were assigned at birth.
+        </li>
+        <li>
+          <strong>Non-binary or Genderqueer: </strong>People who do not identify
+          exclusively as a man or a woman. They may feel like both, somewhere in
+          between, or outside these categories entirely.
+        </li>
+        <li>
+          <strong>Trans Man or Trans Woman: </strong>People whose gender
+          identity differs from the sex they are assigned at birth. e.g., a
+          transgender man is someone who was assigned female at birth but whose
+          gender identity is male, while a transgender woman is someone who is
+          assigned male at birth but whose gender identity is female.
+        </li>
+        <li>
+          <strong>Other: </strong>A person whose gender identity does not fit
+          within the listed categories or who prefers a different term.
+        </li>
+      </ul>
+      " %} {% include "components/learn-more.html" %} {% endwith %}
       <br />
       <select
         name="gender-identity"
@@ -266,24 +228,10 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
             >https://askjan.org/a-to-z.cfm</a
           >)
         </label>
-        <div class="learn-more-wrapper">
-          <button class="learn-more-title" type="button" aria-expanded="false">
-            Learn More
-            <span class="toggle-icon">
-              <span class="toggle-icon-plus">+</span>
-              <span class="toggle-icon-minus">-</span>
-            </span>
-          </button>
-          <p
-            class="learn-more-content"
-            tabindex="0"
-            aria-labelledby="disabled-status"
-          >
-            You are considered to have a disability if you have a physical or
-            mental impairment or medical condition that substantially limits a
-            major life activity.
-          </p>
-        </div>
+        {% with title="Learn More", content="You are considered to have a
+        disability if you have a physical or mental impairment or medical
+        condition that substantially limits a major life activity." %} {%
+        include "components/learn-more.html" %} {% endwith %}
         <br />
         <input
           type="radio"
@@ -326,77 +274,61 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
       <label for="race-ethnicity"
         >With which racial/ethnic groups do you most identify?
       </label>
-      <div class="learn-more-wrapper">
-        <button class="learn-more-title" type="button" aria-expanded="false">
-          Learn More
-          <span class="toggle-icon">
-            <span class="toggle-icon-plus">+</span>
-            <span class="toggle-icon-minus">-</span>
-          </span>
-        </button>
-        <div
-          class="learn-more-content"
-          tabindex="0"
-          aria-labelledby="race-ethnicity"
-        >
-          <ul>
-            <li>
-              <strong>African-American, Black, or African:</strong> A person
-              having origins in Africa, including those across the African
-              diaspora, such as communities in the Americas, the Caribbean, and
-              other regions.
-            </li>
-            <li>
-              <strong>Central Asian:</strong> A person having origins in any of
-              the Central Asian countries, including Kazakhstan, Kyrgyzstan,
-              Tajikistan, Turkmenistan, Uzbekistan.
-            </li>
-            <li>
-              <strong>East Asian:</strong> A person having origins in any of the
-              East Asian countries, including China, Japan, Korea, Mongolia,
-              Tibet, and Taiwan.
-            </li>
-            <li>
-              <strong>Hispanic or Latinx:</strong> A person of having origins in
-              Cuba, Mexico, Puerto Rico, the Dominican Republic, or South or
-              Central America.
-            </li>
-            <li>
-              <strong>Middle Eastern or North African (MENA):</strong> A person
-              having origins in the Middle East or North Africa.
-            </li>
-            <li>
-              <strong
-                >Native American, Alaskan Native, First Nations or
-                Indigenous:</strong
-              >
-              A person having origins in any of the Indigenous peoples of North
-              and South America (including Central America).
-            </li>
-            <li>
-              <strong>Pacific Islander:</strong> A person having origins in any
-              of the Pacific Islands, including Polynesia, Micronesia, and
-              Melanesia.
-            </li>
-            <li>
-              <strong>South Asian:</strong> A person having origins in any of
-              the South Asian countries, including Bangladesh, Bhutan, India,
-              Nepal, Pakistan, Afghanistan, and Sri Lanka.
-            </li>
-            <li>
-              <strong>Southeast Asian:</strong> A person having origins in any
-              of the Southeast Asian countries, including Cambodia, Indonesia,
-              Laos, Malaysia, Myanmar, the Philippines, Singapore, Thailand, and
-              Vietnam.
-            </li>
-            <li><strong>White:</strong> A person having origins in Europe.</li>
-            <li>
-              <strong>Another race/ethnicity:</strong> A person who identifies
-              with a racial/ethnic group not listed above.
-            </li>
-          </ul>
-        </div>
-      </div>
+      {% with title="Learn More", content="
+      <ul>
+        <li>
+          <strong>African-American, Black, or African:</strong> A person having
+          origins in Africa, including those across the African diaspora, such
+          as communities in the Americas, the Caribbean, and other regions.
+        </li>
+        <li>
+          <strong>Central Asian:</strong> A person having origins in any of the
+          Central Asian countries, including Kazakhstan, Kyrgyzstan, Tajikistan,
+          Turkmenistan, Uzbekistan.
+        </li>
+        <li>
+          <strong>East Asian:</strong> A person having origins in any of the
+          East Asian countries, including China, Japan, Korea, Mongolia, Tibet,
+          and Taiwan.
+        </li>
+        <li>
+          <strong>Hispanic or Latinx:</strong> A person of having origins in
+          Cuba, Mexico, Puerto Rico, the Dominican Republic, or South or Central
+          America.
+        </li>
+        <li>
+          <strong>Middle Eastern or North African (MENA):</strong> A person
+          having origins in the Middle East or North Africa.
+        </li>
+        <li>
+          <strong
+            >Native American, Alaskan Native, First Nations or
+            Indigenous:</strong
+          >
+          A person having origins in any of the Indigenous peoples of North and
+          South America (including Central America).
+        </li>
+        <li>
+          <strong>Pacific Islander:</strong> A person having origins in any of
+          the Pacific Islands, including Polynesia, Micronesia, and Melanesia.
+        </li>
+        <li>
+          <strong>South Asian:</strong> A person having origins in any of the
+          South Asian countries, including Bangladesh, Bhutan, India, Nepal,
+          Pakistan, Afghanistan, and Sri Lanka.
+        </li>
+        <li>
+          <strong>Southeast Asian:</strong> A person having origins in any of
+          the Southeast Asian countries, including Cambodia, Indonesia, Laos,
+          Malaysia, Myanmar, the Philippines, Singapore, Thailand, and Vietnam.
+        </li>
+        <li><strong>White:</strong> A person having origins in Europe.</li>
+        <li>
+          <strong>Another race/ethnicity:</strong> A person who identifies with
+          a racial/ethnic group not listed above.
+        </li>
+      </ul>
+      " %} {% include "components/learn-more.html" %} {% endwith %}
       <select
         name="race-ethnicity"
         id="race-ethnicity"
