@@ -3,7 +3,7 @@
 @use "flipcause" as *;
 
 
-// Privacy Page Text Wrapping Fix 
+// Privacy Page Text Wrapping Fix
 
 .privacy-page-content,
 .privacy-page-content * {
@@ -312,6 +312,7 @@
 .testimonial-row {
   padding: 0 !important;
 }
+
 .testimonial-text a {
   word-break: break-word;
 }
@@ -328,11 +329,13 @@
     padding: 12px;
     gap: 12px;
   }
+
   .testimonial-post {
     --size: min(70vw, 92vw);
     flex-basis: var(--size);
     width: var(--size);
   }
+
   .testimonial-post .post-content {
     width: 86%;
   }
@@ -359,6 +362,7 @@
   color: white;
   padding: 3rem;
 }
+
 .nav-bar {
   @include prefix(display, inline-flex, webkit moz);
   flex-flow: row-reverse wrap;
@@ -625,7 +629,8 @@
 }
 
 .icon-text {
-  font-size: 0.7rem; /* Smaller text size */
+  font-size: 0.7rem;
+  /* Smaller text size */
   text-align: center;
   line-height: 1.2;
   margin-top: 0.25rem;
@@ -637,6 +642,7 @@
   justify-content: center;
   gap: 1rem;
 }
+
 .social-link {
   display: flex;
   flex-direction: column;
@@ -762,7 +768,8 @@ p#original-template-source {
 }
 
 .videowrapper {
-  max-width: 560px; /* you have to have a size or this method doesn't work */
+  max-width: 560px;
+  /* you have to have a size or this method doesn't work */
   max-height: 315px;
   margin-right: auto;
   margin-left: auto;
@@ -1020,18 +1027,23 @@ p#original-template-source {
   }
 
   .social-link {
-    width: 50px; /* Slightly smaller width for mobile */
+    width: 50px;
+    /* Slightly smaller width for mobile */
   }
+
   .social-media,
   .hiring {
     width: 2.5rem;
     height: 2.5rem;
   }
+
   .hiring {
     width: 3.75rem;
   }
+
   .icon-text {
-    font-size: 0.6rem; /* Even smaller text for mobile */
+    font-size: 0.6rem;
+    /* Even smaller text for mobile */
   }
 }
 
@@ -1449,6 +1461,7 @@ input[type="radio"] {
   border-width: thick;
   padding: 3% 5% 3% 5%;
 }
+
 #consulting-bullet-items {
   border-style: solid;
   border-color: #05556d;
@@ -1589,6 +1602,15 @@ button.disabled {
 
 .success-container button {
   margin-top: 30px;
+  color: white;
+}
+
+#post-another-job.orange-button h2 {
+  color: white;
+}
+
+button#post-another-job.orange-button {
+  width: auto;
 }
 
 /* Existing styles for invalid fields, etc. */
@@ -1648,18 +1670,22 @@ textarea.invalid {
   margin-left: auto;
   width: 100%;
 }
+
 .sponsor-benefit-table,
 .sponsor-benefit-table td {
   border: 1px solid $main-blue;
   border-collapse: collapse;
 }
+
 .sponsor-benefit-table th {
   padding: 5px;
   column-width: 100px;
 }
+
 .sponsor-table-cell {
   text-align: center;
 }
+
 .sponsor-table-prompt {
   padding-left: 5px;
 }

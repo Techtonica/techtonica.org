@@ -208,7 +208,6 @@ The Prettier pre-commit hook automatically formats code when you attempt to comm
 
 1. **Scenario:**
    During `git commit`, the Prettier pre-commit hook runs and identifies formatting issues.
-
    - If applicable, Prettier will fix these issues but may leave **unstaged changes** in your working directory.
 
 2. **Outcome:**
@@ -227,7 +226,6 @@ To avoid this behavior and streamline your workflow, you can install a Prettier 
 1. Install the Prettier plug-in in your IDE (e.g., VS Code).
 
 2. Enable the "Format on Save" setting:
-
    - Go to **Settings** > **Text Editor** > **Formatting** > Enable **Format on Save**.
 
 3. Ensure your file is saved before running `git commit`.
