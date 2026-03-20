@@ -76,6 +76,14 @@ def render_conduct_page():
     return render_template("conduct.html")
 
 
+@app.route("/partner/")
+def redirect_partner_to_sponsor_page():
+    """
+    Redirects partner route to sponsor page
+    """
+    return redirect(url_for("render_sponsor_page"))
+
+
 @app.route("/privacy/")
 def render_privacy_page():
     """
