@@ -63,7 +63,7 @@ def render_team_page():
 @app.route("/careers/")
 def render_careers_page():
     """
-    Renders the careers page from jinja2 template
+    Redirects careers route to openings page
     """
     return redirect(url_for("render_openings_page"))
 
