@@ -63,7 +63,7 @@ def render_team_page():
 @app.route("/careers/")
 def render_careers_page():
     """
-    Renders the careers page from jinja2 template
+    Redirects careers route to openings page
     """
     return redirect(url_for("render_openings_page"))
 
@@ -74,6 +74,14 @@ def render_conduct_page():
     Renders the conduct page from jinja2 template
     """
     return render_template("conduct.html")
+
+
+@app.route("/partner/")
+def redirect_partner_to_sponsor_page():
+    """
+    Redirects partner route to sponsor page
+    """
+    return redirect(url_for("render_sponsor_page"))
 
 
 @app.route("/privacy/")
