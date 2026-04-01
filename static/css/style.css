@@ -2050,6 +2050,10 @@ button.disabled {
   margin-top: 30px;
 }
 
+#post-another-job.orange-button h2 {
+  color: white;
+}
+
 /* Existing styles for invalid fields, etc. */
 input.invalid,
 textarea.invalid {
