@@ -1,5 +1,3 @@
-@use "settings" as *;
-
 form {
   display: flex;
   justify-content: center;
@@ -13,7 +11,7 @@ form {
 
 .application-page {
   justify-content: center;
-  background-color: $main-blue;
+  background-color: #0093b5;
   padding: 2rem;
 }
 
@@ -46,7 +44,7 @@ form {
   display: inline;
   background: none;
   border: none;
-  color: $main-blue;
+  color: #0093b5;
   cursor: pointer;
   font-size: 1rem;
   text-decoration: underline;
@@ -55,11 +53,11 @@ form {
 }
 
 .application-form .learn-more-wrapper .learn-more-title:hover {
-  color: $light-blue;
+  color: #16c1f3;
 }
 
 .application-form .learn-more-wrapper .learn-more-title:focus {
-  outline: 2px solid $main-blue;
+  outline: 2px solid #0093b5;
   outline-offset: 2px;
 }
 
@@ -68,7 +66,7 @@ form {
   margin: 1rem 0;
   padding: 1rem;
   background-color: #f0f8ff;
-  border-left: 4px solid $main-blue;
+  border-left: 4px solid #0093b5;
   border-radius: 0.25rem;
   font-size: 0.95rem;
   line-height: 1.5;
@@ -92,7 +90,7 @@ form {
   display: inline;
   background-color: white;
   font-size: large;
-  color: $main-blue;
+  color: #0093b5;
   cursor: pointer;
   padding: 0;
   margin: 0 0 0 0.5em;
@@ -100,7 +98,7 @@ form {
 
 .application-form .learn-more-wrapper button:hover {
   background-color: white;
-  color: $light-blue;
+  color: #16c1f3;
 }
 
 .application-form .learn-more-wrapper button:focus-visible {
@@ -180,7 +178,7 @@ legend {
   margin-bottom: 2em;
 }
 #radio-wrapper input {
-  background-color: $light-blue;
+  background-color: #16c1f3;
 }
 
 // Alias for backward compatibility
@@ -195,7 +193,7 @@ button.continue-btn {
 button.continue-btn,
 button.previous-btn,
 button.save-btn {
-  background-color: $focal-orange;
+  background-color: #fc7625;
   color: white;
   font-size: large;
   padding: 1rem;
@@ -209,7 +207,7 @@ button.save-btn {
 button.continue-btn:hover,
 button.previous-btn:hover,
 button.save-btn:hover {
-  background-color: $light-blue;
+  background-color: #16c1f3;
   color: white;
   transition: 0.3s;
 }
@@ -222,7 +220,7 @@ button.save-btn:hover {
 }
 
 .step-header h2 {
-  color: $main-blue;
+  color: #0093b5;
   font-size: 1.8rem;
   margin-bottom: 1rem;
   text-align: center;
@@ -240,7 +238,7 @@ button.save-btn:hover {
 }
 
 .eligibility-message h2 {
-  color: $main-blue;
+  color: #0093b5;
   margin-bottom: 1.5rem;
 }
 
@@ -261,7 +259,7 @@ button.save-btn:hover {
 }
 
 .message-content a {
-  color: $main-blue;
+  color: #0093b5;
   text-decoration: none;
 }
 
@@ -348,7 +346,7 @@ button.save-btn:hover {
 
   .application-form .learn-more-wrapper .learn-more-title,
   .application-form .learn-more-wrapper .toggle-icon {
-    color: $main-blue;
+    color: #0093b5;
     font-size: smaller;
   }
 
