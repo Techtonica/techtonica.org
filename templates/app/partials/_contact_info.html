@@ -1,0 +1,56 @@
+<label for="first-name">Full legal given or 'first' name: </label><br />
+<input
+  type="text"
+  id="first-name"
+  name="first-name"
+  required
+  autocomplete="given-name"
+/><br />
+<label for="preferred-name"
+  >Preferred given or "first" name (if not the same as your legal "first" or
+  given name): <span>(Optional)</span></label
+><br />
+<input type="text" id="preferred-name" name="preferred-name" /><br />
+<label for="last-name">Full legal last/family name or surname: </label><br />
+<input
+  type="text"
+  id="last-name"
+  name="last-name"
+  required
+  autocomplete="family-name"
+/><br />
+<label for="name-pronunciation"
+  >How to pronounce your full name: <span>(Optional)</span></label
+>
+{% set learn_more_content %} You can make a recording on
+<a href="https://www.name-coach.com" target="_blank">name-coach.com</a>,
+generate your link and share in the text field if preferred. {% endset %} {%
+with title="Learn More", content=learn_more_content %} {% include
+"components/learn-more.html" %} {% endwith %}
+<br />
+<input type="text" id="name-pronunciation" name="name-pronunciation" /><br />
+<label for="email">Email: </label>
+{% with title="Learn More", content="Please use the same business-minded Gmail
+with your name (e.g. janedoe@gmail.com) that you used in the shorter form. This
+is the email we will contact you with for the duration of the application
+process and program." %} {% include "components/learn-more.html" %} {% endwith
+%}
+<input
+  type="email"
+  id="email"
+  name="email"
+  required
+  autocomplete="email"
+/><br />
+<label for="phone-number">Cell phone number with area code </label><br />
+<input
+  type="tel"
+  name="phone-number"
+  id="phone-number"
+  pattern="^\+?1?[-.\s]?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$"
+  placeholder="XXX-XXX-XXXX"
+  title="Please enter a valid phone number in the format: 415-555-1234 or 1-415-555-1234."
+  minlength="10"
+  required
+  autocomplete="tel"
+/><br />
