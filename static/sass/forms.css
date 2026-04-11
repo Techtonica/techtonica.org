@@ -421,6 +421,7 @@ button.save-btn:hover {
   }
   .application-page > h1 {
     font-size: 1.5em;
+    max-width: -moz-fit-content;
     max-width: fit-content;
   }
   .application-page > form {
@@ -495,6 +496,7 @@ button.save-btn:hover {
   }
   .application-page > h1 {
     font-size: 2em;
+    max-width: -moz-fit-content;
     max-width: fit-content;
   }
   .application-page > form {
@@ -511,6 +513,4 @@ button.save-btn:hover {
   .step-header h2 {
     font-size: 1.6rem;
   }
-}
-
-/*# sourceMappingURL=forms.css.map */
+} /*# sourceMappingURL=forms.css.map */
