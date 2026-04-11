@@ -247,6 +247,14 @@ def render_testimonials_page():
     return render_template("testimonials.html")
 
 
+@app.route("/blog/")
+def render_blog_page():
+    """
+    Renders the blog page from jinja2 template
+    """
+    return render_template("blog.html")
+
+
 def get_events():
     try:
         group_id = eventbrite.get_user()["id"]
