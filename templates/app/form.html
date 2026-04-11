@@ -1,5 +1,10 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
-Techtonica Application {% endblock title %} {% block content %}
+Techtonica Application {% endblock title %} {% block extra_stylesheets %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/forms.css') }}"
+/>
+{% endblock %} {% block content %}
 <section class="application-page">
   <h1>Techtonica Application</h1>
 
@@ -37,8 +42,8 @@ Techtonica Application {% endblock title %} {% block content %}
             </p>
             <ul>
               <li>
-                <strong>Cis Woman:</strong> A person whose gender identity aligns
-                with the female sex they were assigned at birth.
+                <strong>Cis Woman:</strong> A person whose gender identity
+                aligns with the female sex they were assigned at birth.
               </li>
               <li>
                 <strong>Trans Woman:</strong> A person who was assigned male at
@@ -46,17 +51,18 @@ Techtonica Application {% endblock title %} {% block content %}
               </li>
               <li>
                 <strong>Non-binary or Genderqueer:</strong> People who do not
-                identify exclusively as a man or a woman. They may feel like both,
-                somewhere in between, or outside these categories entirely.
+                identify exclusively as a man or a woman. They may feel like
+                both, somewhere in between, or outside these categories
+                entirely.
               </li>
               <li>
-                <strong>Agender or Genderless:</strong> People who do not identify
-                with any gender or feel an absence of gender.
+                <strong>Agender or Genderless:</strong> People who do not
+                identify with any gender or feel an absence of gender.
               </li>
               <li>
-                <strong>Genderfluid:</strong> People whose gender identity is not
-                fixed and may change over time, fluctuating between different
-                gender expressions or identities.
+                <strong>Genderfluid:</strong> People whose gender identity is
+                not fixed and may change over time, fluctuating between
+                different gender expressions or identities.
               </li>
             </ul>
           </div>
@@ -736,7 +742,7 @@ Techtonica Application {% endblock title %} {% block content %}
       "Non-binary/Genderqueer",
       "Agender/Genderless",
       "Genderfluid",
-      "Trans Man"
+      "Trans Man",
     ];
 
     const isEligible =
@@ -747,8 +753,8 @@ Techtonica Application {% endblock title %} {% block content %}
       selectedGender.toLowerCase().includes("nonbinary") ||
       selectedGender.toLowerCase().includes("genderqueer") ||
       selectedGender.toLowerCase().includes("agender") ||
-      selectedGender.toLowerCase().includes("genderfluid") || 
-      selectedGender.toLowerCase().includes("trans") ;
+      selectedGender.toLowerCase().includes("genderfluid") ||
+      selectedGender.toLowerCase().includes("trans");
 
     if (isEligible) {
       // Store the gender identity and show the main form

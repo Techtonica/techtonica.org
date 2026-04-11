@@ -1,30 +1,28 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
-Techtonica Application {% endblock title %} {% block content %}
+Techtonica Application {% endblock title %} {% block extra_stylesheets %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/forms.css') }}"
+/>
+{% endblock %} {% block content %}
 <section class="application-page">
   <h1>Techtonica Application</h1>
+  {% with current_step='app-form-admin' %} {% include
+  "components/progress-bar.html" %} {% endwith %}
+
   <form action="#" method="POST" class="application-form" id="app-form-6">
     <fieldset>
       <legend>Administrative Questions</legend>
 
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="has-macbook"
+      <div class="radio-wrapper" role="radiogroup">
+        <label for="has-macbook-yes"
           >Do you have a <strong>MacBook</strong> (not another laptop) to use
           during the program that works well so it won't be a problem during our
           intensive program?
         </label>
-        <div class="learn-more-wrapper">
-          <button class="learn-more-title" type="button" aria-expanded="false">
-            Learn More
-            <span class="toggle-icon">
-              <span class="toggle-icon-plus">+</span>
-              <span class="toggle-icon-minus">-</span>
-            </span>
-          </button>
-          <p class="learn-more-content" tabindex="0">
-            This is to let us know if we will need to help you secure a MacBook
-            during the program
-          </p>
-        </div>
+        {% with title="Learn More", content="This is to let us know if we will
+        need to help you secure a MacBook during the program" %} {% include
+        "components/learn-more.html" %} {% endwith %}
         <br />
         <input
           type="radio"
@@ -44,8 +42,8 @@ Techtonica Application {% endblock title %} {% block content %}
         <label for="has-macbook-no">No</label><br />
       </div>
 
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="media-release"
+      <div class="radio-wrapper" role="radiogroup">
+        <label for="media-release-yes"
           >Do you agree to the following media release? Photographs, pictures,
           writing, assignments, recordings, likenesses, slides, movies, video,
           or other media coverage of my activities created or performed by me
@@ -77,8 +75,8 @@ Techtonica Application {% endblock title %} {% block content %}
         <label for="media-release-no">No</label><br />
       </div>
 
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="sharing-personal-journey"
+      <div class="radio-wrapper" role="radiogroup">
+        <label for="sharing-personal-journey-yes"
           >Do you agree to share your personal story/journey into tech as
           requested at Techtonica events and in Techtonica media? </label
         ><br />
@@ -100,8 +98,8 @@ Techtonica Application {% endblock title %} {% block content %}
         <label for="sharing-personal-journey-no">No</label><br />
       </div>
 
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="commit-to-conduct"
+      <div class="radio-wrapper" role="radiogroup">
+        <label for="commit-to-conduct-yes"
           >Do you commit to abiding by Techtonica's Code of Conduct
           <a href="https://techtonica.org/conduct/" target="_blank"
             >(https://techtonica.org/conduct/)</a
@@ -125,8 +123,8 @@ Techtonica Application {% endblock title %} {% block content %}
         <label for="commit-to-conduct-no">No</label><br />
       </div>
 
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="commit-to-work-with-others"
+      <div class="radio-wrapper" role="radiogroup">
+        <label for="commit-to-work-with-others-yes"
           >Do you commit to working with the people assigned to work with you,
           whether volunteer, staff, fellow participants, or someone else? </label
         ><br />
@@ -148,8 +146,8 @@ Techtonica Application {% endblock title %} {% block content %}
         <label for="commit-to-work-with-others-no">No</label><br />
       </div>
 
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="commit-to-program-schedule"
+      <div class="radio-wrapper" role="radiogroup">
+        <label for="commit-to-program-schedule-yes"
           >Do you commit to always being present at, on time to, and prepared
           for the program, which is conducted from 8 AM - 5 PM Pacific Time
           Monday through Friday, as well as other Techtonica-required events
@@ -173,8 +171,8 @@ Techtonica Application {% endblock title %} {% block content %}
         <label for="commit-to-program-schedule-no">No</label><br />
       </div>
 
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="commit-to-placement"
+      <div class="radio-wrapper" role="radiogroup">
+        <label for="commit-to-placement-yes"
           >Do you commit to working with whichever company we might place you
           with? </label
         ><br />
@@ -196,24 +194,14 @@ Techtonica Application {% endblock title %} {% block content %}
         <label for="commit-to-placement-no">No</label><br />
       </div>
 
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="willing-to-relocate"
+      <div class="radio-wrapper" role="radiogroup">
+        <label for="willing-to-relocate-yes"
           >Would you be willing to move to a new city to be placed in a job?
         </label>
-        <div class="learn-more-wrapper">
-          <button class="learn-more-title" type="button" aria-expanded="false">
-            Learn More
-            <span class="toggle-icon">
-              <span class="toggle-icon-plus">+</span>
-              <span class="toggle-icon-minus">-</span>
-            </span>
-          </button>
-          <p class="learn-more-content" tabindex="0">
-            While this is not currently a requirement, it may be a requirement
-            again in the near future, and it increases your chances of securing
-            a job.
-          </p>
-        </div>
+        {% with title="Learn More", content="While this is not currently a
+        requirement, it may be a requirement again in the near future, and it
+        increases your chances of securing a job." %} {% include
+        "components/learn-more.html" %} {% endwith %}
         <br />
         <input
           type="radio"
@@ -233,8 +221,8 @@ Techtonica Application {% endblock title %} {% block content %}
         <label for="willing-to-relocate-no">No</label><br />
       </div>
 
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="aware-no-guaranteed-placement"
+      <div class="radio-wrapper" role="radiogroup">
+        <label for="aware-no-guaranteed-placement-yes"
           >Are you fully aware that placements are not guaranteed by Techtonica
           and you may need to start a job search after graduation? </label
         ><br />
@@ -256,8 +244,8 @@ Techtonica Application {% endblock title %} {% block content %}
         <label for="aware-no-guaranteed-placement-no">No</label><br />
       </div>
 
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="aware-of-tuition-cost"
+      <div class="radio-wrapper" role="radiogroup">
+        <label for="aware-of-tuition-cost-yes"
           >Are you aware that Techtonica’s tuition costs $18,000 and that
           tuition and stipend scholarships are available? </label
         ><br />
@@ -279,8 +267,8 @@ Techtonica Application {% endblock title %} {% block content %}
         <label for="aware-of-tuition-cost-no">No</label><br />
       </div>
 
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="interested-in-scholarships"
+      <div class="radio-wrapper" role="radiogroup">
+        <label for="interested-in-scholarships-yes"
           >Did you want to apply for tuition and stipend scholarships? </label
         ><br />
         <input
@@ -301,8 +289,8 @@ Techtonica Application {% endblock title %} {% block content %}
         <label for="interested-in-scholarships-no">No</label><br />
       </div>
 
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="promote-techtonica"
+      <div class="radio-wrapper" role="radiogroup">
+        <label for="promote-techtonica-yes"
           >Could you please spread the word about Techtonica to friends, family,
           and people in your area? </label
         ><br />
@@ -324,8 +312,8 @@ Techtonica Application {% endblock title %} {% block content %}
         <label for="promote-techtonica-no">No</label><br />
       </div>
 
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="commit-to-two-JS-study-groups"
+      <div class="radio-wrapper" role="radiogroup">
+        <label for="commit-to-two-JS-study-groups-yes"
           >For the next step in the application process, you'll need to join TWO
           of our digital literacy testing and JavaScript events on different
           days (if we decide to move forward with your application, we'll send
@@ -344,8 +332,8 @@ Techtonica Application {% endblock title %} {% block content %}
         ><br />
       </div>
 
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="completed-form-truthfully">
+      <div class="radio-wrapper" role="radiogroup">
+        <label for="completed-form-truthfully-yes">
           Do you confirm you've filled out this form truthfully?
         </label>
         <br />
@@ -367,13 +355,7 @@ Techtonica Application {% endblock title %} {% block content %}
         >
           Previous
         </button>
-        <button
-          type="button"
-          class="continue-to-app-btn"
-          onclick="validateForm()"
-        >
-          Next
-        </button>
+        <button type="button" class="continue-to-app-btn">Next</button>
         <button
           type="button"
           class="save-btn"
@@ -386,204 +368,9 @@ Techtonica Application {% endblock title %} {% block content %}
   </form>
 </section>
 
-<style>
-  form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem auto;
-    width: 75%;
-    max-width: 150rem;
-    padding: 3rem;
-    background-color: white;
-    border: 1px solid rgb(0, 0, 0);
-  }
-
-  .application-page {
-    justify-content: center;
-    background-color: #0093b5;
-    padding: 2rem;
-  }
-
-  .application-form .learn-more-wrapper {
-    display: inline;
-  }
-
-  .application-form .learn-more-content {
-    margin: 0.5em 0 0 0;
-    font-size: large;
-    color: black;
-  }
-
-  .application-form .learn-more-wrapper button {
-    display: inline;
-    background-color: white;
-    font-size: large;
-    color: #0093b5;
-    cursor: pointer;
-    padding: 0;
-    margin: 0 0 0 0.5em;
-  }
-
-  .application-form .learn-more-wrapper button:hover {
-    background-color: white;
-    color: #16c1f3;
-  }
-
-  .application-form .learn-more-wrapper button:focus-visible {
-    padding: 3px;
-  }
-
-  .application-page > h1,
-  .application-page > p {
-    max-width: 65%;
-    margin: auto;
-    text-align: center;
-  }
-
-  legend {
-    color: rgba(0, 115, 149, 0.8);
-    font-size: 20px;
-  }
-
-  .application-form > fieldset {
-    padding: 2rem;
-    border: 1px solid rgba(0, 0, 0, 0.559);
-    border-radius: 0.5rem;
-    width: 100%;
-  }
-
-  .application-form > fieldset > label,
-  .application-form > fieldset > #radio-wrapper {
-    color: black;
-    font-size: large;
-  }
-
-  .application-form > fieldset > label,
-  .application-form > fieldset > #radio-wrapper > label {
-    font-size: large;
-  }
-
-  .application-form > fieldset > #radio-wrapper > input[type="checkbox"],
-  .application-form > fieldset > #radio-wrapper > input[type="radio"] {
-    cursor: pointer;
-  }
-
-  .application-form > fieldset > input[type="checkbox"],
-  .application-form > fieldset > input[type="radio"] {
-    padding: 1em;
-    margin-bottom: 2em;
-    border: 1px solid rgba(0, 0, 0, 0.559);
-    border-radius: 6px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  button.continue-to-app-btn,
-  button.previous-btn,
-  button.save-btn {
-    background-color: #fc7625;
-    color: white;
-    font-size: large;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-  }
-
-  button.continue-to-app-btn:hover,
-  button.previous-btn:hover,
-  button.save-btn:hover {
-    background-color: #16c1f3;
-    color: white;
-    transition: 0.3s;
-  }
-
-  .form-button {
-    display: flex;
-    margin: auto;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  @media only screen and (min-width: 320px) and (max-width: 599px) {
-    .column {
-      padding: 0;
-    }
-    html,
-    body {
-      overflow-x: hidden;
-      width: 100%;
-    }
-    .application-page > form {
-      width: inherit;
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-    }
-    .application-page {
-      padding: 2rem 0;
-    }
-    .application-form .learn-more-wrapper .learn-more-title,
-    .application-form .learn-more-wrapper .toggle-icon {
-      color: #0093b5;
-      font-size: smaller;
-    }
-    .application-form .learn-more-wrapper .learn-more-content {
-      font-size: smaller;
-    }
-    .application-form > fieldset {
-      min-width: 95%;
-      word-wrap: break-word;
-      padding: 1.5rem;
-      margin: 0;
-    }
-    .application-page > h1 {
-      font-size: 1.5em;
-      max-width: fit-content;
-    }
-    legend {
-      font-size: 18px;
-    }
-    #radio-wrapper > input[type="radio"] {
-      margin: 0;
-    }
-    .application-form > fieldset > label,
-    #radio-wrapper > label {
-      font-size: smaller;
-    }
-    .form-button {
-      gap: 0.5em;
-      margin: auto;
-    }
-    button.previous-btn,
-    button.continue-to-app-btn,
-    button.save-btn {
-      font-size: smaller;
-    }
-  }
-
-  @media only screen and (min-width: 600px) and (max-width: 910px) {
-    .column {
-      padding: 0;
-    }
-    html,
-    body {
-      overflow-x: hidden;
-      width: 100%;
-    }
-    .application-page {
-      padding: 2rem 0;
-    }
-    .application-page > form {
-      width: initial;
-      margin-bottom: 2rem;
-    }
-    .application-page > h1 {
-      font-size: 2em;
-      max-width: fit-content;
-    }
-    legend {
-      font-size: 24px;
-    }
-  }
-</style>
+<script>
+  window.onload = function () {
+    attachLiveValidation("app-form-6", "/app-additional");
+  };
+</script>
 {% endblock content %}

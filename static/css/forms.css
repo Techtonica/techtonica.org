@@ -1,90 +1,4 @@
-body {
-  margin: 0;
-  box-sizing: border-box;
-  font-size: 1.2em;
-  line-height: 1.4em;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 1.5rem 0;
-  color: #0093b5;
-  line-height: 1.3em;
-  font-weight: 700;
-}
-
-h1,
-h2 {
-  letter-spacing: 2px;
-}
-
-h3,
-h4,
-h5,
-h6 {
-  letter-spacing: 1px;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  font-family: "lato", helvetica, sans-serif;
-}
-
-h1 {
-  color: white;
-  font-size: 4em;
-  letter-spacing: 4px;
-}
-
-a {
-  color: #0093b5;
-  text-decoration: none;
-}
-
-button {
-  background-color: white;
-  border: 0;
-}
-
-.blue-h1 {
-  color: #05556d;
-  text-shadow: 0px 0px 1px #ccc;
-}
-
-.blue-background {
-  background-color: #0093b5;
-  color: white;
-}
-.blue-background a {
-  color: white;
-}
-
-.white-background {
-  background-color: white;
-  color: #0093b5;
-}
-
-.centered {
-  text-align: center;
-}
-
-.centered p {
-  text-align: center;
-}
-
-p {
-  text-align: justify;
-}
+@use "settings" as *;
 
 form {
   display: flex;
@@ -99,7 +13,7 @@ form {
 
 .application-page {
   justify-content: center;
-  background-color: #0093b5;
+  background-color: $main-blue;
   padding: 2rem;
 }
 
@@ -132,7 +46,7 @@ form {
   display: inline;
   background: none;
   border: none;
-  color: #0093b5;
+  color: $main-blue;
   cursor: pointer;
   font-size: 1rem;
   text-decoration: underline;
@@ -141,11 +55,11 @@ form {
 }
 
 .application-form .learn-more-wrapper .learn-more-title:hover {
-  color: #16c1f3;
+  color: $light-blue;
 }
 
 .application-form .learn-more-wrapper .learn-more-title:focus {
-  outline: 2px solid #0093b5;
+  outline: 2px solid $main-blue;
   outline-offset: 2px;
 }
 
@@ -154,7 +68,7 @@ form {
   margin: 1rem 0;
   padding: 1rem;
   background-color: #f0f8ff;
-  border-left: 4px solid #0093b5;
+  border-left: 4px solid $main-blue;
   border-radius: 0.25rem;
   font-size: 0.95rem;
   line-height: 1.5;
@@ -178,7 +92,7 @@ form {
   display: inline;
   background-color: white;
   font-size: large;
-  color: #0093b5;
+  color: $main-blue;
   cursor: pointer;
   padding: 0;
   margin: 0 0 0 0.5em;
@@ -186,7 +100,7 @@ form {
 
 .application-form .learn-more-wrapper button:hover {
   background-color: white;
-  color: #16c1f3;
+  color: $light-blue;
 }
 
 .application-form .learn-more-wrapper button:focus-visible {
@@ -217,10 +131,10 @@ legend {
   font-size: large;
 }
 
-.application-form > fieldset > input[type=text],
-.application-form > fieldset > input[type=email],
-.application-form > fieldset > input[type=tel],
-.application-form > fieldset > input[type=textarea] {
+.application-form > fieldset > input[type="text"],
+.application-form > fieldset > input[type="email"],
+.application-form > fieldset > input[type="tel"],
+.application-form > fieldset > input[type="textarea"] {
   box-sizing: border-box;
   padding: 1em;
   margin-bottom: 2em;
@@ -229,40 +143,49 @@ legend {
   width: 100%;
 }
 
-.form-step input[type=text],
-.form-step input[type=email],
-.form-step input[type=tel],
-.form-step input[type=date],
-.form-step select {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  box-sizing: border-box;
-}
-.form-step select {
-  height: 3rem;
-  background-color: white;
-}
-.form-step label {
-  margin: 1rem 0 0.5rem 0;
-  color: #333;
-}
-.form-step input[type=radio],
-.form-step input[type=checkbox] {
-  margin: 0.5rem 1rem 0.5rem 0;
-  transform: scale(1.2);
+.form-step {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+  }
+
+  select {
+    height: 3rem;
+    background-color: white;
+  }
+
+  label {
+    margin: 1rem 0 0.5rem 0;
+    color: #333;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin: 0.5rem 1rem 0.5rem 0;
+    transform: scale(1.2);
+  }
 }
 
 #radio-wrapper label {
   color: black;
   margin-bottom: 2em;
 }
-
 #radio-wrapper input {
-  background-color: #16c1f3;
+  background-color: $light-blue;
+}
+
+// Alias for backward compatibility
+  button.continue-btn {
+  @extend .continue-to-app-btn;
 }
 
 button.continue-btn {
@@ -272,7 +195,7 @@ button.continue-btn {
 button.continue-btn,
 button.previous-btn,
 button.save-btn {
-  background-color: #fc7625;
+  background-color: $focal-orange;
   color: white;
   font-size: large;
   padding: 1rem;
@@ -286,7 +209,7 @@ button.save-btn {
 button.continue-btn:hover,
 button.previous-btn:hover,
 button.save-btn:hover {
-  background-color: #16c1f3;
+  background-color: $light-blue;
   color: white;
   transition: 0.3s;
 }
@@ -299,7 +222,7 @@ button.save-btn:hover {
 }
 
 .step-header h2 {
-  color: #0093b5;
+  color: $main-blue;
   font-size: 1.8rem;
   margin-bottom: 1rem;
   text-align: center;
@@ -317,7 +240,7 @@ button.save-btn:hover {
 }
 
 .eligibility-message h2 {
-  color: #0093b5;
+  color: $main-blue;
   margin-bottom: 1.5rem;
 }
 
@@ -338,7 +261,7 @@ button.save-btn:hover {
 }
 
 .message-content a {
-  color: #0093b5;
+  color: $main-blue;
   text-decoration: none;
 }
 
@@ -361,123 +284,41 @@ button.save-btn:hover {
   .application-page {
     padding: 0.25rem;
   }
+
   .form-step {
     width: calc(100% - 0.5rem);
     padding: 0.75rem;
     margin: 0.25rem auto;
   }
+
   .application-page > h1 {
     font-size: 1.6rem;
     margin-bottom: 0.75rem;
   }
-  .application-form fieldset, .form-step fieldset {
-    padding: 0;
-    margin: 0;
-    border: none;
-  }
-  .step-header h2 {
-    font-size: 1.2rem;
-  }
-  .step-header p {
-    font-size: 0.9rem;
-  }
-}
-@media only screen and (min-width: 320px) and (max-width: 599px) {
-  html,
-  body {
-    overflow-x: hidden;
-    width: 100%;
-  }
-  .column {
-    padding: 0 1rem;
-    width: 100%;
-    margin: auto;
-    overflow-x: hidden;
-    box-sizing: border-box;
-  }
-  .row, .application-page {
-    padding: 2em;
-  }
-  .justify {
-    text-align: left;
-  }
-  .large-white-text {
-    font-size: 1.5em;
-  }
-  button.previous-btn,
-  button.continue-btn,
-  button.save-btn {
-    font-size: smaller;
-  }
-  .application-form .learn-more-wrapper .learn-more-title,
-  .application-form .learn-more-wrapper .toggle-icon {
-    color: #0093b5;
-    font-size: smaller;
-  }
-  .application-form .learn-more-wrapper .learn-more-content {
-    font-size: smaller;
-  }
-  .application-page > h1 {
-    font-size: 1.5em;
-    max-width: fit-content;
-  }
-  .application-page > form {
-    width: inherit;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-  }
-  legend {
-    font-size: 18px;
-  }
-  .application-form > fieldset {
-    min-width: 95%;
-    word-wrap: break-word;
-    padding: 1.5rem;
-    margin: 0;
-  }
-  .application-form > fieldset > label {
-    font-size: smaller;
-  }
-  .form-button {
-    gap: 0.5em;
-    margin: auto;
-  }
-  .form-step {
-    width: calc(100% - 1rem);
-    padding: 1rem;
-    margin: 0.5rem auto;
-    box-sizing: border-box;
-  }
-  .step-header h2 {
-    font-size: 1.4rem;
-  }
-  .step-header p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-  }
+
   .application-form fieldset,
   .form-step fieldset {
     padding: 0;
     margin: 0;
     border: none;
   }
-  legend {
-    font-size: 1.1rem;
-    padding: 0;
+
+  .step-header h2 {
+    font-size: 1.2rem;
   }
-  .continue-btn,
-  .continue-to-app-btn,
-  button.continue-btn {
-    width: 100%;
-    margin-top: 1rem;
+
+  .step-header p {
+    font-size: 0.9rem;
   }
 }
-@media only screen and (min-width: 600px) and (max-width: 910px) {
+
+@media only screen and (min-width: 320px) and (max-width: 599px) {
   html,
   body {
     overflow-x: hidden;
     width: 100%;
   }
+
   .column {
     padding: 0 1rem;
     width: 100%;
@@ -485,30 +326,145 @@ button.save-btn:hover {
     overflow-x: hidden;
     box-sizing: border-box;
   }
+
+  .row,
+  .application-page {
+    padding: 2em;
+  }
+
+  .justify {
+    text-align: left;
+  }
+
+  .large-white-text {
+    font-size: 1.5em;
+  }
+
+  button.previous-btn,
+  button.continue-btn,
+  button.save-btn {
+    font-size: smaller;
+  }
+
+  .application-form .learn-more-wrapper .learn-more-title,
+  .application-form .learn-more-wrapper .toggle-icon {
+    color: $main-blue;
+    font-size: smaller;
+  }
+
+  .application-form .learn-more-wrapper .learn-more-content {
+    font-size: smaller;
+  }
+
+  .application-page > h1 {
+    font-size: 1.5em;
+    max-width: fit-content;
+  }
+
+  .application-page > form {
+    width: inherit;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+  }
+
+  legend {
+    font-size: 18px;
+  }
+
+  .application-form > fieldset {
+    min-width: 95%;
+    word-wrap: break-word;
+    padding: 1.5rem;
+    margin: 0;
+  }
+
+  .application-form > fieldset > label {
+    font-size: smaller;
+  }
+
+  .form-button {
+    gap: 0.5em;
+    margin: auto;
+  }
+
+  .form-step {
+    width: calc(100% - 1rem);
+    padding: 1rem;
+    margin: 0.5rem auto;
+    box-sizing: border-box;
+  }
+
+  .step-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .step-header p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .application-form fieldset,
+  .form-step fieldset {
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+
+  legend {
+    font-size: 1.1rem;
+    padding: 0;
+  }
+
+  .continue-btn,
+  .continue-to-app-btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 910px) {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .column {
+    padding: 0 1rem;
+    width: 100%;
+    margin: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
   .row {
     padding: 2em;
   }
+
   .application-page {
     padding: 2em 0;
   }
+
   .application-page > h1 {
     font-size: 2em;
     max-width: fit-content;
   }
+
   .application-page > form {
     width: initial;
     margin-bottom: 2rem;
   }
+
   legend {
     font-size: 24px;
   }
+
   .form-step {
     width: 85%;
     padding: 2rem;
   }
+
   .step-header h2 {
     font-size: 1.6rem;
   }
 }
-
-/*# sourceMappingURL=forms.css.map */

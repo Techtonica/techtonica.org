@@ -1,7 +1,15 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
-Techtonica Application {% endblock title %} {% block content %}
+Techtonica Application {% endblock title %} {% block extra_stylesheets %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/forms.css') }}"
+/>
+{% endblock %} {% block content %}
 <section class="application-page">
   <h1>Techtonica Application</h1>
+  {% with current_step='app-questionnaire' %} {% include
+  "components/progress-bar.html" %} {% endwith %}
+
   <form action="#" method="POST" class="application-form" id="app-form-3">
     <fieldset>
       <legend>Questionnaire</legend>
@@ -134,13 +142,7 @@ Techtonica Application {% endblock title %} {% block content %}
         >
           Previous
         </button>
-        <button
-          type="button"
-          class="continue-to-app-btn"
-          onclick="validateForm()"
-        >
-          Next
-        </button>
+        <button type="button" class="continue-to-app-btn">Next</button>
         <button
           type="button"
           class="save-btn"
@@ -153,190 +155,10 @@ Techtonica Application {% endblock title %} {% block content %}
   </form>
 </section>
 
-<style>
-  form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem auto;
-    width: 75%;
-    max-width: 150rem;
-    padding: 3rem;
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.547);
-  }
-
-  .application-page {
-    justify-content: center;
-    background-color: #0093b5;
-    padding: 2rem;
-  }
-
-  .application-page > h1,
-  .application-page > p {
-    max-width: 65%;
-    margin: auto;
-    text-align: center;
-  }
-
-  .application-form > fieldset > select {
-    cursor: pointer;
-  }
-
-  .application-form > fieldset > select {
-    padding: 1em;
-    margin-bottom: 2em;
-    border: 1px solid rgba(0, 0, 0, 0.559);
-    border-radius: 6px;
-    width: 100%;
-    box-sizing: border-box;
-    appearance: none;
-    background-color: transparent;
-    background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBmaWxsPSJncmF5IiBkPSJNMTAsMjMyLjdsNDkwLDUzNC41bDQ5MC01MzQuNUgxMHoiIC8+DQo8L3N2Zz4=);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 15px;
-    background-origin: content-box;
-  }
-
-  legend {
-    color: rgba(0, 115, 149, 0.8);
-    font-size: 20px;
-  }
-
-  .application-form > fieldset {
-    padding: 2rem;
-    border: 1px solid rgba(0, 0, 0, 0.559);
-    border-radius: 0.5rem;
-    width: 100%;
-  }
-
-  .application-form > fieldset > label,
-  .application-form > fieldset > p {
-    color: black;
-    font-size: large;
-  }
-
-  button.continue-to-app-btn,
-  button.previous-btn,
-  button.save-btn {
-    background-color: #fc7625;
-    color: white;
-    font-size: large;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-  }
-
-  button.continue-to-app-btn:hover,
-  button.previous-btn:hover,
-  button.save-btn:hover {
-    background-color: #16c1f3;
-    color: white;
-    transition: 0.3s;
-  }
-
-  .form-button {
-    display: flex;
-    margin: auto;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  @media only screen and (min-width: 320px) and (max-width: 599px) {
-    .column {
-      padding: 0;
-    }
-    html,
-    body {
-      overflow-x: hidden;
-      width: 100%;
-    }
-    .application-page {
-      padding: 2rem 0;
-    }
-    .application-page > h1 {
-      font-size: 1.5em;
-      max-width: fit-content;
-    }
-    .application-form > fieldset > p {
-      font-size: smaller;
-    }
-    .application-form > fieldset > label {
-      font-size: smaller;
-    }
-    .application-form > fieldset > legend {
-      font-size: 18px;
-    }
-    .application-page > form {
-      width: inherit;
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-    }
-    .application-form > fieldset {
-      min-width: 95%;
-      word-wrap: break-word;
-      padding: 1.5rem;
-      margin: 0;
-    }
-    button.continue-to-app-btn,
-    button.previous-btn,
-    button.save-btn {
-      font-size: smaller;
-    }
-    .form-button {
-      gap: 0.5em;
-      margin: 0;
-    }
-  }
-
-  @media only screen and (min-width: 600px) and (max-width: 910px) {
-    .column {
-      padding: 0;
-    }
-    html,
-    body {
-      overflow-x: hidden;
-      width: 100%;
-    }
-    .application-page {
-      padding: 2rem 0;
-    }
-    .application-page > form {
-      width: initial;
-      margin-bottom: 2rem;
-    }
-    .application-page > h1 {
-      font-size: 2em;
-      max-width: fit-content;
-    }
-    legend {
-      font-size: 24px;
-    }
-  }
-</style>
-
 <script>
-  function validateForm() {
-    const form = document.getElementById("app-form-3");
-    const requiredSelects = form.querySelectorAll("select[required]");
-    let allValid = true;
-
-    requiredSelects.forEach((select) => {
-      select.style.border = "";
-
-      if (select.value === "") {
-        allValid = false;
-        select.style.border = "2px solid red";
-      }
-    });
-
-    if (!allValid) {
-      alert("Please select an option for all questions.");
-    } else {
-      window.location.href = "/app-long-text";
-    }
-  }
+  window.onload = function () {
+    attachLiveValidation("app-form-3", "/app-long-text");
+  };
 </script>
 
 {% endblock content %}

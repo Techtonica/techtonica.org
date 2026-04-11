@@ -1,5 +1,10 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap —
-Post A Job {% endblock title %} {% block content %}
+Post A Job {% endblock title %} {% block extra_stylesheets %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/forms.css') }}"
+/>
+{% endblock %} {% block content %}
 <!-- link to the Web SDK library -->
 <script src="https://sandbox.web.squarecdn.com/v1/square.js"></script>
 <script type="text/javascript" src="{{ PAYMENT_FORM_URL }}"></script>

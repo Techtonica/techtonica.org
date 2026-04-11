@@ -1,0 +1,10 @@
+<div class="learn-more-wrapper">
+  <button class="learn-more-title" type="button" aria-expanded="false">
+    {{ title }}
+    <span class="toggle-icon">
+      <span class="toggle-icon-plus">+</span>
+      <span class="toggle-icon-minus">-</span>
+    </span>
+  </button>
+  <div class="learn-more-content" tabindex="0">{{ content|safe }}</div>
+</div>
