@@ -58,4 +58,6 @@ options=pronoun_options) }}
   disabled
 /><br />
 
-{{ f.input_field('birth-date', 'What is your birth date?', type='date') }}
+{{ f.input_field('birth-date', 'What is your birth date?', type='date') }} {%
+set age_options = ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"] %} {{
+f.select_field('age-group', 'Select your age group', options=age_options) }}
