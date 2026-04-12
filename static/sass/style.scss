@@ -505,6 +505,12 @@
   background-attachment: fixed;
 }
 
+@media (max-width: 768px) {
+  .program-header {
+    background-attachment: scroll;
+    background-position: top center;
+  }
+}
 .sponsor-header {
   @include prefix(background-size, cover, webkit moz o);
   @include prefix(display, flex, webkit moz o);
