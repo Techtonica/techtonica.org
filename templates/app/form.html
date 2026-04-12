@@ -16,10 +16,8 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
 
       {% include "partials/_contact_info.html" %} {% include
       "partials/_gender_identity.html" %} {% include "partials/_pronouns.html"
-      %}
+      %}{% include "partials/_birth_day.html" %}
 
-      <label for="birth-date">What is your birth date? </label><br />
-      <input type="date" id="birth-date" name="birth-date" required /><br />
       <label for="age-group">Select your age group </label><br />
       <select name="age-group" id="age-group" required>
         <br />
