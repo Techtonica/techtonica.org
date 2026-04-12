@@ -255,6 +255,14 @@ def render_blog_page():
     return render_template("blog.html")
 
 
+@app.route("/blog/meet-2026-h1-cohort/")
+def render_meet_2026_h1_cohort():
+    """
+    Renders the blog post page for 2026 H1 cohort from jinja2 template
+    """
+    return render_template("blog-posts/meet-2026-h1-cohort.html")
+
+
 def get_events():
     try:
         group_id = eventbrite.get_user()["id"]
