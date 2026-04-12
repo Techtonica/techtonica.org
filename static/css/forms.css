@@ -499,10 +499,11 @@ button.save-btn:hover {
   .form-step input[type="tel"],
   .form-step input[type="date"],
   .form-step select {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
   }
   #gender-identity-check {
+    margin-top: 1rem;
     margin-bottom: 0;
   }
   .form-step label {
