@@ -349,7 +349,7 @@ button.save-btn:hover {
   .application-form .learn-more-wrapper .learn-more-title,
   .application-form .learn-more-wrapper .toggle-icon {
     color: $main-blue;
-    font-size: smaller;
+    font-size: 0.75rem;
   }
 
   .application-form .learn-more-wrapper .learn-more-content {
@@ -379,7 +379,7 @@ button.save-btn:hover {
   }
 
   .application-form > fieldset > label {
-    font-size: smaller;
+    font-size: 1rem;
   }
 
   .form-button {
@@ -405,9 +405,8 @@ button.save-btn:hover {
 
   .application-form fieldset,
   .form-step fieldset {
-    padding: 0;
+    padding: 0.5rem;
     margin: 0;
-    border: none;
   }
 
   legend {
@@ -419,6 +418,51 @@ button.save-btn:hover {
   .continue-to-app-btn {
     width: 100%;
     margin-top: 1rem;
+  }
+
+  form {
+    padding: 1rem;
+  }
+
+  .toggle-icon-plus,
+  .toggle-icon-minus {
+    font-weight: normal;
+    font-size: 1rem;
+  }
+
+  .form-step input[type="text"],
+  .form-step input[type="email"],
+  .form-step input[type="tel"],
+  .form-step input[type="date"],
+  .form-step select {
+    margin-bottom: 0;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    height: 2.5rem;
+  }
+
+  .form-step label {
+    font-size: 1rem;
+  }
+  #radio-wrapper label {
+    font-size: 1rem;
+  }
+
+  .form-step input[type="radio"],
+  .form-step input[type="checkbox"] {
+    margin: 0.5rem 0rem 0.5rem 0;
+  }
+
+  #radio-wrapper :nth-child(5) {
+    margin: 0.5rem 0rem 0.5rem 0.5rem;
+  }
+
+  #radio-wrapper #disabled-status-yes-label {
+    margin: 0.5rem 0rem 0.5rem 0;
+  }
+
+  #radio-wrapper #disabled-status-no {
+    margin: 0.5rem 0rem 0.5rem 0.5rem;
   }
 }
 
