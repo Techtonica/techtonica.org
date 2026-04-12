@@ -1,5 +1,19 @@
 {% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap -
 Blog {% endblock title %} {% block content %}
+<div class="row row__center blue-background">
+  <div class="column">
+    <h1>Techtonica<br />Blog</h1>
+    <h3>#BridgeTheGap</h3>
+  </div>
+  <div class="column">
+    <img
+      src="{{ url_for('static', filename='img/sf-bridge-logo-without-background.png') }}"
+      alt="Designed image of the San Francisco bridge."
+      class="eighty-five-percent-width"
+    />
+  </div>
+</div>
+
 <div class="row row__center">
   <div>
     <h2 class="blue-h1">Meet Our 2026 H1 Part-Time Cohort!</h2>
