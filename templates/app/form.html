@@ -15,62 +15,9 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
       <legend>General Applicant Demographics</legend>
 
       {% include "partials/_contact_info.html" %} {% include
-      "partials/_gender_identity.html" %}
+      "partials/_gender_identity.html" %} {% include "partials/_pronouns.html"
+      %}
 
-      <label>What are your pronouns? </label><br />
-      <label>
-        <input
-          type="checkbox"
-          name="pronouns"
-          id="pronouns-she-her"
-          value="She/Her"
-        />
-        She/Her</label
-      ><br />
-      <label>
-        <input
-          type="checkbox"
-          name="pronouns"
-          id="pronouns-he-him"
-          value="He/Him"
-        />
-        He/Him</label
-      ><br />
-      <label>
-        <input
-          type="checkbox"
-          name="pronouns"
-          id="pronouns-they-them"
-          value="They/Them"
-        />
-        They/Them</label
-      ><br />
-      <label>
-        <input
-          type="checkbox"
-          name="pronouns"
-          id="pronouns-ze-zir"
-          value="Ze/Zir"
-        />
-        Ze/Zir</label
-      ><br />
-      <label>
-        <input
-          type="checkbox"
-          name="pronouns"
-          id="pronouns-other"
-          value="Other"
-        />
-        Other</label
-      ><br />
-      <input
-        type="text"
-        id="custom-pronouns"
-        name="custom-pronouns"
-        placeholder="Please enter your preferred pronouns"
-        aria-label="custom pronouns selection"
-        disabled
-      /><br />
       <label for="birth-date">What is your birth date? </label><br />
       <input type="date" id="birth-date" name="birth-date" required /><br />
       <label for="age-group">Select your age group </label><br />

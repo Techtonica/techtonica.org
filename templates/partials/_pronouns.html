@@ -1,0 +1,13 @@
+{% import "macros/app_form_macros.html" as f %} {% set pronoun_options =
+["She/Her", "He/Him", "They/Them", "Ze/Zir", "Other"] %} {{
+f.checkbox_group('pronouns', 'What are your pronouns?', options=pronoun_options)
+}}
+
+<input
+  type="text"
+  id="custom-pronouns"
+  name="custom-pronouns"
+  placeholder="Please enter your preferred pronouns"
+  aria-label="custom pronouns selection"
+  disabled
+/><br />
