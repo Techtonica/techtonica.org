@@ -9,4 +9,9 @@ required=False) %} {% set learn_more_content %} You can make a recording on
 <a href="https://www.name-coach.com" target="_blank">name-coach.com</a>,
 generate your link and share in the text field if preferred. {% endset %} {%
 with title="Learn More", content=learn_more_content %} {% include
-"components/learn-more.html" %} {% endwith %} {% endcall %}
+"components/learn-more.html" %} {% endwith %} {% endcall %} {% call
+f.input('email', "Email:", autocomplete="email") %} {% with title="Learn More",
+content="Please use the same business-minded Gmail with your name (e.g.
+janedoe@gmail.com) that you used in the shorter form. This is the email we will
+contact you with for the duration of the application process and program." %} {%
+include "components/learn-more.html" %} {% endwith %} {% endcall %}
