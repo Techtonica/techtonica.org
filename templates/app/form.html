@@ -109,18 +109,6 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
         placeholder="Please enter your racial/ethnic group"
         disabled
       /><br />
-      <label for="address"
-        >What is the full mailing address of where you live? (Don't forget unit
-        number, if applicable, and city, state, and zip code.)</label
-      ><br />
-      <input
-        type="text"
-        name="address"
-        id="address"
-        required
-        pattern="^\d+\s[A-z]+\s[A-z]+(?:\s[A-z]+)*,\s[A-z]+\s[A-z]+,\s[A-Z]{2}\s\d{5}(?:-\d{4})?$"
-        title="Please enter a valid U.S. mailing address."
-      /><br />
 
       <button type="button" class="continue-to-app-btn">Continue</button>
     </fieldset>

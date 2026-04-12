@@ -9,6 +9,11 @@ if you have a physical or mental impairment or medical condition that
 substantially limits a major life activity." %} {% include
 "components/learn-more.html" %} {% endwith %} {% endcall %} {{
 f.yes_no_radio('parental-status', 'Are you a parent or legal guardian of a
-minor?') }} {{ f.yes_no_radio('US-employment-status', 'Can you currently legally
-be employed in the U.S.?') }}{{ f.yes_no_radio('high-school-graduate-ged', 'Have
-you graduated from high school/received your GED?') }}
+minor?') }} {{ f.input_field( 'address', 'What is the full mailing address of
+where you live? (Don\'t forget unit number, if applicable, and city, state, and
+zip code.)', required=True,
+pattern='^\d+\s[A-z]+\s[A-z]+(?:\s[A-z]+)*,\s[A-z]+\s[A-z]+,\s[A-Z]{2}\s\d{5}(?:-\d{4})?$',
+title='Please enter a valid U.S. mailing address.' ) }}{{
+f.yes_no_radio('US-employment-status', 'Can you currently legally be employed in
+the U.S.?') }}{{ f.yes_no_radio('high-school-graduate-ged', 'Have you graduated
+from high school/received your GED?') }}
