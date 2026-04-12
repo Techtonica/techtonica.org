@@ -43,4 +43,24 @@ required=True) %}
   {% endfor %}
 </select>
 <br />
-{% endmacro %}
+{% endmacro %} {% macro checkbox_group(name, label, options, id=None) %}
+<label for="{{ name }}">{{ id or label }}</label>
+
+{% if caller %} {{ caller() }} {% endif %}
+<br />
+
+{% for opt in options %} {% set opt_id = name ~ '-' ~ opt|lower|replace('/',
+'-') %}
+<label>
+  <input
+    type="checkbox"
+    name="{{ name }}"
+    id="{{ opt_id }}"
+    value="{{ opt }}"
+    {{
+    kwargs|xmlattr
+    }}
+  />
+  {{ opt }} </label
+><br />
+{% endfor %} {% endmacro %}
