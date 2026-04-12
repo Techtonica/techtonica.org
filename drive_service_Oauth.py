@@ -1,12 +1,13 @@
 import os
+from io import BytesIO
 
 from dotenv import load_dotenv
-from flask import Flask, redirect, request, session, url_for
+from flask import redirect, request, session, url_for
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import Flow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
-from googleapiclient.http import MediaFileUpload
+from googleapiclient.http import MediaIoBaseUpload
 
 os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 load_dotenv()
@@ -88,21 +89,36 @@ def get_or_create_user_folder(credentials_dict, user_email):
         return folder.get("id")
 
 
-def upload(credentials_dict, user_folder_id):
-
+def upload(credentials_dict, user_folder_id, file_to_upload, custom_name=None):
+    final_filename = custom_name if custom_name else file_to_upload.filename
     try:
+        ALLOWED_MIME_TYPES = {
+            "image/png",
+            "image/jpeg",
+            "application/pdf",
+        }
+
+        if file_to_upload.mimetype not in ALLOWED_MIME_TYPES:
+            print("Invalid file type:", file_to_upload.mimetype)
+            return None
+
         # create drive api client
         service = build_drive_service(credentials_dict)
 
-        file_path = "/Users/shu/Downloads/cat-openmoji.svg"
-
         file_metadata = {
-            "name": "cat-openmoji.svg",
+            "name": final_filename,
             "parents": [user_folder_id],
         }
 
         print("file_metadata: ", file_metadata)
-        media = MediaFileUpload(file_path, mimetype="image/svg+xml")
+
+        buffer_memory = BytesIO()
+        file_to_upload.save(buffer_memory)
+        buffer_memory.seek(0)
+
+        media = MediaIoBaseUpload(
+            buffer_memory, mimetype=file_to_upload.mimetype
+        )
 
         file = (
             service.files()
@@ -169,9 +185,9 @@ def register_drive_routes(app):
         return f"File ID: {file_id}"
 
 
-# for testing purpose
-if __name__ == "__main__":
-    app = Flask(__name__)
-    app.secret_key = "dev-secret"
-    register_drive_routes(app)
-    app.run(debug=True)
+# # for testing purpose
+# if __name__ == "__main__":
+#     app = Flask(__name__)
+#     app.secret_key = "dev-secret"
+#     register_drive_routes(app)
+#     app.run(debug=True)
