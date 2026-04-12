@@ -1,0 +1,5 @@
+{% import "macros/contact_info_macros.html" as f %} {{ f.input('first-name',
+"Full legal given or 'first' name:", autocomplete="given-name") }} {{
+f.input('preferred-name', 'Preferred given or "first" name (if not the same as
+your legal "first" orgiven name):', required=False) }} {{ f.input('last-name',
+'Full legal last/family name or surname:', autocomplete="family-name") }}

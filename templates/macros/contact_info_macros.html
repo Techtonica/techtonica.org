@@ -1,0 +1,21 @@
+{% macro input(name, label, id=None, type="text", required=True) %}
+<label for="{{ name }}">{{ id or label }}</label>
+
+{% if caller %} {{ caller() }} {% endif %}
+<br />
+
+<input
+  type="{{ type }}"
+  id="{{ id or name }}"
+  name="{{ name }}"
+  {%
+  if
+  required
+  %}required{%
+  endif
+  %}
+  {{
+  kwargs|xmlattr
+  }}
+/><br />
+{% endmacro %}
