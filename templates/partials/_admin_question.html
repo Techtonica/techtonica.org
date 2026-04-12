@@ -7,4 +7,6 @@ some examples here:
 >) {% with title="Learn More", content="You are considered to have a disability
 if you have a physical or mental impairment or medical condition that
 substantially limits a major life activity." %} {% include
-"components/learn-more.html" %} {% endwith %} {% endcall %}
+"components/learn-more.html" %} {% endwith %} {% endcall %} {{
+f.yes_no_radio('parental-status', 'Are you a parent or legal guardian of a
+minor?') }}
