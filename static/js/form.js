@@ -156,7 +156,12 @@ function validateAppForm(elementId, nextUrl) {
 }
 
 // Function to attach event listeners for live validation
-function attachLiveValidation(elementId, nextUrl, clear = false) {
+function attachLiveValidation(
+  elementId,
+  nextUrl,
+  clear = false,
+  shouldSubmit = false,
+) {
   const form = document.getElementById(elementId);
   const fields = form.querySelectorAll("[required]");
   fields.forEach((field) => {
@@ -168,7 +173,7 @@ function attachLiveValidation(elementId, nextUrl, clear = false) {
   if (submitButton) {
     submitButton.addEventListener("click", function (event) {
       event.preventDefault();
-      validateAndSubmit(elementId, nextUrl, clear);
+      validateAndSubmit(elementId, nextUrl, clear, shouldSubmit);
     });
   }
 }
@@ -301,7 +306,7 @@ function clearValidation(field) {
 }
 
 // Final validation before navigation
-function validateAndSubmit(elementId, nextUrl) {
+function validateAndSubmit(elementId, nextUrl, shouldSubmit = false) {
   const form = document.getElementById(elementId);
   const fields = form.querySelectorAll("[required]");
   let isValid = true;
@@ -314,11 +319,16 @@ function validateAndSubmit(elementId, nextUrl) {
   });
 
   if (isValid) {
-    if (!nextUrl) {
-      // Code is setup to clear localStorage on submit, not to submit the form
-      clearLocal(elementId);
-    } else {
+    if (shouldSubmit) {
+      if (!nextUrl) {
+        // Code is setup to clear localStorage on submit, not to submit the form
+        clearLocal(elementId);
+      }
+      form.submit();
+    } else if (nextUrl) {
       window.location.href = nextUrl;
+    } else {
+      clearLocal(elementId);
     }
   } else {
     alert("Please complete all required fields.");
