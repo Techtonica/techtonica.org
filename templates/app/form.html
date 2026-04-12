@@ -10,7 +10,12 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
   {% with current_step='app-form' %} {% include "components/progress-bar.html"
   %} {% endwith %}
 
-  <form action="#" method="POST" class="application-form" id="app-form-1">
+  <form
+    action="/app-form"
+    method="POST"
+    class="application-form"
+    id="app-form-1"
+  >
     <fieldset>
       <legend>General Applicant Demographics</legend>
       <label for="first-name">Full legal given or 'first' name: </label><br />
@@ -419,7 +424,7 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
         />
         <label for="high-school-graduate-ged-no">No</label><br />
       </div>
-      <button type="button" class="continue-to-app-btn">Continue</button>
+      <button type="submit" class="continue-to-app-btn">Continue</button>
     </fieldset>
   </form>
 </section>
@@ -427,7 +432,7 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
 <script>
   // Attach live validation on page load
   window.onload = function () {
-    attachLiveValidation("app-form-1", "/app-household");
+    attachLiveValidation("app-form-1", "/app-household", (shouldSubmit = true));
   };
 </script>
 

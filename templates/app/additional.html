@@ -10,7 +10,13 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
   {% with current_step='app-additional' %} {% include
   "components/progress-bar.html" %} {% endwith %}
 
-  <form action="#" method="POST" class="application-form" id="app-form-7">
+  <form
+    action="/app-additional"
+    method="POST"
+    enctype="multipart/form-data"
+    class="application-form"
+    id="app-form-7"
+  >
     <fieldset>
       <legend>Additional Applicant Information</legend>
       <div id="radio-wrapper" role="radiogroup">
@@ -251,11 +257,11 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
         <button
           type="button"
           class="previous-btn"
-          onclick="window.location.href='/app-form-admin'"
+          onclick="window.location.href = '/app-form-admin'"
         >
           Previous
         </button>
-        <button type="button" class="continue-to-app-btn submit-btn">
+        <button type="submit" class="continue-to-app-btn submit-btn">
           Submit
         </button>
       </div>
@@ -265,7 +271,7 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
 <script>
   // Attach live validation on page load
   window.onload = function () {
-    attachLiveValidation("app-form-7", null);
+    attachLiveValidation("app-form-7", "/", (shouldSubmit = true));
   };
 </script>
 {% endblock content %}

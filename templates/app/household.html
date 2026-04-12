@@ -10,7 +10,13 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
   {% with current_step='app-household' %} {% include
   "components/progress-bar.html" %} {% endwith %}
 
-  <form action="#" method="POST" class="application-form" id="app-form-2">
+  <form
+    action="/app-household"
+    method="POST"
+    enctype="multipart/form-data"
+    class="application-form"
+    id="app-form-2"
+  >
     <fieldset>
       <legend>Applicant & Household Financial Information</legend>
       <div id="radio-wrapper" role="radiogroup">
@@ -158,18 +164,14 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
         <button
           type="button"
           class="previous-btn"
-          onclick="window.location.href='/app-form'"
+          onclick="window.location.href = '/app-form'"
         >
           Previous
         </button>
-        <button type="button" class="continue-to-app-btn">Next</button>
-        <button
-          type="button"
-          class="save-btn"
-          onclick="window.location.href='/'"
-        >
-          Save
+        <button type="submit" name="action" class="continue-to-app-btn">
+          Next
         </button>
+        <button type="submit" name="action" class="save-btn">Save</button>
       </div>
     </fieldset>
   </form>
@@ -178,7 +180,11 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     window.onload = function () {
-      attachLiveValidation("app-form-2", "/app-questionnaire");
+      attachLiveValidation(
+        "app-form-2",
+        "/app-questionnaire",
+        (shouldSubmit = true),
+      );
     };
   });
 </script>

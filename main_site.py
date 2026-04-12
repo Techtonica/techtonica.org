@@ -12,13 +12,26 @@ import pendulum
 import requests
 from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
-from flask import Flask, jsonify, redirect, render_template, request, url_for
+from flask import (
+    Flask,
+    jsonify,
+    redirect,
+    render_template,
+    request,
+    session,
+    url_for,
+)
 from flask_sslify import SSLify
 from pydantic import BaseModel
 from square.client import Client
 
 from dates import generate_application_timeline
 from db_connection import get_db_connection
+from drive_service_Oauth import (
+    get_or_create_user_folder,
+    register_drive_routes,
+    upload,
+)
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -33,6 +46,11 @@ except Exception:
 
 app = Flask(__name__)
 sslify = SSLify(app)
+
+# Connect to the drive
+app.secret_key = os.getenv("FLASK_SECRET_KEY", "dev-secret")
+register_drive_routes(app)
+
 
 # Connect to Database
 engine = get_db_connection()
@@ -193,7 +211,8 @@ def render_mentor_page():
 # def render_ft_program_page():
 #     """
 #     Generates time-bound text and application extension variable
-#     Renders the full-time program page from jinja2 template with relevant times
+#     Renders the full-time program page from jinja2 template with relevant
+#     times
 #     """
 #     timeline = generate_application_timeline()
 #     return render_template("full-time-program.html", timeline=timeline)
@@ -244,18 +263,80 @@ def app_form_details():
     return render_template("app/form-details.html")
 
 
-@app.route("/app-form")
+@app.route("/app-form", methods=["GET", "POST"])
 def app_form():
+    if request.method == "POST":
+        email = request.form.get("email")
+
+        # save to session for later create folder
+        session["user_email"] = email
+
+        return redirect(url_for("app_household"))
+
     return render_template("app/form.html")
 
 
-@app.route("/app-additional")
+@app.route("/app-additional", methods=["GET", "POST"])
 def app_additional():
+    if request.method == "POST":
+        if "credentials" not in session:
+            return redirect(url_for("login"))
+        credentials = session["credentials"]
+        user_email = session.get("user_email")
+
+        if not user_email:
+            return "User email not found in session", 400
+
+        # get or create folder
+        folder_id = get_or_create_user_folder(credentials, user_email)
+
+        # get two files
+        typing_file = request.files.get("typing-test-screenshot")
+        fcc_file = request.files.get("FCC-screenshot")
+
+        if typing_file and typing_file.filename:
+            typing_new_name = f"TypingTest_{user_email}_{typing_file.filename}"
+            upload(credentials, folder_id, typing_file, typing_new_name)
+
+        if fcc_file and fcc_file.filename:
+            fcc_new_name = f"FCC_{user_email}_{fcc_file.filename}"
+            upload(credentials, folder_id, fcc_file, fcc_new_name)
+
+        return redirect(url_for("render_home_page"))
+
     return render_template("app/additional.html")
 
 
-@app.route("/app-household")
+@app.route("/app-household", methods=["GET", "POST"])
 def app_household():
+    if request.method == "POST":
+        if "credentials" not in session:
+            return redirect(url_for("login"))
+        credentials = session["credentials"]
+        user_email = session.get("user_email")
+
+        if not user_email:
+            return "User email not found in session", 400
+
+        # get or create folder
+        folder_id = get_or_create_user_folder(credentials, user_email)
+
+        # get two files
+        income_files = request.files.getlist("income-verification-docs")
+        networth_files = request.files.getlist("net-worth-docs")
+
+        for idx, file in enumerate(income_files):
+            if file and file.filename:
+                new_name = f"Income_{user_email}_{idx}_{file.filename}"
+                upload(credentials, folder_id, file, new_name)
+
+        for idx, file in enumerate(networth_files):
+            if file and file.filename:
+                new_name = f"NetWorth_{user_email}_{idx}_{file.filename}"
+                upload(credentials, folder_id, file, new_name)
+
+        return redirect(url_for("app_long_text"))
+
     return render_template("app/household.html")
 
 
