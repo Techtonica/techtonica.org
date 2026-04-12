@@ -1,4 +1,4 @@
-{% macro input(name, label, id=None, type="text", required=True) %}
+{% macro input_field(name, label, id=None, type="text", required=True) %}
 <label for="{{ name }}">{{ id or label }}</label>
 
 {% if caller %} {{ caller() }} {% endif %}
@@ -18,4 +18,5 @@
   kwargs|xmlattr
   }}
 /><br />
-{% endmacro %}
+{% endmacro %} {% macro select_field(name, label, id=None, type="text",
+required=True) %} {% endmacro %}
