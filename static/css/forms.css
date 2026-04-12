@@ -398,7 +398,7 @@ button.save-btn:hover {
   }
   .row,
   .application-page {
-    padding: 2em;
+    padding: 1em;
   }
   .justify {
     text-align: left;
@@ -473,7 +473,8 @@ button.save-btn:hover {
     margin-top: 1rem;
   }
   form {
-    padding: 1rem;
+    padding: 0.25rem;
+    border: none;
   }
   .toggle-icon-plus,
   .toggle-icon-minus {
