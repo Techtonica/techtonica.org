@@ -44,3 +44,18 @@ align?", options=gender_options) %} {% with title="Learn More", content="
   aria-label="custom gender input"
   disabled
 /><br />
+
+{% set pronoun_options = ["She/Her", "He/Him", "They/Them", "Ze/Zir", "Other"]
+%} {{ f.checkbox_group('pronouns', 'What are your pronouns?',
+options=pronoun_options) }}
+
+<input
+  type="text"
+  id="custom-pronouns"
+  name="custom-pronouns"
+  placeholder="Please enter your preferred pronouns"
+  aria-label="custom pronouns selection"
+  disabled
+/><br />
+
+{{ f.input_field('birth-date', 'What is your birth date?', type='date') }}
