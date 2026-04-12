@@ -45,3 +45,17 @@ Added a mobile override to disable the unsupported fixed attachment:<br>
   }
 }`<br>
 This restores the hero image on real mobile devices.
+
+<b>Testing Instructions</b>
+
+- This fix addresses a mobile‑specific CSS issue (background-attachment: fixed) that only appears on real devices.
+- Because this work was completed on the develop branch in a local environment, real‑device testing was not possible.
+- The fix was validated by:
+  - Splitting the background shorthand into explicit properties
+  - Overriding the unsupported property (background-attachment: fixed) with a mobile‑safe value (scroll)
+  - Confirming that the CSS now matches known mobile‑compatibility patterns
+
+  <b>Maintainers can test the fix after merging by:</b>
+
+- Opening the Full-Time Program page on a real mobile device (iOS Safari or Chrome on Android)
+- Confirming that the hero image now appears correctly at the top of the page
