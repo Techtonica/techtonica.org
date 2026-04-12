@@ -60,4 +60,70 @@ options=pronoun_options) }}
 
 {{ f.input_field('birth-date', 'What is your birth date?', type='date') }} {%
 set age_options = ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"] %} {{
-f.select_field('age-group', 'Select your age group', options=age_options) }}
+f.select_field('age-group', 'Select your age group', options=age_options) }} {%
+set race_options = [ "African-American/Black/African", "Central Asian", "East
+Asian", "Hispanic/Latinx", "Middle Eastern or North African", "Native
+American/Alaskan Native/First Nations/Indigenous", "Pacific Islander", "South
+Asian", "Southeast Asian", "White", "Other" ] %} {% call
+f.select_field('race-ethnicity', 'With which racial/ethnic groups do you most
+identify?', options=race_options) %} {% with title="Learn More", content="
+<ul>
+  <li>
+    <strong>African-American, Black, or African:</strong> A person having
+    origins in Africa, including those across the African diaspora, such as
+    communities in the Americas, the Caribbean, and other regions.
+  </li>
+  <li>
+    <strong>Central Asian:</strong> A person having origins in any of the
+    Central Asian countries, including Kazakhstan, Kyrgyzstan, Tajikistan,
+    Turkmenistan, Uzbekistan.
+  </li>
+  <li>
+    <strong>East Asian:</strong> A person having origins in any of the East
+    Asian countries, including China, Japan, Korea, Mongolia, Tibet, and Taiwan.
+  </li>
+  <li>
+    <strong>Hispanic or Latinx:</strong> A person of having origins in Cuba,
+    Mexico, Puerto Rico, the Dominican Republic, or South or Central America.
+  </li>
+  <li>
+    <strong>Middle Eastern or North African (MENA):</strong> A person having
+    origins in the Middle East or North Africa.
+  </li>
+  <li>
+    <strong
+      >Native American, Alaskan Native, First Nations or Indigenous:</strong
+    >
+    A person having origins in any of the Indigenous peoples of North and South
+    America (including Central America).
+  </li>
+  <li>
+    <strong>Pacific Islander:</strong> A person having origins in any of the
+    Pacific Islands, including Polynesia, Micronesia, and Melanesia.
+  </li>
+  <li>
+    <strong>South Asian:</strong> A person having origins in any of the South
+    Asian countries, including Bangladesh, Bhutan, India, Nepal, Pakistan,
+    Afghanistan, and Sri Lanka.
+  </li>
+  <li>
+    <strong>Southeast Asian:</strong> A person having origins in any of the
+    Southeast Asian countries, including Cambodia, Indonesia, Laos, Malaysia,
+    Myanmar, the Philippines, Singapore, Thailand, and Vietnam.
+  </li>
+  <li><strong>White:</strong> A person having origins in Europe.</li>
+  <li>
+    <strong>Another race/ethnicity:</strong> A person who identifies with a
+    racial/ethnic group not listed above.
+  </li>
+</ul>
+" %} {% include "components/learn-more.html" %} {% endwith %} {% endcall %}
+
+<input
+  type="text"
+  id="custom-race-ethnicity"
+  name="custom-race-ethnicity"
+  aria-label="race-ethnicity input"
+  placeholder="Please enter your racial/ethnic group"
+  disabled
+/>
