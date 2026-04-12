@@ -171,23 +171,3 @@ def register_drive_routes(app):
         session["credentials"] = credentials_to_dict(credentials)
 
         return redirect(url_for("upload_test"))
-
-    @app.route("/upload-test")
-    def upload_test():
-        if "credentials" not in session:
-            return redirect(url_for("login"))
-
-        test_email = "test@example.com"
-        folder_id = get_or_create_user_folder(
-            session["credentials"], test_email
-        )
-        file_id = upload(session["credentials"], folder_id)
-        return f"File ID: {file_id}"
-
-
-# # for testing purpose
-# if __name__ == "__main__":
-#     app = Flask(__name__)
-#     app.secret_key = "dev-secret"
-#     register_drive_routes(app)
-#     app.run(debug=True)

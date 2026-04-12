@@ -270,7 +270,6 @@ def app_form():
 
         # save to session for later create folder
         session["user_email"] = email
-        print("SESSION AFTER SAVE:", dict(session))
 
         return redirect(url_for("app_household"))
 
