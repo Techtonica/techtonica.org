@@ -2,4 +2,11 @@
 "Full legal given or 'first' name:", autocomplete="given-name") }} {{
 f.input('preferred-name', 'Preferred given or "first" name (if not the same as
 your legal "first" orgiven name):', required=False) }} {{ f.input('last-name',
-'Full legal last/family name or surname:', autocomplete="family-name") }}
+'Full legal last/family name or surname:', autocomplete="family-name") }} {%
+call f.input('name-pronunciation',"How to pronounce your full name: ",
+required=False) %} {% set learn_more_content %} You can make a recording on
+
+<a href="https://www.name-coach.com" target="_blank">name-coach.com</a>,
+generate your link and share in the text field if preferred. {% endset %} {%
+with title="Learn More", content=learn_more_content %} {% include
+"components/learn-more.html" %} {% endwith %} {% endcall %}
