@@ -121,27 +121,7 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
         pattern="^\d+\s[A-z]+\s[A-z]+(?:\s[A-z]+)*,\s[A-z]+\s[A-z]+,\s[A-Z]{2}\s\d{5}(?:-\d{4})?$"
         title="Please enter a valid U.S. mailing address."
       /><br />
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="US-employment-status"
-          >Can you currently legally be employed in the U.S.? </label
-        ><br />
-        <input
-          type="radio"
-          id="US-employment-status-yes"
-          name="US-employment-status"
-          value="Yes"
-          required
-        />
-        <label for="US-employment-status-yes">Yes</label>
-        <input
-          type="radio"
-          id="US-employment-status-no"
-          name="US-employment-status"
-          value="No"
-          required
-        />
-        <label for="US-employment-status-no">No</label><br />
-      </div>
+
       <div id="radio-wrapper" role="radiogroup">
         <label for="high-school-graduate-ged"
           >Have you graduated from high school/received your GED? </label
