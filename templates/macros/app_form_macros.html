@@ -63,4 +63,43 @@ required=True) %}
   />
   {{ opt }} </label
 ><br />
-{% endfor %} {% endmacro %}
+{% endfor %} {% endmacro %} {% macro yes_no_radio(name, label, required=True) %}
+<div id="radio-wrapper" role="radiogroup" class="form-group">
+  <label>{{ label }}</label><br />
+
+  <!-- yes -->
+  <input
+    type="radio"
+    id="{{ name }}-yes"
+    name="{{ name }}"
+    value="Yes"
+    {%
+    if
+    required
+    %}required{%
+    endif
+    %}
+    {{
+    kwargs|xmlattr
+    }}
+  />
+  <label for="{{ name }}-yes">Yes</label>
+  <!-- No -->
+  <input
+    type="radio"
+    id="{{ name }}-no"
+    name="{{ name }}"
+    value="No"
+    {%
+    if
+    required
+    %}required{%
+    endif
+    %}
+    {{
+    kwargs|xmlattr
+    }}
+  />
+  <label for="{{ name }}-no">No</label><br />
+</div>
+{% endmacro %}
