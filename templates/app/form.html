@@ -432,7 +432,7 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
 <script>
   // Attach live validation on page load
   window.onload = function () {
-    attachLiveValidation("app-form-1", "/app-household");
+    attachLiveValidation("app-form-1", "/app-household", (shouldSubmit = true));
   };
 </script>
 
