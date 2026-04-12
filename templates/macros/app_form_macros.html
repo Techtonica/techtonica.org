@@ -18,5 +18,29 @@
   kwargs|xmlattr
   }}
 /><br />
-{% endmacro %} {% macro select_field(name, label, id=None, type="text",
-required=True) %} {% endmacro %}
+{% endmacro %} {% macro select_field(name, label, option, id=None required=True)
+%}
+<label for="{{ name }}">{{ id or label }}</label>
+
+{% if caller %} {{ caller() }} {% endif %}
+<br />
+<select
+  name="{{ name }}"
+  id="{{ id or name }}"
+  {%
+  if
+  required
+  %}required{%
+  endif
+  %}
+  {{
+  kwargs|xmlattr
+  }}
+>
+  <option value="" selected hidden disabled>Select an Option</option>
+  {% for val in options %}
+  <option value="{{ val }}">{{ val }}</option>
+  {% endfor %}
+</select>
+<br />
+{% endmacro %}
