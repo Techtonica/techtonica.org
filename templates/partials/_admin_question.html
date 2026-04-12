@@ -1,0 +1,10 @@
+{% import "macros/app_form_macros.html" as f %} {{
+f.yes_no_radio('veteran-status', 'Are you a U.S. veteran?') }} {% call
+f.yes_no_radio('disabled-status', 'Do you have a disability?') %} (You can find
+some examples here:
+<a href="https://askjan.org/a-to-z.cfm" target="_blank"
+  >https://askjan.org/a-to-z.cfm</a
+>) {% with title="Learn More", content="You are considered to have a disability
+if you have a physical or mental impairment or medical condition that
+substantially limits a major life activity." %} {% include
+"components/learn-more.html" %} {% endwith %} {% endcall %}

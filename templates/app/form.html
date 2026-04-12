@@ -15,56 +15,9 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
       <legend>General Applicant Demographics</legend>
 
       {% include "partials/_contact_info.html" %} {% include
-      "partials/_demographics.html" %}
+      "partials/_demographics.html" %} {% include
+      "partials/_admin_question.html" %}
 
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="veteran-status">Are you a U.S. veteran? </label><br />
-        <input
-          type="radio"
-          id="veteran-status-yes"
-          name="veteran-status"
-          value="Yes"
-          required
-        />
-        <label for="veteran-status-yes">Yes</label>
-        <input
-          type="radio"
-          id="veteran-status-no"
-          name="veteran-status"
-          value="No"
-          required
-        />
-        <label for="veteran-status-no">No</label><br />
-      </div>
-      <div id="radio-wrapper" role="radiogroup">
-        <label for="disabled-status">
-          Do you have a disability? (You can find some examples here:
-          <a href="https://askjan.org/a-to-z.cfm" target="_blank"
-            >https://askjan.org/a-to-z.cfm</a
-          >)
-        </label>
-        {% with title="Learn More", content="You are considered to have a
-        disability if you have a physical or mental impairment or medical
-        condition that substantially limits a major life activity." %} {%
-        include "components/learn-more.html" %} {% endwith %}
-        <br />
-        <input
-          type="radio"
-          id="disabled-status-yes"
-          name="disabled-status"
-          value="Yes"
-          required
-        />
-        <label for="disabled-status-yes">Yes</label>
-        <input
-          type="radio"
-          id="disabled-status-no"
-          name="disabled-status"
-          value="No"
-          required
-        />
-        <label for="disabled-status-no">No</label><br />
-      </div>
       <div id="radio-wrapper" role="radiogroup">
         <label for="parental-status"
           >Are you a parent or legal guardian of a minor? </label
