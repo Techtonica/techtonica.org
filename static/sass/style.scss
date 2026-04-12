@@ -2,8 +2,7 @@
 @use "mixins" as *;
 @use "flipcause" as *;
 
-
-// Privacy Page Text Wrapping Fix 
+// Privacy Page Text Wrapping Fix
 
 .privacy-page-content,
 .privacy-page-content * {
@@ -541,6 +540,10 @@
     margin-left: auto !important;
     margin-right: auto !important;
   }
+}
+
+.eighty-five-percent-width {
+  width: 85%;
 }
 
 .forty-percent-width {
