@@ -8,6 +8,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload
 
+os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 load_dotenv()
 
 SCOPES = ["https://www.googleapis.com/auth/drive"]
@@ -54,7 +55,40 @@ def build_drive_service(credentials_dict):
     return build("drive", "v3", credentials=credentials)
 
 
-def upload(credentials_dict):
+def get_or_create_user_folder(credentials_dict, user_email):
+    service = build_drive_service(credentials_dict)
+    parent_id = GOOGLE_DRIVE_FOLDER_ID
+
+    query = (
+        f"name = '{user_email}' and "
+        f"mimeType = 'application/vnd.google-apps.folder' and "
+        f"'{parent_id}' in parents and "
+        f"trashed = false"
+    )
+
+    response = (
+        service.files().list(q=query, fields="files(id, name)").execute()
+    )
+
+    folders = response.get("files", [])
+    if len(folders) > 0:
+        return folders[0]["id"]
+    else:
+        # metadata folder
+        folder_metadata = {
+            "name": user_email,
+            "mimeType": "application/vnd.google-apps.folder",
+            "parents": [parent_id],
+        }
+
+        # create folder
+        folder = (
+            service.files().create(body=folder_metadata, fields="id").execute()
+        )
+        return folder.get("id")
+
+
+def upload(credentials_dict, user_folder_id):
 
     try:
         # create drive api client
@@ -64,7 +98,7 @@ def upload(credentials_dict):
 
         file_metadata = {
             "name": "cat-openmoji.svg",
-            "parents": [GOOGLE_DRIVE_FOLDER_ID],
+            "parents": [user_folder_id],
         }
 
         print("file_metadata: ", file_metadata)
@@ -85,7 +119,7 @@ def upload(credentials_dict):
 
     except HttpError as error:
         print(f"An error occurred: {error}")
-        file = None
+        return None
 
 
 def register_drive_routes(app):
@@ -94,7 +128,7 @@ def register_drive_routes(app):
         flow = get_flow()
         auth_url, state = flow.authorization_url(
             access_type="offline",
-            include_granted_scopes="true",
+            include_granted_scopes="false",
             prompt="consent",
         )
         session["state"] = state
@@ -104,9 +138,15 @@ def register_drive_routes(app):
 
     @app.route("/oauth2callback")
     def oauth2callback():
+        state = session.get("state")
+        code_verifier = session.get("code_verifier")
+
+        if not state or not code_verifier:
+            return "Missing OAuth session data. Please log in again.", 400
+
         flow = get_flow(
-            state=session["state"],
-            code_verifier=session["code_verifier"],
+            state=state,
+            code_verifier=code_verifier,
         )
 
         flow.fetch_token(authorization_response=request.url)
@@ -121,8 +161,12 @@ def register_drive_routes(app):
         if "credentials" not in session:
             return redirect(url_for("login"))
 
-        file_id = upload(session["credentials"])
-        return f"Uploaded file ID: {file_id}"
+        test_email = "test@example.com"
+        folder_id = get_or_create_user_folder(
+            session["credentials"], test_email
+        )
+        file_id = upload(session["credentials"], folder_id)
+        return f"File ID: {file_id}"
 
 
 # for testing purpose
