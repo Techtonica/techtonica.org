@@ -2,7 +2,7 @@
 'Agender/Genderless', 'Genderfluid', 'Cis Man', 'Non-binary/Genderqueer', 'Trans
 Man', 'Trans Woman', 'Cis Woman', 'Other'] %} {% call
 f.select_field('gender-identity', "With which gender identity do you most
-align?, options=gender_options") %} {% with title="Learn More", content="
+align?", options=gender_options) %} {% with title="Learn More", content="
 <ul>
   <li>
     <strong>Agender or genderless: </strong>People who do not identify with any
@@ -36,3 +36,11 @@ align?, options=gender_options") %} {% with title="Learn More", content="
   </li>
 </ul>
 " %} {% include "components/learn-more.html" %} {% endwith %} {% endcall %}
+<input
+  type="text"
+  id="custom-gender"
+  name="custom-gender"
+  placeholder="Please enter your gender identity"
+  aria-label="custom gender input"
+  disabled
+/><br />

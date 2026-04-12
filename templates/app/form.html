@@ -14,72 +14,9 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
     <fieldset>
       <legend>General Applicant Demographics</legend>
 
-      {% include "partials/_contact_info.html" %}
+      {% include "partials/_contact_info.html" %} {% include
+      "partials/_gender_identity.html" %}
 
-      <label for="gender-identity"
-        >With which gender identity do you most align?
-      </label>
-      {% with title="Learn More", content="
-      <ul>
-        <li>
-          <strong>Agender or genderless: </strong>People who do not identify
-          with any gender or feel an absence of gender. They may use terms like
-          genderblank, genderfree, genderless, gendervoid, non-gendered, or null
-          gender.
-        </li>
-        <li>
-          <strong>Genderfluid: </strong>People whose gender identity is not
-          fixed and may change over time, fluctuating between different gender
-          expressions or identities.
-        </li>
-        <li>
-          <strong>Cis Man or Cis Woman: </strong>A person whose gender identity
-          aligns with the male or female sex they were assigned at birth.
-        </li>
-        <li>
-          <strong>Non-binary or Genderqueer: </strong>People who do not identify
-          exclusively as a man or a woman. They may feel like both, somewhere in
-          between, or outside these categories entirely.
-        </li>
-        <li>
-          <strong>Trans Man or Trans Woman: </strong>People whose gender
-          identity differs from the sex they are assigned at birth. e.g., a
-          transgender man is someone who was assigned female at birth but whose
-          gender identity is male, while a transgender woman is someone who is
-          assigned male at birth but whose gender identity is female.
-        </li>
-        <li>
-          <strong>Other: </strong>A person whose gender identity does not fit
-          within the listed categories or who prefers a different term.
-        </li>
-      </ul>
-      " %} {% include "components/learn-more.html" %} {% endwith %}
-      <br />
-      <select
-        name="gender-identity"
-        id="gender-identity"
-        aria-label="Gender Identity selection"
-        required
-      >
-        <br />
-        <option value="" selected hidden disabled>Select an Option</option>
-        <option value="Agender/Genderless">Agender/Genderless</option>
-        <option value="Genderfluid">Genderfluid</option>
-        <option value="Cis Man">Cis Man</option>
-        <option value="Non-binary/Genderqueer">Non-binary/Genderqueer</option>
-        <option value="Trans Man">Trans Man</option>
-        <option value="Trans Woman">Trans Woman</option>
-        <option value="Cis Woman">Cis Woman</option>
-        <option value="Other">Other</option>
-      </select>
-      <input
-        type="text"
-        id="custom-gender"
-        name="custom-gender"
-        placeholder="Please enter your gender identity"
-        aria-label="custom gender input"
-        disabled
-      /><br />
       <label>What are your pronouns? </label><br />
       <label>
         <input
