@@ -15,9 +15,4 @@ f.input_field('email', "Email:", autocomplete="email") %} {% with title="Learn
 More", content="Please use the same business-minded Gmail with your name (e.g.
 janedoe@gmail.com) that you used in the shorter form. This is the email we will
 contact you with for the duration of the application process and program." %} {%
-include "components/learn-more.html" %} {% endwith %} {% endcall %} {{
-f.input_field('phone-number', "Cell phone number with area code:", type='tel',
-pattern="^\+?1?[-.\s]?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$",
-placeholder="XXX-XXX-XXXX", title="Please enter a valid phone number in the
-format: 415-555-1234 or 1-415-555-1234.", minlength="10", autocomplete="tel" )
-}}
+include "components/learn-more.html" %} {% endwith %} {% endcall %}
