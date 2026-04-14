@@ -1,7 +1,7 @@
 {% import "forms/macros/form_macros.html" as f %} {{ f.input_field('first-name',
 "Full legal given or 'first' name:", autocomplete="given-name") }} {{
 f.input_field('preferred-name', 'Preferred given or "first" name (if not the
-same as your legal "first" orgiven name): (Optional)', required=False) }} {{
+same as your legal "first" or given name): (Optional)', required=False) }} {{
 f.input_field('last-name', 'Full legal last/family name or surname:',
 autocomplete="family-name") }} {% call f.input_field('name-pronunciation',"How
 to pronounce your full name: (Optional)", required=False) %} {% set
