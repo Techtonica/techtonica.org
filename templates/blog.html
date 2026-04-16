@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block title %} Techtonica: Bridging the Tech Gap -
+Blog {% endblock title %} {% block content %}
+<div class="row row__center blue-background">
+  <div class="column">
+    <h1>Techtonica<br />Blog</h1>
+    <h3>#BridgeTheGap</h3>
+  </div>
+  <div class="column">
+    <img
+      src="{{ url_for('static', filename='img/sf-bridge-logo-without-background.png') }}"
+      alt="Designed image of the San Francisco bridge."
+      class="eighty-five-percent-width"
+    />
+  </div>
+</div>
+
+<div class="row row__center">
+  <div class="column">
+    <h2>
+      <a href="{{ url_for('render_meet_2026_h1_cohort') }}"
+        >Meet Our 2026 H1 Part-Time Cohort!</a
+      >
+    </h2>
+    <p>
+      We are excited about our 2026 H1 cohort, not only because we are always
+      happy to walk this journey with our participants but...
+    </p>
+  </div>
+  <div class="column">
+    <img
+      src="{{ url_for('static', filename='img/2026-H1-Cohort-Introduction.png') }}"
+      alt="Two people with a Laptop."
+      class="forty-percent-width"
+    />
+  </div>
+</div>
+{% endblock content %}
