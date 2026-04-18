@@ -1,18 +1,31 @@
-{% import "forms/macros/form_macros.html" as f %} {{ f.input_field('first-name',
-"Full legal given or 'first' name:", autocomplete="given-name") }} {{
-f.input_field('preferred-name', 'Preferred given or "first" name (if not the
-same as your legal "first" or given name): (Optional)', required=False) }} {{
-f.input_field('last-name', 'Full legal last/family name or surname:',
-autocomplete="family-name") }} {% call f.input_field('name-pronunciation',"How
-to pronounce your full name: (Optional)", required=False) %} {% set
-learn_more_content %} You can make a recording on
+{% import "forms/macros/form_macros.html" as f %}
+<div class="form-group">
+  {{ f.input_field('first-name', "Full legal given or 'first' name:",
+  autocomplete="given-name") }}
+</div>
+<div class="form-group">
+  {{ f.input_field('preferred-name', 'Preferred given or "first" name (if not
+  the same as your legal "first" or given name): (Optional)', required=False) }}
+</div>
+<div class="form-group">
+  {{ f.input_field('last-name', 'Full legal last/family name or surname:',
+  autocomplete="family-name") }}
+</div>
+<div class="form-group">
+  {% call f.input_field('name-pronunciation',"How to pronounce your full name:
+  (Optional)", required=False) %} {% set learn_more_content %} You can make a
+  recording on
 
-<a href="https://www.name-coach.com" target="_blank">name-coach.com</a>,
-generate your link and share in the text field if preferred. {% endset %} {%
-with title="Learn More", content=learn_more_content %} {% include
-"components/learn-more.html" %} {% endwith %} {% endcall %} {% call
-f.input_field('email', "Email:", autocomplete="email") %} {% with title="Learn
-More", content="Please use the same business-minded Gmail with your name (e.g.
-janedoe@gmail.com) that you used in the shorter form. This is the email we will
-contact you with for the duration of the application process and program." %} {%
-include "components/learn-more.html" %} {% endwith %} {% endcall %}
+  <a href="https://www.name-coach.com" target="_blank">name-coach.com</a>,
+  generate your link and share in the text field if preferred. {% endset %} {%
+  with title="Learn More", content=learn_more_content %} {% include
+  "components/learn-more.html" %} {% endwith %} {% endcall %}
+</div>
+<div class="form-group">
+  {% call f.input_field('email', "Email:", autocomplete="email") %} {% with
+  title="Learn More", content="Please use the same business-minded Gmail with
+  your name (e.g. janedoe@gmail.com) that you used in the shorter form. This is
+  the email we will contact you with for the duration of the application process
+  and program." %} {% include "components/learn-more.html" %} {% endwith %} {%
+  endcall %}
+</div>
