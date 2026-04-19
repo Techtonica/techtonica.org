@@ -1,12 +1,13 @@
-{% macro input_field(name, label, id=None, type="text", required=True) %}
-<label for="{{ name }}">{{ id or label }}</label>
+{% macro input_field(name, label, id=None, type="text", required=True) %} {% set
+field_id = id or name %}
+<label for="{{ field_id }}">{{ label }}</label>
 
 {% if caller %} {{ caller() }} {% endif %}
 <br />
 
 <input
   type="{{ type }}"
-  id="{{ id or name }}"
+  id="{{ field_id }}"
   name="{{ name }}"
   {%
   if
@@ -19,14 +20,14 @@
   }}
 /><br />
 {% endmacro %} {% macro select_field(name, label, options, id=None,
-required=True) %}
-<label for="{{ name }}">{{ id or label }}</label>
+required=True) %} {% set field_id = id or name %}
+<label for="{{ field_id }}">{{ label }}</label>
 
 {% if caller %} {{ caller() }} {% endif %}
 <br />
 <select
   name="{{ name }}"
-  id="{{ id or name }}"
+  id="{{ field_id }}"
   {%
   if
   required
@@ -43,15 +44,15 @@ required=True) %}
   {% endfor %}
 </select>
 <br />
-{% endmacro %} {% macro checkbox_group(name, label, options, id=None) %}
-<label for="{{ name }}">{{ id or label }}</label>
+{% endmacro %}{% macro checkbox_group(name, label, options, id=None) %}
+<label>{{ label }}</label>
 
 {% if caller %} {{ caller() }} {% endif %}
 <br />
 
-{% for opt in options %} {% set opt_id = name ~ '-' ~ opt|lower|replace('/',
-'-') %}
-<label>
+{% for opt in options %} {% set opt_id = name ~ '-' ~ opt|lower|replace(' ',
+'-')|replace('/', '-') %}
+<label for="{{ opt_id }}">
   <input
     type="checkbox"
     name="{{ name }}"
@@ -63,16 +64,18 @@ required=True) %}
   />
   {{ opt }} </label
 ><br />
-{% endfor %} {% endmacro %} {% macro yes_no_radio(name, label, required=True) %}
-<div class="radio-wrapper" role="radiogroup" class="form-group">
-  <label>{{ label }}</label>
-  {% if caller %} {{ caller() }} {% endif %}
+{% endfor %} {% endmacro %} {% macro yes_no_radio(name, label, required=True,
+id=None) %} {% set base_id = id or name %}
 
+<div class="radio-wrapper" role="radiogroup">
+  <label>{{ label }}</label>
+
+  {% if caller %} {{ caller() }} {% endif %}
   <br />
-  <!-- yes -->
+
   <input
     type="radio"
-    id="{{ name }}-yes"
+    id="{{ base_id }}-yes"
     name="{{ name }}"
     value="Yes"
     {%
@@ -85,11 +88,11 @@ required=True) %}
     kwargs|xmlattr
     }}
   />
-  <label for="{{ name }}-yes">Yes</label>
-  <!-- No -->
+  <label for="{{ base_id }}-yes">Yes</label>
+
   <input
     type="radio"
-    id="{{ name }}-no"
+    id="{{ base_id }}-no"
     name="{{ name }}"
     value="No"
     {%
@@ -102,7 +105,7 @@ required=True) %}
     kwargs|xmlattr
     }}
   />
-  <label for="{{ name }}-no">No</label>
+  <label for="{{ base_id }}-no">No</label>
 </div>
 <br />
 {% endmacro %}
