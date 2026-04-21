@@ -2080,7 +2080,8 @@ input[type="radio"] {
   width: 50px;
 }
 
-.radio-wrapper #radio-wrapper {
+.radio-wrapper,
+#radio-wrapper {
   width: 100%;
   margin-bottom: 1em;
   color: rgba(0, 115, 149, 0.8);
@@ -2173,7 +2174,8 @@ label[for="code-of-conduct-checkbox"] ~ a {
   }
 }
 /* Invalid radio wrapper styling */
-.radio-wrapper.invalid #radio-wrapper.invalid {
+.radio-wrapper.invalid,
+#radio-wrapper.invalid {
   padding: 10px;
   background-color: rgba(255, 200, 200, 0.1);
   border-radius: 4px;
