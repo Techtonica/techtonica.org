@@ -91,7 +91,7 @@ form {
 
     label,
     p,
-    > #radio-wrapper {
+    > .radio-wrapper {
       color: black;
       font-size: large;
     }
@@ -124,8 +124,8 @@ form {
 
     input[type="file"],
     select,
-    #radio-wrapper > input[type="radio"],
-    #radio-wrapper > input[type="checkbox"] {
+    .radio-wrapper > input[type="radio"],
+    .radio-wrapper > input[type="checkbox"] {
       cursor: pointer;
     }
 
@@ -139,7 +139,7 @@ form {
       background-origin: content-box;
     }
 
-    > #radio-wrapper {
+    > .radio-wrapper {
       width: 100%;
       color: rgba(0, 0, 0, 0.851);
 
@@ -164,7 +164,7 @@ legend {
   font-size: 20px;
 }
 
-#radio-wrapper {
+.radio-wrapper {
   width: 100%;
   color: rgba(0, 0, 0, 0.851);
 
@@ -229,7 +229,7 @@ legend {
 
       label,
       p,
-      #radio-wrapper > label {
+      .radio-wrapper > label {
         font-size: smaller;
       }
     }
@@ -241,7 +241,7 @@ legend {
     }
   }
 
-  #radio-wrapper {
+  .radio-wrapper {
     > input[type="radio"] {
       margin: 0;
     }

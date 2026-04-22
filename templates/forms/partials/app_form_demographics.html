@@ -1,0 +1,75 @@
+{% import "forms/macros/form_macros.html" as f %}
+<div class="form-group">
+  {% set gender_options = [ 'Agender/Genderless', 'Genderfluid', 'Cis Man',
+  'Non-binary/Genderqueer', 'Trans Man', 'Trans Woman', 'Cis Woman', 'Other'] %}
+  {% call f.select_field('gender-identity', "With which gender identity do you
+  most align?", options=gender_options) %} {% with title="Learn More", content="
+  <ul>
+    <li>
+      <strong>Agender or genderless: </strong>People who do not identify with
+      any gender or feel an absence of gender. They may use terms like
+      genderblank, genderfree, genderless, gendervoid, non-gendered, or null
+      gender.
+    </li>
+    <li>
+      <strong>Genderfluid: </strong>People whose gender identity is not fixed
+      and may change over time, fluctuating between different gender expressions
+      or identities.
+    </li>
+    <li>
+      <strong>Cis Man or Cis Woman: </strong>A person whose gender identity
+      aligns with the male or female sex they were assigned at birth.
+    </li>
+    <li>
+      <strong>Non-binary or Genderqueer: </strong>People who do not identify
+      exclusively as a man or a woman. They may feel like both, somewhere in
+      between, or outside these categories entirely.
+    </li>
+    <li>
+      <strong>Trans Man or Trans Woman: </strong>People whose gender identity
+      differs from the sex they are assigned at birth. e.g., a transgender man
+      is someone who was assigned female at birth but whose gender identity is
+      male, while a transgender woman is someone who is assigned male at birth
+      but whose gender identity is female.
+    </li>
+    <li>
+      <strong>Other: </strong>A person whose gender identity does not fit within
+      the listed categories or who prefers a different term.
+    </li>
+  </ul>
+  " %} {% include "components/learn-more.html" %} {% endwith %} {% endcall %}
+  <input
+    type="text"
+    id="custom-gender"
+    name="custom-gender"
+    placeholder="Please enter your gender identity"
+    aria-label="custom gender input"
+    disabled
+  />
+</div>
+<div class="form-group">
+  {% set pronoun_options = ["She/Her", "He/Him", "They/Them", "Ze/Zir", "Other"]
+  %} {{ f.checkbox_group('pronouns', 'What are your pronouns?',
+  options=pronoun_options) }}
+
+  <input
+    type="text"
+    id="custom-pronouns"
+    name="custom-pronouns"
+    placeholder="Please enter your preferred pronouns"
+    aria-label="custom pronouns selection"
+    disabled
+  /><br />
+</div>
+<div class="form-group">
+  {{ f.input_field('birth-date', 'What is your birth date?', type='date') }} {%
+  set age_options = ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"] %} {{
+  f.select_field('age-group', 'Select your age group', options=age_options) }}
+</div>
+<div class="form-group">
+  {{ f.input_field('phone-number', "Cell phone number with area code:",
+  type='tel', pattern="^\+?1?[-.\s]?(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})$",
+  placeholder="XXX-XXX-XXXX", title="Please enter a valid phone number in the
+  format: 415-555-1234 or 1-415-555-1234.", minlength="10", autocomplete="tel" )
+  }}
+</div>

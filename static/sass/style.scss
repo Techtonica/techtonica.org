@@ -2,8 +2,7 @@
 @use "mixins" as *;
 @use "flipcause" as *;
 
-
-// Privacy Page Text Wrapping Fix 
+// Privacy Page Text Wrapping Fix
 
 .privacy-page-content,
 .privacy-page-content * {
@@ -1423,7 +1422,8 @@ input[type="radio"] {
   width: 50px;
 }
 
-#radio-wrapper {
+// prettier-ignore
+.radio-wrapper, #radio-wrapper {
   width: 100%;
   margin-bottom: 1em;
   color: #007395cc;
@@ -1525,7 +1525,8 @@ label[for="code-of-conduct-checkbox"] ~ a {
 }
 
 /* Invalid radio wrapper styling */
-#radio-wrapper.invalid {
+// prettier-ignore
+.radio-wrapper.invalid, #radio-wrapper.invalid {
   padding: 10px;
   background-color: rgba(255, 200, 200, 0.1);
   border-radius: 4px;

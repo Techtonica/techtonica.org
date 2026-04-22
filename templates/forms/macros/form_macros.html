@@ -1,0 +1,111 @@
+{% macro input_field(name, label, id=None, type="text", required=True) %} {% set
+field_id = id or name %}
+<label for="{{ field_id }}">{{ label }}</label>
+
+{% if caller %} {{ caller() }} {% endif %}
+<br />
+
+<input
+  type="{{ type }}"
+  id="{{ field_id }}"
+  name="{{ name }}"
+  {%
+  if
+  required
+  %}required{%
+  endif
+  %}
+  {{
+  kwargs|xmlattr
+  }}
+/><br />
+{% endmacro %} {% macro select_field(name, label, options, id=None,
+required=True) %} {% set field_id = id or name %}
+<label for="{{ field_id }}">{{ label }}</label>
+
+{% if caller %} {{ caller() }} {% endif %}
+<br />
+<select
+  name="{{ name }}"
+  id="{{ field_id }}"
+  {%
+  if
+  required
+  %}required{%
+  endif
+  %}
+  {{
+  kwargs|xmlattr
+  }}
+>
+  <option value="" selected hidden disabled>Select an Option</option>
+  {% for val in options %}
+  <option value="{{ val }}">{{ val }}</option>
+  {% endfor %}
+</select>
+<br />
+{% endmacro %}{% macro checkbox_group(name, label, options, id=None) %}
+<label>{{ label }}</label>
+
+{% if caller %} {{ caller() }} {% endif %}
+<br />
+
+{% for opt in options %} {% set opt_id = name ~ '-' ~ opt|lower|replace(' ',
+'-')|replace('/', '-') %}
+<label for="{{ opt_id }}">
+  <input
+    type="checkbox"
+    name="{{ name }}"
+    id="{{ opt_id }}"
+    value="{{ opt }}"
+    {{
+    kwargs|xmlattr
+    }}
+  />
+  {{ opt }} </label
+><br />
+{% endfor %} {% endmacro %} {% macro yes_no_radio(name, label, required=True,
+id=None) %} {% set base_id = id or name %}
+
+<div class="radio-wrapper" role="radiogroup">
+  <label>{{ label }}</label>
+
+  {% if caller %} {{ caller() }} {% endif %}
+  <br />
+
+  <input
+    type="radio"
+    id="{{ base_id }}-yes"
+    name="{{ name }}"
+    value="Yes"
+    {%
+    if
+    required
+    %}required{%
+    endif
+    %}
+    {{
+    kwargs|xmlattr
+    }}
+  />
+  <label for="{{ base_id }}-yes">Yes</label>
+
+  <input
+    type="radio"
+    id="{{ base_id }}-no"
+    name="{{ name }}"
+    value="No"
+    {%
+    if
+    required
+    %}required{%
+    endif
+    %}
+    {{
+    kwargs|xmlattr
+    }}
+  />
+  <label for="{{ base_id }}-no">No</label>
+</div>
+<br />
+{% endmacro %}

@@ -13,7 +13,7 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
   <form action="#" method="POST" class="application-form" id="app-form-2">
     <fieldset>
       <legend>Applicant & Household Financial Information</legend>
-      <div id="radio-wrapper" role="radiogroup">
+      <div class="radio-wrapper" role="radiogroup">
         <label for="US-bank-account"
           >Do you have a U.S. bank account, or will you by the time the program
           starts? </label
@@ -158,7 +158,7 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
         <button
           type="button"
           class="previous-btn"
-          onclick="window.location.href='/app-form'"
+          onclick="window.location.href = '/app-form'"
         >
           Previous
         </button>
@@ -166,7 +166,7 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
         <button
           type="button"
           class="save-btn"
-          onclick="window.location.href='/'"
+          onclick="window.location.href = '/'"
         >
           Save
         </button>

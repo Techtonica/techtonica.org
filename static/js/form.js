@@ -66,8 +66,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   usBankRadios?.forEach((radio) => {
     radio.addEventListener("change", function () {
-      const radioWrapper = document.getElementById("radio-wrapper");
-      radioWrapper.style.border = "";
+      const radioWrapper = this.closest(".radio-wrapper");
+      if (radioWrapper) {
+        // clear border
+        radioWrapper.style.border = "";
+        // clear invalid class
+        radioWrapper.classList.remove("invalid");
+      }
     });
   });
 
