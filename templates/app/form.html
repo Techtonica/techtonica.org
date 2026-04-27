@@ -10,12 +10,7 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
   {% with current_step='app-form' %} {% include "components/progress-bar.html"
   %} {% endwith %}
 
-  <form
-    action="/app-form"
-    method="POST"
-    class="application-form"
-    id="app-form-1"
-  >
+  <form action="#" method="POST" class="application-form" id="app-form-1">
     <fieldset>
       <legend>General Applicant Demographics</legend>
       <label for="first-name">Full legal given or 'first' name: </label><br />
@@ -432,8 +427,24 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
 <script>
   // Attach live validation on page load
   window.onload = function () {
-    attachLiveValidation("app-form-1", "/app-household", (shouldSubmit = true));
+    attachLiveValidation("app-form-1", "/app-household");
   };
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const emailInput = document.getElementById("email");
+
+    if (!emailInput) return;
+
+    if (emailInput.value) {
+      localStorage.setItem("application_email", emailInput.value);
+    }
+    console.log("application email is : ", emailInput.value);
+    emailInput.addEventListener("input", function () {
+      localStorage.setItem("application_email", emailInput.value);
+    });
+  });
 </script>
 
 {% endblock content %}

@@ -14,8 +14,10 @@ load_dotenv()
 
 SCOPES = ["https://www.googleapis.com/auth/drive"]
 CLIENT_SECRETS_FILE = os.getenv("CLIENT_SECRETS_FILE")
-GOOGLE_DRIVE_FOLDER_ID = os.getenv("GOOGLE_DRIVE_FOLDER_ID")
-REDIRECT_URI = "http://127.0.0.1:5000/oauth2callback"
+GOOGLE_DRIVE_FOLDER_TEMP_ID = os.getenv("GOOGLE_DRIVE_FOLDER_TEMP_ID")
+REDIRECT_URI = os.getenv("REDIRECT_URI")
+
+print("GOOGLE_DRIVE_FOLDER_ID:", os.getenv("GOOGLE_DRIVE_FOLDER_ID"))
 
 
 def get_flow(state=None, code_verifier=None):
@@ -58,8 +60,7 @@ def build_drive_service(credentials_dict):
 
 def get_or_create_user_folder(credentials_dict, user_email):
     service = build_drive_service(credentials_dict)
-    parent_id = GOOGLE_DRIVE_FOLDER_ID
-
+    parent_id = GOOGLE_DRIVE_FOLDER_TEMP_ID
     query = (
         f"name = '{user_email}' and "
         f"mimeType = 'application/vnd.google-apps.folder' and "
@@ -141,6 +142,10 @@ def upload(credentials_dict, user_folder_id, file_to_upload, custom_name=None):
 def register_drive_routes(app):
     @app.route("/login")
     def login():
+        next_url = request.args.get("next")
+        if next_url:
+            session["post_login_redirect"] = next_url
+
         flow = get_flow()
         auth_url, state = flow.authorization_url(
             access_type="offline",
@@ -169,5 +174,8 @@ def register_drive_routes(app):
 
         credentials = flow.credentials
         session["credentials"] = credentials_to_dict(credentials)
+        redirect_to = session.pop(
+            "post_login_redirect", url_for("app_household")
+        )
 
-        return redirect(url_for("upload_test"))
+        return redirect(redirect_to)

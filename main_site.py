@@ -12,26 +12,14 @@ import pendulum
 import requests
 from dotenv import find_dotenv, load_dotenv
 from eventbrite import Eventbrite
-from flask import (
-    Flask,
-    jsonify,
-    redirect,
-    render_template,
-    request,
-    session,
-    url_for,
-)
+from flask import Flask, jsonify, redirect, render_template, request, session, url_for
 from flask_sslify import SSLify
 from pydantic import BaseModel
 from square.client import Client
 
 from dates import generate_application_timeline
 from db_connection import get_db_connection
-from drive_service_Oauth import (
-    get_or_create_user_folder,
-    register_drive_routes,
-    upload,
-)
+from drive_service_Oauth import get_or_create_user_folder, register_drive_routes, upload
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -310,6 +298,8 @@ def app_additional():
 @app.route("/app-household", methods=["GET", "POST"])
 def app_household():
     if request.method == "POST":
+        action = request.form.get("action", "next")
+
         if "credentials" not in session:
             return redirect(url_for("login"))
         credentials = session["credentials"]
@@ -334,6 +324,9 @@ def app_household():
             if file and file.filename:
                 new_name = f"NetWorth_{user_email}_{idx}_{file.filename}"
                 upload(credentials, folder_id, file, new_name)
+
+        if action == "save":
+            return redirect(url_for("render_home_page"))
 
         return redirect(url_for("app_long_text"))
 
@@ -548,6 +541,72 @@ def send_posting():
     return jsonify(
         {"message": "Data received successfully", "received_data": data}
     )
+
+
+@app.route("/upload-household-files", methods=["POST"])
+def upload_household_files():
+    credentials = session["credentials"]
+    user_email = request.form.get("user_email")
+
+    folder_id = get_or_create_user_folder(credentials, user_email)
+
+    income_files = request.files.getlist("income-verification-docs")
+    networth_files = request.files.getlist("net-worth-docs")
+
+    for idx, file in enumerate(income_files):
+        if file and file.filename:
+            upload(
+                credentials,
+                folder_id,
+                file,
+                f"Income_{user_email}_{idx}_{file.filename}",
+            )
+
+    for idx, file in enumerate(networth_files):
+        if file and file.filename:
+            upload(
+                credentials,
+                folder_id,
+                file,
+                f"NetWorth_{user_email}_{idx}_{file.filename}",
+            )
+
+    return jsonify({"success": True})
+
+
+@app.route("/upload-additional-files", methods=["POST"])
+def upload_additional_files():
+    if "credentials" not in session:
+        return (
+            jsonify(
+                {"success": False, "error": "Missing Google Drive credentials"}
+            ),
+            401,
+        )
+
+    credentials = session["credentials"]
+    user_email = request.form.get("user_email")
+
+    if not user_email:
+        return (
+            jsonify({"success": False, "error": "User email not found"}),
+            400,
+        )
+
+    folder_id = get_or_create_user_folder(credentials, user_email)
+
+    typing_file = request.files.get("typing-test-screenshot")
+    fcc_file = request.files.get("FCC-screenshot")
+
+    if typing_file and typing_file.filename:
+        typing_new_name = f"TypingTest_{user_email}_{typing_file.filename}"
+        upload(credentials, folder_id, typing_file, typing_new_name)
+
+    if fcc_file and fcc_file.filename:
+        fcc_new_name = f"FCC_{user_email}_{fcc_file.filename}"
+        upload(credentials, folder_id, fcc_file, fcc_new_name)
+
+    return jsonify({"success": True})
 
 
 if __name__ == "__main__":

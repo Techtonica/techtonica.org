@@ -11,7 +11,7 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
   "components/progress-bar.html" %} {% endwith %}
 
   <form
-    action="/app-additional"
+    action="#"
     method="POST"
     enctype="multipart/form-data"
     class="application-form"
@@ -261,17 +261,77 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
         >
           Previous
         </button>
-        <button type="submit" class="continue-to-app-btn submit-btn">
+        <button
+          type="submit"
+          class="continue-to-app-btn submit-btn"
+          id="additional-submit-btn"
+        >
           Submit
         </button>
       </div>
     </fieldset>
   </form>
 </section>
+
+<script src="{{ url_for('static', filename='js/uploadFilesOnly.js') }}"></script>
+
 <script>
   // Attach live validation on page load
-  window.onload = function () {
-    attachLiveValidation("app-form-7", "/", (shouldSubmit = true));
-  };
+  // window.onload = function () {
+  //   attachLiveValidation("app-form-7", "/");
+  // };
+  document.addEventListener("DOMContentLoaded", function () {
+    const submitButton = document.getElementById("additional-submit-btn");
+
+    if (!submitButton) return;
+
+    submitButton.addEventListener("click", async function (event) {
+      event.preventDefault();
+
+      const form = document.getElementById("app-form-7");
+      const fields = form.querySelectorAll("[required]");
+      let isValid = true;
+
+      fields.forEach((field) => {
+        if (
+          !validateFieldByType(field, field.dataset.validation || field.type)
+        ) {
+          markInvalid(field);
+          isValid = false;
+        } else {
+          clearValidation(field);
+        }
+      });
+
+      if (!isValid) {
+        alert("Please complete all required fields.");
+        return;
+      }
+
+      try {
+        await uploadFilesOnly(
+          "/upload-additional-files",
+          [
+            {
+              inputId: "typing-test-screenshot",
+              fieldName: "typing-test-screenshot",
+            },
+            {
+              inputId: "FCC-screenshot",
+              fieldName: "FCC-screenshot",
+            },
+          ],
+          {
+            user_email: localStorage.getItem("application_email"),
+          },
+        );
+
+        window.location.href = "/";
+      } catch (error) {
+        alert(error.message);
+      }
+    });
+  });
 </script>
+
 {% endblock content %}

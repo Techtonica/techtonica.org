@@ -173,7 +173,7 @@ function attachLiveValidation(
   if (submitButton) {
     submitButton.addEventListener("click", function (event) {
       event.preventDefault();
-      validateAndSubmit(elementId, nextUrl, clear, shouldSubmit);
+      validateAndSubmit(elementId, nextUrl, clear);
     });
   }
 }
@@ -306,7 +306,7 @@ function clearValidation(field) {
 }
 
 // Final validation before navigation
-function validateAndSubmit(elementId, nextUrl, shouldSubmit = false) {
+function validateAndSubmit(elementId, nextUrl) {
   const form = document.getElementById(elementId);
   const fields = form.querySelectorAll("[required]");
   let isValid = true;
@@ -319,16 +319,11 @@ function validateAndSubmit(elementId, nextUrl, shouldSubmit = false) {
   });
 
   if (isValid) {
-    if (shouldSubmit) {
-      if (!nextUrl) {
-        // Code is setup to clear localStorage on submit, not to submit the form
-        clearLocal(elementId);
-      }
-      form.submit();
-    } else if (nextUrl) {
-      window.location.href = nextUrl;
-    } else {
+    if (!nextUrl) {
+      // Code is setup to clear localStorage on submit, not to submit the form
       clearLocal(elementId);
+    } else {
+      window.location.href = nextUrl;
     }
   } else {
     alert("Please complete all required fields.");
