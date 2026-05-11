@@ -194,11 +194,7 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     window.onload = function () {
-      attachLiveValidation(
-        "app-form-2",
-        "/app-questionnaire",
-        (shouldSubmit = true),
-      );
+      attachLiveValidation("app-form-2", "/app-questionnaire");
     };
   });
 </script>

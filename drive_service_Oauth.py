@@ -15,6 +15,9 @@ load_dotenv()
 SCOPES = ["https://www.googleapis.com/auth/drive"]
 CLIENT_SECRETS_FILE = os.getenv("CLIENT_SECRETS_FILE")
 GOOGLE_DRIVE_FOLDER_TEMP_ID = os.getenv("GOOGLE_DRIVE_FOLDER_TEMP_ID")
+GOOGLE_DRIVE_FOLDER_PERMANENT_ID = os.getenv(
+    "GOOGLE_DRIVE_FOLDER_PERMANENT_ID"
+)
 REDIRECT_URI = os.getenv("REDIRECT_URI")
 
 print("GOOGLE_DRIVE_FOLDER_ID:", os.getenv("GOOGLE_DRIVE_FOLDER_ID"))
@@ -58,9 +61,9 @@ def build_drive_service(credentials_dict):
     return build("drive", "v3", credentials=credentials)
 
 
-def get_or_create_user_folder(credentials_dict, user_email):
+def get_or_create_user_folder(credentials_dict, user_email, parent_id):
     service = build_drive_service(credentials_dict)
-    parent_id = GOOGLE_DRIVE_FOLDER_TEMP_ID
+
     query = (
         f"name = '{user_email}' and "
         f"mimeType = 'application/vnd.google-apps.folder' and "
@@ -73,6 +76,7 @@ def get_or_create_user_folder(credentials_dict, user_email):
     )
 
     folders = response.get("files", [])
+
     if len(folders) > 0:
         return folders[0]["id"]
     else:
@@ -88,6 +92,76 @@ def get_or_create_user_folder(credentials_dict, user_email):
             service.files().create(body=folder_metadata, fields="id").execute()
         )
         return folder.get("id")
+
+
+# List files in the folder
+def list_files_in_folder(credentials_dict, folder_id):
+
+    service = build_drive_service(credentials_dict)
+    query = f"'{folder_id}' in parents and trashed = false"
+
+    response = (
+        service.files()
+        .list(
+            q=query,
+            fields="files(id, name, parents, mimeType)",
+        )
+        .execute()
+    )
+
+    return response.get("files", [])
+
+
+def move_file(credentials_dict, file_id, old_parent_id, new_parent_id):
+    service = build_drive_service(credentials_dict)
+
+    return (
+        service.files()
+        .update(
+            fileId=file_id,
+            addParents=new_parent_id,
+            removeParents=old_parent_id,
+            fields="id, name, parents",
+        )
+        .execute()
+    )
+
+
+def move_user_files_to_permanent(credentials_dict, user_email):
+    temp_folder_id = get_or_create_user_folder(
+        credentials_dict,
+        user_email,
+        GOOGLE_DRIVE_FOLDER_TEMP_ID,
+    )
+
+    permanent_folder_id = get_or_create_user_folder(
+        credentials_dict,
+        user_email,
+        GOOGLE_DRIVE_FOLDER_PERMANENT_ID,
+    )
+    print("temp folder id:", temp_folder_id)
+    print("permanent folder id:", permanent_folder_id)
+
+    files = list_files_in_folder(credentials_dict, temp_folder_id)
+    print("files found in temp:", files)
+
+    moved_files = []
+    for file in files:
+        # skip nested folders if you only want to move uploaded files
+        if file.get("mimeType") == "application/vnd.google-apps.folder":
+            continue
+
+        moved = move_file(
+            credentials_dict,
+            file["id"],
+            temp_folder_id,
+            permanent_folder_id,
+        )
+        moved_files.append(moved)
+
+    print("moved file result:", moved)
+
+    return moved_files
 
 
 def upload(credentials_dict, user_folder_id, file_to_upload, custom_name=None):
@@ -110,8 +184,6 @@ def upload(credentials_dict, user_folder_id, file_to_upload, custom_name=None):
             "name": final_filename,
             "parents": [user_folder_id],
         }
-
-        print("file_metadata: ", file_metadata)
 
         buffer_memory = BytesIO()
         file_to_upload.save(buffer_memory)
