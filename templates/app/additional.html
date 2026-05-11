@@ -276,6 +276,10 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
 <script src="{{ url_for('static', filename='js/uploadFilesOnly.js') }}"></script>
 
 <script>
+  // Attach live validation on page load
+  // window.onload = function () {
+  //   attachLiveValidation("app-form-7", "/");
+  // };
   async function submitApplication() {
     const form = document.getElementById("app-form-7");
     const formData = new FormData(form);
