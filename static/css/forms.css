@@ -170,7 +170,7 @@ form {
 }
 .application-form > fieldset label,
 .application-form > fieldset p,
-.application-form > fieldset > #radio-wrapper {
+.application-form > fieldset > .radio-wrapper {
   color: black;
   font-size: large;
 }
@@ -204,8 +204,8 @@ form {
 }
 .application-form > fieldset input[type="file"],
 .application-form > fieldset select,
-.application-form > fieldset #radio-wrapper > input[type="radio"],
-.application-form > fieldset #radio-wrapper > input[type="checkbox"] {
+.application-form > fieldset .radio-wrapper > input[type="radio"],
+.application-form > fieldset .radio-wrapper > input[type="checkbox"] {
   cursor: pointer;
 }
 .application-form > fieldset > select {
@@ -217,18 +217,18 @@ form {
   background-size: 15px;
   background-origin: content-box;
 }
-.application-form > fieldset > #radio-wrapper {
+.application-form > fieldset > .radio-wrapper {
   width: 100%;
   color: rgba(0, 0, 0, 0.851);
 }
-.application-form > fieldset > #radio-wrapper > label {
+.application-form > fieldset > .radio-wrapper > label {
   font-size: large;
 }
-.application-form > fieldset > #radio-wrapper > input[type="radio"] {
+.application-form > fieldset > .radio-wrapper > input[type="radio"] {
   margin: 0;
   cursor: pointer;
 }
-.application-form > fieldset > #radio-wrapper > input[type="checkbox"] {
+.application-form > fieldset > .radio-wrapper > input[type="checkbox"] {
   cursor: pointer;
 }
 
@@ -237,15 +237,15 @@ legend {
   font-size: 20px;
 }
 
-#radio-wrapper {
+.radio-wrapper {
   width: 100%;
   color: rgba(0, 0, 0, 0.851);
 }
-#radio-wrapper label {
+.radio-wrapper label {
   color: black;
   margin-bottom: 2em;
 }
-#radio-wrapper input {
+.radio-wrapper input {
   background-color: #16c1f3;
 }
 
@@ -293,16 +293,16 @@ legend {
   }
   .application-form > fieldset label,
   .application-form > fieldset p,
-  .application-form > fieldset #radio-wrapper > label {
+  .application-form > fieldset .radio-wrapper > label {
     font-size: smaller;
   }
   .application-form .learn-more-wrapper .learn-more-content {
     font-size: smaller;
   }
-  #radio-wrapper > input[type="radio"] {
+  .radio-wrapper > input[type="radio"] {
     margin: 0;
   }
-  #radio-wrapper > label {
+  .radio-wrapper > label {
     font-size: smaller;
   }
   .form-button {

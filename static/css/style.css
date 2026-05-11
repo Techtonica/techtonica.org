@@ -505,6 +505,29 @@ p {
     transform: rotate(360deg);
   }
 }
+.privacy-page-content,
+.privacy-page-content * {
+  word-wrap: break-word;
+}
+
+.privacy-page-content p,
+.privacy-page-content h1,
+.privacy-page-content h2,
+.privacy-page-content h3,
+.privacy-page-content span,
+.privacy-page-content li,
+.privacy-page-content div {
+  word-wrap: break-word;
+  word-break: normal;
+  max-width: 100%;
+}
+
+.privacy-page-content .column,
+.privacy-page-content .row {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
 .sponsor-tiers-container {
   display: grid;
   gap: 2rem;
@@ -531,11 +554,13 @@ p {
   position: relative;
   overflow: hidden;
   height: 100%;
-  padding: 2rem;
 }
 .sponsor-tiers-container .sponsor-tier-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 16px 48px rgba(5, 85, 109, 0.3);
+}
+.sponsor-tiers-container .sponsor-tier-card {
+  padding: 2rem;
 }
 .sponsor-tiers-container .tier-header {
   text-align: center;
@@ -553,7 +578,6 @@ p {
   list-style: none;
   margin: 1.5rem 0;
   padding: 0;
-  padding-inline-start: 10px;
 }
 .sponsor-tiers-container .tier-features li {
   padding: 0.75rem 0;
@@ -569,6 +593,9 @@ p {
   font-weight: bold;
   font-size: 1rem;
   min-width: 20px;
+}
+.sponsor-tiers-container .tier-features {
+  padding-inline-start: 10px;
 }
 .sponsor-tiers-container .tier-features li {
   color: #000;
@@ -613,13 +640,15 @@ p {
   position: relative;
   overflow: hidden;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  border-radius: 8px;
 }
 .program-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 16px 48px rgba(5, 85, 109, 0.3);
+}
+.program-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
 }
 .program-card__header {
   background-color: #0093b5;
@@ -654,7 +683,6 @@ p {
   list-style: none;
   margin: 1.5rem 0;
   padding: 0;
-  flex-grow: 1;
 }
 .program-card__features li {
   padding: 0.75rem 0;
@@ -670,6 +698,9 @@ p {
   font-weight: bold;
   font-size: 1rem;
   min-width: 20px;
+}
+.program-card__features {
+  flex-grow: 1;
 }
 .program-card__button {
   margin-top: auto;
@@ -978,10 +1009,20 @@ p {
   justify-content: flex-end;
   width: 100%;
   height: 100vh;
-  background: url(../img/2024-H2-Launch-Celebration-min.png) #0093b5 no-repeat top fixed;
+  background-image: url(../img/2024-H2-Launch-Celebration-min.png);
+  background-color: #0093b5;
+  background-repeat: no-repeat;
+  background-position: top;
   background-size: cover;
+  background-attachment: fixed;
 }
 
+@media (max-width: 768px) {
+  .program-header {
+    background-attachment: scroll;
+    background-position: top center;
+  }
+}
 .sponsor-header {
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -1243,6 +1284,10 @@ table.mentor td:first-of-type {
   width: 100%;
   display: flex;
   flex-grow: 1;
+}
+
+p#original-template-source {
+  text-align: left;
 }
 
 .videowrapper {
@@ -1856,7 +1901,7 @@ input[type=radio] {
   width: 50px;
 }
 
-#radio-wrapper {
+.radio-wrapper, #radio-wrapper {
   width: 100%;
   margin-bottom: 1em;
   color: rgba(0, 115, 149, 0.8);
@@ -1949,7 +1994,7 @@ label[for=code-of-conduct-checkbox] ~ a {
   }
 }
 /* Invalid radio wrapper styling */
-#radio-wrapper.invalid {
+.radio-wrapper.invalid, #radio-wrapper.invalid {
   padding: 10px;
   background-color: rgba(255, 200, 200, 0.1);
   border-radius: 4px;
@@ -2013,6 +2058,10 @@ button.disabled {
 
 .success-container button {
   margin-top: 30px;
+}
+
+#post-another-job.orange-button h2 {
+  color: white;
 }
 
 /* Existing styles for invalid fields, etc. */

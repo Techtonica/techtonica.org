@@ -1,0 +1,39 @@
+name: New Feature or Content
+description: Use this template for adding new content or features to the website.
+
+body:
+  - type: markdown
+    attributes:
+      value: "👉🏾 First time contributing to this repo? START HERE 👈🏾\n\nTo be added as a contributor and be assigned the related issue, please kindly read through the [README](https://github.com/Techtonica/techtonica.org?tab=readme-ov-file#techtonica) to address any Q&A.\n\n---\n\n_Thanks for reporting an issue with the Techtonica's website! Please fill in the following information to help us resolve the problem as soon as we can._"
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Be specific about what you will be adding or creating and what this issue will be doing.
+      placeholder: Describe what this issue is doing
+    validations:
+      required: true
+  - type: textarea
+    id: location
+    attributes:
+      label: Location
+      description: Share where this new addition will live in the curriculum.
+      placeholder: Enter URL, such as "The [RESTful API](https://github.com/Techtonica/curriculum/blob/main/api/REST-API.md) from Week 6"
+    validations:
+      required: true
+  - type: textarea
+    id: importance
+    attributes:
+      label: Why Is This Important
+      description: What problem is this issue solving and what is the impact to people consuming the curriculum and or program processes / delivery; share any important historical or informational context
+      placeholder: Describe the problem type. Include as much detail as possible about impact. What does this issue affect?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: What changes or additions to the curriculum should be made (i.e. README update, folder updates, pre-requisite references)
+      placeholder: Be specific about the completed contribution and what conditions of being acceptable for the curriculum are.
+    validations:
+      required: true
