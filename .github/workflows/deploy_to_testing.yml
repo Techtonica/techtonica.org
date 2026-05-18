@@ -1,0 +1,33 @@
+name: Deploy to Testing
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.DEPLOY_SSH_KEY }}
+      - name: Deploy to Testing Server
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.DREAMHOST_USER }}@${{ secrets.DREAMHOST_HOST }} << 'EOF'
+            cd testing.techtonica.org
+            source testing/bin/activate
+            cd techtonica/
+            git pull origin develop
+            pip-sync || pip install -r requirements.txt
+            systemctl --user stop gunicorn_testing
+            systemctl --user enable gunicorn_testing
+            systemctl --user restart gunicorn_testing
+          EOF
