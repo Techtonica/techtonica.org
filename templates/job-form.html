@@ -12,20 +12,19 @@ Post A Job {% endblock title %} {% block content %}
 </script>
 
 <div id="payment-page">
-  <h1>Post A Job</h1>
+  <h1>Post an Opportunity</h1>
   <p>
-    Have a job opening but your company isn’t ready to become a hiring partner?
+    Know of an opportunity with a company not ready to become a full hiring partner? 
     <br />
-    Submit the job for $100 and we’ll share with our graduates who have 0-7
-    years of experience.
+    Submit the opportunity here for $100 and we'll share with Techtonica grads (from 2018 onwards).
   </p>
   {% if not credentials %}
-  <p><a href="mailto:info@techtonica.org">Contact us</a> to post your job!</p>
+  <p><a href="mailto:info@techtonica.org">Contact us</a> to post your opportunity!</p>
   {% else %}
   <div class="column">
     <form class="payment-form" id="fast-checkout">
       <div class="wrapper">
-        <h3>Job Listing Form</h3>
+        <h3>Opportunity Listing Form</h3>
         <div id="info-wrapper" class="info-wrapper">
           <fieldset>
             <legend>Contact Information</legend>
@@ -41,12 +40,12 @@ Post A Job {% endblock title %} {% block content %}
           </fieldset>
 
           <fieldset>
-            <legend>Job Details</legend>
+            <legend>Opportunity Details</legend>
 
-            <label for="jobtitle">Job Title</label>
+            <label for="jobtitle">Opportunity Title</label>
             <input type="text" id="jobtitle" name="jobtitle" required />
 
-            <label for="company">Company</label>
+            <label for="company">Company/Organization</label>
             <input type="text" id="company" name="company" required />
 
             <label for="type">Type <span>(optional)</span></label>
@@ -75,7 +74,7 @@ Post A Job {% endblock title %} {% block content %}
 
             <label for="description">Description <span>(optional)</span></label>
             <textarea id="description" name="description">
-Submit your job for $100 to be shared with our 100+ full-stack software engineer graduates.</textarea
+Submit your opportunity for $100 to be shared with our 100+ full-stack software engineer graduates.</textarea
             >
 
             <label for="applicationlink"
