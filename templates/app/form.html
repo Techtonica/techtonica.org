@@ -30,4 +30,20 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
   };
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const emailInput = document.getElementById("email");
+
+    if (!emailInput) return;
+
+    if (emailInput.value) {
+      localStorage.setItem("application_email", emailInput.value);
+    }
+    console.log("application email is : ", emailInput.value);
+    emailInput.addEventListener("input", function () {
+      localStorage.setItem("application_email", emailInput.value);
+    });
+  });
+</script>
+
 {% endblock content %}
