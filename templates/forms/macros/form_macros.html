@@ -1,24 +1,34 @@
-{% macro input_field(name, label, id=None, type="text", required=True) %} {% set
-field_id = id or name %}
-<label for="{{ field_id }}">{{ label }}</label>
+{% macro input_field(name, label, id=None, type="text", required=True, value=None) %}
+  {% set field_id = id or name %}
+  
+  <label for="{{ field_id }}">{{ label }}</label>
 
-{% if caller %} {{ caller() }} {% endif %}
-<br />
+  {% if caller %} 
+    {{ caller() }} 
+  {% endif %}
+  <br />
 
-<input
-  type="{{ type }}"
-  id="{{ field_id }}"
-  name="{{ name }}"
-  {%
-  if
-  required
-  %}required{%
-  endif
-  %}
-  {{
-  kwargs|xmlattr
-  }}
-/><br />
+  {# 1. Check if the type is a textarea #}
+  {% if type == "textarea" %}
+    <textarea
+      id="{{ field_id }}"
+      name="{{ name }}"
+      {% if required %}required{% endif %}
+      {{ kwargs|xmlattr }}
+    >{{ value if value is not none }}</textarea>
+  
+  {# 2. Fall back to standard input types (text, email, password, etc.) #}
+  {% else %}
+    <input
+      type="{{ type }}"
+      id="{{ field_id }}"
+      name="{{ name }}"
+      value="{{ value if value is not none else '' }}"
+      {% if required %}required{% endif %}
+      {{ kwargs|xmlattr }}
+    />
+  {% endif %}
+  <br />
 {% endmacro %} {% macro select_field(name, label, options, id=None,
 required=True) %} {% set field_id = id or name %}
 <label for="{{ field_id }}">{{ label }}</label>
