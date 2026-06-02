@@ -161,7 +161,7 @@ form {
 }
 
 legend {
-  color: rgba(0, 115, 149, 0.8);
+  color: $dark-blue;
   font-size: 20px;
 }
 
@@ -308,6 +308,7 @@ legend {
   margin-left: auto;
   margin-right: auto;
   margin-top: 2%;
+  background-color: $whitesmoke;
 
   /* Visible progress text (helpful + accessible; especially on mobile) */
   &__summary {
