@@ -140,7 +140,8 @@ form {
   margin: 0.5em 0 0 0;
   font-size: large;
   color: black;
-  text-align: left; /* override settings p { text-align: justify } */
+  text-align: left;
+  /* override settings p { text-align: justify } */
 }
 .application-form {
   /* from added CSS: generic button styling inside application-form */
@@ -233,7 +234,7 @@ form {
 }
 
 legend {
-  color: rgba(0, 115, 149, 0.8);
+  color: #05556d;
   font-size: 20px;
 }
 
@@ -350,6 +351,7 @@ legend {
   margin-left: auto;
   margin-right: auto;
   margin-top: 2%;
+  background-color: whitesmoke;
   /* Visible progress text (helpful + accessible; especially on mobile) */
 }
 .tt-stepper__summary {
@@ -377,9 +379,12 @@ legend {
 .tt-stepper__item:not(:last-child)::after {
   content: "";
   position: absolute;
-  top: 12px; /* vertically centered on 24px dot */
-  left: calc(50% + 12px); /* right edge of 24px dot */
-  right: calc(-1rem - 50% + 12px); /* extends to left edge of next dot */
+  top: 12px;
+  /* vertically centered on 24px dot */
+  left: calc(50% + 12px);
+  /* right edge of 24px dot */
+  right: calc(-1rem - 50% + 12px);
+  /* extends to left edge of next dot */
   height: 3px;
   background: #ccc;
 }
