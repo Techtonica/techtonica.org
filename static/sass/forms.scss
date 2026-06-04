@@ -18,8 +18,8 @@ form {
   background-color: $main-blue;
   padding: 2rem;
 
-  >h1,
-  >p {
+  > h1,
+  > p {
     max-width: 65%;
     margin: auto;
     text-align: center;
@@ -81,7 +81,7 @@ form {
     }
   }
 
-  >fieldset {
+  > fieldset {
     padding: 2rem;
     border: 1px solid rgba(0, 0, 0, 0.559);
     border-radius: 0.5rem;
@@ -91,7 +91,7 @@ form {
 
     label,
     p,
-    >.radio-wrapper {
+    > .radio-wrapper {
       color: black;
       font-size: large;
     }
@@ -124,12 +124,12 @@ form {
 
     input[type="file"],
     select,
-    .radio-wrapper>input[type="radio"],
-    .radio-wrapper>input[type="checkbox"] {
+    .radio-wrapper > input[type="radio"],
+    .radio-wrapper > input[type="checkbox"] {
       cursor: pointer;
     }
 
-    >select {
+    > select {
       appearance: none;
       background-color: transparent;
       background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTAwMCAxMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPg0KICA8cGF0aCBmaWxsPSJncmF5IiBkPSJNMTAsMjMyLjdsNDkwLDUzNC41bDQ5MC01MzQuNUgxMHoiIC8+DQo8L3N2Zz4=);
@@ -139,20 +139,20 @@ form {
       background-origin: content-box;
     }
 
-    >.radio-wrapper {
+    > .radio-wrapper {
       width: 100%;
       color: rgba(0, 0, 0, 0.851);
 
-      >label {
+      > label {
         font-size: large;
       }
 
-      >input[type="radio"] {
+      > input[type="radio"] {
         margin: 0;
         cursor: pointer;
       }
 
-      >input[type="checkbox"] {
+      > input[type="checkbox"] {
         cursor: pointer;
       }
     }
@@ -206,13 +206,13 @@ legend {
   .application-page {
     padding: 2rem 0;
 
-    >form {
+    > form {
       width: initial;
       margin-bottom: 2rem;
       padding: 1.5rem;
     }
 
-    >h1 {
+    > h1 {
       font-size: 1.5em;
       max-width: fit-content;
     }
@@ -223,13 +223,13 @@ legend {
   }
 
   .application-form {
-    >fieldset {
+    > fieldset {
       min-width: 95%;
       padding: 1.5rem;
 
       label,
       p,
-      .radio-wrapper>label {
+      .radio-wrapper > label {
         font-size: smaller;
       }
     }
@@ -242,11 +242,11 @@ legend {
   }
 
   .radio-wrapper {
-    >input[type="radio"] {
+    > input[type="radio"] {
       margin: 0;
     }
 
-    >label {
+    > label {
       font-size: smaller;
     }
   }
@@ -281,12 +281,12 @@ legend {
   .application-page {
     padding: 2rem 0;
 
-    >form {
+    > form {
       width: initial;
       margin-bottom: 2rem;
     }
 
-    >h1 {
+    > h1 {
       font-size: 2em;
       max-width: fit-content;
     }
