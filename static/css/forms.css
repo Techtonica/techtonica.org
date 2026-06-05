@@ -140,8 +140,7 @@ form {
   margin: 0.5em 0 0 0;
   font-size: large;
   color: black;
-  text-align: left;
-  /* override settings p { text-align: justify } */
+  text-align: left; /* override settings p { text-align: justify } */
 }
 .application-form {
   /* from added CSS: generic button styling inside application-form */
@@ -187,13 +186,13 @@ form {
   /* inputs from both sources (deduped into one list)
      use descendant selector so controls work when wrapped in <div> (e.g. long-text form) */
 }
-.application-form > fieldset input[type="text"],
-.application-form > fieldset input[type="email"],
-.application-form > fieldset input[type="tel"],
-.application-form > fieldset input[type="date"],
-.application-form > fieldset input[type="number"],
-.application-form > fieldset input[type="url"],
-.application-form > fieldset input[type="file"],
+.application-form > fieldset input[type=text],
+.application-form > fieldset input[type=email],
+.application-form > fieldset input[type=tel],
+.application-form > fieldset input[type=date],
+.application-form > fieldset input[type=number],
+.application-form > fieldset input[type=url],
+.application-form > fieldset input[type=file],
 .application-form > fieldset textarea,
 .application-form > fieldset select {
   padding: 1em;
@@ -203,10 +202,10 @@ form {
   width: 100%;
   box-sizing: border-box;
 }
-.application-form > fieldset input[type="file"],
+.application-form > fieldset input[type=file],
 .application-form > fieldset select,
-.application-form > fieldset .radio-wrapper > input[type="radio"],
-.application-form > fieldset .radio-wrapper > input[type="checkbox"] {
+.application-form > fieldset .radio-wrapper > input[type=radio],
+.application-form > fieldset .radio-wrapper > input[type=checkbox] {
   cursor: pointer;
 }
 .application-form > fieldset > select {
@@ -225,11 +224,11 @@ form {
 .application-form > fieldset > .radio-wrapper > label {
   font-size: large;
 }
-.application-form > fieldset > .radio-wrapper > input[type="radio"] {
+.application-form > fieldset > .radio-wrapper > input[type=radio] {
   margin: 0;
   cursor: pointer;
 }
-.application-form > fieldset > .radio-wrapper > input[type="checkbox"] {
+.application-form > fieldset > .radio-wrapper > input[type=checkbox] {
   cursor: pointer;
 }
 
@@ -300,7 +299,7 @@ legend {
   .application-form .learn-more-wrapper .learn-more-content {
     font-size: smaller;
   }
-  .radio-wrapper > input[type="radio"] {
+  .radio-wrapper > input[type=radio] {
     margin: 0;
   }
   .radio-wrapper > label {
@@ -310,9 +309,7 @@ legend {
     gap: 0.5em;
     margin: auto;
   }
-  button.previous-btn,
-  button.continue-to-app-btn,
-  button.save-btn {
+  button.previous-btn, button.continue-to-app-btn, button.save-btn {
     font-size: smaller;
   }
 }
@@ -352,6 +349,8 @@ legend {
   margin-right: auto;
   margin-top: 2%;
   background-color: whitesmoke;
+  padding: 0.8rem 0.8rem 0 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.547);
   /* Visible progress text (helpful + accessible; especially on mobile) */
 }
 .tt-stepper__summary {
@@ -379,12 +378,9 @@ legend {
 .tt-stepper__item:not(:last-child)::after {
   content: "";
   position: absolute;
-  top: 12px;
-  /* vertically centered on 24px dot */
-  left: calc(50% + 12px);
-  /* right edge of 24px dot */
-  right: calc(-1rem - 50% + 12px);
-  /* extends to left edge of next dot */
+  top: 12px; /* vertically centered on 24px dot */
+  left: calc(50% + 12px); /* right edge of 24px dot */
+  right: calc(-1rem - 50% + 12px); /* extends to left edge of next dot */
   height: 3px;
   background: #ccc;
 }
@@ -409,6 +405,7 @@ legend {
   background: #fc7625;
   border-color: #fc7625;
   color: white;
+  z-index: 1; /* ensure orange dot appears above connector lines */
 }
 .tt-stepper__item.is-current .tt-stepper__label {
   color: #05556d;
@@ -432,7 +429,7 @@ legend {
 .tt-stepper__link {
   /* If you render upcoming steps as disabled links */
 }
-.tt-stepper__link[aria-disabled="true"] {
+.tt-stepper__link[aria-disabled=true] {
   cursor: default;
   pointer-events: none;
 }
