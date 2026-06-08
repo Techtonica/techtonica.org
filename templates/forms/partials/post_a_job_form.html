@@ -1,5 +1,5 @@
 {% import "forms/macros/form_macros.html" as f %}
-<div id="info-wrapper" class="info-wrapper">
+<div>
   <fieldset>
     <legend>Contact Information</legend>
     <div>
@@ -34,14 +34,14 @@
     </div>
     <div>
       {{ f.input_field( 'educationreq', 'Education Requirement (optional)',
-      id="radio-wrapper", type="text", required=False ) }}
+      class="radio-wrapper", type="text", required=False ) }}
     </div>
     <div>
       {{ f.input_field( 'location', 'Location', id="location", type="text",
       required=True, pattern='^[A-Za-z\-\' ]{2,}$', title='Please enter a valid
       location.' ) }}
     </div>
-    <div id="radio-wrapper">
+    <div class="radio-wrapper">
       <p>Can you make a referral/connection?</p>
       <div id="referral-radio-wrapper">
         {{f.yes_no_radio('referral', '', id="ref") }}

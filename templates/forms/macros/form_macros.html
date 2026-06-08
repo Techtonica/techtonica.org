@@ -118,4 +118,20 @@ id=None) %} {% set base_id = id or name %}
   <label for="{{ base_id }}-no">No</label>
 </div>
 <br />
+{% endmacro %}{% macro payment_coc_checkbox(conduct_page_url, required=True) %}
+  <input
+    type="checkbox"
+    id="code-of-conduct-checkbox"
+    name="code-of-conduct-checkbox"
+    {% if required %}required{% endif %}
+  />
+  <label for="code-of-conduct-checkbox">
+    By checking this box, you agree that what you are submitting in this
+    form adheres to
+    <a href="{{ conduct_page_url }}"
+      title="Code of Conduct"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Techtonica's Code of Conduct</a>.
+  </label>
 {% endmacro %}
