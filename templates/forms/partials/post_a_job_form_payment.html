@@ -1,5 +1,5 @@
 {% import "forms/macros/form_macros.html" as f %}
-<div id="info-wrapper" class="info-wrapper">
+<div>
   <!-- This TODO comment was imported from templates/job-form.html -->
   <!-- <div id="ach-wrapper">
     <label for="ach-account-holder-name">Full Name</label>
@@ -20,18 +20,9 @@
 -->
   <h3>Payment Info</h3>
   <div id="card-container"></div>
-  <div class="checkbox-container">
-    {% set code_of_conduct_options = [Yes] %} {{ f.checkbox_group( 'pronouns',
-    ('By checking this box, you agree that what you are submitting in this form
-    adheres to
-    <a
-      href="' ~ url_for('render_conduct_page') ~ '"
-      title="Code of Conduct"
-      target="_blank"
-      rel="noopener noreferrer"
-      >Techtonica\'s Code of Conduct</a
-    >.')|safe, options=code_of_conduct_options ) }}
-  </div>
+<div class="checkbox-container">
+  {{ f.payment_coc_checkbox(url_for('render_conduct_page')) }}
+</div>
   <button id="card-button" type="button" class="orange-button">
     Pay with Card
   </button>
