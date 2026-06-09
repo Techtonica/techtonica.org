@@ -1,8 +1,10 @@
+// Color names in comments point to Techtonica style guide
+// https://www.dropbox.com/scl/fo/sb8ppa0qxuuott515euei/h?rlkey=1ghfh6urkf2rakbonngk9z3bd&e=1&st=q935c0bj&dl=0
 $main-blue: #0093b5; // Bondi Blue
 $light-blue: #16c1f3; // Spiro Disco Ball
 $dark-blue: #05556d; // Indigo
 $white: white;
-$whitesmoke: whitesmoke;
+$whitesmoke: whitesmoke; // re-usable variable similar to $white for adequate contrast but with lower visual heirarchy
 $light-gray: #ccc;
 $dark-gray: #666;
 $thick-dark-text-shadow: 2px 2px 5px $dark-gray;
