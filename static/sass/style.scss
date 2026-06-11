@@ -311,6 +311,7 @@
 .testimonial-row {
   padding: 0 !important;
 }
+
 .testimonial-text a {
   word-break: break-word;
 }
@@ -327,11 +328,13 @@
     padding: 12px;
     gap: 12px;
   }
+
   .testimonial-post {
     --size: min(70vw, 92vw);
     flex-basis: var(--size);
     width: var(--size);
   }
+
   .testimonial-post .post-content {
     width: 86%;
   }
@@ -358,6 +361,7 @@
   color: white;
   padding: 3rem;
 }
+
 .nav-bar {
   @include prefix(display, inline-flex, webkit moz);
   flex-flow: row-reverse wrap;
@@ -646,6 +650,7 @@
   justify-content: center;
   gap: 1rem;
 }
+
 .social-link {
   display: flex;
   flex-direction: column;
@@ -1031,14 +1036,17 @@ p#original-template-source {
   .social-link {
     width: 50px; /* Slightly smaller width for mobile */
   }
+
   .social-media,
   .hiring {
     width: 2.5rem;
     height: 2.5rem;
   }
+
   .hiring {
     width: 3.75rem;
   }
+
   .icon-text {
     font-size: 0.6rem; /* Even smaller text for mobile */
   }
@@ -1433,7 +1441,8 @@ input[type="radio"] {
 }
 
 // prettier-ignore
-.radio-wrapper, #radio-wrapper {
+.radio-wrapper,
+#radio-wrapper {
   width: 100%;
   margin-bottom: 1em;
   color: #007395cc;
@@ -1459,6 +1468,7 @@ input[type="radio"] {
   border-width: thick;
   padding: 3% 5% 3% 5%;
 }
+
 #consulting-bullet-items {
   border-style: solid;
   border-color: #05556d;
@@ -1536,7 +1546,8 @@ label[for="code-of-conduct-checkbox"] ~ a {
 
 /* Invalid radio wrapper styling */
 // prettier-ignore
-.radio-wrapper.invalid, #radio-wrapper.invalid {
+.radio-wrapper.invalid,
+#radio-wrapper.invalid {
   padding: 10px;
   background-color: rgba(255, 200, 200, 0.1);
   border-radius: 4px;
@@ -1875,18 +1886,22 @@ progress::-webkit-progress-bar {
     margin-left: auto;
     width: 100%;
   }
+
   .sponsor-benefit-table,
   .sponsor-benefit-table td {
     border: 1px solid $main-blue;
     border-collapse: collapse;
   }
+
   .sponsor-benefit-table th {
     padding: 5px;
     column-width: 100px;
   }
+
   .sponsor-table-cell {
     text-align: center;
   }
+
   .sponsor-table-prompt {
     padding-left: 5px;
   }
