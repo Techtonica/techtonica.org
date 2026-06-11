@@ -160,7 +160,7 @@ form {
 }
 
 legend {
-  color: rgba(0, 115, 149, 0.8);
+  color: $dark-blue;
   font-size: 20px;
 }
 
@@ -307,6 +307,9 @@ legend {
   margin-left: auto;
   margin-right: auto;
   margin-top: 2%;
+  background-color: $whitesmoke;
+  padding: .8rem .8rem 0 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.547);
 
   /* Visible progress text (helpful + accessible; especially on mobile) */
   &__summary {
@@ -364,6 +367,7 @@ legend {
         background: $focal-orange;
         border-color: $focal-orange;
         color: $white;
+        z-index: 1; /* ensure orange dot appears above connector lines */
       }
 
       .tt-stepper__label {

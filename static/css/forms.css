@@ -186,13 +186,13 @@ form {
   /* inputs from both sources (deduped into one list)
      use descendant selector so controls work when wrapped in <div> (e.g. long-text form) */
 }
-.application-form > fieldset input[type="text"],
-.application-form > fieldset input[type="email"],
-.application-form > fieldset input[type="tel"],
-.application-form > fieldset input[type="date"],
-.application-form > fieldset input[type="number"],
-.application-form > fieldset input[type="url"],
-.application-form > fieldset input[type="file"],
+.application-form > fieldset input[type=text],
+.application-form > fieldset input[type=email],
+.application-form > fieldset input[type=tel],
+.application-form > fieldset input[type=date],
+.application-form > fieldset input[type=number],
+.application-form > fieldset input[type=url],
+.application-form > fieldset input[type=file],
 .application-form > fieldset textarea,
 .application-form > fieldset select {
   padding: 1em;
@@ -202,10 +202,10 @@ form {
   width: 100%;
   box-sizing: border-box;
 }
-.application-form > fieldset input[type="file"],
+.application-form > fieldset input[type=file],
 .application-form > fieldset select,
-.application-form > fieldset .radio-wrapper > input[type="radio"],
-.application-form > fieldset .radio-wrapper > input[type="checkbox"] {
+.application-form > fieldset .radio-wrapper > input[type=radio],
+.application-form > fieldset .radio-wrapper > input[type=checkbox] {
   cursor: pointer;
 }
 .application-form > fieldset > select {
@@ -224,16 +224,16 @@ form {
 .application-form > fieldset > .radio-wrapper > label {
   font-size: large;
 }
-.application-form > fieldset > .radio-wrapper > input[type="radio"] {
+.application-form > fieldset > .radio-wrapper > input[type=radio] {
   margin: 0;
   cursor: pointer;
 }
-.application-form > fieldset > .radio-wrapper > input[type="checkbox"] {
+.application-form > fieldset > .radio-wrapper > input[type=checkbox] {
   cursor: pointer;
 }
 
 legend {
-  color: rgba(0, 115, 149, 0.8);
+  color: #05556d;
   font-size: 20px;
 }
 
@@ -299,7 +299,7 @@ legend {
   .application-form .learn-more-wrapper .learn-more-content {
     font-size: smaller;
   }
-  .radio-wrapper > input[type="radio"] {
+  .radio-wrapper > input[type=radio] {
     margin: 0;
   }
   .radio-wrapper > label {
@@ -309,9 +309,7 @@ legend {
     gap: 0.5em;
     margin: auto;
   }
-  button.previous-btn,
-  button.continue-to-app-btn,
-  button.save-btn {
+  button.previous-btn, button.continue-to-app-btn, button.save-btn {
     font-size: smaller;
   }
 }
@@ -350,6 +348,9 @@ legend {
   margin-left: auto;
   margin-right: auto;
   margin-top: 2%;
+  background-color: whitesmoke;
+  padding: 0.8rem 0.8rem 0 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.547);
   /* Visible progress text (helpful + accessible; especially on mobile) */
 }
 .tt-stepper__summary {
@@ -404,6 +405,7 @@ legend {
   background: #fc7625;
   border-color: #fc7625;
   color: white;
+  z-index: 1; /* ensure orange dot appears above connector lines */
 }
 .tt-stepper__item.is-current .tt-stepper__label {
   color: #05556d;
@@ -427,7 +429,7 @@ legend {
 .tt-stepper__link {
   /* If you render upcoming steps as disabled links */
 }
-.tt-stepper__link[aria-disabled="true"] {
+.tt-stepper__link[aria-disabled=true] {
   cursor: default;
   pointer-events: none;
 }
