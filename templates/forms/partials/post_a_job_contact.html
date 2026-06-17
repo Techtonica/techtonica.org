@@ -17,14 +17,14 @@
       required=True, pattern='^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
       title='Please enter a valid email address.' ) }}
     </div>
-    <legend>Job Details</legend>
+    <legend>Opportunity Details</legend>
     <div>
-      {{ f.input_field( 'jobtitle', 'Job Title', id="jobtitle", type="text",
+      {{ f.input_field( 'jobtitle', 'Opportunity Title', id="jobtitle", type="text",
       required=True, pattern='^[A-Za-z\-\' ]{2,}$', title='Please enter a valid
       job title.' ) }}
     </div>
     <div>
-      {{ f.input_field( 'company', 'Company', id="company", type="text",
+      {{ f.input_field( 'company', 'Company/Organisation', id="company", type="text",
       required=True, pattern='^[A-Za-z\-\' ]{2,}$', title='Please enter a valid
       company name.' ) }}
     </div>
@@ -53,7 +53,7 @@
     </div>
     <div>
       {{ f.input_field( 'description', 'Description (optional)',
-      id="description", type="textarea", required=False, value="Submit your job for $100 to be shared with our 100+ full-stack software engineer graduates.") }}
+      id="description", type="textarea", required=False, value="Submit your Opportunity for $100 to be shared with our 100+ full-stack software engineer graduates.") }}
     </div>
     <div>
       {{ f.input_field( 'applicationlink', 'Link to Apply (optional)', id="applicationlink", type="textarea",
