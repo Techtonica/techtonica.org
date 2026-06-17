@@ -1,0 +1,49 @@
+{% import "forms/macros/form_macros.html" as f %}
+<div>
+  <fieldset>
+    <legend>Opportunity Details</legend>
+    <div>
+      {{ f.input_field( 'jobtitle', 'Opportunity Title', id="jobtitle", type="text",
+      required=True, pattern='^[A-Za-z\-\' ]{2,}$', title='Please enter a valid
+      job title.' ) }}
+    </div>
+    <div>
+      {{ f.input_field( 'company', 'Company/Organisation', id="company", type="text",
+      required=True, pattern='^[A-Za-z\-\' ]{2,}$', title='Please enter a valid
+      company name.' ) }}
+    </div>
+    <div>
+      {{ f.input_field( 'type', 'Type (optional)', id="type", type="text",
+      required=False ) }}
+    </div>
+    <div>
+      {{ f.input_field( 'educationreq', 'Education Requirement (optional)',
+      class="radio-wrapper", type="text", required=False ) }}
+    </div>
+    <div>
+      {{ f.input_field( 'location', 'Location', id="location", type="text",
+      required=True, pattern='^[A-Za-z\-\' ]{2,}$', title='Please enter a valid
+      location.' ) }}
+    </div>
+    <div class="radio-wrapper">
+      <p>Can you make a referral/connection?</p>
+      <div id="referral-radio-wrapper">
+        {{f.yes_no_radio('referral', '', id="ref") }}
+      </div>
+    </div>
+    <div>
+      {{ f.input_field( 'salaryrange', 'Salary Range (optional)',
+      id="salaryrange", type="text", required=False ) }}
+    </div>
+    <div>
+      {{ f.input_field( 'description', 'Description (optional)',
+      id="description", type="textarea", required=False, value="Submit your Opportunity for $100 to be shared with our 100+ full-stack software engineer graduates.") }}
+    </div>
+    <div>
+      {{ f.input_field( 'applicationlink', 'Link to Apply (optional)', id="applicationlink", type="textarea",
+      required=False ) }}
+    </div>
+  </fieldset>
+  <!-- This TODO comment was imported from templates/job-form.html -->
+  <!-- TO-DO: File upload input for screenshots -->
+</div>
