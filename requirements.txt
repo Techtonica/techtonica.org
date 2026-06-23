@@ -66,7 +66,7 @@ markupsafe==3.0.2
     #   flask
     #   jinja2
     #   werkzeug
-msgpack==1.1.0
+msgpack==1.2.1
     # via cachecontrol
 mysql-connector-python==9.2.0
     # via -r requirements.in
