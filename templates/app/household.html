@@ -10,7 +10,13 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
   {% with current_step='app-household' %} {% include
   "components/progress-bar.html" %} {% endwith %}
 
-  <form action="#" method="POST" class="application-form" id="app-form-2">
+  <form
+    action="#"
+    method="POST"
+    enctype="multipart/form-data"
+    class="application-form"
+    id="app-form-2"
+  >
     <fieldset>
       <legend>Applicant & Household Financial Information</legend>
       <div class="radio-wrapper" role="radiogroup">
@@ -162,11 +168,21 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
         >
           Previous
         </button>
-        <button type="button" class="continue-to-app-btn">Next</button>
         <button
           type="button"
+          name="action"
+          value="next"
+          class="continue-to-app-btn"
+          id="household-next-btn"
+        >
+          Next
+        </button>
+        <button
+          type="button"
+          name="action"
+          value="save"
           class="save-btn"
-          onclick="window.location.href = '/'"
+          id="household-save-btn"
         >
           Save
         </button>
@@ -180,6 +196,77 @@ Techtonica Application {% endblock title %} {% block extra_stylesheets %}
     window.onload = function () {
       attachLiveValidation("app-form-2", "/app-questionnaire");
     };
+  });
+</script>
+
+<script src="{{ url_for('static', filename='js/uploadFilesOnly.js') }}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const saveButton = document.getElementById("household-save-btn");
+
+    if (!saveButton) return;
+
+    saveButton.addEventListener("click", async function (event) {
+      event.preventDefault();
+      console.log("sending email:", localStorage.getItem("application_email"));
+      try {
+        await uploadFilesOnly(
+          "/upload-household-files",
+          [
+            {
+              inputId: "income-verification-docs",
+              fieldName: "income-verification-docs",
+            },
+            {
+              inputId: "net-worth-docs",
+              fieldName: "net-worth-docs",
+            },
+          ],
+          {
+            user_email: localStorage.getItem("application_email"),
+          },
+        );
+
+        window.location.href = "/";
+      } catch (error) {
+        alert(error.message);
+      }
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const nextButton = document.getElementById("household-next-btn");
+
+    if (!nextButton) return;
+
+    nextButton.addEventListener("click", async function (event) {
+      event.preventDefault();
+      console.log("sending email:", localStorage.getItem("application_email"));
+      try {
+        await uploadFilesOnly(
+          "/upload-household-files",
+          [
+            {
+              inputId: "income-verification-docs",
+              fieldName: "income-verification-docs",
+            },
+            {
+              inputId: "net-worth-docs",
+              fieldName: "net-worth-docs",
+            },
+          ],
+          {
+            user_email: localStorage.getItem("application_email"),
+          },
+        );
+
+        window.location.href = "/app-questionnaire";
+      } catch (error) {
+        alert(error.message);
+      }
+    });
   });
 </script>
 

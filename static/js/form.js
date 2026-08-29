@@ -161,7 +161,12 @@ function validateAppForm(elementId, nextUrl) {
 }
 
 // Function to attach event listeners for live validation
-function attachLiveValidation(elementId, nextUrl, clear = false) {
+function attachLiveValidation(
+  elementId,
+  nextUrl,
+  clear = false,
+  shouldSubmit = false,
+) {
   const form = document.getElementById(elementId);
   const fields = form.querySelectorAll("[required]");
   fields.forEach((field) => {
