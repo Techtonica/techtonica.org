@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form - Techtonica</title>
+    <style>
+        :root {
+            --primary-color: #005ea5;
+            --error-color: #d4351c;
+            --text-color: #0b0c0c;
+            --bg-color: #ffffff;
+            --border-color: #b1b4b6;
+        }
+        body {
+            font-family: "GDS Transport", Arial, sans-serif;
+            line-height: 1.5;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-step {
+            display: none;
+        }
+        .form-step.active {
+            display: block;
+        }
+        .gov-input-group {
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .radio-option {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .radio-option input {
+            margin-right: 10px;
+        }
+        .btn-next {
+            background-color: #00703c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 0;
+        }
+        .btn-next:hover {
+            background-color: #005a30;
+        }
+        .disqualified-msg {
+            background-color: #f3f2f1;
+            border-left: 10px solid var(--error-color);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="multiStepForm" method="POST" action="/submit-application">
+            
+            <!-- Step 1: Gender Identity (Conditional Gate) -->
+            <div class="form-step active" id="step-1">
+                <h1>Eligibility Check</h1>
+                <div class="gov-input-group">
+                    <label>What is your gender identity?</label>
+                    <div class="radio-option">
+                        <input type="radio" name="gender" value="woman" id="gender-woman" required>
+                        <label for="gender-woman" style="display:inline; font-weight:normal;">Woman</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="gender" value="non-binary" id="gender-nb">
+                        <label for="gender-nb" style="display:inline; font-weight:normal;">Non-binary</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="gender" value="other" id="gender-other">
+                        <label for="gender-other" style="display:inline; font-weight:normal;">Other / Prefer not to say</label>
+                    </div>
+                </div>
+                <button type="button" class="btn-next" onclick="validateStep1()">Continue</button>
+            </div>
+
+            <!-- Disqualification Page -->
+            <div class="form-step" id="step-disqualified">
+                <div class="disqualified-msg">
+                    <h2>Eligibility Requirement</h2>
+                    <p>Thank you for your interest in Techtonica. Unfortunately, our current funding and program requirements are specifically focused on women and non-binary individuals. Therefore, you are not eligible to apply at this time.</p>
+                </div>
+                <p>We wish you the best of luck in your coding journey.</p>
+                <a href="/">Return to Home</a>
+            </div>
+
+            <!-- Step 2: Personal Details -->
+            <div class="form-step" id="step-2">
+                <h1>Personal Details</h1>
+                <div class="gov-input-group">
+                    <label for="full_name">Full Name</label>
+                    <input type="text" id="full_name" name="full_name" style="width: 100%; padding: 8px;">
+                </div>
+                <div class="gov-input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" style="width: 100%; padding: 8px;">
+                </div>
+                <button type="button" class="btn-next" onclick="nextStep(3)">Continue</button>
+            </div>
+
+            <!-- Step 3: Experience -->
+            <div class="form-step" id="step-3">
+                <h1>Experience</h1>
+                <div class="gov-input-group">
+                    <label for="experience">Tell us about your interest in tech</label>
+                    <textarea id="experience" name="experience" rows="5" style="width: 100%; padding: 8px;"></textarea>
+                </div>
+                <button type="submit" class="btn-next">Submit Application</button>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        function validateStep1() {
+            const gender = document.querySelector('input[name="gender"]:checked');
+            if (!gender) {
+                alert('Please select an option to continue.');
+                return;
+            }
+
+            const value = gender.value;
+            // Eligibility: Woman or Non-binary
+            if (value === 'woman' || value === 'non-binary') {
+                nextStep(2);
+            } else {
+                showDisqualified();
+            }
+        }
+
+        function nextStep(stepNumber) {
+            document.querySelectorAll('.form-step').forEach(step => {
+                step.classList.remove('active');
+            });
+            document.getElementById('step-' + stepNumber).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function showDisqualified() {
+            document.querySelectorAll('.form-step').forEach(step => {
+                step.classList.remove('active');
+            });
+            document.getElementById('step-disqualified').classList.add('active');
+        }
+    </script>
+</body>
+</html>
