@@ -1,0 +1,7 @@
+:root {
+    /* Existing variables... */
+    --primary-color: #007796; /* Updated from #0093b5 to meet WCAG 2 AA contrast ratio (4.5:1) */
+    --primary-color-dark: #005a73;
+    --primary-color-light: #e6f2f5;
+    /* Other variables remain unchanged */
+}
