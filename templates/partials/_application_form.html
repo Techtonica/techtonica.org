@@ -1,0 +1,23 @@
+<form action="{{ url_for('apply') }}" method="POST" enctype="multipart/form-data" class="application-form">
+    <div class="form-group">
+        <label for="full_name">Full Name</label>
+        <input type="text" id="full_name" name="full_name" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="portfolio">Portfolio/GitHub URL</label>
+        <input type="url" id="portfolio" name="portfolio">
+    </div>
+    <div class="form-group">
+        <label for="resume">Resume (PDF)</label>
+        <input type="file" id="resume" name="resume" accept=".pdf" required>
+    </div>
+    <div class="form-group">
+        <label for="cover_letter">Cover Letter</label>
+        <textarea id="cover_letter" name="cover_letter" rows="5"></textarea>
+    </div>
+    <button type="submit" class="btn-submit">Submit Application</button>
+</form>
