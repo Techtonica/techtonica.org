@@ -1,0 +1,123 @@
+<div class="p-6 bg-gray-100 min-h-screen">
+  <h1 class="text-3xl font-bold mb-6 text-gray-800">Administrator Dashboard</h1>
+
+  <!-- Statistics Overview -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+    <div class="bg-white p-6 rounded-lg shadow border-l-4 border-blue-500">
+      <p class="text-sm text-gray-500 uppercase font-bold">Total Applications</p>
+      <p class="text-2xl font-bold"><%= @stats[:totalApplications] %></p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow border-l-4 border-yellow-500">
+      <p class="text-sm text-gray-500 uppercase font-bold">Pending Review</p>
+      <p class="text-2xl font-bold"><%= @applicationsByStatus[:pending] %></p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow border-l-4 border-green-500">
+      <p class="text-sm text-gray-500 uppercase font-bold">Accepted</p>
+      <p class="text-2xl font-bold"><%= @applicationsByStatus[:approved] %></p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow border-l-4 border-red-500">
+      <p class="text-sm text-gray-500 uppercase font-bold">Rejected</p>
+      <p class="text-2xl font-bold"><%= @applicationsByStatus[:rejected] + @applicationsByStatus[:prescreenRejected] %></p>
+    </div>
+  </div>
+
+  <!-- Data Visualization -->
+  <div class="bg-white p-6 rounded-lg shadow mb-8">
+    <h2 class="text-xl font-semibold mb-4">Application Status Distribution</h2>
+    <div class="h-64">
+      <canvas id="statusChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Applicants Table -->
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <div class="p-4 border-b flex flex-col md:flex-row justify-between items-center gap-4">
+      <h2 class="text-xl font-semibold">Applicants</h2>
+      <div class="flex gap-2">
+        <input type="text" id="applicantSearch" placeholder="Search applicants..." class="border p-2 rounded w-64">
+        <select id="statusFilter" class="border p-2 rounded">
+          <option value="all">All</option>
+          <option value="Eligible">Eligible</option>
+          <option value="Ineligible">Ineligible</option>
+          <option value="Pending">Pending</option>
+          <option value="Manual Review Needed">Manual Review Needed</option>
+        </select>
+      </div>
+    </div>
+    <table class="w-full text-left border-collapse">
+      <thead class="bg-gray-50">
+        <tr>
+          <th class="p-4 border-b">Name</th>
+          <th class="p-4 border-b">Email</th>
+          <th class="p-4 border-b">Status</th>
+          <th class="p-4 border-b">Date Submitted</th>
+          <th class="p-4 border-b">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="applicantsTable">
+        <% @applicants.each do |applicant| %>
+          <tr class="hover:bg-gray-50 border-b">
+            <td class="p-4"><%= applicant[:name] %></td>
+            <td class="p-4"><%= applicant[:email] %></td>
+            <td class="p-4">
+              <span class="px-2 py-1 rounded text-xs font-bold 
+                <%= applicant[:status] == 'Eligible' ? 'bg-green-100 text-green-800' : 
+                   applicant[:status] == 'Ineligible' ? 'bg-red-100 text-red-800' : 
+                   applicant[:status] == 'Manual Review Needed' ? 'bg-yellow-100 text-yellow-800' : 'bg-gray-100 text-gray-800' %>">
+                <%= applicant[:status] %>
+                <% if applicant[:status] == 'Manual Review Needed' %> ⚠️ <% end %>
+              </span>
+            </td>
+            <td class="p-4"><%= applicant[:date_submitted] %></td>
+            <td class="p-4 flex gap-2">
+              <button onclick="openReviewModal(<%= applicant[:id] %>)" class="text-blue-600 hover:underline text-sm">Review</button>
+              <button onclick="openMessageModal(<%= applicant[:id] %>)" class="text-blue-600 hover:underline text-sm">Message</button>
+              <button onclick="openNoteModal(<%= applicant[:id] %>)" class="text-blue-600 hover:underline text-sm">Note</button>
+            </td>
+          </tr>
+          <tr class="bg-gray-50">
+            <td colspan="5" class="p-2">
+              <details class="text-sm text-gray-600">
+                <summary class="cursor-pointer hover:text-gray-900">Admin Notes</summary>
+                <div class="p-2 pl-6 italic">
+                  <% applicant[:admin_notes].each do |note| %>
+                    <p>• <%= note %></p>
+                  <% end %>
+                </div>
+              </details>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const ctx = document.getElementById('statusChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: <%= @applicationsByStatus.keys.map { |k| k.to_s.humanize }.to_json %>,
+        datasets: [{
+          label: 'Number of Applications',
+          data: <%= @applicationsByStatus.values.to_json %>,
+          backgroundColor: 'rgba(59, 130, 246, 0.5)',
+          borderColor: 'rgb(59, 130, 246)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  });
+
+  function openReviewModal(id) { alert('Opening Review View for Applicant ' + id); }
+  function openMessageModal(id) { alert('Opening Message View for Applicant ' + id); }
+  function openNoteModal(id) { alert('Opening Note View for Applicant ' + id); }
+</script>
