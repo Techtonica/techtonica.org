@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Post a Job</h1>
+    <p>Fill out the form below to post a new job opportunity.</p>
+    
+    <form action="{{ url_for('post_job') }}" method="post">
+        {% include "partials/_form.html" with context %}
+        <button type="submit" class="btn btn-primary">Post Job</button>
+    </form>
+</div>
+{% endblock %}
