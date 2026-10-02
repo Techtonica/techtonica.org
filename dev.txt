@@ -125,7 +125,7 @@ python-dateutil==2.9.0.post0
     #   apimatic-core
     #   pendulum
     #   time-machine
-python-dotenv==1.0.1
+python-dotenv==1.2.2
     # via -r requirements.in
 python-http-client==3.3.7
     # via sendgrid
