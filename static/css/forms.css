@@ -1,0 +1,118 @@
+/* Form styles */
+#info-wrapper > fieldset {
+  margin-top: 1em;
+}
+
+%field-styles {
+  min-width: 90%;
+  margin: auto auto 1em auto;
+  padding: 0.25em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+#info-wrapper > fieldset {
+  > label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.25em;
+  }
+
+  > input[type="text"],
+  > input[type="email"] {
+    @extend %field-styles;
+  }
+
+  > textarea {
+    @extend %field-styles;
+    min-height: 8em;
+    resize: vertical;
+  }
+
+  .form-row {
+    > label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.25em;
+    }
+
+    > input[type="text"],
+    > input[type="email"] {
+      @extend %field-styles;
+    }
+
+    > textarea {
+      @extend %field-styles;
+      min-height: 8em;
+      resize: vertical;
+    }
+  }
+}
+
+/* Apply field styles to any direct child inputs/textarea within fieldset (macro-generated) */
+#info-wrapper > fieldset > input[type="text"],
+#info-wrapper > fieldset > input[type="email"],
+#info-wrapper > fieldset > textarea {
+  min-width: 90%;
+  margin: auto auto 1em auto;
+  padding: 0.25em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+/* Label styles for macro-rendered labels inside fieldset */
+#info-wrapper > fieldset > label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25em;
+}
+
+/* Styles for other forms that may still use direct children */
+fieldset > label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25em;
+}
+
+fieldset > input[type="text"],
+fieldset > input[type="email"] {
+  min-width: 90%;
+  margin: auto auto 1em auto;
+  padding: 0.25em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+fieldset > textarea {
+  min-width: 90%;
+  margin: auto auto 1em auto;
+  padding: 0.25em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  min-height: 8em;
+  resize: vertical;
+}
+
+/* Radio and checkbox styling */
+#info-wrapper > fieldset > input[type="radio"],
+#info-wrapper > fieldset > input[type="checkbox"],
+#info-wrapper > fieldset .form-row > input[type="radio"],
+#info-wrapper > fieldset .form-row > input[type="checkbox"] {
+  margin-right: 0.5em;
+}
+
+/* Button styles */
+form button[type="submit"] {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 0.5em 1.5em;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 1em;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
