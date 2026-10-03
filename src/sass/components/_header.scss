@@ -1,0 +1,42 @@
+// Main Header Styles
+.main-header {
+  background-color: #1a73e8;
+  padding: 1rem 0;
+  
+  // Remove extra spacing on smaller breakpoints
+  @media (max-width: 768px) {
+    padding: 0.5rem 0;
+    margin: 0;
+  }
+  
+  // Ensure no extra spacing on all pages
+  &.program-header {
+    padding: 0.5rem 0;
+    
+    @media (max-width: 768px) {
+      padding: 0.25rem 0;
+      margin: 0;
+    }
+  }
+}
+
+// Program Header Specific Styles
+.program-header {
+  background-color: #1a73e8;
+  padding: 0.5rem 0;
+  
+  @media (max-width: 768px) {
+    padding: 0.25rem 0;
+    margin: 0;
+  }
+}
+
+// Ensure consistent styling across all pages
+.header-container {
+  background-color: #1a73e8;
+  
+  @media (max-width: 768px) {
+    padding: 0;
+    margin: 0;
+  }
+}
