@@ -414,9 +414,59 @@ dependencies. _If there are dependencies only needed for local development, thes
 1. Generate the .txt file
 
    ```bash
-   pip-compile -U <file_name.in>
+   pip-compile <file_name.in>
    pip install -r <file_name.txt>
    ```
+
+   Note: If you want to upgrade all packages, use the `-U` flag with `pip-compile`
+
+#### Troubleshooting: Cargo Version Error
+
+Some Python dependencies, such as `cryptography`, use Rust during their build process. This error occurs when your local Cargo version is too old to recognize the lock file format. Cargo.lock version 4 requires Cargo 1.83 or newer.
+
+If you encounter the following error:
+
+```text
+error: failed to parse lock file at: .../cryptography.../Cargo.lock
+
+Caused by:
+lock file version `4` was found, but this version of Cargo
+does not understand this lock file, perhaps Cargo needs to be updated?
+```
+
+**Cause**
+
+Some Python dependencies, such as `cryptography`, use Rust during their build process. This error occurs when your local Cargo version is too old to recognize the lock file format. Cargo.lock version 4 requires Cargo 1.83 or newer.
+
+**Solution**
+
+1. Check your installed Cargo version:
+
+   ```bash
+   cargo --version
+   ```
+
+2. If you're using `rustup`, update your Rust toolchain:
+
+   ```bash
+   rustup update stable
+   ```
+
+3. Verify that Cargo is now version 1.83 or newer:
+
+   ```bash
+   cargo --version
+   ```
+
+4. Retry compiling your Python dependencies:
+
+   ```bash
+   pip-compile requirements.in
+   ```
+
+**Note:** If `rustup` is not installed or your Cargo version doesn't change, run `which cargo` to identify which installation your terminal is using. You may need to update Rust through your system's package manager instead.
+
+This is typically a local development environment issue and does not require changes to the application's source code.
 
 ### Connecting to the Database
 
