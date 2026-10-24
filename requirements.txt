@@ -23,7 +23,7 @@ blinker==1.9.0
     # via flask
 cachecontrol==0.12.14
     # via apimatic-requests-client-adapter
-certifi==2025.1.31
+certifi==2026.10.19
     # via requests
 charset-normalizer==3.4.1
     # via requests
