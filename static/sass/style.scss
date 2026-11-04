@@ -1408,20 +1408,30 @@ legend {
   color: #007395cc;
 }
 
-#info-wrapper > fieldset > label {
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-  color: #007395cc;
-}
-
-#info-wrapper > fieldset > input[type="text"],
-#info-wrapper > fieldset > input[type="email"],
-#info-wrapper > fieldset > textarea {
+//here i change > sign by adding a placeholder so that HTML can read it
+%form-field-styles {
   min-width: 90%;
   margin: auto auto 1em auto;
   padding: 0.25em;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 6px;
+}
+
+//Now I nested the selectors so they adapt cleanly to the new HTML structure
+#info-wrapper {
+  fieldset {
+    label {
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+      color: #007395cc;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      @extend %form-field-styles;
+    }
+  }
 }
 
 #info-wrapper > fieldset > textarea {
