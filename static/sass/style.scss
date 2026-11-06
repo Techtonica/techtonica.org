@@ -316,6 +316,7 @@
 }
 
 @media (min-width: 800px) and (max-width: 1060px) {
+  // Override the % in the clamp maximum because Chrome fails to paint the text at 801–910px (#892)
   .testimonial-post {
     --size: clamp(260px, 37vw, 400px);
   }
