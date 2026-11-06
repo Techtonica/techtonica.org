@@ -316,6 +316,9 @@
 }
 
 @media (min-width: 800px) and (max-width: 1060px) {
+  .testimonial-post {
+    --size: clamp(260px, 37vw, 400px);
+  }
   .testimonial-post .post-content {
     width: 86%;
     padding: clamp(6px, 1.6vmin, 12px);
