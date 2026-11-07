@@ -343,7 +343,6 @@ There are features on the site that use Square for payments and will periodicall
 Run your server using the following command, it will bypass any HTTPS cert errors.
 
 ```bash
-pip install pyopenssl
 FLASK_DEBUG=1 FLASK_APP=main_site.py FLASK_RUN_CERT=adhoc flask run
 ```
 
