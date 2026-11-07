@@ -4,6 +4,7 @@ services:
     environment:
       FLASK_DEBUG: 1
       FLASK_APP: main_site.py
+      FLASK_RUN_CERT: adhoc
     command: flask run --host=0.0.0.0
     volumes:
       - .:/app:cached
