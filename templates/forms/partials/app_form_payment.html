@@ -1,0 +1,39 @@
+{% import "forms/macros/form_macros.html" as f %}
+<div id="info-wrapper" class="info-wrapper">
+  <!-- This TODO comment was imported from templates/job-form.html -->
+  <!-- <div id="ach-wrapper">
+    <label for="ach-account-holder-name">Full Name</label>
+    <input
+    id="ach-account-holder-name"
+    type="text"
+    placeholder="Jane Doe"
+    name="ach-account-holder-name"
+    autocomplete="name"
+    />
+    <span id="ach-message"></span>
+    <button id="ach-button" type="button">
+    Pay with Bank Account
+    </button>
+    <div class="border">
+        <span>OR</span>
+    </div>
+-->
+  <h3>Payment Info</h3>
+  <div id="card-container"></div>
+  <div class="checkbox-container">
+    {% set code_of_conduct_options = [Yes] %} {{ f.checkbox_group( 'pronouns',
+    ('By checking this box, you agree that what you are submitting in this form
+    adheres to
+    <a
+      href="' ~ url_for('render_conduct_page') ~ '"
+      title="Code of Conduct"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Techtonica\'s Code of Conduct</a
+    >.')|safe, options=code_of_conduct_options ) }}
+  </div>
+  <button id="card-button" type="button" class="orange-button">
+    Pay with Card
+  </button>
+  <span id="payment-flow-message"></span>
+</div>

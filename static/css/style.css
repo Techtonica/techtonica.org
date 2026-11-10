@@ -2298,6 +2298,10 @@ input[type="radio"] {
   margin-bottom: 2rem;
 }
 
+#payment-page > h1 {
+    font-size: clamp(2rem, 5vw + 1rem, 4em);
+}
+
 #consulting-list {
   list-style-position: inside;
   border-style: solid;
