@@ -122,6 +122,7 @@ const statuses = [
   "Eligible",
   "Ineligible",
   "Pending",
+  "Rejected",
   "Manual Review Needed",
 ];
 
@@ -207,7 +208,10 @@ document.addEventListener("DOMContentLoaded", () => {
             <td>
               ${applicant.details.freecodecamp_complete ? "Complete" : "Incomplete"}
             </td>
-          </tr>
+            <td>
+            <button class="admin-button" type="button">Review</button>
+            </td>
+           </tr>
         `
       )
       .join("");
@@ -215,7 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (filteredApplicants.length === 0) {
       tableBody.innerHTML = `
         <tr>
-          <td colspan="7">No applicants found.</td>
+          <td colspan="8">No applicants found.</td>
         </tr>
       `;
     }
