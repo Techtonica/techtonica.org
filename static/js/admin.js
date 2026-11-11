@@ -1,4 +1,6 @@
 
+// Sample applicant data used to populate the admin dashboard.
+// This will eventually be replaced with data retrieved from the database.
 const applicants = [
   {
     id: 1,
@@ -117,6 +119,7 @@ const applicants = [
   },
 ];
 
+// Available application statuses used to populate the status dropdown.
 const statuses = [
   "All",
   "Eligible",
@@ -126,7 +129,9 @@ const statuses = [
   "Manual Review Needed",
 ];
 
+// Wait until the HTML document has finished loading before accessing its elements.
 document.addEventListener("DOMContentLoaded", () => {
+  // Retrieve the search field, filter controls, applicant table, and result counter.
   const searchInput = document.getElementById("applicant-search");
   const statusFilter = document.getElementById("status-filter");
   const missingReferences = document.getElementById("missing-references");
@@ -134,11 +139,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const tableBody = document.getElementById("applicant-table-body");
   const resultCount = document.getElementById("applicant-count");
 
+  // Stop execution if the required dashboard elements are not present.
   if (!searchInput || !statusFilter || !tableBody) {
     return;
   }
 
-  // Populate status choices.
+  // Populate the status dropdown using the available statuses array.
   statuses.forEach((status) => {
     const option = document.createElement("option");
     option.value = status;
@@ -146,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
     statusFilter.appendChild(option);
   });
 
-  // Escape data before inserting it into HTML.
+  // Escape data before inserting it into HTML to prevent HTML injection.
   function escapeHTML(value) {
     return String(value).replace(/[&<>"']/g, (character) => {
       const entities = {
@@ -160,27 +166,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Filter the applicants and update the table whenever a search or filter changes.
   function renderApplicants() {
+    // Get the current search term and selected application status.
     const searchTerm = searchInput.value.trim().toLowerCase();
     const selectedStatus = statusFilter.value;
 
+    // Check each applicant against all active search and filter criteria.
     const filteredApplicants = applicants.filter((applicant) => {
+      // Match the search term against the applicant's name or email.
       const matchesSearch =
         applicant.name.toLowerCase().includes(searchTerm) ||
         applicant.email.toLowerCase().includes(searchTerm);
 
+      // Show all applicants when "All" is selected; otherwise match the selected status.
       const matchesStatus =
         selectedStatus === "All" ||
         applicant.status === selectedStatus;
 
+      // When enabled, show only applicants who are missing their two references.
       const matchesReferences =
         !missingReferences.checked ||
         !applicant.details.two_references;
 
+      // When enabled, show only applicants who have not completed FreeCodeCamp.
       const matchesChallenge =
         !incompleteChallenge.checked ||
         !applicant.details.freecodecamp_complete;
 
+      // An applicant must meet every active criterion to appear in the results.
       return (
         matchesSearch &&
         matchesStatus &&
@@ -189,6 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     });
 
+    // Generate a table row for each applicant who matches the selected criteria.
     tableBody.innerHTML = filteredApplicants
       .map(
         (applicant) => `
@@ -216,6 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
       )
       .join("");
 
+    // Display a message when no applicants match the current search and filters.
     if (filteredApplicants.length === 0) {
       tableBody.innerHTML = `
         <tr>
@@ -224,16 +240,19 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
     }
 
+    // Update the applicant count to reflect the number of matching results.
     if (resultCount) {
       resultCount.textContent =
         `${filteredApplicants.length} applicant(s) found`;
     }
   }
 
+  // Re-render the table whenever the user changes the search or filter controls.
   searchInput.addEventListener("input", renderApplicants);
   statusFilter.addEventListener("change", renderApplicants);
   missingReferences.addEventListener("change", renderApplicants);
   incompleteChallenge.addEventListener("change", renderApplicants);
 
+  // Display all applicants when the dashboard first loads.
   renderApplicants();
 });
