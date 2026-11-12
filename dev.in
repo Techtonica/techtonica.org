@@ -5,5 +5,4 @@ ipdb
 ipython
 isort
 pyOpenSSL
-
 pre-commit
