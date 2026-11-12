@@ -20,21 +20,6 @@ endblock title %} {% block content %}
       </a>
     </div>
   </div>
-  <div class="column">
-    <h1 class="blue-h1">Our Programs at a Glance</h1>
-    <ol>
-      <li>Full-Time Software Engineering Program (Technical Training)</li>
-      <li>
-        Seeker Program (Job Search Support for Graduates of Full-Time Program)
-      </li>
-      <li>
-        <a href="{{ url_for('render_consulting_page') }}"
-          >Techtonica Consulting
-        </a>
-        (Real-World Experience for Graduates of Full-Time Program)
-      </li>
-    </ol>
-  </div>
   <div class="chart-container">
     <canvas id="myChart"></canvas>
   </div>
@@ -217,8 +202,10 @@ endblock title %} {% block content %}
     </p>
     <p>
       Also, check out
-      <a href="https://twitter.com/TechtonicaOrg/status/1558191593861029888"
-        >this video</a
+      <a 
+        href="https://x.com/TechtonicaOrg/status/1558191593861029888"
+        target="_blank"
+      >this video</a
       >
       about a day in the life of a Techtonica participant, our social media,
       <a href="{{ url_for('render_testimonials_page') }}"
@@ -421,7 +408,7 @@ endblock title %} {% block content %}
       </ul>
     </div>
   </div>
-  <div class="row row__baseline how-it-works" id="howitworks">
+  <div class="row row__baseline how-it-works">
     <h1 class="blue-h1">Application Process</h1>
     <p>
       For the January ("H1") cohort, the application forms open, emails to
@@ -439,8 +426,8 @@ endblock title %} {% block content %}
           Log in to
           <a
             href="https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/"
-            target="blank"
-            ref="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
             >freeCodeCamp</a
           >
           and expand the "LEGACY JavaScript Algorithms and Data Structures
@@ -491,15 +478,22 @@ endblock title %} {% block content %}
         <p>Participate in board interviews.</p>
       </div>
     </div>
+    <!-- embedded application -->
+    <!-- <div class="row">
+      <div class="column column-med centered">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform?embedded=true" width="640" height="600" frameborder="0" marginheight="0" id="application" marginwidth="0">Loading…</iframe>
+      </div>
+    </div> -->
     <div class="row">
       <div class="column column-med centered">
-        <!-- embedded application -->
-        <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform?embedded=true" width="640" height="600" frameborder="0" marginheight="0" id="application" marginwidth="0">Loading…</iframe> -->
-        <!-- Old link (Might be reused)
-        <p class="column column-med centered">
-          <a target="_blank" href="http://techtonica.eventbrite.com/">Sign up to join our events (such as our pre-req study groups) here</a>
-        </p>
-        -->
+        <a
+          href="http://techtonica.eventbrite.com/"
+          class="orange-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Sign up to join our events
+        </a>
       </div>
     </div>
   </div>
@@ -550,17 +544,24 @@ endblock title %} {% block content %}
     </div>
   </div>
 </div>
-<div class="row row__baseline how-it-works" id="howitworks">
+<div class="row row__baseline how-it-works">
   <h1 class="blue-h1">How to Prepare</h1>
   <div class="row">
     <div class="column column-med centered">
       <h3>
-        0. Learn as much JavaScript ahead of time as possible—<a
+        0. Learn as much JavaScript ahead of time, 
+        <a
           target="_blank"
           href="http://freecodecamp.org"
-          >freeCodeCamp</a
         >
-        and <a>Codecademy</a> are great for this.
+          freeCodeCamp
+        </a> and 
+        <a 
+        target="_blank"
+        href="https://www.codecademy.com/"
+        >
+          Codecademy
+        </a> are great resources for this.
       </h3>
     </div>
     <div class="column column-med centered">
@@ -574,46 +575,55 @@ endblock title %} {% block content %}
       </h3>
     </div>
     <div class="column column-med centered">
-      <h3>2. Develop your typing and Mac keyboard shortcut skills.</h3>
+      <h3>2. Showcase you are building familiarity with Mac 
+        <a 
+          target="_blank"
+          href="https://github.com/Techtonica/curriculum/blob/main/dev-tools/keyboard-shortcuts.md"
+        >
+          keyboard shortcuts,
+        </a> 
+        <a
+          target="_blank"
+          href="https://github.com/Techtonica/curriculum/tree/main/git"
+        >
+          git,
+        </a> and 
+        <a
+          target="_blank"
+          href="https://github.com/Techtonica/curriculum/blob/main/career/working-and-collaborating-remotely.md"
+        >remote culture</a>.
+      </h3>
     </div>
   </div>
   <div class="row">
     <div class="column column-med centered">
       <h3>
-        3. Learn about different tech companies and long-term pathways in tech
-        to start formulating an idea of your career goals.
+        3. Research the different tech companies and long-term tech pathways
+        to build your career goals.
       </h3>
     </div>
     <div class="column column-med centered">
       <h3>4. Practice learning and applying concepts quickly.</h3>
     </div>
     <div class="column column-med centered">
-      <h3>
-        5. Practice talking out loud about your thought process and
-        collaborating with others.
-      </h3>
+      <h3>5. Practice communicating your thought process and
+        collaborating with others.</h3>
     </div>
     <div class="row">
       <div class="column column-med centered">
         <h3>
-          6. Practice your English Proficiency Levels. Here is a guide to
-          understand your
+          6. Practice your English Proficiency Levels (
           <a
             target="_blank"
             href="https://magoosh.com/english-speaking/english-proficiency-levels-a-guide-to-determining-your-level/"
-            >English Proficiency Levels</a
-          >
+            >see levels guide</a
+          >).
         </h3>
       </div>
       <div class="column column-med centered">
         <h3>
-          7. If you need a reasonable accommodation for any part of our process,
-          <a
-            target="_blank"
-            href="https://github.com/Techtonica/curriculum/blob/main/underrepresented-in-tech-resources/resources-adhd.md"
-            >and including ADHD,</a
-          >
-          we encourage open communication around what works best for you.
+          7. Communicate your needs, reasonable accommodation, or 
+          what works best for you.
         </h3>
       </div>
     </div>

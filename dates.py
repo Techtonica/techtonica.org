@@ -145,17 +145,17 @@ def generate_application_timeline():
         # URLs for buttons when applications are open
         fulltime_top_button_url = "https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
         fulltime_bottom_button_url = "https://docs.google.com/forms/d/e/1FAIpQLSdk8nJUSuK_xoILyYyf3GIpVypQRtqsx9aQE7odHgX1cWvoHA/viewform"
-        home_button_url = "render_ft_program_page"  # This will be used with url_for in the template
+        home_button_url = "render_swe_program_page"  # This will be used with url_for in the template
     else:
         # Applications are closed, not scheduled, or scheduled for the future
         main_text = "Outsource your software work!"
-        fulltime_top_button = "Fill out our interest form to be notified about our next cohort!"
+        fulltime_top_button = "Get notified about the next cohort!"
         fulltime_bottom_button = "Sign up to join our events"
         
         # URLs for buttons when applications are closed
         fulltime_top_button_url = "https://docs.google.com/forms/d/e/1FAIpQLSfUdyIAfcU5KSqtYH5J5iPRgu-yycHdebnUKygQLEv-m7oVMw/viewform"
         fulltime_bottom_button_url = "https://www.eventbrite.com/o/techtonica-11297022451" 
-        home_button_url = "render_sponsor_page"  # This will be used with url_for in the template
+        home_button_url = "render_consulting_page"  # This will be used with url_for in the template
 
     return {
         "APP_OPEN_DATE": format_date(app_open_datetime),
