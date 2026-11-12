@@ -5,61 +5,38 @@
 #    pip-compile --constraint=requirements.txt dev.in
 #
 a2wsgi==1.10.8
-    # via
-    #   -c requirements.txt
-    #   -r requirements.in
+    # via -r requirements.in
 annotated-types==0.7.0
-    # via
-    #   -c requirements.txt
-    #   pydantic
+    # via pydantic
 anyio==4.9.0
-    # via
-    #   -c requirements.txt
-    #   starlette
+    # via starlette
 apimatic-core==0.2.19
-    # via
-    #   -c requirements.txt
-    #   squareup
+    # via squareup
 apimatic-core-interfaces==0.1.6
     # via
-    #   -c requirements.txt
     #   apimatic-core
     #   apimatic-requests-client-adapter
     #   squareup
 apimatic-requests-client-adapter==0.1.7
-    # via
-    #   -c requirements.txt
-    #   squareup
+    # via squareup
 asttokens==3.0.0
     # via stack-data
 blinker==1.9.0
-    # via
-    #   -c requirements.txt
-    #   flask
+    # via flask
 cachecontrol==0.12.14
-    # via
-    #   -c requirements.txt
-    #   apimatic-requests-client-adapter
-certifi==2025.1.31
-    # via
-    #   -c requirements.txt
-    #   requests
+    # via apimatic-requests-client-adapter
+certifi==2026.10.18
+    # via requests
 cffi==2.1.1
     # via cryptography
 cfgv==3.5.0
     # via pre-commit
 charset-normalizer==3.4.1
-    # via
-    #   -c requirements.txt
-    #   requests
+    # via requests
 click==8.1.8
-    # via
-    #   -c requirements.txt
-    #   flask
+    # via flask
 configparser==7.2.0
-    # via
-    #   -c requirements.txt
-    #   -r requirements.in
+    # via -r requirements.in
 cryptography==50.0.2
     # via -r dev.in
 decorator==5.2.1
@@ -67,47 +44,33 @@ decorator==5.2.1
     #   ipdb
     #   ipython
 deprecation==2.1.0
-    # via
-    #   -c requirements.txt
-    #   squareup
+    # via squareup
 distlib==0.4.4
     # via virtualenv
 eventbrite==3.3.5
-    # via
-    #   -c requirements.txt
-    #   -r requirements.in
+    # via -r requirements.in
 executing==2.2.0
     # via stack-data
 fastapi==0.115.11
-    # via
-    #   -c requirements.txt
-    #   -r requirements.in
+    # via -r requirements.in
 filelock==4.2.4
     # via
     #   python-discovery
     #   virtualenv
 flask==3.1.3
     # via
-    #   -c requirements.txt
     #   -r requirements.in
     #   flask-sslify
 flask-sslify==0.1.5
-    # via
-    #   -c requirements.txt
-    #   -r requirements.in
+    # via -r requirements.in
 greenlet==3.1.1
-    # via
-    #   -c requirements.txt
-    #   sqlalchemy
+    # via sqlalchemy
 gunicorn==23.0.0
-    # via
-    #   -c requirements.txt
-    #   -r requirements.in
+    # via -r requirements.in
 identify==2.6.20
     # via pre-commit
 idna==3.15
     # via
-    #   -c requirements.txt
     #   anyio
     #   requests
 ipdb==0.13.13
@@ -121,58 +84,41 @@ ipython-pygments-lexers==1.1.1
 isort==6.0.1
     # via -r dev.in
 itsdangerous==2.2.0
-    # via
-    #   -c requirements.txt
-    #   flask
+    # via flask
 jedi==0.19.2
     # via ipython
 jinja2==3.1.6
     # via
-    #   -c requirements.txt
     #   -r requirements.in
     #   flask
 jsonpickle==3.3.0
-    # via
-    #   -c requirements.txt
-    #   apimatic-core
+    # via apimatic-core
 jsonpointer==2.4
-    # via
-    #   -c requirements.txt
-    #   apimatic-core
+    # via apimatic-core
 markupsafe==3.0.2
     # via
-    #   -c requirements.txt
     #   flask
     #   jinja2
     #   werkzeug
 matplotlib-inline==0.1.7
     # via ipython
 msgpack==1.1.0
-    # via
-    #   -c requirements.txt
-    #   cachecontrol
+    # via cachecontrol
 mysql-connector-python==9.2.0
-    # via
-    #   -c requirements.txt
-    #   -r requirements.in
+    # via -r requirements.in
 mysqlclient==2.2.7
-    # via
-    #   -c requirements.txt
-    #   -r requirements.in
+    # via -r requirements.in
 nodeenv==1.11.0
     # via pre-commit
 packaging==24.2
     # via
-    #   -c requirements.txt
     #   deprecation
     #   gunicorn
     #   virtualenv
 parso==0.8.4
     # via jedi
 pendulum==3.0.0a1
-    # via
-    #   -c requirements.txt
-    #   -r requirements.in
+    # via -r requirements.in
 pexpect==4.9.0
     # via ipython
 platformdirs==4.13.5
@@ -189,108 +135,74 @@ pycparser==3.12
     # via cffi
 pydantic==2.10.6
     # via
-    #   -c requirements.txt
     #   -r requirements.in
     #   fastapi
 pydantic-core==2.27.2
-    # via
-    #   -c requirements.txt
-    #   pydantic
+    # via pydantic
 pygments==2.19.1
     # via
     #   ipython
     #   ipython-pygments-lexers
 python-dateutil==2.9.0.post0
     # via
-    #   -c requirements.txt
     #   apimatic-core
     #   pendulum
     #   time-machine
 python-discovery==1.6.4
     # via virtualenv
 python-dotenv==1.2.2
-    # via
-    #   -c requirements.txt
-    #   -r requirements.in
+    # via -r requirements.in
 python-http-client==3.3.7
-    # via
-    #   -c requirements.txt
-    #   sendgrid
+    # via sendgrid
 pytz==2025.1
-    # via
-    #   -c requirements.txt
-    #   -r requirements.in
+    # via -r requirements.in
 pyyaml==6.0.3
     # via pre-commit
 requests==2.33.0
     # via
-    #   -c requirements.txt
     #   -r requirements.in
     #   apimatic-core
     #   apimatic-requests-client-adapter
     #   cachecontrol
     #   eventbrite
 sendgrid==6.11.0
-    # via
-    #   -c requirements.txt
-    #   -r requirements.in
+    # via -r requirements.in
 six==1.17.0
-    # via
-    #   -c requirements.txt
-    #   python-dateutil
+    # via python-dateutil
 sniffio==1.3.1
-    # via
-    #   -c requirements.txt
-    #   anyio
+    # via anyio
 sqlalchemy==2.0.39
-    # via
-    #   -c requirements.txt
-    #   -r requirements.in
+    # via -r requirements.in
 squareup==41.0.0.20250319
-    # via
-    #   -c requirements.txt
-    #   -r requirements.in
+    # via -r requirements.in
 stack-data==0.6.3
     # via ipython
 starkbank-ecdsa==2.2.0
-    # via
-    #   -c requirements.txt
-    #   sendgrid
+    # via sendgrid
 starlette==0.46.1
-    # via
-    #   -c requirements.txt
-    #   fastapi
+    # via fastapi
 time-machine==2.16.0
-    # via
-    #   -c requirements.txt
-    #   pendulum
+    # via pendulum
 traitlets==5.14.3
     # via
     #   ipython
     #   matplotlib-inline
 typing-extensions==4.12.2
     # via
-    #   -c requirements.txt
     #   fastapi
     #   pydantic
     #   pydantic-core
     #   sqlalchemy
 tzdata==2025.1
-    # via
-    #   -c requirements.txt
-    #   pendulum
+    # via pendulum
 urllib3==2.6.3
-    # via
-    #   -c requirements.txt
-    #   requests
+    # via requests
 virtualenv==21.14.5
     # via pre-commit
 wcwidth==0.2.13
     # via prompt-toolkit
 werkzeug==3.1.6
-    # via
-    #   -c requirements.txt
-    #   flask
+    # via flask
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
