@@ -2710,6 +2710,98 @@ progress::-webkit-progress-bar {
   background-color: rgb(252, 202, 211);
 }
 
+
+
+/* All Applications */
+
+.all-applications-container {
+  overflow-x: auto;
+}
+
+.all-applications-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.all-applications-table th {
+  text-align: left;
+  color: gray;
+  padding: 2em 2em;
+}
+
+.all-applications-table td {
+  border-width: 2px 0 0 0;
+  border-color: rgb(228, 228, 228);
+  border-style: solid;
+  border-collapse: collapse;
+  padding: 2em 2em;
+}
+
+/* Application Filters */
+
+.application-filters {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin: 2em 0;
+}
+
+.search-wrapper {
+  position: relative;
+  width: 35%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+  pointer-events: none;
+}
+
+#applicant-search,
+#status-filter {
+  height: 44px;
+  padding: 0 1em;
+  border: 1px solid rgb(228, 228, 228);
+  border-radius: 6px;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+#applicant-search {
+  width: 100%;
+  padding-left: 2.8em;
+}
+
+#status-filter {
+  width: 45%;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* All Applications Buttons */
+
+.all-applications-table .admin-button {
+  font-size: medium;
+  padding: 0.75em 1em;
+  box-shadow: 0 3px 5px 1px #ccc;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  cursor: pointer;
+}
+
+.all-applications-table .admin-button:hover {
+  box-shadow: 0 3px 5px 1px #aaa;
+}
+
+
+
+
 #admin-action,
 #applicant-action {
   padding: 5px;

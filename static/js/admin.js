@@ -1,6 +1,9 @@
 
 // Sample applicant data used to populate the admin dashboard.
 // This will eventually be replaced with data retrieved from the database.
+
+
+
 const applicants = [
   {
     id: 1,
@@ -125,7 +128,6 @@ const statuses = [
   "Eligible",
   "Ineligible",
   "Pending",
-  "Rejected",
   "Manual Review Needed",
 ];
 
@@ -134,8 +136,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Retrieve the search field, filter controls, applicant table, and result counter.
   const searchInput = document.getElementById("applicant-search");
   const statusFilter = document.getElementById("status-filter");
-  const missingReferences = document.getElementById("missing-references");
-  const incompleteChallenge = document.getElementById("incomplete-challenge");
+  // const missingReferences = document.getElementById("missing-references");
+  // const incompleteChallenge = document.getElementById("incomplete-challenge");
   const tableBody = document.getElementById("applicant-table-body");
   const resultCount = document.getElementById("applicant-count");
 
@@ -166,93 +168,112 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Filter the applicants and update the table whenever a search or filter changes.
+
   function renderApplicants() {
-    // Get the current search term and selected application status.
     const searchTerm = searchInput.value.trim().toLowerCase();
     const selectedStatus = statusFilter.value;
 
-    // Check each applicant against all active search and filter criteria.
     const filteredApplicants = applicants.filter((applicant) => {
-      // Match the search term against the applicant's name or email.
-      const matchesSearch =
-        applicant.name.toLowerCase().includes(searchTerm) ||
-        applicant.email.toLowerCase().includes(searchTerm);
+      const matchesName = applicant.name
+        .toLowerCase()
+        .includes(searchTerm);
+      const matchesEmail = applicant.email.toLowerCase().includes(searchTerm);
+      const matchesSearch = matchesName || matchesEmail;
 
-      // Show all applicants when "All" is selected; otherwise match the selected status.
       const matchesStatus =
         selectedStatus === "All" ||
         applicant.status === selectedStatus;
+// filter by two references
+      // const matchesReferences =
+      //   !missingReferences ||
+      //   !missingReferences.checked ||
+      //   !applicant.details.two_references;
 
-      // When enabled, show only applicants who are missing their two references.
-      const matchesReferences =
-        !missingReferences.checked ||
-        !applicant.details.two_references;
+// filter by freeCodeCamp challenge completion 
+      // const matchesChallenge =
+      //   !incompleteChallenge ||
+      //   !incompleteChallenge.checked ||
+      //   !applicant.details.freecodecamp_complete;
 
-      // When enabled, show only applicants who have not completed FreeCodeCamp.
-      const matchesChallenge =
-        !incompleteChallenge.checked ||
-        !applicant.details.freecodecamp_complete;
-
-      // An applicant must meet every active criterion to appear in the results.
       return (
         matchesSearch &&
-        matchesStatus &&
-        matchesReferences &&
-        matchesChallenge
+        matchesStatus 
+        // matchesReferences &&
+        // matchesChallenge
       );
     });
 
-    // Generate a table row for each applicant who matches the selected criteria.
     tableBody.innerHTML = filteredApplicants
       .map(
         (applicant) => `
           <tr>
             <td>${escapeHTML(applicant.name)}</td>
-            <td>${escapeHTML(applicant.email)}</td>
-            <td>
-              <span class="applicant-status">
-                ${escapeHTML(applicant.status)}
-              </span>
-            </td>
             <td>${escapeHTML(applicant.eligibility_score)}</td>
-            <td>${escapeHTML(applicant.date_submitted)}</td>
-            <td>
-              ${applicant.details.two_references ? "Complete" : "Missing"}
-            </td>
-            <td>
-              ${applicant.details.freecodecamp_complete ? "Complete" : "Incomplete"}
-            </td>
-            <td>
-            <button class="admin-button" type="button">Review</button>
-            </td>
-           </tr>
+        <td>
+  <button
+    class="admin-button details-button"
+    type="button"
+    aria-label="View details for ${escapeHTML(applicant.name)}"
+  >
+    View Details
+    <span aria-hidden="true">⌄</span>
+  </button>
+</td>
+<td>
+  <button
+    class="admin-button edit-button"
+    type="button"
+    aria-label="Edit ${escapeHTML(applicant.name)}"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M12 20h9" />
+      <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L8 18l-4 1 1-4Z" />
+    </svg>
+    Edit
+  </button>
+</td>
+          </tr>
         `
       )
       .join("");
 
-    // Display a message when no applicants match the current search and filters.
     if (filteredApplicants.length === 0) {
       tableBody.innerHTML = `
         <tr>
-          <td colspan="8">No applicants found.</td>
+          <td colspan="4">No applicants found.</td>
         </tr>
       `;
     }
 
-    // Update the applicant count to reflect the number of matching results.
     if (resultCount) {
       resultCount.textContent =
         `${filteredApplicants.length} applicant(s) found`;
     }
   }
 
-  // Re-render the table whenever the user changes the search or filter controls.
+  // Update the table when search or filter values change.
   searchInput.addEventListener("input", renderApplicants);
   statusFilter.addEventListener("change", renderApplicants);
-  missingReferences.addEventListener("change", renderApplicants);
-  incompleteChallenge.addEventListener("change", renderApplicants);
 
-  // Display all applicants when the dashboard first loads.
+  // if (missingReferences) {
+  //   missingReferences.addEventListener("change", renderApplicants);
+  // }
+
+  // if (incompleteChallenge) {
+  //   incompleteChallenge.addEventListener("change", renderApplicants);
+  // }
+
+  // Display all applicants when the page first loads.
   renderApplicants();
 });
