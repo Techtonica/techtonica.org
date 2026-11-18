@@ -917,6 +917,8 @@ p#original-template-source {
   .main-header {
     display: block;
     position: relative;
+    height: auto;
+    padding-top: 75%;
     background: url(../img/three-participants-at-laptops-min.jpg) $main-blue
       no-repeat top center;
     @include prefix(background-size, contain, webkit moz o);
@@ -928,6 +930,16 @@ p#original-template-source {
     max-width: 100%;
     width: auto;
     padding: 0 1em;
+  }
+
+  .main-header .main-header__text {
+    position: relative;
+  }
+
+  .main-header .main-header__text h1:only-child {
+    text-align: center;
+    margin: 0;
+    padding: 1rem 0;
   }
 
   .main-content {
