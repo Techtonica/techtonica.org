@@ -315,6 +315,10 @@
 }
 
 @media (min-width: 800px) and (max-width: 1060px) {
+  // Override the % in the clamp maximum because Chrome fails to paint the text at 801–910px (#892)
+  .testimonial-post {
+    --size: clamp(260px, 37vw, 400px);
+  }
   .testimonial-post .post-content {
     width: 86%;
     padding: clamp(6px, 1.6vmin, 12px);
@@ -912,6 +916,8 @@ p#original-template-source {
   .main-header {
     display: block;
     position: relative;
+    height: auto;
+    padding-top: 75%;
     background: url(../img/three-participants-at-laptops-min.jpg) $main-blue
       no-repeat top center;
     @include prefix(background-size, contain, webkit moz o);
@@ -923,6 +929,16 @@ p#original-template-source {
     max-width: 100%;
     width: auto;
     padding: 0 1em;
+  }
+
+  .main-header .main-header__text {
+    position: relative;
+  }
+
+  .main-header .main-header__text h1:only-child {
+    text-align: center;
+    margin: 0;
+    padding: 1rem 0;
   }
 
   .main-content {

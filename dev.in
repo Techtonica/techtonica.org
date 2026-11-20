@@ -1,5 +1,7 @@
 -r requirements.in
 
+cryptography
 ipdb
 ipython
 isort
+pre-commit

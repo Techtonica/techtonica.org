@@ -400,6 +400,9 @@ p {
 }
 
 @media (min-width: 800px) and (max-width: 1060px) {
+  .testimonial-post {
+    --size: clamp(260px, 37vw, 400px);
+  }
   .testimonial-post .post-content {
     width: 86%;
     padding: clamp(6px, 1.6vmin, 12px);
@@ -1001,7 +1004,10 @@ p#original-template-source {
   .main-header {
     display: block;
     position: relative;
-    background: url(../img/three-participants-at-laptops-min.jpg) #0093b5 no-repeat top center;
+    height: auto;
+    padding-top: 75%;
+    background: url(../img/three-participants-at-laptops-min.jpg) #0093b5
+      no-repeat top center;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
@@ -1013,6 +1019,14 @@ p#original-template-source {
     max-width: 100%;
     width: auto;
     padding: 0 1em;
+  }
+  .main-header .main-header__text {
+    position: relative;
+  }
+  .main-header .main-header__text h1:only-child {
+    text-align: center;
+    margin: 0;
+    padding: 1rem 0;
   }
   .main-content {
     margin-top: 5rem;
