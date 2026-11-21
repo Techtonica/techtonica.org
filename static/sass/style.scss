@@ -172,9 +172,6 @@
       color: $white;
       text-decoration: none;
 
-    a#success-container {
-      color: $black;
-    }
       &:hover {
         text-decoration: underline;
       }
@@ -1280,6 +1277,10 @@ p.press-release-bold {
   color: #ffffff !important;
   text-decoration: underline;
   font-weight: bold;
+}
+
+#payment-page p a.black-text {
+  color: #000000 !important;
 }
 
 #payment-page p a:hover {
