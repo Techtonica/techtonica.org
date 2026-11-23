@@ -312,5 +312,266 @@ Techtonica: Bridging the Tech Gap {% endblock title %} {% block content %}
       </div>
     </div>
   </section>
+
+  <section
+    class="admin-section individual-applications-section"
+    id="individual-applications-section"
+  >
+    <div class="admin-box">
+      <div class="individual-applications-header">
+        <h3>Individual Application Review</h3>
+        <p class="admin-subtitle">
+          Manage, review, and edit individual applicant details, eligibility
+          criteria, and admin-only notes
+        </p>
+      </div>
+      <div class="individual-applications-container">
+        <table
+          class="individual-applications-table"
+          aria-label="Individual Applications Review"
+        >
+          <thead>
+            <tr>
+              <th>Applicant</th>
+              <th>Eligibility Score</th>
+              <th>Details</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="individual-applications-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Edit Application Overlay Popup Modal -->
+  <div
+    id="edit-application-modal"
+    class="admin-modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="edit-modal-title"
+    hidden
+  >
+    <div class="admin-modal-card">
+      <div class="admin-modal-header">
+        <h3 id="edit-modal-title">Edit Application Details</h3>
+        <button
+          type="button"
+          class="admin-modal-close"
+          data-close-modal="edit"
+          aria-label="Close edit form"
+        >
+          &times;
+        </button>
+      </div>
+      <form id="edit-application-form" class="admin-modal-form">
+        <div class="admin-form-row">
+          <label for="edit-applicant-name">Name</label>
+          <input type="text" id="edit-applicant-name" required />
+        </div>
+        <div class="admin-form-row">
+          <label for="edit-applicant-email">Email</label>
+          <input type="email" id="edit-applicant-email" required />
+        </div>
+        <div class="admin-form-row">
+          <label for="edit-applicant-status">Status</label>
+          <select id="edit-applicant-status">
+            <option value="Eligible">Eligible</option>
+            <option value="Ineligible">Ineligible</option>
+            <option value="Pending">Pending</option>
+            <option value="Manual Review Needed">Manual Review Needed</option>
+          </select>
+        </div>
+        <div class="admin-form-row">
+          <label for="edit-applicant-score">Eligibility Score</label>
+          <input
+            type="number"
+            id="edit-applicant-score"
+            min="0"
+            max="100"
+            required
+          />
+        </div>
+        <div class="admin-form-row">
+          <label for="edit-wpm-score">WPM Score (50+ required)</label>
+          <input type="number" id="edit-wpm-score" min="0" required />
+        </div>
+        <div class="admin-form-row">
+          <label for="edit-wpm-accuracy">WPM Accuracy (80%+ required)</label>
+          <input type="text" id="edit-wpm-accuracy" required />
+        </div>
+        <div class="admin-form-row">
+          <label for="edit-two-references">Two References Submitted</label>
+          <select id="edit-two-references">
+            <option value="true">true</option>
+            <option value="false">false</option>
+          </select>
+        </div>
+        <div class="admin-form-row">
+          <label for="edit-freecodecamp-complete"
+            >FreeCodeCamp Complete (115 problems screenshot)</label
+          >
+          <select id="edit-freecodecamp-complete">
+            <option value="true">true</option>
+            <option value="false">false</option>
+          </select>
+        </div>
+        <div class="admin-form-row">
+          <label for="edit-reviewer-role">Reviewer Role</label>
+          <select id="edit-reviewer-role">
+            <option value="Admin User">Admin User</option>
+            <option value="Program Staff">Program Staff</option>
+          </select>
+        </div>
+        <div class="admin-form-row">
+          <label for="edit-gender">Gender</label>
+          <input type="text" id="edit-gender" required />
+        </div>
+        <div class="admin-form-row">
+          <label for="edit-computer-literate">Computer Literate</label>
+          <select id="edit-computer-literate">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+        <div class="admin-form-row">
+          <label for="edit-recent-bootcamp">Recent Bootcamp</label>
+          <select id="edit-recent-bootcamp">
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select>
+        </div>
+        <div class="admin-form-row">
+          <label for="edit-stable-housing">Stable Housing</label>
+          <select id="edit-stable-housing">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+        <div class="admin-modal-actions">
+          <button
+            type="button"
+            class="admin-button modal-cancel-btn"
+            data-close-modal="edit"
+          >
+            Cancel
+          </button>
+          <button type="submit" class="admin-button modal-submit-btn">
+            Save Changes
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Leave Admin-Only Note Overlay Popup Modal -->
+  <div
+    id="admin-note-modal"
+    class="admin-modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="note-modal-title"
+    hidden
+  >
+    <div class="admin-modal-card">
+      <div class="admin-modal-header">
+        <h3 id="note-modal-title">Leave Admin-Only Note</h3>
+        <button
+          type="button"
+          class="admin-modal-close"
+          data-close-modal="note"
+          aria-label="Close admin note form"
+        >
+          &times;
+        </button>
+      </div>
+      <form id="admin-note-form" class="admin-modal-form">
+        <p class="admin-modal-recipient">
+          Applicant: <strong id="note-modal-applicant-name"></strong>
+        </p>
+        <div class="admin-form-row">
+          <label for="note-author-role">Author Role</label>
+          <select id="note-author-role">
+            <option value="Admin User">Admin User</option>
+            <option value="Program Staff">Program Staff</option>
+          </select>
+        </div>
+        <div class="admin-form-row">
+          <label for="admin-note-textarea">Admin-Only Note</label>
+          <textarea
+            id="admin-note-textarea"
+            rows="4"
+            placeholder="Write an internal note for this applicant..."
+            required
+          ></textarea>
+        </div>
+        <div class="admin-modal-actions">
+          <button
+            type="button"
+            class="admin-button modal-cancel-btn"
+            data-close-modal="note"
+          >
+            Cancel
+          </button>
+          <button type="submit" class="admin-button modal-submit-btn">
+            Save Admin Note
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Message Applicant Overlay Popup Modal -->
+  <div
+    id="message-applicant-modal"
+    class="admin-modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="message-modal-title"
+    hidden
+  >
+    <div class="admin-modal-card">
+      <div class="admin-modal-header">
+        <h3 id="message-modal-title">Message Applicant</h3>
+        <button
+          type="button"
+          class="admin-modal-close"
+          data-close-modal="message"
+          aria-label="Close message applicant form"
+        >
+          &times;
+        </button>
+      </div>
+      <form id="message-applicant-form" class="admin-modal-form">
+        <p class="admin-modal-recipient">
+          Recipient: <strong id="message-modal-applicant-name"></strong>
+        </p>
+        <div class="admin-form-row">
+          <label for="message-applicant-textarea">Message</label>
+          <textarea
+            id="message-applicant-textarea"
+            rows="4"
+            placeholder="Write a message to the applicant (logged in admin-only notes)..."
+            required
+          ></textarea>
+        </div>
+        <div class="admin-modal-actions">
+          <button
+            type="button"
+            class="admin-button modal-cancel-btn"
+            data-close-modal="message"
+          >
+            Cancel
+          </button>
+          <button type="submit" class="admin-button modal-submit-btn">
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/admin-application-view.js') }}"></script>
 </div>
 {%endblock%}

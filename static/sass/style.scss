@@ -1918,3 +1918,356 @@ progress::-webkit-progress-bar {
     }
   }
 }
+
+/* Individual Application View (Issue #579) */
+.individual-applications-container {
+  overflow-x: auto;
+}
+
+.individual-applications-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.individual-applications-table th {
+  text-align: left;
+  color: $dark-gray;
+  padding: 1.25em 1.5em;
+  border-bottom: 2px solid rgb(228, 228, 228);
+}
+
+.individual-applications-table .applicant-main-row td {
+  border-top: 2px solid rgb(228, 228, 228);
+  padding: 1.5em 1.5em 1em;
+  vertical-align: top;
+}
+
+.applicant-name {
+  font-weight: 700;
+  font-size: 1.05em;
+  color: #222;
+}
+
+.applicant-email {
+  color: $dark-gray;
+  font-size: 0.9em;
+  margin: 0.25em 0 0.6em;
+}
+
+.applicant-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.applicant-submitted-date {
+  font-size: 0.82em;
+  color: $dark-gray;
+}
+
+.status-badge-eligible {
+  color: rgb(0, 98, 24);
+  background-color: rgb(155, 255, 180);
+}
+
+.status-badge-ineligible {
+  color: rgb(138, 0, 25);
+  background-color: rgb(252, 202, 211);
+}
+
+.status-badge-manual {
+  color: rgb(146, 64, 14);
+  background-color: rgb(252, 237, 140);
+}
+
+.status-badge-pending {
+  color: rgb(0, 58, 108);
+  background-color: rgb(155, 225, 255);
+}
+
+.eligibility-score-badge {
+  font-weight: 700;
+  font-size: 1.15em;
+  color: #222;
+}
+
+.details-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.65em 1.1em;
+  border: 1px solid rgb(220, 220, 220);
+  background-color: $white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.applicant-details-panel {
+  margin-top: 1em;
+  padding: 1em;
+  background-color: #fafafa;
+  border: 1px solid rgb(228, 228, 228);
+  border-radius: 8px;
+}
+
+.criteria-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 0.85em 1.5em;
+}
+
+.criterion-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em;
+}
+
+.criterion-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  font-size: 0.92em;
+}
+
+.criterion-label {
+  font-weight: 600;
+  color: #222;
+}
+
+.criterion-value {
+  color: #333;
+}
+
+.criteria-icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.fcc-manual-review-controls {
+  margin-top: 0.3em;
+  padding: 0.5em 0.65em;
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45em;
+}
+
+.fcc-warning-badge {
+  font-size: 0.78em;
+  font-weight: 600;
+  color: #92400e;
+}
+
+.fcc-verify-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.fcc-role-select {
+  padding: 0.35em 0.5em;
+  border: 1px solid $light-gray;
+  border-radius: 4px;
+  font-size: 0.82em;
+  background-color: $white;
+}
+
+.fcc-confirm-btn {
+  padding: 0.4em 0.75em;
+  font-size: 0.82em;
+  background-color: $main-blue;
+  color: $white;
+  cursor: pointer;
+}
+
+.applicant-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55em;
+  min-width: 165px;
+}
+
+.applicant-action-buttons .admin-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45em;
+  padding: 0.6em 0.9em;
+  border: 1px solid rgb(220, 220, 220);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.applicant-notes-row td.applicant-notes-dropdown-cell {
+  padding: 0 1.5em 1.25em;
+  border-top: 0;
+}
+
+.admin-notes-dropdown {
+  width: 100%;
+  background-color: #f8fafc;
+  border: 1px solid rgb(220, 226, 235);
+  border-radius: 6px;
+  padding: 0.6em 1em;
+  box-sizing: border-box;
+}
+
+.admin-notes-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.9em;
+  color: $dark-blue;
+}
+
+.notes-dropdown-hint {
+  font-weight: 400;
+  font-size: 0.85em;
+  color: $dark-gray;
+}
+
+.admin-notes-list {
+  margin: 0.75em 0 0.25em;
+  padding-left: 1.25em;
+}
+
+.admin-note-item {
+  font-size: 0.88em;
+  color: #333;
+  margin-bottom: 0.4em;
+  line-height: 1.4;
+}
+
+/* Admin Overlay Popup Modals */
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1em;
+}
+
+.admin-modal-overlay[hidden] {
+  display: none;
+}
+
+.admin-modal-card {
+  background-color: $white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 1.5em;
+  box-sizing: border-box;
+}
+
+.admin-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgb(228, 228, 228);
+  padding-bottom: 0.75em;
+  margin-bottom: 1em;
+}
+
+.admin-modal-header h3 {
+  margin: 0;
+}
+
+.admin-modal-close {
+  font-size: 1.6em;
+  line-height: 1;
+  color: $dark-gray;
+  cursor: pointer;
+  padding: 0.1em 0.35em;
+}
+
+.admin-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85em;
+}
+
+.admin-form-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+  gap: 0.75em;
+}
+
+.admin-form-row label {
+  font-weight: 600;
+  font-size: 0.9em;
+  color: #222;
+}
+
+.admin-form-row input,
+.admin-form-row select,
+.admin-form-row textarea {
+  width: 100%;
+  padding: 0.55em 0.75em;
+  border: 1px solid $light-gray;
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.92em;
+  box-sizing: border-box;
+}
+
+.admin-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75em;
+  margin-top: 0.75em;
+  padding-top: 0.75em;
+  border-top: 1px solid rgb(228, 228, 228);
+}
+
+.modal-submit-btn {
+  background-color: $main-blue;
+  color: $white;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.65em 1.25em;
+}
+
+.modal-cancel-btn {
+  background-color: $whitesmoke;
+  color: #333;
+  cursor: pointer;
+  padding: 0.65em 1.25em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .criteria-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-form-row {
+    grid-template-columns: 1fr;
+  }
+}
