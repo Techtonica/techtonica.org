@@ -991,6 +991,7 @@ p {
 
 .testimonial-row {
   padding: 0 !important;
+  width: 100%;
 }
 
 .testimonial-text a {
@@ -999,7 +1000,7 @@ p {
 
 @media (min-width: 800px) and (max-width: 1060px) {
   .testimonial-post {
-    --size: clamp(260px, 37vw, 400px);
+    --size: clamp(260px, 35vw, 400px);
   }
   .testimonial-post .post-content {
     width: 86%;
