@@ -314,21 +314,11 @@ p {
   -webkit-transform: translateZ(0);
   -o-transform: translateZ(0);
   -ms-transform: translateZ(0);
-  animation:
-    fcload6 1.7s infinite ease,
-    fcround 1.7s infinite ease;
-  -moz-animation:
-    fcload6 1.7s infinite ease,
-    fcround 1.7s infinite ease;
-  -webkit-animation:
-    fcload6 1.7s infinite ease,
-    fcround 1.7s infinite ease;
-  -o-animation:
-    fcload6 1.7s infinite ease,
-    fcround 1.7s infinite ease;
-  -ms-animation:
-    fcload6 1.7s infinite ease,
-    fcround 1.7s infinite ease;
+  animation: fcload6 1.7s infinite ease, fcround 1.7s infinite ease;
+  -moz-animation: fcload6 1.7s infinite ease, fcround 1.7s infinite ease;
+  -webkit-animation: fcload6 1.7s infinite ease, fcround 1.7s infinite ease;
+  -o-animation: fcload6 1.7s infinite ease, fcround 1.7s infinite ease;
+  -ms-animation: fcload6 1.7s infinite ease, fcround 1.7s infinite ease;
 }
 
 .fc-direct-embed-loader {
@@ -346,21 +336,11 @@ p {
   -webkit-transform: translateZ(0);
   -o-transform: translateZ(0);
   -ms-transform: translateZ(0);
-  animation:
-    fcload6 1.7s infinite ease,
-    fcround 1.7s infinite ease;
-  -moz-animation:
-    fcload6 1.7s infinite ease,
-    fcround 1.7s infinite ease;
-  -webkit-animation:
-    fcload6 1.7s infinite ease,
-    fcround 1.7s infinite ease;
-  -o-animation:
-    fcload6 1.7s infinite ease,
-    fcround 1.7s infinite ease;
-  -ms-animation:
-    fcload6 1.7s infinite ease,
-    fcround 1.7s infinite ease;
+  animation: fcload6 1.7s infinite ease, fcround 1.7s infinite ease;
+  -moz-animation: fcload6 1.7s infinite ease, fcround 1.7s infinite ease;
+  -webkit-animation: fcload6 1.7s infinite ease, fcround 1.7s infinite ease;
+  -o-animation: fcload6 1.7s infinite ease, fcround 1.7s infinite ease;
+  -ms-animation: fcload6 1.7s infinite ease, fcround 1.7s infinite ease;
   z-index: 1;
   display: none;
 }
@@ -377,262 +357,102 @@ p {
 
 @keyframes fcload6 {
   0% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      0 -0.83em 0 -0.42em,
-      0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em,
-      0 -0.83em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
-  5%,
-  95% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      0 -0.83em 0 -0.42em,
-      0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em,
-      0 -0.83em 0 -0.477em;
+  5%, 95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
-  10%,
-  59% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      -0.087em -0.825em 0 -0.42em,
-      -0.173em -0.812em 0 -0.44em,
-      -0.256em -0.789em 0 -0.46em,
-      -0.297em -0.775em 0 -0.477em;
+  10%, 59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
   }
   20% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      -0.338em -0.758em 0 -0.42em,
-      -0.555em -0.617em 0 -0.44em,
-      -0.671em -0.488em 0 -0.46em,
-      -0.749em -0.34em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
   }
   38% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      -0.377em -0.74em 0 -0.42em,
-      -0.645em -0.522em 0 -0.44em,
-      -0.775em -0.297em 0 -0.46em,
-      -0.82em -0.09em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
   }
   100% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      0 -0.83em 0 -0.42em,
-      0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em,
-      0 -0.83em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
 }
 @-moz-keyframes fcload6 {
   0% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      0 -0.83em 0 -0.42em,
-      0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em,
-      0 -0.83em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
-  5%,
-  95% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      0 -0.83em 0 -0.42em,
-      0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em,
-      0 -0.83em 0 -0.477em;
+  5%, 95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
-  10%,
-  59% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      -0.087em -0.825em 0 -0.42em,
-      -0.173em -0.812em 0 -0.44em,
-      -0.256em -0.789em 0 -0.46em,
-      -0.297em -0.775em 0 -0.477em;
+  10%, 59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
   }
   20% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      -0.338em -0.758em 0 -0.42em,
-      -0.555em -0.617em 0 -0.44em,
-      -0.671em -0.488em 0 -0.46em,
-      -0.749em -0.34em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
   }
   38% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      -0.377em -0.74em 0 -0.42em,
-      -0.645em -0.522em 0 -0.44em,
-      -0.775em -0.297em 0 -0.46em,
-      -0.82em -0.09em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
   }
   100% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      0 -0.83em 0 -0.42em,
-      0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em,
-      0 -0.83em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
 }
 @-webkit-keyframes fcload6 {
   0% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      0 -0.83em 0 -0.42em,
-      0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em,
-      0 -0.83em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
-  5%,
-  95% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      0 -0.83em 0 -0.42em,
-      0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em,
-      0 -0.83em 0 -0.477em;
+  5%, 95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
-  10%,
-  59% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      -0.087em -0.825em 0 -0.42em,
-      -0.173em -0.812em 0 -0.44em,
-      -0.256em -0.789em 0 -0.46em,
-      -0.297em -0.775em 0 -0.477em;
+  10%, 59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
   }
   20% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      -0.338em -0.758em 0 -0.42em,
-      -0.555em -0.617em 0 -0.44em,
-      -0.671em -0.488em 0 -0.46em,
-      -0.749em -0.34em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
   }
   38% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      -0.377em -0.74em 0 -0.42em,
-      -0.645em -0.522em 0 -0.44em,
-      -0.775em -0.297em 0 -0.46em,
-      -0.82em -0.09em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
   }
   100% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      0 -0.83em 0 -0.42em,
-      0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em,
-      0 -0.83em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
 }
 @-o-keyframes fcload6 {
   0% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      0 -0.83em 0 -0.42em,
-      0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em,
-      0 -0.83em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
-  5%,
-  95% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      0 -0.83em 0 -0.42em,
-      0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em,
-      0 -0.83em 0 -0.477em;
+  5%, 95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
-  10%,
-  59% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      -0.087em -0.825em 0 -0.42em,
-      -0.173em -0.812em 0 -0.44em,
-      -0.256em -0.789em 0 -0.46em,
-      -0.297em -0.775em 0 -0.477em;
+  10%, 59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
   }
   20% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      -0.338em -0.758em 0 -0.42em,
-      -0.555em -0.617em 0 -0.44em,
-      -0.671em -0.488em 0 -0.46em,
-      -0.749em -0.34em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
   }
   38% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      -0.377em -0.74em 0 -0.42em,
-      -0.645em -0.522em 0 -0.44em,
-      -0.775em -0.297em 0 -0.46em,
-      -0.82em -0.09em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
   }
   100% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      0 -0.83em 0 -0.42em,
-      0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em,
-      0 -0.83em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
 }
 @-ms-keyframes fcload6 {
   0% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      0 -0.83em 0 -0.42em,
-      0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em,
-      0 -0.83em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
-  5%,
-  95% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      0 -0.83em 0 -0.42em,
-      0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em,
-      0 -0.83em 0 -0.477em;
+  5%, 95% {
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
-  10%,
-  59% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      -0.087em -0.825em 0 -0.42em,
-      -0.173em -0.812em 0 -0.44em,
-      -0.256em -0.789em 0 -0.46em,
-      -0.297em -0.775em 0 -0.477em;
+  10%, 59% {
+    box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
   }
   20% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      -0.338em -0.758em 0 -0.42em,
-      -0.555em -0.617em 0 -0.44em,
-      -0.671em -0.488em 0 -0.46em,
-      -0.749em -0.34em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
   }
   38% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      -0.377em -0.74em 0 -0.42em,
-      -0.645em -0.522em 0 -0.44em,
-      -0.775em -0.297em 0 -0.46em,
-      -0.82em -0.09em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
   }
   100% {
-    box-shadow:
-      0 -0.83em 0 -0.4em,
-      0 -0.83em 0 -0.42em,
-      0 -0.83em 0 -0.44em,
-      0 -0.83em 0 -0.46em,
-      0 -0.83em 0 -0.477em;
+    box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
   }
 }
 @keyframes fcround {
@@ -1126,11 +946,7 @@ p {
 }
 
 .mc-closeModal {
-  text-shadow:
-    -1px -1px 0 #000,
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 
 .main-content {
@@ -1150,8 +966,7 @@ p {
   justify-content: flex-end;
   width: 100%;
   height: 75vh;
-  background: url(../img/three-participants-at-laptops-min.jpg) #0093b5
-    no-repeat top right fixed;
+  background: url(../img/three-participants-at-laptops-min.jpg) #0093b5 no-repeat top right fixed;
   background-size: cover;
 }
 
@@ -1607,8 +1422,7 @@ p#original-template-source {
   .main-header {
     display: block;
     position: relative;
-    background: url(../img/three-participants-at-laptops-min.jpg) #0093b5
-      no-repeat top center;
+    background: url(../img/three-participants-at-laptops-min.jpg) #0093b5 no-repeat top center;
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
@@ -2074,8 +1888,8 @@ legend {
   color: rgba(0, 115, 149, 0.8);
 }
 
-#info-wrapper > fieldset > input[type="text"],
-#info-wrapper > fieldset > input[type="email"],
+#info-wrapper > fieldset > input[type=text],
+#info-wrapper > fieldset > input[type=email],
 #info-wrapper > fieldset > textarea {
   min-width: 90%;
   margin: auto auto 1em auto;
@@ -2088,7 +1902,7 @@ legend {
   min-height: 6em;
 }
 
-input[type="radio"] {
+input[type=radio] {
   width: 50px;
 }
 
@@ -2139,7 +1953,7 @@ input#code-of-conduct-checkbox {
   margin-right: 15px;
 }
 
-label[for="code-of-conduct-checkbox"] ~ a {
+label[for=code-of-conduct-checkbox] ~ a {
   color: rgba(0, 115, 149, 0.8);
   text-decoration: none;
 }
@@ -2517,37 +2331,119 @@ progress::-webkit-progress-bar {
 #applicant-action {
   padding: 5px;
   border-radius: 10px;
-  /* Sponsor Page Styling */
 }
-#admin-action .sponsor-benefit-table,
-#applicant-action .sponsor-benefit-table {
+
+/* All Applications */
+.all-applications-container {
+  overflow-x: auto;
+}
+
+.all-applications-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.all-applications-table th {
+  text-align: left;
+  color: gray;
+  padding: 2em 2em;
+}
+
+.all-applications-table td {
+  border-width: 2px 0 0 0;
+  border-color: rgb(228, 228, 228);
+  border-style: solid;
+  border-collapse: collapse;
+  padding: 2em 2em;
+}
+
+/* Application Filters */
+.application-filters {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin: 2em 0;
+}
+
+.search-wrapper {
+  position: relative;
+  width: 35%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+  pointer-events: none;
+}
+
+#applicant-search,
+#status-filter {
+  height: 44px;
+  padding: 0 1em;
+  border: 1px solid rgb(228, 228, 228);
+  border-radius: 6px;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+#applicant-search {
+  width: 100%;
+  padding-left: 2.8em;
+}
+
+#status-filter {
+  width: 45%;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* All Applications Buttons */
+.all-applications-table .admin-button {
+  font-size: medium;
+  padding: 0.75em 1em;
+  box-shadow: 0 3px 5px 1px #ccc;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  cursor: pointer;
+}
+
+.all-applications-table .admin-button:hover {
+  box-shadow: 0 3px 5px 1px #aaa;
+}
+
+/* Sponsor Page Styling */
+.sponsor-benefit-table {
   margin-right: auto;
   margin-left: auto;
   width: 100%;
 }
-#admin-action .sponsor-benefit-table,
-#admin-action .sponsor-benefit-table td,
-#applicant-action .sponsor-benefit-table,
-#applicant-action .sponsor-benefit-table td {
+
+.sponsor-benefit-table,
+.sponsor-benefit-table td {
   border: 1px solid #0093b5;
   border-collapse: collapse;
 }
-#admin-action .sponsor-benefit-table th,
-#applicant-action .sponsor-benefit-table th {
+
+.sponsor-benefit-table th {
   padding: 5px;
   column-width: 100px;
 }
-#admin-action .sponsor-table-cell,
-#applicant-action .sponsor-table-cell {
+
+.sponsor-table-cell {
   text-align: center;
 }
-#admin-action .sponsor-table-prompt,
-#applicant-action .sponsor-table-prompt {
+
+.sponsor-table-prompt {
   padding-left: 5px;
 }
 @media only screen and (min-width: 320px) and (max-width: 699px) {
-  #admin-action .sponsor-benefit-table,
-  #applicant-action .sponsor-benefit-table {
+  .sponsor-benefit-table {
     max-width: 100%;
     table-layout: inherit;
     font-size: 13px;
