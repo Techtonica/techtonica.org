@@ -328,7 +328,7 @@ For more detailed guidelines and examples, refer to the [Alt-Text Wiki](https://
 
 ### Square Testing
 
-There are features on the site that use Square for payments and will periodically need testing (especially if their libraries get updated). Currently this is only the "Post a Job" page.
+There are features on the site that use Square for payments and will periodically need testing (especially if their libraries get updated). Currently this is only the "Post an Opportunity" page.
 
 #### Setup
 
@@ -349,7 +349,7 @@ FLASK_DEBUG=1 FLASK_APP=main_site.py FLASK_RUN_CERT=adhoc flask run
 When navigating to the site, if your browser pops up an HTTPS insecure warning, click "Advanced" and "[Proceed to 127.0.0.1 (unsafe)](chrome-error://chromewebdata/#)"
 <img width="720" alt="image" src="https://github.com/user-attachments/assets/20fe29d5-051d-44d4-9d05-6e797012d207" />
 
-Navigate to one of the pages that uses Square, currently "Post a Job".
+Navigate to one of the pages that uses Square, currently "Post an opportunity".
 
 Follow the instructions on the page, and when instructed to enter a credit card number, use one of the following numbers found [here](https://developer.squareup.com/docs/devtools/sandbox/payments).
 
