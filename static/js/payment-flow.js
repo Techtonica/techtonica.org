@@ -35,7 +35,7 @@ window.showSuccessPage = function (jobTitle, company) {
     <h2>Payment Successful!</h2>
     <p>Thank you for submitting your job posting for "${jobTitle}" at "${company}".</p>
     <p>If approved, your job will be shared with our graduates who have 0-7 years of experience.</p>
-    <p>If you have any questions, please contact us at <a href="mailto:info@techtonica.org">info@techtonica.org</a>.</p>
+    <p>If you have any questions, please contact us at <a class="black-text" href="mailto:info@techtonica.org">info@techtonica.org</a>.</p>
     <button id="post-another-job" class="orange-button">
       <h2>Post Another Job</h2>
     </button>

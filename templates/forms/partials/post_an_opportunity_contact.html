@@ -1,0 +1,14 @@
+{% import "forms/macros/form_macros.html" as f %}
+<fieldset>
+  <legend>Contact Information</legend>
+  {{ f.input_field( 'firstname', 'First Name', id="firstname", type="text",
+  required=True, pattern='^[A-Za-z\-\' ]{2,}$', title='Please enter a valid
+  first name.' ) }}
+  {{ f.input_field( 'lastname', 'Last Name', id="lastname", type="text",
+  required=True, pattern='^[A-Za-z\-\' ]{2,}$', title='Please enter a valid
+  last name.' ) }}
+  {{ f.input_field( 'email', 'Email', id="email", type="email",
+  required=True, pattern='^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+  title='Please enter a valid email address.' ) }}
+  <!-- TO-DO: File upload input for screenshots -->
+</fieldset>

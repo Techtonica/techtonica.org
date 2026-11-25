@@ -1287,6 +1287,10 @@ p.press-release-bold {
   font-weight: bold;
 }
 
+#payment-page p a.black-text {
+  color: #000000 !important;
+}
+
 #payment-page p a:hover {
   color: #16c1f3 !important;
   text-decoration: underline;
@@ -1463,6 +1467,10 @@ input[type="radio"] {
   margin: auto;
   text-align: center;
   margin-bottom: 2rem;
+}
+
+#payment-page > h1 {
+  font-size: clamp(2rem, 5vw + 1rem, 4em);
 }
 
 #consulting-list {
